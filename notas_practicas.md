@@ -25,7 +25,11 @@ Los NBs están situados en un repositorio público de [GitHub](https://github.co
 
 Accede al repositorio de los apuntes [book-USC-MMIII](https://github.com/jahernando/book-USC-MMIII)  
 
-Had click en al boton **Code**, a la derache, en rojo. Aparecerá en desplegable. Selecciona **Download Zip**. Todos los ficheros del repositorio se descargarán en tu ordenador en un fichero type *zip* comprimido. Descomprime el fichero *zip* para acceder localemente a los NBs.
+Had click en al boton **Code**, a la derecha en rojo. Aparecerá un desplegable. Selecciona **Download Zip**. Todos los ficheros del repositorio se descargarán en tu ordenador en un fichero comprimido de formato *zip*. Descomprime el fichero *zip* para acceder a los NBs.
 
-Los NBs estarán en la carpeta *book-USC-MMIII* de tu ordenador, dentro de la carpete *notebooks*. Abre con tu Jupyter NB de anaconda el NB asociado a cada sección, por ejemplo, *tderivdas_introduccion.ipynb* donde se proponen diversas cuestiones sobre funciones en varias dimensiones.
+Los NBs estarán dentro de la carpeta *book-USC-MMIII/notebooks* en tu ordenador. Abre con tu Jupyter NB de anaconda el NB asociado a cada sección, por ejemplo, *tderivdas_introduccion.ipynb* donde se proponen diversas cuestiones sobre funciones en varias dimensiones.
+
+Puede editar y extender a tu guso los apuntes de tu ordenador. 
+
+Si en algún momento dejan de funcionar, ¡siempre puedes descargarlos de nuevo!
 
