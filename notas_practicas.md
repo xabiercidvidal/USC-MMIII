@@ -19,7 +19,7 @@ Para saber más de los Jupyter Notebook visita [Jupyter](https://jupyter.org)
 
 En tu distribución de [Anaconda](https://anaconda.org) debería aparecerte el logo de Jupyter-Notebook, puedes acceder a ellas desde el [navegador da Anacoda](https://docs.anaconda.com/navigator)
 
-## ¿Cómo descargar en mi ordeador los apuntes?
+## ¿Cómo descargar en mi ordenador los apuntes?
 
 Los NBs están situados en un repositorio público de [GitHub](https://github.com)
 
