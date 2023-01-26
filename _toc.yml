@@ -8,7 +8,6 @@ parts:
   chapters:
   - file: notas_practicas.md
   - file: run_cloud.md
-  - file: notebooks/tderivadas_introduccion.ipynb
 - caption: Derivadas en varias dimensiones
   chapters:
   - file: notebooks/tderivadas_introduccion.ipynb
