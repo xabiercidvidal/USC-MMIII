@@ -1,0 +1,10 @@
+name: book-USC-MIII
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - jupyter
+  - rise
+  - numpy
+  - matplotlib
+  - scipy
