@@ -6,10 +6,12 @@ root: intro
 parts:
 - caption: Introdución
   chapters:
+  - file: notas_practicas.md
   - file: run_cloud.md
   - file: notebooks/tderivadas_introduccion.ipynb
 - caption: Derivadas en varias dimensiones
   chapters:
+  - file: notebooks/tderivadas_introduccion.ipynb
   - file: notebooks/tderivadas_funcion_escalar_vectorial.ipynb
   - file: notebooks/tderivadas_limites_continuidad.ipynb
   - file: notebooks/tderivadas_parametrizacion_lineas_superficies.ipynb

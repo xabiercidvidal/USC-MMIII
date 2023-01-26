@@ -1,4 +1,4 @@
-# Ejecutar los apuntes en la nube
+# Notas prácticas, ¿Cómo acceder a los apuntes?
 
 
 ## ¿Como leer los apuntes en la web?
