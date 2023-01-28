@@ -1,15 +1,14 @@
-# Notas prácticas, ¿Cómo acceder a los apuntes?
+# Cómo acceder a los apuntes
 
+### ¿Como leer los apuntes en la web?
 
-## ¿Como leer los apuntes en la web?
+ En la siguiente dirección: [jahernando.github.io/book-USC-MMIII](https://jahernando.github.io/book-USC-MMIII)
 
- En la siguiente [web](https://jahernando.github.io/book-USC-MMIII)
+### ¿Como ejecutar los apuntes de forma interactiva en la nube?
 
-## ¿Como ejecutar los apuntes de forma interactiva en la nube?
+ En la siguiente [sección](https://jahernando.github.io/book-USC-MMIII/run_cloud.html) puedes ejecutar los apuntes interactivos en [Google Colab](https://colab.research.google.com/?hl=es). Es muy posible que necesites una cuenta de Google.
 
- En la siguiente [sección](https://jahernando.github.io/book-USC-MMIII/run_cloud.html) puedes ejecutar los apuntes interactivos en [Google Colab](https://colab.research.google.com/?hl=es)
-
-## Sobre los apuntes
+### Sobre los apuntes
 
 Los apuntes interactivos están en Jupyter Notebooks (NB). 
 
@@ -17,19 +16,18 @@ Un Jupyter NB permite combinar en una página visible en un navegador distintas 
 
 Para saber más de los Jupyter Notebook visita [Jupyter](https://jupyter.org)
 
-En tu distribución de [Anaconda](https://anaconda.org) debería aparecerte el logo de Jupyter-Notebook, puedes acceder a ellas desde el [navegador da Anacoda](https://docs.anaconda.com/navigator)
-
-## ¿Cómo descargar en mi ordenador los apuntes?
+### ¿Cómo descargar los apuntes en mi ordenador?
 
 Los NBs están situados en un repositorio público de [GitHub](https://github.com)
 
-Accede al repositorio de los apuntes [book-USC-MMIII](https://github.com/jahernando/book-USC-MMIII)  
+Accede al repositorio de los apuntes siguiendo éste enlace: [book-USC-MMIII](https://github.com/jahernando/book-USC-MMIII)  
 
-Had click en al boton **Code**, a la derecha en rojo. Aparecerá un desplegable. Selecciona **Download Zip**. Todos los ficheros del repositorio se descargarán en tu ordenador en un fichero comprimido de formato *zip*. Descomprime el fichero *zip* para acceder a los NBs.
+Had click en al botón **Code**, a la derecha remarcado. Aparecerá un desplegable. Selecciona **Download Zip**. Todos los ficheros del repositorio se descargarán en tu ordenador en un fichero comprimido de formato *zip*. Descomprime el fichero *zip* para acceder a los NBs.
 
-Los NBs estarán dentro de la carpeta *book-USC-MMIII/notebooks* en tu ordenador. Abre con tu Jupyter NB de anaconda el NB asociado a cada sección, por ejemplo, *tderivdas_introduccion.ipynb* donde se proponen diversas cuestiones sobre funciones en varias dimensiones.
+Los NBs estarán dentro una carpeta llamada *book-USC-MMIII/notebooks* en tu ordenador. por ejemplo, el NB con el título *tderivadas_introduccion.ipynb* contiene diversas cuestiones sobre funciones en varias dimensiones con el que empezaremos el curso.
 
-Puede editar y extender a tu guso los apuntes de tu ordenador. 
+### ¿Cómo abrir, modificar y ejecutar los apuntes en mi ordenador?
 
-Si en algún momento dejan de funcionar, ¡siempre puedes descargarlos de nuevo!
+Puedes abrir un NB a través de tu instalación de [Anaconda](https://anaconda.org) en tu ordenador. Si inicias el [navegador da Anacoda](https://docs.anaconda.com/navigator) debería aparecerte el logo de Jupyter. Un click sobre él debería lanzar el editor. Selecciona ahora el NB que quieras editar o ejecutar buscándolo en las carpetas de tu ordenador.
 
+Puedes añadir o eliminar celdas en un NB al hacer click sobre los símbolos *+* o *tijera*. Puedes modificar o añadir celdas en código *Python* o de texto con formato *Markdown*, un lenguaje sencillo que admite escribir fórmulas matemáticas de forma elegantes con el editor científico *Latex*. Puedes modificar las celdas de texto haciendo un doble-click sobre ellas. Para ejecutar las celdas had click sobre el símbolo de *play*.

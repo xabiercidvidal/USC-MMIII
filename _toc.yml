@@ -4,7 +4,7 @@
 format: jb-book
 root: intro
 parts:
-- caption: Introdución
+- caption: Notas prácticas
   chapters:
   - file: notas_practicas.md
   - file: run_cloud.md
