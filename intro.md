@@ -1,22 +1,22 @@
-# Introducción
+# Introdución
 
-Apuntes de la asignatura **Métodos Matemáticos III** del grado de Física de la **Universidade de Santiago de Compostela**
+Apuntes da materia **Métodos Matemáticos III** do grao en Física da **Universidade de Santiago de Compostela**
 
-Autor: José Ángel Hernando Morata
+Autor: José Ángel Hernando Morata, Xabier Cid Vidal
 
-Correo electrónico: jose.hernando@usc.es
+Correo electrónico: xabier.cid@usc.gal
 
-Vesión: Enero 2023
+Vesión: Xaneiro 2024
 
 -----
 
-## Sobre la asignatura
+## Sobre a materia
 
-Esta asignatura consta de cuatro temas: en el primero discutiremos la derivación de las funciones de varias dimensiones y la determinación de mínimos y máximos de las funciones escalares; en el segundo tema definiremos y calcularemos integrales en varias dimensiones; en el tema tercero estableceremos los conceptos y teoremas principales del cálculo vectorial, definiremos las integrales de línea y de superfice, y conoceremos que existen relaciones importantes entre las dos (teorema de Green y de Stockes) y entre integrales de superficies y de volumen (teorema de Gauss); el último tema del curso está dedicado a las series de Fourier, donde describiremos las funciones periódicas como descomposiciones lineales de funciones de senos y cosenos.
+Esta materia consta de catro temas: no primeiro trataremos a derivación de funcións de varias dimensións e a determinación de mínimos e máximos de funcións escalares; No segundo tema definiremos e calcularemos integrais en varias dimensións; No terceiro tema estableceremos os principais conceptos e teoremas do cálculo vectorial, definiremos as integrais de liña e de superficie, e coñeceremos que existen importantes relacións entre ambas (teorema de Green e Stokes) e entre as integrais de superficie e de volume ( teorema de Gauss); O último tema do curso está dedicado ás series de Fourier, onde describiremos as funcións periódicas como descomposicións lineais de funcións seno e coseno.
 
-A lo largo del curso relacionaremos los conceptos y teoremas matemáticos con los físicos. Constataremos que los principios fundamentales de Física Clásica, especialmente de gravitación y electromagnetismo, se corresponden con teoremas del cálculo vectorial. También veremos que el tratamiento de señales e imágenes se basa principalmente en las series de Fourier, que serán nuestro primer encuentro matemático con la Física Cuántica.
+Ao longo do curso relacionaremos conceptos e teoremas matemáticos cos físicos. Verificaremos que os principios fundamentais da Física Clásica, especialmente a gravitación e o electromagnetismo, corresponden a teoremas do cálculo vectorial. Tamén veremos que o procesamento de sinais e imaxes baséase principalmente nas series de Fourier, que serán o noso primeiro encontro matemático coa Física Cuántica.
 
-La materia de esta asignatura es fundamental para todas las formaciones científicas, las ingenierías y la arquitectura. Los conceptos de derivación son cruciales para algunas ramas modernas de la computación como la animación y la inteligencia artificial. 
+A materia desta materia é fundamental para toda formación científica, enxeñería e arquitectura. Os conceptos de derivación son cruciais para algunhas ramas modernas da informática como a animación e a intelixencia artificial.
 
 -------
 
