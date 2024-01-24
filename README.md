@@ -1,10 +1,10 @@
 # Universidade de Santiago de Compostela
 ## Facultade de Física
 ## Curso Métodos Matemáticos III
-### author: J. A. Hernando
-### date  : January 2020
+### author: J. A. Hernando, X. Cid Vidal
+### date  : January 2024
 
-Repositorio con los *Jupyter Notebook* y módulos *Python* del curso "Métodos Matemáticos III" de la Universidade de Santiago de Compostela
+Repositorio cos *Jupyter Notebook* e módulos *Python* do curso "Métodos Matemáticos III" da Universidade de Santiago de Compostela
 
 Binder:
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jahernando/USC-MMIII/master)
