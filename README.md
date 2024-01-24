@@ -7,4 +7,4 @@
 Repositorio cos *Jupyter Notebook* e módulos *Python* do curso "Métodos Matemáticos III" da Universidade de Santiago de Compostela
 
 Binder:
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/jahernando/USC-MMIII/master)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/master)
