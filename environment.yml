@@ -1,4 +1,4 @@
-name: book-USC-MIII
+name: USC-MIII
 channels:
   - conda-forge
 dependencies:
