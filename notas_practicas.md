@@ -6,7 +6,7 @@
 
 ### Como executar notas de forma interactiva na nube?
 
- Na seguinte [sección](https://jahernando.github.io/book-USC-MMIII/run_cloud.html) podes executar as notas interactivas en [Google Colab](https://colab.research.google.com /?hl=es). É posible que necesites unha conta de Google.
+ Na seguinte [sección](https://jahernando.github.io/book-USC-MMIII/run_cloud.html) podes executar as notas interactivas en [Google Colab](https://colab.research.google.com/?hl=es). É posible que necesites unha conta de Google.
 
 ### Sobre as notas
 
