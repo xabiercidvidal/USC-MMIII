@@ -66,8 +66,6 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_min_max';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Integrales en una dimensión" href="tintegral_1d.html" />
-    <link rel="prev" title="Cambio de coordenadas y regla de la cadena" href="tderivadas_coordenadas_cadena.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -163,35 +161,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
-<ul class="current nav bd-sidenav">
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Mínimos y máximos de funciones escalares</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
-</ul>
-<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
-<ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
 </ul>
 
     </div>
@@ -479,7 +451,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Jan 25 13:37:48 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Jan 25 14:28:42 2024
 </pre></div>
 </div>
 </div>
@@ -1073,10 +1045,10 @@ y(x \, | \, a, b) = a \, x + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  1.0074940282899525 b =  -0.04937665319155388
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  0.9945048222682992 b =  0.04784809562830495
 </pre></div>
 </div>
-<img alt="../_images/ac37f7a363f1f100278a826d10dc7202f04d26c07193d7ee91adf94604483cf3.png" src="../_images/ac37f7a363f1f100278a826d10dc7202f04d26c07193d7ee91adf94604483cf3.png" />
+<img alt="../_images/d8cb5fd80b9ce1947b9d3645afdbe61251f8a2a460871fb57aa2334012a3e677.png" src="../_images/d8cb5fd80b9ce1947b9d3645afdbe61251f8a2a460871fb57aa2334012a3e677.png" />
 </div>
 </div>
 <p>En la siguiente celda, dibujamos los conjuntos de nivel de la función <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span>.</p>
@@ -1093,10 +1065,10 @@ y(x \, | \, a, b) = a \, x + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  1.077776923442666
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  0.9019420879082374
 </pre></div>
 </div>
-<img alt="../_images/305635a03c4d23251561263ad3042f2998411c2397bc78422268209b25c8641e.png" src="../_images/305635a03c4d23251561263ad3042f2998411c2397bc78422268209b25c8641e.png" />
+<img alt="../_images/ceb4be346403b6318b2b442dde60684256728a3c91f71283663b1435a4d6bf21.png" src="../_images/ceb4be346403b6318b2b442dde60684256728a3c91f71283663b1435a4d6bf21.png" />
 </div>
 </div>
 </section>
@@ -1352,24 +1324,6 @@ autovector 2 : [1.23404266e-05 1.00000000e+00]
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="tderivadas_coordenadas_cadena.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Cambio de coordenadas y regla de la cadena</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="tintegral_1d.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Integrales en una dimensión</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div></div>
   
 </div>
@@ -1426,7 +1380,7 @@ autovector 2 : [1.23404266e-05 1.00000000e+00]
   <div class="footer-item">
     
 <p class="component-author">
-By José Ángel Hernando Morata
+By José Ángel Hernando Morata, X. Cid Vidal
 </p>
 
   </div>
@@ -1435,7 +1389,7 @@ By José Ángel Hernando Morata
     
   <p class="copyright">
     
-      © Copyright USC - J.A. Hernando - 2023.
+      © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
       <br/>
     
   </p>

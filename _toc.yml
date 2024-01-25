@@ -11,11 +11,5 @@ parts:
 - caption: Derivadas en varias dimensións
   chapters:
   - file: notebooks/tderivadas_introduccion.ipynb
-- caption: Integrais en varias dimensións
-  chapters:
-- caption: Cálculo vectorial
-  chapters:
-- caption: Series de Fourier
-  chapters:
 
 

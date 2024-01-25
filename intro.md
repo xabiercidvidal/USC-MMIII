@@ -20,7 +20,7 @@ A materia desta materia é fundamental para toda formación científica, enxeñe
 
 -------
 
-## Tabla de contenidos
+## Táboa de contidos
 
 ```{tableofcontents}
 ```

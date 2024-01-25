@@ -1,0 +1,37 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: intro
+parts:
+- caption: Notas prácticas
+  chapters:
+  - file: notas_practicas.md
+  - file: run_cloud.md
+- caption: Derivadas en varias dimensións
+  chapters:
+  - file: notebooks/tderivadas_introduccion.ipynb
+  - file: notebooks/tderivadas_funcion_escalar_vectorial.ipynb
+  - file: notebooks/tderivadas_limites_continuidad.ipynb
+  - file: notebooks/tderivadas_parametrizacion_lineas_superficies.ipynb
+  - file: notebooks/tderivadas_direccional_diferencial.ipynb
+  - file: notebooks/tderivadas_gradiante_jacobiana.ipynb
+  - file: notebooks/tderivadas_coordenadas_cadena.ipynb
+  - file: notebooks/tderivadas_min_max.ipynb
+- caption: Integrais en varias dimensións
+  chapters:
+  - file: notebooks/tintegral_1d.ipynb
+  - file: notebooks/tintegral_metodos.ipynb
+  - file: notebooks/tintegral_2d.ipynb
+  - file: notebooks/tintegral_3d.ipynb
+- caption: Cálculo vectorial
+  chapters:
+  - file: notebooks/tcalvec_integral_linea.ipynb
+  - file: notebooks/tcalvec_green.ipynb
+  - file: notebooks/tcalvec_rotdiv_conservativos.ipynb
+  - file: notebooks/tcalvec_integral_superficie.ipynb
+  - file: notebooks/tcalvec_stockes_gauss.ipynb
+- caption: Series de Fourier
+  chapters:
+  - file: notebooks/tfourier.ipynb
+

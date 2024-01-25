@@ -2,9 +2,9 @@
 # Learn more at https://jupyterbook.org/customize/config.html
 
 title: Métodos Matemáticos III - USC
-author: José Ángel Hernando Morata
+author: José Ángel Hernando Morata, X. Cid Vidal
 logo: logo.png
-copyright: USC - J.A. Hernando - 2023
+copyright: USC - J.A. Hernando, X. Cid Vidal - 2024
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html
