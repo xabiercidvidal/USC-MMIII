@@ -1,0 +1,1241 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Integrales en dos dimensiones &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tintegral_2d';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integrales en varias dimensiones" href="tintegral_3d.html" />
+    <link rel="prev" title="Métodos de integración" href="tintegral_metodos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tintegral_2d.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tintegral_2d.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tintegral_2d.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tintegral_2d.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integrales en dos dimensiones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-tema">Estructura del tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recordatorio-de-la-suma-de-riemann">Recordatorio de la Suma De Riemann</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-2d">Integrales 2D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini">Teorema de Fubini</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-cavalieri">Principio de Cavalieri.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-en-una-region-no-rectangular">Integración en una región no rectangular.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-jacobiano">Cambio de variables. Jacobiano</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integrales-en-dos-dimensiones">
+<h1>Integrales en dos dimensiones<a class="headerlink" href="#integrales-en-dos-dimensiones" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Jan 25 13:39:43 2024
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="estructura-del-tema">
+<h2>Estructura del tema<a class="headerlink" href="#estructura-del-tema" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Introducción</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=PJn_TxdpfnM&amp;feature=youtu.be">[&gt;]</a> Integral 2D</p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=SdQw3YZLoiw&amp;feature=youtu.be">[&gt;]</a> Teorema de Fubini</p>
+<ul>
+<li><p>Principio de Cavalieri</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ocexIJjzmkI">[&gt;]</a> Integrales en regiones no rectangulares</p></li>
+<li><p><a class="reference external" href="https://youtu.be/Q6AmxbCsPsI">[&gt;]</a> Cambio de variables. Jacobiano</p>
+<ul>
+<li><p><a class="reference external" href="https://youtu.be/FKZA-RReV-A">[&gt;]</a> ejemplo de cambio a polares</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Extender el concepto de integral de Riemann en dos dimensiones</p>
+<p>El Teorema de Fubini: la integral no depende del orden de integración</p>
+<p>Principio de Cavilieri.</p>
+<p>Integrales en regiones no rectangulares.</p>
+<p>Cambio de variables, polares.</p>
+<p>Mostrar algunos ejemplos sencillos</p>
+</section>
+<section id="introduccion">
+<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
+<section id="recordatorio-de-la-suma-de-riemann">
+<h3>Recordatorio de la Suma De Riemann<a class="headerlink" href="#recordatorio-de-la-suma-de-riemann" title="Permalink to this heading">#</a></h3>
+<p>Para calcular el <em>área</em> bajo una curva de una función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, y el eje <span class="math notranslate nohighlight">\(y=0\)</span> en un intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, habíamos introducido la integral de una dimensión.</p>
+<p>Que la defininmos a partir de la <strong>suma de Riemann</strong>. Dada la partición de un intervalo , y una función, acotada y continua en dicho intervalo, dábamos la suma de Riemann como:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{S}(f, \mathcal{P}) = \sum_{i=1, n} f(x'_i) (x_i - x_{i-1})  
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(x'_i\)</span> es un valor aleatorio entre los valores <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span></p>
+<p>También definíamos la suma superior de Riemann como:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{U}(f, \mathcal{P}) = \sum_{i=1, n} f(x'_i) (x_i - x_{i-1})  
+\]</div>
+<p>donde ahora <span class="math notranslate nohighlight">\(x'_i\)</span> es el valor del intervalo <span class="math notranslate nohighlight">\([x_i, x_{i-1}]\)</span> donde la función <span class="math notranslate nohighlight">\(f(x)\)</span> es <em>máxima</em>.</p>
+<p>También definíamos la suma inferior de Riemann como:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}(f, \mathcal{P}) = \sum_{i=1, n} f(x'_i) (x_i - x_{i-1})  
+\]</div>
+<p>donde ahora <span class="math notranslate nohighlight">\(x'_i\)</span> es el valor del intervalo <span class="math notranslate nohighlight">\([x_i, x_{i-1}]\)</span> donde la función <span class="math notranslate nohighlight">\(f(x)\)</span> es <em>mínima</em>.</p>
+<p>La función tenía integral en el intervalo <span class="math notranslate nohighlight">\([a, b]\)</span> si para particiones cada ver más finas, las tres sumas de Riemann convergían a un determinado valor, la integral.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \, f(x) \, \mathrm{d}x
+\]</div>
+<p>Recordad que siempre se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{L}(f, \mathcal{P}) \le \mathcal{S}(f, \mathcal{P}) \le \mathcal{U}(f, \mathcal{P}) 
+\]</div>
+</section>
+</section>
+<section id="integrales-2d">
+<h2>Integrales 2D<a class="headerlink" href="#integrales-2d" title="Permalink to this heading">#</a></h2>
+<p>Sabemos el área entre su gráfica de una función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, en un intervalo, <span class="math notranslate nohighlight">\([a, b], \)</span>y el eje <span class="math notranslate nohighlight">\(x\)</span>, corresponde a su integral definida:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{A} = \int_a^b \, f(x) \,\mathrm{d}x  
+\]</div>
+<p>El volumen bajo la gráfica de una función escalar, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, definida en una región, <span class="math notranslate nohighlight">\([a, b]\times [c, d]\)</span> y el plano <span class="math notranslate nohighlight">\((x, y)\)</span>, correspondonderá al la integral definida en dos dimensiones:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{V} = \int_a^b \int_c^d \, f(x, y) \,\mathrm{d}x \mathrm{d} y
+\]</div>
+<p>Nos preguntamos ahora cuál es volumen bajo la gráfica de la función <span class="math notranslate nohighlight">\(f(x, y)\)</span> y el plano <span class="math notranslate nohighlight">\((x, y)\)</span>. Sea <span class="math notranslate nohighlight">\(f(x, y) = 2 - x^2 - y^2\)</span> y la base dada por <span class="math notranslate nohighlight">\([-1, 1] \times [-1, 1]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">2</span><span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:70: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/af5d8250d966f361d2e2568b629184cc73f2cef5806e93a7de839aaec2a31c8d.png" src="../_images/af5d8250d966f361d2e2568b629184cc73f2cef5806e93a7de839aaec2a31c8d.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">bars3d</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:102: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" src="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" />
+</div>
+</div>
+<p>Podemos extender la <strong>suma de Riemann</strong> a la función escalar de dos dimensiones, <span class="math notranslate nohighlight">\(f(x, y)\)</span> en la región <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, a partir de la partición de los intervalos <span class="math notranslate nohighlight">\([a, b], \,[c, d]\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{S}(f, \mathcal{P}) = \sum_{i=1}^n \sum_{j = 1}^m \, f(x'_i, y'_j) \, \Delta x_i \, \Delta y_j 
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\((x'_i, y'_j)\)</span> es un valor aleatorio entre los valores <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span> e <span class="math notranslate nohighlight">\([y_{j-1}, y_{j}]\)</span>, y <span class="math notranslate nohighlight">\(\Delta x_i = x_i - x_{i-1}, \, \Delta y_j = y_j - y_{j-1}\)</span></p>
+<p>Igualmente definimos la <strong>suma de Riemann superior e inferior</strong>, y definimos la integral si para particiones cada vez más finas, las sumas de Riemann convergen a un determinado valor, la integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_c^d \, f(x, y) \, \mathrm{d}x \mathrm{d}y
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">riemann_sum</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Summa de Riemann = &#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s1">&#39;, integral =&#39;</span><span class="p">,</span> <span class="mf">16.</span><span class="o">/</span><span class="mf">3.</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Summa de Riemann =  5.386655728457595 , integral = 5.333333333333333
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notar que la notación de la integral recuerda la definición de la suma de Riemann.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{S}(f, \mathcal{P}) = \sum_{i=1}^n \sum_{j = 1}^m \, f(x'_i, y'_j) \; (x_i - x_{i-1}) \; (y_j - y_{j-1}) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_c^d \, f(x, y) \, \mathrm{d}x \mathrm{d}y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\sum \to \int, \;\;\; \Delta x_i = x_i - x_{i-1} \to \mathrm{d}x, \;\;\; \Delta y_j = y_j - y_{j-1} \to \mathrm{d}y,
+\]</div>
+<p>Notar que las variables de integración son <em>mudas</em>, las únicas variables son los límites de integración <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>.</p>
+</section>
+<section id="teorema-de-fubini">
+<h2>Teorema de Fubini<a class="headerlink" href="#teorema-de-fubini" title="Permalink to this heading">#</a></h2>
+<p>Nos dice que si una función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, es integrable en una región <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, podemos integral en el orden que consideremos.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_c^d f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_a^b \left[ \int_c^d \, f(x, y) \, \mathrm{d}y \right] \mathrm{d}x = \int_c^d \left[ \int_a^b \, f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">bars3d</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" src="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" />
+</div>
+</div>
+<p>Podemos darnos cuenta que el valor entre los corchetes corresponde al área para un determinado valor fijado de <span class="math notranslate nohighlight">\(x\)</span> o de <span class="math notranslate nohighlight">\(y\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\mathcal{A}(x) =  \int_c^d \, f(x, y) \, \mathrm{d}y , \;\;\; \mathcal{A'}(y)=  \int_a^b \, f(x, y) \, \mathrm{d}x 
+\]</div>
+<p>Así:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_c^d f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_a^b \mathcal{A}(x) \, \mathrm{d}x = \int_c^d \mathcal{A'}(y) \, \mathrm{d}y
+\]</div>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_c^d f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_a^b \left[ \int_c^d \, f(x, y) \, \mathrm{d}y \right] \mathrm{d}x = \int_c^d \left[ \int_a^b \, f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">bars3d</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">acolor</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a30832ee57f48c832a0601b26d1617624611a90f6e3e4a85823098ba2b757412.png" src="../_images/a30832ee57f48c832a0601b26d1617624611a90f6e3e4a85823098ba2b757412.png" />
+</div>
+</div>
+<p><em>Ejercicio</em>: Integra <span class="math notranslate nohighlight">\(f(x, y) = x\)</span> en el cuadrado <span class="math notranslate nohighlight">\([0, 1] \times [0, 1]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">bars3d</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">yrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="n">acolor</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b739fe965dc4187e7099d2e880f87306c90758c7fab98b4addffaaebef1219d2.png" src="../_images/b739fe965dc4187e7099d2e880f87306c90758c7fab98b4addffaaebef1219d2.png" />
+</div>
+</div>
+<p><em>Ejercicio</em>: Integra la función, <span class="math notranslate nohighlight">\(f(x, y) = y^2 \sin(x)\)</span> en la región, <span class="math notranslate nohighlight">\([0, \pi] \times [0, \pi]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">bars3d</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">yrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">acolor</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0da2fd0eae92481a4e3f7ca496cbf85683ab140cebebd67826b5a5403ddff4ed.png" src="../_images/0da2fd0eae92481a4e3f7ca496cbf85683ab140cebebd67826b5a5403ddff4ed.png" />
+</div>
+</div>
+<section id="principio-de-cavalieri">
+<h3>Principio de Cavalieri.<a class="headerlink" href="#principio-de-cavalieri" title="Permalink to this heading">#</a></h3>
+<p>Para cuerpos de revolución, obtenidos de girar una figura alrededor de un eje.</p>
+<p><em>Ejercicio</em>: Calcula el volumen de un cono formado al girar el triángulo que tiene dos lados iguales, como en la figura.</p>
+<p><em>Explora</em>: Considera que para un determinado <span class="math notranslate nohighlight">\(z\)</span>, el radio máximo es <span class="math notranslate nohighlight">\(z^2\)</span>, ¿Cómo quedaría la figura?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">);</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="mf">0.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/930c85bbbb9bf7eb6c5af544c13375c9f587d116d7354dec466caaa97fcf88d7.png" src="../_images/930c85bbbb9bf7eb6c5af544c13375c9f587d116d7354dec466caaa97fcf88d7.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="integracion-en-una-region-no-rectangular">
+<h2>Integración en una región no rectangular.<a class="headerlink" href="#integracion-en-una-region-no-rectangular" title="Permalink to this heading">#</a></h2>
+<p>Considera que queremos integrar una función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, en la región, <span class="math notranslate nohighlight">\(R\)</span>, no necesariamente un rectángulo, por ejemplo en el siguiente triángulo:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fx</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
+<span class="n">fy0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>
+<span class="n">fy1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy0</span><span class="p">,</span> <span class="n">trange</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy1</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c211077a28bda2c2fdfda04d36f63c2b3d49432bc9eb1c7e94836f102f58ba46.png" src="../_images/c211077a28bda2c2fdfda04d36f63c2b3d49432bc9eb1c7e94836f102f58ba46.png" />
+</div>
+</div>
+<p>Podemos definir la región como, los puntos que cumplen</p>
+<div class="math notranslate nohighlight">
+\[
+\{ 0 \le x \le 1, \;\; 0 \le y \le x \}
+\]</div>
+<p>Y la integral quedaría:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \int_{R} f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_0^1 \left[ \int_0^x f(x, y) \, \mathrm{d}y \right] \mathrm{d}x
+\]</div>
+<p>Las dos variables ya no son independientes, con esta definición la variable <span class="math notranslate nohighlight">\(y\)</span> depende de la <span class="math notranslate nohighlight">\(x\)</span>. Fijado un valor de <span class="math notranslate nohighlight">\(x\)</span>, el intervalo de integración para la <span class="math notranslate nohighlight">\(y\)</span> es <span class="math notranslate nohighlight">\([0, x]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fx</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
+<span class="n">fy0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>
+<span class="n">fy1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy0</span><span class="p">,</span> <span class="n">trange</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy1</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="c1">#gf.line2d(lambda t: 1 + 0.*t, lambda t: t, trange, newfig=False);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8f11236a7167f1c676b69d66ff6adb7f3ce1b712f9d71db0a928503dca330e72.png" src="../_images/8f11236a7167f1c676b69d66ff6adb7f3ce1b712f9d71db0a928503dca330e72.png" />
+</div>
+</div>
+<p>O en función de <span class="math notranslate nohighlight">\(y\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\{ 0 \le y \le 1, \;\; y \le x \le 1 \}
+\]</div>
+<p>La integral queda:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \int_{R} f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_0^1 \left[ \int_{y}^1 f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fy</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
+<span class="n">fx0</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
+<span class="n">fx1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx0</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">trange</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx1</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/dec16d6b3871420382986473845841cc650a3c5d484b92e1a3deaa6ba389a04a.png" src="../_images/dec16d6b3871420382986473845841cc650a3c5d484b92e1a3deaa6ba389a04a.png" />
+</div>
+</div>
+<p><em>Ejercicio</em>: Calcula la integral de <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> en el triángulo anterior. ¿A qué corresponde?</p>
+<p>de tipo I:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^1 \left[ \int_0^x \, \mathrm{d}y \right] \mathrm{d}x = \int_0^1 \left. y \right|_0^x \mathrm{d}x  = \int_0^1 x \, \mathrm{d}x  = \left. \frac{x^2}{2} \right|_0^1 = \frac{1}{2}
+\]</div>
+<p>de tipo II:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^1 \left[ \int_y^1 \, \mathrm{d}x \right] \mathrm{d}y = \int_0^1 \left. x \right|_y^1 \mathrm{d}y  = \int_0^1 (1-y) \, \mathrm{d}y  = \left. \left( y - \frac{y^2}{2} \right) \right|_0^1 = \frac{1}{2}
+\]</div>
+<p>En general si queremos integral la función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, en una región <span class="math notranslate nohighlight">\(R\)</span>, primero debemos definirla</p>
+<p>de tipo I:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ a \le x \le b, \;\; \phi_0(x) \le y \le \phi_1(x) \}
+\]</div>
+<p>Donde <span class="math notranslate nohighlight">\(\phi_0 (x)\)</span> y <span class="math notranslate nohighlight">\(\phi_1(x)\)</span> son dos funciones reales que para un valor de <span class="math notranslate nohighlight">\(x\)</span> dan los extremos del intervalo en los que integramos <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>o de tipo II:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ c \le y \le d, \;\; \xi_0(y) \le x \le \xi_1(y) \}
+\]</div>
+<p>Algunas regiones admiten los dos tipos de definiciones.</p>
+<p>Si la región, <span class="math notranslate nohighlight">\(R\)</span>, es de tipo I, la integral queda:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_R f(x, y) \, \mathrm{d}x \mathrm{d} y = \int_a^b \left[ \int_{\phi_0(x)}^{\phi_1(x)} f(x, y) \, \mathrm{d}y \right] \mathrm{d}x
+\]</div>
+<p>Mientras que si es de tipo II:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_R f(x, y) \, \mathrm{d}x \mathrm{d} y = \int_c^d \left[ \int_{\xi_0(y)}^{\xi_1(y)} f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
+\]</div>
+<p>En el ejemplo anterior del triángulo, definido como tipo I:</p>
+<div class="math notranslate nohighlight">
+\[
+\phi_0(x) = 0, \;\; \phi_1(x) = x
+\]</div>
+<p>definido como tipo II:</p>
+<div class="math notranslate nohighlight">
+\[
+\xi_0(y) = y, \;\; \xi_1(y) = 1
+\]</div>
+<p><em>Ejercicio</em>: Calcula la integral <span class="math notranslate nohighlight">\(f(x, y) = y \)</span>, en el triángulo, <span class="math notranslate nohighlight">\(\{0 \le x \le 1,  \; 0 \le y \le x \}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span>
+<span class="n">condition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span> <span class="o">&lt;=</span> <span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">condition</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:70: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/e2516a3fd6998f96505b5c7d70b1224fbce62fb0abf5fba78c2bd9f884f5a129.png" src="../_images/e2516a3fd6998f96505b5c7d70b1224fbce62fb0abf5fba78c2bd9f884f5a129.png" />
+</div>
+</div>
+<p><em>Ejercicio</em></p>
+<p>Define la región dada por el cuarto del disco de radio <span class="math notranslate nohighlight">\(a\)</span> en el primer cuadrante.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>      <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>       <span class="p">,</span> <span class="n">trange</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>       <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/77b3d71626b76b5b7a66512056766aa981ea421077157ad3008e6990a544d744.png" src="../_images/77b3d71626b76b5b7a66512056766aa981ea421077157ad3008e6990a544d744.png" />
+</div>
+</div>
+<p>De tipo I, la región se define como:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ 0 \le x \le a, \;\; 0 \le y \le \sqrt{a^2 - x^2} \}
+\]</div>
+<p>y de tipo II:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ 0 \le y \le a, \;\; 0 \le x \le \sqrt{a^2 - y^2} \}
+\]</div>
+<p>Si queremos calcular la integral de la función, <span class="math notranslate nohighlight">\(f(x, y) = \sqrt{a^2 - y^2}\)</span>, es mas conveniente definir la región de tipo II.</p>
+<div class="math notranslate nohighlight">
+\[
+\int \int_{R} \sqrt{a^2 - y^2} \mathrm{d}x\mathrm{d} y = \int_0^a \left[ \int_0^{\sqrt{a^2-y^2}} \sqrt{a^2 - y^2} \mathrm{d}x \right] \mathrm{d}y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_0^a \left. \sqrt{a^2 - y^2} \, x  \right|_0^{\sqrt{a^2-y^2}} \mathrm{d}y = 
+\int_0^a (a^2 - y^2) \, \mathrm{d}y = \left. a^2 y - \frac{y^3}{3} \right|_0^a = \frac{2 a^3}{3}
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">rrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">cond</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="n">a</span>
+<span class="n">fun</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">a</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">cond</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:70: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/5a4f4b30cbdd99fdee1ac7c4365055eb2eec78283c043afd021f8dfb26118fba.png" src="../_images/5a4f4b30cbdd99fdee1ac7c4365055eb2eec78283c043afd021f8dfb26118fba.png" />
+</div>
+</div>
+</section>
+<section id="cambio-de-variables-jacobiano">
+<h2>Cambio de variables. Jacobiano<a class="headerlink" href="#cambio-de-variables-jacobiano" title="Permalink to this heading">#</a></h2>
+<p>En el caso anterior puede ser más conveniente realizar la integral en coordenadas polares. ¿Cómo se integra tras cambiar de coordenadas?</p>
+<p>Observa en las figuras siguientes como la región de una sección del anillo de radio <span class="math notranslate nohighlight">\([0.5, 1]\)</span> y ángulo <span class="math notranslate nohighlight">\([0, \pi/2]\)</span> es una región rectangular en <span class="math notranslate nohighlight">\((r, \phi)\)</span>.</p>
+<p>Sin embargo las particiones rectángulares en <span class="math notranslate nohighlight">\((r, \phi)\)</span> se transforman en polígonos en el plano <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
+<p>Para la integrar necesitamos calcular el volumen de los prismas de la summa de Riemann cuya base son esos polígonos (que al hacer las particiones más pequeñas se convierten el paralelogramos), cuya área viene dada por los dos vectores que definen sus lados.</p>
+<p>En las siguientes celdas te mostramos como se transforman los vectores en las particiones al hacer el cambio de coordenadas.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">rfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span>
+<span class="n">pfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">phi</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface2d</span><span class="p">(</span><span class="n">rfun</span><span class="p">,</span> <span class="n">pfun</span><span class="p">,</span> <span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$r$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$\phi$&quot;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface2d</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="n">aspect</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0dcef5c8fcd3e0f879d6c880349c401df4b139366ced95b7b301a6b2abc0fad2.png" src="../_images/0dcef5c8fcd3e0f879d6c880349c401df4b139366ced95b7b301a6b2abc0fad2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span>
+<span class="n">rs</span><span class="p">,</span> <span class="n">phis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">rsrange</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">phisrange</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface2d</span><span class="p">(</span><span class="n">rfun</span><span class="p">,</span> <span class="n">pfun</span><span class="p">,</span> <span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$r$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">&quot;$\phi$&quot;</span><span class="p">);</span>
+<span class="n">ri</span><span class="p">,</span> <span class="n">pj</span><span class="p">,</span> <span class="n">dri</span><span class="p">,</span> <span class="n">dpj</span> <span class="o">=</span> <span class="n">rs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">phis</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">rs</span><span class="p">[</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">rs</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">phis</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">phis</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">ri</span><span class="p">,</span> <span class="n">pj</span><span class="p">,</span> <span class="n">dri</span><span class="p">,</span>  <span class="mf">0.</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">ri</span><span class="p">,</span> <span class="n">pj</span><span class="p">,</span> <span class="mf">0.</span> <span class="p">,</span> <span class="n">dpj</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">xfun</span><span class="p">(</span><span class="n">ri</span>      <span class="p">,</span> <span class="n">pj</span><span class="p">)</span>      <span class="p">,</span> <span class="n">yfun</span><span class="p">(</span><span class="n">ri</span>      <span class="p">,</span> <span class="n">pj</span><span class="p">)</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">xfun</span><span class="p">(</span><span class="n">ri</span> <span class="o">+</span> <span class="n">dri</span><span class="p">,</span> <span class="n">pj</span><span class="p">)</span>      <span class="p">,</span> <span class="n">yfun</span><span class="p">(</span><span class="n">ri</span> <span class="o">+</span> <span class="n">dri</span><span class="p">,</span> <span class="n">pj</span><span class="p">)</span>
+<span class="n">x2</span><span class="p">,</span> <span class="n">y2</span> <span class="o">=</span> <span class="n">xfun</span><span class="p">(</span><span class="n">ri</span>      <span class="p">,</span> <span class="n">pj</span> <span class="o">+</span> <span class="n">dpj</span><span class="p">),</span> <span class="n">yfun</span><span class="p">(</span><span class="n">ri</span>      <span class="p">,</span> <span class="n">pj</span><span class="o">+</span><span class="n">dpj</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface2d</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span><span class="p">,</span> <span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x1</span> <span class="o">-</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y1</span> <span class="o">-</span> <span class="n">y0</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">x2</span> <span class="o">-</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y2</span> <span class="o">-</span> <span class="n">y0</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.03</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="n">aspect</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/26dae34a8eb27b465ac4b62c3ee6db4f2435e71d5b2e4a8156b32761123545b5.png" src="../_images/26dae34a8eb27b465ac4b62c3ee6db4f2435e71d5b2e4a8156b32761123545b5.png" />
+</div>
+</div>
+<p>El área de cada uno de las regiones en el plano <span class="math notranslate nohighlight">\((x, y)\)</span> viene dado por el producto vectorial de los vectores de sus lados.</p>
+<p>Consideremos un cambio de variables <span class="math notranslate nohighlight">\((u, v) \to (x, y)\)</span>. El vector entre <span class="math notranslate nohighlight">\((u_0, v_0)\)</span> y <span class="math notranslate nohighlight">\((u_0 + \Delta u, v_0)\)</span> - uno de los lados de los rectángulos en <span class="math notranslate nohighlight">\((u, v)\)</span>-, se transforma en el vector similar que corresponde a uno de los lados del polígono en <span class="math notranslate nohighlight">\((x,y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\left (x(u_0+\Delta u, v_0) - x(u_0, v_0), \;\; y(u_0+\Delta u, v_0) - y(u_0, v_0)\right)
+\]</div>
+<p>Y al ser el cambio diferenciable:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial x}{\partial u}(u_0, v_0) \, \Delta u, \;\; \frac{\partial y}{\partial u} (u_0, v_0) \, \Delta u \right)
+\]</div>
+<p>De igual forma, el vector <span class="math notranslate nohighlight">\((u_0, v_0 + \Delta v) - (u_0, v_0)\)</span>, el otro lado del rectángulo en <span class="math notranslate nohighlight">\((u, v)\)</span>, se transforma en el vector, el otro lado en <span class="math notranslate nohighlight">\((x, y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(\frac{\partial x}{\partial v}(u_0, v_0) \, \Delta v, \;\; \frac{\partial y}{\partial v} (u_0, v_0) \, \Delta v \right)
+\]</div>
+<p>Los vectores de los lados en un espacio <span class="math notranslate nohighlight">\((x, y)\)</span> son</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{\partial x}{\partial u}, \, \frac{\partial y}{ \partial u} \right) \Delta u, \;\; 
+\left( \frac{\partial x}{\partial v}, \, \frac{\partial y}{ \partial v} \right) \Delta v \;\; 
+\]</div>
+<p>Y el área que sustentan viene dada por el valor absoluto de su producto vectorial:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left| \begin{array}{cc} \frac{\partial x}{ \partial u} &amp; \frac{\partial x}{\partial v} \\ 
+\frac{\partial y}{ \partial u} &amp; \frac{\partial y}{\partial v} 
+\end{array} \right| \Delta u \Delta v
+\end{split}\]</div>
+<p>Donde,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+J = \left| \begin{array}{cc} \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\ 
+\frac{\partial y}{ \partial u} &amp; \frac{\partial y}{\partial v} 
+\end{array} \right|
+\end{split}\]</div>
+<p>Es el determinante de la matriz jacobiana, o jacobiano.</p>
+<p>Como el diferencial de área siempre tiene que ser positivo, ¡tomaremos el valor absoluto del jacobiano!</p>
+<p>Así, cuando cambiamos de coordenadas</p>
+<div class="math notranslate nohighlight">
+\[
+\int_R f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_{R'} f(u, v) \, |J| \, \mathrm{d}u \mathrm{d} v
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(R'\)</span> es la región definida en el espacio (<span class="math notranslate nohighlight">\(u, v\)</span>), <span class="math notranslate nohighlight">\(f(u, v) = f(x(u, v), y(u, v)) \)</span> es la función en las nuevas coordenadas, y finalmente, el diferencial de área viene dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}x \mathrm{d} y \to |J| \mathrm{d} u \mathrm{d}v,
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(|J|\)</span> es el valor absoluto del jacobiano del cambio de variables.</p>
+<p><em>Ejercicio</em>: Calcula la integral en el anillo comprendido entre los radios <span class="math notranslate nohighlight">\([a, b]\)</span> del primer cuadrante de la función <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> y de la función <span class="math notranslate nohighlight">\(f(x, y) = \log(x^2 + y^2)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface2d</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="n">aspect</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/862a0465e9f3bfcc73042e87f6a81f1d652391c3c8f382389f23b03553b61c45.png" src="../_images/862a0465e9f3bfcc73042e87f6a81f1d652391c3c8f382389f23b03553b61c45.png" />
+</div>
+</div>
+<p>El cambio en polares es:</p>
+<div class="math notranslate nohighlight">
+\[
+x(r, \phi) = r \cos \phi, \;\; y(r, \phi) = r \sin \phi
+\]</div>
+<p>El Jacobiano del cambio a polares es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left| \begin{array}{cc} \cos \phi &amp; - r \sin \phi\\ 
+\sin \phi &amp; r \cos \phi \end{array} \right| = r (\cos^2 \phi + \sin^2 \phi) = r
+\end{split}\]</div>
+<p>Fíjate en la siguiente imagen, en cada paralelogramo, uno de los lados es <span class="math notranslate nohighlight">\(\mathrm{d}r\)</span> y el otro <span class="math notranslate nohighlight">\(r \, \mathrm{d}\phi\)</span>. Y por lo tanto el diferencial de área es:</p>
+<div class="math notranslate nohighlight">
+\[
+r \mathrm{d}\phi \mathrm{d} r
+\]</div>
+<p>La región de integración está definida en polares:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ a \le r \le b, \; 0 \le \phi \le \pi/2\}
+\]</div>
+<p>El jacobiano del cambio de coordenadas, que calculamos antes, es: <span class="math notranslate nohighlight">\(J = r\)</span></p>
+<p>para <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> la integral es:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_0^{\pi/2} r \mathrm{d}r \mathrm{d}\phi = \left. \frac{r^2}{2} \right|_a^b \phi \big|_0^{\pi/2} = \frac{\pi}{4} (b^2 -a^2) 
+\]</div>
+<p>que es equivalente al área de un cuarto del anillo.</p>
+<p>La función, <span class="math notranslate nohighlight">\(f(x, y) = \log(x^2 + y^2)\)</span>, en polares es <span class="math notranslate nohighlight">\(f(r, \phi) = 2 \log r\)</span>. La integral en la sección del anillo</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_0^{\pi/2}  (2 \log r) \, r \mathrm{d}r \mathrm{d}\phi 
+\]</div>
+<p>La integral en <span class="math notranslate nohighlight">\(\phi\)</span>, es simplemente <span class="math notranslate nohighlight">\(\pi/2\)</span></p>
+<p>La integral en <span class="math notranslate nohighlight">\(r\)</span> se resuelve por partes:</p>
+<div class="math notranslate nohighlight">
+\[
+\int 2 r \log r \, \mathrm{d} r= r^2 \log r - \int r \mathrm{d}r = r^2 \log r - \frac{r^2}{2}
+\]</div>
+<p>Luego la integral completa es:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_0^{\pi/2}  2 r \log r \, \mathrm{d}r \mathrm{d}\phi 
+= \frac{\pi}{2} \left( b^2 \log b - \frac{b^2}{2} - a^2 \log a + \frac{a^2}{2} \right)
+\]</div>
+<p>La siguiente figura muestra la región de integración y la gráfica de la función a integrar en la región.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span>  <span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface2d</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span>      <span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/c8c02ccbfe368bbab139b43f2ab76ee860ab1d833392c31d4d4968f40c36e1a2.png" src="../_images/c8c02ccbfe368bbab139b43f2ab76ee860ab1d833392c31d4d4968f40c36e1a2.png" />
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tintegral_metodos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Métodos de integración</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tintegral_3d.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integrales en varias dimensiones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-tema">Estructura del tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recordatorio-de-la-suma-de-riemann">Recordatorio de la Suma De Riemann</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-2d">Integrales 2D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini">Teorema de Fubini</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-cavalieri">Principio de Cavalieri.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-en-una-region-no-rectangular">Integración en una región no rectangular.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-jacobiano">Cambio de variables. Jacobiano</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
