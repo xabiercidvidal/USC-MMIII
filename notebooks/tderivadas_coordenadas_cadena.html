@@ -1,0 +1,1004 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Cambio de coordenadas y regla de la cadena &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_coordenadas_cadena';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mínimos y máximos de funciones escalares" href="tderivadas_min_max.html" />
+    <link rel="prev" title="Gradiente, matriz jacobiana, funciones diferenciables" href="tderivadas_gradiante_jacobiana.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tderivadas_coordenadas_cadena.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tderivadas_coordenadas_cadena.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tderivadas_coordenadas_cadena.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tderivadas_coordenadas_cadena.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cambio de coordenadas y regla de la cadena</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables">Cambio de variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambios-de-coordenadas">Cambios de coordenadas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-jacobiana-del-cambio-de-coordenadas">Matriz jacobiana del cambio de coordenadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-regla-de-la-cadena">La regla de la cadena</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-regla-de-la-cadena">Teorema de la regla de la cadena</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cambio-de-coordenadas-y-regla-de-la-cadena">
+<h1>Cambio de coordenadas y regla de la cadena<a class="headerlink" href="#cambio-de-coordenadas-y-regla-de-la-cadena" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Jan 25 13:33:56 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Aprender a hacer cambios de coordenadas</p>
+<p>Mostrar la regla de la cadena y algunos usos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="cambio-de-variables">
+<h2>Cambio de variables<a class="headerlink" href="#cambio-de-variables" title="Permalink to this heading">#</a></h2>
+<p>La siguiente función es el potencial de una carga eléctrica, <span class="math notranslate nohighlight">\(q\)</span> en el espacio:</p>
+<div class="math notranslate nohighlight">
+\[
+V(x, y, z) = k \frac{q}{\sqrt{x^2 + y^2 + z^2}}
+\]</div>
+<p>El potencial sabemos que es radial, que solo depende de la distancia a la carga, <span class="math notranslate nohighlight">\(r = \sqrt{x^2 + y^2 + z^2}\)</span>.</p>
+<p>Podemos expresar el potencial en <em>coordenadas cartesianas</em>, como en la anterior ecuación, pero también, de forma más sencilla, en <em>coordenadas esféricas</em>, donde la variable <span class="math notranslate nohighlight">\(r\)</span> es la distancia al origen, así:</p>
+<div class="math notranslate nohighlight">
+\[
+V(r) = k \frac{q}{r}
+\]</div>
+<p>En este caso solo depende de <span class="math notranslate nohighlight">\(r\)</span></p>
+<p>En la sección de parametrización de superficies, vimos que podíamos dar la pared de un cilindro de radio <span class="math notranslate nohighlight">\(r\)</span>, y altura infinita como:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(\phi, z) = ( r \cos \phi, r \sin \phi, z)
+\]</div>
+<p>Donde el radio, <span class="math notranslate nohighlight">\(r\)</span>, era una constante. Si consideramos ahora que <span class="math notranslate nohighlight">\(r\)</span> puede tomar todos los valores de <span class="math notranslate nohighlight">\([0, \infty)\)</span>. El conjunto de todos los cilindros <em>cubre</em>, mapea, el espacio tridimensional.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phi_range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">z_range</span>   <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span>      <span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">funx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">r</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">funy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">r</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">funz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span><span class="p">:</span> <span class="n">z</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">funx</span><span class="p">,</span> <span class="n">funy</span><span class="p">,</span> <span class="n">funz</span><span class="p">,</span> <span class="n">phi_range</span><span class="p">,</span> <span class="n">z_range</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/261364d945b6d941ccc546eaf7880c52f5e14f3831731e32f0e8dd7b32a75153.png" src="../_images/261364d945b6d941ccc546eaf7880c52f5e14f3831731e32f0e8dd7b32a75153.png" />
+</div>
+</div>
+<p>Podemos dar todos los puntos, <span class="math notranslate nohighlight">\((x, y, z)\)</span>, de un espacio <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span> en <em>coordenadas cilíndricas</em>, donde expresamos las coordenadas <span class="math notranslate nohighlight">\((x, y)\)</span> por, <span class="math notranslate nohighlight">\((r, \phi)\)</span> donde <span class="math notranslate nohighlight">\(r\)</span> es la distancia al origen y <span class="math notranslate nohighlight">\(\phi\)</span> el ángulo con el eje <span class="math notranslate nohighlight">\(x\)</span>. Mientras que mantenemos la coordenada <span class="math notranslate nohighlight">\(z\)</span>. Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+(r, \phi, z) \to (x, y, z)
+\]</div>
+<p>Donde:</p>
+<div class="math notranslate nohighlight">
+\[
+x = r \cos \phi, \;\,
+y = r \sin \phi, \;\,
+z = z
+\]</div>
+<p>El dominio en cilíndricas es <span class="math notranslate nohighlight">\(r \in [0, \infty)\)</span>, <span class="math notranslate nohighlight">\(\phi \in [0, 2 \pi)\)</span>, mientras que <span class="math notranslate nohighlight">\(z\)</span> es todo <span class="math notranslate nohighlight">\(\mathrm{R}\)</span>.</p>
+<p><em>Cuestión</em>: ¿Cuál es la transformación inversa, de cartesianas a cilíndricas?</p>
+<p>La transformación inversa, de <em>cilíndricas</em> a <em>cartesianas</em> viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+r = \sqrt{x^2 + y^2}, \, \cos \phi =  \frac{x}{\sqrt{x^2 + y^2}}, \;\, z = z
+\]</div>
+<p>Si recuerdas, también parametrizamos una esfera de radio <span class="math notranslate nohighlight">\(r\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(\theta, \phi) = (r \cos \phi \sin \theta, \; r \sin \phi \sin \theta, \; r \cos \theta)
+\]</div>
+<p>Considerando ahora todas las posibles esferas, esto es variando <span class="math notranslate nohighlight">\(r\)</span> de <span class="math notranslate nohighlight">\([0, \infty)\)</span> podemos cubrir de nuevo todo el espacio tri-dimensional, <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta_range</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span>    <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span>
+<span class="n">phi_range</span>   <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">funx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">funy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">funz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span>               <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">funx</span><span class="p">,</span> <span class="n">funy</span><span class="p">,</span> <span class="n">funz</span><span class="p">,</span> <span class="n">theta_range</span><span class="p">,</span> <span class="n">phi_range</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0ca2e9840e118dfe24919b42583b8d6e3d1dbed0073a3f3203bd225c5a35c61e.png" src="../_images/0ca2e9840e118dfe24919b42583b8d6e3d1dbed0073a3f3203bd225c5a35c61e.png" />
+</div>
+</div>
+<p>Las <em>coordenadas esféricas</em> nos permiten asociar cualquier punto del espacio, <span class="math notranslate nohighlight">\((x, y, z)\)</span>, de <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span>, a un radio, <span class="math notranslate nohighlight">\(r\)</span>, la distancia del punto al origen, el ángulo <span class="math notranslate nohighlight">\(\theta\)</span> que forma el punto con el eje <span class="math notranslate nohighlight">\(z\)</span>, y el ángulo que forma la proyección del punto en el plano <span class="math notranslate nohighlight">\((x, y)\)</span> en el eje <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>El cambio en esféricas viene dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+ x = r \cos \phi \sin \theta, \;\, y = r \cos \phi \sin \theta, \;\, z = r \cos \theta
+\]</div>
+<p>Donde el rango de <span class="math notranslate nohighlight">\(\theta\)</span> es <span class="math notranslate nohighlight">\([0, \pi]\)</span> y el de <span class="math notranslate nohighlight">\(\phi\)</span> de <span class="math notranslate nohighlight">\([0, 2 \pi)\)</span>.</p>
+<p>Con <span class="math notranslate nohighlight">\(\theta = 0, \pi\)</span> damos los polos de la esfera, con <span class="math notranslate nohighlight">\(\theta = \pi/2\)</span> su ecuador. Situados a una altura de la esfera, el ángulo <span class="math notranslate nohighlight">\(\phi\)</span>, nos permite recorrerla en una circuferencia de radio <span class="math notranslate nohighlight">\(r \sin \theta\)</span> en sentido antihorario (visto desde arriba). En el ecuador, claro está, con radio <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p><em>Cuestión:</em> ¿Cuál es el cambio inverso que nos pasa de cartesianas a esféricas?</p>
+<p>El cambio inverso de cartesianas a esféricas, viene dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+r = \sqrt{x^2 + y^2 + z^2}, \;\, \cos \phi = \frac{x}{\sqrt{x^2 + y^2}}, \;\, \cos \theta = \frac{z}{\sqrt{x^2 + y^2 + z^2}}
+\]</div>
+<section id="cambios-de-coordenadas">
+<h3>Cambios de coordenadas<a class="headerlink" href="#cambios-de-coordenadas" title="Permalink to this heading">#</a></h3>
+<p>Los cambios de coordenadas son por lo tanto funciones vectoriales, <span class="math notranslate nohighlight">\({\bf f}: \mathrm{R}^n \to \mathrm{R}^n\)</span>, diferenciables, biyectivas (a excepción de algún punto singular) y que admiten una función inversa también diferenciable.</p>
+<p><em>Nota:</em> Una función biyectica asociada a cada punto de espacio inicial un punto distinto en el espacio imagen, y todo punto del espacio imagen tiene un punto en el inicial. Fíjate que hay algunos puntos singulares que no cumplen esto, como los polos en el cambio a esféricas y cuando <span class="math notranslate nohighlight">\(r = 0\)</span> para las dos. Sin embargo esto no nos impide cubrir completamente el espacio <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span></p>
+</section>
+<section id="matriz-jacobiana-del-cambio-de-coordenadas">
+<h3>Matriz jacobiana del cambio de coordenadas<a class="headerlink" href="#matriz-jacobiana-del-cambio-de-coordenadas" title="Permalink to this heading">#</a></h3>
+<p>Vamos a calcular la matriz jacobiana de los cambios de coordenadas a cilíndricas.</p>
+<p>la función vectorial del cambio de coordenadas a cilíndricas es:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf x}(r, \phi, z) \; =  \, \left( r \cos \phi, \, r \sin \phi, \,  z \right)
+\]</div>
+<p>Y su matriz jacobiana:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf Dx}(r, \phi, z) = \left( \begin{array}{ccc} 
+\cos \phi &amp; - r \sin \phi &amp; 0 \\
+\sin \phi &amp;   r \cos \phi &amp; 0 \\
+        0 &amp;             0 &amp; 1 
+\end{array} \right)
+\end{split}\]</div>
+<p>la función vectorial del cambio de coordenadas a esféricas es:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf x}(r, \phi, \theta) \; =  \, \left( r \cos \phi \sin \theta, \, r \sin \phi \sin \theta, \,  r \cos \theta \right)
+\]</div>
+<p>Y su matriz jacobiana:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf Dx}(r, \phi, \theta) = \left( \begin{array}{ccc} 
+\cos \phi \sin \theta &amp; - r \sin \phi \sin \theta &amp;  r \cos \phi \cos \theta \\
+\sin \phi \sin \theta &amp;   r \cos \phi \sin \theta &amp;  r \sin \phi \cos \theta \\
+          \cos \theta &amp;                         0 &amp; -r \sin \theta  
+\end{array} \right)
+\end{split}\]</div>
+</section>
+</section>
+<section id="la-regla-de-la-cadena">
+<h2>La regla de la cadena<a class="headerlink" href="#la-regla-de-la-cadena" title="Permalink to this heading">#</a></h2>
+<p>En determinados casos tenemos una función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>,  de <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span>, de la que conocemos su derivada, <span class="math notranslate nohighlight">\({\bf Df}({\bf x})\)</span>, y nos preguntamos cuál será su derivada en coordenadas cilíndricas o esféricas.</p>
+<p>¿Existe una relación sencilla entre la derivada de la función en las nuevas coordenadas y la derivada en cartesianas?</p>
+<p>La respuesta es la regla de la cadena, que nos dice, que la nueva derivada es el producto de la derivada de la primera función y la derivada, la matriz jacobiana, del cambio de variables:</p>
+<p>Sea <span class="math notranslate nohighlight">\({\bf f}({\bf x)}\)</span> con derivada, <span class="math notranslate nohighlight">\({\bf Df}({\bf x})\)</span> en cartesianas y <span class="math notranslate nohighlight">\({\bf x}({\bf u})\)</span> un cambio de coordenadas, con matriz jacobiana, <span class="math notranslate nohighlight">\({\bf Dx}({\bf u})\)</span>. La función compuesta, <span class="math notranslate nohighlight">\({\bf h} ({\bf u}) = {\bf f} \circ { \bf x}({\bf u}) = {\bf f}\left({\bf x}({\bf u}) \right)\)</span>, tiene como derivada:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf Dh}({\bf u}) \; = \; {\bf Df} \left({\bf x( {\bf u})} \right) \; {\bf Dx}({\bf u})
+\]</div>
+<p>¡El producto de las derivadas!</p>
+<section id="teorema-de-la-regla-de-la-cadena">
+<h3>Teorema de la regla de la cadena<a class="headerlink" href="#teorema-de-la-regla-de-la-cadena" title="Permalink to this heading">#</a></h3>
+<p><em>Teorema</em>: Sea <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathbf{R}^n \to \mathbf{R}^m\)</span>, <span class="math notranslate nohighlight">\(A\)</span> un conjunto abierto de <span class="math notranslate nohighlight">\(\mathbf{R}^n\)</span>, y <span class="math notranslate nohighlight">\({\bf f}: B \subset \mathbf{R}^m \to \mathbf{R}^p\)</span>, <span class="math notranslate nohighlight">\(B\)</span> un conjunto abierto de <span class="math notranslate nohighlight">\(\mathbf{R}^m\)</span>, donde el dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span> esta incluido en el rango de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Si <span class="math notranslate nohighlight">\({\bf g}\)</span> es diferenciable en un punto <span class="math notranslate nohighlight">\({\bf x}\)</span> interior a <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\({\bf f}\)</span> lo es en el punto <span class="math notranslate nohighlight">\({\bf g}({\bf x})\)</span>, entonces, la función composición <span class="math notranslate nohighlight">\({\bf h} = {\bf f} \circ {\bf g}: A \subset \mathbf{R}^n \to \mathbf{R}^p\)</span>, definida como: <span class="math notranslate nohighlight">\({\bf h}({\bf x})= {\bf f} \circ {\bf g} ({\bf x}) = {\bf f} \left( {\bf g}({\bf x}) \right)\)</span>, es diferenciable en <span class="math notranslate nohighlight">\({\bf x}\)</span> y su diferencial es:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf D}({\bf f} \circ {\bf g})({\bf x}) = {\bf Df}\left( {\bf g}({\bf x}) \right) \, {\bf Dg}({\bf x}) 
+\]</div>
+<p><em>Ejemplo</em>: Con las funciones: <span class="math notranslate nohighlight">\(f(x,y)= x^2+y^2\)</span> y <span class="math notranslate nohighlight">\({\bf g}(r,\theta) = (r\cos \theta, r \sin \theta)\)</span>, verifica la regla de la cadena para la función compuesta, <span class="math notranslate nohighlight">\(h(r,\theta) = (f \circ {\bf g})(r,\theta)\)</span>.</p>
+<p><em>solución:</em>
+Como producto de derivadas:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f (x,y)  = (2x, \, 2y) \Rightarrow \nabla f (r,\theta)  = (2 r \cos \theta, \, 2 r \sin \theta) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf Dg}(r,\theta)  = \left( \begin{array}{cc} 
+\cos \theta &amp; - r \sin \theta \\
+ \sin \theta &amp; r \cos \theta
+\end{array} \right) 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla f (r,\theta) \, {\bf Dg} (r,\theta)  =  (2 r \cos \theta, 2 r \sin \theta) \, \left(
+\begin{array}{cc} 
+\cos \theta &amp; - r \sin \theta \\
+ \sin \theta &amp; r \cos \theta
+\end{array} \right) = (2r,0) \\
+\end{split}\]</div>
+<p>Ahora expresando la función inicial en polares:</p>
+<div class="math notranslate nohighlight">
+\[
+ h (r,\theta)  = r^2 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla h (r,\theta) = (2r,0)
+\]</div>
+<p><em>Ejercicio</em>: Verifica la regla de la cadena para la función compuesta
+<span class="math notranslate nohighlight">\(h = f \circ {\bf g}: \mathbf{R}^3 \to \mathbf{R}\)</span> dada por <span class="math notranslate nohighlight">\(g:\mathbf{R}^3 \to \mathbf{R}^3\)</span>, <span class="math notranslate nohighlight">\({\bf g}(x,y,z)=(x^2y,y^2,e^{-xz})\)</span> y <span class="math notranslate nohighlight">\(f:\mathbf{R}^3\to\mathbf{R}\)</span>, <span class="math notranslate nohighlight">\(f(u,v,w)=u^2+v^2-w\)</span>.</p>
+<p><em>Solución</em>:</p>
+<p>Sustituyendo:</p>
+<div class="math notranslate nohighlight">
+\[
+h(x,y,z)  = (x^2y)^2+(y^2)^2-e^{-xz} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla h(x,y,z)  =(4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz}) 
+\]</div>
+<p>Aplicando la regla de la cadena:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf Dg}(x,y,z)  = \left( \begin{array}{ccc}
+2xy &amp; x^2 &amp; 0 \\
+0 &amp; 2y &amp; 0 \\
+-ze^{-xz} &amp; 0 &amp; -xe^{-xz} \\ \end{array} \right) 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla f(u,v,w) = (2u,2v,-1) \Rightarrow \nabla f(x,y,z) = (2x^2y,2y^2,-1) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla f(x,y,z) \, {\bf Dg}(x,y,z)  =  (2x^2y,2y^2,-1) \, \left( \begin{array}{ccc}
+2xy &amp; x^2 &amp; 0 \\
+0 &amp; 2y &amp; 0 \\
+-ze^{-xz} &amp; 0 &amp; -xe^{-xz} \\ \end{array} \right)  \\
+= (4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz})
+\end{split}\]</div>
+<p>Aplicando la regla de la cadena:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf Dg}(x,y,z)  = \left( \begin{array}{ccc}
+2xy &amp; x^2 &amp; 0 \\
+0 &amp; 2y &amp; 0 \\
+-ze^{-xz} &amp; 0 &amp; -xe^{-xz} \\ \end{array} \right) 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\nabla f(u,v,w) = (2u,2v,-1) \Rightarrow \nabla f(x,y,z) = (2x^2y,2y^2,-1) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla f(x,y,z) \, {\bf Dg}(x,y,z)  =  (2x^2y,2y^2,-1) \, \left( \begin{array}{ccc}
+2xy &amp; x^2 &amp; 0 \\
+0 &amp; 2y &amp; 0 \\
+-ze^{-xz} &amp; 0 &amp; -xe^{-xz} \\ \end{array} \right)  \\
+= (4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz})
+\end{split}\]</div>
+<p><em>Ejemplo</em> del uso de la regla de la cadena:</p>
+<p><strong>Plano tangente a un conjunto de nivel de una función <span class="math notranslate nohighlight">\(f(x, y, z)\)</span></strong>.</p>
+<p>Sea un función escalar, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^3  \to \mathrm{R}\)</span>, y un conjunto de nivel, c, <span class="math notranslate nohighlight">\(f(x , y, z) = c\)</span>, y una línea, una trayectoria, parametrizada, de puntos de ese conjunto de nivel <span class="math notranslate nohighlight">\({\bf r}(t)\)</span>, con <span class="math notranslate nohighlight">\(t \in [t_0, t_e]\)</span>, donde en <span class="math notranslate nohighlight">\(t = t_0\)</span>, nos da <span class="math notranslate nohighlight">\({\bf r}(t_0) = (x_0, y_0, z_0)\)</span>.</p>
+<p>Si hacemos la función compuesta <span class="math notranslate nohighlight">\(h = f \circ \ {\bf r} (t)\)</span>, que fíjate, es simplemente una función real de una dimensión, <span class="math notranslate nohighlight">\(h(t) = f({\bf r}(t)), \;
+\mathrm{R} \to \mathrm{R}\)</span>.</p>
+<p>En este caso dado, los puntos de <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> están en el conjunto de nivel de <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span>, la función siempre vale <span class="math notranslate nohighlight">\(c\)</span>, y por lo tanto su derivada es nula.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}h(t_0)}{\mathrm{d}t} = 0.
+\]</div>
+<p>Que por la regla de la cadena es lo mismo que:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f \left({\bf r}(t_0) \right) \, {\bf r}'(t_0) = 0
+\]</div>
+<p>Que corresponde a dos vectores ortogonales. El primero es el gradiente de <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> en <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, esto es, <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>. El segundo es el vector “velocidad” de la trayectoria en <span class="math notranslate nohighlight">\(t_0\)</span>.</p>
+<p>En un espacio <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span>, dado un punto <span class="math notranslate nohighlight">\({\bf x}_0 = (x_0, y_0, z_0)\)</span> y vector <span class="math notranslate nohighlight">\({\bf n}\)</span>. Podemos dar la ecuación del plano normal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, que pasa por <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, como aquellos puntos, <span class="math notranslate nohighlight">\({\bf x} = (x, y, z)\)</span> cuyo vector, <span class="math notranslate nohighlight">\({\bf x} - {\bf x}_0\)</span>, <span class="math notranslate nohighlight">\((x - x_0, y - y_0, z - z_0)\)</span>, es ortogonal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+({\bf x} - {\bf x}_0) \, {\bf n} = 0
+\]</div>
+<p>Si nos fijamos en el caso anterior, la ‘velocidad’ de la trayectoria, <span class="math notranslate nohighlight">\({\bf r}'(t_0)\)</span>, debe estar contenida entonces en el plano definido por el punto <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span> y el vector <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>.</p>
+<p>Ese plano, que es el plano tangente a al conjunto de nivel <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span> en <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, viene dado por la ecuación:</p>
+<div class="math notranslate nohighlight">
+\[
+({\bf x} - {\bf x}_0) \, \nabla f({\bf x}_0) = 0
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f'_x(x_0, y_0, z_0) \, (x - x_0) \, + \, f'_y(x_0, y_0, z_0) \, (y - y_0) + \, f'_z(x_0, y_0, z_0) \, (z - z_0) \, = \, 0.
+\]</div>
+<p>Date cuenta que esta forma de dar el plano, solo sirve para funciones, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, cuyo gradiente en un punto, <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>, sea distinto de cero.</p>
+<p>La siguiente celda muestra el plano tangente en un punto al conjunto de nivel de la función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span> de valor <span class="math notranslate nohighlight">\(c=1\)</span>, que corresponde a la esfera de radio unidad.</p>
+<p>También se muestra el gradiente de la función en el punto de la esfera dado por <span class="math notranslate nohighlight">\(\theta = \pi/4, \; \phi = 3\pi/2\)</span>, y dos trayectorias dentro de la esfera, una vertical, un meridiano, y otra horizontal, un paralelo, que pasan por ese punto. Puedes ver también los vectores “velocidad” de esas trayectorias, que están, claro, dentro del plano.</p>
+<p><em>Explora</em> y cambia el punto de la esfera.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">theta0</span><span class="p">,</span> <span class="n">phi0</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span>
+<span class="n">_</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">grad</span><span class="p">,</span> <span class="n">vphi</span><span class="p">,</span> <span class="n">vtheta</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">sphere_plane</span><span class="p">(</span><span class="n">theta0</span><span class="p">,</span> <span class="n">phi0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;gradiente   :&#39;</span><span class="p">,</span> <span class="n">grad</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;v-paralelo  :&#39;</span><span class="p">,</span> <span class="n">vphi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;v-meridiano :&#39;</span><span class="p">,</span> <span class="n">vtheta</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:380: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:380: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:380: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradiente   : (8.659560562354932e-17, -1.414213562373095, 1.4142135623730951)
+v-paralelo  : (0.7071067811865475, 4.329780281177466e-17, 0.0)
+v-meridiano : (4.329780281177467e-17, -0.7071067811865476, -0.7071067811865475)
+</pre></div>
+</div>
+<img alt="../_images/b0319df9dc7f98ea5d031054abc81332abf06376b693ccffd75747fc07636cbb.png" src="../_images/b0319df9dc7f98ea5d031054abc81332abf06376b693ccffd75747fc07636cbb.png" />
+</div>
+</div>
+<p><em>Ejercicio</em>: Sea la función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span>, y el punto <span class="math notranslate nohighlight">\({\bf x}_0 = \left(0, -1/{\sqrt{2}}, 1/{\sqrt{2}} \right)\)</span>, calcula el plano tangente del conjunto de nivel de la función a la que pertenece el punto.</p>
+<p>El valor de la función en el punto es <span class="math notranslate nohighlight">\(f ({\bf x_0}) = 1\)</span>, luego el punto pertenece al conjunto de nivel con valor <span class="math notranslate nohighlight">\(c = 1\)</span>.</p>
+<p>El conjunto de nivel <span class="math notranslate nohighlight">\(f(x, y, z) = 1\)</span> es la esfera de radio unidad: <span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 1\)</span>.</p>
+<p>El punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, en coordenadas esféricas es <span class="math notranslate nohighlight">\(r = 1, \theta = \pi/4, \phi = 3 \pi/2\)</span>.</p>
+<p>El gradiente de la función es: <span class="math notranslate nohighlight">\(\nabla f (x, y, z) = (2 x, 2y, 2z)\)</span>.</p>
+<p>Y en el punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> vale: <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = \left(0, -\sqrt{2}, \sqrt{2}\right)\)</span>.</p>
+<p>El plano tangente, en un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> de la esfera cumple la ecuación:</p>
+<div class="math notranslate nohighlight">
+\[
+2x_0 (x - x_0) + 2 y_0 (y - y_0) + 2 z_0 (z - z_0) = 0
+\]</div>
+<p>Y en el punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span>  es:</p>
+<div class="math notranslate nohighlight">
+\[
+-\sqrt{2} \left( y + \frac{1}{\sqrt{2}} \right) + \sqrt{2} \left( z - \frac{1}{\sqrt{2}} \right) = 0
+\]</div>
+<p>Por lo tanto el plano tangente tiene como ecuación:</p>
+<div class="math notranslate nohighlight">
+\[ 
+z = y + \sqrt{2} 
+\]</div>
+<p><strong>¡Aún hay más!</strong></p>
+<p>Las simetrías en Física son fundamentales. Fue la gran física <a class="reference external" href="https://es.wikipedia.org/wiki/Emmy_Noether">Emmy Noether</a> quien formuló un teorema que afirma que detrás de una simetría hay en Física una cantidad conservada. Por ejemplo, si el problema tiene simetría esférica, la cantidad conservada es el momento angular.</p>
+<p>Emmy Noether sufrió desafortunadamentelos los males de su tiempo (y que aún perduran en los nuestros), el machismo de sus compañeros de Universidad y el antisemitismo nazi.</p>
+<p><strong>¡Esto es todo por ahora!</strong></p>
+</section>
+</section>
+<section id="apendice">
+<h2>Apéndice<a class="headerlink" href="#apendice" title="Permalink to this heading">#</a></h2>
+<p><em>Demostración</em> de la regla de la cadena</p>
+<p>Las dos funciones son diferenciables:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf g}({\bf x}+{\bf v}) -{\bf g}({\bf x})  = {\bf Dg}({\bf x})\,{\bf v} 
++ \| {\bf v} \| {\bf E}_g({\bf x,v}) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf f}({\bf y}+{\bf u}) -{\bf f}({\bf y})  = {\bf Df}({\bf y})\, {\bf u} + \| {\bf u} \| {\bf E}_f({\bf y,u}) 
+\]</div>
+<p>Como <span class="math notranslate nohighlight">\({\bf u} = {\bf g}({\bf x}+{\bf v}) -{\bf g}({\bf x})\)</span>, tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf f}({\bf y}+{\bf u}) -{\bf f}({\bf y})  = {\bf Df}({\bf y}) \left( {\bf Dg}({\bf x}) \, {\bf v} + \| {\bf v} \| {\bf E}_g({\bf x,v}) \right) 
++ \| {\bf u} \| {\bf E}_f({\bf y,u}) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+=  {\bf Df}({\bf y}){\bf Dg}({\bf x}) \, {\bf v} + \| {\bf v} \| \left( {\bf Df}({\bf y}) \, {\bf E}_g({\bf x,v})  
++ \frac{\| {\bf u} \|}{\| {\bf v} \|} {\bf E}_f({\bf y,u}) \right) 
+\]</div>
+<p>Que podemos asociar a:</p>
+<div class="math notranslate nohighlight">
+\[
+ {\bf h}({\bf x}+{\bf v}) -{\bf h}({\bf x})  =  {\bf Dh}({\bf x}) \, {\bf v} + \| {\bf v} \| {\bf E}_h ({\bf x,v}) 
+ \]</div>
+<p>Donde</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf Dh}({\bf x}) = {\bf Df}({\bf y}) \, {\bf Dg}({\bf x})
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf E}_h({\bf x,v})  = {\bf Df}({\bf y}) \, {\bf E}_g({\bf x,v})  + \frac{\| {\bf u} \|}{\| {\bf v} \|} {\bf E}_f({\bf y,v}) 
+\]</div>
+<p>La derivada es el producto de las derivadas.</p>
+<p>Solo falta comprobar que: <span class="math notranslate nohighlight">\(\lim_{{\bf v} \to {\bf 0}} {\bf E}_h({\bf x,v}) \to {\bf 0}\)</span>.</p>
+<p>El primer termino es directo <span class="math notranslate nohighlight">\({\bf E}_g({\bf x,v}) \to {\bf 0}\)</span>.</p>
+<p>En el segundo podemos acotar, <span class="math notranslate nohighlight">\(\frac{\| u \|}{\| v \| } \leq M_g({\bf x}) + \| {\bf E}_g({\bf x,v}) \|\)</span>, donde
+<span class="math notranslate nohighlight">\(M_g({\bf x}) = \sum_{k=1}^n \| \nabla g_k({\bf x}) \|\)</span>.</p>
+<p>ya que <span class="math notranslate nohighlight">\({\bf u} = {\bf g(x+v)} - {\bf g(x)} = {\bf Dg}({\bf x}) {\bf v} + \| {\bf v} \| {\bf E}_g({\bf x,v})\)</span> y por lo tanto <span class="math notranslate nohighlight">\(\| {\bf u} \| \le \left( \sum_{i=1}^n \| \nabla g_k \| + \| {\bf E_g}(y, v) \| \right) \| {\bf v} \|\)</span>.</p>
+<p>Cuando  <span class="math notranslate nohighlight">\({\bf v} \to {\bf 0}\)</span> también <span class="math notranslate nohighlight">\({\bf u} \to {\bf 0}\)</span> y <span class="math notranslate nohighlight">\({\bf E}_f({\bf y, u}) \to {\bf 0}\)</span>.</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tderivadas_gradiante_jacobiana.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Gradiente, matriz jacobiana, funciones diferenciables</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tderivadas_min_max.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Mínimos y máximos de funciones escalares</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables">Cambio de variables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#cambios-de-coordenadas">Cambios de coordenadas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-jacobiana-del-cambio-de-coordenadas">Matriz jacobiana del cambio de coordenadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#la-regla-de-la-cadena">La regla de la cadena</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-regla-de-la-cadena">Teorema de la regla de la cadena</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1219 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Métodos de integración &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tintegral_metodos';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integrales en dos dimensiones" href="tintegral_2d.html" />
+    <link rel="prev" title="Integrales en una dimensión" href="tintegral_1d.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tintegral_metodos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tintegral_metodos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tintegral_metodos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tintegral_metodos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Métodos de integración</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-inmediatas">Integrales inmediatas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-partes">Integración por partes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-por-sustitucion">Integrales por sustitución</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-de-funciones-racionales">Integración de funciones racionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-polinomios">Descomposición de polinomios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-razones-mas-sencillas">Suma de razones más sencillas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-las-razones-mas-sencillas">Integrales de las razones más sencillas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-trigonometricas">Integrales trigonométricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-con-productos-de-sin-x-y-cos-x">Integrales con productos de <span class="math notranslate nohighlight">\(\sin x\)</span> y <span class="math notranslate nohighlight">\(\cos x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-con-productos-de-sin-a-x-y-cos-b-x">Integrales con productos de <span class="math notranslate nohighlight">\(\sin a x\)</span> y <span class="math notranslate nohighlight">\(\cos b x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-racionales-con-cos-x-o-sin-x">Integrales racionales con <span class="math notranslate nohighlight">\(\cos x\)</span> o <span class="math notranslate nohighlight">\(\sin x\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-impropias">Integrales impropias</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limites-de-integracion-en-el-infinito">Límites de integración en el infinito</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-no-acotadas">funciones no acotadas</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="metodos-de-integracion">
+<h1>Métodos de integración<a class="headerlink" href="#metodos-de-integracion" title="Permalink to this heading">#</a></h1>
+<p>A partir de los apuntes de la prof. Pilar Hernandez Gamazo (U. de València)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Jan 25 13:40:43 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Presentar y mostrar con ejemplos sencillos los diferentes métodos de integración</p>
+<ul class="simple">
+<li><p>Integrales inmediatas,</p></li>
+<li><p>Integración por partes,</p></li>
+<li><p>Integración por sustitución,</p></li>
+<li><p>Integración de fracciones de polinomios,</p></li>
+<li><p>Integración de funciones trigonométicas.</p></li>
+</ul>
+<p>Presentar las integrales impropias y mostrar algunos ejemplos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">sympy</span> <span class="k">as</span> <span class="nn">sp</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="integrales-inmediatas">
+<h2>Integrales inmediatas<a class="headerlink" href="#integrales-inmediatas" title="Permalink to this heading">#</a></h2>
+<p>Alguna integrales son inmediatas gracias al 1er teorema del cálculo integral que nos dice que si <span class="math notranslate nohighlight">\(f(x)\)</span> es una función continua.</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \int_a^x f(x) \, \mathrm{d}x \;\; \Rightarrow \;\; F'(x) = f(x)
+\]</div>
+<p>Integrales inmediatas triviales</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int x^n \, \mathrm{d}x = \frac{1}{n+1} x^{n+1}, \, \mathrm{si} \, n \ne -1,\\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int e^x \, \mathrm{d}x = e^x , \; \int \frac{1}{x} \, \mathrm{d}x = \log x, \, \mathrm{si} \, x \gt 0 \\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int \cos x \, \mathrm{d}x = \sin x, \; \int \sin x \, \mathrm{d}x = - \cos x, \;
+\int \frac{1}{\cos^2 x} \, \mathrm{d}x = \tan x
+\]</div>
+<p>¡En estos apuntes <span class="math notranslate nohighlight">\(\log\)</span> es siempre Neperiano!</p>
+<p>Otras integrales inmediatas no tan triviales:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{1+x^2} \, \mathrm{d}x = \arctan x, \; \int \frac{1}{\sqrt{1-x^2}} \, \mathrm{d}x = \arcsin x, \, \mathrm{si} \, -1 \lt x \lt 1,
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int \frac{1}{\sqrt{1+x^2}} \, \mathrm{d}x = \mathrm{arcsinh} \, x, \,
+\int \frac{1}{\sqrt{x^2-1}} \, \mathrm{d}x = \mathrm{arccosh} \, x, \, \mathrm{si} \, |x| \gt 1, \\
+\int \frac{1}{1-x^2} \, \mathrm{d}x = \mathrm{arctanh} \,  x, \, \mathrm{si} -1 \lt x \lt 1.
+\end{split}\]</div>
+<p>Recordemos:</p>
+<div class="math notranslate nohighlight">
+\[
+\sinh = \frac{e^x-e^{-x}}{2}, \; \cosh = \frac{e^x + e^{-x}}{2}, \; \tanh = \frac{e^{2x}-1}{e^{2x}+1}
+\]</div>
+<p>y</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\mathrm{arcsinh} \, x = \log \left(x + \sqrt{x^2+1} \right), \; 
+\mathrm{arccosh} \, x = \log \left(x + \sqrt{x^2-1} \right), \; \mathrm{si} \; x \gt 1, \\
+\mathrm{arctanh} \, x = \frac{1}{2}\log \frac{1+x}{1-x}, \, \mathrm{si} \; 0 \le x \lt 1\;.
+\end{split}\]</div>
+</section>
+<section id="integracion-por-partes">
+<h2>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Permalink to this heading">#</a></h2>
+<p>Sean <span class="math notranslate nohighlight">\(f(x), \, g(x)\)</span> funciones continuas, entonces se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(x) \, g'(x) \, \mathrm{d}x = f(x) \, g(x) - \int f'(x) \, g(x) \, \mathrm{d}x
+\]</div>
+<p>De:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) \, g(x) = \int \left[f(x) \, g(x)\right]' \, \mathrm{d}x = \int f'(x) \, g(x) \, \mathrm{d}x + \int f(x) \, g'(x) \, \mathrm{d}x
+\]</div>
+<p><em>Ejercicio:</em> Calcula</p>
+<div class="math notranslate nohighlight">
+\[
+\int x \, e^x \, \mathrm{d}x
+\]</div>
+<p><em>Solución:</em></p>
+<p>tomamos: <span class="math notranslate nohighlight">\(f(x) = x, \; g'(x) = e^x\)</span>, así <span class="math notranslate nohighlight">\(f'(x) = 1, \; g(x) = e^x\)</span>, entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+\int x \, e^x \, \mathrm{d}x = x \, e^x - \int e^x \mathrm{dx} = x \, e^x - e^x  = e^x \, (x - 1).
+\]</div>
+</section>
+<section id="integrales-por-sustitucion">
+<h2>Integrales por sustitución<a class="headerlink" href="#integrales-por-sustitucion" title="Permalink to this heading">#</a></h2>
+<p>Sea <span class="math notranslate nohighlight">\(f(x), g'(x)\)</span> continuas y <span class="math notranslate nohighlight">\(F(x)\)</span> primitiva de <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span>, se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\int f(g(x)) \, g'(x) \, \mathrm{d}x = F(g(x))
+\]</div>
+<p>dado que por la regla de la cadena, se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+F(g(x))' = F'(g(x)) \, f'(x) = f(g(x)) \, g'(x)
+\]</div>
+<p><em>Ejercicio</em>: Calcula</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{x \log x} \mathrm{d}x 
+\]</div>
+<p><em>Solución</em>:</p>
+<p>Si tomamos:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{1}{x}, \; g'(x) = \frac{1}{x} \Rightarrow F(x) = \log(x), \, g(x) = \log(x)
+\]</div>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+f(g(x)) \, g'(x) = \frac{1}{x\log x}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{x \log x} \mathrm{d}x = \log (\log x)
+\]</div>
+<p>De forma equivalente podemos hacer el siguiente cambio de variable:</p>
+<div class="math notranslate nohighlight">
+\[
+u = \log x \Rightarrow  \mathrm{d}u = \frac{1}{x} \, \mathrm{d}x
+\]</div>
+<p>Por lo tanto</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{x \log x} \, \mathrm{d}x = \int \frac{1}{u} \, \mathrm{d}u = \log u = \log(\log x)
+\]</div>
+<p>En la siguiente celda verificaremos con <em>SymPy</em> la integral.</p>
+<p><em>SymPy</em> es un módulo de <em>Python</em> que nos permite calcular derivadas, integrales, etc con cálculo simbólico.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;1/(x*log(x))&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \log{\left(\log{\left(x \right)} \right)}\]</div>
+</div>
+</div>
+</section>
+<section id="integracion-de-funciones-racionales">
+<h2>Integración de funciones racionales<a class="headerlink" href="#integracion-de-funciones-racionales" title="Permalink to this heading">#</a></h2>
+<p>Estas integrales son:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{P_n(x)}{Q_m(x)} \, \mathrm{d}x
+\]</div>
+<p>donde el grado de los polinomios comple, <span class="math notranslate nohighlight">\(n &lt; m\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P_n(x) = x^n + a_{n-1} x^{n-1} + \dots + a_{0} \\
+Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
+\end{split}\]</div>
+<p>El método de integrar puede ser largo pero está bien definido.</p>
+<p>Se compone de los siguientes pasos:</p>
+<ol class="arabic simple">
+<li><p>calcular las raices del polinomio del denominador,</p></li>
+<li><p>descomponer la razón en suma de razones más sencillas,</p></li>
+<li><p>integrar cada razón sencilla cuyas integrales están tabuladas.</p></li>
+</ol>
+<p><em>Cuestión:</em> En el caso de que la razón entre los polinomios sea <span class="math notranslate nohighlight">\(n \ge m\)</span>, ¿cómo harías la integral?</p>
+<section id="descomposicion-de-polinomios">
+<h3>Descomposición de polinomios<a class="headerlink" href="#descomposicion-de-polinomios" title="Permalink to this heading">#</a></h3>
+<p>El polinomio del denominador se puede descomponer en el producto de polinomios:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_m(x) = (x-\alpha_1)^{n_1} \dots (x-\alpha_p)^{n_p} \; (x^2+\beta_1x+\gamma_1)^{m_1} \dots (x^2+\beta_q+\gamma_q)^{m_q}
+\]</div>
+<p>donde las <span class="math notranslate nohighlight">\(\alpha_i\)</span> son las <span class="math notranslate nohighlight">\(p\)</span> raices reales, <span class="math notranslate nohighlight">\(i=1, \dots, p\)</span>, cada una de ellas con multiplicidad <span class="math notranslate nohighlight">\(n_i\)</span>.</p>
+<p>y las <span class="math notranslate nohighlight">\(\beta_i, \gamma_i\)</span> son los valores reales que corresponden a las <span class="math notranslate nohighlight">\(q\)</span> raices imaginarias, <span class="math notranslate nohighlight">\(i=1, \dots, q\)</span>, que cumplen, <span class="math notranslate nohighlight">\(\beta^2_i - 4 \gamma_i \lt 0\)</span>, y que cada una aparece con multiplicidad <span class="math notranslate nohighlight">\(m_i\)</span>.</p>
+<p><em>Ejemplo:</em> Descomponer el polinomio: <span class="math notranslate nohighlight">\(Q_3(x) = x^3 + 2x^2 +2x +1\)</span></p>
+<p>Podemos comprobar que una raiz es <span class="math notranslate nohighlight">\(\alpha = -1, \; Q(-1) = -1 + 2 -2 + 1 = 0.\)</span></p>
+<p>Luego el polinomio queda:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_3(x) = (x +1) \, (A x^2 + B x + C) = A x^3 + (A+B) x^2 + (B+C) x + C
+\]</div>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+A = 1, \; A+B = 2, \; B+C = 2, \; C = 1
+\]</div>
+<p>que tiene como solución: <span class="math notranslate nohighlight">\(A=B=C=1\)</span>.</p>
+<p>El polinomio <span class="math notranslate nohighlight">\(x^2 + x + 1\)</span> no tiene raiz real sólo imaginaria, con <span class="math notranslate nohighlight">\(\beta = 1, \gamma = 1\)</span>, que cumplen <span class="math notranslate nohighlight">\(\beta^2 - 4 \gamma  = -3 &lt; 0\)</span>.</p>
+<p>La descomposición del polinomio es:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_3(x) = (x+1) \, (x^2+x+1)
+\]</div>
+</section>
+<section id="suma-de-razones-mas-sencillas">
+<h3>Suma de razones más sencillas<a class="headerlink" href="#suma-de-razones-mas-sencillas" title="Permalink to this heading">#</a></h3>
+<p>Dada la descomposición de <span class="math notranslate nohighlight">\(Q_m(x)\)</span>, la razón de polinomios puede expresarse como suma de fracciones más simples de polinomios:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{P_n(x)}{Q_m(x)} = \sum_{i=1}^p \frac{A^i_1}{(x-\alpha_i)} + \frac{A^i_2}{(x-\alpha_i)^2} + \dots + \frac{A^i_{n_i}}{(x-\alpha_i)^{n_i}}  \\
++ \sum_{j = 1}^{q} \frac{B^j_1 x + C^j_1}{(x^2 + \beta_j x + \gamma_j)} + \frac{B^j_2 x + C^j_2}{(x^2 + \beta_j x + \gamma_j)^2} + \dots + \frac{B^j_{m_j} x + C^j_{m_j}}{(x^2 + \beta_j x + \gamma_j)^{m_j}}
+\end{split}\]</div>
+<p><em>Ejemplo:</em> Expresa la siguiente razón como suma de fracciones simples:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{P_2(x)}{Q_3(x)} = \frac{3x^2+3x+1}{x^3+2x^2+2x+1}
+\]</div>
+<p>El denominador sabemos que puede descomponerse en:</p>
+<div class="math notranslate nohighlight">
+\[
+Q_3(x) = (x+1) \, (x^2+x+1)
+\]</div>
+<p>donde hay una raiz real <span class="math notranslate nohighlight">\(\alpha_1 = -1\)</span> con multiplicidad <span class="math notranslate nohighlight">\(n_1=1\)</span>, y una compleja con <span class="math notranslate nohighlight">\(\beta_1 = 1, \gamma = 1\)</span> con multiplicidad <span class="math notranslate nohighlight">\(m_1 = 1\)</span></p>
+<p>La razón de polinomios admite la siguiente suma:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3x^2+3x+1}{x^3+2x^2+2x+1} = \frac{A}{x+1} + \frac{Bx + C}{x^2+x+1}
+\]</div>
+<p>Para determinar los coeficientes <span class="math notranslate nohighlight">\(A, B\)</span> y <span class="math notranslate nohighlight">\(C\)</span> igualamos los numeradores:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+3x^2+3x+1 = A \, (x^2+x+1) + (B x +C) \, (x+1) \\ = (A+B) x^2 + (A+B+C) x+ (A+C)
+\end{split}\]</div>
+<p>Lo que implica el siguiente conjunto de igualdades:</p>
+<div class="math notranslate nohighlight">
+\[
+A+B = 3, \, A+B+C = 3, A+C = 1
+\]</div>
+<p>cuya solución es: <span class="math notranslate nohighlight">\(A = 1, B= 2, C = 0.\)</span></p>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{3x^2+3x+1}{x^3+2x^2+2x+1} = \frac{1}{x+1} + \frac{2x}{x^2+x+1}
+\]</div>
+</section>
+<section id="integrales-de-las-razones-mas-sencillas">
+<h3>Integrales de las razones más sencillas<a class="headerlink" href="#integrales-de-las-razones-mas-sencillas" title="Permalink to this heading">#</a></h3>
+<p>La integral de una razón de polinomios, despues de descomponerla en suma de razones más simples, implica la siguientes posibles integrales:</p>
+<p>Para las raices reales con <span class="math notranslate nohighlight">\(n=1\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{A}{(x-\alpha)} \, \mathrm{d}x = A \, \log(x-\alpha)
+\]</div>
+<p>y para <span class="math notranslate nohighlight">\(n &gt;1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{A}{(x-\alpha)^n} \, \mathrm{d}x = - \frac{1}{n-1} \frac{A}{(x-\alpha)^{n-1}}
+\]</div>
+<p>Para las raices complejas, para el caso <span class="math notranslate nohighlight">\(m = 1\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{B x + C}{(x^2 + \beta x + \gamma)} \, \mathrm{d} x= \frac{B}{2} \log (x^2+\beta+\gamma) 
++ \frac{C - \beta B /2}{\sqrt{a}} \arctan \frac{x + \beta/2}{\sqrt{a}}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(a = \gamma - \beta^2/4\)</span></p>
+<p>y para el caso <span class="math notranslate nohighlight">\(m &gt;1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int \frac{B x + C}{(x^2 + \beta x + \alpha)^m} \, \mathrm{d} x =
+- \frac{B}{2(m - 1)} \frac{1}{(x^2+\beta x+ \alpha)^{m-1}} \\
++ \frac{C - \beta B /2}{a^m} \sqrt{a} \int \frac{1}{(u^2+1)^m} \, \mathrm{d}u
+\end{split}\]</div>
+<p>con <span class="math notranslate nohighlight">\(u = \frac{x + \beta/2}{\sqrt{a}}\)</span></p>
+<p>Y la última integral cumple una regla recurrente:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{(u^2+1)^m} \, \mathrm{d}x = \frac{2m-3}{2m-2} \int \frac{1}{(u^2+1)^{m-1}} \,  \mathrm{d}u + \frac{1}{2m-2} \frac{u}{(u^2+1)^{m-1}}
+\]</div>
+<p><em>Ejemplo:</em> Calcula la integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{3x^2+3x+1}{x^3+2x^2+2x+1} \, \mathrm{d}x 
+\]</div>
+<p><em>Solución</em> La integral será la suma de las integrales de las razones de polinomios que obtuvimos antes.</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{x+1} \, \mathrm{d}x + \int \frac{2x}{x^2+x+1} \, \mathrm{d}x
+\]</div>
+<p>Por las reglas que vimos anteriormente, estas integrales valen:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{1}{x+1} \, \mathrm{d}x  = \log (x+1) 
+\]</div>
+<p>y</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int \frac{2x}{x^2+x+1} \, \mathrm{d}x = \int \frac{2x+1}{x^2+x+1} \mathrm{d} x - \int \frac{1}{x^2+x+1} \, \mathrm{d}x\\
+= \log(x^2+2x+1) - \frac{2}{\sqrt{3}} \arctan \frac{2x+1}{\sqrt{3}}
+\end{split}\]</div>
+<p>Así:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{3x^2+3x+1}{x^3+2x^2+2x+1} \, \mathrm{d}x  = 
+\log (x+1) + \log(x^2+2x+1) - \frac{2}{\sqrt{3}} \arctan \frac{2x+1}{\sqrt{3}}
+\]</div>
+<p>En las siguientes celdas verificaremos con <em>SymPy</em> las integrales</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>       <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;1/(x+1)&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \log{\left(x + 1 \right)}\]</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;2*x/(x**2+x+1)&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \log{\left(x^{2} + x + 1 \right)} - \frac{2 \sqrt{3} \operatorname{atan}{\left(\frac{2 \sqrt{3} x}{3} + \frac{\sqrt{3}}{3} \right)}}{3}\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="integrales-trigonometricas">
+<h2>Integrales trigonométricas<a class="headerlink" href="#integrales-trigonometricas" title="Permalink to this heading">#</a></h2>
+<section id="integrales-con-productos-de-sin-x-y-cos-x">
+<h3>Integrales con productos de <span class="math notranslate nohighlight">\(\sin x\)</span> y <span class="math notranslate nohighlight">\(\cos x\)</span><a class="headerlink" href="#integrales-con-productos-de-sin-x-y-cos-x" title="Permalink to this heading">#</a></h3>
+<p>Las integrales de la forma:</p>
+<div class="math notranslate nohighlight">
+\[
+\int \sin^n x \cos^m x \, \mathrm{d}x
+\]</div>
+<p>Admiten los casos:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n\)</span> y <span class="math notranslate nohighlight">\(m\)</span> son pares, <span class="math notranslate nohighlight">\(n= 2p, \, m = 2q\)</span>. En ese caso utilizamos recursivamente el cambio:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+ \cos^2 x = \frac{1+\cos 2x}{2}, \;  \sin^2 x = \frac{1-\cos 2x}{2}
+\]</div>
+<ul class="simple">
+<li><p>Si <span class="math notranslate nohighlight">\(n\)</span> es impar, <span class="math notranslate nohighlight">\(n = 2p+1\)</span>, hacemos el cambio <span class="math notranslate nohighlight">\(u = \cos x, \; \mathrm{d}u = - \sin x \, \mathrm{d}x\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+ \int \sin^n x \cos^m x \, \mathrm{d}x = \int \sin x \sin^{2p}x \cos^m x \, \mathrm{d}x 
+ = \int - (1-u^2)^p u^m \, \mathrm{d}u
+ \]</div>
+<ul class="simple">
+<li><p>si <span class="math notranslate nohighlight">\(m\)</span> es impar, <span class="math notranslate nohighlight">\(m = 2q+1\)</span>, hacemos el cambio <span class="math notranslate nohighlight">\(u = \sin x, \, \mathrm{d}u = \cos x \, \mathrm{dx}\)</span>:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+ \int \sin^n x \cos^m x \, \mathrm{d}x = \int \cos x \cos^{2q}x \sin^n x \, \mathrm{d}x 
+ = \int  (1-u^2)^q u^n \, \mathrm{d}u
+ \]</div>
+</section>
+<section id="integrales-con-productos-de-sin-a-x-y-cos-b-x">
+<h3>Integrales con productos de <span class="math notranslate nohighlight">\(\sin a x\)</span> y <span class="math notranslate nohighlight">\(\cos b x\)</span><a class="headerlink" href="#integrales-con-productos-de-sin-a-x-y-cos-b-x" title="Permalink to this heading">#</a></h3>
+<p>Aplicaremos los relaciones trigonométricas:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\cos ax \, \cos bx = \frac{\cos (a-b) \, x + \cos (a+b) \, x}{2} \\
+\sin ax \, \sin bx = \frac{\cos (a-b) \, x - \cos (a+b) \, x}{2} \\
+\sin ax \, \cos bx = \frac{\sin (a-b) \, x + \sin (a+b) \, x}{2}
+\end{split}\]</div>
+</section>
+<section id="integrales-racionales-con-cos-x-o-sin-x">
+<h3>Integrales racionales con <span class="math notranslate nohighlight">\(\cos x\)</span> o <span class="math notranslate nohighlight">\(\sin x\)</span><a class="headerlink" href="#integrales-racionales-con-cos-x-o-sin-x" title="Permalink to this heading">#</a></h3>
+<p>se pueden transformar en razones de polinomios con el cambio:</p>
+<div class="math notranslate nohighlight">
+\[
+u = \tan \frac{x}{2}, \; \mathrm{d}x = \frac{2}{1+u^2} \, \mathrm{d}u 
+\]</div>
+<p>así:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin x = \frac{2u}{1+u^2}, \; \cos x = \frac{1-u^2}{1+u^2}
+\]</div>
+<p><em>Ejemplo:</em> Calcula la integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int \tan(x) \, \mathrm{d}x
+\]</div>
+<p>con el cambio <span class="math notranslate nohighlight">\(u = \cos x, \; \mathrm{d}u = - \sin x \, \mathrm{d}x\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int \frac{\sin x}{\cos x} \, \mathrm{d}x = \int -\frac{1}{u} \, \mathrm{d}u = - \log u = \log \frac{1}{u} = \log \frac{1}{\cos x}
+\]</div>
+<p>En la siguiente celda verificamos la integral con <em>SymPy</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;tan(x)&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle - \log{\left(\cos{\left(x \right)} \right)}\]</div>
+</div>
+</div>
+</section>
+</section>
+<section id="integrales-impropias">
+<h2>Integrales impropias<a class="headerlink" href="#integrales-impropias" title="Permalink to this heading">#</a></h2>
+<p>Llamamos integrales impropias aquellas en las que:</p>
+<ul class="simple">
+<li><p>uno o los dos límites de integración son <span class="math notranslate nohighlight">\(\pm \infty\)</span>,</p></li>
+<li><p>la función a integrar no está acotada en alguno de los valores del intervalo de integración.</p></li>
+</ul>
+<section id="limites-de-integracion-en-el-infinito">
+<h3>Límites de integración en el infinito<a class="headerlink" href="#limites-de-integracion-en-el-infinito" title="Permalink to this heading">#</a></h3>
+<p>En el caso de que uno de los límites sea <span class="math notranslate nohighlight">\(\pm \infty\)</span>, calculamos las integrales como un límite:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_a^\infty f(x) \, \mathrm{d}x = \lim_{b \to \infty} \int_a^b f(x) \, \mathrm{d}x \\
+\int_{-\infty}^b f(x) \, \mathrm{d}x = \lim_{a \to -\infty} \int_a^b f(x) \, \mathrm{d}x \\
+\end{split}\]</div>
+<p>Si el límite existe decimos que la integral converse, si no que diverge.</p>
+<p><em>Ejemplo:</em> Calcula la integral impropia</p>
+<div class="math notranslate nohighlight">
+\[
+\int_1^\infty \frac{1}{x^2} \, \mathrm{d}x
+\]</div>
+<p>Calculamos:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{b \to \infty} \int_1^b \frac{1}{x^2} \, \mathrm{d}x = \lim_{b \to \infty} \left. -\frac{1}{x} \right|_1^b = - \lim_{b\to \infty} \frac{1}{b} + 1 = 1
+\]</div>
+<p>La integral converge</p>
+<p>En la siguiente celda mostramos la integral</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">xs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span> <span class="c1"># plt.plot(xs, np.zeros(100), &#39;black&#39;);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x) = \frac</span><span class="si">{1}</span><span class="s2">{x^2}$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2ae0c227c598fb283b1b2d0af578c044ef5f4fa15e865f8b7a193b4fd2d685a3.png" src="../_images/2ae0c227c598fb283b1b2d0af578c044ef5f4fa15e865f8b7a193b4fd2d685a3.png" />
+</div>
+</div>
+<p><em>Ejemplo:</em> Calcula la integral impropia:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_1^\infty \frac{1}{x} \, \mathrm{d}x
+\]</div>
+<p>Calculamos:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{b \to \infty} \int_1^b \frac{1}{x} \, \mathrm{d}x = \lim_{b \to \infty} \left. -\log x \right|_1^b =  \lim_{b\to \infty} \log b - 0 = \infty
+\]</div>
+<p>En este caso, la integral diverge</p>
+<p>En la siguiente celda mostramos la integral</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">x</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1e2</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">xs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span> <span class="c1"># plt.plot(xs, np.zeros(100), &#39;black&#39;);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x) = \frac</span><span class="si">{1}{x}</span><span class="s2">$&quot;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/22880ecbb049b8300fb7a5dbc8b44503bd92f9f3a633a2348a96674c854e2fa5.png" src="../_images/22880ecbb049b8300fb7a5dbc8b44503bd92f9f3a633a2348a96674c854e2fa5.png" />
+</div>
+</div>
+</section>
+<section id="funciones-no-acotadas">
+<h3>funciones no acotadas<a class="headerlink" href="#funciones-no-acotadas" title="Permalink to this heading">#</a></h3>
+<p>Si la función no está acotada en el extremo del intervalo, recurrimos de nuevo a calcular los límites.</p>
+<p>Por ejemplo, si la función no está acotada en <span class="math notranslate nohighlight">\(b\)</span>, el extremo superior del intervalo, entonces:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x)\, \mathrm{d}x \equiv \lim_{y \to b}\int_a^y f(x) \, \mathrm{d}x
+\]</div>
+<p>y de forma similar para el caso en el que la función no estuviese acotada en <span class="math notranslate nohighlight">\(a\)</span>.</p>
+<p>Si la función no está acotada en un punto <span class="math notranslate nohighlight">\(c\)</span> en el interior del intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b f(x) \, \mathrm{d}x \equiv \lim_{y \to c^-} \int_a^y f(x) \, \mathrm{d}x + \lim_{y \to c^+} \int_y^b f(x) \, \mathrm{d}x
+\]</div>
+<p><em>Ejemplo:</em> Calcular la integral impropia</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^1 \frac{1}{\sqrt{1-x}} \, \mathrm{d}x
+\]</div>
+<p>La función no está acotada en <span class="math notranslate nohighlight">\(b = 1\)</span>, por lo tanto calculamos:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{y \to 1} \int_0^y \frac{1}{\sqrt{1-x}} \, \mathrm{d}x = \lim_{y \to 1} \left. - 2 \sqrt{1-x} \right|_0^y = \lim_{y \to 1} - 2 \sqrt{1-y} + 2 = 2
+\]</div>
+<p>La integral converge.</p>
+<p>Lo verificamos en la siguiente celda:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;1/sqrt(1-x)&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle 2\]</div>
+</div>
+</div>
+<p>En la siguiente celda mostramos la integral:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span> 
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.999</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">xs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span> <span class="c1"># plt.plot(xs, np.zeros(100), &#39;black&#39;);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x) = \frac</span><span class="si">{1}</span><span class="s2">{\sqrt{1-x}}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3866a5708eb06101a1a714ab0e7a48ed3f47327d0e30cb2b4fd7b2f7c8ec7825.png" src="../_images/3866a5708eb06101a1a714ab0e7a48ed3f47327d0e30cb2b4fd7b2f7c8ec7825.png" />
+</div>
+</div>
+<p><em>Ejemplo</em>: Calcular la integral impropia</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2 \frac{1}{(1-x)^2} \, \mathrm{d}x
+\]</div>
+<p>La función no está acotada en el punto interior <span class="math notranslate nohighlight">\(x = 1\)</span>.</p>
+<p>Calculamos la integral:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\lim_{y \to 1^-} \int_0^y \frac{1}{(1-x)^2} \, \mathrm{d}x + \lim_{y \to 1^+} \int_y^2 \frac{1}{(1-x)^2} \, \mathrm{d}x \\
+= \lim_{y \to 1^-} \left.  \frac{1}{(1-x)} \right|_0^y + \lim_{y \to 1^+} \left.  \frac{1}{(1-x)} \right|_y^2 \\
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\lim_{y \to 1^-}   \frac{1}{(1-y)} - \lim_{y \to 1^+} \frac{1}{(1-y)} -2
+\]</div>
+<p>Ninguno de los dos límites existe y la integral diverge</p>
+<p>Comprobémoslo con <em>SymPy</em>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;1/(1-x)^2&quot;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_latex math notranslate nohighlight">
+\[\displaystyle \infty\]</div>
+</div>
+</div>
+<p>En la siguiente celda mostramos la integral</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">x</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> 
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">xs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">fill_between</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fun</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$x$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x)$&quot;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$f(x) = \frac</span><span class="si">{1}</span><span class="s2">{(1-x)^2}$&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/9dcc9346fc1ba16d7c11630c6a4098d72965327c68c3031e79219e04d7069108.png" src="../_images/9dcc9346fc1ba16d7c11630c6a4098d72965327c68c3031e79219e04d7069108.png" />
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tintegral_1d.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Integrales en una dimensión</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tintegral_2d.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integrales en dos dimensiones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-inmediatas">Integrales inmediatas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-por-partes">Integración por partes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-por-sustitucion">Integrales por sustitución</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-de-funciones-racionales">Integración de funciones racionales</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#descomposicion-de-polinomios">Descomposición de polinomios</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-razones-mas-sencillas">Suma de razones más sencillas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-de-las-razones-mas-sencillas">Integrales de las razones más sencillas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-trigonometricas">Integrales trigonométricas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-con-productos-de-sin-x-y-cos-x">Integrales con productos de <span class="math notranslate nohighlight">\(\sin x\)</span> y <span class="math notranslate nohighlight">\(\cos x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-con-productos-de-sin-a-x-y-cos-b-x">Integrales con productos de <span class="math notranslate nohighlight">\(\sin a x\)</span> y <span class="math notranslate nohighlight">\(\cos b x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-racionales-con-cos-x-o-sin-x">Integrales racionales con <span class="math notranslate nohighlight">\(\cos x\)</span> o <span class="math notranslate nohighlight">\(\sin x\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-impropias">Integrales impropias</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limites-de-integracion-en-el-infinito">Límites de integración en el infinito</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-no-acotadas">funciones no acotadas</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

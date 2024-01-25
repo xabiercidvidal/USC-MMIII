@@ -1,0 +1,1124 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Integral de superficie &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_integral_superficie';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Teorema de Stockes y Teorema de Gauss" href="tcalvec_stockes_gauss.html" />
+    <link rel="prev" title="Operador Nabla. Campos conservativos" href="tcalvec_rotdiv_conservativos.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tcalvec_integral_superficie.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tcalvec_integral_superficie.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tcalvec_integral_superficie.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tcalvec_integral_superficie.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integral de superficie</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-en-una-superficies">Integral en una superficies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-de-parametrizacion-de-superficies">Revisión de parametrización de superficies.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizacion-de-la-superficie-de-una-grafica">Parametrización de la superficie de una gráfica.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-una-funcion-escalar-en-una-superfice">Integral de una función escalar en una superfice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-una-funcion-vectorial-a-traves-de-una-superfice">Integral de una función vectorial a través de una superfice</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integral-de-superficie">
+<h1>Integral de superficie<a class="headerlink" href="#integral-de-superficie" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Jan 25 13:32:44 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Revisar la parametrización de superficies.</p>
+<p>Definir la integral de una función escalar y vectorial en una superficie.</p>
+<p>Mostrar algunos ejemplos sencillos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="integral-en-una-superficies">
+<h2>Integral en una superficies<a class="headerlink" href="#integral-en-una-superficies" title="Permalink to this heading">#</a></h2>
+<section id="revision-de-parametrizacion-de-superficies">
+<h3>Revisión de parametrización de superficies.<a class="headerlink" href="#revision-de-parametrizacion-de-superficies" title="Permalink to this heading">#</a></h3>
+<p>Hemos visto con anterioridad que podemos parametrizar una superficie, <span class="math notranslate nohighlight">\({\bf \sigma}(u, v)\)</span>, de un espacio <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span> como una función vectorial definida en un región <span class="math notranslate nohighlight">\(R\)</span> de un espacio <span class="math notranslate nohighlight">\((u, v)\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(u, v) = \left( x(u, v), \, y(u, v), \, z(u, v) \right)
+\]</div>
+<p><em>Ejemplo</em>: parametrización de un cilindro centrado en el origen, con eje en <span class="math notranslate nohighlight">\(z\)</span>, radio <span class="math notranslate nohighlight">\(r\)</span>, y longitud infinita</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(\phi, z) = (r \cos \phi, \, r \sin \phi, z), \; \phi \in [0, 2\pi), \, z \in \mathrm{R}
+\]</div>
+<p><em>Observa</em>: como las siguientes figuras están dibujadas a partir de la malla de <span class="math notranslate nohighlight">\((u, v)\)</span>. Puedes ver su cuadrícula.</p>
+<p><em>Observa:</em> fíjate también en las líneas de la superficie, cada una ellas corresponde al caso en la que <span class="math notranslate nohighlight">\(u\)</span> o <span class="math notranslate nohighlight">\(v\)</span> son constantes y la otra variable recorre los posible valores de su rango.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
+<span class="n">zrange</span>   <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> 
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> 
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/0ac7cd4f4bc301e2035a8b1fee1e44c4f61b82220533d68753b1ed5aed163ae1.png" src="../_images/0ac7cd4f4bc301e2035a8b1fee1e44c4f61b82220533d68753b1ed5aed163ae1.png" />
+</div>
+</div>
+<p><em>Ejemplo</em>: Parametrización de una esfera centrada en el origen de radio <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(\theta, \phi) = \left( r \sin \theta \cos \phi, r \sin \theta \sin \phi, r \cos \theta \right), \; \theta \in [0, \pi], \, \phi \in [0, 2 \pi)
+\]</div>
+<p><em>Observa:</em> fíjate también en las líneas de la superficie, cada una ellas corresponde al caso en la que <span class="math notranslate nohighlight">\(u\)</span> o <span class="math notranslate nohighlight">\(v\)</span> son constantes y la otra variable recorre los posible valores de su rango.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phirange</span>   <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">thetarange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span>   <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> 
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/88d9c7dd17229f6f383a83d27b2a64dc57a490e71ebf7b9f49d6225892d08911.png" src="../_images/88d9c7dd17229f6f383a83d27b2a64dc57a490e71ebf7b9f49d6225892d08911.png" />
+</div>
+</div>
+<p>La superficie se construye a partir de líneas maestras. Fijado un valor de <span class="math notranslate nohighlight">\(u = u'\)</span>, si recorremos <span class="math notranslate nohighlight">\(v\)</span> en su rango, <span class="math notranslate nohighlight">\([v_0, v_1]\)</span> obtenenos las líneas maestras a lo largo de <span class="math notranslate nohighlight">\(v\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}_{u'}(v) = \left( x(u', v), y(u', v), z(u', v) \right), \; u = u' , \, v \in [v_0, v_1]
+\]</div>
+<p>Y viceversa:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}_{v'}(u) = \left( x(u, v'), y(u, v'), z(u, v') \right), \; u = [u_0, u_1] , \, v = v'
+\]</div>
+<p><em>Observa</em>: En la siguiente figura están marcadas dos de las líneas maestras del cilindro.</p>
+<p><em>Explora</em>: Cambia las líneas maestras que están dibujadas, cambiando el elemento <span class="math notranslate nohighlight">\((i, j)\)</span> de la malla <span class="math notranslate nohighlight">\((u, v)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">zrange</span>   <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span> 
+<span class="n">phii</span><span class="p">,</span> <span class="n">zj</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">10</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfmasterlines</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">phii</span><span class="p">,</span> <span class="n">vj</span> <span class="o">=</span> <span class="n">zj</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:325: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/0d7a216c8ffc10d99828d4be16eaf18568e943932e6c636e05d2351b281916ba.png" src="../_images/0d7a216c8ffc10d99828d4be16eaf18568e943932e6c636e05d2351b281916ba.png" />
+</div>
+</div>
+<p><em>Observa</em>: En la siguiente figura están marcadas dos de las líneas maestras de la esfera.</p>
+<p><em>Explora</em>: Cambia las líneas maestras que están dibujadas, cambiando el elemento <span class="math notranslate nohighlight">\((i, j)\)</span> de la malla <span class="math notranslate nohighlight">\((u, v)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span>          <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">phirange</span>   <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span>
+<span class="n">thetarange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span>   <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">31</span><span class="p">)</span> 
+<span class="n">phii</span><span class="p">,</span> <span class="n">thetaj</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">14</span> <span class="c1"># 20, 14</span>
+<span class="n">f0</span>         <span class="o">=</span>  <span class="mf">0.85</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">f0</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">f0</span> <span class="o">*</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfmasterlines</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">phii</span><span class="p">,</span> <span class="n">vj</span> <span class="o">=</span> <span class="n">thetaj</span><span class="p">);</span>
+<span class="c1">#plt.gca(projection=&#39;3d&#39;).auto_scale_xyz((-1, 1), (-1, 1), (-1, 1))</span>
+<span class="c1">#plt.set_aspect(&#39;equal&#39;,&#39;box&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:325: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/34d3a067d2f19a8e85c905c0d6a74fd64352958a781770b925e01cbb50400948.png" src="../_images/34d3a067d2f19a8e85c905c0d6a74fd64352958a781770b925e01cbb50400948.png" />
+</div>
+</div>
+<p>En un punto <span class="math notranslate nohighlight">\((u, v)\)</span> podemos obtenemos los vectores tangentes a las líneas en ese punto.</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_u  = \frac{\partial \sigma(u, v)}{ \partial u}, \;
+{\bf t}_v  = \frac{\partial \sigma(u, v)}{ \partial v} 
+\]</div>
+<p>que están asociados a lo diferencial vectorial de arco de cada línea maestra:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_u  \, \mathrm{d}u,  \;
+{\bf t}_v  \, \mathrm{d}v 
+\]</div>
+<p>El vector normal a los dos vendrá dado por:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf n} = {\bf t}_u \times {\bf t}_v
+\]</div>
+<p>Si te das cuenta <span class="math notranslate nohighlight">\({\bf n}\)</span> es la normal a los dos vectores y su módulo corresponde al área del paralelogramo que sustentan <span class="math notranslate nohighlight">\({\bf t}_u, \; {\bf t}_v\)</span>.</p>
+<p>El diferencial de área</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d} \vec{\sigma} = {\bf n} \, \mathrm{d}u \mathrm{d} v, \; \mathrm{d}\sigma = |{\bf n}| \, \mathrm{d}u \mathrm{d} v,
+\]</div>
+<p>Diremos que una superficie es regular siempre que exista <span class="math notranslate nohighlight">\({\bf n}\)</span> en todo el rango de <span class="math notranslate nohighlight">\((u, v)\)</span>.</p>
+<p><em>Observa</em>: los vectores tangentes, <span class="math notranslate nohighlight">\({\bf t}_u, \, {\bf t}_v\)</span> a la superficie un punto y su vector normal <span class="math notranslate nohighlight">\({\bf n}\)</span>.</p>
+<p><em>Explora</em>: cambia la posición <span class="math notranslate nohighlight">\((i, j)\)</span> de la malla de <span class="math notranslate nohighlight">\((u, v)\)</span> donde dibujamos los tres vectores.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">zrange</span>   <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">size</span><span class="p">,</span> <span class="n">size</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span> 
+<span class="n">phii</span><span class="p">,</span> <span class="n">zj</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">8</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfaxis</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">phii</span><span class="p">,</span> <span class="n">vj</span> <span class="o">=</span> <span class="n">zj</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:352: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/e459164406b4854d28eb9ff5fbe9691994ceabeda8c377e6bcc86f1db25a2f8a.png" src="../_images/e459164406b4854d28eb9ff5fbe9691994ceabeda8c377e6bcc86f1db25a2f8a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span>          <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">phirange</span>   <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span>
+<span class="n">thetarange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span>   <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">21</span><span class="p">)</span> 
+<span class="n">thetai</span><span class="p">,</span> <span class="n">phij</span> <span class="o">=</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">18</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfaxis</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">thetai</span><span class="p">,</span> <span class="n">vj</span> <span class="o">=</span> <span class="n">phij</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2aa111215282a429161b9b9107bcc17240c436cabfe3e9a22501683ad1d4ca98.png" src="../_images/2aa111215282a429161b9b9107bcc17240c436cabfe3e9a22501683ad1d4ca98.png" />
+</div>
+</div>
+<p><em>Cuestión:</em> ¿Es la siguiente superficie regular?</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma (\phi, z) = \left(z \cos \phi, z \sin \phi, z \right), \; \phi \in [0, 2 \pi), z \ge 0
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">zrange</span>   <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span>      <span class="mf">1.</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span> 
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/442102f9d87c4bacf0b02d4016db9ae0ebec38191452d9c571b79a17fa1f66e8.png" src="../_images/442102f9d87c4bacf0b02d4016db9ae0ebec38191452d9c571b79a17fa1f66e8.png" />
+</div>
+</div>
+<p>Si consideramos ahora en un punto <span class="math notranslate nohighlight">\((u, v)\)</span> los elementos diferenciales de arco en las dos líneas maestras son:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_u \, \mathrm{d}u, \; {\bf t}_v \, \mathrm{d}v
+\]</div>
+<p>y el elemento diferencial de área que sustentan es:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d} \sigma = |{\bf n}| \, \mathrm{d}u \mathrm{d}v = | {\bf t}_u \times {\bf t}_v | \, \mathrm{d}u \mathrm{d}v
+\]</div>
+<p>Entonces, para obtener el área de una superficie parametrizada <span class="math notranslate nohighlight">\(\sigma (u, v)\)</span> donde <span class="math notranslate nohighlight">\((u, v)\)</span> están definidas en una región <span class="math notranslate nohighlight">\(R\)</span>, calculamos:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int_{\sigma} \mathrm{d}\sigma = \int_{R} |{\bf n} | \, \mathrm{d}u \mathrm{d}v = \int_{R} |{\bf t}_u \times {\bf t}_v | \, \mathrm{d}u \mathrm{d}v
+\]</div>
+<p><strong>Ejemplo</strong>: Calcula el área de una esfera de radio <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>La superficie parametrizada es:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(\theta, \phi) = \left( r \sin \theta \cos \phi, r \sin \theta \sin \phi, r \cos \theta \right), \; \theta \in [0, \pi], \, \phi\in [0, 2 \pi]
+\]</div>
+<p>Los vectores directores:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_\theta = \left( r \cos \theta \cos \phi ,  r \cos \theta \sin \phi, - r \sin \theta \right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_\phi = \left( - r \sin \theta \sin \phi ,  r \sin \theta \cos \phi, 0 \right)
+\]</div>
+<p>Y el vector normal:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf n} = \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+r \cos \theta \cos \phi &amp;  r \cos \theta \sin \phi &amp; - r \sin \theta \\ - r \sin \theta \sin \phi &amp;  r \sin \theta \cos \phi &amp;  0 \end{array} \right| 
+\end{split}\]</div>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf n} = \left( r^2 \sin^2 \theta \cos \phi, \; r^2 \sin^2 \theta \sin \phi, \; r^2 \cos \theta \sin \theta \right)
+\]</div>
+<p>Y por lo tanto</p>
+<div class="math notranslate nohighlight">
+\[
+|{\bf n}| = \sqrt{r^4 \sin^4 \theta + r^4 \cos^2 \theta \sin^2 \theta} = r^2\sin \theta
+\]</div>
+<p>El área de la superficie es:</p>
+<div class="math notranslate nohighlight">
+\[
+S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}v  = \int_0^\pi \int_0^{2\pi} r^2 \sin \theta \, \mathrm{d}\phi \mathrm{d} \theta
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= r^2 \, \phi \Big|_0^{2 \pi} \, (-\cos \theta)\Big|_0^{\pi} = 4 \pi r^2
+\]</div>
+</section>
+<section id="parametrizacion-de-la-superficie-de-una-grafica">
+<h3>Parametrización de la superficie de una gráfica.<a class="headerlink" href="#parametrizacion-de-la-superficie-de-una-grafica" title="Permalink to this heading">#</a></h3>
+<p>Podemos considerar la gráfica de una función <span class="math notranslate nohighlight">\(f(x, y)\)</span> definida en una reción <span class="math notranslate nohighlight">\(R\)</span> como la parametrización de una superficie con <span class="math notranslate nohighlight">\((x, y)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(x, y) = \left( x, y, z = f(x, y) \right)\; (x, y) \in \mathrm{R} 
+\]</div>
+<p>En este caso los vectores directores y el vector normal tienen expresiones más simples:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_x(x, y) = \left( 1, 0, \frac{\partial z}{\partial x}\right), 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_y(x, y) = \left(0, 1, \frac{\partial z}{ \partial y} \right)
+\]</div>
+<p>y:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf n} 
+= \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+ 1 &amp;  0 &amp; \frac{\partial z}{\partial x} \\
+ 0 &amp;  1 &amp; \frac{\partial z}{\partial y} \\
+ \end{array} 
+ \right| = \left(-\frac{\partial z}{\partial x}, -\frac{\partial z}{\partial y}, 1\right) 
+\end{split}\]</div>
+<p>Y el módulo:</p>
+<div class="math notranslate nohighlight">
+\[
+|{\bf n}| = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y} \right)^2}
+\]</div>
+<p><em>Observa</em>: la siguiente figura, donde se representa la gráfica de la función, <span class="math notranslate nohighlight">\(f(x, y) = x^2 + y^2\)</span>, y se dibuja una partición de la región <span class="math notranslate nohighlight">\((x, y)\)</span>. Para cada uno de los rectángulitos de la gráfica, que es una pequeña sección de un plano, estamos dando su área como:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d} \sigma =
+\sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y} \right)^2} \, \mathrm{d}x \mathrm{d}y
+\]</div>
+<p>Mientras que el área de los rectángulos en <span class="math notranslate nohighlight">\((x, y) \)</span> que los sustentan es
+<span class="math notranslate nohighlight">\(
+\mathrm{d}x\mathrm{d}y
+\)</span></p>
+<p>Podemos reescribir:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}\sigma = \frac{\mathrm{d}x \mathrm{d}y}{\cos \gamma}, \;\;
+\cos \gamma = \frac{1}{\sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y} \right)^2}}
+\]</div>
+<p>Donde <span class="math notranslate nohighlight">\(\gamma\)</span> es ahora el ángulo que forma la normal, <span class="math notranslate nohighlight">\({\bf n}\)</span>, con el eje <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">zero</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">0</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfaxis</span>   <span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zero</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7b1fd120966a0c58150787129a9d218d490682f38a9afa278ad043e71fca4c49.png" src="../_images/7b1fd120966a0c58150787129a9d218d490682f38a9afa278ad043e71fca4c49.png" />
+</div>
+</div>
+<p><em>Ejercicio</em>: Verifica que <span class="math notranslate nohighlight">\(\gamma\)</span> es dicho ángulo para gráficas de planos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">cgamma</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">a</span><span class="o">*</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="o">*</span><span class="n">b</span><span class="p">))</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span> 
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">b</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">c</span>
+<span class="n">zero</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">0</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zero</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">xi</span><span class="p">,</span> <span class="n">yj</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfaxis</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">xi</span><span class="p">,</span> <span class="n">vj</span> <span class="o">=</span> <span class="n">yj</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfaxis</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zero</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">xi</span><span class="p">,</span> <span class="n">vj</span> <span class="o">=</span> <span class="n">yj</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;gamma&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">arccos</span><span class="p">(</span><span class="n">cgamma</span><span class="p">),</span> <span class="s1">&#39;cos(gamma)&#39;</span><span class="p">,</span> <span class="n">cgamma</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gamma 0.7853981633974483 cos(gamma) 0.7071067811865476
+</pre></div>
+</div>
+<img alt="../_images/3a5a2c4a537262c4fcdf9adc1d14f1ba26a5361b2b3115bd30c22d61125497cd.png" src="../_images/3a5a2c4a537262c4fcdf9adc1d14f1ba26a5361b2b3115bd30c22d61125497cd.png" />
+</div>
+</div>
+</section>
+<section id="integral-de-una-funcion-escalar-en-una-superfice">
+<h3>Integral de una función escalar en una superfice<a class="headerlink" href="#integral-de-una-funcion-escalar-en-una-superfice" title="Permalink to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(S\)</span> una superficie parametrizada con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> en una region <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((u, v)\)</span>, y <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> una función escalar definida en los puntos de la superficie. Llamamos integral de la función <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> en la superficie <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> a:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{S} f(x, y, z) \, \mathrm{d}\sigma = \int_R f(\sigma(u, v)) \, |{\bf n}| \mathrm{d}u \mathrm{d}v 
+\]</div>
+<p><em>Cuestión</em>: ¿Puedes dar una interpretación a la integral de una función escalar sobre una superficie?</p>
+<p><strong>Ejercicio</strong>: Integra la función <span class="math notranslate nohighlight">\(f(x, y, z) = \sqrt{x^2 + y^2 +1}\)</span> en el helicoloide dado por <span class="math notranslate nohighlight">\(\sigma (r, \theta) = \left( r \cos \theta, r \sin \theta, \theta \right)\)</span> con <span class="math notranslate nohighlight">\(\theta \in [0, 2 \pi]\)</span> y <span class="math notranslate nohighlight">\(r \in [0, 1]\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thetarange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">rrange</span>     <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span>      <span class="mf">1.</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">theta</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/510c5b15786ea4337f9e672d3e7d7fd71681231fb4b94b8f3131669573b3bace.png" src="../_images/510c5b15786ea4337f9e672d3e7d7fd71681231fb4b94b8f3131669573b3bace.png" />
+</div>
+</div>
+<p>A partir de la superficie parametrizada:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma (r, \theta) = \left( r \cos \theta, r \sin \theta, \theta \right)
+\]</div>
+<p>Calculamos los vectores:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_r = \left( \cos \theta, \sin \theta, 0 \right),
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf t}_{\theta} = \left( - r \sin \theta, r \cos \theta, 1 \right)
+\]</div>
+<p>y el vector normal</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf n} = \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+  \cos \theta      &amp;  \sin \theta  &amp; 0 \\
+   - r \sin \theta &amp; r \cos \theta &amp; 1\\
+ \end{array} 
+ \right| = \left(\sin \theta, - \cos \theta, r \right) 
+\end{split}\]</div>
+<p>La función en la superficie vale:</p>
+<div class="math notranslate nohighlight">
+\[
+f(\sigma(r, \theta)) = \sqrt{ r^2 \cos^2 \theta + r^2 \sin^2 \theta + 1} = \sqrt{r^2 +1 }
+\]</div>
+<p>El diferencial de área:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}\sigma = |{\bf n}| \, \mathrm{d}\theta \mathrm{d}r = \sqrt{1+r^2} \, \mathrm{d}\theta \mathrm{d}r
+\]</div>
+<p>Y la integral de la función en la superficie:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{\sigma} f(x, y, z) \, \mathrm{d} \sigma 
+= \int_0^{2 \pi} \int_0^1 \sqrt{r^2 + 1} \sqrt{r^2 +1} \, \mathrm{d}r \mathrm{d}\theta 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^{2 \pi} \int_0^1 (r^2 +1) \, \mathrm{d}r \mathrm{d}\theta 
+= 2 \pi \left( r + \frac{r^3}{3 }\right) \Big|_0^1 = \frac{8 \pi}{3}
+\]</div>
+</section>
+<section id="integral-de-una-funcion-vectorial-a-traves-de-una-superfice">
+<h3>Integral de una función vectorial a través de una superfice<a class="headerlink" href="#integral-de-una-funcion-vectorial-a-traves-de-una-superfice" title="Permalink to this heading">#</a></h3>
+<p>Sea <span class="math notranslate nohighlight">\(S\)</span> una superficie parametrizada con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> en una region <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((u, v)\)</span>, y <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left(F_x, F_y, F_z \right)\)</span> una función vectorial definida en los puntos de la superficie.
+Llamamos integral de la función <span class="math notranslate nohighlight">\({\bf F}(x, y, z)\)</span> a través de la superficie <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> a:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{\sigma} {\bf F}(x, y, z) \, \mathrm{d} \vec{\sigma} = \int_R {\bf F}(\sigma(u, v)) \, {\bf n} \, \mathrm{d}u \mathrm{d}v 
+\]</div>
+<p><em>Cuestión</em>: ¿Puedes dar una interpretación de la integral de un campo <span class="math notranslate nohighlight">\({\bf F}\)</span> a través de una superficie? En Física seguro que has encontrado este caso con anterioridad. ¡Se trata del flujo!</p>
+<p><strong>Ejercicio</strong>: Integra el campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x, y, z)\)</span> sobre la esfera de radio unidad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">phirange</span>   <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">thetarange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span>   <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span> 
+<span class="n">xrange</span>     <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">Ex</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">x</span>
+<span class="n">Ey</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">y</span>
+<span class="n">Ez</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">theta</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">Ez</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:163: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/c3fd6bc0f49f96ad9db1d32ef3a82fad7da36ab5f37d78412501a7ef4a866e25.png" src="../_images/c3fd6bc0f49f96ad9db1d32ef3a82fad7da36ab5f37d78412501a7ef4a866e25.png" />
+</div>
+</div>
+<p>Vimos antes que:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf n} = \left(
+\sin^2 \theta \cos \phi,  \sin^2 \theta \sin \phi, \cos \theta \sin \theta
+\right)
+\]</div>
+<p>El campo en la esfera es:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf F}(\sigma(\theta, \phi)) 
+= (\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta)
+\]</div>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf F}(\sigma (\theta, \phi)) \, {\bf n} = 
+ \sin^3 \theta \cos^2 \phi +  \sin^3 \theta \sin^2 \phi + \sin \theta \cos^2 \theta =  \sin \theta
+\]</div>
+<p>Y la integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{\sigma} {\bf F}({\bf x}) \, \mathrm{d} \vec{\sigma}
+= \int_0^{2 \pi} \int_0^{\pi}  \sin \theta \, \mathrm{d}\theta \mathrm{d}\phi
+= 4 \pi 
+\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tcalvec_rotdiv_conservativos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Operador Nabla. Campos conservativos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tcalvec_stockes_gauss.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Teorema de Stockes y Teorema de Gauss</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-en-una-superficies">Integral en una superficies</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-de-parametrizacion-de-superficies">Revisión de parametrización de superficies.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizacion-de-la-superficie-de-una-grafica">Parametrización de la superficie de una gráfica.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-una-funcion-escalar-en-una-superfice">Integral de una función escalar en una superfice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-una-funcion-vectorial-a-traves-de-una-superfice">Integral de una función vectorial a través de una superfice</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

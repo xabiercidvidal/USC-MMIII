@@ -1,0 +1,1081 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Teorema de Green &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_green';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Operador Nabla. Campos conservativos" href="tcalvec_rotdiv_conservativos.html" />
+    <link rel="prev" title="Integral de línea" href="tcalvec_integral_linea.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tcalvec_green.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tcalvec_green.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tcalvec_green.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tcalvec_green.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Teorema de Green</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indice">Indice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Teorema de Green</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-integral-de-linea-de-un-campo-vectorial-e-integral-de-superficie">Relación entre integral de línea de un campo vectorial e integral de superficie.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Teorema de Green</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-divergencia">Teorema de la divergencia.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apéndices</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="teorema-de-green">
+<h1>Teorema de Green<a class="headerlink" href="#teorema-de-green" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última actualización &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última actualización  Thu Jan 25 13:32:24 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="indice">
+<h2>Indice<a class="headerlink" href="#indice" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Integral de área como integral de línea</p></li>
+<li><p><a class="reference external" href="https://youtu.be/nZgbSd2MoZI">[&gt;]</a> Teorema de Green</p></li>
+<li><p><a class="reference external" href="https://youtu.be/iO1iR_bsH5M">[&gt;]</a> Teorema de la divergencia</p></li>
+</ul>
+</section>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Relación entre la integral de área de una región y la integral de línea de determinados campos vectoriales.</p>
+<p>El teorema de Green. Relación entre la integral a lo largo de una curva cerrada de una función vectorial y la integral de la tercera componente del rotacional dentro de la región encerrada.</p>
+<p>Demostrar el teorema con dos lemas.</p>
+<p>Mostrar algunos ejemplos sencillos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Teorema de Green<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="relacion-entre-integral-de-linea-de-un-campo-vectorial-e-integral-de-superficie">
+<h3>Relación entre integral de línea de un campo vectorial e integral de superficie.<a class="headerlink" href="#relacion-entre-integral-de-linea-de-un-campo-vectorial-e-integral-de-superficie" title="Permalink to this heading">#</a></h3>
+<p>Considera una región, <span class="math notranslate nohighlight">\(R\)</span>, en plano <span class="math notranslate nohighlight">\((x, y)\)</span> definida de tipo I:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ a \le x \le b, \; y_1(x) \le y \le y_2(x)\}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(y_1(x)\)</span> e <span class="math notranslate nohighlight">\(y_2(x)\)</span> son las funciones que limitan la parte inferior y superior de la región.</p>
+<p>Date cuenta que podemos parametrizar la línea del límite inferior de la región con:</p>
+<div class="math notranslate nohighlight">
+\[
+x \in [a, b], \; {\bf c_1}(x) = \left(x, y_1(x) \right) 
+\]</div>
+<p>y la superior con:</p>
+<div class="math notranslate nohighlight">
+\[
+x \in [a, b], \; {\bf c_2}(x) = \left( x, y_2(x) \right) 
+\]</div>
+<p><em>Observa</em>: En la siguiente figura se muestra el campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, 0)\)</span> y la elipse de ejes <span class="math notranslate nohighlight">\(a=2\)</span> en <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(b=1\)</span> en <span class="math notranslate nohighlight">\(y\)</span>. Recuerda que el área de elipse es <span class="math notranslate nohighlight">\(a b \pi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mi">13</span><span class="p">)</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">41</span><span class="p">)</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span>     <span class="n">y</span> <span class="o">*</span> <span class="mf">1.</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span>     <span class="n">x</span> <span class="o">*</span> <span class="mf">0.</span>
+<span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span>    <span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span>    <span class="p">:</span> <span class="n">b</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">);</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/21f4c4702a76949e192d1376e1d8a8c12374d0fc4b81d944e9d0f3388e5bd13c.png" src="../_images/21f4c4702a76949e192d1376e1d8a8c12374d0fc4b81d944e9d0f3388e5bd13c.png" />
+</div>
+</div>
+<p><em>Observa</em>: En la siguiente figura se muestra cómo podemos definir la región de la elipse de tipo I, y parametrizar las dos curvas que determinan la frontera de la región.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_2(x)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_2(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_1(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d67efada753c0b61fea1acb25765b429ec0f7eb179840e0547ce875216474f77.png" src="../_images/d67efada753c0b61fea1acb25765b429ec0f7eb179840e0547ce875216474f77.png" />
+</div>
+</div>
+<p>Cálculemos ahora el área de la región:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_R \mathrm{d}x \mathrm{d} y = \int_a^b \left[ \int_{y_1(x)}^{y_2(x)} \mathrm{dy} 
+\right]\mathrm{d}x 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_a^b \left(y_2(x) - y_1(x) \right) \, \mathrm{d} x = \int_a^b y_2(x) \,\mathrm{d}x - \int_a^b y_1(x) \,\mathrm{d}x
+\]</div>
+<p>Si calculamos ahora la integral de la función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, 0)\)</span> a lo largo de <span class="math notranslate nohighlight">\({\bf c}_1(x)\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{{\bf c}_1} {\bf F}({\bf x}) \, \mathrm{d} {\bf s} = \int_{{\bf c}_1} y \, \mathrm{d}x
+\]</div>
+<p>Dado que <span class="math notranslate nohighlight">\({\bf c}_1 = (x, y_1(x))\)</span>, el elemento vectorial diferencial de arco es:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d} {\bf s} = {\bf {\dot c}}(x) \,\mathrm{d} x = \left(1, \dot{y}_1(x) \right) \mathrm{d} x
+\]</div>
+<p>Y el producto vectorial:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf F}({\bf x}) \, \mathrm{d} {\bf s} \to (y_1(x), 0) \, \left(1, \dot{y}_1(x) \right) \, \mathrm{d}x = y_1(x) \, \mathrm{d}x
+\]</div>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{{\bf c}_1} {\bf F}({\bf x}) \, \mathrm{d} {\bf s} 
+= \int_{{\bf c}_1} y \, \mathrm{d}x
+= \int_a^b y_1(x) \mathrm{d}x
+\]</div>
+<p>Que corresponde al área que hay entre la línea <span class="math notranslate nohighlight">\(y_1(x)\)</span> (o <span class="math notranslate nohighlight">\({\bf c}_1\)</span>) y el eje <span class="math notranslate nohighlight">\(y=0\)</span>, en el intervalo <span class="math notranslate nohighlight">\([a, b]\)</span> de <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>De igual forma, la integral de la función vectorial, <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, 0)\)</span>, a lo largo de la línea superior, <span class="math notranslate nohighlight">\({\bf c}_2(x)\)</span> que da la frontera superior de la región queda:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{{\bf c}_2} {\bf F}({\bf x}) \, \mathrm{d} {\bf s} 
+= \int_{{\bf c}_2} y \, \mathrm{d}x
+= \int_a^b y_2(x) \, \mathrm{d} x
+\]</div>
+<p>Si enlazamos la integral de línea de la función vectorial <span class="math notranslate nohighlight">\((y, 0)\)</span> a lo largo de <span class="math notranslate nohighlight">\({\bf c}_2(x)\)</span> y luego <span class="math notranslate nohighlight">\({\bf c}_1(x)\)</span> (en sentido contrario), nos da una integral a lo largo de una curva cerrada, <span class="math notranslate nohighlight">\({\bf c} \)</span>, en sentido horario, que corresponde al área de la región, <span class="math notranslate nohighlight">\(R\)</span>, encerrada por <span class="math notranslate nohighlight">\({\bf c}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{c} (y, 0) \, \mathrm{d} {\bf s} = \oint_{\bf c} y \, \mathrm{d}x  = \int_{{\bf c}_2} y \, \mathrm{d}x - \int_{{\bf c}_1} y \, \mathrm{d}x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_a^b \ y_2(x) - \int_a^b y_1(x)  \mathrm{d} x = \int_{R} \mathrm{d}x \mathrm{d} y
+\]</div>
+<p><em>Ejercicio:</em> Verifica que la integral de la función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = (0, x)\)</span> a lo largo de la frontera, <span class="math notranslate nohighlight">\({\bf c}(y)\)</span>, en sentido anti-horario, de una región, <span class="math notranslate nohighlight">\(R\)</span>, de <span class="math notranslate nohighlight">\((x, y)\)</span> parametrizada de tipo II, es igual al área de <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} (0, x) \, \mathrm{d} {\bf s} 
+= \oint_{{\bf c}} x \, \mathrm{d}y
+= \int_{R} \mathrm{d}x \mathrm{d}y
+\]</div>
+</section>
+<section id="id2">
+<h3>Teorema de Green<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h3>
+<p><strong>Teorema</strong>: La integral del campo vectorial, <span class="math notranslate nohighlight">\({\bf F}(x, y) = \left( F_x(x, y), \; F_y(x, y)\right)\)</span>, con <span class="math notranslate nohighlight">\(F_x(x, y), F_y(x, y)\)</span> con derivadas primeras continuas en una región, <span class="math notranslate nohighlight">\(R\)</span>, a lo largo de una línea frontera, <span class="math notranslate nohighlight">\({\bf c}\)</span> de la región <span class="math notranslate nohighlight">\(R\)</span>, recorrida en sentido anti-horario es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\oint_{{\bf c}} {\bf F}(x, y) \, \mathrm{d} {\bf s} = 
+\oint_{{\bf c}} F_x(x, y) \, \mathrm{d}x + F_y(x, y) \, \mathrm{d}y \\ = 
+\int_{R} \left( \frac{\partial F_y(x, y)}{\partial x} - \frac{\partial F_x(x, y)}{\partial y} \right) \mathrm{d}x \mathrm{d}y
+\end{split}\]</div>
+<p><strong>Lema</strong>: Sea una función vectorial, <span class="math notranslate nohighlight">\({\bf F}(x, y) = \left( F_x(x, y), 0 \right)\)</span> con <span class="math notranslate nohighlight">\(F_x(x, y)\)</span> con derivadas primeras continuas en una región, <span class="math notranslate nohighlight">\(R\)</span>; la integral de <span class="math notranslate nohighlight">\({\bf F} \)</span> a lo largo de una línea frontera, <span class="math notranslate nohighlight">\({\bf c}\)</span>, de <span class="math notranslate nohighlight">\(R\)</span>, recorrida en sentido anti-horario es:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F}(x,  y) \, \mathrm{d} {\bf s} = 
+\oint_{{\bf c}} F_x(x, y) \, \mathrm{d}x  =
+\int_{R}  - \frac{\partial F_x(x, y)}{\partial y} \mathrm{d}x \mathrm{d}y
+\]</div>
+<p>Consideremos que definimos la región de tipo I, con dos líneas frontera, parametrizadas en función de <span class="math notranslate nohighlight">\(x\)</span> en el intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\{ a \le x \le b, \; y_1(x) \le y \le y_2(x)\}
+\]</div>
+<p>con:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}_1(x) = \left( x, y_1(x) \right), \; x \in [a, b]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}_2(x) = \left( x, y_2(x) \right), \; x \in [a, b]
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_2(x)$&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_2(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_1(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d67efada753c0b61fea1acb25765b429ec0f7eb179840e0547ce875216474f77.png" src="../_images/d67efada753c0b61fea1acb25765b429ec0f7eb179840e0547ce875216474f77.png" />
+</div>
+</div>
+<p>La integral (nota el cambio de signo):</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{R}  \frac{\partial F_x(x, y)}{\partial y}  \mathrm{d}x \mathrm{d}y = 
+\int_a^b \left[ \int_{y_1(x)}^{y_2(x)}   \frac{\partial F_x(x, y)}{\partial y}  \mathrm{d}y \right]  \mathrm{d}x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ =  \int_a^b  F_x(x, y) \Big|_{y_1(x)}^{y_2(x)} \mathrm{d}x
+ =   \int_a^b F_x(x, y_2(x)) \, \mathrm{d}x - \int_a^b F_x(x, y_1(x)) \, \mathrm{d}x
+\]</div>
+<p>Por otro lado, la integral en la línea <span class="math notranslate nohighlight">\({\bf c}_2(x)\)</span> de la función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y ) = \left(F_x(x, y), 0 \right)\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{{\bf c}_2} {\bf F}(x, y) \, \mathrm{d}{\bf s} 
+= \int_{{\bf c}_2} \left(F_x(x, y), 0\right) \, \mathrm{d}{\bf s} 
+= \int_{{\bf c}_2} F_x(x, y) \, \mathrm{d} x  
+\]</div>
+<p>Como en el caso anterior:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d} {\bf s} = {\bf {\dot c}_2}(x) \, \mathrm{d}x = \left(1, \dot{y}_2(x) \right) \mathrm{d}x
+\]</div>
+<p>Y por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_{{\bf c}_2} \left(F_x(x, y), 0 \right) \,\mathrm{d} {\bf s} 
+= \int_a^b \left( F_x(x, y_2(x)), 0 \right) \, \left( 1, \dot{y}_2(x) \right) \, \mathrm{d} x  \\
+= \int_a^b F_x(x, y_2(x)) \, \mathrm{d}x
+\end{split}\]</div>
+<p>que corresponde al primer término de la integral anterior.</p>
+<p>Si calculamos entonces la integral del campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = \left( F_x(x, y), 0 \right)\)</span> en dirección horaria de la curva cerrada, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que es la frontera de <span class="math notranslate nohighlight">\(R\)</span>, y que corresponde a integrar en <span class="math notranslate nohighlight">\({\bf c}_2\)</span> y luego en <span class="math notranslate nohighlight">\({\bf c}_1\)</span> (en sentido opuesto), esto es, en sentido horario, obtenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F}(x, y) \, \mathrm{d}{\bf s} = 
+\int_{{\bf c}_2} {\bf F}(x, y) \, \mathrm{d}{\bf s} - \int_{{\bf c}_1} {\bf F}(x, y) \, \mathrm{d}{\bf s} =
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \int_a^b F_x(x, y_2(x)) \, \mathrm{d}x - \int_a^b F_x(x, y_1(x)) \, \mathrm{d}x =   \\ \int_R \frac{\partial F_x(x, y)}{\partial y} \mathrm{d}x \mathrm{d}y
+\end{split}\]</div>
+<p>Si consideramos el sentido anti-horario, implica un cambio de signo en el lado derecho de la igualdad:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} \left(F_x(x, y), 0 \right) \mathrm{d} {\bf s} = \int_{R} -\frac{\partial F_x(x, y)}{\partial y} \mathrm{d}x \mathrm{d}y
+\]</div>
+<p>con lo que hemos verificado el lema.</p>
+<p><em>Ejercicio</em>: Verificar ahora este segundo lema:</p>
+<p><strong>Lema</strong>: La integral de la función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = \left( 0, F_y(x, y) \right)\)</span> a lo largo de la curva <span class="math notranslate nohighlight">\({\bf c}\)</span>, que limita una región <span class="math notranslate nohighlight">\(R\)</span>, en sentido anti-horario es:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F}(x, y) \, \mathrm{d}{\bf s} = \oint_{{\bf c}} F_y(x, y) \, \mathrm{d} y = \int \frac{\partial F_y(x, y)}{\partial x} \mathrm{d}x\mathrm{d}y
+\]</div>
+<p>Con la demostración de ambos lemas, queda demostrado el teorema de Green.</p>
+<p><strong>Corolario:</strong> La integral en sentido anti-horario de la función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = \left( - y, x \right) /2\)</span> a lo largo de la línea frontera <span class="math notranslate nohighlight">\({\bf c}\)</span> de una región <span class="math notranslate nohighlight">\(R\)</span> corresponde a su área:</p>
+<p>El término que aparece en el teorema de Green es:</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{\partial F_y(x, y)}{\partial x} - \frac{\partial F_x (x, y)}{\partial y} \right) = \frac{1}{2} + \frac{1}{2} = 1
+\]</div>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} \frac{1}{2}(-y, x)\, \mathrm{d} {\bf s} = 
+\oint_{{\bf c}} -\frac{y}{2} \, \mathrm{d}x + \frac{x}{2} \mathrm{d}y = 
+\int_{R} \mathrm{d}x \mathrm{d}y
+\]</div>
+<p><strong>Ejercicio</strong>: Verificar el teorema de Green con la función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = (x, y)\)</span> en el disco de radio unidad.</p>
+<p>El término de la derecha del teorema de Green es:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_y(x, y)}{\partial x} - \frac{\partial F_x(x, y)}{\partial y} = 0
+\]</div>
+<p>Para la parametrización de la circunferencia, en sentido anti-horario:</p>
+<div class="math notranslate nohighlight">
+\[
+t \in [0, 2 \pi), \; {\bf c}(t) = \left( \cos t, \sin t\right)
+\]</div>
+<p>La integral de línea:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{\bf c} (x, y) \, \mathrm{d}{\bf s} = \int_0^{2\pi} (\cos t, \sin t) \, (-\sin t, \cos t) \, \mathrm{d} t= 0
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mf">1.</span><span class="o">*</span><span class="n">x</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mf">1.</span><span class="o">*</span><span class="n">y</span>
+<span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span>    <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span>    <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">);</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d7c609a2a43aa5bb088888482cc58b0ba0f617bb0465d04c6f3e76fbbb6a6f02.png" src="../_images/d7c609a2a43aa5bb088888482cc58b0ba0f617bb0465d04c6f3e76fbbb6a6f02.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="teorema-de-la-divergencia">
+<h2>Teorema de la divergencia.<a class="headerlink" href="#teorema-de-la-divergencia" title="Permalink to this heading">#</a></h2>
+<p>Vamos a considerar la integral de una función vectorial de dos dimensiones, <span class="math notranslate nohighlight">\({\bf F}({\bf x})\)</span>, <em>a través de</em> una línea cerrada, <span class="math notranslate nohighlight">\({\bf c}(t)\)</span>.</p>
+<p>Dado el elemento vectorial diferencial de arco <span class="math notranslate nohighlight">\(\mathrm{d} {\bf s} = (\mathrm{d}x, \mathrm{d}y)\)</span>, en vez de calcular el productor escalar del campo a lo largo de la trayectoria, <span class="math notranslate nohighlight">\( {\bf F}(x, y) \, \mathrm{d}{\bf s}\)</span>, lo calculamos a través de ella, normal a ella, <span class="math notranslate nohighlight">\({\bf F}(x, y) \, \mathrm{d}{\bf n}\)</span>, donde, <span class="math notranslate nohighlight">\(\mathrm{d}{\bf n}\)</span> es normal a <span class="math notranslate nohighlight">\(\mathrm{d}{\bf s}\)</span>, pero con igual módulo, donde definimos <span class="math notranslate nohighlight">\(\mathrm{d}{\bf n} = ( \mathrm{d}y, -\mathrm{d}x)\)</span>.</p>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{{\bf c}} {\bf F}(x, y) \, \mathrm{d}{\bf n}  = \int_{{\bf c}} F_x(x, y) \, \mathrm{d}y - F_y(x, y) \,\mathrm{d}x
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>   <span class="n">x</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">square</span><span class="p">(</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;g&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span>              <span class="p">,</span>  <span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span>       <span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">xside</span>      <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span>        <span class="p">,</span>  <span class="mf">0.2</span><span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span>       <span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span>              <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span>        <span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span>              <span class="p">,</span>  <span class="mf">0.0</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">xside</span>      <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.2</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span>              <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/591ebc812b64c5311aee7be1267f318992e0449ff768e7103d59436b7096f1e2.png" src="../_images/591ebc812b64c5311aee7be1267f318992e0449ff768e7103d59436b7096f1e2.png" />
+</div>
+</div>
+<p>Que podemos calcular a partir de la parametrización de la curva:
+<span class="math notranslate nohighlight">\({\bf c}(t) = (x(t), y(t))\)</span>, con <span class="math notranslate nohighlight">\(t \in [t_0, t_1]\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}{\bf n} = (\mathrm{d}y, -\mathrm{d}x) \to (\dot{y}(t), - \dot{x}(t)) \, \mathrm{d}t
+\]</div>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{{\bf c}} {\bf F}(x, y) \, \mathrm{d}{\bf n}  = \int_{t_0}^{t_1} \left( F_x(x(t), y(t)), \, F_y(x(t), y(t)) \right)  \, \left( \dot{y}(t), - \dot{x}(t) \right) \mathrm{d}t
+\]</div>
+<p>Si aplicamos el teorema de Green a una curva cerrada recorrida en sentido anti-horario, <span class="math notranslate nohighlight">\(\mathrm{d}{\bf n} = (\mathrm{d}y, - \mathrm{d}x)\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F}(x, y) \, \mathrm{d}{\bf n}  = \int_{{\bf c}} F_x(x, y) \, \mathrm{d}y - F_y(x, y) \,\mathrm{d}x
+\]</div>
+<p>Si llamamos, por visibilidad, <span class="math notranslate nohighlight">\(G_x = - F_y, \; G_y = F_x\)</span>, y aplicamos el teorema de Green:</p>
+<div class="math notranslate nohighlight">
+\[
+= \int_{{\bf c}} G_x \mathrm{d} x + G_y \mathrm{d}y =  \int_{R} \left( \frac{\partial G_y}{\partial x} - \frac{\partial G_x}{\partial y}\right) \mathrm{d}x\mathrm{d}y
+\]</div>
+<p>Si sustituimos de nuevo <span class="math notranslate nohighlight">\({\bf G}(x, y) = (G_x, G_y) = (-F_y, F_x)\)</span>, tenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F}(x, y) \, \mathrm{d}{\bf n}
+= \int_{R} \left( \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y}\right) \mathrm{d}x\mathrm{d}y
+\]</div>
+<p>que se denomina <strong>teorema de la divergencia</strong>.</p>
+<p><em>Explora</em>: Cómo es la integral de los campos a lo largo y a través de la espira cuadrada centrada en el origen. Dibuja por ejemplo los siguientes campos: <span class="math notranslate nohighlight">\( {\bf F}(x, y) = (\pm x, \pm y)/2\)</span> y <span class="math notranslate nohighlight">\( {\bf F}(x, y) = (\pm y , \pm x)/2\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="o">-</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># + x/2</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># + y/2</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">square</span><span class="p">(</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span>              <span class="p">,</span>  <span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span>       <span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">xside</span>      <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span>        <span class="p">,</span>  <span class="mf">0.2</span><span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span>       <span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span>              <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span>        <span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fbeba4d648c42df3f24fd107532b240494c55ee63eb8be5b18064f90d0d57111.png" src="../_images/fbeba4d648c42df3f24fd107532b240494c55ee63eb8be5b18064f90d0d57111.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">square</span><span class="p">(</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span>              <span class="p">,</span>  <span class="mf">0.0</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">xside</span>      <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.2</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span>              <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.05</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a00cea38b5451b8b97270f2771fabaceb591542a273eca4ece1085d334745976.png" src="../_images/a00cea38b5451b8b97270f2771fabaceb591542a273eca4ece1085d334745976.png" />
+</div>
+</div>
+<section id="apendices">
+<h3>Apéndices<a class="headerlink" href="#apendices" title="Permalink to this heading">#</a></h3>
+<p><strong>Ejercicio</strong>: Verifica el teorema de Green para el campo, <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, x^2)\)</span> en la región definida como: <span class="math notranslate nohighlight">\(\{0 \le x \le 1, \; x^2 \le y \le x \}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">Ex</span>     <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span>
+<span class="n">Ey</span>     <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="n">fx</span>     <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span>   <span class="p">:</span> <span class="n">x</span>
+<span class="n">fy1</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span>   <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="n">fy2</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span>   <span class="p">:</span> <span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy1</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy2</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/a233f06ec55b967a97ccb09d7ecba211723070afc6eaa4191c69800a49b30939.png" src="../_images/a233f06ec55b967a97ccb09d7ecba211723070afc6eaa4191c69800a49b30939.png" />
+</div>
+</div>
+<ol class="arabic simple">
+<li><p>Calculamos</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \to 2x -1
+\]</div>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_R \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \mathrm{d}x \mathrm{d}y
+\to  \int_0^1 \left[ \int_{x}^{x^2} (2x -1) \mathrm{d}y \right] \mathrm{d}x
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^1 (2x-1) \, y \big|_x^{x^2} \mathrm{d}x = \int_0^1 (2x-1) (x-x^2) \mathrm{d}x 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^1 (-2x^3 + 3x^2 -x) \mathrm{d}x = \left(-\frac{x^4}{2} + x^3 - \frac{x}{2} \right) \Big|_0^1 = 0 
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Parametrizamos la línea frontera inferior <span class="math notranslate nohighlight">\({\bf c}_1(x)\)</span> y superior <span class="math notranslate nohighlight">\({\bf c}_2(x)\)</span>:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}_1(x) = (x, x^2), \; \dot{{\bf c}}_1(x) = (1, 2x), \; x \in [0, 1]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}_2(x) = (x, x), \; \dot{{\bf c}}_2(x) = (1, 1), \; x \in [0, 1]
+\]</div>
+<p>2i) La integral del campo, <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, x^2)\)</span> a lo largo de <span class="math notranslate nohighlight">\({\bf c}_1\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_{{\bf c}_1} {\bf F} \, \mathrm{d}{\bf s} \to \int_0^1 (x^2, x^2) \, (1, 2x) \, \mathrm{d}x 
+= \int_0^1 x^2 + 2x^3 \mathrm{d}x \\
+= \left(\frac{x^3}{3} + \frac{x^4}{2} \right) \Big|_0^1 
+= \frac{5}{6}
+\end{split}\]</div>
+<p>2ii) La integral del campo a lo largo de <span class="math notranslate nohighlight">\({\bf c}_2\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_{{\bf c}_2} {\bf F} \, \mathrm{d}{\bf s} \to \int_0^1 (x, x^2) \, (1, 1) \, \mathrm{d}x 
+= \int_0^1 x + x^2 \mathrm{d}x \\
+= \left(\frac{x^2}{2} + \frac{x^3}{3} \right) \Big|_0^1 
+= \frac{5}{6}
+\end{split}\]</div>
+<p>2iii) La integral del campo a lo largo de <span class="math notranslate nohighlight">\({\bf c}_1\)</span> y luego <span class="math notranslate nohighlight">\({\bf c}_2\)</span> (en sentido contrario), de tal forma que recorrarmos la frontera, <span class="math notranslate nohighlight">\({\bf c}\)</span>, en sentido antihorario es:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F} \, \mathrm{d} {\bf s} = \int_{{\bf c}_1} {\bf F} \, \mathrm{d} {\bf s} - \int_{{\bf c}_2} {\bf F} \, \mathrm{d} {\bf s} = \frac{5}{6} - \frac{5}{6} = 0
+\]</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tcalvec_integral_linea.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Integral de línea</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tcalvec_rotdiv_conservativos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Operador Nabla. Campos conservativos</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#indice">Indice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Teorema de Green</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#relacion-entre-integral-de-linea-de-un-campo-vectorial-e-integral-de-superficie">Relación entre integral de línea de un campo vectorial e integral de superficie.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Teorema de Green</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-divergencia">Teorema de la divergencia.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apéndices</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

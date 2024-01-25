@@ -1,0 +1,1041 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Gradiente, matriz jacobiana, funciones diferenciables &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_gradiante_jacobiana';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Cambio de coordenadas y regla de la cadena" href="tderivadas_coordenadas_cadena.html" />
+    <link rel="prev" title="Derivada direccional y funciones diferenciables" href="tderivadas_direccional_diferencial.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tderivadas_gradiante_jacobiana.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tderivadas_gradiante_jacobiana.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tderivadas_gradiante_jacobiana.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tderivadas_gradiante_jacobiana.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Gradiente, matriz jacobiana, funciones diferenciables</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradiente">Gradiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-jacobiana">Matriz Jacobiana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-diferenciable">Función diferenciable</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condicion-suficiente-de-diferenciabilidad">Condición suficiente de diferenciabilidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apendices</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="gradiente-matriz-jacobiana-funciones-diferenciables">
+<h1>Gradiente, matriz jacobiana, funciones diferenciables<a class="headerlink" href="#gradiente-matriz-jacobiana-funciones-diferenciables" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Jan 25 13:36:12 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Presentar los conceptos de</p>
+<ul class="simple">
+<li><p>gradiente y matriz jacobiana</p></li>
+<li><p>definición de función diferenciable</p></li>
+</ul>
+<p>Discutir sobre:</p>
+<ul class="simple">
+<li><p>La condición suficiente de diferenciabilidad</p></li>
+<li><p>las bondades de las funciones diferenciables</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gradiente">
+<h2>Gradiente<a class="headerlink" href="#gradiente" title="Permalink to this heading">#</a></h2>
+<p>Para una función escalar <span class="math notranslate nohighlight">\(f(x, y)\)</span> diferenciable, hemos dado el desarrollo de Taylor en un punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> si nos desplazamos en el espacio origen un vector <span class="math notranslate nohighlight">\((v _x, v_y)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+f((x_0, y_0) + (v_x, v_y)) \simeq f(x_0, y_0) + f'_x(x_0, y_0) v_x + f'_y (x_0, y_0) v_y
+\]</div>
+<p>o lo que es lo mismo:</p>
+<div class="math notranslate nohighlight">
+\[
+f((x_0, y_0) + (v_x, v_y)) \simeq f(x_0, y_0) + \left(f'_x(x_0, y_0), \, f'_y (x_0, y_0) \right) \, (v_x, v_y)
+\]</div>
+<p>Donde la expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+\left(f'_x(x_0, y_0), \, f'_y (x_0, y_0) \right) \, (v_x, v_y)
+\]</div>
+<p>Es el producto escalar entre <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>, el vector desplazamiento; y otro vector, el <strong>gradiente</strong>, <span class="math notranslate nohighlight">\(\nabla f (x_0, y_0)\)</span>,  cuyas componentes son las derivadas parciales:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f(x_0, y_0) = \left(f'_x(x_0, y_0), \, f'_y (x_0, y_0) \right) = \left( \frac{\partial f(x_0, y_0)}{\partial x}, \frac{\partial f (x_0, y_0)}{\partial y} \right)
+\]</div>
+<p>Supongo que ya has visto el gradiente en Física. En el electromagnetismo definimos el campo eléctrico como (menos) el gradiente del potencial.</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf E}({\bf x}) = - \nabla V({\bf x})
+\]</div>
+<p>Puedes revisar que efectivamente es así, a partir de la definición de potencial y campo eléctrico que vimos en la sección sobre funciones escalares y vectoriales.</p>
+<p><em>Ejemplo</em>: La siguiente figura nos muestra los conjuntos de nivel del potencial eléctrico de una carga.
+También nos muestra  el campo eléctrico, (el gradiente cambiado de signo), en un determinado punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span></p>
+<p><em>Explora</em> y cambia el punto y observa como cambia el gradiente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span>  <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.5</span>
+<span class="n">V</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">contours</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">zlim</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">4</span><span class="p">));</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">Ex</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">Ey</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/95182e639da9b70690da5f4e5e9f00d56fc5e4ff641d801b825eea4cca73ea12.png" src="../_images/95182e639da9b70690da5f4e5e9f00d56fc5e4ff641d801b825eea4cca73ea12.png" />
+</div>
+</div>
+<p>Por supuesto, lo que hemos visto para funciones escalares de dos dimensiones para para cualquier dimensión.</p>
+<p>Sea una función <span class="math notranslate nohighlight">\(f({\bf x})\)</span> escalar definida en <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, diremos que es “suave”, si tiene desarrollo de Taylor de primer orden, esto es, la función en un punto <span class="math notranslate nohighlight">\({\bf x}\)</span> próximo a <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, relacionados por un vector “pequeño”, <span class="math notranslate nohighlight">\({\bf v}\)</span> por <span class="math notranslate nohighlight">\({\bf x} = {\bf x}_0 + {\bf v}\)</span>, se puede aproximar por un hyper-plano.</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}_0 + {\bf v} ) \simeq f({\bf x_0}) + \nabla f ({\bf x_0}) \, {\bf v}
+\]</div>
+<p>donde las derivadas parciales son las pendientes en cada dirección, <span class="math notranslate nohighlight">\(f'_i ({\bf x}_0)\)</span>.</p>
+<p><em>Ejercicio</em>: Calcula el gradiente de las siguientes funciones:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(f(x, y) = e^{x + y}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(f(x, y) = \cos x \sin y\)</span></p></li>
+</ol>
+<p><em>Solución</em>:</p>
+<ol class="arabic simple">
+<li><p><span class="math notranslate nohighlight">\(\nabla f(x, y) = \left( e^{x+y}, \; e^{x+y} \right)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\nabla f(x, y) = \left( -\sin x \sin y, \; \cos x \cos y \right)\)</span></p></li>
+</ol>
+<p>El gradiente nos aporta más información sobre la función. Fíjate:</p>
+<p>El término:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f ({\bf x}_0) \, {\bf v} 
+\]</div>
+<p>es un producto escalar que podemos reescribir cómo:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f ({\bf x}_0) \, {\bf v} = || \nabla f({\bf x}_0) || \, ||{\bf v}|| \, \cos \theta
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\theta\)</span> es el ángulo que forman los dos vectores.</p>
+<p>Tenemos ahora dos casos:</p>
+<ol class="arabic simple">
+<li><p>los dos vectores son paralelos, si van en la misma dirección y sentido, es máximo.</p></li>
+</ol>
+<p>Esto es, si el desplazamiento <span class="math notranslate nohighlight">\( {\bf v} \)</span> va en la misma dirección y sentido que el gradiente, el cambio de la función es máximo.</p>
+<ol class="arabic simple" start="2">
+<li><p>los dos vectores son perpendiculares, el término es nulo.</p></li>
+</ol>
+<p>O lo que es lo mismo, la valor función no cambiará ortogonalmente al gradiente.</p>
+<p>Regresemos a la relación entre el campo y el potencial eléctrico:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf E}({\bf x}) = - \nabla V({\bf x})
+\]</div>
+<p>El gradiente entonces indica la dirección y sentido en el que el potencial eléctrico <em>decae</em> más rápidamente.</p>
+<p>Ahora recordemos los conjuntos de nivel, que son aquellos puntos del espacio inicial cuya valor de la función es <span class="math notranslate nohighlight">\(c\)</span>.</p>
+<p>El gradiente va a ser normal a los conjuntos de nivel, porque en los conjuntos de nivel el valor de la función no cambia.</p>
+<p><em>Ejemplo</em>: La siguiente figura nos muestra los conjuntos de nivel de un dipolo eléctrico. También nos muestra  el campo eléctrico, (el gradiente cambiado de signo), en un determinado punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span></p>
+<p><em>Explora</em> y cambia el punto y observa como cambia el gradiente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">common_functions</span> <span class="kn">import</span> <span class="n">edipole</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span>
+<span class="n">V</span><span class="p">,</span> <span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span> <span class="o">=</span> <span class="n">edipole</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">,</span> <span class="mf">0.</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">contours</span><span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">zlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">))</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">Ex</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">Ey</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c09c8883d5bb2c55a99bc863fb41b6e1022f0664a6ecd480b0edc7f3d501c6b9.png" src="../_images/c09c8883d5bb2c55a99bc863fb41b6e1022f0664a6ecd480b0edc7f3d501c6b9.png" />
+</div>
+</div>
+<p>La siguiente celda te permite dibujar el potencial de un conjunto de cargas. El dibujo corresponde a dos cargas negativas situadas en el eje vertical separadas por 2 unidades.</p>
+<p><em>Explora</em> y cambia el punto y observa como cambia el potencial y el gradiente.</p>
+<p><em>Explora</em> y cambia el sistema de cargas para ver como cambia el potencial y el gradiente en un punto.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">common_functions</span> <span class="kn">import</span> <span class="n">esystem</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span> 
+<span class="n">charges</span> <span class="o">=</span> <span class="p">[(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">)]</span>
+<span class="n">V</span><span class="p">,</span> <span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span> <span class="o">=</span> <span class="n">esystem</span><span class="p">(</span><span class="n">charges</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">V</span><span class="p">,</span> <span class="n">contours</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">zlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mf">5.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">))</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">Ex</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">Ey</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ac8c98e92470f99d81fb61c30006caeb2687dbccca831ffd5d3cfa4d0362d417.png" src="../_images/ac8c98e92470f99d81fb61c30006caeb2687dbccca831ffd5d3cfa4d0362d417.png" />
+</div>
+</div>
+</section>
+<section id="matriz-jacobiana">
+<h2>Matriz Jacobiana<a class="headerlink" href="#matriz-jacobiana" title="Permalink to this heading">#</a></h2>
+<p>Una función vectorial es diferenciable, si y solo si, lo son cada una de sus funciones componentes.</p>
+<p>Sea una función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}^m\)</span>, que es diferenciable en un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span></p>
+<p>cada uno de sus funciones componentes debe ser diferenciable, pongamoslas una debajo de la otra:</p>
+<div class="math notranslate nohighlight">
+\[
+f_1( {\bf x}_0 + {\bf v}) \approx f_1({\bf x}_0) + \nabla f_1({\bf x}_0) {\bf v}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\dots
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f_m( {\bf x}_0 + {\bf v}) \approx f_m({\bf x}_0) + \nabla f_m({\bf x}_0) {\bf v}
+\]</div>
+<p>O también:</p>
+<div class="math notranslate nohighlight">
+\[
+f_1( {\bf x}_0 + {\bf v}) \approx f_1({\bf x}_0) + \sum _{i=1, n} \frac{\partial f_1({\bf x}_0)}{\partial x_i} v_i
+\]</div>
+<div class="math notranslate nohighlight">
+\[ 
+\dots
+\]</div>
+<div class="math notranslate nohighlight">
+\[  
+f_m( {\bf x}_0 + {\bf v}) \approx f_m({\bf x}_0) + \sum_{i=1, n} \frac{\partial f_m({\bf x}_0)}{\partial x_i} v_i
+\]</div>
+<p>Que podemos reescribir de forma matricial, colocando <span class="math notranslate nohighlight">\({\bf v}\)</span>, <span class="math notranslate nohighlight">\({\bf f}({\bf x}_0 + {\bf v})\)</span> y <span class="math notranslate nohighlight">\({\bf f}({\bf x}_0)\)</span> como vectores columnas.</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf f} ({\bf x}_0 + {\bf v}) = {\bf f}({\bf x}_0) + {\bf Df}({\bf x}_0) \, {\bf v}
+\]</div>
+<p>Donde <span class="math notranslate nohighlight">\({\bf Df}({\bf x}_0)\)</span> es una matriz cuyos elementos son:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf Df}_{ij}({\bf x}_0) = \frac{\partial f_i ({\bf x_0})}{ \partial x_j}
+\]</div>
+<p><em>Cuestión</em>: Si te fijas en las filas de la matriz jacobiana, ¿a qué corresponden?</p>
+<p><em>Ejercicio</em>: Calcula la matriz jacobiana de la siguiente función vectorial:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf f}(x, y) = \left( e^{x+y}, \cos x \sin y \right)
+\]</div>
+<p><em>Solución</em>:</p>
+<p><span class="math notranslate nohighlight">\({\bf Df}(x, y) = \left( \begin{array}{cc} e^{x+y} &amp; e^{x+y} \\ -\sin x \sin y &amp; \cos x \cos y \end{array} \right)\)</span></p>
+<p>Recapitulemos:</p>
+<ul class="simple">
+<li><p>Si una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span> es diferenciable podemos aproximarla en un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> y en una dirección <span class="math notranslate nohighlight">\({\bf v}\)</span> por :</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}_0 + {\bf v}) \approx f({\bf x}_0) + \nabla f ({\bf x}_0) \, {\bf v}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\nabla f {\bf x}_0\)</span> es el gradiente:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f (x_0, y_0) = \left( \frac{\partial f(x_0, y_0)}{\partial x}, \frac{f (x_0, y_0)}{\partial y} \right)
+\]</div>
+<ul class="simple">
+<li><p>Si una función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span> es diferenciable podemos aproximarla en un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> y en una dirección <span class="math notranslate nohighlight">\({\bf v}\)</span> por:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+{\bf f}({\bf x}_0 + {\bf v}) \approx {\bf f}({\bf x}_0) + {\bf Df}({\bf x}_0) \, {\bf v}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\({\bf Df}({\bf x}_0)\)</span> es la matriz jacobiana:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf Df}_{ij}({\bf x}_0) = \frac{\partial f_i ({\bf x_0})}{ \partial x_j}
+\]</div>
+<p><em>Cuestión</em>: Ya conoces con seguridad de Física al menos una matriz jacobiana. ¿Sabes cuál?</p>
+<p>¡La velocidad!</p>
+<p>Si tenemos una trayectoria de un móvil en el espacio en función del tiempo:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf r}(t) = \left( \begin{array}{c} x(t) \\ y(t) \\ z(t) \end{array} \right) 
+\end{split}\]</div>
+<p>En la noticación anterior, la matriz jacobiana es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf Dr}(t) = {\bf r}'(t) =  \left( \begin{array}{c} x'(t) \\ y'(t) \\ z'(t) \end{array} \right) 
+\end{split}\]</div>
+<p>El desarrollo de Taylor es por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf r}(t_0 + \Delta t) \approx {\bf r}(t_0) + {\bf r}'(t_0) \Delta t
+\]</div>
+<p><em>Ejemplo</em>: La siguiente celda dibuja la línea de un movil a lo largo de una elipse y en un punto su velocidad (su “matriz” jacobiana)</p>
+<p><em>Explora</em>: puedes cambiar el valor de <span class="math notranslate nohighlight">\(t_0\)</span> y observa como cambia la velocidad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span>
+<span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+<span class="n">fx</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span>    <span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">fy</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span>    <span class="n">b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">fxp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="o">-</span><span class="n">w</span><span class="o">*</span><span class="n">a</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">fyp</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span>  <span class="n">w</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span><span class="o">*</span><span class="n">t</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">fy</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">));</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">fx</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span> <span class="n">fy</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span> <span class="n">fxp</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span> <span class="n">fyp</span><span class="p">(</span><span class="n">t0</span><span class="p">));</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="n">b</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">b</span><span class="o">+</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/fb52accd0020ac25d84e4836120b61d7c03c820cceaa8949ec61c554a5286779.png" src="../_images/fb52accd0020ac25d84e4836120b61d7c03c820cceaa8949ec61c554a5286779.png" />
+</div>
+</div>
+</section>
+<section id="funcion-diferenciable">
+<h2>Función diferenciable<a class="headerlink" href="#funcion-diferenciable" title="Permalink to this heading">#</a></h2>
+<p>Hemos visto como son las funciones diferenciables, pero ¿cómo las definimos matemáticamente? ¿cuándo una función será diferenciable?</p>
+<p>Sea <span class="math notranslate nohighlight">\({\bf f}: D \subset \mathbf{R}^n \to \mathbf{R}^m\)</span>, decimos que la función es <strong>diferenciable</strong> en un punto <span class="math notranslate nohighlight">\({\bf x}\)</span> interior a <span class="math notranslate nohighlight">\(D\)</span> si en una bola centrada en <span class="math notranslate nohighlight">\({\bf x}\)</span> de radio <span class="math notranslate nohighlight">\(r\)</span> y para los vectores que cumplen <span class="math notranslate nohighlight">\(\| {\bf v} \| &lt; r\)</span>,  existe una <em>transformación lineal</em> <span class="math notranslate nohighlight">\({\bf T_x}: \mathbf{R}^n \to \mathbf{R}^m\)</span> y una <em>función error</em>, <span class="math notranslate nohighlight">\({\bf E}:\mathbf{R}^n \to \mathbf{R}^m\)</span>,  <span class="math notranslate nohighlight">\({\bf E}({\bf x},{\bf v})\)</span>, tales que:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf f}({\bf x}+{\bf v})  = {\bf f}({\bf x}) + {\bf T_x}({\bf v} )+ \| {\bf v} \| {\bf E}({\bf x},{\bf v}) 
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\({\bf E}({\bf x}, {\bf v  })\)</span> es una función error de orden <span class="math notranslate nohighlight">\(\mathcal{O}(\| {\bf v} \|)\)</span>, que cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{{\bf v} \to {\bf 0}} {\bf E(x,v)} = {\bf 0} 
+\]</div>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{{\bf v} \to {\bf 0}} \frac{ {\bf f}({\bf x}+{\bf v}) - {\bf f} ({\bf x}) - {\bf T_x}({\bf v} )}{\| {\bf v} \|}  = \lim_{{\bf v} \to {\bf 0}} {\bf E(x,v)} = {\bf 0} 
+\]</div>
+<p>A <span class="math notranslate nohighlight">\({\bf T_x}\)</span> se llama diferencial o <strong>derivada</strong> de <span class="math notranslate nohighlight">\({\bf f}\)</span> en <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+<p>La expresión anterior es el <strong>desarrollo de Taylor</strong> de primer orden de <span class="math notranslate nohighlight">\({\bf f}({\bf x}+{\bf v})\)</span></p>
+<p><span class="math notranslate nohighlight">\({\bf T_x}\)</span> es la <strong>derivada</strong> de <span class="math notranslate nohighlight">\({\bf f}\)</span> en <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+<ul class="simple">
+<li><p>Si se trata de una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, es un <strong>gradiente</strong>, <span class="math notranslate nohighlight">\(\nabla f({\bf x})\)</span>.</p></li>
+<li><p>Si se trata de una función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>, es <strong>la matriz jacobiana</strong>, <span class="math notranslate nohighlight">\({\bf Df}({\bf x})\)</span></p></li>
+</ul>
+<p>Y te adelanto que:</p>
+<p><span class="math notranslate nohighlight">\({\bf T_x}({\bf v})\)</span> es la <strong>derivada direccional</strong> de <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span> en el punto <span class="math notranslate nohighlight">\({\bf x}\)</span> y la dirección <span class="math notranslate nohighlight">\({\bf v}\)</span></p>
+<ul class="simple">
+<li><p>Si se trata de un función escalar, <span class="math notranslate nohighlight">\({\bf T_x}({\bf v})  = \nabla f({\bf x}) {\bf v}\)</span>.</p></li>
+<li><p>Si se trata de una función vectorial, <span class="math notranslate nohighlight">\({\bf T_x}({\bf v}) = {\bf Df}({\bf x}) {\bf v}\)</span></p></li>
+</ul>
+<p><strong>Propiedades de las funciones diferenciables</strong></p>
+<p><em>Ejercicios</em>: Intenta ahora demostrar los siguientes teoremas:</p>
+<p><em>Teorema</em></p>
+<p>Si una función <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}^m\)</span> es diferenciable en un punto interior <span class="math notranslate nohighlight">\({\bf x}\)</span>, entonces en continua en ese punto.</p>
+<p><em>Teorema</em></p>
+<p>Si una función <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}^m\)</span> es diferenciable en un punto interior <span class="math notranslate nohighlight">\({\bf x}\)</span>, su derivada direccional a lo largo de un vector <span class="math notranslate nohighlight">\({\bf v}\)</span> viene dada por:</p>
+<ul class="simple">
+<li><p>si la función es escalar</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+f'({\bf x}; {\bf v}) = \nabla f ({\bf x}) \, {\bf v}
+\]</div>
+<ul class="simple">
+<li><p>si la función es vectorial</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+{\bf f}'({\bf x}; {\bf v}) = {\bf Df} ({\bf x}) \, {\bf v}
+\]</div>
+<p><em>Teorema:</em>  Sean <span class="math notranslate nohighlight">\({\bf f,g}\)</span> dos funciones vectoriales definidas en <span class="math notranslate nohighlight">\(S\subset \mathbf{R}^n \to\mathbf{R}^m\)</span>; <span class="math notranslate nohighlight">\(f, g\)</span> dos campos escalares definidos en <span class="math notranslate nohighlight">\(S'\subset \mathbf{R}^n \to \mathbf{R}\)</span> y <span class="math notranslate nohighlight">\(\lambda\)</span> un número real. Si son diferenciables en un punto <span class="math notranslate nohighlight">\({\bf x}\)</span>, la siguientes funciones también lo son, con la siguiente derivada:</p>
+<div class="math notranslate nohighlight">
+\[
+i ) \;\;\;  {\bf f(x)} + {\bf g(x)};  \;\;\; {\bf D[f+g](x)} = {\bf Df(x)} + {\bf Dg(x)} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ii) \;\;\;  \lambda\, {\bf f(x)}; \;\;\; {\bf D[} \lambda \, {\bf f]} ({\bf x}) = \lambda \, {\bf Df(x)} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+iii) \;\;\; f ({\bf x}) \, g ({\bf x}); \;\;\; \nabla [f ({\bf x}) \, g({\bf x})] = \nabla f({\bf x}) \, g({\bf x}) + f({\bf x}) \, \nabla g({\bf x}) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+iv) \;\;\; f ({\bf x})/g ({\bf x}); \;\;\; {\text si } \; g({\bf x}) \not= 0\;\;\; \nabla [f({\bf x})/g({\bf x})] = 
+\frac{\nabla f({\bf x}) g({\bf x}) - f({\bf x}) \nabla g({\bf x})}{g^2({\bf x})} 
+\]</div>
+<section id="condicion-suficiente-de-diferenciabilidad">
+<h3>Condición suficiente de diferenciabilidad<a class="headerlink" href="#condicion-suficiente-de-diferenciabilidad" title="Permalink to this heading">#</a></h3>
+<p>Si recuerdas un función real de una dimensión, <span class="math notranslate nohighlight">\(f(x)\)</span>, era diferenciable, tenía desarrollo de Taylor, en un punto interior, <span class="math notranslate nohighlight">\(x\)</span>, si su derivada, <span class="math notranslate nohighlight">\(f'(x)\)</span>, era continua en un intervalo centrado en ese punto <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Ahora para funciones escalares, se cumple:</p>
+<p><em>Teorema</em>:</p>
+<p>Una función <span class="math notranslate nohighlight">\(f({\bf x})\)</span> definida en un dominio <span class="math notranslate nohighlight">\(D \subset \mathrm{R}^n \to \mathrm{R}\)</span> es diferenciable si sus derivadas parciales, <span class="math notranslate nohighlight">\(f'_{x_i}({\bf x})\)</span>, son continuas en una bola en torno a <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+<p><em>Cuestión</em>: En la siguiente celda están dibujadas dos funciones escalares, <span class="math notranslate nohighlight">\(f(x, y)\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^2 \to \mathrm{R}\)</span>, una de ellas es diferenciable en todo el dominio y la otra no. ¿Sabes cual es la diferenciable?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:70: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/ff7a4d17fa120ec7e3235c5202dde7831ff48a21202c0fd0d1c4db51205866f0.png" src="../_images/ff7a4d17fa120ec7e3235c5202dde7831ff48a21202c0fd0d1c4db51205866f0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun2</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/19f4566154e23cc60476fd00b31049c62fcae2e80b9108fa07017c34468b4aa8.png" src="../_images/19f4566154e23cc60476fd00b31049c62fcae2e80b9108fa07017c34468b4aa8.png" />
+</div>
+</div>
+<p><strong>¡Esto es todo por ahora!</strong></p>
+</section>
+</section>
+<section id="apendices">
+<h2>Apendices<a class="headerlink" href="#apendices" title="Permalink to this heading">#</a></h2>
+<p><em>Demostración</em> de la condición suficiente de diferenciabilidad</p>
+<p>Lo demostraremos solamente en funciones escalares.</p>
+<p>Queremos comprobar que</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x} + {\bf v}) - f({\bf x}) - \nabla f({\bf x}) {\bf v} = {\bf E}({\bf x}, {\bf v})
+\]</div>
+<p>y que</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{{\bf v} \to {\bf 0}} {\bf E}({\bf x}, {\bf v}) = 0
+\]</div>
+<p>Sea el vector <span class="math notranslate nohighlight">\({\bf v}\)</span> con norma <span class="math notranslate nohighlight">\(\lambda\)</span> y vector unitario <span class="math notranslate nohighlight">\({\bf u}\)</span>. Construimos <span class="math notranslate nohighlight">\(n+1\)</span> vectores <span class="math notranslate nohighlight">\({\bf v}_i\)</span>, que van incorporando sucesivamente cada coordenada de <span class="math notranslate nohighlight">\({\bf v}\)</span>, empezando por <span class="math notranslate nohighlight">\({\bf v}_0 = {\bf 0}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf v}  =  \lambda {\bf u}, \; \mathrm{con:  }\; \parallel {\bf u} \parallel = 1, \; \parallel {\bf v} \parallel = \lambda; \; {\bf v} = \lambda \sum_{k=1}^n u_{k} {\bf e}_k 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf v}_0 =  {\bf 0} , \; {\bf v}_k  = \sum_{i=1}^k \lambda u_k; \;\; k=1,\dots,n; \; {\bf v}_n = {\bf v}
+\]</div>
+<p>Consideramos, por comodidad, los vectores:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf b}_k =  {\bf x} + {\bf v}_k, \; {\bf b}_k = {\bf b}_{k-1} + \lambda u_k {\bf e}_k, \; k = 1, \dots, n
+\]</div>
+<p>Reescribimos la parte izquierda de la igualdad con una suma telescópica:</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}+{\bf v}) - f({\bf x})  = f({\bf x} + {\bf v}_n) - f({\bf x} + {\bf v}_{n-1}) + \dots + f({\bf x}+{\bf v}_1) -f({\bf x}+{\bf v}_0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+  = \sum_{k=1}^n f({\bf x} + {\bf v}_k)-f({\bf x}+{\bf v}_{k-1})  =  \sum_{k=1}^n f({\bf b}_{k} )-f({\bf b}_{k-1}) 
+  =  \sum_{k=1}^n f({\bf b}_{k-1} + \lambda u_k {\bf e}_k)-f({\bf b}_{k-1})  
+\]</div>
+<p>Cada sumando, por ejemplo: <span class="math notranslate nohighlight">\(f({\bf b}_{k-1} + \lambda u_k {\bf e}_k)-f({\bf b}_{k-1})\)</span>, es una función de una dimensión, en la coordenada <span class="math notranslate nohighlight">\(k\)</span>.
+Podemos aplicar por lo tanto el teorema del valor medio en un punto <span class="math notranslate nohighlight">\({\bf c}_k\)</span> entre <span class="math notranslate nohighlight">\({\bf b}_{k-1} + \lambda u_k {\bf e}_k\)</span> y <span class="math notranslate nohighlight">\({\bf b}_{k-1}\)</span> y siendo la anchura del intervalo <span class="math notranslate nohighlight">\(\lambda u_k\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  =  \sum_{k=1}^n f({\bf b}_{k-1} + \lambda u_k {\bf e}_k)-f({\bf b}_{k-1})   = \sum_{k=1}^n \lambda u_k f'_{k}({\bf c}_{k})
+\]</div>
+<p>Introducimos un sumando nulo por conveniencia, <span class="math notranslate nohighlight">\(\sum_{k=1}^n \lambda u_k \, [f'_k({\bf x}) -f'_k({\bf x})]\)</span>, con el fin de obtener el término <span class="math notranslate nohighlight">\(\nabla f({\bf x}) \, {\bf v}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+  =  \sum_{k=1}^n \lambda u_k \, f'_k({\bf c}_k) + \sum_{k=1}^n \lambda u_k \, [f'_k({\bf x}) -f'_k({\bf x})]
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ = \nabla f({\bf x}) \cdot {\bf v} + \lambda \sum_{k=1}^{n} [f'_k({\bf c}_k)-f'_k({\bf x}) ] u_k 
+\]</div>
+<p>Si recuperamos la expresión de función diferenciable:</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x} + {\bf v}) =  f({\bf x}) + \nabla f({\bf x}) \, {\bf v} + \parallel {\bf v} \parallel E({\bf x}, {\bf v}); \; \mathrm{donde: }\; E({\bf x},{\bf v}) = \sum_{k=1}^{n} [f'_k({\bf c}_k)-f'_k({\bf x})] u_k 
+\]</div>
+<p>Cuando <span class="math notranslate nohighlight">\({\bf v} \to 0, \; \lambda \to 0\)</span>, entonces <span class="math notranslate nohighlight">\(\forall k, \: {\bf c}_k \to {\bf x}\)</span>.</p>
+<p><em>Si las derivadas parciales</em>, <span class="math notranslate nohighlight">\(f'_k({\bf x})\)</span>, <em>son continuas</em> entoces <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\(E({\bf x},{\bf v}) \to 0\)</span>.
+Luego la función es diferenciable. Q.E.D</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tderivadas_direccional_diferencial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Derivada direccional y funciones diferenciables</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tderivadas_coordenadas_cadena.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Cambio de coordenadas y regla de la cadena</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#gradiente">Gradiente</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#matriz-jacobiana">Matriz Jacobiana</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcion-diferenciable">Función diferenciable</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#condicion-suficiente-de-diferenciabilidad">Condición suficiente de diferenciabilidad</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apendices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

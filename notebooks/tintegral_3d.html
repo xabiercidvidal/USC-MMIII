@@ -1,0 +1,948 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Integrales en varias dimensiones &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tintegral_3d';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integral de línea" href="tcalvec_integral_linea.html" />
+    <link rel="prev" title="Integrales en dos dimensiones" href="tintegral_2d.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_lineas_superficies.html">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tintegral_3d.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tintegral_3d.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tintegral_3d.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tintegral_3d.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Integrales en varias dimensiones</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-de-la-integral-a-3d">Extensión de la integral a 3D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-en-volumenes-que-no-son-un-prisma">Integrales en volumenes que no son un prisma.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables">Cambio de variables</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="integrales-en-varias-dimensiones">
+<h1>Integrales en varias dimensiones<a class="headerlink" href="#integrales-en-varias-dimensiones" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Jan 25 13:40:35 2024
+</pre></div>
+</div>
+</div>
+</div>
+<p>Estructura del tema:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://youtu.be/x4rNgrcBNEEIntegral">[&gt;]</a> Integral en 3D</p>
+<ul>
+<li><p>Ejemplo de integral en un volumen dado.</p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://youtu.be/_zcybsGfcu8">[&gt;]</a> Cambio de variables</p></li>
+</ul>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Extender la integral de una función escalar de dos dimensions.</p>
+<p>Definición de regiones en varias dimensiones.</p>
+<p>Extender cómo integrar con un cambio de variables.</p>
+<p>Mostrar algunos ejemplos sencillos</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="extension-de-la-integral-a-3d">
+<h2>Extensión de la integral a 3D<a class="headerlink" href="#extension-de-la-integral-a-3d" title="Permalink to this heading">#</a></h2>
+<p>Sea una función escalar, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, y un prisma dado por: <span class="math notranslate nohighlight">\([a, b] \times [c, d] \times [e, f]\)</span>. La integral de la función en el prisma es:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{V} f(x, y, z) \, \mathrm{d}x \mathrm{d}y \mathrm{d}z = \int_a^b \int_c^d \int_e^f f(x, y, z) \, \mathrm{d}x \mathrm{d}y \mathrm{d}z
+\]</div>
+<p>El <strong>teorema de Fubini</strong> nos asegura que podemos integrar en el orden que deseemos.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \int_c^d \int_e^f f(x, y, z) \, \mathrm{d}x \mathrm{d}y \mathrm{d}z = 
+\int_a^b \left[ \int_c^d \left[ \int_e^f f(x, y, z) \, \mathrm{d}z \right] \mathrm{d}y \right]  \mathrm{d}x 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_e^f \left[ \int_c^d \left[ \int_a^b f(x, y, z) \, \mathrm{d}x \right] \mathrm{d}y \right]  \mathrm{d}z = \; ...
+\]</div>
+<section id="integrales-en-volumenes-que-no-son-un-prisma">
+<h3>Integrales en volumenes que no son un prisma.<a class="headerlink" href="#integrales-en-volumenes-que-no-son-un-prisma" title="Permalink to this heading">#</a></h3>
+<p>Considera el siguiente volumen limitado por superficie <span class="math notranslate nohighlight">\(z = x^2 + y^2\)</span> hasta <span class="math notranslate nohighlight">\(z = 2\)</span>, con <span class="math notranslate nohighlight">\(x \ge 0\)</span> e <span class="math notranslate nohighlight">\(y \ge 0\)</span>.</p>
+<p>La siguiente figura te muestra este volumen.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">xfun</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">r</span>
+<span class="n">ztop</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">r</span> <span class="c1"># this is trick</span>
+<span class="n">cero</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="mi">0</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">r</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">ztop</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">cero</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">cero</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/ee392bd4f762762b51a74690188c734b3b9baf6a7b72f9b079adc9a0c8d046cc.png" src="../_images/ee392bd4f762762b51a74690188c734b3b9baf6a7b72f9b079adc9a0c8d046cc.png" />
+</div>
+</div>
+<p>Vamos a definir el anterior volumen como tipo I.</p>
+<p>En la figura se muestra la tapa superor, que nos permite determinar el rango de integración.
+El intervalo en <span class="math notranslate nohighlight">\(x\)</span> en <span class="math notranslate nohighlight">\([0, \sqrt{2}]\)</span>. Mientras que fijado un valor de <span class="math notranslate nohighlight">\(x\)</span>, el intervalo de <span class="math notranslate nohighlight">\(y\)</span> es <span class="math notranslate nohighlight">\([0, \sqrt{2 - x^2}]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">ztop</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">cero</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">cero</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/29f085a4042af3df8610db09218d66c568245d96ff897f3a61f6a31b2ca06467.png" src="../_images/29f085a4042af3df8610db09218d66c568245d96ff897f3a61f6a31b2ca06467.png" />
+</div>
+</div>
+<p>En la figura se muestra el segmento en <span class="math notranslate nohighlight">\(z\)</span> de integracción fijado un punto <span class="math notranslate nohighlight">\((x, y)\)</span>, que corresponde a <span class="math notranslate nohighlight">\([x^2 + y^2, 2].\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span> <span class="o">-</span> <span class="n">x0</span><span class="o">*</span><span class="n">x0</span><span class="p">))</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">xline</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">t</span> 
+<span class="n">yline</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">t</span>
+<span class="n">zline</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="p">(</span><span class="mi">1</span> <span class="o">-</span> <span class="n">t</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x0</span><span class="o">*</span><span class="n">x0</span> <span class="o">+</span> <span class="n">y0</span><span class="o">*</span><span class="n">y0</span><span class="p">)</span> <span class="o">+</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">t</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">ztop</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">cero</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">cero</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span> <span class="n">yline</span><span class="p">,</span> <span class="n">zline</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/dfeaed60656f81a33c52d3648f545931fbd59f6b4f2494ce312f6db51082dda2.png" src="../_images/dfeaed60656f81a33c52d3648f545931fbd59f6b4f2494ce312f6db51082dda2.png" />
+</div>
+</div>
+<p>El volumen queda definido como:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ 0 \le x \le \sqrt{2}, \; 0 \le y \le \sqrt{2-x^2}, \; x^2 + y^2 \le z \le 2 \}
+\]</div>
+<p>Luego la integral queda:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{\sqrt{2}} \left[ \int_0^{\sqrt{2-x^2}} \left[ \int_{x^2+y^2}^2 f(x, y, z) \, \mathrm{d}z \right]\mathrm{d}y\right] \mathrm{d}x
+\]</div>
+<p>En 3 dimensiones podemos definir un volumen con 6 tipos distintos, de forma simular a cómo definimos las regiones en 2 dimensiones.</p>
+<p>Por ejemplo, el volumen de tipo I sería:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ a \le x \le b, \, \phi_0(x) \le y \le \phi_1(x), \, \gamma_0(x, y) \le z \le \gamma_1(x, y) \}
+\]</div>
+<p>donde el intervalo de integración en <span class="math notranslate nohighlight">\(x\)</span> es <span class="math notranslate nohighlight">\([a, b]\)</span>. Fijado un valor de <span class="math notranslate nohighlight">\(x\)</span>, los límites de integración en <span class="math notranslate nohighlight">\(y\)</span> vienen dados por las funciones reales <span class="math notranslate nohighlight">\([\phi_0(x), \phi_1(x)]\)</span>. Y finalmente, fijado un punto <span class="math notranslate nohighlight">\((x, y)\)</span>, los límites de integración en <span class="math notranslate nohighlight">\(z\)</span> están dados por las funciones escalares <span class="math notranslate nohighlight">\([\gamma_0(x, y), \gamma_1(x, y)]\)</span>.</p>
+<p>La integral es:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_a^b \left[ \int_{\phi_0(x)}^{\phi_1(x)} \left[ \int_{\gamma_0(x, y)}^{\gamma_1(x,y)} f(x, y, z) \, \mathrm{d}z \right] \mathrm{d}y \right] \mathrm{d}x
+\]</div>
+<p>En el caso en que <span class="math notranslate nohighlight">\(f(x, y, z) = 1\)</span>, la integral corresponde al volumen.</p>
+<p><em>Ejercicio</em>: Integra la función <span class="math notranslate nohighlight">\(f(x, y, z) = x\)</span> en el volumen anterior.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{\sqrt{2}} \left[ \int_0^{\sqrt{2-x^2}} \left[ \int_{x^2+y^2}^2 x \, \mathrm{d}z \right] \mathrm{d}y \right] \mathrm{d}x 
+= \int_0^{\sqrt{2}} \left[ \int_0^{\sqrt{2-x^2}} x \, z \Big|_{x^2+y^2}^2 \mathrm{d}y\right] \mathrm{d}x 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^{\sqrt{2}} \left[ \int_0^{\sqrt{2-x^2}} x \, (2-  x^2- y^2) \mathrm{d}y\right] \mathrm{d} x 
+= \int_0^{\sqrt{2}} \left. x(2-x^2) y - x \frac{y^3}{3} \right|_0^{\sqrt{2-x^2}}  \mathrm{d}x 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^{\sqrt{2}}  \frac{2x}{3}(2-x^2)^{3/2} \mathrm{d} x 
+= \left. -\frac{2}{15} (2-x^2)^{5/2} \right|_0^{\sqrt{2}}
+= \frac{8}{15} \sqrt{2}
+\]</div>
+<p>Vamos a redefinir el volumen de otro tipo.</p>
+<p>El rango en <span class="math notranslate nohighlight">\(z\)</span> es <span class="math notranslate nohighlight">\([0, 2]\)</span>.</p>
+<p>La figura muestra el plano <span class="math notranslate nohighlight">\((x, y)\)</span> una vez fijado un valor de <span class="math notranslate nohighlight">\(z\)</span>. El rango, por ejemplo, de <span class="math notranslate nohighlight">\(y\)</span> es <span class="math notranslate nohighlight">\([0, \sqrt{z}]\)</span>.</p>
+<p>De la ecuación <span class="math notranslate nohighlight">\(z = x^2 + y^2\)</span>, con <span class="math notranslate nohighlight">\(x = 0\)</span>, <span class="math notranslate nohighlight">\(y = \sqrt{z}\)</span></p>
+<p>La figura también muestra el segmento en <span class="math notranslate nohighlight">\(x\)</span> una vez fijado un punto <span class="math notranslate nohighlight">\((y, z)\)</span>. El rango en <span class="math notranslate nohighlight">\(x\)</span> es <span class="math notranslate nohighlight">\([0, \sqrt{z - y^2}]\)</span>.</p>
+<p>De la ecuación <span class="math notranslate nohighlight">\(x = x^2 + y^2\)</span>, <span class="math notranslate nohighlight">\(z = \sqrt{z - y^2}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="mf">2.</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z0</span><span class="p">)</span>
+<span class="n">xval</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z0</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yval</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z0</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zval</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z0</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">r</span>
+<span class="n">xline</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">z0</span> <span class="o">-</span> <span class="n">y0</span><span class="o">*</span><span class="n">y0</span><span class="p">)</span> <span class="o">*</span> <span class="n">t</span> 
+<span class="n">yline</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">t</span>
+<span class="n">zline</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span> <span class="p">:</span> <span class="n">z0</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">t</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">ztop</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">cero</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">cero</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xval</span><span class="p">,</span> <span class="n">yval</span><span class="p">,</span> <span class="n">zval</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">xline</span><span class="p">,</span> <span class="n">yline</span><span class="p">,</span> <span class="n">zline</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax  = plt.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/7e6d96acac981d654de98233e80550cecd26f4435ab6d99827c3b0b7ae39ac41.png" src="../_images/7e6d96acac981d654de98233e80550cecd26f4435ab6d99827c3b0b7ae39ac41.png" />
+</div>
+</div>
+<p>El volumen se puede redefinir como:</p>
+<div class="math notranslate nohighlight">
+\[
+\{0 \le z \le 2, \; 0 \le y \le \sqrt{z}, \, 0 \le x \le \sqrt{z-y^2} \}
+\]</div>
+<p>La integral queda:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2 \left[ \int_0^{\sqrt{z}} \left[ \int_0^{\sqrt{z-y^2}} f(x, y, z) \, \mathrm{d}x \right]\mathrm{d}y\right] \mathrm{d}z
+\]</div>
+<p><em>Ejercicio</em>: Repite la integral de <span class="math notranslate nohighlight">\(f(x, y, z) = x\)</span> con la nueva definición del volumen.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2 \left[ \int_0^{\sqrt{z}} \left[ \int_0^{\sqrt{z-y^2}} x \, \mathrm{d}x \right]\mathrm{d}y\right] \mathrm{d}z
+= \int_0^2 \left[ \int_0^{\sqrt{z}} \left. \frac{x^2}{2} \right|_0^{\sqrt{z-y^2}} \mathrm{d}y\right] \mathrm{d}z
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^2 \left[ \int_0^{\sqrt{z}} \frac{z-y^2}{2} \mathrm{d}y \right] \mathrm{d}z
+= \int_0^2 \left. \frac{z}{2}y -\frac{y^3}{6} \right|_0^{\sqrt{z}} \mathrm{d}z
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^2 \frac{1}{3} z^{3/2}\mathrm{d}z
+= \left. \frac{2}{15} z^{5/2} \right|_0^2 = \frac{8}{15} \sqrt{2}
+\]</div>
+</section>
+</section>
+<section id="cambio-de-variables">
+<h2>Cambio de variables<a class="headerlink" href="#cambio-de-variables" title="Permalink to this heading">#</a></h2>
+<p>En el caso anterior, la integral se resuelve de forma más cómoda en cilíndricas.</p>
+<p>Al igual que vimos en funciones escalares de dos dimensiones. En unas nuevas variables <span class="math notranslate nohighlight">\((u, v, w)\)</span>, con <span class="math notranslate nohighlight">\(x(u, v, w), y (u, v, w), z(u, v, w)\)</span>, viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{V} f(x, y, z) \, \mathrm{d}x \mathrm{d}y \mathrm{d}z 
+= \int_{V'} f(u, v, w) \, |J| \, \mathrm{d}u \mathrm{d}v \mathrm{d}w 
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(V'\)</span> es el volumen y <span class="math notranslate nohighlight">\(f(u, v, w)\)</span> la función en las nuevas variables.</p>
+<p>Mientras que el elemento diferencial de volumen:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}x \mathrm{d}y \mathrm{d}z \to |J| \, \mathrm{d}u \mathrm{d}v \mathrm{d}w 
+\]</div>
+<p>Donde <span class="math notranslate nohighlight">\(|J|\)</span> es el valor absoluto del jacobiano, el determinante de la matriz jacobiana del cambio de variables:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+J = 
+\left| \begin{array}{ccc} 
+\frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} &amp; \frac{\partial x}{\partial w} \\
+\frac{\partial y}{\partial u} &amp; \frac{\partial y}{\partial v} &amp; \frac{\partial y}{\partial w} \\
+\frac{\partial z}{\partial u} &amp; \frac{\partial z}{\partial v} &amp; \frac{\partial z}{\partial w} 
+\end{array}\right|
+\end{split}\]</div>
+<p><strong>Cambio a cilíndricas</strong></p>
+<p>Recordemos que el cambio a cilíndricas es:</p>
+<div class="math notranslate nohighlight">
+\[
+x(r, \phi, z) = r \cos \phi, \; y(r, \phi, z) = r \sin \phi, \; z(r, \phi, z) = z
+\]</div>
+<p>La matriz Jacobiana:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left(\begin{array}{ccc} 
+\cos \phi  &amp; -r \sin \phi &amp; 0 \\
+\sin \phi  &amp; r \cos \phi  &amp; 0 \\
+0 &amp; 0 &amp; 1 \\
+\end{array} \right)
+\end{split}\]</div>
+<p>Y el Jacobiano, <span class="math notranslate nohighlight">\(J = r\)</span></p>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}x \mathrm{d}y \mathrm{d}z \to r \, \mathrm{d}r \mathrm{d}\phi \mathrm{d}z
+\]</div>
+<p><em>Ejercicio</em>: Calcula nuevamente la integral de <span class="math notranslate nohighlight">\(f(x, y, z) = x\)</span> en el volumen anterior en coordenadas cilíndricas.</p>
+<p>El volumen podemos definirlo como en cilíndricas como:</p>
+<div class="math notranslate nohighlight">
+\[
+\{0 \le z \le 2,\; 0 \le \phi \le \pi/2, \, 0 \le r \le \sqrt{z} \}
+\]</div>
+<p>La integral, como <span class="math notranslate nohighlight">\(x = r \cos \phi\)</span>, queda:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2 \left[ \int_0^{\pi/2} \left[ \int_0^{\sqrt{z}} r \cos \phi \, r \mathrm{d}r \right]\mathrm{d}\phi\right] \mathrm{d}z
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2  \sin \phi \Big|_0^{\pi/2} \left. \frac{r^3}{3} \right|_0^{\sqrt{z}}  \mathrm{d}z
+= \int_0^2 \frac{z^{3/2}}{3} \mathrm{d}z 
+= \left. \frac{2}{15} z^{5/2} \right|_0^2 = \frac{8}{15} \sqrt 2
+\]</div>
+<p><strong>Cámbio a esféricas</strong></p>
+<p>Recordemos el cámbio de coordenadas esféricas:</p>
+<div class="math notranslate nohighlight">
+\[
+x(r, \phi, \theta) =  r \cos \phi \sin \theta, \; y(r, \phi, \theta) = r \sin \phi \sin \theta, \;  z(r, \phi, \theta) = r \cos \theta 
+\]</div>
+<p>Y su matriz jacobiana:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left( \begin{array}{ccc} 
+\cos \phi \sin \theta &amp; - r \sin \phi \sin \theta &amp;  r \cos \phi \cos \theta \\
+\sin \phi \sin \theta &amp;   r \cos \phi \sin \theta &amp;  r \sin \phi \cos \theta \\
+          \cos \theta &amp;                         0 &amp; -r \sin \theta  
+\end{array} \right)
+\end{split}\]</div>
+<p>Y el valor absoluto del jacobiano <span class="math notranslate nohighlight">\(|J| = r^2 \sin\theta\)</span></p>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}x\mathrm{d}y\mathrm{d}z \to r^2 \sin\theta \, \mathrm{d}r\mathrm{d}\phi\mathrm{d}\theta
+\]</div>
+<p>El jacobiano:</p>
+<div class="math notranslate nohighlight">
+\[
+J = \cos \theta \left( -r^2 \sin^2 \phi \sin \theta \cos \theta - r^2 \cos^2 \phi \cos \theta \sin \theta \right) - r \sin \theta \left( r \cos^2 \phi \sin^2 \theta + r \sin^2 \phi \sin^2 \theta \right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= -r^2 \sin \theta \cos^2 \theta - r^2 \sin^3 \theta = -r^2 \sin \theta 
+\]</div>
+<p>La siguiente figura muestra el elemento diferencial de volumen en coordenadas esféricas.</p>
+<a class="reference internal image-reference" href="../_images/dv_esfericas.png"><img alt="../_images/dv_esfericas.png" src="../_images/dv_esfericas.png" style="width: 350px;" /></a>
+<p>Los lados del elemento diferencial son: <span class="math notranslate nohighlight">\(\mathrm{d}r\)</span>, <span class="math notranslate nohighlight">\(r\mathrm{d}\theta\)</span>, y <span class="math notranslate nohighlight">\(r \sin \theta \mathrm{d}\phi\)</span>.</p>
+<p><em>Ejercicio</em>: Calcula la integral de <span class="math notranslate nohighlight">\(f(x, y, z) = e ^{(x^2 + y^2 + z^2)^{3/2}}\)</span> en la esfera de radio unidad.</p>
+<p>La definición de la esfera de radio unidad:</p>
+<div class="math notranslate nohighlight">
+\[
+\{ 0 \le r \le 1, \, 0 \le \phi \lt 2 \pi, \, 0 \le \theta \le \pi \}
+\]</div>
+<p>La integral queda:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^1 \int_0^{2\pi} \int_0^\pi e^{r^3} \, r^2 \sin \theta \;\mathrm{d}r \mathrm{d}\theta \mathrm{d} \phi = \phi \big|_0^{2\pi} (-\cos \theta) \big|_0^\pi \frac{1}{3} e^{r^3} \big|_0^1 = \frac{4 \pi}{3} (e-1)
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tintegral_2d.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Integrales en dos dimensiones</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tcalvec_integral_linea.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integral de línea</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#extension-de-la-integral-a-3d">Extensión de la integral a 3D</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-en-volumenes-que-no-son-un-prisma">Integrales en volumenes que no son un prisma.</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables">Cambio de variables</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

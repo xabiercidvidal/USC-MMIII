@@ -1,0 +1,930 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Parametrización de lineas y de superficies &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_parametrizacion_lineas_superficies';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Derivada direccional y funciones diferenciables" href="tderivadas_direccional_diferencial.html" />
+    <link rel="prev" title="Límite y continuidad de funciones escalares y vectoriales" href="tderivadas_limites_continuidad.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensiones</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introduccion.html">Cuestiones iniciales</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidad.html">Límite y continuidad de funciones escalares y vectoriales</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Parametrización de lineas y de superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivada direccional y funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_jacobiana.html">Gradiente, matriz jacobiana, funciones diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadena.html">Cambio de coordenadas y regla de la cadena</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos y máximos de funciones escalares</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Integrales en varias dimensiones</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrales en una dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrales en dos dimensiones</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrales en varias dimensiones</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Cálculo vectorial</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linea.html">Integral de línea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stockes_gauss.html">Teorema de Stockes y Teorema de Gauss</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Series de Fourier</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Series de Fourier</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/jahernando/book-USC-MMIII/master?urlpath=tree/docs/notebooks/tderivadas_parametrizacion_lineas_superficies.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/jahernando/book-USC-MMIII/blob/master/docs/notebooks/tderivadas_parametrizacion_lineas_superficies.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/jahernando/book-USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tderivadas_parametrizacion_lineas_superficies.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tderivadas_parametrizacion_lineas_superficies.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Parametrización de lineas y de superficies</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizacion-de-lineas">Parametrización de líneas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-arco">Longitud de arco</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-parametrizacion-de-superficies">Introducción a la parametrización de superficies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="parametrizacion-de-lineas-y-de-superficies">
+<h1>Parametrización de lineas y de superficies<a class="headerlink" href="#parametrizacion-de-lineas-y-de-superficies" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Jan 25 13:38:41 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Presentar a introducir los conceptos de:</p>
+<ul class="simple">
+<li><p>Parametrización de líneas</p></li>
+<li><p>Parameterización de superficies</p></li>
+</ul>
+<p>Y asociarlos a las trayectorias de móviles en física clásica y a las gráficas de funciones escalares.</p>
+<p>También adelantaremos cálculos como el de la longitud de una línea.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="parametrizacion-de-lineas">
+<h2>Parametrización de líneas<a class="headerlink" href="#parametrizacion-de-lineas" title="Permalink to this heading">#</a></h2>
+<p>Considera la siguiente función:</p>
+<div class="math notranslate nohighlight">
+\[
+ {\bf r} (t) = \left( r \cos \omega \,t \, , \; r \sin \omega \, t \right)  
+\]</div>
+<p>Date cuenta que <strong>es una función vectorial</strong> de <span class="math notranslate nohighlight">\(t \in \mathrm{R} \mapsto {\bf r}(t) \in \mathrm{R}^2\)</span>.</p>
+<p>Puedes asociar esta función a la trayectoria de un móvil a lo largo de una circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span> con velocidad angular <span class="math notranslate nohighlight">\(\omega\)</span> donde la <span class="math notranslate nohighlight">\(t\)</span> sería el tiempo.</p>
+<p>También se trata de la parametrización de una circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>En la siguiente celda dibujamos esta trayectoria, la circunferencia, con <em>Python</em>. Por comodidad tomaremos <span class="math notranslate nohighlight">\(r = 1, \, \omega = 1\)</span> y <span class="math notranslate nohighlight">\(t\)</span> recorrerá el intervalo <span class="math notranslate nohighlight">\([0, 2 \pi]\)</span>. Fíjate en el código.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">r</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/376be12a43057ebcfc43fda3504be73e9e4f7e3519b868c50418e8dd15ee4e3c.png" src="../_images/376be12a43057ebcfc43fda3504be73e9e4f7e3519b868c50418e8dd15ee4e3c.png" />
+</div>
+</div>
+<p>En general, podremos expresar una línea en el espacio, siempre que no se cruce consigo misma, mediante una función vectorial que asigne a valores contiguos de <span class="math notranslate nohighlight">\(t\)</span> dentro de un intervalo, <span class="math notranslate nohighlight">\([t_0, t_{e}]\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}\)</span>, puntos contiguos, <span class="math notranslate nohighlight">\({\bf r}(t)\)</span>, en el espacio <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n &gt;1\)</span>.</p>
+<p>Estoy seguro que en física has parametrizado antes diversas trayectorias, circunferencias, parábolas, hélices y otras más, en función de <span class="math notranslate nohighlight">\(t\)</span>, que era el <em>tiempo</em>.</p>
+<p>La siguiente parametrización corresponde a una hélice en el eje <span class="math notranslate nohighlight">\(z\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+ {\bf r} (t) = \left( r \cos \omega \,t \, , \; r \sin \omega \, t , \; v_z \, t \right)  
+\]</div>
+<p>O también a un móvil, una partícula, que gira en una circunferencia con radio <span class="math notranslate nohighlight">\(r\)</span> y velocidad angular <span class="math notranslate nohighlight">\(\omega\)</span> en el plano <span class="math notranslate nohighlight">\((x, y)\)</span> mientras avanza en el tiempo <span class="math notranslate nohighlight">\(t\)</span>, a lo largo del eje <span class="math notranslate nohighlight">\(z\)</span> con velocidad <span class="math notranslate nohighlight">\(v_z.\)</span></p>
+<p>Vamos a dibujarla. Por comodidad tomamos <span class="math notranslate nohighlight">\(r = 1, \omega =1, v_z =1\)</span> y <span class="math notranslate nohighlight">\(t = [0, 8 \pi]\)</span>. Esto es, dibujamos cuatro vueltas de la circunferencia.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">400</span><span class="p">)</span>
+<span class="n">r</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">vz</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">r</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">r</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">zs</span> <span class="o">=</span> <span class="n">vz</span> <span class="o">*</span> <span class="n">ts</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> 
+<span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span> <span class="o">=</span> <span class="s1">&#39;3d&#39;</span><span class="p">)</span> 
+<span class="c1">#ax = fig.gca(projection=&#39;3d&#39;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">zs</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">);</span> <span class="c1">#plt.axis(&#39;equal&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7eda0b048987867a7f8100baeeed402a59b23a0bdb6bf407c3dd59879f38d5ac.png" src="../_images/7eda0b048987867a7f8100baeeed402a59b23a0bdb6bf407c3dd59879f38d5ac.png" />
+</div>
+</div>
+<p><strong>Explora</strong> cómo cambia la trayectoria variándo los parámetros <span class="math notranslate nohighlight">\(r, \omega, v_z\)</span> y el intervalo de <span class="math notranslate nohighlight">\(t\)</span>.</p>
+<p><strong>Ejercicio</strong>: Intenta parametrizar y dibujar la trayectoria que describe un punto de una rueda de radio <span class="math notranslate nohighlight">\(r\)</span> de una bicicleta caundo esta se desplaza horizontal y en lína recta con velocidad <span class="math notranslate nohighlight">\(v_x\)</span>.</p>
+<p><em>solución</em>:</p>
+<p>En un periodo <span class="math notranslate nohighlight">\(T\)</span> un punto en la rueda ha recorrido <span class="math notranslate nohighlight">\(2 \pi r \)</span> que corresponde a la distancia que el centro de la rueda se ha displazado en <span class="math notranslate nohighlight">\(x\)</span> que es <span class="math notranslate nohighlight">\(v_x T\)</span>.
+Si despejamos la frecuencia de rotación:<span class="math notranslate nohighlight">\( \omega = 2 \pi /T = v_x /r\)</span>.</p>
+<p>El punto empeza en <span class="math notranslate nohighlight">\((0, 0)\)</span>, y el centro de la rueda está en <span class="math notranslate nohighlight">\((0, r)\)</span>.</p>
+<p>Así tenemos:</p>
+<p><span class="math notranslate nohighlight">\(
+x(t) = v_x t - r \sin(v_x t/r) 
+\)</span></p>
+<p><span class="math notranslate nohighlight">\(
+y(t) = r \, (1 - \cos(v_x t/r))
+\)</span></p>
+<p>Es una <em>cicloide</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">v</span><span class="p">,</span> <span class="n">r</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">8</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">r</span><span class="p">,</span> <span class="mi">200</span><span class="p">)</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">v</span><span class="o">*</span><span class="n">ts</span> <span class="o">-</span> <span class="n">r</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">ts</span><span class="o">/</span><span class="n">r</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">ts</span><span class="o">/</span><span class="n">r</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">xxs</span> <span class="o">=</span> <span class="n">r</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">v</span><span class="o">*</span><span class="n">ts</span><span class="o">/</span><span class="n">r</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xxs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">((</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">12.</span><span class="p">));</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">((</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">15.</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">5.</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/8b4039aa97c78ff72ee0a2a76d37221e06ed09875835f11c220f51235be7ee2c.png" src="../_images/8b4039aa97c78ff72ee0a2a76d37221e06ed09875835f11c220f51235be7ee2c.png" />
+</div>
+</div>
+<section id="longitud-de-arco">
+<h3>Longitud de arco<a class="headerlink" href="#longitud-de-arco" title="Permalink to this heading">#</a></h3>
+<p>Fíjate en el código <em>Python</em> con el que dibujamos antes la circunfencia. La figura <em>parece</em> una cincunferencia. Pero en realidad estamos dibujando segmentos que unen puntos de la circunferencia, solo que están tan próximos que el resultado final se <em>aproxima</em> a una circunferencia.</p>
+<p>La siguiente figura muestra una sección de ese dibujo, donde hemos marcados los puntos para que se vean más claros los segmentos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">nbins</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">nbins</span><span class="p">)</span>
+<span class="n">r</span><span class="p">,</span> <span class="n">w</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span> 
+<span class="n">xs</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">w</span> <span class="o">*</span> <span class="n">ts</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="s1">&#39;*-&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span> <span class="s1">&#39;equal&#39;</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">((</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">));</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">((</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.01</span><span class="p">));</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f547c5a7f339cd4ce4d672fc0edc538b6af51179dcbe204a548d5fccbbb66c26.png" src="../_images/f547c5a7f339cd4ce4d672fc0edc538b6af51179dcbe204a548d5fccbbb66c26.png" />
+</div>
+</div>
+<p>Considera ahora que queremos calcular la longitud de la circunferencia a partir de esos segmentos. ¿Sabrías hacerlo? Bastaría con calcular la longitud de cada uno de esos segmentos y luego sumarlos.</p>
+<p>Es lo que hacemos en la siguiente celda. El error que cometemos en la determinación de la longitud depende del número de puntos con los que dibujemos la circunferencia. A mayor número de puntos, menor error.</p>
+<p><strong>Explora</strong>: cuántos puntos hacen falta hasta tener un error menor de 1 por cien mil.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">circunferencia</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbins</span><span class="p">):</span>
+    <span class="n">dx</span> <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">dy</span> <span class="o">=</span> <span class="n">ys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">ys</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+    <span class="n">dr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">dx</span><span class="o">*</span><span class="n">dx</span> <span class="o">+</span> <span class="n">dy</span><span class="o">*</span><span class="n">dy</span><span class="p">)</span>
+    <span class="n">circunferencia</span> <span class="o">+=</span> <span class="n">dr</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;longitud de la circunferencia &#39;</span><span class="p">,</span> <span class="n">circunferencia</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;la longitud de una circunferencia de radio unidad es &#39;</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>longitud de la circunferencia  6.282130832617387
+la longitud de una circunferencia de radio unidad es  6.283185307179586
+</pre></div>
+</div>
+</div>
+</div>
+<p>En este caso, como las funciones componentes de la función vectorial son funciones de una dimensión, sabemos ya operar con ellas, derivarlas y hacer su desarrollo de Taylor.</p>
+<p>Consideremos la parametrización de la circunferencia con radio <span class="math notranslate nohighlight">\(r\)</span>, <span class="math notranslate nohighlight">\(\omega = 1\)</span> e intervalo temporal <span class="math notranslate nohighlight">\([0, 2\pi]\)</span>.
+Las derivadas de la funciones componentes son:</p>
+<div class="math notranslate nohighlight">
+\[
+x(t) = r \cos  t   \rightarrow x'(t) = - r \sin  t 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t) = r \sin  t   \rightarrow y'(t) =   r \cos  t 
+\]</div>
+<p>Y a partir de ellas, hacemos el desarrollo de Taylor de primer orden, desde un tiempo <span class="math notranslate nohighlight">\(t_0\)</span> a un tiempo próximo <span class="math notranslate nohighlight">\(t_0 + \Delta t\)</span>, donde <span class="math notranslate nohighlight">\(\Delta t\)</span> es “pequeño”.</p>
+<div class="math notranslate nohighlight">
+\[
+x(t_0 + \Delta t)  = x(t_0) - r  \sin  t_0  \; \Delta t 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(t_0 + \Delta t)  = y(t_0) + r  \cos  t_0  \; \Delta t 
+\]</div>
+<p>Por lo tanto la distancia entre dos puntos es:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\Delta r   = || {\bf r}(t_0 + \Delta t) - {\bf r}(t_0) || 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\Delta r = \sqrt{r^2  \sin^2 t_0 + r^2 \cos^2 t_0} \, \Delta t = r \, \Delta t
+\]</div>
+<p>Si la diferencia de intervalos temporales es infinitesimal, <span class="math notranslate nohighlight">\(\Delta t \rightarrow \mathrm{d} t\)</span>, la suma de todos los segmentos, <span class="math notranslate nohighlight">\(s\)</span>, se convierte en la integral en <span class="math notranslate nohighlight">\(t\)</span> entre los extremos de su intervalo <span class="math notranslate nohighlight">\([0, 2 \pi)\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+s = \int_{0}^{2 \pi} r \mathrm{d}t = r \, t \, \big|_{0}^{2 \pi} = 2 \pi r 
+\]</div>
+<p>Y obtenemos la longitud de una circunferencia, <span class="math notranslate nohighlight">\(2 \pi r\)</span>.</p>
+<p>Sea entonces una línea <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> en un espacio <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>, parametrizada en función de una variable real <span class="math notranslate nohighlight">\(t\)</span> que toma valores en el intervalo <span class="math notranslate nohighlight">\([t_0, t_e]\)</span>, podemos dar su <strong>longitud de arco</strong>, <span class="math notranslate nohighlight">\(s\)</span>, mediante la integral en una dimensión:</p>
+<div class="math notranslate nohighlight">
+\[
+s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
+\]</div>
+<p>Donde:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf r}' (t) = \left( x'_1(t), \dots, x'_n(t) \right)
+\]</div>
+<p><em>Nota</em>: Date cuenta que <span class="math notranslate nohighlight">\({\bf r}'(t)\)</span> en el caso de que <span class="math notranslate nohighlight">\(t\)</span> sea el tiempo y <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> la trayectoria de un móvil a lo largo del tiempo es ¡<em>la velocidad</em>!</p>
+<p><strong>Ejercicio</strong>: Considera ahora la parametrización anterior de la hélice. ¿Puedes calcular su longitud de arco?</p>
+<p>Es más, ¿podrías <em>re-parametrizar</em> la hélice pero ahora utilizando su longitud?</p>
+<p>Imagina para ello que se trata de un móvil que recorre la hélice con velocidad angular <span class="math notranslate nohighlight">\(\omega = 1\)</span> y velocidad en <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(v_z = 1\)</span>. ¿Puedes decir en qué punto se encuentra el móvil en la hélice cuando haya recorrido una distancia <span class="math notranslate nohighlight">\(s\)</span>? Esto es, ¿puedes dar <span class="math notranslate nohighlight">\({\bf r}(s)\)</span>, donde <span class="math notranslate nohighlight">\(s\)</span> es la longitud recorrida?</p>
+</section>
+</section>
+<section id="introduccion-a-la-parametrizacion-de-superficies">
+<h2>Introducción a la parametrización de superficies<a class="headerlink" href="#introduccion-a-la-parametrizacion-de-superficies" title="Permalink to this heading">#</a></h2>
+<p>Fíjate en la siguiente figura. Es la superficie del lateral de un cilindro vertical cuya base es un disco. Observa cómo está dibujada la superfice.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">zs</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>      <span class="mi">10</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">pms</span><span class="p">,</span> <span class="n">zms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">phis</span><span class="p">,</span> <span class="n">zs</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">xms</span> <span class="o">=</span> <span class="n">r</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pms</span><span class="p">)</span>
+<span class="n">yms</span> <span class="o">=</span> <span class="n">r</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pms</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span>  <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span> <span class="o">=</span> <span class="s1">&#39;3d&#39;</span><span class="p">)</span> <span class="c1"># ax = fig.gca(projection=&#39;3d&#39;)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_zlabel</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">);</span> <span class="c1">#ax.set_aspect(&#39;equal&#39;)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4a667aef4b8d5304b2e7681ed5c3acb911ef49b7b6ae5464f12e064fdb76929e.png" src="../_images/4a667aef4b8d5304b2e7681ed5c3acb911ef49b7b6ae5464f12e064fdb76929e.png" />
+</div>
+</div>
+<p>Si cortases la pared del cilindro a lo largo de una línea vertical y la desplegases, tendrías una hoja cuadriculada.</p>
+<p>Podríamos hacer el proceso al revés. Cogemos una hoja cuadrículada, cuyas coordenadas podemos llamar <span class="math notranslate nohighlight">\((u, v)\)</span>, y la enrollamos hasta obtener un cilíndro. Cada punto en el espacio del cilindro <span class="math notranslate nohighlight">\((x, y, z)\)</span> podemos darlo a partir de <span class="math notranslate nohighlight">\((u, v)\)</span>.</p>
+<p>Esto es, la superficie lateral del cilindro se puede dar, parametrizar, como <strong>una función vectorial</strong> de dos variables <span class="math notranslate nohighlight">\((u, v)\)</span>.</p>
+<p>En general, podemos especificar una superficie en el espacio mediante una función vectorial, <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span>, que asocie puntos contiguos <span class="math notranslate nohighlight">\((u, v)\)</span> en una región <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span> a puntos contiguos en el espacio de tres dimensiones, <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+(u, v) \in \mathcal{R} \subset \mathrm{R}^2 \mapsto \left( x(u,v), \; y(u, v), \; z(u, v) \right) \in \mathrm{R}^3
+\]</div>
+<p>En el caso del cilindro, las variables iniciales son <span class="math notranslate nohighlight">\((\phi, z)\)</span> y la región, <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> está definida por los intervalos <span class="math notranslate nohighlight">\(z \in [0, 10]\)</span> y <span class="math notranslate nohighlight">\(\phi \in [0, 2 \pi)\)</span>. La superficie esta parametrizada con la siguiente función:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(z, \phi) = \left( r \cos \phi, \;  r \sin \phi, \; z \right)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(r\)</span> es una constante. En este caso, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span> no dependen de <span class="math notranslate nohighlight">\(z\)</span>, solo de <span class="math notranslate nohighlight">\(\phi\)</span>.</p>
+<p>Algo similar habíamos ya visto con las gráficas de una función escalar, <span class="math notranslate nohighlight">\(f(x, y)\)</span>.</p>
+<p>Observa la siguiente gráfica y la región <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> en el plano <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ys</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">xms</span><span class="p">,</span> <span class="n">yms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+<span class="n">rms</span> <span class="o">=</span>  <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span> <span class="n">xms</span><span class="o">*</span><span class="n">xms</span> <span class="o">+</span> <span class="n">yms</span><span class="o">*</span><span class="n">yms</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span>    <span class="n">rms</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="mf">0.</span><span class="o">*</span><span class="n">rms</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span> <span class="p">);</span>
+<span class="c1">#ax.set_aspect(&#39;equal&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7a170e525eec3a5bd02f22aa499e4cf846b1c6569094a7e6e073cfd3c01868f9.png" src="../_images/7a170e525eec3a5bd02f22aa499e4cf846b1c6569094a7e6e073cfd3c01868f9.png" />
+</div>
+</div>
+<p>Es este caso la región <span class="math notranslate nohighlight">\(\mathcal{R} = [-2, 2] \times [-2, 2]\)</span> es la zona en rojo, y las variables <span class="math notranslate nohighlight">\((u, v)\)</span> son simplemente <span class="math notranslate nohighlight">\((x, y)\)</span>. La superfice está es azul y su parametrización es muy sencilla:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(x, y) = \left(x, y, \sqrt{x^2 + y^2} \right)
+\]</div>
+<p>Luego una gráfica de una función es también la parametrización de su superficie.</p>
+<p><strong>Ejercicio</strong>: Observa la siguiente figura y estudia el código <em>Python</em> que la crea. Se trata de la parametrización de una esfera de radio unidad.</p>
+<p>¿Qué interpretación das a las variables <em>phis</em> y <em>thetas</em> del código? ¿Puedes reescribir matemáticamente, esto es, dar la región <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> donde están definidas las variables <span class="math notranslate nohighlight">\((\theta, \phi)\)</span> y la parametrización <span class="math notranslate nohighlight">\(\sigma (\theta, \phi)\)</span> de la esfera?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">thetas</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>    <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">phis</span>    <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span>  <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">25</span><span class="p">)</span>
+<span class="n">thetams</span><span class="p">,</span> <span class="n">phims</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">thetas</span><span class="p">,</span> <span class="n">phis</span><span class="p">)</span>
+<span class="n">r</span>  <span class="o">=</span> <span class="mf">1.</span>
+<span class="n">xms</span>  <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">thetams</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phims</span><span class="p">)</span>
+<span class="n">yms</span>  <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">thetams</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phims</span><span class="p">)</span>
+<span class="n">zms</span>  <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">thetams</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">);</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f9e2abab932e4b33945c14dc49b04dc1a460fb2d7103564ce0800047a1fdf8fa.png" src="../_images/f9e2abab932e4b33945c14dc49b04dc1a460fb2d7103564ce0800047a1fdf8fa.png" />
+</div>
+</div>
+<p><em>solución</em>: La región <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> viene dada por las variables <span class="math notranslate nohighlight">\(\theta, \phi\)</span> que toman valores en los intervalos <span class="math notranslate nohighlight">\(\theta \in [0, \pi]\)</span>, y  <span class="math notranslate nohighlight">\(\phi \in [0, 2 \pi)\)</span>.</p>
+<p>La parametrización de la esfera, <span class="math notranslate nohighlight">\(\sigma (\theta, \phi)\)</span>, con radio <span class="math notranslate nohighlight">\(r\)</span>, es:</p>
+<div class="math notranslate nohighlight">
+\[
+x(\theta, \phi)  = r \, \sin \theta \, \cos\phi 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+y(\theta, \phi)  = r \, \sin \theta \, \sin \phi 
+\]</div>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+z(\theta, \phi)  = r \, \cos \theta \\
+\end{split}\]</div>
+<p><em>Por si te ayuda</em>:</p>
+<p>Parametrizar una superficie en el espacio es como si dispusíeramos de un material plano imaginario que pudieramos recortar, para tener una región <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>, y que luego pudieramos moldear, comprimir o expandir a voluntad en el espacio para crear con él la superficie <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
+<p>En el caso de que no comprimamos o estiremos ese material imaginario, el área de la superfice, <span class="math notranslate nohighlight">\(\sigma\)</span>, corresponde al área de la región <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. Ese es el caso de la pared del cilindro del ejemplo anterior. Pero no el de la esfera, ya que para darle forma con ese mágico material tendríamos que comprimirlo y estirarlo.</p>
+<p>Supongo que intuyes cómo calcularemos las áreas de las superficies parametrizadas, pero aún no disponemos de todas las herramientas necesarias. Tenemos que esperar al final del capítulo de integrales.</p>
+</section>
+<section id="aun-hay-mas">
+<h2>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h2>
+<p>Supongo que sabes que una partícula cargada cuando entra normal a un campo magnético uniforme describe una hélice, como la que hemos dibujado antes.</p>
+<p>En física de partículas, la hélice juega un papel fundamental.</p>
+<p>Fíjate en esta imagen de ‘una’ colisión de protones en el detector <a class="reference external" href="https://atlas.cern">ATLAS</a>, donde están reconstruidas las trayectorias de distintas partículas.</p>
+<p>Las partículas están dentro de un campo magnético uniforme, de ahí que describan hélices. Con distinta carga las hélices giran en sentidos opuestos. No ves hélices porque se trata de la proyección sobre el plano <span class="math notranslate nohighlight">\((x, y)\)</span> y porque no llegan a dar un giro completo. Las partículas más energéticas tienen una hélice muy abierta y las menos energéticas, más cerrada.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-center"><p></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="../_images/atlas_event.jpeg"><img alt="../_images/atlas_event.jpeg" class="align-center" src="../_images/atlas_event.jpeg" style="width: 400px;" /></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-center"><p>Visión transversal de una colisión en en experimento ATLAS (CERN)</p></td>
+</tr>
+</tbody>
+</table>
+<p>La imagen corresponde a uno de los primeros sucesos con un Higgs que tomó el detector ATLAS en junio del 2012, donde el bosón de Higgs se desintegra a dos muones (en rojo) y dos electrones (en verde). Por supuesto. Hay muchas más particulas que las que vienen del Higgs.</p>
+<p><strong>¡Esto es todo por ahora!</strong></p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="tderivadas_limites_continuidad.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Límite y continuidad de funciones escalares y vectoriales</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tderivadas_direccional_diferencial.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Derivada direccional y funciones diferenciables</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parametrizacion-de-lineas">Parametrización de líneas</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#longitud-de-arco">Longitud de arco</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion-a-la-parametrizacion-de-superficies">Introducción a la parametrización de superficies</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando - 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
