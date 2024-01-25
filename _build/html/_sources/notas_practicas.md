@@ -2,11 +2,11 @@
 
 ### Como ler as notas na web?
 
- No seguinte enderezo: [jahernando.github.io/book-USC-MMIII](https://jahernando.github.io/book-USC-MMIII)
+ No seguinte enderezo: [xabiercidvidal.github.io/USC-MMIII](https://xabiercidvidal.github.io/USC-MMIII)
 
 ### Como executar notas de forma interactiva na nube?
 
- Na seguinte [sección](https://jahernando.github.io/book-USC-MMIII/run_cloud.html) podes executar as notas interactivas en [Google Colab](https://colab.research.google.com/?hl=es). É posible que necesites unha conta de Google.
+ Na seguinte [sección](https://xabiercidvidal.github.io/USC-MMIII/run_cloud.html) podes executar as notas interactivas en [Google Colab](https://colab.research.google.com/?hl=es). É posible que necesites unha conta de Google.
 
 ### Sobre as notas
 
@@ -30,4 +30,4 @@ As notas estarán nun cartafol chamado *USC-MMIII/notebooks* no teu ordenador. P
 
 Podes abrir un NB a través da túa instalación [Anaconda](https://anaconda.org) no teu ordenador. Se inicia o [Navegador Anacoda](https://docs.anaconda.com/navigator) debería aparecer o logotipo de Jupyter. Un clic nel debería iniciar o editor. Agora selecciona o NB que queres editar ou executar buscándoo nos cartafoles do teu ordenador.
 
-Podes engadir ou eliminar celas nun NB premendo nos símbolos *+* ou *tesoiras*. Podes modificar ou engadir celas en código ou texto *Python* co formato *Markdown*, unha linguaxe sinxela que permite escribir fórmulas matemáticas de xeito elegante co editor científico *Latex*. Pode modificar as celas de texto facendo dobre clic nelas. Para reproducir as celas fai clic no símbolo *play*.
+Podes engadir ou eliminar celas nun NB premendo nos símbolos *+* ou *tesoiras*. Podes modificar ou engadir celas en código ou texto *Python* co formato *Markdown*, unha linguaxe sinxela que permite escribir fórmulas matemáticas de xeito elegante co editor científico *Latex*. Podes modificar as celas de texto facendo dobre clic nelas. Para reproducir as celas fai clic no símbolo *play*.
