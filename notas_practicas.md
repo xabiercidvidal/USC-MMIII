@@ -1,4 +1,4 @@
-# Como acceder ás notas
+# Como acceder ás notasA
 
 ### Como ler as notas na web?
 
@@ -20,14 +20,14 @@ Para obter máis información sobre Jupyter Notebook, visita [Jupyter](https://j
 
 Os NB están situados nun repositorio público en [GitHub](https://github.com)
 
-Acceda ao repositorio de notas seguindo esta ligazón: [USC-MMIII](https://github.com/xabiercidvidal/USC-MMIII)
+Accede ao repositorio de notas seguindo esta ligazón: [USC-MMIII](https://github.com/xabiercidvidal/USC-MMIII)
 
-Fai clic no botón **Código**, resaltado á dereita. Aparecerá un menú despregable. Seleccione **Descargar Zip**. Todos os ficheiros do repositorio descargaranse no teu ordenador nun ficheiro comprimido en formato *zip*. Descomprime o ficheiro *zip* para acceder aos NB.
+Fai clic no botón **Código**, resaltado á dereita. Aparecerá un menú despregable. Selecciona **Descargar Zip**. Todos os ficheiros do repositorio descargaranse no teu ordenador nun ficheiro comprimido en formato *zip*. Descomprime o ficheiro *zip* para acceder aos NB.
 
-As notas estarán nun cartafol chamado *USC-MMIII/notebooks* no teu ordenador. Por exemplo, o NB co título *tderivadas_introduccion.ipynb* contén diversas preguntas sobre funcións en diversas dimensións coas que comezaremos o curso.
+As notas estarán nun cartafol chamado *USC-MMIII/notebooks* no teu ordenador. Por exemplo, o NB co título *tderivadas_introducion.ipynb* contén diversas preguntas sobre funcións en diversas dimensións coas que comezaremos o curso.
 
 ### Como abrir, modificar e executar as notas no meu ordenador?
 
-Podes abrir un NB a través da túa instalación [Anaconda](https://anaconda.org) no teu ordenador. Se inicia o [Navegador Anacoda](https://docs.anaconda.com/navigator) debería aparecer o logotipo de Jupyter. Un clic nel debería iniciar o editor. Agora selecciona o NB que queres editar ou executar buscándoo nos cartafoles do teu ordenador.
+Podes abrir un NB a través da túa instalación [Anaconda](https://anaconda.org) no teu ordenador. Se inicias o [Navegador Anacoda](https://docs.anaconda.com/navigator) debería aparecer o logotipo de Jupyter. Un clic nel debería iniciar o editor. Agora selecciona o NB que queres editar ou executar buscándoo nos cartafoles do teu ordenador.
 
 Podes engadir ou eliminar celas nun NB premendo nos símbolos *+* ou *tesoiras*. Podes modificar ou engadir celas en código ou texto *Python* co formato *Markdown*, unha linguaxe sinxela que permite escribir fórmulas matemáticas de xeito elegante co editor científico *Latex*. Podes modificar as celas de texto facendo dobre clic nelas. Para reproducir as celas fai clic no símbolo *play*.

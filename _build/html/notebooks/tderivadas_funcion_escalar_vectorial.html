@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales. &#8212; Métodos Matemáticos III - USC</title>
+    <title>Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais. &#8212; Métodos Matemáticos III - USC</title>
   
   
   
@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_funcion_escalar_vectorial';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Cuestións iniciais" href="tderivadas_introducion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -158,12 +159,13 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notasA</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 </ul>
 
     </div>
@@ -396,7 +398,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.</h1>
+    <h1>Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -406,16 +408,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-escalares">Funciones escalares</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-de-una-funcion">Gráfica de una función</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-de-nivel">Conjuntos de nivel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcions-escalares">Funcións escalares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-dunha-funcion">Gráfico dunha función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conxuntos-de-nivel">Conxuntos de nivel</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">Funciones vectoriales</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-componentes">Funciones componentes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-dibujar-un-campo-vectorial">¿Cómo dibujar un campo vectorial?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcions-vectoriais">Funcións vectoriais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcions-dos-componentes">Funcións dos compoñentes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-debuxar-un-campo-vectorial">Como debuxar un campo vectorial?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
 </ul>
@@ -429,36 +431,36 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="funciones-escalares-graficas-conjuntos-de-nivel-y-funciones-vectoriales">
-<h1>Funciones escalares, gráficas, conjuntos de nivel y funciones vectoriales.<a class="headerlink" href="#funciones-escalares-graficas-conjuntos-de-nivel-y-funciones-vectoriales" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="funcions-escalares-graficos-conxuntos-de-nivel-e-funcions-vectoriais">
+<h1>Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.<a class="headerlink" href="#funcions-escalares-graficos-conxuntos-de-nivel-e-funcions-vectoriais" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Fri Jan 26 23:15:11 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Jan 27 13:03:02 2024
 </pre></div>
 </div>
 </div>
 </div>
-<section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
-<p>Presentar los conceptos de</p>
+<section id="obxectivos">
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<p>Presentar os conceptos de</p>
 <ul class="simple">
-<li><p>funciones escalares y la gráfica de una función escalar</p></li>
-<li><p>los conjuntos de nivel</p></li>
-<li><p>funciones vectoriales</p></li>
+<li><p>funcións escalares e a gráfica dunha función escalar</p></li>
+<li><p>conxuntos de nivel</p></li>
+<li><p>funcións vectoriais</p></li>
 </ul>
-<p>y asociarlos a funciones conocidas en Física Clásica:</p>
+<p>e asocialos con funcións coñecidas na Física Clásica:</p>
 <ul class="simple">
-<li><p>el potencial y el campo eléctrico</p></li>
+<li><p>o potencial e o campo eléctrico</p></li>
 </ul>
-<p>o de otros ámbitos:</p>
+<p>ou doutras zonas:</p>
 <ul class="simple">
-<li><p>los mapas de superficie topográficos o los mapas de isobaras.</p></li>
+<li><p>mapas de superficie topográfico ou mapas de isóbaras.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -478,12 +480,12 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="funciones-escalares">
-<h2>Funciones escalares<a class="headerlink" href="#funciones-escalares" title="Permalink to this heading">#</a></h2>
-<p>Observa la siguiente figura:</p>
+<section id="funcions-escalares">
+<h2>Funcións escalares<a class="headerlink" href="#funcions-escalares" title="Permalink to this heading">#</a></h2>
+<p>Observa a seguinte figura:</p>
 <ul class="simple">
-<li><p>¿Has visto en Física alguna función similar a la que estamos dibujando?</p></li>
-<li><p>¿Reconoces a qué se parece?</p></li>
+<li><p>Viches algunha función en Física semellante á que estamos debuxando?</p></li>
+<li><p>Recoñeces o que parece?</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -517,48 +519,48 @@ document.write(`
 <img alt="../_images/822291a89274a8877ebd707c11b803024c73d93454ede8936e974f90542675cf.png" src="../_images/822291a89274a8877ebd707c11b803024c73d93454ede8936e974f90542675cf.png" />
 </div>
 </div>
-<p>Es el potencial electromagnético de una carga en el plano</p>
+<p>É o potencial electromagnético dunha carga no plano</p>
 <div class="math notranslate nohighlight">
 \[
 V(x, y) = k \frac{q}{\sqrt{x^2 + y^2}}
 \]</div>
-<p>Solo que hemos tomado por simplicidad <span class="math notranslate nohighlight">\(k = 1\)</span> y <span class="math notranslate nohighlight">\(q=1\)</span>.</p>
-<p>También hemos truncando la gráfica para poder verla mejor.</p>
-<p>La anterior función es una <strong>función escalar</strong>.</p>
-<p>Una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, asigna un valor real, a un punto, <span class="math notranslate nohighlight">\({\bf x}\)</span>, de un dominio, <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>, en un espacio real de dimensión <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>.</p>
+<p>Só que tomamos por simplicidade <span class="math notranslate nohighlight">\(k = 1\)</span> e <span class="math notranslate nohighlight">\(q=1\)</span>.</p>
+<p>Tamén truncamos o gráfico para velo mellor.</p>
+<p>A función anterior é unha <strong>función escalar</strong>.</p>
+<p>Unha función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, asigna un valor real, a un punto, <span class="math notranslate nohighlight">\({\bf x}\)</span>, dun dominio, <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>, nun espazo real de dimensión <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-{\bf x} \in \mathcal{D} \subset \mathrm{R}^n \mapsto f({\bf x}) \in \mathrm{R}
+{\bf x} \in \mathcal{D} \subset \mathbb{R}^n \mapsto f({\bf x}) \in \mathbb{R}
 \]</div>
-<p>El potencial eléctrico anterior es una función escalar de <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span>, donde el dominio es todo <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span> menos el origen, <span class="math notranslate nohighlight">\((0, 0)\)</span>, donde la función no está definida.</p>
-<section id="grafica-de-una-funcion">
-<h3>Gráfica de una función<a class="headerlink" href="#grafica-de-una-funcion" title="Permalink to this heading">#</a></h3>
-<p>La figura anterior es la <strong>gráfica</strong> del potencial eléctrico de una carga.</p>
-<p>Sea <span class="math notranslate nohighlight">\(f(x, y)\)</span> una función escalar con dominio <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span>, la gráfica de la función son los puntos de <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span> dados por:</p>
+<p>O potencial eléctrico anterior é unha función escalar de <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, onde o dominio é todo <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> menos a orixe, <span class="math notranslate nohighlight">\((0, 0)\)</span>, onde a función non está definida.</p>
+<section id="grafico-dunha-funcion">
+<h3>Gráfico dunha función<a class="headerlink" href="#grafico-dunha-funcion" title="Permalink to this heading">#</a></h3>
+<p>A figura anterior é a <strong>gráfica</strong> do potencial eléctrico dunha carga.</p>
+<p>Sexa <span class="math notranslate nohighlight">\(f(x, y)\)</span> unha función escalar co dominio <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span>, a gráfica da función son os puntos de <span class="math notranslate nohighlight">\(\mathrm{R}^3 \)</span> dados por:</p>
 <div class="math notranslate nohighlight">
 \[
 \{(x, \, y, \, f(x, y)), \; \forall \;(x, \, y) \, \in \, \mathcal{D}\}
 \]</div>
-<p>En el caso anterior, la gráfica de la función <span class="math notranslate nohighlight">\(f(x, y)\)</span> son los puntos <span class="math notranslate nohighlight">\((x, y, z = f(x, y))\)</span>.</p>
-<p>¡Los humanos somos algo limitados solo podemos ‘ver’ las gráficas de las funciones escalares de dos dimensiones!</p>
+<p>No caso anterior, a gráfica da función <span class="math notranslate nohighlight">\(f(x, y)\)</span> son os puntos <span class="math notranslate nohighlight">\((x, y, z = f(x, y))\)</span>.</p>
+<p>Os humanos somos algo limitados, só podemos “ver” os gráficos de funcións escalares bidimensionais!</p>
 </section>
-<section id="conjuntos-de-nivel">
-<h3>Conjuntos de nivel<a class="headerlink" href="#conjuntos-de-nivel" title="Permalink to this heading">#</a></h3>
-<p>Si te fijas, el valor del potencial eléctrico es el mismo para todos los puntos de una circunferencia centrada en el origen. Decimos que son puntos equipotenciales.</p>
-<p>De otra forma, si calculamos cuáles son los puntos cuya función vale un determinado valor <span class="math notranslate nohighlight">\(c\)</span>, esto es <span class="math notranslate nohighlight">\(f(x, y) = c\)</span>, obtenemos la ecuación de una circunferencia:</p>
+<section id="conxuntos-de-nivel">
+<h3>Conxuntos de nivel<a class="headerlink" href="#conxuntos-de-nivel" title="Permalink to this heading">#</a></h3>
+<p>Se observas, o valor do potencial eléctrico é o mesmo para todos os puntos dun círculo centrado na orixe. Dicimos que son puntos equipotenciais.</p>
+<p>Doutra maneira, se calculamos cales son os puntos para os cales a función vale un determinado valor <span class="math notranslate nohighlight">\(c\)</span>, é dicir <span class="math notranslate nohighlight">\(f(x, y) = c\)</span>, obtemos a ecuación dunha circunferencia:</p>
 <div class="math notranslate nohighlight">
 \[
-f(x, y) = c \;\; \Rightarrow \frac{1}{\sqrt{x^2 + y^2}} = c\;\;  \Rightarrow x^2 + y^2 = (1/c)^2
+f(x, y) = c \;\; \rightarrow \frac{1}{\sqrt{x^2 + y^2}} = c\;\; \rightarrow x^2 + y^2 = (1/c)^2
 \]</div>
-<p>El conjunto de nivel son todos los puntos, <span class="math notranslate nohighlight">\({\bf x} = {x_1, \dots }\)</span> del dominio inicial, <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>, en un espacio real de dimension <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>, cuyo valor de la función es un mismo valor, <span class="math notranslate nohighlight">\(c\)</span>.
-Esto es:</p>
+<p>O conxunto de nivel son todos os puntos, <span class="math notranslate nohighlight">\({\bf x} = {x_1, \dots }\)</span> do dominio inicial, <span class="math notranslate nohighlight">\(\mathcal{D}\)</span>, nun espazo real de dimensión <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathrm{R } ^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>, para os cales o valor da función é o mesmo valor, <span class="math notranslate nohighlight">\(c\)</span>.
+Isto é:</p>
 <div class="math notranslate nohighlight">
 \[
-\{  \forall \, {\bf x} \, \in \mathcal{D} \subset \mathrm{R}^n \; | \; f({\bf x}) = c \}
+\{  \forall \, {\bf x} \, \in \mathcal{D} \subset \mathbb{R}^n \; | \; f({\bf x}) = c \}
 \]</div>
-<p>De hecho, podemos dibujar una función a partir de sus conjuntos de nivel.</p>
-<p>Observa la siguiente figura. Hemos dibujado la misma función, el potencial eléctrico, pero usando diversos conjuntos de nivel. ¿Puedes imaginar su gráfica en tres dimensiones a partir de los conjuntos de nivel?</p>
-<p>Los conjuntos de nivel tienen una ventaja adicional, si nos movemos dentro de uno de ellos ¡la función no cambia de valor!</p>
+<p>De feito, podemos extraer unha función a partir dos seus conxuntos de nivel.</p>
+<p>Observa a seguinte figura. Debuxamos a mesma función, o potencial eléctrico, pero utilizando distintos niveis. Imaxinas a súa gráfica en tres dimensións a partir dos conxuntos de nivel?</p>
+<p>Os conxuntos de nivel teñen unha vantaxe adicional, se nos movemos dentro dun deles a función non cambia de valor!</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
@@ -574,10 +576,10 @@ Esto es:</p>
 <img alt="../_images/8a3d8a561f01b122b0aad2bcdff4bafdafcd4e52ba006bbb9cd04e4abe35e01e.png" src="../_images/8a3d8a561f01b122b0aad2bcdff4bafdafcd4e52ba006bbb9cd04e4abe35e01e.png" />
 </div>
 </div>
-<p><em>Cuestión</em>: En el caso del potencial eléctrico en tres dimensiones de una carga situada en el origen, ¿qué figura geométrica forman sus conjuntos de nivel?</p>
-<p><em>Ejercicio</em>: Indica cuál es su dominio y dibuja la gráfica de la función escalar:</p>
+<p><em>Pregunta</em>: No caso do potencial eléctrico tridimensional dunha carga situada na orixe, que figura xeométrica forman os seus conxuntos de nivel?</p>
+<p><em>Exercicio</em>: Indica cal é o seu dominio e debuxa a gráfica da función escalar:</p>
 <p><span class="math notranslate nohighlight">\(f(x, y) = x^2 + y^2\)</span></p>
-<p>¿Qué forma geométrica forman sus conjuntos de nivel?</p>
+<p>Que forma xeométrica forman os teus conxuntos de nivel?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -609,14 +611,14 @@ Esto es:</p>
 <img alt="../_images/1ab342ce00a3e714afcc9e49f94f8533569a9f52bed0932ec246b5179194aa50.png" src="../_images/1ab342ce00a3e714afcc9e49f94f8533569a9f52bed0932ec246b5179194aa50.png" />
 </div>
 </div>
-<p><em>Solución</em>: el dominio es todo <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span>.</p>
-<p>Los conjuntos de nivel son circunferencias (<span class="math notranslate nohighlight">\(c &gt; 0\)</span>):</p>
+<p><em>Solución</em>: O dominio é todo <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span>.</p>
+<p>Os conxuntos de nivel son circunferencias (<span class="math notranslate nohighlight">\(c &gt; 0\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
 x^{2} + y^{2} = c
 \]</div>
-<p>Para <span class="math notranslate nohighlight">\(c = 0\)</span>, el conjunto de nivel es el origen <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
-<p><em>Ejercicio</em>: Considera ahora la función escalar <span class="math notranslate nohighlight">\(f(x, y) = \frac{x^2}{a^2} + \frac{y^2}{b^2}\)</span>, donde <span class="math notranslate nohighlight">\(a, \, b\)</span> son constantes. Estudia su dominio, dibuja sus gráfica y sus conjuntos de nivel. ¿qué figura geométrica son? Usa valores concretos para <span class="math notranslate nohighlight">\(a, \, b\)</span>, por ejemplo <span class="math notranslate nohighlight">\(a =1, \, b = 2\)</span>.</p>
+<p>Para <span class="math notranslate nohighlight">\(c = 0\)</span>, o conxunto de nivel é a orixe <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
+<p><em>Exercicio</em>: Considera agora a función escalar <span class="math notranslate nohighlight">\(f(x, y) = \frac{x^2}{a^2} + \frac{y^2}{b^2}\)</span>, onde <span class="math notranslate nohighlight">\(a, \, b\)</span> son constantes. Estuda o teu dominio, debuxa os teus gráficos e os teus conxuntos de nivel. Que figura xeométrica son? Use valores concretos para <span class="math notranslate nohighlight">\(a, \, b\)</span>, por exemplo <span class="math notranslate nohighlight">\(a =1, \, b = 2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -652,13 +654,13 @@ x^{2} + y^{2} = c
 <img alt="../_images/73e2ccb87d74c3b860c552fe7b4f5838e5a203ce12547207073d04187d8eb011.png" src="../_images/73e2ccb87d74c3b860c552fe7b4f5838e5a203ce12547207073d04187d8eb011.png" />
 </div>
 </div>
-<p><em>Solución</em>: los conjuntos de nivel son elipses (<span class="math notranslate nohighlight">\(c &gt;0)\)</span>:</p>
+<p><em>Solución</em>: os conxuntos de nivel son elipses (<span class="math notranslate nohighlight">\(c &gt;0)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{x^2}{c \, a^2} + \frac{y^2}{c \, b^2} = 1
 \]</div>
-<p>cuando <span class="math notranslate nohighlight">\(a = b\)</span>, son circunferencias, y cuando <span class="math notranslate nohighlight">\(c = 0\)</span>? el conjunto de nivel es el origen <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
-<p><em>Ejercicio</em>: Considera ahora la función escalar <span class="math notranslate nohighlight">\(f(x, y) = x^2 - y^2\)</span>. Estudia su dominio, dibuja sus gráfica y sus conjuntos de nivel. ¿Qué figura geométrica son?</p>
+<p>cando <span class="math notranslate nohighlight">\(a = b\)</span>, son círculos, e cando <span class="math notranslate nohighlight">\(c = 0\)</span>? o conxunto de nivel é a orixe <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
+<p><em>Exercicio</em>: Considera agora a función escalar <span class="math notranslate nohighlight">\(f(x, y) = x^2 - y^2\)</span>. Estuda o teu dominio, debuxa os teus gráficos e os teus conxuntos de nivel. Que figura xeométrica son?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
@@ -689,17 +691,17 @@ x^{2} + y^{2} = c
 <img alt="../_images/6e8e83301451f491789ca671ea3ab18c8bbc710820ead33f7765d860dfd060d2.png" src="../_images/6e8e83301451f491789ca671ea3ab18c8bbc710820ead33f7765d860dfd060d2.png" />
 </div>
 </div>
-<p><em>Solución</em>: los conjuntos de nivel son hipérbolas:</p>
+<p><em>Solución</em>: Os conxuntos de nivel son hipérbolas:</p>
 <div class="math notranslate nohighlight">
 \[
 x^2 - y^2 = c
 \]</div>
-<p>Para el caso <span class="math notranslate nohighlight">\(c = 0\)</span>, el conjunto de nivel son las rectas:</p>
+<p>Para o caso <span class="math notranslate nohighlight">\(c = 0\)</span>, o conxunto de nivel son as rectas:</p>
 <div class="math notranslate nohighlight">
 \[
 y = \pm x
 \]</div>
-<p><em>Ejercicio</em>: Dibuja la gráfica del potencial de un dipolo eléctrico, centrado en origen, cuyas cargas, <span class="math notranslate nohighlight">\(q\)</span>, están separadas una distancia <span class="math notranslate nohighlight">\(d\)</span>. Considera por simplicidad <span class="math notranslate nohighlight">\(k=1, q = \pm 1\)</span>, <span class="math notranslate nohighlight">\(d = 2\)</span>.</p>
+<p><em>Exercicio</em>: Debuxa a gráfica do potencial dun dipolo eléctrico, centrado na orixe, para o cal as cargas, <span class="math notranslate nohighlight">\(q\)</span>, están separadas por unha distancia <span class="math notranslate nohighlight">\(d\)</span>. Considera por simplicidade <span class="math notranslate nohighlight">\(k=1, q = \pm 1\)</span>, <span class="math notranslate nohighlight">\(d = 2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dipole_potential</span><span class="p">():</span>
@@ -743,44 +745,40 @@ y = \pm x
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">vdipolo</span><span class="p">,</span> <span class="mi">300</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;hot&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$y$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;V dipolo&#39;</span><span class="p">)</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">());</span> <span class="n">plt</span><span class="o">.</span><span class="n">axis</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">();</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/jupyter/lib/python3.7/site-packages/ipykernel_launcher.py:4: MatplotlibDeprecationWarning: Starting from Matplotlib 3.6, colorbar() will steal space from the mappable&#39;s axes, rather than from the current axes, to place the colorbar.  To silence this warning, explicitly pass the &#39;ax&#39; argument to colorbar().
-  after removing the cwd from sys.path.
-</pre></div>
-</div>
 <img alt="../_images/edbdc383fdb6aec19a51e166c09cd2a217cb876adcb1a5fa2f3c762119e5ae0e.png" src="../_images/edbdc383fdb6aec19a51e166c09cd2a217cb876adcb1a5fa2f3c762119e5ae0e.png" />
 </div>
 </div>
-<p><em>Cuestión</em>: ¿Qué indica que los conjuntos de nivel están muy próximos entre ellos? ¿Y cuándo están alejados?</p>
+<p><em>Pregunta</em>: Que indica que os conxuntos de nivel están moi preto uns dos outros? E cando están separados?</p>
 </section>
 </section>
-<section id="funciones-vectoriales">
-<h2>Funciones vectoriales<a class="headerlink" href="#funciones-vectoriales" title="Permalink to this heading">#</a></h2>
-<p>Considera la siguiente función que, supogo, la has visto con anterioridad en Electromagnetismo.</p>
-<p>Es el campo eléctrico de una carga <span class="math notranslate nohighlight">\(q\)</span> centrada en el origin <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>:</p>
+<section id="funcions-vectoriais">
+<h2>Funcións vectoriais<a class="headerlink" href="#funcions-vectoriais" title="Permalink to this heading">#</a></h2>
+<p>Considera a seguinte función que seguramente xa teñas visto antes en Física Xeral.</p>
+<p>É o campo eléctrico dunha carga <span class="math notranslate nohighlight">\(q\)</span> centrada na orixe <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-{\bf E} (x, y, z) = k\frac{q}{(x^2 + y^2 + z^2)^{3/2}} \left( x, y, z \right) 
+{\bf E} (x, y, z) = k\frac{q}{(x^2 + y^2 + z^2)^{3/2}} \left( x, y, z \right )
 \]</div>
-<p>Quizás lo reconozcas mejor si lo reescribimos en coordenades esféricas, donde <span class="math notranslate nohighlight">\(r\)</span> es la distancia a la carga, y <span class="math notranslate nohighlight">\({\hat r}\)</span>, el vector unitario que une la carga con el punto donde estimamos el campo.</p>
+<p>Quizais o recoñezades mellor se o reescribimos en coordenadas esféricas, onde <span class="math notranslate nohighlight">\(r\)</span> é a distancia á carga e <span class="math notranslate nohighlight">\({\hat r}\)</span>, o vector unitario que une a carga ata o punto onde estimamos o campo.</p>
 <div class="math notranslate nohighlight">
 \[
-{\bf E} ({\bf r}) =  k\frac{q}{r^2} {\hat r}
+{\bf E} ({\bf r}) = k\frac{q}{r^2} {\hat r}
 \]</div>
-<p>El campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} (x, y, z)\)</span>, es una <strong>función vectorial</strong>.</p>
-<p>Una función vectorial asigna a cada punto, <span class="math notranslate nohighlight">\({\bf x}\)</span>, de una región, o dominio, <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> de un espacio real de dimensión <span class="math notranslate nohighlight">\(n\)</span>, con <span class="math notranslate nohighlight">\(n \ge 1\)</span>, <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, un punto de un espacio real de dimensión <span class="math notranslate nohighlight">\(m\)</span>, con <span class="math notranslate nohighlight">\(m &gt;1\)</span>, <span class="math notranslate nohighlight">\(\mathrm{R}^m\)</span>.</p>
+<p>O campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} (x, y, z)\)</span>, é unha <strong>función vectorial</strong>.</p>
+<p>Unha función vectorial mapea a cada punto, <span class="math notranslate nohighlight">\({\bf x}\)</span>, dunha rexión ou dominio, <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> dun espazo real de dimensión <span class="math notranslate nohighlight">\(n\)</span>, con <span class="math notranslate nohighlight">\(n \ge 1\)</span>, <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, un punto nun espazo real de dimensión <span class="math notranslate nohighlight">\(m\)</span>, con <span class="math notranslate nohighlight">\(m &gt;1\)</span>, <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-{\bf x} \in \mathcal{D} \subset \mathrm{R}^n \mapsto \bf{f}(\bf x) \in \mathrm{R}^m
+{\bf x} \in \mathcal{D} \subset \mathbb{R}^n \mapsto \bf{f}(\bf x) \in \mathrm{R}^m
 \]</div>
-<p>Nota que <span class="math notranslate nohighlight">\(n \ge 1\)</span> y <span class="math notranslate nohighlight">\( m &gt;1\)</span>.</p>
-<section id="funciones-componentes">
-<h3>Funciones componentes<a class="headerlink" href="#funciones-componentes" title="Permalink to this heading">#</a></h3>
-<p>Si te fijas el campo eléctrico, <span class="math notranslate nohighlight">\({\bf E}({\bf x})\)</span> lo hemos expresado como tres funciones escalares:</p>
+<p>Ten en conta que <span class="math notranslate nohighlight">\(n \ge 1\)</span> e <span class="math notranslate nohighlight">\( m &gt;1\)</span>.</p>
+<section id="funcions-dos-componentes">
+<h3>Funcións dos compoñentes<a class="headerlink" href="#funcions-dos-componentes" title="Permalink to this heading">#</a></h3>
+<p>Se observas o campo eléctrico, <span class="math notranslate nohighlight">\({\bf E}({\bf x})\)</span> expresámolo como tres funcións escalares:</p>
 <div class="math notranslate nohighlight">
 \[
 E_x ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{x}{\sqrt{x^2 + y^2 + z^2}} 
@@ -793,20 +791,20 @@ E_y ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{y}{\sqrt{x^2 + y^2 + z^2}}
 \[
 E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}} 
 \]</div>
-<p>Cada una de ellas es una función componente.</p>
-<p>Llamamos función componente, <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span>, a cada función escalar que representa la coordenada <span class="math notranslate nohighlight">\(i\)</span>-ésima de una función vectorial,</p>
+<p>Cada unha delas é unha función compoñente.</p>
+<p>Chamamos á función compoñente <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span>, a cada función escalar que representa a <span class="math notranslate nohighlight">\(i\)</span>-ésima coordenada dunha función vectorial,</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf f} ({\bf x}) = \left( f_1 ({\bf x}), \dots, f_m({\bf x}) \, \right).
 \]</div>
-<p>O lo que es lo mismo, para dar una función vectorial, basta con dar sus funciones componentes.</p>
-<p><em>Nota</em>: Para indicar valores o funciones vectoriales usamos letras en negrita, mientras que usamos tipos normales para valores o funciones escalares.</p>
+<p>Ou o que é o mesmo, para dar unha función vectorial abonda con dar as súas funcións compoñentes.</p>
+<p><em>Nota</em>: Para indicar valores ou funcións vectoriais usamos letras en negra, mentres que usamos tipos normais para valores escalares ou funcións.</p>
 </section>
-<section id="como-dibujar-un-campo-vectorial">
-<h3>¿Cómo dibujar un campo vectorial?<a class="headerlink" href="#como-dibujar-un-campo-vectorial" title="Permalink to this heading">#</a></h3>
-<p>En realidad no podemos dibujar adecuadamente un campo vectorial.</p>
-<p>No obstante podemos ‘visualizar’ un campo vectorial colocando sobre el espacio inicial unos vectorcitos o flechas, que por su tamaño, grosor o color nos digan en qué dirección va el campo y cuál es su módulo. ¡Aunque sólo podemos hacerlo en <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span> y <em>malamente</em> en <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span>!</p>
-<p>La siguiente figura intenta visualizar el campo eléctrico de una carga en dos dimensiones.</p>
+<section id="como-debuxar-un-campo-vectorial">
+<h3>Como debuxar un campo vectorial?<a class="headerlink" href="#como-debuxar-un-campo-vectorial" title="Permalink to this heading">#</a></h3>
+<p>En realidade, non podemos debuxar correctamente un campo vectorial.</p>
+<p>Porén, podemos ‘visualizar’ un campo vectorial colocando uns pequenos vectores ou frechas no espazo inicial, que polo seu tamaño, grosor ou cor nos indican en que dirección vai o campo e cal é o seu módulo. Aínda que só podemos facelo en <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> e <em>mal</em> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>!</p>
+<p>A seguinte figura tenta visualizar o campo eléctrico dunha carga en dúas dimensións.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">charge_electric_field</span><span class="p">():</span>
@@ -842,9 +840,9 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 <img alt="../_images/351df95f56b858ec2891878aefbd674b59e1f24e83e0f1aac99df2e458adb6d3.png" src="../_images/351df95f56b858ec2891878aefbd674b59e1f24e83e0f1aac99df2e458adb6d3.png" />
 </div>
 </div>
-<p>El campo eléctrico es radial y se debilita conforme nos alejamos de la carga.</p>
-<p><em>Ejercicio</em>:</p>
-<p>Intenta dibujar el campo eléctrico en el plano producido por un dipolo, centrado en el origen, cuyas cargas están separadas una distancia <span class="math notranslate nohighlight">\(d =2\)</span>. Considera por simplicidad <span class="math notranslate nohighlight">\(k =1, \, q = \pm 1\)</span>.</p>
+<p>O campo eléctrico é radial e vaise debilitando a medida que nos afastamos da carga.</p>
+<p><em>Exercicio</em>:</p>
+<p>Tenta debuxar o campo eléctrico no plano producido por un dipolo, centrado na orixe, con cargas separadas por unha distancia <span class="math notranslate nohighlight">\(d =2\)</span>. Considera por simplicidade <span class="math notranslate nohighlight">\(k =1, \, q = \pm 1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dipole_electric_field</span><span class="p">():</span>
@@ -865,7 +863,6 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 
     <span class="n">color</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">))</span>
     <span class="n">fig</span>   <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
-    <span class="n">color</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">))</span> 
     <span class="n">st</span>    <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">streamplot</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="n">color</span><span class="p">,</span> 
                           <span class="n">linewidth</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">cm</span><span class="o">.</span><span class="n">inferno</span><span class="p">,</span>
                           <span class="n">density</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">arrowstyle</span><span class="o">=</span><span class="s1">&#39;-&gt;&#39;</span><span class="p">,</span> <span class="n">arrowsize</span><span class="o">=</span><span class="mf">1.5</span><span class="p">)</span>
@@ -886,26 +883,26 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 <img alt="../_images/59d0dfad56701f733cb067ab8ff5d2042bfa76c6d8412eb514b56e4a3189c85a.png" src="../_images/59d0dfad56701f733cb067ab8ff5d2042bfa76c6d8412eb514b56e4a3189c85a.png" />
 </div>
 </div>
-<p>La líneas de campo eléctrico de un dipolo salen de la carga positiva y mueren en la negativa.</p>
+<p>As liñas de campo eléctrico dun dipolo saen da carga positiva e morren na carga negativa.</p>
 </section>
-<section id="aun-hay-mas">
-<h3>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h3>
-<p>El concepto de conjunto de nivel es bastante común, seguramente conoces los mapas de nivel que representan una zona topográfica a partir de sus curvas de nivel. Cuando las líneas están muy juntas significa que la pendiente sube abruptamente, mientras que cuando están muy separadas indica que la pendiente es muy suave, un falso llano.</p>
-<p>La imagen muestra el mapa topográfico de la zona de Canfranc, en el Pirineo, donde se encuentra, bajo la montaña de “El Tobazo” el Laboratorio Subterráneo de Canfranc donde se estudia, entre otras cosas, cuál es la naturaleza del neutrino o si existe la materia oscura. El enlace al laboratorio es <a class="reference external" href="https://lsc-canfranc.es">éste</a>. Fíjate lo empinado de sus laderas al lado de la estación internacional de Canfranc, luego míralas en la <a class="reference external" href="http://notatherdesk.com/travel/exploring-canfranc-railway-station/">foto</a></p>
+<section id="ainda-hai-mais">
+<h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h3>
+<p>O concepto de conxunto de curvas de nivel é bastante común, seguro que coñeces os mapas de contornos que representan unha zona topográfica en función das súas curvas de nivel. Cando as liñas están moi xuntas significa que a pendente sobe bruscamente, mentres que cando están moi afastadas indica que a pendente é moi suave, unha falsa chaira.</p>
+<p>A imaxe mostra o mapa topográfico da zona de Canfranc, nos Pirineos, onde se atopa o Laboratorio Subterráneo de Canfranc baixo o monte “El Tobazo” onde, entre outras cousas, se estuda a natureza do neutrino ou se existe materia escura. A ligazón ao laboratorio é <a class="reference external" href="https://lsc-canfranc.es">este</a>. Mira o empinado que son as pistas xunto á estación internacional de Canfranc, logo míraas na <a class="reference external" href="http://notatherdesk.com/travel/exploring-canfranc-railway-station/">foto</a></p>
 <table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p></p></th>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="../_images/Canfranc_mapa.png"><img alt="../_images/Canfranc_mapa.png" src="../_images/Canfranc_mapa.png" style="width: 250px;" /></a></p></td>
+<tr class="row-even"><td class="text-center"><p><a class="reference internal" href="../_images/Canfranc_mapa.png"><img alt="../_images/Canfranc_mapa.png" src="../_images/Canfranc_mapa.png" style="width: 450px;" /></a></p></td>
 </tr>
-<tr class="row-odd"><td class="text-center"><p>Líneas de nivel en la zona de Canfranc Estación (Huesca)</p></td>
+<tr class="row-odd"><td class="text-center"><p>Liñas de nivel na zona de Canfranc Estación (Huesca)</p></td>
 </tr>
 </tbody>
 </table>
-<p>También puedes visitar la página del <a class="reference external" href="http://www.meteogalicia.gal/web/index.action">tiempo</a> de Galicia y ver cómo dibujan las funciones escalares de la presión y las vectoriales de los vientos.</p>
-<p><strong>¡Esto es todo por ahora!</strong></p>
+<p>Tamén podes visitar a páxina do <a class="reference external" href="https://www.meteogalicia.gal/web/home">tempo</a> de Galicia e ver como debuxan as funcións escalares da presión e as funcións vectoriais dos ventos.</p>
+<p><strong>Isto é todo por agora!</strong></p>
 </section>
 </section>
 </section>
@@ -941,6 +938,15 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tderivadas_introducion.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Cuestións iniciais</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -959,16 +965,16 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-escalares">Funciones escalares</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-de-una-funcion">Gráfica de una función</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conjuntos-de-nivel">Conjuntos de nivel</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcions-escalares">Funcións escalares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafico-dunha-funcion">Gráfico dunha función</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conxuntos-de-nivel">Conxuntos de nivel</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-vectoriales">Funciones vectoriales</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-componentes">Funciones componentes</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-dibujar-un-campo-vectorial">¿Cómo dibujar un campo vectorial?</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funcions-vectoriais">Funcións vectoriais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#funcions-dos-componentes">Funcións dos compoñentes</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#como-debuxar-un-campo-vectorial">Como debuxar un campo vectorial?</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
 </ul>

@@ -11,5 +11,5 @@ parts:
 - caption: Derivadas en varias dimensións
   chapters:
   - file: notebooks/tderivadas_introducion.ipynb
-
+  - file: notebooks/tderivadas_funcion_escalar_vectorial.ipynb
 
