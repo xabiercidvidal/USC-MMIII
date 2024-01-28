@@ -1,0 +1,1053 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Límite e continuidade das funcións escalares e vectoriais &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_limites_continuidade';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_limites_continuidade.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_limites_continuidade.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tderivadas_limites_continuidade.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tderivadas_limites_continuidade.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Límite e continuidade das funcións escalares e vectoriais</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limite-de-funcions-escalares-e-vectoriais">Límite de funcións escalares e vectoriais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bola">Bola</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidade">Continuidade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Apéndice</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="limite-e-continuidade-das-funcions-escalares-e-vectoriais">
+<h1>Límite e continuidade das funcións escalares e vectoriais<a class="headerlink" href="#limite-e-continuidade-das-funcions-escalares-e-vectoriais" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Sun Jan 28 23:34:06 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="obxectivos">
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<p>Lembrar os conceptos de límite e continuidade en funcións dunha soa dimensión.</p>
+<p>E estendelos a funcións escalares e vectoriais.</p>
+<p>Presentar un exemplo de como estimar os posibles límites dunha función escalar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="limite-de-funcions-escalares-e-vectoriais">
+<h2>Límite de funcións escalares e vectoriais<a class="headerlink" href="#limite-de-funcions-escalares-e-vectoriais" title="Permalink to this heading">#</a></h2>
+<section id="bola">
+<h3>Bola<a class="headerlink" href="#bola" title="Permalink to this heading">#</a></h3>
+<p>Antes de estudar os límites debemos definir un novo concepto: <strong>bola</strong> .</p>
+<p>Nunha dimensión, a distancia entre dous valores reais, <span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(x_0\)</span>, estaba dada polo valor absoluto: <span class="math notranslate nohighlight">\(|x - x_0|\)</span>.</p>
+<p>Nun espazo real n-dimensional, <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, <span class="math notranslate nohighlight">\(n &gt;1\)</span>, a distancia euclidiana entre dous puntos, <span class="math notranslate nohighlight">\({\bf x}\)</span> e <span class="math notranslate nohighlight">\({\bf x}_0\)</span> é a norma do vector <span class="math notranslate nohighlight">\({\bf x}- {\bf x}_0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+|| {\bf x} - {\bf x}_0 || = \sqrt{\sum_{i=1}^{n}(x_i - x_{0i})^2}
+\]</div>
+<p>Por exemplo, en dúas dimensións, a distancia entre dous puntos: <span class="math notranslate nohighlight">\((x, y)\)</span> e <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[
+ \sqrt{(x-x_0)^2 + (y- y_0)^2}
+ \]</div>
+<p>A distancia entre dous puntos é unha función escalar.</p>
+<p>Se temos un espazo real de dimensión <span class="math notranslate nohighlight">\(n\)</span>, <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>. Chamamos <strong>bola</strong> aberta de radio <span class="math notranslate nohighlight">\(r\)</span> centrada nun punto <span class="math notranslate nohighlight">\({\bf x}_0 \)</span> a todos os puntos dese espazo, <span class="math notranslate nohighlight">\({\bf x}\)</span>, que están a unha distancia de <span class="math notranslate nohighlight">\({\bf x}_0\)</span> menor de <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\{ \forall {\bf x} \in \mathbb{R}^n \, |  \; ||{\bf x} - {\bf x}_0|| \lt r \}
+\]</div>
+<p>Se a bóla está pechada, a condición é que estean a unha distancia menor ou igual a ela, <span class="math notranslate nohighlight">\(\le\)</span>, na expresión anterior.</p>
+<p>Podes imaxinar que en dúas dimensións, unha bola é un disco. Se está pechado, inclúe os puntos da circunferencia do seu borde; se está aberto, non o inclúe.</p>
+<p><em>Pregunta:</em> que forma xeométrica ten unha bola en tres dimensións? e en <span class="math notranslate nohighlight">\(n\)</span>-dimensións?</p>
+<p>Algunhas definicións máis:</p>
+<p>Dicimos que un punto é <em>interior</em> dun conxunto <span class="math notranslate nohighlight">\(S\)</span>, se podemos centrar nel unha bola cuxos puntos pertenzan todos ao conxunto. E <em>borde</em> , se todas as bólas que centramos nela, sempre teñen puntos do conxunto e puntos que non.</p>
+<p><strong>Pregunta</strong> : Considera unha bola pechada nun espazo 2D. Son os puntos da circunferencia que limita o interior ou o bordo do disco?</p>
+<p><strong>Exercicio</strong> : Podes demostrar que todos os puntos dunha bola aberta no espazo 2D son interiores? Mira a seguinte cela.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">phis</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1">## big circle</span>
+<span class="n">xs</span><span class="p">,</span> <span class="n">ys</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phis</span><span class="p">)</span>
+<span class="n">r1</span><span class="p">,</span> <span class="n">phi</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="k">while</span> <span class="p">(</span><span class="n">r1</span> <span class="o">&gt;=</span><span class="mf">1.</span><span class="p">):</span> <span class="n">r1</span><span class="p">,</span> <span class="n">phi</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+<span class="c1">## radius of small circle</span>
+<span class="c1">## 1-r1 is the distance between the center of the new circle and the border...</span>
+<span class="n">r2</span>       <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">r1</span><span class="p">)</span><span class="o">/</span><span class="mf">2.</span>
+<span class="c1">## centre of small circle</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span>   <span class="o">=</span> <span class="n">r1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">),</span> <span class="n">r1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="c1">## small circle</span>
+<span class="n">x1s</span><span class="p">,</span> <span class="n">y1s</span> <span class="o">=</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">r2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phis</span><span class="p">),</span> <span class="n">y1</span> <span class="o">+</span> <span class="n">r2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phis</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="n">x1s</span><span class="p">,</span> <span class="n">y1s</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/cff920d3b761e7f6debeed699cf94b8e96e08ad55b311e1523a15364ae2cce44.png" src="../_images/cff920d3b761e7f6debeed699cf94b8e96e08ad55b311e1523a15364ae2cce44.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="limites">
+<h2>Límites<a class="headerlink" href="#limites" title="Permalink to this heading">#</a></h2>
+<p>Revisemos a definición dun límite nunha dimensión.</p>
+<p>Para unha función <span class="math notranslate nohighlight">\(f(x)\)</span> dixemos que o límite existía nun punto <span class="math notranslate nohighlight">\(x_{0}\)</span> do dominio ou da súa fronteira, se cando nos achegamos a ela, a función “aproximábase a un valor <span class="math notranslate nohighlight">\(b\)</span>” .</p>
+<p>Matemáticamente, poñemos unha condición.</p>
+<p>Dicíamos que <span class="math notranslate nohighlight">\(b\)</span> era o límite de <span class="math notranslate nohighlight">\(f(x)\)</span> en <span class="math notranslate nohighlight">\(x_0\)</span>, se sempre podíamos atopar un intervalo de tamaño <span class="math notranslate nohighlight">\(\delta\)</span> arredor de <span class="math notranslate nohighlight">\(x_0\)</span>, tal que o valor da función nos puntos dese intervalo, estaba tan próximo ao valor <span class="math notranslate nohighlight">\(b\)</span> como quixésemos, dado por unha distancia <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>É máis doado dalo en notación matemática:</p>
+<p>Existe o límite dunha función <span class="math notranslate nohighlight">\(f(x)\)</span> en <span class="math notranslate nohighlight">\(x_0\)</span> e vale <span class="math notranslate nohighlight">\(b\)</span>, se:</p>
+<div class="math notranslate nohighlight">
+\[
+\forall \epsilon &gt;0, \; \exists \, \delta &gt;0, \; \mathrm{t.q.} \;| x- x_0| &lt; \delta \, \Rightarrow \, | f(x) - b| &lt; \epsilon
+\]</div>
+<p>A seguinte gráfica corresponde á función:</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x) = \frac{\sin x}{x}
+ \]</div>
+<p>Vemos que a función ten un límite na orixe, <span class="math notranslate nohighlight">\(x=0\)</span>.</p>
+<p>Podes calculalo se aplicas a regra de l’Hôpital ou fas a expansión de Taylor do numerador e do denominador ao redor de <span class="math notranslate nohighlight">\(x=0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span> <span class="o">/</span> <span class="n">xs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$f(x)$&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$\sin x /x$&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" src="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" />
+</div>
+</div>
+<p>Dicimos que unha función escalar <span class="math notranslate nohighlight">\(f({\bf x}\)</span>) ten un límite nun punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, do seu dominio ou do seu bordo e vale <span class="math notranslate nohighlight">\(b\)</span>, se:</p>
+<div class="math notranslate nohighlight">
+\[
+\forall \epsilon &gt;0, \; \exists \, \delta &gt;0, \; \mathrm{t.q.} \; \| {\bf x}- {\bf x}_0 \| &lt; \delta \, \Rightarrow \, | f({\bf x}) - b | &lt; \epsilon
+\]</div>
+<p>O valor da función, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, nos puntos, <span class="math notranslate nohighlight">\({\bf x}\)</span> dunha bola de tamaño <span class="math notranslate nohighlight">\(\delta\)</span> e centrada en <span class="math notranslate nohighlight">\({\bf x}_0\)</span> están dentro dun intervalo de tamaño <span class="math notranslate nohighlight">\(\epsilon\)</span> centrado en <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>E do mesmo xeito para unha función vectorial.</p>
+<p>Dicimos que unha función vectorial <span class="math notranslate nohighlight">\({\bf f}({\bf x}\)</span>) ten un límite nun punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, do seu dominio ou bordo do mesmo e vale <span class="math notranslate nohighlight">\({\bf b }\)</span>, se:</p>
+<div class="math notranslate nohighlight">
+\[
+\forall \epsilon &gt;0, \; \exists \, \delta &gt;0, \; \mathrm{t.q.} \; \| {\bf x}- {\bf x}_0 \| &lt; \delta \, \Rightarrow \, \| {\bf f}({\bf x}) - {\bf b} \| &lt; \epsilon
+\]</div>
+<p>O valor da función, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>, nos puntos <span class="math notranslate nohighlight">\({\bf x}\)</span> dunha bola de tamaño <span class="math notranslate nohighlight">\(\delta\)</span> e centrada en <span class="math notranslate nohighlight">\({\bf x} _0\)</span> están dentro dunha bola de radio <span class="math notranslate nohighlight">\(\epsilon\)</span> centrada en <span class="math notranslate nohighlight">\({\bf b}\)</span>.</p>
+<p>Observa agora a gráfica da función escalar:</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x, y) = \frac{\sin \sqrt{x^2 + y^2}}{ \sqrt{x^2 + y^2}}
+ \]</div>
+<p>Ves que volve ter un límite na orixe e que vale 1.</p>
+<p>Calculalo, porén, é máis complicado. Debemos recorrer á definición de límite.</p>
+<p>Dado un tamaño <span class="math notranslate nohighlight">\(\epsilon\)</span>, debemos atopar un disco de raio <span class="math notranslate nohighlight">\(\delta\)</span> centrado na orixe, de xeito que para os puntos do disco, o valor da función estea a unha distancia inferior a <span class="math notranslate nohighlight">\(\epsilon\)</span> do límite, de 1 neste caso.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-10</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ps</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">rms</span><span class="p">,</span> <span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span>
+<span class="n">xms</span>      <span class="o">=</span> <span class="n">rms</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pms</span><span class="p">)</span>
+<span class="n">yms</span>      <span class="o">=</span> <span class="n">rms</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pms</span><span class="p">)</span>
+<span class="n">zms</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rms</span><span class="p">)</span><span class="o">/</span><span class="n">rms</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">);</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" src="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" />
+</div>
+</div>
+<p>A seguinte cela permíteche variar o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> e móstrache a gráfica cos puntos que están preto do límite a unha distancia inferior a <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<p>A súa proxección no plano <span class="math notranslate nohighlight">\((x, y)\)</span> móstrache a bola, o disco, de raio <span class="math notranslate nohighlight">\(\delta\)</span>, con respecto á orixe na que están incluídos todos os puntos. Non importa o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> que elixas, sempre atoparás un disco de raio <span class="math notranslate nohighlight">\(\delta\)</span>. Logo existe o límite e é igual a 1.</p>
+<p><strong>Explora</strong> : cambia o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> e observa como cambia o tamaño do disco <span class="math notranslate nohighlight">\(\delta\)</span> que cumpre a condición de límite.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rms</span><span class="p">)</span><span class="o">/</span> <span class="n">rms</span>
+<span class="n">b</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.001</span>
+<span class="n">sel</span>        <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">zms</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span>
+<span class="n">cms</span><span class="p">[</span><span class="o">~</span><span class="n">sel</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="c1">#ax.plot_surface(xms, yms, zms, cmap = &#39;jet&#39;, alpha = 0.2);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">cms</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/980271cfe2f0fa71fad077089bbe44641db6677f1ede2f7e213ba7c1df35654d.png" src="../_images/980271cfe2f0fa71fad077089bbe44641db6677f1ede2f7e213ba7c1df35654d.png" />
+</div>
+</div>
+<p>Para calcular los límites utilizaremos una aproximación.</p>
+<p>Calcularemos los límites en un punto aproximándones a él por todas las rectas posibles.</p>
+<p>Si el valor del límite que encontremos es el mismo y no depende de la recta, podremos afirmar: <em>“si existe el límite, éste debe ser su valor”.</em></p>
+<p>Para calcular os límites usaremos unha aproximación.</p>
+<p>Calcularemos os límites nun punto aproximándoo por todas as rectas posibles.</p>
+<p>Se o valor do límite que atopamos é o mesmo e non depende da liña, podemos afirmar: <em>“se o límite existe, este debe ser o seu valor”.</em></p>
+<p><strong>Ejemplo</strong>: Calcula el límite en el origen de la función escalar:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}
+\]</div>
+<p>En la siguientes celdas se muestra los conjuntos de nivel de la función y una recta que pasa por el origen.</p>
+<p><strong>Explora</strong> cambia la pendiente de la recta y considera qué valor alcaza la función al aproximarse por esa recta al origen</p>
+<p><strong>Exemplo</strong> : Calcula o límite na orixe da función escalar:</p>
+<div class="math notranslate nohighlight">
+\[ f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}\]</div>
+<p>As seguintes celas mostran os conxuntos de niveis da función e unha liña que pasa pola orixe.</p>
+<p><strong>Explorar</strong> cambia a pendente da recta e considera o valor que alcanza a función cando se achega á orixe ao longo desa liña.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span> <span class="c1">#pendiente de la recta que pasa por el origen</span>
+<span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">xs</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" src="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" />
+</div>
+</div>
+<p>Calculamos ahora el límite en el origen aproximandonos por todas la rectas que pasan por el origen, que podemos dar en:</p>
+<ul class="simple">
+<li><p>cartesianas:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+y = a x + b
+\]</div>
+<p>donde b = 0, porque pasa por el origen.
+Calculamos en 1D el límite cuando <span class="math notranslate nohighlight">\(x \rightarrow 0\)</span></p>
+<ul class="simple">
+<li><p>o en polares:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[
+x = r \cos \phi; \; y = r \sin \phi
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\phi \in [0, 2 \pi)\)</span>. Tomamos el límite en 1D  cuando <span class="math notranslate nohighlight">\(r \rightarrow 0\)</span></p>
+<p>Agora calculamos o límite na orixe aproximando todas as liñas que pasan pola orixe, que podemos dar como:</p>
+<ul class="simple">
+<li><p>Cartesiano:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ y = ax + b\]</div>
+<p>onde b = 0, porque pasa pola orixe.</p>
+<p>Calculamos en 1D o límite cando <span class="math notranslate nohighlight">\(x \rightarrow 0\)</span></p>
+<ul class="simple">
+<li><p>ou en polar:</p></li>
+</ul>
+<div class="math notranslate nohighlight">
+\[ x = r \cos \phi; \; y = r \sin \phi\]</div>
+<p>onde <span class="math notranslate nohighlight">\(\phi \in [0, 2 \pi)\)</span>. Tomamos o límite en 1D cando <span class="math notranslate nohighlight">\(r \rightarrow 0\)</span></p>
+<p><em>Solución</em>:</p>
+<p>En cartesianas, sustituyendo <span class="math notranslate nohighlight">\(y = a x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x \to 0 }\frac{\sin  x \sqrt{(1 +a^2)}}{ x \sqrt{1 + a^2}} = 1
+\]</div>
+<p>Si existe el límite es 1</p>
+<p>ii) o si cambiamos a polares y hacemos el límite <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{r \to 0 }\frac{\sin r}{ r} = 1
+\]</div>
+<p>Si existe el límite es 1.</p>
+<p><em>Solución</em> :</p>
+<p>En cartesianos, substituíndo <span class="math notranslate nohighlight">\(y = ax\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{x \to 0 }\frac{\sin x \sqrt{(1 +a^2)}}{ x \sqrt{1 + a^2}} = 1\]</div>
+<p>Se existe o límite é 1</p>
+<p>ii) ou se cambiamos a polar e facemos o límite <span class="math notranslate nohighlight">\(r \a 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{r \to 0 }\frac{\sin r}{ r} = 1\]</div>
+<p>Se existe, o límite é 1.</p>
+<p><strong>Ejercicio</strong>: Calcular si existe el límite en el origen de la función:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = \frac{x y}{x^2 + y^2}
+\]</div>
+<p><strong>Observa</strong> primero la gráfica de la función y pregúntate si tiene límite en el origen. Considera por ejemplo aproximarte al origen con rectas dependiente +1 y -1.</p>
+<p><strong>Exercicio</strong> : Calcula se o límite existe na orixe da función:</p>
+<div class="math notranslate nohighlight">
+\[ f(x, y) = \frac{xy}{x^2 + y^2}\]</div>
+<p>Primeiro <strong>mira</strong> a gráfica da función e pregúntase se ten un límite na orixe. Considere, por exemplo, aproximarse á orixe con liñas dependentes +1 e -1.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%matplotlib notebook</span>
+<span class="n">xs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ys</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">xms</span><span class="p">,</span> <span class="n">yms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+<span class="n">zms</span>      <span class="o">=</span> <span class="p">(</span><span class="n">xms</span> <span class="o">*</span> <span class="n">yms</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">xms</span><span class="o">*</span><span class="n">xms</span> <span class="o">+</span> <span class="n">yms</span><span class="o">*</span><span class="n">yms</span><span class="p">)</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mf">60.</span><span class="p">)</span>
+<span class="n">sf</span>  <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$xy/(x^2+y^2)$&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" src="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" />
+</div>
+</div>
+<p>Dibujamos ahora los conjuntos de nivel. ¿Son rectas? ¿Qué pasa si te aproximas ahora al origen por cada una de esas rectas?</p>
+<p>Agora debuxamos os conxuntos de niveis. Son rectos? Que pasa se agora te achegas á orixe por cada unha desas liñas?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">cs</span>  <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.4999</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.4</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.3</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4999</span><span class="p">]</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">cs</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" src="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" />
+</div>
+</div>
+<p><em>solución</em>:</p>
+<p>i) si estudiamos el límite a lo largo de la recta <span class="math notranslate nohighlight">\(y = ax\)</span> y tomamos el límite <span class="math notranslate nohighlight">\(x \to 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{x \to 0} \frac{a x^2 }{x^2 + a^2 x^2} = \frac{a}{1+a^2} 
+\]</div>
+<p>El límite depende de la pendiente <span class="math notranslate nohighlight">\(a\)</span>, luego no existe el límite.</p>
+<p>Si <span class="math notranslate nohighlight">\(a = 0\)</span>, el límite valdría 0.
+Si <span class="math notranslate nohighlight">\(a = \pm 1\)</span>, el limite valdría <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
+<p><em>solución</em> :</p>
+<p>i) se estudamos o límite ao longo da recta <span class="math notranslate nohighlight">\(y = ax\)</span> e tomamos o límite <span class="math notranslate nohighlight">\(x \a 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \lim_{x \to 0} \frac{ax^2 }{x^2 + a^2 x^2} = \frac{a}{1+a^2}\]</div>
+<p>O límite depende da pendente <span class="math notranslate nohighlight">\(a\)</span>, polo que o límite non existe.</p>
+<p>Se <span class="math notranslate nohighlight">\(a = 0\)</span>, o límite sería 0.</p>
+<p>Se <span class="math notranslate nohighlight">\(a = \pm 1\)</span>, o límite sería <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
+<p>ii) Si cambiamos a polares y luego hacemos el límite <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{r \to 0} \frac{r^2 \cos \phi \sin \phi}{r^2 (\cos^2 \phi +  \sin^2 \phi)} = \cos \phi \sin\phi = \frac{1}{2} \sin 2 \phi
+\]</div>
+<p>El límite depende del ángulo <span class="math notranslate nohighlight">\(\phi\)</span>, luego no existe el límite.</p>
+<p>Si <span class="math notranslate nohighlight">\(\phi = 0, \pi/2\)</span> la función vale 0, mientras que para <span class="math notranslate nohighlight">\(\phi = \pm \pi/4\)</span>, vale <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
+<p>ii) Se cambiamos a polar e logo facemos o límite <span class="math notranslate nohighlight">\(r \a 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ \lim_{r \to 0} \frac{r^2 \cos \phi \sin \phi}{r^2 (\cos^2 \phi + \sin^2 \phi)} = \cos \phi \sin \phi = \frac{1}{2} \sin 2 \phi\]</div>
+<p>O límite depende do ángulo <span class="math notranslate nohighlight">\(\phi\)</span>, polo tanto, o límite non existe.</p>
+<p>Se <span class="math notranslate nohighlight">\(\phi = 0, \pi/2\)</span> a función é 0, mentres que para <span class="math notranslate nohighlight">\(\phi = \pm \pi/4\)</span>, é <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
+<p><strong>Ejercicio</strong>: ¿Puedes dar las ecuaciones de todas las rectas que pasan por <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>? En cartesianas y polares.</p>
+<p><strong>Exercicio</strong> : Podes dar as ecuacións de todas as rectas que pasan por <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>? En cartesiano e polar.</p>
+<p><em>solución</em>:</p>
+<p>En cartesianas:</p>
+<div class="math notranslate nohighlight">
+\[
+y = y_0 + a (x -x_0)
+\]</div>
+<p>En polares:</p>
+<div class="math notranslate nohighlight">
+\[
+x = x_0 + r \cos \phi, \;\;\; y = y_0 + r \sin \phi
+\]</div>
+<p><em>solución</em> :</p>
+<p>En cartesiano:</p>
+<div class="math notranslate nohighlight">
+\[ y = y_0 + a (x -x_0)\]</div>
+<p>En polar:</p>
+<div class="math notranslate nohighlight">
+\[ x = x_0 + r \cos \phi, \;\;\; y = y_0 + r \sin \phi\]</div>
+<p><strong>Teorema</strong></p>
+<p>Sean dos funciones <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> y <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span>, y <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, si existen el <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} {\bf f}({\bf x}) = {\bf b}\)</span> y el <span class="math notranslate nohighlight">\(\lim_{{\bf x}\to {\bf a}} {\bf g}({\bf x}) = {\bf c}\)</span> se cumple:</p>
+<div class="math notranslate nohighlight">
+\[ 
+i) \;\; \lim_{{\bf x} \to {\bf a}} {\bf f}({\bf x})  + {\bf g}({\bf x})=  {\bf b} + {\bf c}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ii) \;\; \lim_{{\bf x} \to {\bf a}} \lambda {\bf f}({\bf x}) = \lambda {\bf b} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+iii) \; \lim_{{\bf x} \to {\bf a}} {\bf f(x)} \cdot {\bf g}({\bf x}) = {\bf b \; c}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
+\]</div>
+<p><strong>Teorema</strong></p>
+<p>Sexan dúas funcións <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> e <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \ a \mathrm{R}^m\)</span>, e <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, se o <span class="math notranslate nohighlight">\(\lim *{{\bf x} \to {\bf a}} {\bf f}({\bf x})* existe *= {\bf b}\)</span> e o <span class="math notranslate nohighlight">\(\lim* {{\bf x}\to {\bf a}} {\bf g}({\bf x}) = {\bf c}\)</span> ten:</p>
+<div class="math notranslate nohighlight">
+\[ Eu) \;\; \lim _{{\bf x} \to {\bf a}} {\bf f}({\bf x}) + {\bf g}({\bf x})= {\bf b} + { \ bf c}\]</div>
+<div class="math notranslate nohighlight">
+\[ ii) \;\; \lim _{{\bf x} \to {\bf a}} \lambda {\bf f}({\bf x}) = \lambda {\bf b}\]</div>
+<div class="math notranslate nohighlight">
+\[ iii) \; \lim _{{\bf x} \to {\bf a}} {\bf f(x)} \cdot {\bf g}({\bf x}) = {\bf b \; c}\]</div>
+<div class="math notranslate nohighlight">
+\[ iv) \;\; \lim _{{\bf x} \to {\bf a}} | {\bf f}({\bf x}) | = | {\bf b} |\]</div>
+<p><strong>Teorema</strong></p>
+<p>Sea una función vectorial <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span>, y <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span> las m-funciones componentes de <span class="math notranslate nohighlight">\({\bf f(x)}\)</span>. El límite
+<span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} {\bf f(x)}= {\bf b}\)</span>, con <span class="math notranslate nohighlight">\({\bf a} \in S\)</span>, existe, si y solo si, existen los límites de sus m-funciones componentes y estos son <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} f_i({\bf x})= b_i\)</span>.</p>
+<p><strong>Teorema</strong></p>
+<p>Sexa <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> unha función vectorial, e <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span> as funcións de m-componentes de <span class="math notranslate nohighlight">\( {\bf f(x)}\)</span>. O límite</p>
+<p><span class="math notranslate nohighlight">\(\lim *{{\bf x} \to {\bf a}} {\bf f(x)}= {\bf b}\)</span>, con <span class="math notranslate nohighlight">\({\bf a} \en S\)</span>, existe, se e só si, hai límites das súas funcións de m-componentes e estes son <span class="math notranslate nohighlight">\(\lim* {{\bf x} \to {\bf a}} f_i({\bf x})= b_i\)</span>.</p>
+<p><em>Ejercicio</em></p>
+<p>Sea la función vectorial:</p>
+<div class="math notranslate nohighlight">
+\[    
+{\bf f}( x, y) = \left( \frac{\sin \sqrt{x^2 + y^2}}{(x^2 + y^2)^{1/2}}, \frac{x y}{x^2 + y^2} \right)
+\]</div>
+<p>¿Tiene límite en el origen?</p>
+<p><em>Exercicio</em></p>
+<p>Sexa a función vectorial:</p>
+<div class="math notranslate nohighlight">
+\[ {\bf f}( x, y) = \left( \frac{\sin \sqrt{x^2 + y^2}}{(x^2 + y^2)^{1/2}}, \ frac{xy}{x^2 + y^2} \dereita)\]</div>
+<p>Ten un límite na orixe?</p>
+</section>
+<section id="continuidad">
+<h2>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this heading">#</a></h2>
+<p>En funciones de una dimensión, decíamos que la función era continua en un punto, <span class="math notranslate nohighlight">\(x_0\)</span>, si pertenecía a su dominio, y el valor de la función en ese punto, <span class="math notranslate nohighlight">\(f(x_0)\)</span>, coincide con el límite <span class="math notranslate nohighlight">\(\lim_{x \to x_0} f(x) = f(x_0)\)</span></p>
+<p>Para una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, diremos que es continua en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, si el punto está en el dominio y el valor de la función y el límite coinciden:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{{\bf x} \to {\bf x}_0} f({\bf x}) = f({\bf x}_0)
+\]</div>
+<p>Y para una función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>, si, dado un <span class="math notranslate nohighlight">\({\bf x}_0\)</span> del dominio, se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\lim_{{\bf x} \to {\bf x}_0} {\bf f} (x) = {\bf f}({\bf x}_0)
+\]</div>
+</section>
+<section id="continuidade">
+<h2>Continuidade<a class="headerlink" href="#continuidade" title="Permalink to this heading">#</a></h2>
+<p>Nas funcións unidimensionales, dixemos que a función era continua nun punto, <span class="math notranslate nohighlight">\(x_0\)</span>, se pertencía ao seu dominio, e o valor da función nese punto, <span class="math notranslate nohighlight">\(f(x *0)\)</span>, coincide co límite. <span class="math notranslate nohighlight">\(\ lim* {x \to x_0} f(x) = f(x_0)\)</span></p>
+<p>Para unha función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, diremos que é continua en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, se o punto está no dominio e o valor da función e o límite coinciden. :</p>
+<div class="math notranslate nohighlight">
+\[ \lim _{{\bf x} \to {\bf x}_0} f({\bf x}) = f({\bf x}_0)\]</div>
+<p>E para unha función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>, se, dado un <span class="math notranslate nohighlight">\({\bf x}_0\)</span> do dominio, ten:</p>
+<div class="math notranslate nohighlight">
+\[ \lim _{{\bf x} \to {\bf x}_0} {\bf f} (x) = {\bf f}({\bf x}_0)\]</div>
+<p><strong>Teorema</strong></p>
+<p>Sean dos funciones <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R^m}\)</span> y <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \to \mathrm{R^m}\)</span>, y <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, si <span class="math notranslate nohighlight">\({\bf f(x), \, g(x)}\)</span> son continuas en un punto <span class="math notranslate nohighlight">\({\bf a}\)</span>, se cumple que las siguientes funciones también son continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ i) \; {\bf f(x)}  + {\bf g(x)} \]</div>
+<div class="math notranslate nohighlight">
+\[ ii) \; \lambda {\bf f(x)}  \]</div>
+<div class="math notranslate nohighlight">
+\[ iii) \; {\bf f(x)} \cdot {\bf g(x)} \]</div>
+<div class="math notranslate nohighlight">
+\[ iv) \; \| {\bf f(x)} \| \]</div>
+<p><strong>Teorema</strong></p>
+<p>Si la función vectorial es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>, también son lo son las <span class="math notranslate nohighlight">\(m\)</span>-funciones componentes <span class="math notranslate nohighlight">\({\bf f(x)} = (f_1({\bf x}),\dots,f_m({\bf x}))\)</span> y viceversa.</p>
+<p><strong>Teorema</strong></p>
+<p>Sexan dúas funcións <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R^m}\)</span> e <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \ a \mathrm{R^m}\)</span>, e <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, se <span class="math notranslate nohighlight">\({\bf f(x), \, g(x)}\)</span> son continuos nun punto <span class="math notranslate nohighlight">\({\bf a}\)</span>, cumpre que as seguintes funcións tamén son continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ i) \; {\bf f(x)} + {\bf g(x)} \]</div>
+<div class="math notranslate nohighlight">
+\[ ii) \; \lambda {\bf f(x)} \]</div>
+<div class="math notranslate nohighlight">
+\[ iii) \; {\bf f(x)} \cdot {\bf g(x)} \]</div>
+<div class="math notranslate nohighlight">
+\[iv) \; | {\bf f(x)} | \]</div>
+<p><strong>Teorema</strong></p>
+<p>Se a función vectorial é continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>, tamén o son as funcións de compoñentes <span class="math notranslate nohighlight">\(m\)</span> <span class="math notranslate nohighlight">\({\bf f(x)} = (f_1({\bf x}),\dots,f_m ({ \bf x}))\)</span> e viceversa.</p>
+<p><strong>¡Esto es todo por ahora!</strong></p>
+<p><strong>Isto é todo por agora!</strong></p>
+</section>
+<section id="apendice">
+<h2>Apéndice<a class="headerlink" href="#apendice" title="Permalink to this heading">#</a></h2>
+<p><strong>teorema</strong></p>
+<p>Sea <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> y <span class="math notranslate nohighlight">\({\bf f}:B \subset \mathrm{R}^m \to \mathrm{R}^p\)</span>, donde suponemos que el rango de <span class="math notranslate nohighlight">\({\bf g}\)</span> está en el dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span>, B. Si <span class="math notranslate nohighlight">\({\bf g(x)}\)</span> es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span> y <span class="math notranslate nohighlight">\({\bf f(y)}\)</span> lo es en <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, entonces la función compuesta <span class="math notranslate nohighlight">\({\bf  f \circ g}: A \subset \mathbf{R}^n \to \mathbf{R}^p\)</span> es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>.</p>
+</section>
+<section id="id1">
+<h2>Apéndice<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p><strong>teorema</strong></p>
+<p>Sexa <span class="math notranslate nohighlight">\({\bf g}: A \subconxunto \mathrm{R}^n \to \mathrm{R}^m\)</span> e <span class="math notranslate nohighlight">\({\bf f}:B \subset \mathrm{R}^m \to \mathrm {R}^p\)</span>, onde asumimos que o rango de <span class="math notranslate nohighlight">\({\bf g}\)</span> está no dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span>, B. Se <span class="math notranslate nohighlight">\({\bf g(x)}\)</span> é continuo en <span class="math notranslate nohighlight">\( {\bf a}\)</span> e <span class="math notranslate nohighlight">\({\bf f(y)}\)</span> está en <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, entón a función composta <span class="math notranslate nohighlight">\({\bf f \circ g}: A \subconxunto \mathbf {R}^n \to \mathbf{R}^p\)</span> é continuo en <span class="math notranslate nohighlight">\({\bf a}\)</span>.</p>
+<p><em>demostracion:</em></p>
+<p>Al ser <span class="math notranslate nohighlight">\({\bf g}, \, {\bf f}\)</span> continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span> y <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, tenemos que <span class="math notranslate nohighlight">\(\forall \, \epsilon &gt;0\)</span> y <span class="math notranslate nohighlight">\(\epsilon' &gt;0\)</span> existen <span class="math notranslate nohighlight">\(\delta &gt;0\)</span> y <span class="math notranslate nohighlight">\(\delta'&gt;0\)</span> y se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\| {\bf x} - {\bf a} \| &lt; \delta \Rightarrow \| {\bf g(x)}-{\bf g(a)} \| &lt; \epsilon' 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\| {\bf y} - {\bf b} \| &lt; \delta' \Rightarrow \| {\bf f(y)}-{\bf f(b)} \| &lt; \epsilon 
+\]</div>
+<p>Al componer <span class="math notranslate nohighlight">\({\bf g}\)</span> sobre <span class="math notranslate nohighlight">\({\bf f}\)</span>, aplicamos la función <span class="math notranslate nohighlight">\({\bf f}\)</span> sobre los puntos de llegada de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Esto es  <span class="math notranslate nohighlight">\({\bf y} = {\bf g(x)}\)</span> y al ser además <span class="math notranslate nohighlight">\({\bf g}\)</span> continua, <span class="math notranslate nohighlight">\( {\bf b} = {\bf g(a)}\)</span>.</p>
+<p>Si tomamos <span class="math notranslate nohighlight">\(\epsilon' = \delta '\)</span>, tenemos que para todo <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>, existe un <span class="math notranslate nohighlight">\(\delta\)</span>, tal que, si <span class="math notranslate nohighlight">\(\| {\bf x}-{\bf a} \| &lt; \delta\)</span>, entonces,</p>
+<div class="math notranslate nohighlight">
+\[
+\| {\bf f(g(x))} - {\bf f(g(a))} \| = \, \| {\bf (f \circ g)(x)} - {\bf (f \circ g)(a)} \| &lt; \epsilon.
+\]</div>
+<p>que es la condición de que exista el límite y sea continua la función compuesta.</p>
+<p>Q.E.D.</p>
+<p><em>demostración:</em></p>
+<p>Dado que <span class="math notranslate nohighlight">\({\bf g}, \, {\bf f}\)</span> son continuos en <span class="math notranslate nohighlight">\({\bf a}\)</span> e <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, temos que <span class="math notranslate nohighlight">\(\forall \, \epsilon &amp;gt;0 \)</span> e <span class="math notranslate nohighlight">\(\epsilon&amp;#39; &amp;gt;0\)</span> existen <span class="math notranslate nohighlight">\(\delta &amp;gt;0\)</span> e <span class="math notranslate nohighlight">\(\delta&amp;#39;&amp;gt;0\)</span> e contén:</p>
+<div class="math notranslate nohighlight">
+\[ | {\bf x} - {\bf a} | &amp;lt; \delta \Frecha dereita | {\bf g(x)}-{\bf g(a)} | &amp;lt; \epsilon&amp;#39;\]</div>
+<div class="math notranslate nohighlight">
+\[ | {\bf y} - {\bf b} | &amp;lt; \delta&amp;#39; \Rightarrow | {\bf f(y)}-{\bf f(b)} | &amp;lt; \epsilon\]</div>
+<p>Compoñendo <span class="math notranslate nohighlight">\({\bf g}\)</span> en <span class="math notranslate nohighlight">\({\bf f}\)</span>, aplicamos a función <span class="math notranslate nohighlight">\({\bf f}\)</span> nos puntos de chegada de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Isto é <span class="math notranslate nohighlight">\({\bf y} = {\bf g(x)}\)</span> e como <span class="math notranslate nohighlight">\({\bf g}\)</span> tamén é continuo, <span class="math notranslate nohighlight">\( {\bf b} = {\bf g(a)}\)</span>.</p>
+<p>Se tomamos <span class="math notranslate nohighlight">\(\epsilon&amp;#39; = \delta &amp;#39;\)</span>, temos que para cada <span class="math notranslate nohighlight">\(\epsilon&amp;gt;0\)</span>, existe un <span class="math notranslate nohighlight">\(\delta\)</span>, tal que, se <span class="math notranslate nohighlight">\(| {\bf x}-{\bf a} | &amp;lt; \delta\)</span>, entón,</p>
+<div class="math notranslate nohighlight">
+\[ | {\bf f(g(x))} - {\bf f(g(a))} | = \, | {\bf (f \circ g)(x)} - {\bf (f \circ g)(a)} | &amp;lt; \epsilon.\]</div>
+<p>que é a condición de que exista o límite e que a función composta sexa continua.</p>
+<p>QED</p>
+<p><em>Cuestión</em>: ¿Es esta función <span class="math notranslate nohighlight">\(h(x,y) = \sin^2 (x^2+y^2)\)</span> continua?</p>
+<p><em>Pregunta</em> : Esta función <span class="math notranslate nohighlight">\(h(x,y) = \sin^2 (x^2+y^2)\)</span> é continua?</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limite-de-funcions-escalares-e-vectoriais">Límite de funcións escalares e vectoriais</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bola">Bola</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidade">Continuidade</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Apéndice</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata, X. Cid Vidal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

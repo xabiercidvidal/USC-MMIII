@@ -1,4 +1,4 @@
-# Como acceder ás notasA
+# Como acceder ás notas
 
 ### Como ler as notas na web?
 
