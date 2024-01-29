@@ -9,3 +9,4 @@
 | Sección | Google Colab  |                    
 | :--  | :--: |
 | Funcións escalares e vectoriais | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_funcion_escalar_vectorial.ipynb) |
+| Límites e continuidade | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_limites_continuidade.ipynb) |

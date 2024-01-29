@@ -12,4 +12,4 @@ parts:
   chapters:
   - file: notebooks/tderivadas_introducion.ipynb
   - file: notebooks/tderivadas_funcion_escalar_vectorial.ipynb
-
+  - file: notebooks/tderivadas_limites_continuidade.ipynb
