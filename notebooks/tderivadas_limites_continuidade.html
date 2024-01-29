@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_limites_continuidade';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais." href="tderivadas_funcion_escalar_vectorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,9 +163,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Límite e continuidade das funcións escalares e vectoriais</a></li>
 </ul>
 
     </div>
@@ -413,10 +415,8 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidade">Continuidade</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Apéndice</a></li>
 </ul>
             </nav>
         </div>
@@ -438,7 +438,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Sun Jan 28 23:34:06 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Mon Jan 29 16:47:36 2024
 </pre></div>
 </div>
 </div>
@@ -519,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cff920d3b761e7f6debeed699cf94b8e96e08ad55b311e1523a15364ae2cce44.png" src="../_images/cff920d3b761e7f6debeed699cf94b8e96e08ad55b311e1523a15364ae2cce44.png" />
+<img alt="../_images/632a38757ad4c94c5e2b7cfd960cfa0797b935a13238496b153a5989ac0ca1f5.png" src="../_images/632a38757ad4c94c5e2b7cfd960cfa0797b935a13238496b153a5989ac0ca1f5.png" />
 </div>
 </div>
 </section>
@@ -579,63 +579,217 @@ document.write(`
 <p>Dado un tamaño <span class="math notranslate nohighlight">\(\epsilon\)</span>, debemos atopar un disco de raio <span class="math notranslate nohighlight">\(\delta\)</span> centrado na orixe, de xeito que para os puntos do disco, o valor da función estea a unha distancia inferior a <span class="math notranslate nohighlight">\(\epsilon\)</span> do límite, de 1 neste caso.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-10</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">ps</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-10</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">ps</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">rms</span><span class="p">,</span> <span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">ps</span><span class="p">)</span>
 <span class="n">xms</span>      <span class="o">=</span> <span class="n">rms</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pms</span><span class="p">)</span>
 <span class="n">yms</span>      <span class="o">=</span> <span class="n">rms</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pms</span><span class="p">)</span>
 <span class="n">zms</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rms</span><span class="p">)</span><span class="o">/</span><span class="n">rms</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">);</span>
-<span class="n">sf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">);</span>
+<span class="c1">#sf = ax.plot_surface(xms, yms, zms, cmap=&#39;jet&#39;, alpha = 1.);</span>
+<span class="c1">#ax.set_xlabel(&#39;x&#39;); ax.set_ylabel(&#39;y&#39;); fig.colorbar(sf);</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">CS3</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">CS3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" src="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1118e4410&gt;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Error in callback &lt;function flush_figures at 0x1115a0290&gt; (for post_execute):
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">~/jupyter/lib/python3.7/site-packages/ipykernel/pylab/backend_inline.py</span> in <span class="ni">flush_figures</span><span class="nt">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">118</span>         <span class="c1"># ignore the tracking, just draw and close all figures</span>
+<span class="g g-Whitespace">    </span><span class="mi">119</span>         <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">120</span>             <span class="k">return</span> <span class="n">show</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">121</span>         <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">122</span>             <span class="c1"># safely show traceback if in IPython, else raise</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/ipykernel/pylab/backend_inline.py</span> in <span class="ni">show</span><span class="nt">(close, block)</span>
+<span class="g g-Whitespace">     </span><span class="mi">40</span>             <span class="n">display</span><span class="p">(</span>
+<span class="g g-Whitespace">     </span><span class="mi">41</span>                 <span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">,</span>
+<span class="ne">---&gt; </span><span class="mi">42</span>                 <span class="n">metadata</span><span class="o">=</span><span class="n">_fetch_figure_metadata</span><span class="p">(</span><span class="n">figure_manager</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">figure</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">43</span>             <span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">44</span>     <span class="k">finally</span><span class="p">:</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/IPython/core/display.py</span> in <span class="ni">display</span><span class="nt">(include, exclude, metadata, transient, display_id, *objs, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">311</span>             <span class="n">publish_display_data</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">obj</span><span class="p">,</span> <span class="n">metadata</span><span class="o">=</span><span class="n">metadata</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">312</span>         <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">313</span>             <span class="n">format_dict</span><span class="p">,</span> <span class="n">md_dict</span> <span class="o">=</span> <span class="nb">format</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="n">include</span><span class="o">=</span><span class="n">include</span><span class="p">,</span> <span class="n">exclude</span><span class="o">=</span><span class="n">exclude</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">314</span>             <span class="k">if</span> <span class="ow">not</span> <span class="n">format_dict</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">315</span>                 <span class="c1"># nothing to display (e.g. _ipython_display_ took over)</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/IPython/core/formatters.py</span> in <span class="ni">format</span><span class="nt">(self, obj, include, exclude)</span>
+<span class="g g-Whitespace">    </span><span class="mi">178</span>             <span class="n">md</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">179</span>             <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">180</span>                 <span class="n">data</span> <span class="o">=</span> <span class="n">formatter</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">181</span>             <span class="k">except</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">182</span>                 <span class="c1"># FIXME: log the exception</span>
+
+<span class="nn">&lt;decorator-gen-2&gt;</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/IPython/core/formatters.py</span> in <span class="ni">catch_format_error</span><span class="nt">(method, self, *args, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">222</span>     <span class="sd">&quot;&quot;&quot;show traceback on failed format call&quot;&quot;&quot;</span>
+<span class="g g-Whitespace">    </span><span class="mi">223</span>     <span class="k">try</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">224</span>         <span class="n">r</span> <span class="o">=</span> <span class="n">method</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">225</span>     <span class="k">except</span> <span class="ne">NotImplementedError</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">226</span>         <span class="c1"># don&#39;t warn on NotImplementedErrors</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/IPython/core/formatters.py</span> in <span class="ni">__call__</span><span class="nt">(self, obj)</span>
+<span class="g g-Whitespace">    </span><span class="mi">339</span>                 <span class="k">pass</span>
+<span class="g g-Whitespace">    </span><span class="mi">340</span>             <span class="k">else</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">341</span>                 <span class="k">return</span> <span class="n">printer</span><span class="p">(</span><span class="n">obj</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">342</span>             <span class="c1"># Finally look for special method names</span>
+<span class="g g-Whitespace">    </span><span class="mi">343</span>             <span class="n">method</span> <span class="o">=</span> <span class="n">get_real_method</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">print_method</span><span class="p">)</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/IPython/core/pylabtools.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(fig)</span>
+<span class="g g-Whitespace">    </span><span class="mi">246</span> 
+<span class="g g-Whitespace">    </span><span class="mi">247</span>     <span class="k">if</span> <span class="s1">&#39;png&#39;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">248</span>         <span class="n">png_formatter</span><span class="o">.</span><span class="n">for_type</span><span class="p">(</span><span class="n">Figure</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">fig</span><span class="p">:</span> <span class="n">print_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="s1">&#39;png&#39;</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+<span class="g g-Whitespace">    </span><span class="mi">249</span>     <span class="k">if</span> <span class="s1">&#39;retina&#39;</span> <span class="ow">in</span> <span class="n">formats</span> <span class="ow">or</span> <span class="s1">&#39;png2x&#39;</span> <span class="ow">in</span> <span class="n">formats</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">250</span>         <span class="n">png_formatter</span><span class="o">.</span><span class="n">for_type</span><span class="p">(</span><span class="n">Figure</span><span class="p">,</span> <span class="k">lambda</span> <span class="n">fig</span><span class="p">:</span> <span class="n">retina_figure</span><span class="p">(</span><span class="n">fig</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/IPython/core/pylabtools.py</span> in <span class="ni">print_figure</span><span class="nt">(fig, fmt, bbox_inches, **kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>         <span class="n">FigureCanvasBase</span><span class="p">(</span><span class="n">fig</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span> 
+<span class="ne">--&gt; </span><span class="mi">132</span>     <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">print_figure</span><span class="p">(</span><span class="n">bytes_io</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">bytes_io</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>     <span class="k">if</span> <span class="n">fmt</span> <span class="o">==</span> <span class="s1">&#39;svg&#39;</span><span class="p">:</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/matplotlib/backend_bases.py</span> in <span class="ni">print_figure</span><span class="nt">(self, filename, dpi, facecolor, edgecolor, orientation, format, bbox_inches, pad_inches, bbox_extra_artists, backend, **kwargs)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2228</span>                        <span class="k">else</span> <span class="n">suppress</span><span class="p">())</span>
+<span class="g g-Whitespace">   </span><span class="mi">2229</span>                 <span class="k">with</span> <span class="n">ctx</span><span class="p">:</span>
+<span class="ne">-&gt; </span><span class="mi">2230</span>                     <span class="bp">self</span><span class="o">.</span><span class="n">figure</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2231</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2232</span>             <span class="k">if</span> <span class="n">bbox_inches</span><span class="p">:</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">72</span>     <span class="nd">@wraps</span><span class="p">(</span><span class="n">draw</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">def</span> <span class="nf">draw_wrapper</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="ne">---&gt; </span><span class="mi">74</span>         <span class="n">result</span> <span class="o">=</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">75</span>         <span class="k">if</span> <span class="n">renderer</span><span class="o">.</span><span class="n">_rasterizing</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">76</span>             <span class="n">renderer</span><span class="o">.</span><span class="n">stop_rasterizing</span><span class="p">()</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> 
+<span class="ne">---&gt; </span><span class="mi">51</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/matplotlib/figure.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2736</span>             <span class="bp">self</span><span class="o">.</span><span class="n">patch</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2737</span>             <span class="n">mimage</span><span class="o">.</span><span class="n">_draw_list_compositing_images</span><span class="p">(</span>
+<span class="ne">-&gt; </span><span class="mi">2738</span>                 <span class="n">renderer</span><span class="p">,</span> <span class="bp">self</span><span class="p">,</span> <span class="n">artists</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">suppressComposite</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">2739</span> 
+<span class="g g-Whitespace">   </span><span class="mi">2740</span>             <span class="k">for</span> <span class="n">sfig</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">subfigs</span><span class="p">:</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/matplotlib/image.py</span> in <span class="ni">_draw_list_compositing_images</span><span class="nt">(renderer, parent, artists, suppress_composite)</span>
+<span class="g g-Whitespace">    </span><span class="mi">130</span>     <span class="k">if</span> <span class="n">not_composite</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">has_images</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">131</span>         <span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">artists</span><span class="p">:</span>
+<span class="ne">--&gt; </span><span class="mi">132</span>             <span class="n">a</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">renderer</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">133</span>     <span class="k">else</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">134</span>         <span class="c1"># Composite any adjacent images together</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/matplotlib/artist.py</span> in <span class="ni">draw_wrapper</span><span class="nt">(artist, renderer, *args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">49</span>                 <span class="n">renderer</span><span class="o">.</span><span class="n">start_filter</span><span class="p">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">50</span> 
+<span class="ne">---&gt; </span><span class="mi">51</span>             <span class="k">return</span> <span class="n">draw</span><span class="p">(</span><span class="n">artist</span><span class="p">,</span> <span class="n">renderer</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>         <span class="k">finally</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">53</span>             <span class="k">if</span> <span class="n">artist</span><span class="o">.</span><span class="n">get_agg_filter</span><span class="p">()</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/mpl_toolkits/mplot3d/axes3d.py</span> in <span class="ni">draw</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">    </span><span class="mi">485</span>                     <span class="nb">sorted</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">collections</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">486</span>                            <span class="n">key</span><span class="o">=</span><span class="n">do_3d_projection</span><span class="p">,</span>
+<span class="ne">--&gt; </span><span class="mi">487</span>                            <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)):</span>
+<span class="g g-Whitespace">    </span><span class="mi">488</span>                 <span class="n">col</span><span class="o">.</span><span class="n">zorder</span> <span class="o">=</span> <span class="n">zorder_offset</span> <span class="o">+</span> <span class="n">i</span>
+<span class="g g-Whitespace">    </span><span class="mi">489</span>             <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">patch</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/mpl_toolkits/mplot3d/axes3d.py</span> in <span class="ni">do_3d_projection</span><span class="nt">(artist)</span>
+<span class="g g-Whitespace">    </span><span class="mi">469</span>                     <span class="c1"># avoid passing it to them; call this directly once the</span>
+<span class="g g-Whitespace">    </span><span class="mi">470</span>                     <span class="c1"># deprecation has expired.</span>
+<span class="ne">--&gt; </span><span class="mi">471</span>                     <span class="k">return</span> <span class="n">artist</span><span class="o">.</span><span class="n">do_3d_projection</span><span class="p">()</span>
+<span class="g g-Whitespace">    </span><span class="mi">472</span> 
+<span class="g g-Whitespace">    </span><span class="mi">473</span>                 <span class="n">_api</span><span class="o">.</span><span class="n">warn_deprecated</span><span class="p">(</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/matplotlib/_api/deprecation.py</span> in <span class="ni">wrapper</span><span class="nt">(*inner_args, **inner_kwargs)</span>
+<span class="g g-Whitespace">    </span><span class="mi">429</span>                          <span class="k">else</span> <span class="n">deprecation_addendum</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">430</span>                 <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="ne">--&gt; </span><span class="mi">431</span>         <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">inner_args</span><span class="p">,</span> <span class="o">**</span><span class="n">inner_kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">432</span> 
+<span class="g g-Whitespace">    </span><span class="mi">433</span>     <span class="k">return</span> <span class="n">wrapper</span>
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/mpl_toolkits/mplot3d/art3d.py</span> in <span class="ni">do_3d_projection</span><span class="nt">(self, renderer)</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>                  <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">((</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">zs</span><span class="p">),</span> <span class="n">fc</span><span class="p">,</span> <span class="n">ec</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span>                  <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xyzlist</span><span class="p">,</span> <span class="n">cface</span><span class="p">,</span> <span class="n">cedge</span><span class="p">))),</span>
+<span class="ne">--&gt; </span><span class="mi">822</span>                 <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span> 
+<span class="g g-Whitespace">    </span><span class="mi">824</span>             <span class="n">_</span><span class="p">,</span> <span class="n">segments_2d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_facecolors2d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgecolors2d</span><span class="p">,</span> <span class="n">idxs</span> <span class="o">=</span> \
+
+<span class="nn">~/jupyter/lib/python3.7/site-packages/mpl_toolkits/mplot3d/art3d.py</span> in <span class="ni">&lt;lambda&gt;</span><span class="nt">(x)</span>
+<span class="g g-Whitespace">    </span><span class="mi">820</span>                  <span class="k">for</span> <span class="n">idx</span><span class="p">,</span> <span class="p">((</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">zs</span><span class="p">),</span> <span class="n">fc</span><span class="p">,</span> <span class="n">ec</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">821</span>                  <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">xyzlist</span><span class="p">,</span> <span class="n">cface</span><span class="p">,</span> <span class="n">cedge</span><span class="p">))),</span>
+<span class="ne">--&gt; </span><span class="mi">822</span>                 <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">823</span> 
+<span class="g g-Whitespace">    </span><span class="mi">824</span>             <span class="n">_</span><span class="p">,</span> <span class="n">segments_2d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_facecolors2d</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">_edgecolors2d</span><span class="p">,</span> <span class="n">idxs</span> <span class="o">=</span> \
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
 </div>
 </div>
 <p>A seguinte cela permíteche variar o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> e móstrache a gráfica cos puntos que están preto do límite a unha distancia inferior a <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 <p>A súa proxección no plano <span class="math notranslate nohighlight">\((x, y)\)</span> móstrache a bola, o disco, de raio <span class="math notranslate nohighlight">\(\delta\)</span>, con respecto á orixe na que están incluídos todos os puntos. Non importa o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> que elixas, sempre atoparás un disco de raio <span class="math notranslate nohighlight">\(\delta\)</span>. Logo existe o límite e é igual a 1.</p>
-<p><strong>Explora</strong> : cambia o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> e observa como cambia o tamaño do disco <span class="math notranslate nohighlight">\(\delta\)</span> que cumpre a condición de límite.</p>
+<p><strong>Explora</strong>: cambia o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> e observa como cambia o tamaño do disco <span class="math notranslate nohighlight">\(\delta\)</span> que cumpre a condición de límite.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rms</span><span class="p">)</span><span class="o">/</span> <span class="n">rms</span>
-<span class="n">b</span><span class="p">,</span> <span class="n">epsilon</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.001</span>
-<span class="n">sel</span>        <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">zms</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span>
-<span class="n">cms</span><span class="p">[</span><span class="o">~</span><span class="n">sel</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">0.</span>
-<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
-<span class="c1">#ax.plot_surface(xms, yms, zms, cmap = &#39;jet&#39;, alpha = 0.2);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">cms</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">,</span><span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rs1</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">1e-10</span><span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="n">ps1</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span>
+<span class="n">rms1</span><span class="p">,</span> <span class="n">pms1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">rs1</span><span class="p">,</span> <span class="n">ps1</span><span class="p">)</span>
+<span class="n">xms1</span>      <span class="o">=</span> <span class="n">rms1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">pms1</span><span class="p">)</span>
+<span class="n">yms1</span>      <span class="o">=</span> <span class="n">rms1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">pms1</span><span class="p">)</span>
+<span class="n">zms1</span>      <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">rms1</span><span class="p">)</span><span class="o">/</span><span class="n">rms1</span>
+<span class="n">b</span><span class="p">,</span><span class="n">epsilon</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span><span class="mf">0.1</span>
+<span class="n">sel</span>        <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">zms1</span><span class="o">-</span><span class="n">b</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">epsilon</span>
+<span class="n">zms1</span><span class="p">[</span><span class="o">~</span><span class="n">sel</span><span class="p">]</span>  <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">);</span>
+<span class="c1">#sf = ax.plot_surface(xms, yms, zms, cmap=&#39;jet&#39;, alpha = 1.);</span>
+<span class="c1">#ax.set_xlabel(&#39;x&#39;); ax.set_ylabel(&#39;y&#39;); fig.colorbar(sf);</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">CS3</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xms1</span><span class="p">,</span> <span class="n">yms1</span><span class="p">,</span> <span class="n">zms1</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">CS3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/980271cfe2f0fa71fad077089bbe44641db6677f1ede2f7e213ba7c1df35654d.png" src="../_images/980271cfe2f0fa71fad077089bbe44641db6677f1ede2f7e213ba7c1df35654d.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x13e8f2f50&gt;
+</pre></div>
+</div>
+<img alt="../_images/b180ec43c40e67988ad2df4c5e9f2d46ce09d8def0349fe1142e4425ce7ecb5c.png" src="../_images/b180ec43c40e67988ad2df4c5e9f2d46ce09d8def0349fe1142e4425ce7ecb5c.png" />
 </div>
 </div>
-<p>Para calcular los límites utilizaremos una aproximación.</p>
-<p>Calcularemos los límites en un punto aproximándones a él por todas las rectas posibles.</p>
-<p>Si el valor del límite que encontremos es el mismo y no depende de la recta, podremos afirmar: <em>“si existe el límite, éste debe ser su valor”.</em></p>
 <p>Para calcular os límites usaremos unha aproximación.</p>
 <p>Calcularemos os límites nun punto aproximándoo por todas as rectas posibles.</p>
-<p>Se o valor do límite que atopamos é o mesmo e non depende da liña, podemos afirmar: <em>“se o límite existe, este debe ser o seu valor”.</em></p>
-<p><strong>Ejemplo</strong>: Calcula el límite en el origen de la función escalar:</p>
+<p>Se o valor do límite que atopamos é o mesmo e non depende da liña, podemos afirmar: <strong>“se o límite existe, este debe ser o seu valor”.</strong></p>
+<p><strong>Exemplo</strong> : Calcula o límite na orixe da función escalar:</p>
 <div class="math notranslate nohighlight">
 \[
 f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}
 \]</div>
-<p>En la siguientes celdas se muestra los conjuntos de nivel de la función y una recta que pasa por el origen.</p>
-<p><strong>Explora</strong> cambia la pendiente de la recta y considera qué valor alcaza la función al aproximarse por esa recta al origen</p>
-<p><strong>Exemplo</strong> : Calcula o límite na orixe da función escalar:</p>
-<div class="math notranslate nohighlight">
-\[ f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}\]</div>
-<p>As seguintes celas mostran os conxuntos de niveis da función e unha liña que pasa pola orixe.</p>
-<p><strong>Explorar</strong> cambia a pendente da recta e considera o valor que alcanza a función cando se achega á orixe ao longo desa liña.</p>
+<p>As seguintes celas mostran os conxuntos de nivel da función e unha liña que pasa pola orixe.</p>
+<p><strong>Explorar</strong> cambia a pendente da recta e considera o valor que acada a función cando se achega á orixe ao longo desa liña.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span> <span class="c1">#pendiente de la recta que pasa por el origen</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span> <span class="c1">#pendente da recta que pasa pola orixe</span>
 <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">8.</span><span class="p">,</span> <span class="mf">8.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
 <span class="n">ys</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">xs</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
@@ -647,73 +801,46 @@ f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" src="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" />
+<img alt="../_images/357b9db8ff4d93000456e6d5ee88260967c25fc0871a2a8a5efa17cdbf504c41.png" src="../_images/357b9db8ff4d93000456e6d5ee88260967c25fc0871a2a8a5efa17cdbf504c41.png" />
 </div>
 </div>
-<p>Calculamos ahora el límite en el origen aproximandonos por todas la rectas que pasan por el origen, que podemos dar en:</p>
-<ul class="simple">
-<li><p>cartesianas:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-y = a x + b
-\]</div>
-<p>donde b = 0, porque pasa por el origen.
-Calculamos en 1D el límite cuando <span class="math notranslate nohighlight">\(x \rightarrow 0\)</span></p>
-<ul class="simple">
-<li><p>o en polares:</p></li>
-</ul>
-<div class="math notranslate nohighlight">
-\[
-x = r \cos \phi; \; y = r \sin \phi
-\]</div>
-<p>donde <span class="math notranslate nohighlight">\(\phi \in [0, 2 \pi)\)</span>. Tomamos el límite en 1D  cuando <span class="math notranslate nohighlight">\(r \rightarrow 0\)</span></p>
 <p>Agora calculamos o límite na orixe aproximando todas as liñas que pasan pola orixe, que podemos dar como:</p>
 <ul class="simple">
-<li><p>Cartesiano:</p></li>
+<li><p>Cartesianas:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[ y = ax + b\]</div>
-<p>onde b = 0, porque pasa pola orixe.</p>
-<p>Calculamos en 1D o límite cando <span class="math notranslate nohighlight">\(x \rightarrow 0\)</span></p>
+\[
+ y = ax + b
+ \]</div>
+<p>onde b = 0, porque pasa pola orixe.
+Calculamos en 1D o límite cando <span class="math notranslate nohighlight">\(x \rightarrow 0\)</span></p>
 <ul class="simple">
-<li><p>ou en polar:</p></li>
+<li><p>ou en polares:</p></li>
 </ul>
 <div class="math notranslate nohighlight">
-\[ x = r \cos \phi; \; y = r \sin \phi\]</div>
+\[
+ x = r \cos \phi; \; y = r \sin \phi
+ \]</div>
 <p>onde <span class="math notranslate nohighlight">\(\phi \in [0, 2 \pi)\)</span>. Tomamos o límite en 1D cando <span class="math notranslate nohighlight">\(r \rightarrow 0\)</span></p>
-<p><em>Solución</em>:</p>
-<p>En cartesianas, sustituyendo <span class="math notranslate nohighlight">\(y = a x\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[
-\lim_{x \to 0 }\frac{\sin  x \sqrt{(1 +a^2)}}{ x \sqrt{1 + a^2}} = 1
-\]</div>
-<p>Si existe el límite es 1</p>
-<p>ii) o si cambiamos a polares y hacemos el límite <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[
-\lim_{r \to 0 }\frac{\sin r}{ r} = 1
-\]</div>
-<p>Si existe el límite es 1.</p>
 <p><em>Solución</em> :</p>
-<p>En cartesianos, substituíndo <span class="math notranslate nohighlight">\(y = ax\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[ \lim_{x \to 0 }\frac{\sin x \sqrt{(1 +a^2)}}{ x \sqrt{1 + a^2}} = 1\]</div>
-<p>Se existe o límite é 1</p>
-<p>ii) ou se cambiamos a polar e facemos o límite <span class="math notranslate nohighlight">\(r \a 0\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[ \lim_{r \to 0 }\frac{\sin r}{ r} = 1\]</div>
-<p>Se existe, o límite é 1.</p>
-<p><strong>Ejercicio</strong>: Calcular si existe el límite en el origen de la función:</p>
+<p>En cartesianas, substituíndo <span class="math notranslate nohighlight">\(y = ax\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-f(x, y) = \frac{x y}{x^2 + y^2}
-\]</div>
-<p><strong>Observa</strong> primero la gráfica de la función y pregúntate si tiene límite en el origen. Considera por ejemplo aproximarte al origen con rectas dependiente +1 y -1.</p>
+ \lim_{x \to 0 }\frac{\sin x \sqrt{(1 +a^2)}}{ x \sqrt{1 + a^2}} = 1
+ \]</div>
+<p>Se existe o límite é 1</p>
+<p>ii) ou se cambiamos a polar e facemos o límite <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+ \lim_{r \to 0 }\frac{\sin r}{ r} = 1
+ \]</div>
+<p>Se existe, o límite é 1.</p>
 <p><strong>Exercicio</strong> : Calcula se o límite existe na orixe da función:</p>
 <div class="math notranslate nohighlight">
-\[ f(x, y) = \frac{xy}{x^2 + y^2}\]</div>
-<p>Primeiro <strong>mira</strong> a gráfica da función e pregúntase se ten un límite na orixe. Considere, por exemplo, aproximarse á orixe con liñas dependentes +1 e -1.</p>
+\[
+ f(x, y) = \frac{xy}{x^2 + y^2}
+ \]</div>
+<p>Primeiro <strong>mira</strong> a gráfica da función e pensa se ten un límite na orixe. Considera, por exemplo, aproximarse á orixe con liñas de pendentes +1 e -1.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%matplotlib notebook</span>
@@ -722,18 +849,24 @@ f(x, y) = \frac{x y}{x^2 + y^2}
 <span class="n">xms</span><span class="p">,</span> <span class="n">yms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
 <span class="n">zms</span>      <span class="o">=</span> <span class="p">(</span><span class="n">xms</span> <span class="o">*</span> <span class="n">yms</span><span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">xms</span><span class="o">*</span><span class="n">xms</span> <span class="o">+</span> <span class="n">yms</span><span class="o">*</span><span class="n">yms</span><span class="p">)</span>
 <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">);</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mf">60.</span><span class="p">)</span>
-<span class="n">sf</span>  <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot_surface</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;jet&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">);</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;$xy/(x^2+y^2)$&#39;</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">view_init</span><span class="p">(</span><span class="n">azim</span><span class="o">=</span><span class="mf">30.</span><span class="p">)</span>
+<span class="c1">#sf  = ax.plot_surface(xms, yms, zms, cmap=&#39;jet&#39;, alpha = 1.);</span>
+<span class="c1">#plt.xlabel(&#39;x&#39;); plt.ylabel(&#39;y&#39;); fig.colorbar(sf); plt.title(&#39;$xy/(x^2+y^2)$&#39;);</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">500</span>
+<span class="n">CS3</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contourf</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">N</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s2">&quot;viridis&quot;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span><span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span><span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s1">&#39;$xy/(x^2+y^2)$&#39;</span><span class="p">);</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">CS3</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" src="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x14666f8d0&gt;
+</pre></div>
+</div>
+<img alt="../_images/81b30334505865b0577d0a938895f01fc46489aa27bae7edcb5854e3e8779351.png" src="../_images/81b30334505865b0577d0a938895f01fc46489aa27bae7edcb5854e3e8779351.png" />
 </div>
 </div>
-<p>Dibujamos ahora los conjuntos de nivel. ¿Son rectas? ¿Qué pasa si te aproximas ahora al origen por cada una de esas rectas?</p>
-<p>Agora debuxamos os conxuntos de niveis. Son rectos? Que pasa se agora te achegas á orixe por cada unha desas liñas?</p>
+<p>Agora debuxamos os conxuntos de nivel. Son rectas? Que pasa se agora te achegas á orixe por cada unha desas liñas?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
@@ -749,36 +882,67 @@ f(x, y) = \frac{x y}{x^2 + y^2}
 <img alt="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" src="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" />
 </div>
 </div>
-<p><em>solución</em>:</p>
-<p>i) si estudiamos el límite a lo largo de la recta <span class="math notranslate nohighlight">\(y = ax\)</span> y tomamos el límite <span class="math notranslate nohighlight">\(x \to 0\)</span></p>
+<p><em>Solución</em> :</p>
+<p>i) se estudamos o límite ao longo da recta <span class="math notranslate nohighlight">\(y = ax\)</span> e tomamos o límite <span class="math notranslate nohighlight">\(x \to 0\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\lim_{x \to 0} \frac{a x^2 }{x^2 + a^2 x^2} = \frac{a}{1+a^2} 
-\]</div>
-<p>El límite depende de la pendiente <span class="math notranslate nohighlight">\(a\)</span>, luego no existe el límite.</p>
-<p>Si <span class="math notranslate nohighlight">\(a = 0\)</span>, el límite valdría 0.
-Si <span class="math notranslate nohighlight">\(a = \pm 1\)</span>, el limite valdría <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
-<p><em>solución</em> :</p>
-<p>i) se estudamos o límite ao longo da recta <span class="math notranslate nohighlight">\(y = ax\)</span> e tomamos o límite <span class="math notranslate nohighlight">\(x \a 0\)</span></p>
-<div class="math notranslate nohighlight">
-\[ \lim_{x \to 0} \frac{ax^2 }{x^2 + a^2 x^2} = \frac{a}{1+a^2}\]</div>
+ \lim_{x \to 0} \frac{ax^2 }{x^2 + a^2 x^2} = \frac{a}{1+a^2}
+ \]</div>
 <p>O límite depende da pendente <span class="math notranslate nohighlight">\(a\)</span>, polo que o límite non existe.</p>
 <p>Se <span class="math notranslate nohighlight">\(a = 0\)</span>, o límite sería 0.</p>
 <p>Se <span class="math notranslate nohighlight">\(a = \pm 1\)</span>, o límite sería <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
-<p>ii) Si cambiamos a polares y luego hacemos el límite <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
+<p>ii) Se cambiamos a polar e logo facemos o límite <span class="math notranslate nohighlight">\(r \to 0\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-\lim_{r \to 0} \frac{r^2 \cos \phi \sin \phi}{r^2 (\cos^2 \phi +  \sin^2 \phi)} = \cos \phi \sin\phi = \frac{1}{2} \sin 2 \phi
-\]</div>
-<p>El límite depende del ángulo <span class="math notranslate nohighlight">\(\phi\)</span>, luego no existe el límite.</p>
-<p>Si <span class="math notranslate nohighlight">\(\phi = 0, \pi/2\)</span> la función vale 0, mientras que para <span class="math notranslate nohighlight">\(\phi = \pm \pi/4\)</span>, vale <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
-<p>ii) Se cambiamos a polar e logo facemos o límite <span class="math notranslate nohighlight">\(r \a 0\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[ \lim_{r \to 0} \frac{r^2 \cos \phi \sin \phi}{r^2 (\cos^2 \phi + \sin^2 \phi)} = \cos \phi \sin \phi = \frac{1}{2} \sin 2 \phi\]</div>
+ \lim_{r \to 0} \frac{r^2 \cos \phi \sin \phi}{r^2 (\cos^2 \phi + \sin^2 \phi)} = \cos \phi \sin \phi = \frac{1}{2} \sin 2 \phi
+ \]</div>
 <p>O límite depende do ángulo <span class="math notranslate nohighlight">\(\phi\)</span>, polo tanto, o límite non existe.</p>
 <p>Se <span class="math notranslate nohighlight">\(\phi = 0, \pi/2\)</span> a función é 0, mentres que para <span class="math notranslate nohighlight">\(\phi = \pm \pi/4\)</span>, é <span class="math notranslate nohighlight">\(\pm 1/2\)</span>.</p>
-<p><strong>Ejercicio</strong>: ¿Puedes dar las ecuaciones de todas las rectas que pasan por <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>? En cartesianas y polares.</p>
-<p><strong>Exercicio</strong> : Podes dar as ecuacións de todas as rectas que pasan por <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>? En cartesiano e polar.</p>
+<p><strong>Exercicio</strong> : Calcula se o límite existe na orixe da función:</p>
+<div class="math notranslate nohighlight">
+\[
+ f(x, y) = \frac{x^2}{x- y^3}
+ \]</div>
+<p><em>Solución</em> :</p>
+<p>se estudamos o límite ao longo da recta <span class="math notranslate nohighlight">\(y = ax\)</span> e tomamos o límite <span class="math notranslate nohighlight">\(x \to 0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+ \lim_{x \to 0} \frac{x^2 }{x -  a^3 x^3} = \frac{x}{1-a^2 x^2} = 0
+ \]</div>
+<p>poderíamos estar tentados a deixalo ir, e dicir que o límite existe…</p>
+<p>problemos agora o límite ao longo da curva <span class="math notranslate nohighlight">\(y=x^{\frac{1}{3}}\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+ \lim_{x \to 0} \frac{x^2 }{x - (x^{\frac{1}{3}})^3} = \frac{x}{1-1} \to \infty
+\]</div>
+<p>Vexámolo graficamente</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#%matplotlib notebook</span>
+<span class="n">xs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ys</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">xms</span><span class="p">,</span> <span class="n">yms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+<span class="n">zms</span>      <span class="o">=</span> <span class="p">(</span><span class="n">xms</span> <span class="o">**</span><span class="mi">2</span> <span class="p">)</span> <span class="o">/</span><span class="p">(</span><span class="n">xms</span> <span class="o">-</span> <span class="n">yms</span><span class="o">**</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.</span> <span class="c1">#pendente da recta que pasa pola orixe</span>
+<span class="n">xsl</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">a</span><span class="o">*</span><span class="n">xsl</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">();</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+<span class="n">myl</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1000</span><span class="p">,</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">1000</span><span class="p">]</span>
+<span class="n">sf</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">myl</span><span class="p">,</span> <span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;grey&quot;</span><span class="p">,</span><span class="s2">&quot;black&quot;</span><span class="p">,</span><span class="s2">&quot;blue&quot;</span><span class="p">,</span><span class="s2">&quot;cyan&quot;</span><span class="p">,</span><span class="s2">&quot;pink&quot;</span><span class="p">,</span><span class="s2">&quot;magenta&quot;</span><span class="p">,</span><span class="s2">&quot;red&quot;</span><span class="p">,</span><span class="s2">&quot;yellow&quot;</span><span class="p">],</span><span class="n">linestyles</span><span class="o">=</span><span class="s2">&quot;dashed&quot;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsl</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;black&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">sf</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span>
+<span class="n">ysn</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cbrt</span><span class="p">(</span><span class="n">xsl</span><span class="p">)</span> <span class="c1">## cubic root</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xsl</span><span class="p">,</span> <span class="n">ysn</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">lims</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span> <span class="o">-</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1f9c5f3ebd903e97bd45376d42b7c38e422af115b48bd6442571e43c0e8a7e5a.png" src="../_images/1f9c5f3ebd903e97bd45376d42b7c38e422af115b48bd6442571e43c0e8a7e5a.png" />
+</div>
+</div>
+<p><strong>Exercicio</strong> : Podes dar as ecuacións de todas as rectas que pasan por <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>? En cartesianas e polares.</p>
 <p><em>solución</em>:</p>
 <p>En cartesianas:</p>
 <div class="math notranslate nohighlight">
@@ -790,97 +954,50 @@ y = y_0 + a (x -x_0)
 \[
 x = x_0 + r \cos \phi, \;\;\; y = y_0 + r \sin \phi
 \]</div>
-<p><em>solución</em> :</p>
-<p>En cartesiano:</p>
-<div class="math notranslate nohighlight">
-\[ y = y_0 + a (x -x_0)\]</div>
-<p>En polar:</p>
-<div class="math notranslate nohighlight">
-\[ x = x_0 + r \cos \phi, \;\;\; y = y_0 + r \sin \phi\]</div>
 <p><strong>Teorema</strong></p>
-<p>Sean dos funciones <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> y <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span>, y <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, si existen el <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} {\bf f}({\bf x}) = {\bf b}\)</span> y el <span class="math notranslate nohighlight">\(\lim_{{\bf x}\to {\bf a}} {\bf g}({\bf x}) = {\bf c}\)</span> se cumple:</p>
-<div class="math notranslate nohighlight">
-\[ 
-i) \;\; \lim_{{\bf x} \to {\bf a}} {\bf f}({\bf x})  + {\bf g}({\bf x})=  {\bf b} + {\bf c}
-\]</div>
+<p>Sexan dúas funcións <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> e <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathbb{R}^n \to \mathbb{R}^m\)</span>, e <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, se existen o <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} {\bf f}({\bf x}) = {\bf b}\)</span> e o <span class="math notranslate nohighlight">\(\lim_{{\bf x}\to {\bf a}} {\bf g}({\bf x}) = {\bf c}\)</span> cúmprese:</p>
 <div class="math notranslate nohighlight">
 \[
-ii) \;\; \lim_{{\bf x} \to {\bf a}} \lambda {\bf f}({\bf x}) = \lambda {\bf b} 
-\]</div>
+ i) \;\; \lim _{{\bf x} \to {\bf a}} {\bf f}({\bf x}) + {\bf g}({\bf x})= {\bf b} + { \bf c}
+ \]</div>
 <div class="math notranslate nohighlight">
 \[
-iii) \; \lim_{{\bf x} \to {\bf a}} {\bf f(x)} \cdot {\bf g}({\bf x}) = {\bf b \; c}
-\]</div>
+ ii) \;\; \lim _{{\bf x} \to {\bf a}} \lambda {\bf f}({\bf x}) = \lambda {\bf b}
+ \]</div>
 <div class="math notranslate nohighlight">
 \[
-iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
-\]</div>
+ iii) \; \lim _{{\bf x} \to {\bf a}} {\bf f(x)} \cdot {\bf g}({\bf x}) = {\bf b \; c}
+ \]</div>
+<div class="math notranslate nohighlight">
+\[
+ iv) \;\; \lim _{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
+ \]</div>
 <p><strong>Teorema</strong></p>
-<p>Sexan dúas funcións <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> e <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \ a \mathrm{R}^m\)</span>, e <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, se o <span class="math notranslate nohighlight">\(\lim *{{\bf x} \to {\bf a}} {\bf f}({\bf x})* existe *= {\bf b}\)</span> e o <span class="math notranslate nohighlight">\(\lim* {{\bf x}\to {\bf a}} {\bf g}({\bf x}) = {\bf c}\)</span> ten:</p>
-<div class="math notranslate nohighlight">
-\[ Eu) \;\; \lim _{{\bf x} \to {\bf a}} {\bf f}({\bf x}) + {\bf g}({\bf x})= {\bf b} + { \ bf c}\]</div>
-<div class="math notranslate nohighlight">
-\[ ii) \;\; \lim _{{\bf x} \to {\bf a}} \lambda {\bf f}({\bf x}) = \lambda {\bf b}\]</div>
-<div class="math notranslate nohighlight">
-\[ iii) \; \lim _{{\bf x} \to {\bf a}} {\bf f(x)} \cdot {\bf g}({\bf x}) = {\bf b \; c}\]</div>
-<div class="math notranslate nohighlight">
-\[ iv) \;\; \lim _{{\bf x} \to {\bf a}} | {\bf f}({\bf x}) | = | {\bf b} |\]</div>
-<p><strong>Teorema</strong></p>
-<p>Sea una función vectorial <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span>, y <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span> las m-funciones componentes de <span class="math notranslate nohighlight">\({\bf f(x)}\)</span>. El límite
-<span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} {\bf f(x)}= {\bf b}\)</span>, con <span class="math notranslate nohighlight">\({\bf a} \in S\)</span>, existe, si y solo si, existen los límites de sus m-funciones componentes y estos son <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} f_i({\bf x})= b_i\)</span>.</p>
-<p><strong>Teorema</strong></p>
-<p>Sexa <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> unha función vectorial, e <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span> as funcións de m-componentes de <span class="math notranslate nohighlight">\( {\bf f(x)}\)</span>. O límite</p>
-<p><span class="math notranslate nohighlight">\(\lim *{{\bf x} \to {\bf a}} {\bf f(x)}= {\bf b}\)</span>, con <span class="math notranslate nohighlight">\({\bf a} \en S\)</span>, existe, se e só si, hai límites das súas funcións de m-componentes e estes son <span class="math notranslate nohighlight">\(\lim* {{\bf x} \to {\bf a}} f_i({\bf x})= b_i\)</span>.</p>
-<p><em>Ejercicio</em></p>
-<p>Sea la función vectorial:</p>
+<p>Sexa unha función vectorial <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathbb{R}^n \to \mathbb{R}^m\)</span>, e <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span> as m-funcións compoñentes de <span class="math notranslate nohighlight">\({\bf f(x)}\)</span>. O límite
+<span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} {\bf f(x)}= {\bf b}\)</span>, con <span class="math notranslate nohighlight">\({\bf a} \in S\)</span>, existe, se e só se, existen os límites das súas m-funcións compoñentes e estes son <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} f_i({\bf x})= b_i\)</span>.</p>
+<p><em>Exercicio</em></p>
+<p>Sexa a función vectorial:</p>
 <div class="math notranslate nohighlight">
 \[    
 {\bf f}( x, y) = \left( \frac{\sin \sqrt{x^2 + y^2}}{(x^2 + y^2)^{1/2}}, \frac{x y}{x^2 + y^2} \right)
 \]</div>
-<p>¿Tiene límite en el origen?</p>
-<p><em>Exercicio</em></p>
-<p>Sexa a función vectorial:</p>
-<div class="math notranslate nohighlight">
-\[ {\bf f}( x, y) = \left( \frac{\sin \sqrt{x^2 + y^2}}{(x^2 + y^2)^{1/2}}, \ frac{xy}{x^2 + y^2} \dereita)\]</div>
 <p>Ten un límite na orixe?</p>
-</section>
-<section id="continuidad">
-<h2>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this heading">#</a></h2>
-<p>En funciones de una dimensión, decíamos que la función era continua en un punto, <span class="math notranslate nohighlight">\(x_0\)</span>, si pertenecía a su dominio, y el valor de la función en ese punto, <span class="math notranslate nohighlight">\(f(x_0)\)</span>, coincide con el límite <span class="math notranslate nohighlight">\(\lim_{x \to x_0} f(x) = f(x_0)\)</span></p>
-<p>Para una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, diremos que es continua en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, si el punto está en el dominio y el valor de la función y el límite coinciden:</p>
-<div class="math notranslate nohighlight">
-\[
-\lim_{{\bf x} \to {\bf x}_0} f({\bf x}) = f({\bf x}_0)
-\]</div>
-<p>Y para una función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>, si, dado un <span class="math notranslate nohighlight">\({\bf x}_0\)</span> del dominio, se cumple:</p>
-<div class="math notranslate nohighlight">
-\[
-\lim_{{\bf x} \to {\bf x}_0} {\bf f} (x) = {\bf f}({\bf x}_0)
-\]</div>
 </section>
 <section id="continuidade">
 <h2>Continuidade<a class="headerlink" href="#continuidade" title="Permalink to this heading">#</a></h2>
-<p>Nas funcións unidimensionales, dixemos que a función era continua nun punto, <span class="math notranslate nohighlight">\(x_0\)</span>, se pertencía ao seu dominio, e o valor da función nese punto, <span class="math notranslate nohighlight">\(f(x *0)\)</span>, coincide co límite. <span class="math notranslate nohighlight">\(\ lim* {x \to x_0} f(x) = f(x_0)\)</span></p>
+<p>Nas funcións unidimensionales, dixemos que a función era continua nun punto, <span class="math notranslate nohighlight">\(x_0\)</span>, se pertencía ao seu dominio, e o valor da función nese punto, <span class="math notranslate nohighlight">\(f(x_0)\)</span>, coincide co límite <span class="math notranslate nohighlight">\(\lim_{x \to x_0} f(x) = f(x_0)\)</span></p>
 <p>Para unha función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, diremos que é continua en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, se o punto está no dominio e o valor da función e o límite coinciden. :</p>
 <div class="math notranslate nohighlight">
-\[ \lim _{{\bf x} \to {\bf x}_0} f({\bf x}) = f({\bf x}_0)\]</div>
+\[
+ \lim _{{\bf x} \to {\bf x}_0} f({\bf x}) = f({\bf x}_0)
+ \]</div>
 <p>E para unha función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>, se, dado un <span class="math notranslate nohighlight">\({\bf x}_0\)</span> do dominio, ten:</p>
 <div class="math notranslate nohighlight">
-\[ \lim _{{\bf x} \to {\bf x}_0} {\bf f} (x) = {\bf f}({\bf x}_0)\]</div>
+\[
+ \lim _{{\bf x} \to {\bf x}_0} {\bf f} (x) = {\bf f}({\bf x}_0)
+ \]</div>
 <p><strong>Teorema</strong></p>
-<p>Sean dos funciones <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R^m}\)</span> y <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \to \mathrm{R^m}\)</span>, y <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, si <span class="math notranslate nohighlight">\({\bf f(x), \, g(x)}\)</span> son continuas en un punto <span class="math notranslate nohighlight">\({\bf a}\)</span>, se cumple que las siguientes funciones también son continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span>:</p>
-<div class="math notranslate nohighlight">
-\[ i) \; {\bf f(x)}  + {\bf g(x)} \]</div>
-<div class="math notranslate nohighlight">
-\[ ii) \; \lambda {\bf f(x)}  \]</div>
-<div class="math notranslate nohighlight">
-\[ iii) \; {\bf f(x)} \cdot {\bf g(x)} \]</div>
-<div class="math notranslate nohighlight">
-\[ iv) \; \| {\bf f(x)} \| \]</div>
-<p><strong>Teorema</strong></p>
-<p>Si la función vectorial es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>, también son lo son las <span class="math notranslate nohighlight">\(m\)</span>-funciones componentes <span class="math notranslate nohighlight">\({\bf f(x)} = (f_1({\bf x}),\dots,f_m({\bf x}))\)</span> y viceversa.</p>
-<p><strong>Teorema</strong></p>
-<p>Sexan dúas funcións <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathrm{R}^n \to \mathrm{R^m}\)</span> e <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathrm{R}^n \ a \mathrm{R^m}\)</span>, e <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, se <span class="math notranslate nohighlight">\({\bf f(x), \, g(x)}\)</span> son continuos nun punto <span class="math notranslate nohighlight">\({\bf a}\)</span>, cumpre que as seguintes funcións tamén son continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span>:</p>
+<p>Sexan dúas funcións <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathbb{R}^n \to \mathbb{R^m}\)</span> e <span class="math notranslate nohighlight">\({\bf g}:S \subset \mathbb{R}^n \to \mathbb{R}^m\)</span>, e <span class="math notranslate nohighlight">\(\lambda\)</span> un número real, se <span class="math notranslate nohighlight">\({\bf f(x), \, g(x)}\)</span> son continuos nun punto <span class="math notranslate nohighlight">\({\bf a}\)</span>, cúmprese que as seguintes funcións tamén son continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[ i) \; {\bf f(x)} + {\bf g(x)} \]</div>
 <div class="math notranslate nohighlight">
@@ -888,23 +1005,17 @@ iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
 <div class="math notranslate nohighlight">
 \[ iii) \; {\bf f(x)} \cdot {\bf g(x)} \]</div>
 <div class="math notranslate nohighlight">
-\[iv) \; | {\bf f(x)} | \]</div>
+\[iv) \; \| {\bf f(x)} \| \]</div>
 <p><strong>Teorema</strong></p>
 <p>Se a función vectorial é continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>, tamén o son as funcións de compoñentes <span class="math notranslate nohighlight">\(m\)</span> <span class="math notranslate nohighlight">\({\bf f(x)} = (f_1({\bf x}),\dots,f_m ({ \bf x}))\)</span> e viceversa.</p>
-<p><strong>¡Esto es todo por ahora!</strong></p>
 <p><strong>Isto é todo por agora!</strong></p>
 </section>
 <section id="apendice">
 <h2>Apéndice<a class="headerlink" href="#apendice" title="Permalink to this heading">#</a></h2>
-<p><strong>teorema</strong></p>
-<p>Sea <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> y <span class="math notranslate nohighlight">\({\bf f}:B \subset \mathrm{R}^m \to \mathrm{R}^p\)</span>, donde suponemos que el rango de <span class="math notranslate nohighlight">\({\bf g}\)</span> está en el dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span>, B. Si <span class="math notranslate nohighlight">\({\bf g(x)}\)</span> es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span> y <span class="math notranslate nohighlight">\({\bf f(y)}\)</span> lo es en <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, entonces la función compuesta <span class="math notranslate nohighlight">\({\bf  f \circ g}: A \subset \mathbf{R}^n \to \mathbf{R}^p\)</span> es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>.</p>
-</section>
-<section id="id1">
-<h2>Apéndice<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p><strong>teorema</strong></p>
-<p>Sexa <span class="math notranslate nohighlight">\({\bf g}: A \subconxunto \mathrm{R}^n \to \mathrm{R}^m\)</span> e <span class="math notranslate nohighlight">\({\bf f}:B \subset \mathrm{R}^m \to \mathrm {R}^p\)</span>, onde asumimos que o rango de <span class="math notranslate nohighlight">\({\bf g}\)</span> está no dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span>, B. Se <span class="math notranslate nohighlight">\({\bf g(x)}\)</span> é continuo en <span class="math notranslate nohighlight">\( {\bf a}\)</span> e <span class="math notranslate nohighlight">\({\bf f(y)}\)</span> está en <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, entón a función composta <span class="math notranslate nohighlight">\({\bf f \circ g}: A \subconxunto \mathbf {R}^n \to \mathbf{R}^p\)</span> é continuo en <span class="math notranslate nohighlight">\({\bf a}\)</span>.</p>
-<p><em>demostracion:</em></p>
-<p>Al ser <span class="math notranslate nohighlight">\({\bf g}, \, {\bf f}\)</span> continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span> y <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, tenemos que <span class="math notranslate nohighlight">\(\forall \, \epsilon &gt;0\)</span> y <span class="math notranslate nohighlight">\(\epsilon' &gt;0\)</span> existen <span class="math notranslate nohighlight">\(\delta &gt;0\)</span> y <span class="math notranslate nohighlight">\(\delta'&gt;0\)</span> y se cumple:</p>
+<p><strong>Teorema</strong></p>
+<p>Sexa <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span> e <span class="math notranslate nohighlight">\({\bf f}:B \subset \mathbb{R}^m \to \mathbb{R}^p\)</span>, onde supoñemos que o rango de <span class="math notranslate nohighlight">\({\bf g}\)</span> está no dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span>, B. Se <span class="math notranslate nohighlight">\({\bf g(x)}\)</span> é continua en <span class="math notranslate nohighlight">\({\bf a}\)</span> e <span class="math notranslate nohighlight">\({\bf f(y)}\)</span> o é en <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, entón a función composta <span class="math notranslate nohighlight">\({\bf  f \circ g}: A \subset \mathbf{R}^n \to \mathbf{R}^p\)</span> é continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>.</p>
+<p><em>Demostracion:</em></p>
+<p>Ao ser <span class="math notranslate nohighlight">\({\bf g}, \, {\bf f}\)</span> continuas en <span class="math notranslate nohighlight">\({\bf a}\)</span> e <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, temos que <span class="math notranslate nohighlight">\(\forall \, \epsilon &gt;0\)</span> e <span class="math notranslate nohighlight">\(\epsilon' &gt;0\)</span> existen <span class="math notranslate nohighlight">\(\delta &gt;0\)</span> e <span class="math notranslate nohighlight">\(\delta'&gt;0\)</span> e cúmprese</p>
 <div class="math notranslate nohighlight">
 \[
 \| {\bf x} - {\bf a} \| &lt; \delta \Rightarrow \| {\bf g(x)}-{\bf g(a)} \| &lt; \epsilon' 
@@ -913,27 +1024,14 @@ iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
 \[
 \| {\bf y} - {\bf b} \| &lt; \delta' \Rightarrow \| {\bf f(y)}-{\bf f(b)} \| &lt; \epsilon 
 \]</div>
-<p>Al componer <span class="math notranslate nohighlight">\({\bf g}\)</span> sobre <span class="math notranslate nohighlight">\({\bf f}\)</span>, aplicamos la función <span class="math notranslate nohighlight">\({\bf f}\)</span> sobre los puntos de llegada de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Esto es  <span class="math notranslate nohighlight">\({\bf y} = {\bf g(x)}\)</span> y al ser además <span class="math notranslate nohighlight">\({\bf g}\)</span> continua, <span class="math notranslate nohighlight">\( {\bf b} = {\bf g(a)}\)</span>.</p>
-<p>Si tomamos <span class="math notranslate nohighlight">\(\epsilon' = \delta '\)</span>, tenemos que para todo <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>, existe un <span class="math notranslate nohighlight">\(\delta\)</span>, tal que, si <span class="math notranslate nohighlight">\(\| {\bf x}-{\bf a} \| &lt; \delta\)</span>, entonces,</p>
+<p>Ao compor <span class="math notranslate nohighlight">\({\bf g}\)</span> sobre <span class="math notranslate nohighlight">\({\bf f}\)</span>, aplicamos a función <span class="math notranslate nohighlight">\({\bf f}\)</span> sobre os puntos de chegada de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Isto é  <span class="math notranslate nohighlight">\({\bf y} = {\bf g(x)}\)</span> e ao ser ademais <span class="math notranslate nohighlight">\({\bf g}\)</span> continua, <span class="math notranslate nohighlight">\( {\bf b} = {\bf g(a)}\)</span>.</p>
+<p>Se tomamos <span class="math notranslate nohighlight">\(\epsilon' = \delta '\)</span>, temos que para todo <span class="math notranslate nohighlight">\(\epsilon&gt;0\)</span>, existe un <span class="math notranslate nohighlight">\(\delta\)</span>, tal que, se <span class="math notranslate nohighlight">\(\| {\bf x}-{\bf a} \| &lt; \delta\)</span>, entón,</p>
 <div class="math notranslate nohighlight">
 \[
 \| {\bf f(g(x))} - {\bf f(g(a))} \| = \, \| {\bf (f \circ g)(x)} - {\bf (f \circ g)(a)} \| &lt; \epsilon.
 \]</div>
-<p>que es la condición de que exista el límite y sea continua la función compuesta.</p>
-<p>Q.E.D.</p>
-<p><em>demostración:</em></p>
-<p>Dado que <span class="math notranslate nohighlight">\({\bf g}, \, {\bf f}\)</span> son continuos en <span class="math notranslate nohighlight">\({\bf a}\)</span> e <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, temos que <span class="math notranslate nohighlight">\(\forall \, \epsilon &amp;gt;0 \)</span> e <span class="math notranslate nohighlight">\(\epsilon&amp;#39; &amp;gt;0\)</span> existen <span class="math notranslate nohighlight">\(\delta &amp;gt;0\)</span> e <span class="math notranslate nohighlight">\(\delta&amp;#39;&amp;gt;0\)</span> e contén:</p>
-<div class="math notranslate nohighlight">
-\[ | {\bf x} - {\bf a} | &amp;lt; \delta \Frecha dereita | {\bf g(x)}-{\bf g(a)} | &amp;lt; \epsilon&amp;#39;\]</div>
-<div class="math notranslate nohighlight">
-\[ | {\bf y} - {\bf b} | &amp;lt; \delta&amp;#39; \Rightarrow | {\bf f(y)}-{\bf f(b)} | &amp;lt; \epsilon\]</div>
-<p>Compoñendo <span class="math notranslate nohighlight">\({\bf g}\)</span> en <span class="math notranslate nohighlight">\({\bf f}\)</span>, aplicamos a función <span class="math notranslate nohighlight">\({\bf f}\)</span> nos puntos de chegada de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Isto é <span class="math notranslate nohighlight">\({\bf y} = {\bf g(x)}\)</span> e como <span class="math notranslate nohighlight">\({\bf g}\)</span> tamén é continuo, <span class="math notranslate nohighlight">\( {\bf b} = {\bf g(a)}\)</span>.</p>
-<p>Se tomamos <span class="math notranslate nohighlight">\(\epsilon&amp;#39; = \delta &amp;#39;\)</span>, temos que para cada <span class="math notranslate nohighlight">\(\epsilon&amp;gt;0\)</span>, existe un <span class="math notranslate nohighlight">\(\delta\)</span>, tal que, se <span class="math notranslate nohighlight">\(| {\bf x}-{\bf a} | &amp;lt; \delta\)</span>, entón,</p>
-<div class="math notranslate nohighlight">
-\[ | {\bf f(g(x))} - {\bf f(g(a))} | = \, | {\bf (f \circ g)(x)} - {\bf (f \circ g)(a)} | &amp;lt; \epsilon.\]</div>
 <p>que é a condición de que exista o límite e que a función composta sexa continua.</p>
-<p>QED</p>
-<p><em>Cuestión</em>: ¿Es esta función <span class="math notranslate nohighlight">\(h(x,y) = \sin^2 (x^2+y^2)\)</span> continua?</p>
+<p>Q.E.D.</p>
 <p><em>Pregunta</em> : Esta función <span class="math notranslate nohighlight">\(h(x,y) = \sin^2 (x^2+y^2)\)</span> é continua?</p>
 </section>
 </section>
@@ -969,6 +1067,15 @@ iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tderivadas_funcion_escalar_vectorial.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -993,10 +1100,8 @@ iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limites">Límites</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidad">Continuidad</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#continuidade">Continuidade</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Apéndice</a></li>
 </ul>
   </nav></div>
 
