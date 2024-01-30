@@ -32,8 +32,8 @@ nbclient.exceptions.CellTimeoutError: A cell timed out while it was being execut
 The message was: Cell execution timed out.
 Here is a preview of the cell contents:
 -------------------
-['rs       = np.linspace(1e-10, 10., 1000)', 'ps       = np.linspace(0. , 2.*np.pi, 1000)', 'rms, pms = np.meshgrid(rs, ps)', 'xms      = rms * np.cos(pms)', 'yms      = rms * np.sin(pms)']
+['rs1       = np.linspace(1e-10, 2.5, 2000)', 'ps1       = np.linspace(0. , 2.*np.pi, 2000)', 'rms1, pms1 = np.meshgrid(rs1, ps1)', 'xms1      = rms1 * np.cos(pms1)', 'yms1      = rms1 * np.sin(pms1)']
 ...
-["#ax.set_xlabel('x'); ax.set_ylabel('y'); fig.colorbar(sf);", 'N = 500', 'CS3 = ax.contourf(xms, yms, zms, N, cmap="viridis")', "ax.set_xlabel('x');ax.set_ylabel('y')", 'fig.colorbar(CS3, ax=ax)']
+['N = 500', 'CS3 = ax.contourf(xms1, yms1, zms1, N, cmap="viridis")', "ax.set_xlabel('x')", "ax.set_ylabel('y')", 'fig.colorbar(CS3, ax=ax)']
 -------------------
 
