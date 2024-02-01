@@ -1,10 +1,10 @@
-#---------------------------------------------
+# ---------------------------------------------
 #
 #  Methods to draw graphs and contours with matplotlib
 #
 #  J.A. Hernando
 #  February 2019
-#---------------------------------------------
+# ---------------------------------------------
 
 import numpy as np
 import matplotlib
@@ -54,7 +54,7 @@ def zfun(fun, xms, yms, condition = None, zlim = None, zzero = 0.):
     return zms
 
 def graph(fun, xrange = xrange, yrange = xrange, condition = None,
-          zlim = None, newfig = True):
+          zlim = None, newfig = True, mycmap = cmap, **kargs):
     """ draws a funcion
     parameters:
         fun    : (function)    x,y function to draw
@@ -67,8 +67,9 @@ def graph(fun, xrange = xrange, yrange = xrange, condition = None,
     xms, yms = meshgrid(xrange, yrange)
     zms      = zfun(fun, xms, yms, condition, zlim)
     fig = plt.figure(figsize=figsize) if newfig else plt.gcf()
-    ax = plt.gca(projection='3d')
-    sf  = ax.plot_surface(xms, yms, zms, cmap=cmap, alpha = 0.8)
+    ax = fig.add_subplot(projection='3d')
+    #ax = plt.gca(projection='3d')
+    sf  = ax.plot_surface(xms, yms, zms, cmap=mycmap, **kargs)
     if (zlim is not None): ax.set_zlim3d(*zlim)
     ax.set_xlabel('$x$'); ax.set_ylabel('$y$'); #ax.set_aspect('equal')
     if (newfig): fig.colorbar(sf)
