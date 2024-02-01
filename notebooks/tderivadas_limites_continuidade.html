@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_limites_continuidade';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Parametrización de liñas e superficies" href="tderivadas_parametrizacion_linhas_superficies.html" />
     <link rel="prev" title="Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais." href="tderivadas_funcion_escalar_vectorial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -167,6 +168,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de liñas e superficies</a></li>
 </ul>
 
     </div>
@@ -438,7 +440,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Feb  1 00:13:13 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Feb  1 14:24:34 2024
 </pre></div>
 </div>
 </div>
@@ -519,7 +521,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ec253b5349bd5d566190dd9094daf914925924fb7b47b35624a515623ffd01a1.png" src="../_images/ec253b5349bd5d566190dd9094daf914925924fb7b47b35624a515623ffd01a1.png" />
+<img alt="../_images/a81488ba4aabc8681701ba5b197eafe50283e19d1d3b3a920aeb702be0f68220.png" src="../_images/a81488ba4aabc8681701ba5b197eafe50283e19d1d3b3a920aeb702be0f68220.png" />
 </div>
 </div>
 </section>
@@ -597,7 +599,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x12767d310&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1117cd710&gt;
 </pre></div>
 </div>
 <img alt="../_images/71ab72bc14dc68396a68d57f5f9361f95689248e0f45c99f00b83be240081d85.png" src="../_images/71ab72bc14dc68396a68d57f5f9361f95689248e0f45c99f00b83be240081d85.png" />
@@ -630,7 +632,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x127517b10&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x1297fd0d0&gt;
 </pre></div>
 </div>
 <img alt="../_images/60788b1d28b3d953db73b737503621394924ec41d9dfa10d2781053a7f9a9a32.png" src="../_images/60788b1d28b3d953db73b737503621394924ec41d9dfa10d2781053a7f9a9a32.png" />
@@ -642,7 +644,7 @@ document.write(`
 <p><strong>Exemplo</strong> : Calcula o límite na orixe da función escalar:</p>
 <div class="math notranslate nohighlight">
 \[
-f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}
+f(x, y) = \frac{\sin\sqrt{x^2 + y^2}}{\sqrt{x^2 + y^2}}
 \]</div>
 <p>As seguintes celas mostran os conxuntos de nivel da función e unha liña que pasa pola orixe.</p>
 <p><strong>Explorar</strong> cambia a pendente da recta e considera o valor que acada a función cando se achega á orixe ao longo desa liña.</p>
@@ -719,7 +721,7 @@ Calculamos en 1D o límite cando <span class="math notranslate nohighlight">\(x 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x12edbb250&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x129563350&gt;
 </pre></div>
 </div>
 <img alt="../_images/dd0ef05633eb98968ce424226b1946780c5fbdc1d66319897501ff83de226cf3.png" src="../_images/dd0ef05633eb98968ce424226b1946780c5fbdc1d66319897501ff83de226cf3.png" />
@@ -834,7 +836,7 @@ x = x_0 + r \cos \phi, \;\;\; y = y_0 + r \sin \phi
 <p><strong>Teorema</strong></p>
 <p>Sexa unha función vectorial <span class="math notranslate nohighlight">\({\bf f}:S \subset \mathbb{R}^n \to \mathbb{R}^m\)</span>, e <span class="math notranslate nohighlight">\(f_i({\bf x})\)</span> as m-funcións compoñentes de <span class="math notranslate nohighlight">\({\bf f(x)}\)</span>. O límite
 <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} {\bf f(x)}= {\bf b}\)</span>, con <span class="math notranslate nohighlight">\({\bf a} \in S\)</span>, existe, se e só se, existen os límites das súas m-funcións compoñentes e estes son <span class="math notranslate nohighlight">\(\lim_{{\bf x} \to {\bf a}} f_i({\bf x})= b_i\)</span>.</p>
-<p><em>Exercicio</em></p>
+<p><em>Problema</em></p>
 <p>Sexa a función vectorial:</p>
 <div class="math notranslate nohighlight">
 \[    
@@ -934,6 +936,15 @@ x = x_0 + r \cos \phi, \;\;\; y = y_0 + r \sin \phi
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="tderivadas_parametrizacion_linhas_superficies.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Parametrización de liñas e superficies</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
