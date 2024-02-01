@@ -438,7 +438,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Feb  1 14:27:20 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Feb  1 15:57:17 2024
 </pre></div>
 </div>
 </div>
@@ -472,12 +472,12 @@ document.write(`
 </section>
 <section id="parametrizacion-de-linas">
 <h2>Parametrización de liñas<a class="headerlink" href="#parametrizacion-de-linas" title="Permalink to this heading">#</a></h2>
-<p>Considere a seguinte función:</p>
+<p>Considera a seguinte función:</p>
 <div class="math notranslate nohighlight">
 \[
  {\bf r} (t) = \left( r \cos \omega \,t \, , \; r \sin \omega \, t \right)
  \]</div>
-<p>Observe que <strong>é unha función vectorial</strong> de <span class="math notranslate nohighlight">\(t \in \mathbb{R} \mapsto {\bf r}(t) \in \mathbb{R}^2\)</span>.</p>
+<p>Observa que <strong>é unha función vectorial</strong> de <span class="math notranslate nohighlight">\(t \in \mathbb{R} \mapsto {\bf r}(t) \in \mathbb{R}^2\)</span>.</p>
 <p>Podes asociar esta función coa traxectoria dun móbil ao longo dun círculo de raio <span class="math notranslate nohighlight">\(r\)</span> con velocidade angular <span class="math notranslate nohighlight">\(\omega\)</span> onde <span class="math notranslate nohighlight">\(t\)</span> sería o tempo.</p>
 <p>Tamén se trata da parametrización dun círculo de raio <span class="math notranslate nohighlight">\(r\)</span>.</p>
 <p>Na seguinte cela debuxamos esta traxectoria, a circunferencia, con <em>Python</em>. Por comodidade tomaremos <span class="math notranslate nohighlight">\(r = 1, \, \omega = 1\)</span> e <span class="math notranslate nohighlight">\(t\)</span> cubrirá o intervalo <span class="math notranslate nohighlight">\([0, 2 \pi]\)</span>. Mira o código.</p>
@@ -653,7 +653,7 @@ y(t_0 + \Delta t)  = y(t_0) + r  \cos  t_0  \; \Delta t
 s = \int_{0}^{2 \pi} r \mathrm{d}t = r \, t \, \big|_{0}^{2 \pi} = 2 \pi r 
 \]</div>
 <p>E obtemos a lonxitude dun círculo, <span class="math notranslate nohighlight">\(2 \pi r\)</span>.</p>
-<p>Sexa entón unha liña <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> nun espazo <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>, parametrizada como función dunha variable real <span class="math notranslate nohighlight">\(t\)</span> que toma valores no intervalo <span class="math notranslate nohighlight">\([t_0, t_e]\)</span>, podemos dar a súa <strong>lonxitude de arco</strong> , <span class="math notranslate nohighlight">\(s\)</span>, pola integral nunha dimensión:</p>
+<p>Sexa entón unha liña <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> nun espazo <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>, parametrizada como función dunha variable real <span class="math notranslate nohighlight">\(t\)</span> que toma valores no intervalo <span class="math notranslate nohighlight">\([t_0, t_e]\)</span>, podemos dar a súa <strong>lonxitude de arco</strong>, <span class="math notranslate nohighlight">\(s\)</span>, pola integral nunha dimensión:</p>
 <div class="math notranslate nohighlight">
 \[
 s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
@@ -766,7 +766,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 <p><em>No caso de que che axude</em> :</p>
 <p>Parametrizar unha superficie no espazo é coma se tivésemos un material plano imaxinario que puidésemos recortar, para ter unha rexión <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>, e que logo poderiamos dar forma, comprimir ou expandir a vontade no espazo para crear con el a superficie <span class="math notranslate nohighlight">\(\sigma\)</span>.</p>
 <p>No caso de que non comprimamos nin estiramos ese material imaxinario, a área superficial, <span class="math notranslate nohighlight">\(\sigma\)</span>, corresponde á área da rexión <span class="math notranslate nohighlight">\(\mathcal{R}\)</span>. É o caso da parede do cilindro do exemplo anterior. Pero non a esfera, xa que para darlle forma con ese material máxico habería que comprimila e estirala.</p>
-<p>Supoño que tes unha idea de como calcularemos as áreas das superficies parametrizadas, pero aínda non temos todas as ferramentas necesarias. Temos que esperar ao final do capítulo integral.</p>
+<p>Supoño que tes unha idea de como calcularemos as áreas das superficies parametrizadas, pero aínda non temos todas as ferramentas necesarias. Temos que esperar ao final do capítulo das integrais.</p>
 </section>
 <section id="ainda-hai-mais">
 <h2>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h2>
