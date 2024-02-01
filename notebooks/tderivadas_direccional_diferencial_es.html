@@ -1,0 +1,1123 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Derivada direccional y funciones diferenciables &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_direccional_diferencial_es';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de liñas e superficies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_direccional_diferencial_es.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_direccional_diferencial_es.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tderivadas_direccional_diferencial_es.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tderivadas_direccional_diferencial_es.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Derivada direccional y funciones diferenciables</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-direccional">Derivada direccional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales">Derivadas parciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-segundas">Derivadas segundas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#malditas-funciones-raras">¡Malditas funciones raras!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-diferenciables">Funciones diferenciables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apendices</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="derivada-direccional-y-funciones-diferenciables">
+<h1>Derivada direccional y funciones diferenciables<a class="headerlink" href="#derivada-direccional-y-funciones-diferenciables" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Feb  1 19:37:12 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Recordar que la derivada está relacionada con la pendiente de la función.</p>
+<p>Presentar los conceptos de:</p>
+<ul class="simple">
+<li><p>derivada direccional de una función escalar.</p></li>
+<li><p>funciones diferenciables.</p></li>
+</ul>
+<p>Estudiar la derivada direccional en un plano.</p>
+<p>Remarcar que en funciones escalares y vectorales para dar la derivada necesitamos un punto y una dirección de desplazamiento.</p>
+<p>Recordaremos que son las funciones “suaves” y la relación del desarrollo de Taylor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">load_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="derivada-direccional">
+<h2>Derivada direccional<a class="headerlink" href="#derivada-direccional" title="Permalink to this heading">#</a></h2>
+<p>En funciones de una dimensión, <span class="math notranslate nohighlight">\(f(x)\)</span>, la derivada estaba asociada la la “pendiente” de la función en un punto.</p>
+<p>La definición de derivada de una función real en un punto <span class="math notranslate nohighlight">\(x\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[
+f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
+\]</div>
+<p>Observa la siguiente gráfica de la función escalar <span class="math notranslate nohighlight">\(f(x, y) = y - x\)</span>. Se trata de un plano
+que pasa por el origen y que tiene pendiente <span class="math notranslate nohighlight">\(-1\)</span> en <span class="math notranslate nohighlight">\(x\)</span> y pendiente <span class="math notranslate nohighlight">\(+1\)</span> en <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>Puedes ver que si queremos dar la pendiente en un determinado punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> tenemos que indicar también en qué dirección queremos calcular esa pendiente <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
+</div>
+</div>
+<p>La siguiente figura muestra los conjuntos de nivel del plano, que son rectas.</p>
+<p>Considera por ejemplo el origen <span class="math notranslate nohighlight">\((0, 0)\)</span> y ahora a partir de los conjuntos de nivel, intenta determinar cuál es la pendiente si nos desplazamos en estas direcciones:</p>
+<p>i) en <span class="math notranslate nohighlight">\(x\)</span>, esto es en <span class="math notranslate nohighlight">\({\bf v} = (1, 0)\)</span></p>
+<p>ii) en <span class="math notranslate nohighlight">\(y\)</span>, en <span class="math notranslate nohighlight">\({\bf v} = (0, 1)\)</span></p>
+<p>iii) en la bisectriz del primer cuadrante <span class="math notranslate nohighlight">\({\bf v} = (1, 1)\)</span></p>
+<p><em>Experimenta</em>: cambia la dirección del vector y estudia el cambio de pendiente.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">contours</span> <span class="o">=</span> <span class="mi">11</span><span class="p">);</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2a1e29396e0bd70aa29057d9b618afa0ea00e103af124735fbda6387ddbeef68.png" src="../_images/2a1e29396e0bd70aa29057d9b618afa0ea00e103af124735fbda6387ddbeef68.png" />
+</div>
+</div>
+<p>Has podido comprobar que la pendiente cambia con el vector <span class="math notranslate nohighlight">\({\bf v}\)</span>.</p>
+<p>Para dar la derivada, la pendiente, de funciones escalares necesitamos dar además del punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, la dirección, <span class="math notranslate nohighlight">\({\bf v}\)</span> en la que queremos calcularla.</p>
+<p>En la siguiente celda dibujamos la gráfica del plano <span class="math notranslate nohighlight">\(y-x\)</span> y la seccionamos verticalmente pasando por el punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, en este caso el origen, <span class="math notranslate nohighlight">\((0, 0)\)</span>, y en una determinada dirección <span class="math notranslate nohighlight">\({\bf v}\)</span>, en este caso <span class="math notranslate nohighlight">\({\bf v} = (1, 0)\)</span>.</p>
+<p><em>Explora</em>: cambia el vector <span class="math notranslate nohighlight">\({\bf v}\)</span> para ver como cambia la sección de la gráfica.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph_section</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
+<img alt="../_images/e64d5aa61d945455c2629ee84f738cb871645e52efc68241bcd7e5d636f9f27f.png" src="../_images/e64d5aa61d945455c2629ee84f738cb871645e52efc68241bcd7e5d636f9f27f.png" />
+</div>
+</div>
+<p><em>Explora</em>: observa como son las secciones y las pendientes en un punto y una dirección con la función <span class="math notranslate nohighlight">\(f(x, y) = y^2 - x^2\)</span>.</p>
+<p><em>Explora</em>: cambia la función y estudia de nuevo las pendientes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph_section</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0f3acb586a544b7900290be4a418e3e04e37ed7b3bcd201b971e88bb4c8237da.png" src="../_images/0f3acb586a544b7900290be4a418e3e04e37ed7b3bcd201b971e88bb4c8237da.png" />
+<img alt="../_images/32e5c0fcb95708e7be61fd5806fed926d0bf4a727b70958386490954ae56c3a4.png" src="../_images/32e5c0fcb95708e7be61fd5806fed926d0bf4a727b70958386490954ae56c3a4.png" />
+</div>
+</div>
+<p>Definimos la <strong>derivada direccional</strong>, <span class="math notranslate nohighlight">\(f'({\bf x}; {\bf v})\)</span> , de una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, en un punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span> y dirección, <span class="math notranslate nohighlight">\({\bf v}\)</span>, como:</p>
+<div class="math notranslate nohighlight">
+\[
+f'({\bf x}_0; \, {\bf v}) = \lim_{h \to 0} \frac{f({\bf x}_0 + h {\bf v}) - f({\bf x}_0)}{h}
+\]</div>
+<p>La derivada direccional de una función <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, es la pendiente de la función en <span class="math notranslate nohighlight">\({\bf x}_0\)</span> y en la dirección <span class="math notranslate nohighlight">\({\bf v}\)</span>, que la calculamos a partir de la razón entre diferencia del valor de la función en un punto <span class="math notranslate nohighlight">\({\bf x}_0 + h {\bf v}\)</span> y en el punto de referencia <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, y la distancia <span class="math notranslate nohighlight">\(h\)</span> que hacemos tender a cero, de tal forma que los dos puntos están infinitésimamente próximos.</p>
+<p>Date cuenta que en la derivada direccional aparece explícitamente la dirección <span class="math notranslate nohighlight">\({\bf v}\)</span>.</p>
+<p>En la figura enterior, la derivada, <span class="math notranslate nohighlight">\(f'({\bf x}_0; \; {\bf v})\)</span> corresponde a la pendiente en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>; y en la gráfica de <span class="math notranslate nohighlight">\(f({\bf x}_0 + t {\bf v})\)</span> vs <span class="math notranslate nohighlight">\(t\)</span>, a la pendiente en <span class="math notranslate nohighlight">\(t=0\)</span>, en negrita.</p>
+<p><em>Ejemplo</em>: Vamos a calcular la derivada direccional del plano <span class="math notranslate nohighlight">\(f(x, y) = y - x\)</span>  en el origen y en las direcciones <span class="math notranslate nohighlight">\((1, 0), \; (0, 1), \; (1, 1)\)</span>.</p>
+<p>Calculamos:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0), \; (v_x, v_y)) = \lim_{h\to 0} \frac{f(h v_x, \, h  v_y) - \,f (0,0)}{ h}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\( f(x, y) = y - x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f(h v_x,h  v_y) = h v_y -  h v_x = h (v_y - v_x), \;\;\; f(0, 0) = 0
+\]</div>
+<p>i) para el vector <span class="math notranslate nohighlight">\((1, 0)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0) ; \, (1, 0)) = \lim_{h \to 0} \frac{-h}{h} = -1
+\]</div>
+<p>ii) para el vector <span class="math notranslate nohighlight">\((0, 1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0) ; \, (0, 1)) = \lim_{h \to 0} \frac{h}{h} = 1
+\]</div>
+<p>iii) para el vector <span class="math notranslate nohighlight">\((1, 1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0) ; \, (1, 1)) = \lim_{h \to 0} \frac{h (1 -1)}{h} = 0
+\]</div>
+<p>iv) y para un vector genérico <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0) ; \, (v_x, v_y)) = \lim_{h \to 0} \frac{h (v_y - v_x)}{h} = v_y - v_x
+\]</div>
+<p>En concreto, para <span class="math notranslate nohighlight">\((v_x, 0)\)</span> y <span class="math notranslate nohighlight">\((0, v_y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0) ; \, (v_x, 0)) = - v_x, \;\;\; f'((0, 0) ; \, (0, v_y)) = v_y 
+\]</div>
+<p>Fíjate que en este caso, la derivada direccional es una aplicación lineal.</p>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0); \, (v_x, v_y)) = f'((0,0); \, (v_x,0)) \, + \, f'((0, 0); \,(0, v_y))
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f'((0, 0); \, \lambda (v_x, v_y)) = \lambda \, f'((0, 0); \, (v_x, v_y))
+\]</div>
+<p>Esto es, la suma de la derivada direccional de <span class="math notranslate nohighlight">\(v_x\)</span> en <span class="math notranslate nohighlight">\(x\)</span> y la derivada diracción en <span class="math notranslate nohighlight">\(v_y\)</span> en <span class="math notranslate nohighlight">\(y\)</span>, es la derivada dirección en la dirección <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>.</p>
+<p><em>Ejercicio</em>: calcula la derivada direccional de la función <span class="math notranslate nohighlight">\(f(x, y) = 9 - x^2 - y^2\)</span> en <span class="math notranslate nohighlight">\((1, 1)\)</span> y las direcciones <span class="math notranslate nohighlight">\((1, 0)\)</span> y <span class="math notranslate nohighlight">\((0, 1)\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">9</span> <span class="o">-</span> <span class="mf">2.</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span> <span class="mf">2.</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph_section</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/121809250c06d7aab125b3aa42a3f75de5b79df9d9a43f5e15f10cb3306809fb.png" src="../_images/121809250c06d7aab125b3aa42a3f75de5b79df9d9a43f5e15f10cb3306809fb.png" />
+<img alt="../_images/de463cdedb3b4ab1a8a690f75e00e12d740a2e17792daa48aba198cdb9a7db4d.png" src="../_images/de463cdedb3b4ab1a8a690f75e00e12d740a2e17792daa48aba198cdb9a7db4d.png" />
+</div>
+</div>
+<p>La función es: <span class="math notranslate nohighlight">\(f(x, y) = 9 -x^2 - y^2\)</span></p>
+<p>Calculamos:</p>
+<div class="math notranslate nohighlight">
+\[
+f(1, 1) = 9-1-1=7
+\]</div>
+<p>Y</p>
+<div class="math notranslate nohighlight">
+\[
+f((1, 1)+ h(1, 0)) = f(1+h, 1) = 9 - (1+h)^2 - 1 = 8 -1-2h-h^2= 7 -2h - h^2
+\]</div>
+<p>Y ahora la derivada direccional la dirección <span class="math notranslate nohighlight">\((1, 0)\)</span> en el punto <span class="math notranslate nohighlight">\((1, 1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((1, 1);\; (1, 0)) = \lim_{h \to 0} \frac{f((1, 1)+ h(1, 0)) - f(1,1)}{h} =
+\lim_{h \to 0}  \frac{7-2h-h^2 -7}{h} = -2
+\]</div>
+<p>Para</p>
+<div class="math notranslate nohighlight">
+\[
+f((1, 1)+ h(0, 1)) = f(1, 1+h) = 9 -1 - (1+h)^2  = 8 -1 - 2h -h^2 = 7 -2h - h^2
+\]</div>
+<p>Y la derivada dirección en la dirección <span class="math notranslate nohighlight">\((1, 0)\)</span> en el punto <span class="math notranslate nohighlight">\((1, 1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((1, 1);\; (0, 1)) = \lim_{h \to 0} \frac{f((1, 1)+ h(0, 1)) - f(1,1)}{h} =
+\lim_{h \to 0}  \frac{7-2h-h^2 -7}{h} = -2
+\]</div>
+<p>Las dos coinciden.</p>
+<hr class="docutils" />
+<section id="derivadas-parciales">
+<h3>Derivadas parciales<a class="headerlink" href="#derivadas-parciales" title="Permalink to this heading">#</a></h3>
+<p>Llamaremos <strong>derivadas parciales</strong> de una función escalar en un punto a las derivadas direccionales en los ejes coordenados.</p>
+<p>En el caso anterior, la derivada parcial con respecto a <span class="math notranslate nohighlight">\(x\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_x (x, y) = \frac{\partial f(x, y)}{ \partial x} = f'((x, y); \, (1, 0))
+\]</div>
+<p>y con respecto a <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_y (x, y) = \frac{\partial f(x, y)}{ \partial y} = f'((x, y); \, (0, 1))
+\]</div>
+<p>Date cuenta de que usamos distintas notaciones con igual significado.</p>
+<p>Para calcular las derivadas direccionales podemos valernos de los métodos de derivación de funciones reales de una dimensión.</p>
+<p>Si calculamos la derivada parcial respecto a <span class="math notranslate nohighlight">\(x\)</span>, consideramos la <span class="math notranslate nohighlight">\(y\)</span> como una constante en la expresión de la función, y derivaremos normalmente respecto a <span class="math notranslate nohighlight">\(x\)</span>.</p>
+<p>Considera la función:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = 9 -x^2 - y^2
+\]</div>
+<p>Las derivadas parciales serán:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_x (x, y) = -2 x, \;\, f'_y(x, y) = -2 y
+\]</div>
+<p>Si las valoramos en el punto <span class="math notranslate nohighlight">\((1, 1)\)</span>, obtenemos:</p>
+<div class="math notranslate nohighlight">
+\[ 
+f'_x(1, 1) = -2, \;\, f'_y(1, 1) = -2
+\]</div>
+<p>Lo mismo que obtuvimos antes  a partir de la definición de derivada direccional.</p>
+</section>
+<hr class="docutils" />
+<section id="derivadas-segundas">
+<h3>Derivadas segundas<a class="headerlink" href="#derivadas-segundas" title="Permalink to this heading">#</a></h3>
+<p>Cada derivada parcial es una función escalar a la que a su vez podemos calcular sus derivadas parciales, que llamaremos <strong>derivadas segundas</strong>.</p>
+<div class="math notranslate nohighlight">
+\[
+f''_x = \frac{\partial^2 f(x, y)}{\partial x^2}, \;\;
+f''_y = \frac{\partial^2 f(x, y)}{\partial y^2}, \;\;
+\]</div>
+<p>y las derivadas segundas cruzadas:</p>
+<div class="math notranslate nohighlight">
+\[
+f''_{xy} = \frac{\partial^2 f(x, y)}{\partial x \partial y}, \;\;
+f''_{yx} = \frac{\partial^2 f(x, y)}{\partial y\partial x}, \;\;
+\]</div>
+<p>En general las derivadas parciales cruzadas serán iguales, pero no necesariamente.</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{\partial^2 f(x, y)}{\partial x \partial y} \neq  \frac{\partial^2 f(x, y)}{\partial y \partial x}
+\]</div>
+<p>En el ejemplo anterior, siendo la función escalar: <span class="math notranslate nohighlight">\(f(x, y) = 9 -x^2 -y^2\)</span>.</p>
+<p>Ya habíamos calculado sus derivadas parciales:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_x (x, y) = -2 x, \;\, f'_y(x, y) = -2 y
+\]</div>
+<p>Y sus derivadas segundas son:</p>
+<div class="math notranslate nohighlight">
+\[
+f''_x (x, y) = -2 , \;\, f''_y(x, y) = -2 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+f''_{xy} (x, y) =  f''_{yx} (x, y) = 0
+\]</div>
+<p><em>Ejercicio</em>: calcula las derivadas parciales segundas de la siguiente función:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = e^x \cos y
+\]</div>
+<p><em>Solución</em>:</p>
+<p>Las derivadas parciales son:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_x (x, y) = e^x \cos y, \;\; f'_y (x, y) = - e^x \sin y
+\]</div>
+<p>Y las derivadas segundas:</p>
+<div class="math notranslate nohighlight">
+\[
+f''_x (x, y) = e^x \cos y, \;\; f''_y (x, y) = - e^x \cos y
+\]</div>
+<p>Y las derivadas segundas cruzadas:</p>
+<div class="math notranslate nohighlight">
+\[
+f''_{xy} (x, y) = - e^x \sin y, \;\; f''_{yx} (x, y) =  - e^x \sin y
+\]</div>
+</section>
+<hr class="docutils" />
+<section id="malditas-funciones-raras">
+<h3>¡Malditas funciones raras!<a class="headerlink" href="#malditas-funciones-raras" title="Permalink to this heading">#</a></h3>
+<p>Estudia ahora la siguiente función:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x,y) = \left \{
+\begin{array}{ l l}
+x+y &amp; \quad \mbox{si $x=0$ o $y=0$} \\
+1 &amp; \quad \mbox{en cualquier otro caso} \\
+\end{array}
+\right.
+\end{split}\]</div>
+<p><em>Ejercicio</em>: comprueba que en el origen tiene derivadas parciales, ¡pero no tiene derivadas en cualquier otra dirección!</p>
+<p>Estudia ahora esta función, que es incluso peor:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f(x,y) = \left \{
+\begin{array}{ l l}
+x+y &amp; \quad \mbox{si $x=0$ o $y=0$} \\
+0 &amp; \quad \mbox{en cualquier otro caso} \\
+\end{array}
+\right.
+\end{split}\]</div>
+<p><em>Ejercicio</em>: comprueba que en el origen, esta función es continua, tiene derivadas parciales y todas las direccionales, pero su gráfica es endemoniada, no es en absoluto “suave”.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">3.</span><span class="p">,</span> <span class="mf">3.</span><span class="p">,</span> <span class="mi">101</span><span class="p">)</span>
+<span class="n">xms</span><span class="p">,</span> <span class="n">yms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">0.</span>
+<span class="n">zms</span> <span class="o">=</span> <span class="mf">0.</span><span class="o">*</span><span class="n">xms</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">yms</span> <span class="o">+</span><span class="n">a</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="p">(</span><span class="n">xms</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span> <span class="n">zms</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span> <span class="o">=</span> <span class="n">xms</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span> <span class="o">+</span> <span class="n">yms</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span>
+<span class="n">sel</span> <span class="o">=</span> <span class="p">(</span><span class="n">yms</span> <span class="o">==</span> <span class="mi">0</span><span class="p">);</span> <span class="n">zms</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span> <span class="o">=</span> <span class="n">xms</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span> <span class="o">+</span> <span class="n">yms</span><span class="p">[</span><span class="n">sel</span><span class="p">]</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">));</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">axes</span><span class="p">(</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot_wireframe</span><span class="p">(</span><span class="n">xms</span><span class="p">,</span> <span class="n">yms</span><span class="p">,</span> <span class="n">zms</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">);</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;y&#39;</span><span class="p">);</span> <span class="c1">#ax.set_aspect(&#39;equal&#39;);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/d3f5f29f6c091e0b06204d3ce80c5c57c6bd4bd71488bce5ae63d0dc16535a37.png" src="../_images/d3f5f29f6c091e0b06204d3ce80c5c57c6bd4bd71488bce5ae63d0dc16535a37.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="funciones-diferenciables">
+<h2>Funciones diferenciables<a class="headerlink" href="#funciones-diferenciables" title="Permalink to this heading">#</a></h2>
+<p>En funciones reales en 1D, decíamos que una función era diferenciable si era <strong>“suave”</strong>: si era continua, no tenía ni dobleces, ni quiebros.</p>
+<p>En otras palabras, era diferenciable si admitía el <strong>desarrollo de Taylor</strong>.</p>
+<p>En primer orden, el desarrollo de Taylor de en una función real de 1D nos permitía aproximar, en un valor <span class="math notranslate nohighlight">\(x\)</span> “cercano” a <span class="math notranslate nohighlight">\(x_0\)</span> la función por una recta tangente con pendiente <span class="math notranslate nohighlight">\(f'(x_0)\)</span>, la derivada en <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) \approx f(x_0) + f'(x_0) \, (x - x_0) 
+\]</div>
+<p>Recuerda que la ecuación de una recta que pasa por el punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> con pendiente <span class="math notranslate nohighlight">\(a\)</span> viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+y(x) = y_0 + a \, (x-x_0)
+\]</div>
+<p>La derivada es la pendiente de la función en un punto.</p>
+<p>En la siguiente figura hemos dibujado la función <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> y el desarrollo de Taylor en el punto <span class="math notranslate nohighlight">\(x_0\)</span>. Puedes observar que en una pequeña región la recta y la función se superponen.</p>
+<p><em>Explora</em> cambiando el valor de <span class="math notranslate nohighlight">\(x_0\)</span>.</p>
+<p>Es claro que <span class="math notranslate nohighlight">\(f(x)\)</span> es “suave”.</p>
+<p><em>Cuestión</em>: Invéntante una función de 1D que no sea “suave”, no sea diferenciable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span>  <span class="mf">0.</span>
+<span class="n">fun</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
+<span class="n">fp</span>     <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mf">2.</span><span class="o">*</span><span class="n">x</span>
+<span class="n">taylor</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">fun</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fp</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span><span class="n">x0</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">taylor</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/0fa4a1fbc86183a72161a9f1677a642677caed96bb2960efca56a50685ad4f35.png" src="../_images/0fa4a1fbc86183a72161a9f1677a642677caed96bb2960efca56a50685ad4f35.png" />
+</div>
+</div>
+<p>Consideremos ahora una función escalar de dos dimensiones, diremos que es “suave” si su gráfica es continua (no está quebrada), no tiene dobleces, ni picos.</p>
+<p>Observa la gráfica de este función, ¿consideras que es “suave”? ¿está rasgada, tiene dobleces, picos?</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = 9 - x^2 - y^2
+\]</div>
+<p>Ciertamente es “suave”</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">9</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/142eef9b4f41fc3f3a23abbbb1070a66a5e0ecbe2e07e05addd733f96db31c88.png" src="../_images/142eef9b4f41fc3f3a23abbbb1070a66a5e0ecbe2e07e05addd733f96db31c88.png" />
+</div>
+</div>
+<p>Las funciones escalares de dos dimensiones serán diferenciables si podemos hacer su desarrollo de Taylor de primer orden.</p>
+<p>Que en este caso significa que en una región “pequeña”, en un punto <span class="math notranslate nohighlight">\((x, y)\)</span> “próximo” al punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, la gráfica de la función puede aproximarse por <strong>un plano tangente</strong>, cuya pendiente en la dirección <span class="math notranslate nohighlight">\(x\)</span> correspondera a su derivada parcial en <span class="math notranslate nohighlight">\(x\)</span> en ese punto, <span class="math notranslate nohighlight">\(f'_x(x_0, y_0)\)</span> y la pendiente en la dirección <span class="math notranslate nohighlight">\(y\)</span>, a la derivada parcial en <span class="math notranslate nohighlight">\(y\)</span>, <span class="math notranslate nohighlight">\(f'_y (x_0, y_0)\)</span>.</p>
+<p>El desarrollo de Taylor de primer orden será:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) \approx f(x_0, y_0) + f'_x(x_0, y_0) \,  (x-x_0) + f'_y(x_0, y_0) \,( y - y_0) 
+\]</div>
+<p>Recuerda que la ecuación de un plano que pasa por <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, con pendientes <span class="math notranslate nohighlight">\(a\)</span> en la dirección <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(b\)</span> en la dirección <span class="math notranslate nohighlight">\(y\)</span>, viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+z(x, y) = z_0 + a (x - x_0) + b (y - y_0)
+\]</div>
+<p>donde identificamos rápidamente:</p>
+<div class="math notranslate nohighlight">
+\[
+a = f'_x (x_0, y_0), \; b = f'_y (x_0, y_0), \; z_0 = f(x_0, y_0)
+\]</div>
+<p>que son, claro está, las derivadas parciales.</p>
+<p>Observa la gráfica de la función:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = 9 -x^2 - y^2
+\]</div>
+<p>sobre la que hemos dibujado, en un punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, el plano que corresponde a su desarrollo de Taylor de primer orden.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) \approx f(x_0, y_0) + f'_x(x_0, y_0) \,  (x-x_0) + f'_y(x_0, y_0) \,( y - y_0) 
+\]</div>
+<p><em>Explora</em>: cambia el punto y observa cómo el desarrollo del Taylor, el plano tangente, cubre, solapa la gráfica en una región alrededor del <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. Algo similar a lo que ocurría con la recta en una función de una dimensión.</p>
+<p>En este caso:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x_0, y_0) = 9 -x^2_0 - y^2_0, \;\, f'_x(x_0, y_0) = -2 x_0, \;\; f'_y(x_0, y_0) = -2 y_0
+\]</div>
+<p>luego el desarrollo de Taylor en torno al punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) \approx 9 -x^2_0 - y^2_0 - 2 x_0 (x - x_0) - 2 y_0 ( y - y_0)
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">fun</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">9</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">fpx</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">y</span>
+<span class="n">fpy</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">x</span>
+<span class="n">taylor</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">fun</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fpx</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fpy</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span><span class="n">y0</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">taylor</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/836eefa138b643e2a684d37388caaadb1dc42974bafcc713e2adbf07787946b3.png" src="../_images/836eefa138b643e2a684d37388caaadb1dc42974bafcc713e2adbf07787946b3.png" />
+</div>
+</div>
+<p><em>Ejercicio</em> Calcula el desarrollo de Taylor en el origen del plano <span class="math notranslate nohighlight">\(y -x\)</span> y verifica que es el mismo.</p>
+<p>Tomemos el plano anterior: <span class="math notranslate nohighlight">\(f(x, y) = y -x \)</span>.</p>
+<p>En el origen, <span class="math notranslate nohighlight">\(f(0, 0) = 0\)</span>, y las derivadas direccionales son:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_x(x, y) = -1, \;\, f'_y(x, y) = 1
+\]</div>
+<p>Luego el desarrollo de Taylor en <span class="math notranslate nohighlight">\((0,0)\)</span> es: <span class="math notranslate nohighlight">\(f(x, y) = y - x \)</span></p>
+<p><em>Cuestión</em> ¿Y en cualquier otro punto?</p>
+<p><em>Las derivadas direccionales de una función diferenciables tienen una expresión sencilla.</em></p>
+<p>Consideremos nuevamente una función <span class="math notranslate nohighlight">\(f(x, y)\)</span> diferenciable en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>.</p>
+<p>Reescribimos ahora el punto próximo <span class="math notranslate nohighlight">\((x, y)\)</span> por <span class="math notranslate nohighlight">\((x_0, y_0) + (v_x, v_y)\)</span>, donde <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> es un vector “pequeño”.</p>
+<div class="math notranslate nohighlight">
+\[
+(x, y) = (x_0, y_0) + (v_x, v_y)
+\]</div>
+<p>Podemos aproximar la función:</p>
+<div class="math notranslate nohighlight">
+\[
+f((x_0, y_0) + (v_x, v_y)) \approx f(x_0, y_0) + f'_x(x_0, y_0) v_x + f'_y(x_0, y_0) v_y
+\]</div>
+<p>Calculemos ahora la derivada direccional en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> en la dirección <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((x_0, y_0); (v_x, v_y)) = \lim_{h \to 0} \frac{f((x_0, y_0) + h (v_x, v_y)) - f(x_0, y_0)}{h}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ = \lim_{h \to 0} \frac{f(x_0, y_0) + h f'_x(x_0, y_0) v_x + h f'_y (x_0, y_0)  v_y - f(x_0, y_0)}{h}
+\]</div>
+<p>Por lo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((x_0, y_0); \, (v_x, v_y)) =  f'_x(x_0, y_0) v_x + f'_y (x_0, y_0)  v_y
+\]</div>
+<p>Si la función es diferenciable, la derivada direccional en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> y con dirección <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> se puede obtener a partir de sus derivadas parciales y además es lineal en <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>.</p>
+<p><em>Ejercicio</em>: calcula la derivada direccional de la función diferenciable <span class="math notranslate nohighlight">\(f(x, y) = 9 -x^2 - y^2\)</span> en el punto <span class="math notranslate nohighlight">\((1, 1)\)</span> y la dirección <span class="math notranslate nohighlight">\((1, 1)\)</span> a partir de sus derivadas parciales.</p>
+<p>Las derivadas parciales son:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_x(x, y) = -2x, \; f'_y(x, y) = -2y
+\]</div>
+<p>En el punto <span class="math notranslate nohighlight">\((1, 1)\)</span> valen:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_x(1, 1) = -2, \; f'_y(1, 1) = -2
+\]</div>
+<p>Y la derivada direccional en el vector <span class="math notranslate nohighlight">\((1, 1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+f'((1, 1); \, (1, 1)) = -4
+\]</div>
+<p>Para funciones escalares genéricas en <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>.</p>
+<p>Sea <span class="math notranslate nohighlight">\(f({\bf x})\)</span> una función escalar de <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, la función será diferenciable en <span class="math notranslate nohighlight">\({\bf x}_0\)</span> si en un punto “próximo”, <span class="math notranslate nohighlight">\({\bf x}\)</span>, dado por un vector “pequeño”, <span class="math notranslate nohighlight">\({\bf v}\)</span>, mediante <span class="math notranslate nohighlight">\({\bf x} = {\bf x}_0 + {\bf v}\)</span> podemos aproximarla:</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}) \approx f({\bf x}_0) + \sum_{i = 1, n} f'_{i}({\bf x}_0) v_i 
+\]</div>
+<p>donde, las derivadas parciales son:</p>
+<div class="math notranslate nohighlight">
+\[
+f'_i ({\bf x}) = \frac{\partial f ({\bf x})}{ \partial x_i}
+\]</div>
+<p>Y la derivada direccional en un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> dirección <span class="math notranslate nohighlight">\({\bf v}\)</span> viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+f'({\bf x}_0; \, {\bf v}) = \sum_{i = 1, n} f'_i ({\bf x}_0) \, v_i
+\]</div>
+<p><em>Ejercicio</em>: calcula las derivadas parciales de la siguiente función escalar:</p>
+<div class="math notranslate nohighlight">
+\[
+V(x, y, z) = \frac{1}{\sqrt{x^2 + y^2 + z^2}}
+\]</div>
+<p><em>Solución</em>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial V(x, y, z)}{ \partial x} = - \frac{x}{(x^2 + y^2 + z^2)^{3/2}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial V(x, y, z)}{ \partial y} = - \frac{y}{(x^2 + y^2 + z^2)^{3/2}}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial V(x, y, z)}{ \partial z} = - \frac{z}{(x^2 + y^2 + z^2)^{3/2}}
+\]</div>
+<p><strong>¡Esto es todo por ahora!</strong></p>
+</section>
+<section id="apendices">
+<h2>Apendices<a class="headerlink" href="#apendices" title="Permalink to this heading">#</a></h2>
+<p>¡Algo más complicado!</p>
+<p><em>Ejercicio</em>: calcula la derivada direccional de la función <span class="math notranslate nohighlight">\(f({\bf x}) = \| {\bf x} \|^2\)</span> en la dirección <span class="math notranslate nohighlight">\({\bf v}\)</span>.</p>
+<p><em>Solución</em>:</p>
+<p>Nota que <span class="math notranslate nohighlight">\(f({\bf x}) = \| {\bf x} \|^2 = {\bf x} {\bf x}\)</span>, así pues:</p>
+<div class="math notranslate nohighlight">
+\[
+f'({\bf x}; {\bf v}) = \lim_{h \to 0} \frac{({\bf x}+h{\bf v})({\bf x}+h{\bf v}) - {\bf x}{\bf x}}{h}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ = \lim_{h \to 0} \frac{{\bf x}{\bf x}+2h{\bf x}{\bf v} + h^2 {\bf v}{\bf v} - {\bf x}{\bf x}}{h}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+ = \lim_{h \to 0} \frac{ 2 h {\bf x}{\bf v} + h^2 {\bf v}{\bf v} }{h} = 2 {\bf x}{\bf v}
+\]</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#derivada-direccional">Derivada direccional</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-parciales">Derivadas parciales</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derivadas-segundas">Derivadas segundas</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#malditas-funciones-raras">¡Malditas funciones raras!</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#funciones-diferenciables">Funciones diferenciables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apendices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata, X. Cid Vidal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
