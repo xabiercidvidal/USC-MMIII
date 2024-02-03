@@ -257,23 +257,31 @@ def arrow3d(x0, y0, z0, vx, vy, vz, color = 'black', head = 0.0):
 def graph_section(fun, x0, y0, vx, vy, length = 5., sign = +1.):
     xs  = np.linspace(-length, length, 100)
     ys  = np.linspace(-length, length, 100)
+    ## first plot
     xms, yms = np.meshgrid(xs, ys)
     zms = fun(xms, yms)
+    ## vector from (x0,y0) to points in x,y plane
     dvx, dvy = xms - x0, yms - y0
+    ## cross product d x v
     dd  = dvy * vx - dvx * vy
     zmin = np.min(zms)
+    ## assign points for which the angle between d and v is greater than (or smaller than) 180 degrees
     zms[sign*dd >= 0.] = zmin
     fig = plt.figure(figsize=(8, 3.8))
     ax = fig.add_subplot(1, 2, 1, projection='3d')
     sf = ax.plot_surface(xms, yms, zms, cmap = cmap)
     ax.set_xlabel('$x$'); ax.set_ylabel('$y$'); #ax.set_aspect('equal')
     fig.colorbar(sf)
+    ## second plot
     ax = plt.subplot(1, 2, 2)
     ts  = np.linspace(-1.*length, length, 100)
     gxs = x0 + ts * vx
     gys = y0 + ts * vy
+    ## apply function to points across the vector (through parameter t)
     ffs = fun(gxs, gys)
+    ## plot evolution of function through the line parameter t
     ax.plot(ts, ffs)
+    ## plot subsection to see smaller increment
     sel = (ts >= 0.) & (ts < 0.1)
     ax.plot(ts[sel], ffs[sel], color = 'black', lw = 2)
     ax.set_xlabel('$t$'); ax.set_ylabel(r'$f({\bf x}_0 + t {\bf v})$');
