@@ -66,9 +66,14 @@ def graph(fun, xrange = xrange, yrange = xrange, condition = None,
     """
     xms, yms = meshgrid(xrange, yrange)
     zms      = zfun(fun, xms, yms, condition, zlim)
-    fig = plt.figure(figsize=figsize) if newfig else plt.gcf()
-    ax = fig.add_subplot(projection='3d')
+    #fig = plt.figure(figsize=figsize) if newfig else plt.gcf()
+    #ax = fig.add_subplot(projection='3d')
     #ax = plt.gca(projection='3d')
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else:
+        fig,ax = newfig
     sf  = ax.plot_surface(xms, yms, zms, cmap=mycmap, **kargs)
     if (zlim is not None): ax.set_zlim3d(*zlim)
     ax.set_xlabel('$x$'); ax.set_ylabel('$y$'); #ax.set_aspect('equal')

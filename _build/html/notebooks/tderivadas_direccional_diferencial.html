@@ -443,7 +443,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Mon Feb  5 22:25:57 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Feb  6 00:13:11 2024
 </pre></div>
 </div>
 </div>
@@ -860,7 +860,7 @@ y(x) = y_0 + a \, (x-x_0)
 <span class="n">fun</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
 <span class="n">fp</span>     <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mf">2.</span><span class="o">*</span><span class="n">x</span>
 <span class="n">taylor</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">fun</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fp</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span><span class="n">x0</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
 <span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">taylor</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">);</span>
 </pre></div>
@@ -935,13 +935,13 @@ f(x, y) \approx 9 -x^2_0 - y^2_0 - 2 x_0 (x - x_0) - 2 y_0 ( y - y_0)
 <span class="n">fpx</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">y</span>
 <span class="n">fpy</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">x</span>
 <span class="n">taylor</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">fun</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fpx</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fpy</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">-</span><span class="n">y0</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">taylor</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span>  <span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">taylor</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/836eefa138b643e2a684d37388caaadb1dc42974bafcc713e2adbf07787946b3.png" src="../_images/836eefa138b643e2a684d37388caaadb1dc42974bafcc713e2adbf07787946b3.png" />
+<img alt="../_images/eabaa48d730d1376b33ce9677f58f10a0f84d5329847cf0b2eefef0e0d095138.png" src="../_images/eabaa48d730d1376b33ce9677f58f10a0f84d5329847cf0b2eefef0e0d095138.png" />
 </div>
 </div>
 <p><em>Exercicio</em> Calcula a expansión de Taylor na orixe do plano <span class="math notranslate nohighlight">\(y -x\)</span> e verifica que é o mesmo.</p>
