@@ -12,3 +12,5 @@
 | Límites e continuidade | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_limites_continuidade.ipynb) |
 | Parametrización de liñas e superficies | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_parametrizacion_linhas_superficies.ipynb) |
 | Derivadas direccionais e funcións derivables | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_direccional_diferencial.ipynb) |
+| Gradiente, matriz xacobiana, funcións diferenciables | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](notebooks/tderivadas_gradiante_xacobiana.ipynb) |
+
