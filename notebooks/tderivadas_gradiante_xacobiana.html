@@ -167,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de liñas e superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
 </ul>
@@ -441,7 +441,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Mon Feb  5 16:56:56 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Feb 15 16:21:22 2024
 </pre></div>
 </div>
 </div>
@@ -517,7 +517,7 @@ f((x_0, y_0) + (v_x, v_y)) \simeq f(x_0, y_0) + \left(f'_x(x_0, y_0), \, f'_y (x
 <p><em>Explora</em> e cambia o punto e mira como cambia o gradiente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span>  <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.5</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span>  <span class="o">-</span><span class="mf">1.0</span><span class="p">,</span> <span class="mi">0</span>
 <span class="n">V</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">)</span><span class="o">**</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
@@ -527,7 +527,7 @@ f((x_0, y_0) + (v_x, v_y)) \simeq f(x_0, y_0) + \left(f'_x(x_0, y_0), \, f'_y (x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/95182e639da9b70690da5f4e5e9f00d56fc5e4ff641d801b825eea4cca73ea12.png" src="../_images/95182e639da9b70690da5f4e5e9f00d56fc5e4ff641d801b825eea4cca73ea12.png" />
+<img alt="../_images/746963ff653d536229720c674a2ff227e4b703155a7b0fe5a063a1aefa0dbbda.png" src="../_images/746963ff653d536229720c674a2ff227e4b703155a7b0fe5a063a1aefa0dbbda.png" />
 </div>
 </div>
 <p>Por suposto, o que vimos para funcións escalares bidimensionais é valido para calquera dimensión.</p>
@@ -861,8 +861,8 @@ f({\bf x}+{\bf v}) - f({\bf x})  = f({\bf x} + {\bf v}_n) - f({\bf x} + {\bf v}_
   = \sum_{k=1}^n f({\bf x} + {\bf v}_k)-f({\bf x}+{\bf v}_{k-1})  =  \sum_{k=1}^n f({\bf b}_{k} )-f({\bf b}_{k-1}) 
   =  \sum_{k=1}^n f({\bf b}_{k-1} + \lambda u_k {\bf e}_k)-f({\bf b}_{k-1})  
 \]</div>
-<p>Cada sumando, por exemplo: <span class="math notranslate nohighlight">\(f({\bf b}_{k-1} + \lambda u_k {\bf e} *k)-f({\bf b}* {k-1})\)</span>, é unha función dunha dimensión, na coordenada <span class="math notranslate nohighlight">\(k\)</span>.</p>
-<p>Polo tanto, podemos aplicar o teorema do valor medio nun punto <span class="math notranslate nohighlight">\({\bf c}_k\)</span> entre <span class="math notranslate nohighlight">\({\bf b}_{k-1} + \lambda u_k {\bf e} *k\)</span> e <span class="math notranslate nohighlight">\({\bf b }* { k-1}\)</span> e sendo o ancho do intervalo <span class="math notranslate nohighlight">\(\lambda u_k\)</span>:</p>
+<p>Cada sumando, por exemplo: <span class="math notranslate nohighlight">\(f({\bf b}_{k-1} + \lambda u_k {\bf e}_k)-f({\bf b}_{k-1})\)</span>, é unha función dunha dimensión, na coordenada <span class="math notranslate nohighlight">\(k\)</span>.</p>
+<p>Polo tanto, podemos aplicar o teorema do valor medio nun punto <span class="math notranslate nohighlight">\({\bf c}_k\)</span> entre <span class="math notranslate nohighlight">\({\bf b}_{k-1} + \lambda u_k {\bf e}_k\)</span> y <span class="math notranslate nohighlight">\({\bf b}_{k-1}\)</span> e sendo o ancho do intervalo <span class="math notranslate nohighlight">\(\lambda u_k\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
   =  \sum_{k=1}^n f({\bf b}_{k-1} + \lambda u_k {\bf e}_k)-f({\bf b}_{k-1})   = \sum_{k=1}^n \lambda u_k f'_{k}({\bf c}_{k})
@@ -879,7 +879,7 @@ f({\bf x}+{\bf v}) - f({\bf x})  = f({\bf x} + {\bf v}_n) - f({\bf x} + {\bf v}_
 <p>Se recuperamos a expresión da función diferenciable:</p>
 <div class="math notranslate nohighlight">
 \[
-f({\bf x} + {\bf v}) =  f({\bf x}) + \nabla f({\bf x}) \, {\bf v} + \parallel {\bf v} \parallel E({\bf x}, {\bf v}); \; \mathrm{donde: }\; E({\bf x},{\bf v}) = \sum_{k=1}^{n} [f'_k({\bf c}_k)-f'_k({\bf x})] u_k 
+f({\bf x} + {\bf v}) =  f({\bf x}) + \nabla f({\bf x}) \, {\bf v} + \parallel {\bf v} \parallel E({\bf x}, {\bf v}); \; \mathrm{onde: }\; E({\bf x},{\bf v}) = \sum_{k=1}^{n} [f'_k({\bf c}_k)-f'_k({\bf x})] u_k 
 \]</div>
 <p>Cando <span class="math notranslate nohighlight">\({\bf v} \to 0, \; \lambda \to 0\)</span>, entonces <span class="math notranslate nohighlight">\(\forall k, \: {\bf c}_k \to {\bf x}\)</span>.</p>
 <p><em>Se as derivadas parciais</em> , <span class="math notranslate nohighlight">\(f'_k({\bf x})\)</span>, <em>son continuas,</em> entón <span class="math notranslate nohighlight">\({\bf x}\)</span>, <span class="math notranslate nohighlight">\(E({\bf x},{\bf v}) \to 0\)</span>.</p>

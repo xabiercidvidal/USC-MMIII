@@ -443,7 +443,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Feb  6 00:13:11 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Feb 15 16:19:42 2024
 </pre></div>
 </div>
 </div>
@@ -551,7 +551,7 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span>
-<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span>
 <span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span> <span class="o">-</span> <span class="n">x</span>
 <span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">)</span>
 <span class="n">gf</span><span class="o">.</span><span class="n">graph_section</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">sign</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">);</span>
@@ -560,7 +560,7 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
-<img alt="../_images/0706243679ea591126d26270ce727894df39a6d95311956d19b35e61078d63c9.png" src="../_images/0706243679ea591126d26270ce727894df39a6d95311956d19b35e61078d63c9.png" />
+<img alt="../_images/20de4cbe5fdab99084e205590fa0743416155193c95672e155cd48fed111d114.png" src="../_images/20de4cbe5fdab99084e205590fa0743416155193c95672e155cd48fed111d114.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -819,7 +819,7 @@ x+y &amp; \quad \mbox{se $x=0$ ou $y=0$} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b2645eaabb85b972b64fd52dd157ddc3f3633a7b7fe9a6a57c94dc2c0b00e520.png" src="../_images/b2645eaabb85b972b64fd52dd157ddc3f3633a7b7fe9a6a57c94dc2c0b00e520.png" />
+<img alt="../_images/5fdfa9e0f7887581148c1a788ef6e8ab6d449b18c9a0147eddbc3c118d17bfdc.png" src="../_images/5fdfa9e0f7887581148c1a788ef6e8ab6d449b18c9a0147eddbc3c118d17bfdc.png" />
 </div>
 </div>
 <p><em>Pregunta</em> :  Agora estuda esta función, que é aínda peor:</p>
@@ -856,7 +856,7 @@ y(x) = y_0 + a \, (x-x_0)
 <p><em>Pregunta</em> : Inventa unha función 1D que non sexa “suave”, non diferenciable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span>  <span class="mf">0.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span> <span class="o">=</span>  <span class="mf">1.5</span>
 <span class="n">fun</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
 <span class="n">fp</span>     <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="mf">2.</span><span class="o">*</span><span class="n">x</span>
 <span class="n">taylor</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">fun</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">+</span> <span class="n">fp</span><span class="p">(</span><span class="n">x0</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">-</span><span class="n">x0</span><span class="p">)</span>
@@ -867,7 +867,7 @@ y(x) = y_0 + a \, (x-x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0fa4a1fbc86183a72161a9f1677a642677caed96bb2960efca56a50685ad4f35.png" src="../_images/0fa4a1fbc86183a72161a9f1677a642677caed96bb2960efca56a50685ad4f35.png" />
+<img alt="../_images/94cbc09ab341dd5389a4e40f9a688b66170df5be80e931001a00f4c9c8fc1211.png" src="../_images/94cbc09ab341dd5389a4e40f9a688b66170df5be80e931001a00f4c9c8fc1211.png" />
 </div>
 </div>
 <p>Consideremos agora unha función escalar bidimensional. Diremos que é “suave” se a súa gráfica é continua (non está rota), non ten pregamentos nin picos.</p>
@@ -930,7 +930,7 @@ f(x, y) \approx 9 -x^2_0 - y^2_0 - 2 x_0 (x - x_0) - 2 y_0 ( y - y_0)
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.</span>
 <span class="n">fun</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">9</span> <span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
 <span class="n">fpx</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">y</span>
 <span class="n">fpy</span>    <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="mf">2.</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">*</span> <span class="n">x</span>
@@ -941,7 +941,7 @@ f(x, y) \approx 9 -x^2_0 - y^2_0 - 2 x_0 (x - x_0) - 2 y_0 ( y - y_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eabaa48d730d1376b33ce9677f58f10a0f84d5329847cf0b2eefef0e0d095138.png" src="../_images/eabaa48d730d1376b33ce9677f58f10a0f84d5329847cf0b2eefef0e0d095138.png" />
+<img alt="../_images/ba0447b857322f941185b85dd9c65d146560334e9f325d2715bc4ce4a53741e0.png" src="../_images/ba0447b857322f941185b85dd9c65d146560334e9f325d2715bc4ce4a53741e0.png" />
 </div>
 </div>
 <p><em>Exercicio</em> Calcula a expansión de Taylor na orixe do plano <span class="math notranslate nohighlight">\(y -x\)</span> e verifica que é o mesmo.</p>
