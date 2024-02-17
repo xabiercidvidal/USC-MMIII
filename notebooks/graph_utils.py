@@ -248,17 +248,6 @@ def arrow(x0, y0, vx, vy, head = 0.3, color = 'black'):
     return ax
 
 
-def arrow3d(x0, y0, z0, vx, vy, vz, color = 'black', head = 0.0):
-    ax = plt.gca(projection='3d')
-    vv = np.sqrt(vx*vx + vy*vy + vz*vz)
-    if (vv == 0.):
-        ax.plot(x0, y0, z0, color='black', marker='*')
-    else:
-        vx, vy, vz = (1-head)*vx, (1-head)*vy, (1-head)*vz
-        ax.quiver(x0, y0, z0, vx, vy, vz, color = color, lw=2)
-    return ax
-
-
 def graph_section(fun, x0, y0, vx, vy, length = 5., sign = +1.):
     xs  = np.linspace(-length, length, 100)
     ys  = np.linspace(-length, length, 100)
@@ -308,8 +297,13 @@ def line3d(funx, funy, funz, trange = xrange,
            newfig = True, color = 'blue', alpha = 0.8):
     ts = np.linspace(*trange)
     xs, ys, zs = funx(ts), funy(ts), funz(ts)
-    fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
-    ax  = plt.gca(projection='3d')
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else:
+        fig,ax = newfig
+    #fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
+    #ax  = plt.gca(projection='3d')
     ax.plot(xs, ys, zs, color = color, lw = 2, alpha = 0.8)
     ax.set_xlabel('$x$'); ax.set_ylabel('$y$'); #ax.set_aspect('equal')
     return fig, ax
@@ -321,8 +315,13 @@ def wfsurface(funx, funy, funz, urange = xrange, vrange = xrange,
     vs = np.linspace(*vrange)
     ums, vms = np.meshgrid(us, vs)
     xms, yms, zms = funx(ums, vms), funy(ums, vms), funz(ums, vms)
-    fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
-    ax  = plt.gca(projection='3d')
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else:
+        fig,ax = newfig
+    #fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
+    #ax  = plt.gca(projection='3d')
     ax.plot_wireframe(xms, yms, zms, alpha = alpha, color = color)
     ax.set_xlabel('$x$'); ax.set_ylabel('$y$'); #ax.set_aspect('equal')
     return fig, ax
@@ -390,8 +389,8 @@ def wfsurface2d(xfun, yfun, urange, vrange, newfig = False,
     ax.set_xlabel(xlabel); ax.set_ylabel(ylabel); #ax.set_aspect('equal')
     return fig, ax
 
-def arrow3d(x0, y0, z0, vx, vy, vz, color = 'black', head = 0.3):
-    ax = plt.gca(projection='3d')
+def arrow3d(x0, y0, z0, vx, vy, vz, ax,color = 'black', head = 0.3):
+    #ax = plt.gca(projection='3d')
     vv = np.sqrt(vx*vx + vy*vy + vz*vz)
     if (vv == 0.):
         ax.plot(x0, y0, z0, color='black', marker='*')
@@ -490,10 +489,10 @@ def sphere_plane(theta0,  phi0, length = 0.5):
     zplane = lambda x, y : z0 - (fpx0 * (x-x0) + fpy0 * (y - y0))/fpz0
     x_range = x0 - length, x0 + length, 10
     y_range = y0 - length, y0 + length, 10
-    wfsurface(xplane, yplane, zplane, x_range, y_range, newfig = False)
+    wfsurface(xplane, yplane, zplane, x_range, y_range, newfig = [fig,ax])
 
     # draw gradient
-    arrow3d(x0, y0, z0, fpx0, fpy0, fpz0)
+    arrow3d(x0, y0, z0, fpx0, fpy0, fpz0,ax)
 
     xptheta = lambda theta, phi :  r * np.cos(phi) * np.cos(theta)
     yptheta = lambda theta, phi :  r * np.sin(phi) * np.cos(theta)
@@ -507,19 +506,19 @@ def sphere_plane(theta0,  phi0, length = 0.5):
     xu = lambda phi : xpos(theta0, phi)
     yu = lambda phi : ypos(theta0, phi)
     zu = lambda phi : zpos(theta0, phi)
-    line3d(xu, yu, zu, phi_range, newfig = False)
+    line3d(xu, yu, zu, phi_range, newfig = [fig,ax])
 
     xvphi, yvphi, zvphi = xpphi(theta0, phi0), ypphi(theta0, phi0), zpphi(theta0, phi0)
-    arrow3d(x0, y0, z0, xvphi, yvphi, zvphi)
+    arrow3d(x0, y0, z0, xvphi, yvphi, zvphi,ax)
 
     # draw line
     xv = lambda theta : xpos(theta, phi0)
     yv = lambda theta : ypos(theta, phi0)
     zv = lambda theta : zpos(theta, phi0)
-    line3d(xv, yv, zv, theta_range, newfig = False)
+    line3d(xv, yv, zv, theta_range, newfig = [fig,ax])
 
     xvtheta, yvtheta, zvtheta = xptheta(theta0, phi0), yptheta(theta0, phi0), zptheta(theta0, phi0)
-    arrow3d(x0, y0, z0, xvtheta, yvtheta, zvtheta)
+    arrow3d(x0, y0, z0, xvtheta, yvtheta, zvtheta,ax)
 
     grad   = (fpx0 ,      fpy0, fpz0)
     vphi   = (xvphi,     yvphi, zvphi)
