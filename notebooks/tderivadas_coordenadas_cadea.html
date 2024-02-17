@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_coordenadas_cadea';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Gradiente, matriz xacobiana, funcións diferenciables" href="tderivadas_gradiante_xacobiana.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,13 +163,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Cambio de coordenadas e regra da cadea</a></li>
 </ul>
 
     </div>
@@ -418,12 +420,10 @@ document.write(`
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regra-da-cadea">A regra da cadea</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-regla-de-la-cadena">Teorema de la regla de la cadena</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-da-regra-da-cadea">Teorema da regra da cadea</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Apéndice</a></li>
 </ul>
             </nav>
         </div>
@@ -445,7 +445,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Feb 15 16:19:25 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Feb 17 22:34:11 2024
 </pre></div>
 </div>
 </div>
@@ -510,11 +510,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:325: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/261364d945b6d941ccc546eaf7880c52f5e14f3831731e32f0e8dd7b32a75153.png" src="../_images/261364d945b6d941ccc546eaf7880c52f5e14f3831731e32f0e8dd7b32a75153.png" />
+<img alt="../_images/a56f866ec52d4f987569b04391f85c2a37ed32571e5dd7ce884a7cd959dcc514.png" src="../_images/a56f866ec52d4f987569b04391f85c2a37ed32571e5dd7ce884a7cd959dcc514.png" />
 </div>
 </div>
 <p>Podemos dar todos os puntos, <span class="math notranslate nohighlight">\((x, y, z)\)</span>, dun espazo <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> en <em>coordenadas cilíndricas</em> , onde expresamos as coordenadas <span class="math notranslate nohighlight">\((x, y)\)</span> por, <span class="math notranslate nohighlight">\((r, \phi)\)</span> onde <span class="math notranslate nohighlight">\(r\)</span> é a distancia á orixe e <span class="math notranslate nohighlight">\(\phi\)</span> o ángulo co eixe <span class="math notranslate nohighlight">\(x\)</span>. Mentres mantemos a coordenada <span class="math notranslate nohighlight">\(z\)</span>. Isto é:</p>
@@ -622,23 +618,16 @@ document.write(`
  {\bf Dh}({\bf u}) \; = \; {\bf Df} \left({\bf x( {\bf u})} \right) \; {\bf Dx}({\bf u})
  \]</div>
 <p>O produto dos derivadas!</p>
-<section id="teorema-de-la-regla-de-la-cadena">
-<h3>Teorema de la regla de la cadena<a class="headerlink" href="#teorema-de-la-regla-de-la-cadena" title="Permalink to this heading">#</a></h3>
-<p><em>Teorema</em>: Sea <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathbf{R}^n \to \mathbf{R}^m\)</span>, <span class="math notranslate nohighlight">\(A\)</span> un conjunto abierto de <span class="math notranslate nohighlight">\(\mathbf{R}^n\)</span>, y <span class="math notranslate nohighlight">\({\bf f}: B \subset \mathbf{R}^m \to \mathbf{R}^p\)</span>, <span class="math notranslate nohighlight">\(B\)</span> un conjunto abierto de <span class="math notranslate nohighlight">\(\mathbf{R}^m\)</span>, donde el dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span> esta incluido en el rango de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Si <span class="math notranslate nohighlight">\({\bf g}\)</span> es diferenciable en un punto <span class="math notranslate nohighlight">\({\bf x}\)</span> interior a <span class="math notranslate nohighlight">\(A\)</span> y <span class="math notranslate nohighlight">\({\bf f}\)</span> lo es en el punto <span class="math notranslate nohighlight">\({\bf g}({\bf x})\)</span>, entonces, la función composición <span class="math notranslate nohighlight">\({\bf h} = {\bf f} \circ {\bf g}: A \subset \mathbf{R}^n \to \mathbf{R}^p\)</span>, definida como: <span class="math notranslate nohighlight">\({\bf h}({\bf x})= {\bf f} \circ {\bf g} ({\bf x}) = {\bf f} \left( {\bf g}({\bf x}) \right)\)</span>, es diferenciable en <span class="math notranslate nohighlight">\({\bf x}\)</span> y su diferencial es:</p>
+<section id="teorema-da-regra-da-cadea">
+<h3>Teorema da regra da cadea<a class="headerlink" href="#teorema-da-regra-da-cadea" title="Permalink to this heading">#</a></h3>
+<p><em>Teorema</em>: Sexa <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math notranslate nohighlight">\(A\)</span> un conxunto aberto de <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, e <span class="math notranslate nohighlight">\({\bf f}: B \subset \mathbb{R}^m \to \mathbb{R}^p\)</span>, <span class="math notranslate nohighlight">\(B\)</span> un conxunto aberto de <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, onde o dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span> se inclúe no intervalo de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Se <span class="math notranslate nohighlight">\({\bf g}\)</span> é diferenciable nun punto <span class="math notranslate nohighlight">\({\bf x}\)</span> interior a <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\({\bf f}\)</span> o é no punto <span class="math notranslate nohighlight">\({\bf g}({\bf x})\)</span>, entón, a función de composición <span class="math notranslate nohighlight">\({\bf h} = {\bf f} \circ {\bf g}: A \subset \mathbb{R}^n \to \mathbb{R}^p\)</span>, definida como: <span class="math notranslate nohighlight">\({\bf h}({\bf x})= {\bf f} \circ {\bf g} ({\bf x}) = {\bf f} \left( {\bf g}({\bf x}) \right)\)</span>, é diferenciable en <span class="math notranslate nohighlight">\({\bf x}\)</span> e o seu diferencial é:</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf D}({\bf f} \circ {\bf g})({\bf x}) = {\bf Df}\left( {\bf g}({\bf x}) \right) \, {\bf Dg}({\bf x}) 
 \]</div>
-</section>
-<section id="teorema-da-regra-da-cadea">
-<h3>Teorema da regra da cadea<a class="headerlink" href="#teorema-da-regra-da-cadea" title="Permalink to this heading">#</a></h3>
-<p><em>Teorema</em> : Sexa <span class="math notranslate nohighlight">\({\bf g}: un \subconxunto \mathbf{R}^n \to \mathbf{R}^m\)</span>, <span class="math notranslate nohighlight">\(A\)</span> sexa un conxunto aberto de <span class="math notranslate nohighlight">\(\mathbf{R}^n\)</span> e <span class="math notranslate nohighlight">\( {\bf f}: B \subset \mathbf{R}^m \to \mathbf{R}^p\)</span>, <span class="math notranslate nohighlight">\(B\)</span> un conxunto aberto de <span class="math notranslate nohighlight">\(\mathbf{R}^m\)</span>, onde o dominio de <span class="math notranslate nohighlight">\( { \bf f}\)</span> inclúese no intervalo de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Se <span class="math notranslate nohighlight">\({\bf g}\)</span> é diferenciable nun punto <span class="math notranslate nohighlight">\({\bf x}\)</span> interior a <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\({\bf f}\)</span> é diferenciable no punto <span class="math notranslate nohighlight">\({\bf g}({\bf x} )\)</span>, entón, a función de composición <span class="math notranslate nohighlight">\({\bf h} = {\bf f} \circ {\bf g}: Un \subconjunto \mathbf{R}^n \to \mathbf{R}^p\)</span>, definido como: <span class="math notranslate nohighlight">\({\bf h}({\bf x})= {\bf f} \circ {\bf g} ({\bf x}) = {\bf f} \left( {\bf g}( {\bf x}) \right)\)</span>, é diferenciable en <span class="math notranslate nohighlight">\({\bf x}\)</span> e o seu diferencial é:</p>
-<div class="math notranslate nohighlight">
-\[ {\bf D}({\bf f} \circ {\bf g})({\bf x}) = {\bf Df}\left( {\bf g}({\bf x}) \right) \, {\bf Dg}({\bf x})\]</div>
-<p><em>Ejemplo</em>: Con las funciones: <span class="math notranslate nohighlight">\(f(x,y)= x^2+y^2\)</span> y <span class="math notranslate nohighlight">\({\bf g}(r,\theta) = (r\cos \theta, r \sin \theta)\)</span>, verifica la regla de la cadena para la función compuesta, <span class="math notranslate nohighlight">\(h(r,\theta) = (f \circ {\bf g})(r,\theta)\)</span>.</p>
-<p><em>Exemplo</em> : coas funcións: <span class="math notranslate nohighlight">\(f(x,y)= x^2+y^2\)</span> e <span class="math notranslate nohighlight">\({\bf g}(r,\theta) = (r\cos \theta, r \sin \theta)\)</span> , verifique a regra da cadea para a función composta, <span class="math notranslate nohighlight">\(h(r,\theta) = (f \circ {\bf g})(r,\theta)\)</span>.</p>
+<p><em>Exemplo</em> : coas funcións: <span class="math notranslate nohighlight">\(f(x,y)= x^2+y^2\)</span> e <span class="math notranslate nohighlight">\({\bf g}(r,\theta) = (r\cos \theta, r \sin \theta)\)</span> , verifica a regra da cadea para a función composta, <span class="math notranslate nohighlight">\(h(r,\theta) = (f \circ {\bf g})(r,\theta)\)</span>.</p>
 <p><em>solución:</em>
-Como producto de derivadas:</p>
+Como produto de derivadas:</p>
 <div class="math notranslate nohighlight">
 \[
 \nabla f (x,y)  = (2x, \, 2y) \Rightarrow \nabla f (r,\theta)  = (2 r \cos \theta, \, 2 r \sin \theta) 
@@ -658,7 +647,7 @@ Como producto de derivadas:</p>
  \sin \theta &amp; r \cos \theta
 \end{array} \right) = (2r,0) \\
 \end{split}\]</div>
-<p>Ahora expresando la función inicial en polares:</p>
+<p>Agora expresando a función inicial en polares:</p>
 <div class="math notranslate nohighlight">
 \[
  h (r,\theta)  = r^2 
@@ -667,25 +656,10 @@ Como producto de derivadas:</p>
 \[
 \nabla h (r,\theta) = (2r,0)
 \]</div>
-<p><em>solución:</em></p>
-<p>Como produto de derivados:</p>
-<div class="math notranslate nohighlight">
-\[ \nabla f (x,y) = (2x, \, 2y) \Rightarrow \nabla f (r,\theta) = (2 r \cos \theta, \, 2 r \sin \theta)\]</div>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} {\bf Dg}(r,\theta) = \left( \begin{array}{cc}\\ \cos \theta &amp;amp; - r \sin \theta \\\ \sin \theta &amp;amp; r \cos \theta\\ \end{matriz} \right)\end{aligned}\end{align} \]</div>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} \nabla f (r,\theta) \, {\bf Dg} (r,\theta) = (2 r \cos \theta, 2 r \sin \theta) \, \left(\\ \begin{matriz}{cc}\\ \cos \theta &amp;amp; - r \sin \theta \\\ \sin \theta &amp;amp; r \cos \theta\\ \end{matriz} \right) = (2r,0) \\end{aligned}\end{align} \]</div>
-<p>Agora expresando a función inicial en polar:</p>
-<div class="math notranslate nohighlight">
-\[ h (r,\theta) = r^2\]</div>
-<div class="math notranslate nohighlight">
-\[ \nabla h (r,\theta) = (2r,0)\]</div>
-<p><em>Ejercicio</em>: Verifica la regla de la cadena para la función compuesta
-<span class="math notranslate nohighlight">\(h = f \circ {\bf g}: \mathbf{R}^3 \to \mathbf{R}\)</span> dada por <span class="math notranslate nohighlight">\(g:\mathbf{R}^3 \to \mathbf{R}^3\)</span>, <span class="math notranslate nohighlight">\({\bf g}(x,y,z)=(x^2y,y^2,e^{-xz})\)</span> y <span class="math notranslate nohighlight">\(f:\mathbf{R}^3\to\mathbf{R}\)</span>, <span class="math notranslate nohighlight">\(f(u,v,w)=u^2+v^2-w\)</span>.</p>
-<p><em>Exercicio</em> : Verifica a regra da cadea para a función composta</p>
-<p><span class="math notranslate nohighlight">\(h = f \circ {\bf g}: \mathbf{R}^3 \to \mathbf{R}\)</span> dado por <span class="math notranslate nohighlight">\(g:\mathbf{R}^3 \to \mathbf{R}^3\)</span>, <span class="math notranslate nohighlight">\({\bf g}(x,y,z)=(x^2y,y^2,e^{-xz})\)</span> e <span class="math notranslate nohighlight">\(f:\mathbf{R}^3\to\mathbf{R}\)</span> , <span class="math notranslate nohighlight">\(f(u,v,w)=u^2+v^2-w\)</span>.</p>
+<p><em>Exercicio</em> : Verifica a regra da cadea para a función composta
+<span class="math notranslate nohighlight">\(h = f \circ {\bf g}: \mathbb{R}^3 \to \mathbb{R}\)</span> dado por <span class="math notranslate nohighlight">\(g:\mathbb{R}^3 \to \mathbb{R}^3\)</span>, <span class="math notranslate nohighlight">\({\bf g}(x,y,z)=(x^2y,y^2,e^{-xz})\)</span> e <span class="math notranslate nohighlight">\(f:\mathbb{R}^3\to\mathbb{R}\)</span> , <span class="math notranslate nohighlight">\(f(u,v,w)=u^2+v^2-w\)</span>.</p>
 <p><em>Solución</em>:</p>
-<p>Sustituyendo:</p>
+<p>Substituíndo:</p>
 <div class="math notranslate nohighlight">
 \[
 h(x,y,z)  = (x^2y)^2+(y^2)^2-e^{-xz} 
@@ -694,7 +668,7 @@ h(x,y,z)  = (x^2y)^2+(y^2)^2-e^{-xz}
 \[
 \nabla h(x,y,z)  =(4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz}) 
 \]</div>
-<p>Aplicando la regla de la cadena:</p>
+<p>Aplicando a regra da cadea:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 {\bf Dg}(x,y,z)  = \left( \begin{array}{ccc}
@@ -714,81 +688,29 @@ h(x,y,z)  = (x^2y)^2+(y^2)^2-e^{-xz}
 -ze^{-xz} &amp; 0 &amp; -xe^{-xz} \\ \end{array} \right)  \\
 = (4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz})
 \end{split}\]</div>
-<p><em>Solución</em> :</p>
-<p>Substituíndo:</p>
-<div class="math notranslate nohighlight">
-\[ h(x,y,z) = (x^2y)^2+(y^2)^2-e^{-xz}\]</div>
-<div class="math notranslate nohighlight">
-\[ \nabla h(x,y,z) =(4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz})\]</div>
-<p>Aplicando a regra da cadea:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} {\bf Dg}(x,y,z) = \left( \begin{matriz}{ccc}\\ 2xy e x^2 e 0 \\\ 0 &amp;amp; 2y &amp;amp; 0 \\\ -ze^{-xz} e 0 e -xe^{-xz} \ \end{matriz} \right)\end{aligned}\end{align} \]</div>
-<div class="math notranslate nohighlight">
-\[ \nabla f(u,v,w) = (2u,2v,-1) \Frecha dereita \nabla f(x,y,z) = (2x^2y,2y^2,-1)\]</div>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} \nabla f(x,y,z) \, {\bf Dg}(x,y,z) = (2x^2y,2y^2,-1) \, \left( \begin{array}{ccc}\\ 2xy e x^2 e 0 \\\ 0 &amp;amp; 2y &amp;amp; 0 \\\ -ze^{-xz} &amp;amp; 0 &amp;amp; -xe^{-xz} \ \end{matriz} \right) \\\ = (4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz})\end{aligned}\end{align} \]</div>
-<p>Aplicando la regla de la cadena:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-{\bf Dg}(x,y,z)  = \left( \begin{array}{ccc}
-2xy &amp; x^2 &amp; 0 \\
-0 &amp; 2y &amp; 0 \\
--ze^{-xz} &amp; 0 &amp; -xe^{-xz} \\ \end{array} \right) 
-\end{split}\]</div>
+<p><em>Exemplo</em> de uso da regra da cadea:</p>
+<p><strong>Plano tanxente a un conxunto de nivel dunha función <span class="math notranslate nohighlight">\(f(x, y, z)\)</span></strong> .</p>
+<p>Sexa unha función escalar, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}^3 \to \mathbb{R}\)</span>, e un conxunto de nivel, c, <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span>, e unha traxectoria, parametrizada, de puntos dese conxunto de nivel  <span class="math notranslate nohighlight">\({\bf r}(t)\)</span>, con <span class="math notranslate nohighlight">\(t \in [t_0, t_e]\)</span>, onde en <span class="math notranslate nohighlight">\(t = t_0\)</span> , dános <span class="math notranslate nohighlight">\({\bf r}(t_0) = (x_0, y_0, z_0)\)</span>.</p>
+<p>Se facemos a función composta <span class="math notranslate nohighlight">\(h = f \circ \ {\bf r} (t)\)</span>, que é simplemente unha función real unidimensional, <span class="math notranslate nohighlight">\(h(t) = f({\bf r}(t)), \;
+\mathbb{R} \to \mathbb{R}\)</span>.</p>
+<p>Neste caso dado, os puntos de <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> están no conxunto de nivel <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span>, a función sempre vale <span class="math notranslate nohighlight">\(c\)</span> e, polo tanto, a súa derivada é nula.</p>
 <div class="math notranslate nohighlight">
 \[
-\nabla f(u,v,w) = (2u,2v,-1) \Rightarrow \nabla f(x,y,z) = (2x^2y,2y^2,-1) 
-\]</div>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\nabla f(x,y,z) \, {\bf Dg}(x,y,z)  =  (2x^2y,2y^2,-1) \, \left( \begin{array}{ccc}
-2xy &amp; x^2 &amp; 0 \\
-0 &amp; 2y &amp; 0 \\
--ze^{-xz} &amp; 0 &amp; -xe^{-xz} \\ \end{array} \right)  \\
-= (4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz})
-\end{split}\]</div>
-<p>Aplicando a regra da cadea:</p>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} {\bf Dg}(x,y,z) = \left( \begin{matriz}{ccc}\\ 2xy e x^2 e 0 \\\ 0 &amp;amp; 2y &amp;amp; 0 \\\ -ze^{-xz} e 0 e -xe^{-xz} \ \end{matriz} \right)\end{aligned}\end{align} \]</div>
-<div class="math notranslate nohighlight">
-\[ \nabla f(u,v,w) = (2u,2v,-1) \Frecha dereita \nabla f(x,y,z) = (2x^2y,2y^2,-1)\]</div>
-<div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} \nabla f(x,y,z) \, {\bf Dg}(x,y,z) = (2x^2y,2y^2,-1) \, \left( \begin{array}{ccc}\\ 2xy e x^2 e 0 \\\ 0 &amp;amp; 2y &amp;amp; 0 \\\ -ze^{-xz} &amp;amp; 0 &amp;amp; -xe^{-xz} \ \end{matriz} \right) \\\ = (4x^3y^2+ze^{-xz},2x^4y+4y^3,xe^{-xz})\end{aligned}\end{align} \]</div>
-<p><em>Ejemplo</em> del uso de la regla de la cadena:</p>
-<p><strong>Plano tangente a un conjunto de nivel de una función <span class="math notranslate nohighlight">\(f(x, y, z)\)</span></strong>.</p>
-<p>Sea un función escalar, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^3  \to \mathrm{R}\)</span>, y un conjunto de nivel, c, <span class="math notranslate nohighlight">\(f(x , y, z) = c\)</span>, y una línea, una trayectoria, parametrizada, de puntos de ese conjunto de nivel <span class="math notranslate nohighlight">\({\bf r}(t)\)</span>, con <span class="math notranslate nohighlight">\(t \in [t_0, t_e]\)</span>, donde en <span class="math notranslate nohighlight">\(t = t_0\)</span>, nos da <span class="math notranslate nohighlight">\({\bf r}(t_0) = (x_0, y_0, z_0)\)</span>.</p>
-<p>Si hacemos la función compuesta <span class="math notranslate nohighlight">\(h = f \circ \ {\bf r} (t)\)</span>, que fíjate, es simplemente una función real de una dimensión, <span class="math notranslate nohighlight">\(h(t) = f({\bf r}(t)), \;
-\mathrm{R} \to \mathrm{R}\)</span>.</p>
-<p>En este caso dado, los puntos de <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> están en el conjunto de nivel de <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span>, la función siempre vale <span class="math notranslate nohighlight">\(c\)</span>, y por lo tanto su derivada es nula.</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}h(t_0)}{\mathrm{d}t} = 0.
-\]</div>
-<p>Que por la regla de la cadena es lo mismo que:</p>
+ \frac{\mathrm{d}h(t_0)}{\mathrm{d}t} = 0.
+ \]</div>
+<p>Que pola regra da cadea é o mesmo que:</p>
 <div class="math notranslate nohighlight">
 \[
 \nabla f \left({\bf r}(t_0) \right) \, {\bf r}'(t_0) = 0
 \]</div>
-<p>Que corresponde a dos vectores ortogonales. El primero es el gradiente de <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> en <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, esto es, <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>. El segundo es el vector “velocidad” de la trayectoria en <span class="math notranslate nohighlight">\(t_0\)</span>.</p>
-<p><em>Exemplo</em> de uso da regra da cadea:</p>
-<p><strong>Plano tanxente a un conxunto de niveis dunha función <span class="math notranslate nohighlight">\(f(x, y, z)\)</span></strong> .</p>
-<p>Sexa unha función escalar, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^3 \to \mathrm{R}\)</span>, e un conxunto de niveis, c, <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span>, e unha liña, un camiño, parametrizado, de puntos dese nivel conxunto <span class="math notranslate nohighlight">\({\bf r}(t)\)</span>, con <span class="math notranslate nohighlight">\(t \in [t_0, t_e]\)</span>, onde en <span class="math notranslate nohighlight">\(t = t_0\)</span> , dános <span class="math notranslate nohighlight">\({\bf r}(t_0) = (x_0, y_0, z_0)\)</span>.</p>
-<p>Se facemos a función composta <span class="math notranslate nohighlight">\(h = f \circ \ {\bf r} (t)\)</span>, que é simplemente unha función real unidimensional, $h(t) = f({\bf r} (t) ), ;</p>
-<p>\mathrm{R} \to \mathrm{R}$.</p>
-<p>Neste caso dado, os puntos de <span class="math notranslate nohighlight">\({\bf r}(t)\)</span> están no conxunto de niveis <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span>, a función sempre vale <span class="math notranslate nohighlight">\(c\)</span> e, polo tanto, a súa derivada é nulo.</p>
-<div class="math notranslate nohighlight">
-\[ \frac{\mathrm{d}h(t_0)}{\mathrm{d}t} = 0.\]</div>
-<p>Que pola regra da cadea é o mesmo que:</p>
-<div class="math notranslate nohighlight">
-\[ \nabla f \left({\bf r}(t_0) \right) \, {\bf r}&amp;#39;(t_0) = 0\]</div>
 <p>Que corresponde a dous vectores ortogonais. O primeiro é o gradiente de <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> en <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, é dicir, <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>. O segundo é o vector “velocidade” da traxectoria en <span class="math notranslate nohighlight">\(t_0\)</span>.</p>
-<p>En un espacio <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span>, dado un punto <span class="math notranslate nohighlight">\({\bf x}_0 = (x_0, y_0, z_0)\)</span> y vector <span class="math notranslate nohighlight">\({\bf n}\)</span>. Podemos dar la ecuación del plano normal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, que pasa por <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, como aquellos puntos, <span class="math notranslate nohighlight">\({\bf x} = (x, y, z)\)</span> cuyo vector, <span class="math notranslate nohighlight">\({\bf x} - {\bf x}_0\)</span>, <span class="math notranslate nohighlight">\((x - x_0, y - y_0, z - z_0)\)</span>, es ortogonal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, esto es:</p>
+<p>Nun espazo <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, dado un punto <span class="math notranslate nohighlight">\({\bf x}_0 = (x_0, y_0, z_0)\)</span> e un vector <span class="math notranslate nohighlight">\({\bf n}\)</span>. Podemos dar a ecuación do plano normal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, que pasa por <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, como aqueles puntos, <span class="math notranslate nohighlight">\({\bf x} = (x, y, z)\)</span> para os cales o vector, <span class="math notranslate nohighlight">\({\bf x} - {\bf x}_0\)</span>, <span class="math notranslate nohighlight">\((x - x_0, y - y_0, z - z_0)\)</span>, é ortogonal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, é dicir:</p>
 <div class="math notranslate nohighlight">
 \[
-({\bf x} - {\bf x}_0) \, {\bf n} = 0
-\]</div>
-<p>Si nos fijamos en el caso anterior, la ‘velocidad’ de la trayectoria, <span class="math notranslate nohighlight">\({\bf r}'(t_0)\)</span>, debe estar contenida entonces en el plano definido por el punto <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span> y el vector <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>.</p>
-<p>Ese plano, que es el plano tangente a al conjunto de nivel <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span> en <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, viene dado por la ecuación:</p>
+ ({\bf x} - {\bf x}_0) \, {\bf n} = 0
+ \]</div>
+<p>Se observamos o caso anterior, a “velocidade” da traxectoria, <span class="math notranslate nohighlight">\({\bf r}'(t_0)\)</span>, debe estar contida entón no plano tanxente ao conxunto de nivel <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span> en <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, perpendicular ao vector <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>.</p>
+<p>Ese plano vén dado pola ecuación:</p>
 <div class="math notranslate nohighlight">
 \[
 ({\bf x} - {\bf x}_0) \, \nabla f({\bf x}_0) = 0
@@ -797,22 +719,9 @@ h(x,y,z)  = (x^2y)^2+(y^2)^2-e^{-xz}
 \[
 f'_x(x_0, y_0, z_0) \, (x - x_0) \, + \, f'_y(x_0, y_0, z_0) \, (y - y_0) + \, f'_z(x_0, y_0, z_0) \, (z - z_0) \, = \, 0.
 \]</div>
-<p>Date cuenta que esta forma de dar el plano, solo sirve para funciones, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, cuyo gradiente en un punto, <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>, sea distinto de cero.</p>
-<p>Nun espazo <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span>, dado un punto <span class="math notranslate nohighlight">\({\bf x}_0 = (x_0, y_0, z_0)\)</span> e un vector <span class="math notranslate nohighlight">\({\bf n}\)</span>. Podemos dar a ecuación do plano normal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, que pasa por <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, como eses puntos, <span class="math notranslate nohighlight">\({\bf x} = (x, y, z)\)</span> cuxos puntos o vector, <span class="math notranslate nohighlight">\({\bf x} - {\bf x}_0\)</span>, <span class="math notranslate nohighlight">\((x - x_0, y - y_0, z - z_0)\)</span>, é ortogonal a <span class="math notranslate nohighlight">\({\bf n}\)</span>, é dicir:</p>
-<div class="math notranslate nohighlight">
-\[ ({\bf x} - {\bf x}_0) \, {\bf n} = 0\]</div>
-<p>Se observamos o caso anterior, a ‘velocidade’ da traxectoria, <span class="math notranslate nohighlight">\({\bf r}&amp;#39;(t_0)\)</span>, debe estar contida entón no plano definido polo punto <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span> e o vector <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>.</p>
-<p>Ese plano, que é o plano tanxente ao conxunto de niveis <span class="math notranslate nohighlight">\(f(x, y, z) = c\)</span> en <span class="math notranslate nohighlight">\((x_0, y_0, z_0)\)</span>, vén dado pola ecuación:</p>
-<div class="math notranslate nohighlight">
-\[ ({\bf x} - {\bf x}_0) \, \nabla f({\bf x}_0) = 0\]</div>
-<div class="math notranslate nohighlight">
-\[ f&amp;#39;_x(x_0, y_0, z_0) \, (x - x_0) \, + \, f&amp;#39;_y(x_0, y_0, z_0) \, (y - y_0) + \, f&amp;#39;_z(x_0, y_0, z_0) \, (z - z_0) \, = \, 0.\]</div>
-<p>Teña en conta que esta forma de dar o plano só funciona para funcións, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, cuxo gradiente nun punto, <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>, é distinto de cero.</p>
-<p>La siguiente celda muestra el plano tangente en un punto al conjunto de nivel de la función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span> de valor <span class="math notranslate nohighlight">\(c=1\)</span>, que corresponde a la esfera de radio unidad.</p>
-<p>También se muestra el gradiente de la función en el punto de la esfera dado por <span class="math notranslate nohighlight">\(\theta = \pi/4, \; \phi = 3\pi/2\)</span>, y dos trayectorias dentro de la esfera, una vertical, un meridiano, y otra horizontal, un paralelo, que pasan por ese punto. Puedes ver también los vectores “velocidad” de esas trayectorias, que están, claro, dentro del plano.</p>
-<p><em>Explora</em> y cambia el punto de la esfera.</p>
-<p>A seguinte cela mostra o plano tanxente nun punto ao conxunto de niveis da función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span> de valor <span class="math notranslate nohighlight">\(c=1\)</span>, que corresponde a a esfera de raio unitario.</p>
-<p>Tamén se mostra o gradiente da función no punto da esfera dado por <span class="math notranslate nohighlight">\(\theta = \pi/4, \; \phi = 3\pi/2\)</span>, e dúas traxectorias dentro da esfera, unha vertical, meridiano, e outra horizontal, paralela, que pasan por ese punto. Tamén se poden ver os vectores “velocidade” desas traxectorias, que están, por suposto, dentro do plano.</p>
+<p>Cómpre decatarse de que esta forma de dar o plano só funciona para funcións, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, que teñen un gradiente nun punto, <span class="math notranslate nohighlight">\(\nabla f(x_0, y_0, z_0)\)</span>, distinto de cero.</p>
+<p>A seguinte cela mostra o plano tanxente nun punto ao conxunto de nivel da función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span> de valor <span class="math notranslate nohighlight">\(c=1\)</span>, que corresponde a a esfera de raio unitario.</p>
+<p>Tamén se mostra o gradiente da función no punto da esfera dado por <span class="math notranslate nohighlight">\(\theta = \pi/4, \; \phi = 3\pi/2\)</span>, e dúas traxectorias dentro da esfera, unha vertical, meridiano, e outra horizontal, paralelo, que pasan por ese punto. Tamén se poden ver os vectores “velocidade” desas traxectorias, que están, por suposto, dentro do plano.</p>
 <p><em>Explora</em> e cambia o punto da esfera.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -825,76 +734,45 @@ f'_x(x_0, y_0, z_0) \, (x - x_0) \, + \, f'_y(x_0, y_0, z_0) \, (y - y_0) + \, f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:394: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:312: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:394: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:312: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:394: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradiente   : (8.659560562354932e-17, -1.414213562373095, 1.4142135623730951)
 v-paralelo  : (0.7071067811865475, 4.329780281177466e-17, 0.0)
 v-meridiano : (4.329780281177467e-17, -0.7071067811865476, -0.7071067811865475)
 </pre></div>
 </div>
-<img alt="../_images/b0319df9dc7f98ea5d031054abc81332abf06376b693ccffd75747fc07636cbb.png" src="../_images/b0319df9dc7f98ea5d031054abc81332abf06376b693ccffd75747fc07636cbb.png" />
+<img alt="../_images/4a1ec4be867eae89adf095ebd9694688868c525c626661c30a8d1ffd96a88018.png" src="../_images/4a1ec4be867eae89adf095ebd9694688868c525c626661c30a8d1ffd96a88018.png" />
 </div>
 </div>
-<p><em>Ejercicio</em>: Sea la función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span>, y el punto <span class="math notranslate nohighlight">\({\bf x}_0 = \left(0, -1/{\sqrt{2}}, 1/{\sqrt{2}} \right)\)</span>, calcula el plano tangente del conjunto de nivel de la función a la que pertenece el punto.</p>
-<p>El valor de la función en el punto es <span class="math notranslate nohighlight">\(f ({\bf x_0}) = 1\)</span>, luego el punto pertenece al conjunto de nivel con valor <span class="math notranslate nohighlight">\(c = 1\)</span>.</p>
-<p>El conjunto de nivel <span class="math notranslate nohighlight">\(f(x, y, z) = 1\)</span> es la esfera de radio unidad: <span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 1\)</span>.</p>
-<p>El punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, en coordenadas esféricas es <span class="math notranslate nohighlight">\(r = 1, \theta = \pi/4, \phi = 3 \pi/2\)</span>.</p>
-<p><em>Exercicio</em> : Sexa a función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span>, e o punto <span class="math notranslate nohighlight">\({\bf x}_0 = \left(0, -1/{\sqrt {2}}, 1/{\sqrt{2}} \right)\)</span>, calcula o plano tanxente do conxunto de niveis da función á que pertence o punto.</p>
-<p>O valor da función no punto é <span class="math notranslate nohighlight">\(f ({\bf x_0}) = 1\)</span>, entón o punto pertence ao nivel establecido co valor <span class="math notranslate nohighlight">\(c = 1\)</span>.</p>
-<p>O conxunto de niveis <span class="math notranslate nohighlight">\(f(x, y, z) = 1\)</span> é a esfera de raio unitario: <span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 1\)</span>.</p>
+<p><em>Exercicio</em> : Sexa a función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span>, e o punto <span class="math notranslate nohighlight">\({\bf x}_0 = \left(0, -1/{\sqrt {2}}, 1/{\sqrt{2}} \right)\)</span>, calcula o plano tanxente do conxunto de nivel da función á que pertence o punto.</p>
+<p>O valor da función no punto é <span class="math notranslate nohighlight">\(f ({\bf x_0}) = 1\)</span>, entón o punto pertence ao conxunto de nivel establecido co valor <span class="math notranslate nohighlight">\(c = 1\)</span>.</p>
+<p>O conxunto de nivel <span class="math notranslate nohighlight">\(f(x, y, z) = 1\)</span> é a esfera de raio unitario: <span class="math notranslate nohighlight">\(x^2 + y^2 + z^2 = 1\)</span>.</p>
 <p>O punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, en coordenadas esféricas é <span class="math notranslate nohighlight">\(r = 1, \theta = \pi/4, \phi = 3 \pi/2\)</span>.</p>
-<p>El gradiente de la función es: <span class="math notranslate nohighlight">\(\nabla f (x, y, z) = (2 x, 2y, 2z)\)</span>.</p>
-<p>Y en el punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> vale: <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = \left(0, -\sqrt{2}, \sqrt{2}\right)\)</span>.</p>
-<p>El plano tangente, en un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> de la esfera cumple la ecuación:</p>
-<div class="math notranslate nohighlight">
-\[
-2x_0 (x - x_0) + 2 y_0 (y - y_0) + 2 z_0 (z - z_0) = 0
-\]</div>
-<p>Y en el punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span>  es:</p>
-<div class="math notranslate nohighlight">
-\[
--\sqrt{2} \left( y + \frac{1}{\sqrt{2}} \right) + \sqrt{2} \left( z - \frac{1}{\sqrt{2}} \right) = 0
-\]</div>
-<p>Por lo tanto el plano tangente tiene como ecuación:</p>
-<div class="math notranslate nohighlight">
-\[ 
-z = y + \sqrt{2} 
-\]</div>
 <p>O gradiente da función é: <span class="math notranslate nohighlight">\(\nabla f (x, y, z) = (2 x, 2y, 2z)\)</span>.</p>
 <p>E no punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> vale: <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = \left(0, -\sqrt{2}, \sqrt{2}\right)\)</span> .</p>
 <p>O plano tanxente, nun punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> da esfera cumpre coa ecuación:</p>
 <div class="math notranslate nohighlight">
-\[ 2x_0 (x - x_0) + 2 y_0 (y - y_0) + 2 z_0 (z - z_0) = 0\]</div>
+\[
+ 2x_0 (x - x_0) + 2 y_0 (y - y_0) + 2 z_0 (z - z_0) = 0
+ \]</div>
 <p>E no punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> é:</p>
 <div class="math notranslate nohighlight">
-\[ -\sqrt{2} \left( y + \frac{1}{\sqrt{2}} \right) + \sqrt{2} \left( z - \frac{1}{\sqrt{2}} \ dereita) = 0\]</div>
+\[
+-\sqrt{2} \left( y + \frac{1}{\sqrt{2}} \right) + \sqrt{2} \left( z - \frac{1}{\sqrt{2}} \right) = 0
+\]</div>
 <p>Polo tanto, o plano tanxente ten a ecuación:</p>
 <div class="math notranslate nohighlight">
-\[ z = y + \sqrt{2}\]</div>
-<p><strong>¡Aún hay más!</strong></p>
-<p>Las simetrías en Física son fundamentales. Fue la gran física <a class="reference external" href="https://es.wikipedia.org/wiki/Emmy_Noether">Emmy Noether</a> quien formuló un teorema que afirma que detrás de una simetría hay en Física una cantidad conservada. Por ejemplo, si el problema tiene simetría esférica, la cantidad conservada es el momento angular.</p>
-<p>Emmy Noether sufrió desafortunadamentelos los males de su tiempo (y que aún perduran en los nuestros), el machismo de sus compañeros de Universidad y el antisemitismo nazi.</p>
+\[
+ z = y + \sqrt{2}
+ \]</div>
 <p><strong>Aínda hai máis!</strong></p>
-<p>As simetrías en Física son fundamentais. Foi a gran física <a class="reference external" href="https://es.wikipedia.org/wiki/Emmy_Noether">Emmy Noether</a> quen formulou un teorema que afirma que detrás dunha simetría hai unha cantidade conservada en física. Por exemplo, se o problema ten simetría esférica, a cantidade conservada é o momento angular.</p>
-<p>Emmy Noether sufriu por desgraza os males do seu tempo (e que aínda persisten no noso), o machismo dos seus compañeiros de universidade e o antisemitismo nazi.</p>
-<p><strong>¡Esto es todo por ahora!</strong></p>
+<p>As simetrías en Física son fundamentais. Foi a gran física <a class="reference external" href="https://gl.wikipedia.org/wiki/Emmy_Noether">Emmy Noether</a> quen formulou un teorema que afirma que detrás dunha simetría hai unha cantidade conservada en física. Por exemplo, se o problema ten simetría esférica, a cantidade conservada é o momento angular.</p>
+<p>Emmy Noether sufriu por desgraza os males do seu tempo (e que aínda persisten no noso), o machismo dos seus compañeiros de universidade e o racismo nazi.</p>
 <p><strong>Isto é todo por agora!</strong></p>
 </section>
 </section>
 <section id="apendice">
 <h2>Apéndice<a class="headerlink" href="#apendice" title="Permalink to this heading">#</a></h2>
-<p><em>Demostración</em> de la regla de la cadena</p>
-<p>Las dos funciones son diferenciables:</p>
+<p><em>Proba</em> da regra da cadea</p>
+<p>As dúas funcións son diferenciables:</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf g}({\bf x}+{\bf v}) -{\bf g}({\bf x})  = {\bf Dg}({\bf x})\,{\bf v} 
@@ -904,7 +782,7 @@ z = y + \sqrt{2}
 \[
 {\bf f}({\bf y}+{\bf u}) -{\bf f}({\bf y})  = {\bf Df}({\bf y})\, {\bf u} + \| {\bf u} \| {\bf E}_f({\bf y,u}) 
 \]</div>
-<p>Como <span class="math notranslate nohighlight">\({\bf u} = {\bf g}({\bf x}+{\bf v}) -{\bf g}({\bf x})\)</span>, tenemos:</p>
+<p>Como <span class="math notranslate nohighlight">\({\bf u} = {\bf g}({\bf x}+{\bf v}) -{\bf g}({\bf x})\)</span>, temos:</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf f}({\bf y}+{\bf u}) -{\bf f}({\bf y})  = {\bf Df}({\bf y}) \left( {\bf Dg}({\bf x}) \, {\bf v} + \| {\bf v} \| {\bf E}_g({\bf x,v}) \right) 
@@ -920,7 +798,7 @@ z = y + \sqrt{2}
 \[
  {\bf h}({\bf x}+{\bf v}) -{\bf h}({\bf x})  =  {\bf Dh}({\bf x}) \, {\bf v} + \| {\bf v} \| {\bf E}_h ({\bf x,v}) 
  \]</div>
-<p>Donde</p>
+<p>Onde</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf Dh}({\bf x}) = {\bf Df}({\bf y}) \, {\bf Dg}({\bf x})
@@ -929,45 +807,13 @@ z = y + \sqrt{2}
 \[
 {\bf E}_h({\bf x,v})  = {\bf Df}({\bf y}) \, {\bf E}_g({\bf x,v})  + \frac{\| {\bf u} \|}{\| {\bf v} \|} {\bf E}_f({\bf y,v}) 
 \]</div>
-<p>La derivada es el producto de las derivadas.</p>
-</section>
-<section id="id1">
-<h2>Apéndice<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
-<p><em>Proba</em> da regra da cadea</p>
-<p>As dúas funcións son diferenciables:</p>
-<div class="math notranslate nohighlight">
-\[ {\bf g}({\bf x}+{\bf v}) -{\bf g}({\bf x}) = {\bf Dg}({\bf x})\,{\bf v }
--  | {\bf v} | {\bf E}_g({\bf x,v})\]</div>
-<div class="math notranslate nohighlight">
-\[ {\bf f}({\bf y}+{\bf u}) -{\bf f}({\bf y}) = {\bf Df}({\bf y})\, {\bf u } + | {\bf u} | {\bf E}_f({\bf y,u})\]</div>
-<p>Dado que <span class="math notranslate nohighlight">\({\bf u} = {\bf g}({\bf x}+{\bf v}) -{\bf g}({\bf x})\)</span>, temos:</p>
-<div class="math notranslate nohighlight">
-\[ {\bf f}({\bf y}+{\bf u}) -{\bf f}({\bf y}) = {\bf Df}({\bf y}) \left( {\bf Dg}({\bf x}) \, {\bf v} + | {\bf v} | {\bf E}_g({\bf x,v}) \right)
--  | {\bf u} | {\bf E}_f({\bf y,u})\]</div>
-<div class="math notranslate nohighlight">
-\[ = {\bf Df}({\bf y}){\bf Dg}({\bf x}) \, {\bf v} + | {\bf v} | \left( {\bf Df}({\bf y}) \, {\bf E}_g({\bf x,v})
--  \frac{| {\bf u} |}{| {\bf v} |} {\bf E}_f({\bf y,u}) \right)\]</div>
-<p>Con que podemos asociar:</p>
-<div class="math notranslate nohighlight">
-\[ {\bf h}({\bf x}+{\bf v}) -{\bf h}({\bf x}) = {\bf Dh}({\bf x}) \, {\bf v } + | {\bf v} | {\bf E}_h ({\bf x,v})\]</div>
-<p>Onde</p>
-<div class="math notranslate nohighlight">
-\[ {\bf Dh}({\bf x}) = {\bf Df}({\bf y}) \, {\bf Dg}({\bf x})\]</div>
-<div class="math notranslate nohighlight">
-\[ {\bf E}_h({\bf x,v}) = {\bf Df}({\bf y}) \, {\bf E}_g({\bf x,v}) + \frac{| {\bf u} |}{| {\bf v} |} {\bf E}_f({\bf y,v})\]</div>
 <p>A derivada é o produto das derivadas.</p>
-<p>Solo falta comprobar que: <span class="math notranslate nohighlight">\(\lim_{{\bf v} \to {\bf 0}} {\bf E}_h({\bf x,v}) \to {\bf 0}\)</span>.</p>
-<p>El primer termino es directo <span class="math notranslate nohighlight">\({\bf E}_g({\bf x,v}) \to {\bf 0}\)</span>.</p>
-<p>En el segundo podemos acotar, <span class="math notranslate nohighlight">\(\frac{\| u \|}{\| v \| } \leq M_g({\bf x}) + \| {\bf E}_g({\bf x,v}) \|\)</span>, donde
+<p>Só fica comprobar que: <span class="math notranslate nohighlight">\(\lim_{{\bf v} \to {\bf 0}} {\bf E}_h({\bf x,v}) \to {\bf 0}\)</span>.</p>
+<p>O primeiro termo é directo <span class="math notranslate nohighlight">\({\bf E}_g({\bf x,v}) \to {\bf 0}\)</span>.</p>
+<p>No segundo podemos acotar, <span class="math notranslate nohighlight">\(\frac{\| u \|}{\| v \| } \leq M_g({\bf x}) + \| {\bf E}_g({\bf x,v}) \|\)</span>, onde
 <span class="math notranslate nohighlight">\(M_g({\bf x}) = \sum_{k=1}^n \| \nabla g_k({\bf x}) \|\)</span>.</p>
-<p>ya que <span class="math notranslate nohighlight">\({\bf u} = {\bf g(x+v)} - {\bf g(x)} = {\bf Dg}({\bf x}) {\bf v} + \| {\bf v} \| {\bf E}_g({\bf x,v})\)</span> y por lo tanto <span class="math notranslate nohighlight">\(\| {\bf u} \| \le \left( \sum_{i=1}^n \| \nabla g_k \| + \| {\bf E_g}(y, v) \| \right) \| {\bf v} \|\)</span>.</p>
-<p>Cuando  <span class="math notranslate nohighlight">\({\bf v} \to {\bf 0}\)</span> también <span class="math notranslate nohighlight">\({\bf u} \to {\bf 0}\)</span> y <span class="math notranslate nohighlight">\({\bf E}_f({\bf y, u}) \to {\bf 0}\)</span>.</p>
-<p>Só temos que comprobar que: <span class="math notranslate nohighlight">\(\lim_{{\bf v} \to {\bf 0}} {\bf E}_h({\bf x,v}) \to {\bf 0}\)</span>.</p>
-<p>O primeiro termo é directo <span class="math notranslate nohighlight">\({\bf E}_g({\bf x,v}) \a {\bf 0}\)</span>.</p>
-<p>No segundo podemos limitar, <span class="math notranslate nohighlight">\(\frac{| u |}{| v | } \leq M_g({\bf x}) + | {\bf E}_g({\bf x,v}) |\)</span>, onde</p>
-<p><span class="math notranslate nohighlight">\(M *g({\bf x}) = \sum* {k=1}^n | \nabla g_k({\bf x}) |\)</span>.</p>
-<p>xa que <span class="math notranslate nohighlight">\({\bf u} = {\bf g(x+v)} - {\bf g(x)} = {\bf Dg}({\bf x}) {\bf v} + | {\bf v} | {\bf E} *g({\bf x,v})\)</span> e polo tanto <span class="math notranslate nohighlight">\(| {\bf u} | \le \left( \sum* {i=1}^n | \nabla g_k | + | {\bf E_g}(y, v) | \right) | {\bf v} |\)</span>.</p>
-<p>Cando <span class="math notranslate nohighlight">\({\bf v} \to {\bf 0}\)</span> tamén <span class="math notranslate nohighlight">\({\bf u} \to {\bf 0}\)</span> e <span class="math notranslate nohighlight">\({\bf E}_f({\bf y, u}) \to { \bf 0}\)</span>.</p>
+<p>xa que <span class="math notranslate nohighlight">\({\bf u} = {\bf g(x+v)} - {\bf g(x)} = {\bf Dg}({\bf x}) {\bf v} + \| {\bf v} \| {\bf E}_g({\bf x,v})\)</span> e polo tanto <span class="math notranslate nohighlight">\(\| {\bf u} \| \le \left( \sum_{i=1}^n \| \nabla g_k \| + \| {\bf E_g}(y, v) \| \right) \| {\bf v} \|\)</span>.</p>
+<p>Cando  <span class="math notranslate nohighlight">\({\bf v} \to {\bf 0}\)</span> tamén <span class="math notranslate nohighlight">\({\bf u} \to {\bf 0}\)</span> e <span class="math notranslate nohighlight">\({\bf E}_f({\bf y, u}) \to {\bf 0}\)</span>.</p>
 </section>
 </section>
 
@@ -1002,6 +848,15 @@ z = y + \sqrt{2}
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tderivadas_gradiante_xacobiana.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Gradiente, matriz xacobiana, funcións diferenciables</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -1027,12 +882,10 @@ z = y + \sqrt{2}
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-regra-da-cadea">A regra da cadea</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-la-regla-de-la-cadena">Teorema de la regla de la cadena</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-da-regra-da-cadea">Teorema da regra da cadea</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendice">Apéndice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Apéndice</a></li>
 </ul>
   </nav></div>
 
