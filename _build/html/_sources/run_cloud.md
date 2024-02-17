@@ -13,4 +13,5 @@
 | Parametrización de liñas e superficies | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_parametrizacion_linhas_superficies.ipynb) |
 | Derivadas direccionais e funcións derivables | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_direccional_diferencial.ipynb) |
 | Gradiente, matriz xacobiana, funcións diferenciables | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](notebooks/tderivadas_gradiante_xacobiana.ipynb) |
-| Cambio de coordenadas e regra da cadea | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](notebooks/tderivadas_coordenadas_cadea.ipynb) |
+| Cambio de coordenadas e regra da cadea | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/US\
+C-MMIII/blob/main/notebooks/tderivadas_coordenadas_cadea.ipynb) |
