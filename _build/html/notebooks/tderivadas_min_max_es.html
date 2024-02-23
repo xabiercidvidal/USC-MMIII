@@ -1,0 +1,1420 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Mínimos y máximos de funciones escalares &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_min_max_es';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadea.html">Cambio de coordenadas e regra da cadea</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_min_max_es.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_min_max_es.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tderivadas_min_max_es.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tderivadas_min_max_es.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Mínimos y máximos de funciones escalares</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-taylor-de-2o-orden-de-funciones-escalares">Desarrollo de Taylor de 2º orden de funciones escalares.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-de-los-conceptos-de-extremos-minimos-y-maximos">Revisión de los conceptos de extremos, mínimos y máximos.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#igualdad-de-las-derivadas-segundas-cruzadas">Igualdad de las derivadas segundas cruzadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-taylor-de-segundo-orden-de-funciones-escalares">Desarrollo de Taylor de segundo orden de funciones escalares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Mínimos y máximos de funciones escalares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-de-puntos-extremos">Clasificación de puntos extremos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimos-y-maximos-para-funciones-escalares-de-varias-dimensiones">minimos y máximos para funciones escalares de varias dimensiones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimos-y-maximos-condicionados">Mínimos y máximos condicionados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplicadores-de-lagrange">Multiplicadores de Lagrange</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joseph-louis-lagrange">Joseph Louis Lagrange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-minima-accion">Principio de mínima acción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-metodo-de-minimos-cuadrados">El método de mínimos cuadrados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#las-redes-neuronales">Las redes neuronales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apendices</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="minimos-y-maximos-de-funciones-escalares">
+<h1>Mínimos y máximos de funciones escalares<a class="headerlink" href="#minimos-y-maximos-de-funciones-escalares" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Fri Feb 23 16:09:09 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Recordar el concepto de mínimo y máximo de una función real y cómo se calculan.</p>
+<p>Introducir el desarrollo de Taylor de 2º orden de funciones escalares y la matriz hessiana.</p>
+<ul class="simple">
+<li><p>Comentar la condición suficiente.</p></li>
+</ul>
+<p>Relación entre los mínimos y máximos y los autovalores de la matriz hessiana.</p>
+<ul class="simple">
+<li><p>Ejemplos de cálculos de mínimos y máximos.</p></li>
+</ul>
+<p>Introducir el concepto de mínimos condicionados.</p>
+<ul class="simple">
+<li><p>Presentar el método de los multiplicadores de Lagrange.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="desarrollo-de-taylor-de-2o-orden-de-funciones-escalares">
+<h2>Desarrollo de Taylor de 2º orden de funciones escalares.<a class="headerlink" href="#desarrollo-de-taylor-de-2o-orden-de-funciones-escalares" title="Permalink to this heading">#</a></h2>
+<section id="revision-de-los-conceptos-de-extremos-minimos-y-maximos">
+<h3>Revisión de los conceptos de extremos, mínimos y máximos.<a class="headerlink" href="#revision-de-los-conceptos-de-extremos-minimos-y-maximos" title="Permalink to this heading">#</a></h3>
+<p>Para las funciones reales, <span class="math notranslate nohighlight">\(f(x)\)</span>, habíamos definido como mínimo local, aquel valor <span class="math notranslate nohighlight">\(x_0\)</span> del dominio tal que en los valores en un intervalo en torno suyo, de anchura <span class="math notranslate nohighlight">\(h\)</span>, la función es mayor o igual que en <span class="math notranslate nohighlight">\(x_0\)</span>. De forma similar definimos el máximo local.</p>
+<p>Llamamos mínimo local:</p>
+<div class="math notranslate nohighlight">
+\[
+x \in [x_0 - h, x_0 + h] \Rightarrow f(x) \ge f(x_0)
+\]</div>
+<p>Llamamos máximo local:</p>
+<div class="math notranslate nohighlight">
+\[
+x \in [x_0 - h, x_0 + h] \Rightarrow f(x) \le f(x_0)
+\]</div>
+<p><span class="math notranslate nohighlight">\(x_0\)</span> es un mínimo global si todos el valor de la función en todos los puntos del dominio es mayor que en <span class="math notranslate nohighlight">\(x_0\)</span>, y de forma similar para el máximo.</p>
+<p><em>Ejemplo</em>: La siguiente función real, <span class="math notranslate nohighlight">\(f(x) = x^2+2x-1\)</span>, presenta un mínimo local en el <span class="math notranslate nohighlight">\(x_0 = -1\)</span>.</p>
+<p>¿Recuerdas cómo calculábamos los mínimos o máximos? Ambos cumplían la condición de que su pendiente era nula y el signo de segunda derivada nos indicaba, si era positiva que era un mínimo, y si era negativa, que era un máximo.</p>
+<p>Condición de extremos: <span class="math notranslate nohighlight">\(f'(x_0) = 0\)</span></p>
+<p>Codición de máximo: <span class="math notranslate nohighlight">\(f''(x_0) &lt; 0\)</span> y de mínimo <span class="math notranslate nohighlight">\(f''(x_0) &gt;0\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4c3c15ad98ace6be397f227c383876e0a9cce8386c30df0c44f39616fbd9c886.png" src="../_images/4c3c15ad98ace6be397f227c383876e0a9cce8386c30df0c44f39616fbd9c886.png" />
+</div>
+</div>
+<p>En este caso, con <span class="math notranslate nohighlight">\(f(x) = x^2 + 2x - 1\)</span>, la condición de extremo: <span class="math notranslate nohighlight">\(f'(x_0) = 2 x_0 + 2 = 0\)</span>, que resulta en <span class="math notranslate nohighlight">\(x_0 = -1\)</span>.</p>
+<p>Se trata de un mínimo, ya que <span class="math notranslate nohighlight">\(f''(x_0) = 2\)</span></p>
+<p>Si recuerdas, podíamos obtener los mínimos y máximos, gracias a que esta función es diferenciable, admite desarrollo de Taylor de segundo orden.</p>
+<p>El desarrollo de Taylor de segundo orden de una función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, es:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x_0 + h) \simeq f(x_0) + f'(x_0) h + \frac{1}{2} f''(x_0) h^2
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(h\)</span> es un tamaño “pequeño”.</p>
+<p>Recuerda también que la condición suficiente para que una función real tenga desarrollo de Taylor de segundo orden en un valor <span class="math notranslate nohighlight">\(x_0\)</span> es que su derivada segunda en un entorno de ese valor sea continua.</p>
+<p>Interpretando <span class="math notranslate nohighlight">\(f'(x_0)\)</span> como la pendiente, vemos que para que la función no cambie de valor entorno a <span class="math notranslate nohighlight">\(x_0\)</span>, su pendiente tiene que ser nula.</p>
+<p>Y después, el segundo sumando, <span class="math notranslate nohighlight">\(\frac{1}{2} f''(x_0) h^2\)</span>, es positivo o negativo dependiendo del signo de la derivada segunda, <span class="math notranslate nohighlight">\(f''(x_0)\)</span>. De ahí la condición de mínimo o máximo.</p>
+</section>
+<section id="igualdad-de-las-derivadas-segundas-cruzadas">
+<h3>Igualdad de las derivadas segundas cruzadas<a class="headerlink" href="#igualdad-de-las-derivadas-segundas-cruzadas" title="Permalink to this heading">#</a></h3>
+<p>Antes de abordar el desarrollo de Taylor de segundo orden de funciones escalares, vamos a ver este teorema importante:</p>
+<p><em>Teorema</em>: Sea <span class="math notranslate nohighlight">\(f({\bf x})\)</span> una función escalar de <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}\)</span>, si las derivadas segundas son continuas en una bola centrada en un punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, se cumple que las derivadas cruzadas son iguales:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial^2 f({\bf x}_0)}{\partial x_i \partial x_j} = \frac{\partial^2 f({\bf x}_0)}{\partial x_j \partial x_i}
+\]</div>
+<p>con <span class="math notranslate nohighlight">\(i \ne j, \; i = 1, \dots, n; \, j = 1, \dots, n\)</span>.</p>
+</section>
+</section>
+<section id="desarrollo-de-taylor-de-segundo-orden-de-funciones-escalares">
+<h2>Desarrollo de Taylor de segundo orden de funciones escalares<a class="headerlink" href="#desarrollo-de-taylor-de-segundo-orden-de-funciones-escalares" title="Permalink to this heading">#</a></h2>
+<p>Sea una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}\)</span>, con derivadas segundas continuas en un punto interior, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, del dominio, la función se puede aproximar en un punto “próximo”, <span class="math notranslate nohighlight">\({\bf x}\)</span>, separado de <span class="math notranslate nohighlight">\({\bf x}_0\)</span> por un vector “pequeño” <span class="math notranslate nohighlight">\({\bf v}\)</span>, por su <strong>desarrollo de Taylor de segundo orden</strong>:</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}_0 + {\bf v}) \simeq f({\bf x}_0) + \sum_{i=1}^n \frac{\partial f({\bf x}_0)}{\partial x_i} v_i + \frac{1}{2}\sum_{i= 1}^n  \sum_{j=1}^n \frac{\partial^2 f({\bf x}_0)}{ \partial x_i \partial x_j} v_i v_j
+\]</div>
+<p>Que podemos reescribir en forma matricial:</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}_0 + {\bf v}) \simeq f({\bf x}_0) + \nabla f({\bf x}_0) \, {\bf v} + \frac{1}{2} {\bf v}^T \, {\bf H}({\bf x}_0) \, {\bf v}
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\({\bf H}({\bf x}_0)\)</span> es la <strong>matriz hessiana</strong> valorada en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, cuyas componentes son las derivadas segundas,</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf H}_{ij}({\bf x}_0) = \frac{\partial^2 f({\bf x}_0)}{ \partial x_i \partial x_j}
+\]</div>
+<p>y donde <span class="math notranslate nohighlight">\({\bf v}\)</span>, es el vector en forma columna, y <span class="math notranslate nohighlight">\({\bf v}^T\)</span> en forma fila.</p>
+<p><em>Cuestión</em>: ¿Es la hessiana una matriz simétrica?</p>
+<p><em>Cuestión</em>: Se escapa del alcance de este curso, pero inténtalo, ¿cómo crees que sería el desarrollo de Taylor de segundo orden de una función vectorial?</p>
+<p><em>Date cuenta</em>: Al menos hay una función vectorial de la que conoces su desarrollo de Taylor de 2º orden. ¡La de la trayectoria de un movil a lo largo del tiempo!</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf r}(t_0 + \Delta t) \simeq {\bf r}(t_0) + {\bf r}'(t_0) \Delta t + \frac{1}{2} {\bf r}''(t_0) (\Delta t)^2
+\]</div>
+<p><strong>Ejemplo</strong>: Calcula el desarrollo de Taylor de la función escalar, <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 + 4 y^2\)</span>, en el punto <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
+<p>Los distintos sumandos del desarrollo de Taylor son:</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}_0) = 0
+\]</div>
+<p>El gradiente es</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f ({\bf x}) = (4 x , 8 y)  
+\]</div>
+<p>Valorado en el origen es:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f ({\bf x}_0) = (0, 0) 
+\]</div>
+<p>La matriz hessiana es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf H}({\bf x}) = \left( \begin{array}{cc} 4 &amp; 0 \\ 0 &amp; 8\end{array} \right)
+\end{split}\]</div>
+<p>que es independiente del punto, <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+<p>Luego el desarrollo de Taylor respecto al punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &amp; 0 \\ 0 &amp; 8\end{array} \right) \, \left( \begin{array}{c} v_x \\ v_y \end{array} \right) =  2 v^2_x + 4 v^2_y 
+\end{split}\]</div>
+<p>Observa la gráfica de la función y sus conjuntos de nivel.</p>
+<p><em>Cuestión</em>: ¿Puedes determinar si hay un mínimo o un máximo local y dónde?</p>
+<p>Es obvio, ¿verdad?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f2a8a255e865ac903a80f01ff6666c24d203c57461cfebe5a57ad0c5604d8ba9.png" src="../_images/f2a8a255e865ac903a80f01ff6666c24d203c57461cfebe5a57ad0c5604d8ba9.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">contours</span> <span class="o">=</span> <span class="mi">40</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/233212d0d6b33738fcd9d3521e4a210884e2179169dce735c38ba20821e8235f.png" src="../_images/233212d0d6b33738fcd9d3521e4a210884e2179169dce735c38ba20821e8235f.png" />
+</div>
+</div>
+</section>
+<section id="id1">
+<h2>Mínimos y máximos de funciones escalares<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<p>Como en una dimensión, llamaremos un punto <strong>extremo</strong> o <strong>crítico</strong>, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, de una función escalar diferenciable, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}\)</span>, a aquellos puntos del dominio cuyo gradiente sea nulo, <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = {\bf 0}\)</span>.</p>
+<p>En el ejemplo anterior, la función escalar, <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 + 4y^2\)</span> tiene un extremo en <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
+<p>Observa la gráfica y los conjuntos de nivel de la siguiente función, <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 - 4y^2\)</span>. Puedes comprobar que el punto <span class="math notranslate nohighlight">\((0, 0)\)</span> es un extremo, tiene gradiente nulo (el gradiente es <span class="math notranslate nohighlight">\(\nabla f(x, y) = (4x, -8 y)\)</span> ), sin embargo no es ni máximo ni mínimo, es un <strong>punto silla</strong>. Definimos como tal, al punto extremo a partir del que la función asciende en una dirección y desciende en otra.</p>
+<p><em>Explora</em> y modifica el vector <span class="math notranslate nohighlight">\({\bf v}\)</span> sobreimpuesto sobre los conjuntos de nivel y observa como dependiendo de la dirección de <span class="math notranslate nohighlight">\({\bf v}\)</span> la función finalmente asciende o desciende.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="mi">4</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/6ec77d1ecfec14d3f263db2dfd1c4dcf65fee91de6c945a0d10634f776f1da44.png" src="../_images/6ec77d1ecfec14d3f263db2dfd1c4dcf65fee91de6c945a0d10634f776f1da44.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span>  <span class="mf">0.</span><span class="p">,</span> <span class="mf">0.</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span>  <span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">contours</span> <span class="o">=</span> <span class="mi">40</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/eb4bb90ca78e0da7135398cc7e66c71a819e3ac8f112d0d2784c15f737ab1bfd.png" src="../_images/eb4bb90ca78e0da7135398cc7e66c71a819e3ac8f112d0d2784c15f737ab1bfd.png" />
+</div>
+</div>
+<p><em>Ejercicio</em>: Da el desarrolo de Taylor de segundo orden de la función <span class="math notranslate nohighlight">\(f(x, y) = 2 x^2 - 4 y^2\)</span> en el punto silla <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
+<p>La función en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, vale:</p>
+<div class="math notranslate nohighlight">
+\[
+f({\bf x}_0) = 0
+\]</div>
+<p>El gradiente es nulo:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f(x, y) = (4 x, -8y) \Rightarrow \nabla f({\bf x}_0) = (0, 0)
+\]</div>
+<p>La matriz hessiana es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf H}({\bf x}) = \left( \begin{array}{cc} 4 &amp; 0 \\ 0 &amp; -8\end{array} \right)
+\end{split}\]</div>
+<p>que es independiente del punto, <span class="math notranslate nohighlight">\({\bf x}\)</span>.</p>
+<p>Luego el desarrollo de Taylor respecto al punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+f({\bf x}_0 + {\bf v}) =  \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &amp; 0 \\ 0 &amp; - 8\end{array} \right) \, \left( \begin{array}{c} v_x \\ v_y \end{array} \right) =  2 v^2_x - 4 v^2_y 
+\end{split}\]</div>
+<p>Donde vemos que si avanzamos <em>solo</em> en la dirección <span class="math notranslate nohighlight">\(x\)</span> la función asciende, mientras que si avanzamos <em>solo</em> en la dirección <span class="math notranslate nohighlight">\(y\)</span>, desciende. Se trata pues de un punto silla.</p>
+<section id="clasificacion-de-puntos-extremos">
+<h3>Clasificación de puntos extremos<a class="headerlink" href="#clasificacion-de-puntos-extremos" title="Permalink to this heading">#</a></h3>
+<p>Los puntos extremos de una función escalar, serán máximos, mínimos o puntos silla, dependiendo de valor del término de la matriz hessiana de su desarrollo de Taylor:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2} {\bf v}^T \, {\bf H}({\bf x}_0) \, {\bf v}
+\]</div>
+<p>Si para todo vector <span class="math notranslate nohighlight">\({\bf v}\)</span> el término es positivo, entonces es un mínimo, la función asciende siempre.
+Si es negativo, es un máximo, la función desciende siempre. Y si dependiendo del vector, es positivo o negativo, es un punto silla, la función en una dirección asciende y en otra desciende.</p>
+<p>Consideremos el caso de una función escalar <span class="math notranslate nohighlight">\(f(x, y)\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^2 \to \mathrm{R}\)</span>, en el que la matriz Hessiana es diagonal, y los elementos de la diagonal son <span class="math notranslate nohighlight">\(\lambda_1, \lambda_2\)</span> en un punto extremo <span class="math notranslate nohighlight">\({\bf x_0}\)</span>.</p>
+<p>El término del Hessiano en el desarrollo de Taylor sería:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} \lambda_1 &amp; 0 \\ 0 &amp; \lambda_2\end{array} \right) \, \left( \begin{array}{c} v_x \\ v_y \end{array} \right) = \frac{1}{2}\left( \lambda_1 v^2_x + \lambda_2 v^2_y \right)
+\end{split}\]</div>
+<p>Podemos ver que si los dos valores son positivos, <span class="math notranslate nohighlight">\(\lambda_1 &gt; 0, \lambda_2 &gt;0\)</span>, el punto será un mínimo, para cualquier vector <span class="math notranslate nohighlight">\((v_x, v_y)\)</span> la función asciende.</p>
+<p>Si los dos son negativos, <span class="math notranslate nohighlight">\(\lambda_1 &lt; 0, \lambda_2 &lt; 0\)</span>, es un máximo, la función desciende siempre.</p>
+<p>Si uno es negativo y otro positivo, dependera del vector, <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>, en determinadas direcciones la función asciende y otras denciende, luego será un punto silla.</p>
+<p><em>Ejercicio</em>: Calcula la matriz hessiana para el punto extremo <span class="math notranslate nohighlight">\((0, 0)\)</span> de la función, <span class="math notranslate nohighlight">\(f(x, y) = 3 x^2 + 3y^2 - 2xy\)</span>.</p>
+<p><em>Observa</em> la gráfica de esta función y sus conjuntos de nivel.</p>
+<p>El gradiente es:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f(x, y) = (6 x - 2y, 6y - 2x)
+\]</div>
+<p>Y la matriz Hessiana:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf H}(x, y) = \left( \begin{array}{cc} 6 &amp; -2 \\ -2 &amp; 6\end{array}\right)
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/05b4ab67ed7171a92f7ae3792bf3c5aa6bf61a41aefaf1e1c06f26c67e99c15b.png" src="../_images/05b4ab67ed7171a92f7ae3792bf3c5aa6bf61a41aefaf1e1c06f26c67e99c15b.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">contours</span><span class="o">=</span><span class="mi">40</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b0d45456499af8f1c4a3780612255fba09139d7170cd300db071244153e9783f.png" src="../_images/b0d45456499af8f1c4a3780612255fba09139d7170cd300db071244153e9783f.png" />
+</div>
+</div>
+<p>¿Y si la hesiana en el punto extremo, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, no es diagonal?</p>
+<p>Sabemos que la matriz hessiana, al ser las derivadas segundas continuas, es simétrica, y también sabemos que las matrices simétricas son diagonalizables.</p>
+<p>Por lo tanto, existe una base ortonormal, <span class="math notranslate nohighlight">\(\{{\bf e}'_1, {\bf e}'_2 \}\)</span>, en la que la matriz hessiana es diagonal, <span class="math notranslate nohighlight">\({\bf H}'({\bf x}_0)\)</span> con auto-valores <span class="math notranslate nohighlight">\(\lambda'_1, \lambda'_2\)</span>. La relación entre las dos viene dada por la matriz ortonormal de cambio de base <span class="math notranslate nohighlight">\({\bf U}\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf H}({\bf x}_0) = {\bf U} \, {\bf H}' ({\bf x}_0) \, {\bf U}^T
+\]</div>
+<p>donde:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf U} { \bf U}^T = {\bf U}^T { \bf U}  = {\bf I}
+\]</div>
+<p>El vector <span class="math notranslate nohighlight">\({\bf v}\)</span> lo podemos expresar en la base de los autovectores (lo denotamos como <span class="math notranslate nohighlight">\({\bf v}'\)</span>), mediante el cambio:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf v} = {\bf U} \, {\bf v}'
+\]</div>
+<p>Podemos entonces reescribir el término de la hessiana del desarrollo de Taylor en la base de los autovectores:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{2}{\bf v}^T \, {\bf H}({\bf x}_0) \, {\bf v} = \frac{1}{2}{\bf v}'^T {\bf U}^T \, {\bf U} {\bf H}'({\bf x_0}){\bf U}^T \, {\bf U} {\bf v}'= \frac{1}{2} {\bf v}'^T \, {\bf H}'({\bf x_0}) \,{\bf v}'
+\]</div>
+<p>Esto es, el término de la hessiana del desarrollo de Taylor no depende de la base en la que lo calculemos.</p>
+<p>Si expresamos el vector, <span class="math notranslate nohighlight">\((v_x, v_y)\)</span>, en la base de los autovectores, esto es, <span class="math notranslate nohighlight">\((v'_x, v'_y)\)</span>, tenemos</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\frac{1}{2} {\bf v'}^T \, {\bf H}'({\bf x}_0) \, {\bf v}' =   \frac{1}{2} (v'_x, v'_y) \, \left( \begin{array}{cc} \lambda'_1 &amp; 0 \\ 0 &amp; \lambda'_2\end{array} \right) \, \left( \begin{array}{c} v'_x \\ v'_y \end{array} \right) = 
+\frac{1}{2} \left( \lambda'_1 v'^2_x + \lambda'_2 v'^2_y \right)
+\end{split}\]</div>
+<p>Y por lo tanto, si los dos autovalores de la Hessiana son positivos, <span class="math notranslate nohighlight">\(\lambda'_1 &gt; 0, \lambda'_2 &gt;0\)</span>, el punto extremo <span class="math notranslate nohighlight">\({\bf x}_0\)</span> es mínimo; si los dos son negativos <span class="math notranslate nohighlight">\(\lambda'_1 &lt;0, \lambda'_2 &lt;0\)</span>, es un máximo, y si uno es positivo y otro negativo, es un punto silla.</p>
+<p>En el ejemplo anterior, la Hessiana era:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf H}(x, y) = \left( \begin{array}{cc} 6 &amp; -2 \\ -2 &amp; 6\end{array}\right)
+\end{split}\]</div>
+<p>Calculamos sus autovalores:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\left| \begin{array}{cc} (6-\lambda) &amp; -2 \\ -2 &amp; (6-\lambda) \end{array}\right| = (6-\lambda)^2 -4 = 0
+\end{split}\]</div>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+(6-\lambda) = \pm 2 \; \Rightarrow \, \lambda = 6 \pm 2 \; \Rightarrow \, \lambda'_1 = 4, \; \lambda'_2 = 8
+\]</div>
+<p>El punto extremo es mínimo porque los dos autovalores son positivos.</p>
+<p>Calculemos sus autovectores <span class="math notranslate nohighlight">\({\bf e}'_1 = (u_x, u_y), \; {\bf e}'_2 = (v_x, v_y)\)</span>, que recordemos deben ser ortonormales:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \left( \begin{array}{cc} 6 &amp; -2 \\ -2 &amp; 6\end{array}\right) \, \left( \begin{array}{c} u_x \\ u_y \end{array}\right) = 4 \left( \begin{array}{c} u_x \\ u_y \end{array} \right)
+\end{split}\]</div>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+6 u_x - 2 u_y =  4 u_x \; \Rightarrow 2u_x =  2u_y \; \Rightarrow u_x = u_y \
+\]</div>
+<p>Dado que el vector tiene norma unidad:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf e}'_1 = \left( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right)
+\]</div>
+<p>Mientras que para el segundo autovector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+ \left( \begin{array}{cc} 6 &amp; -2 \\ -2 &amp; 6\end{array}\right) \, \left( \begin{array}{c} v_x \\ v_y \end{array}\right) = 8 \left( \begin{array}{c} v_x \\ v_y \end{array} \right)
+\end{split}\]</div>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+6 v_x - 2 v_y =  8 v_x \; \Rightarrow  -2 v_x =  2 v_y \; \Rightarrow \, v_x = - v_y
+\]</div>
+<p>Como tienen que ser ortonormales:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf e}'_2 = \left( -\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}} \right)
+\]</div>
+<p>En la siguiente celda dibujamos los conjuntos de nivel de la función y sobre el punto extremo dibujamos los autovectores.</p>
+<p><em>Cuestión</em>: ¿Puedes dar la relación que guardan los autovectores, los autovalores y los conjuntos de nivel del desarrollo de Taylor en torno a un extremo?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span>              <span class="mf">0.</span><span class="p">,</span>            <span class="mf">0.</span>
+<span class="n">ux</span><span class="p">,</span> <span class="n">uy</span> <span class="o">=</span>  <span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">),</span> <span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">vx</span><span class="p">,</span> <span class="n">vy</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">),</span> <span class="mf">1.</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">2.</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">contours</span> <span class="o">=</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">ux</span><span class="p">,</span> <span class="n">uy</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/ae87edf33561fc2cc50f8e96b8100962055914edd388294e8b0ce11c56144019.png" src="../_images/ae87edf33561fc2cc50f8e96b8100962055914edd388294e8b0ce11c56144019.png" />
+</div>
+</div>
+<p>El desarrollo de Taylor de segundo orden en torno a un punto extremo <em>siempre</em> tiene ejes de simetría, que vienen dados por los autovectores.</p>
+<p>La ecuación de los conjuntos de nivel de valor <span class="math notranslate nohighlight">\(c\)</span> en el desarrollo de Taylor de segundo orden en un punto extremo, <span class="math notranslate nohighlight">\((x'_0, y'_0)\)</span>, en la base de autovectores, viene dada por:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x'_0 + v'_x, \, y'_0 + v'_y) \simeq f(x'_0, y'_0) + \frac{1}{2}\left( \lambda'_1 v'^2_x + \lambda'_2 v'^2_y \right) = c
+\]</div>
+<p>Los conjuntos de nivel son <em>elipses</em> si es un mínimo o un máximo, o <em>hypérbolas</em> si es un punto silla, respecto sus ejes de simetría.</p>
+<p>Los autovalores nos cuantifican la curvatura en cada uno de los ejes de simetría. La curvatura es más acuciada conforme más grande es el autovalor.</p>
+<p>O también podemos asociarlos a los ejes de las elipses de los conjuntos de nivel. El eje de la elipse es mayor para autovalores menores.</p>
+</section>
+<section id="minimos-y-maximos-para-funciones-escalares-de-varias-dimensiones">
+<h3>minimos y máximos para funciones escalares de varias dimensiones<a class="headerlink" href="#minimos-y-maximos-para-funciones-escalares-de-varias-dimensiones" title="Permalink to this heading">#</a></h3>
+<p>Sea la función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}\)</span>, un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> es <strong>extremo</strong> o <strong>crítico</strong> si su gradiente es nulo, <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = {\bf 0}\)</span>.</p>
+<p>Decimos que un punto extremo es <strong>mínimo local</strong> si todos los puntos dentro de una bola de tamaño <span class="math notranslate nohighlight">\(\delta\)</span>, centrada en <span class="math notranslate nohighlight">\({\bf x}_0\)</span> tienen un valor de la función menor o igual al de <span class="math notranslate nohighlight">\({\bf x}_0\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+{\bf x} \; \mathrm{t.q.} \, \parallel {\bf x} - {\bf x}_0 \parallel  \lt \delta \, \Rightarrow f({\bf x}) \ge f({\bf x}_0)
+\]</div>
+<p>Y de forma similar, será un <strong>máximo local</strong> si:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf x} \; \mathrm{t.q.} \, \parallel {\bf x} - {\bf x}_0 \parallel \lt \delta \, \Rightarrow f({\bf x}) \le f({\bf x}_0)
+\]</div>
+<p>Finalmente, es <strong>punto silla</strong> si en toda bola centrada en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, hay puntos dentro de la bola cuyo valor de la función es mayor y otros menor que el valor en el punto crítico.</p>
+<p>El punto extremo es un mínimo, si todos los <strong>autovalores</strong>, <span class="math notranslate nohighlight">\(\{\lambda_i, \, i=1, \dots, n \}\)</span>, de su <strong>matriz hessiana</strong>, <span class="math notranslate nohighlight">\({\bf H}({\bf x_0})\)</span>, son positivos; es un máximo si todos son negativos; y es un punto silla si alguno es negativo y alguno positivo.</p>
+<p><em>Cuestión</em>: Considera una función escalar <span class="math notranslate nohighlight">\(f(x, y)\)</span> y el punto extremo, <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, el determinante de la matriz hessiana es negativo. ¿Puedes clasificar el extremo, es mínimo, máximo, punto silla? ¿Y si el determinante es positivo?</p>
+</section>
+</section>
+<section id="minimos-y-maximos-condicionados">
+<h2>Mínimos y máximos condicionados<a class="headerlink" href="#minimos-y-maximos-condicionados" title="Permalink to this heading">#</a></h2>
+<p>Considera el caso de que queremos calcular los extremos de una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, pero no en todo su dominio, si no en una parte del mismo. En este caso hablamos de <strong>extremos condicionados</strong>.</p>
+<p>Por ejemplo, sea la función: <span class="math notranslate nohighlight">\(f(x, y) = x^2 - y^2\)</span>, y queremos calcular sus extremos en la circunferencia de radio unidad, esto es, en los puntos que cumplen <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>.</p>
+<p>La siguiente celda te dibuja los conjuntos de nivel de la función y la circunferencia. Como puedes ver hemos parametrizado la circunferencia en función de <span class="math notranslate nohighlight">\(t\)</span> que toma los valores en <span class="math notranslate nohighlight">\([0, 2 \pi)\)</span>.</p>
+<p><em>Cuestión</em>: ¿Puedes identificar los puntos extremos de la función a lo largo de la circunferencia?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">f</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">xt</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span>    <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">yt</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span>    <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">trange</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/25b64e7965cd333963f2e2787d3e36288aa7ac426fbc105f8001155d5bba2e02.png" src="../_images/25b64e7965cd333963f2e2787d3e36288aa7ac426fbc105f8001155d5bba2e02.png" />
+</div>
+</div>
+<p>Vamos a dibujar sobre un determinado punto el gradiente de la función, que como sabemos nos indica la dirección en la que la función experimenta el cambio máximo.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = x^2 - y^2 \, \Rightarrow \nabla f(x, y) = (2x, 2y)
+\]</div>
+<p><em>Considera</em> primero el valor <span class="math notranslate nohighlight">\(t = 3 \pi/4\)</span>, que nos da el punto <span class="math notranslate nohighlight">\(\left( -1/\sqrt{2}, 1/\sqrt{2} \right)\)</span>.</p>
+<p>Si quisieramos dirigirnos en una dirección en la que la función aumentase sin salir de la circunferencia, solo podríamos movernos hacia la izquierda, (como si el gradiente tirase de un movil que solo pudiera desplazarse a lo largo de la circunferencia), pero ¿hasta cuándo?</p>
+<p><em>Considera</em> ahora el valor <span class="math notranslate nohighlight">\(t  = \pi\)</span>, esto es el punto <span class="math notranslate nohighlight">\((-1, 0)\)</span>. El gradiente ahí es radial, si queremos permanecer en la circunferencia, entonces ya no hay ninguna dirección que nos permita hacerlo y que a su vez nos permita aumentar el valor de la función. Hemos alcazado el máximo condicionado de la función.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span>  <span class="o">=</span> <span class="mf">4.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span>
+<span class="n">fpx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span>  <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="n">fpy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="o">-</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">xt</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span> <span class="n">yt</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">trange</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">fpx</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">fpy</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span> <span class="c1"># nabla f</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b9ac89d2eaa2f4ce3754382f8663a3edc937fd5901be120e34195abeccafb866.png" src="../_images/b9ac89d2eaa2f4ce3754382f8663a3edc937fd5901be120e34195abeccafb866.png" />
+</div>
+</div>
+<p>Si te das cuenta el extremo de la función coincide en el punto cuyo gradiente sea <em>ortogonal</em> a la circunferencia.</p>
+<p>La circunferencia podemos darla como el conjunto de nivel de una función, (con <span class="math notranslate nohighlight">\(c= 1\)</span>), simplemente:</p>
+<div class="math notranslate nohighlight">
+\[
+g(x, y) = x^2 + y^2 = c
+\]</div>
+<p>y sabemos que el gradiente de esta función siempre sera <em>ortogonal</em> al conjunto de nivel.</p>
+<p>Luego el punto extremo, <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> los dos gradientes, el de la función y el de la condición de conjunto de nivel, deben ser paralelos, esto es proporcionales:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f (x_0, y_0) = \lambda \nabla g(x_0, y_0)
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\lambda\)</span> es un valor de proporcionalidad.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">t0</span>  <span class="o">=</span> <span class="mf">6.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">4.</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">xt</span><span class="p">(</span><span class="n">t0</span><span class="p">),</span> <span class="n">yt</span><span class="p">(</span><span class="n">t0</span><span class="p">)</span>
+<span class="n">g</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gpx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="n">gpy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">xt</span><span class="p">,</span> <span class="n">yt</span><span class="p">,</span> <span class="n">trange</span><span class="o">=</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">fpx</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">fpy</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span> <span class="c1"># nabla f3</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">gpx</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">gpy</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span> <span class="c1"># nabla g</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7752f747ebdfaccb867ae811bf878bc01ccffe7e2d9a4113f3b19d74c908ec5a.png" src="../_images/7752f747ebdfaccb867ae811bf878bc01ccffe7e2d9a4113f3b19d74c908ec5a.png" />
+</div>
+</div>
+<section id="multiplicadores-de-lagrange">
+<h3>Multiplicadores de Lagrange<a class="headerlink" href="#multiplicadores-de-lagrange" title="Permalink to this heading">#</a></h3>
+<p>Sea una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, los extremos, <span class="math notranslate nohighlight">\({\bf x_0}\)</span> de esa función, donde <span class="math notranslate nohighlight">\({\bf x}_0\)</span> pertenece a los conjuntos de nivel dados por <span class="math notranslate nohighlight">\(g({\bf x}) = c\)</span>, cumplen que:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f ({\bf x}_0) = \lambda \nabla g ({\bf x}_0) 
+\]</div>
+<p>donde <span class="math notranslate nohighlight">\(\lambda\)</span> es un factor de proporcionalidad, llamado <strong>multiplicador de Lagrange</strong>.</p>
+<p><em>Ejercicio</em>: Calcula los extremos condicionados de la función <span class="math notranslate nohighlight">\(f(x, y)= x^2 - y^2\)</span> en la circunferencia de radio unidad</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f (x, y) = (2x, -2y)
+\]</div>
+<p>La condición podemos darla por:</p>
+<div class="math notranslate nohighlight">
+\[
+g(x, y) = x^2 + y^2 = 1
+\]</div>
+<p>La condición de Lagrange:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f (x_0, y_0) = \lambda \nabla g (x_0, y_0) \; \Rightarrow \, (2x_0, -2y_0) = \lambda (2x_0, 2y_0)
+\]</div>
+<p>De la primera condición <span class="math notranslate nohighlight">\(2 x_0 = \lambda 2 x_0\)</span>, obtenemos <span class="math notranslate nohighlight">\(\lambda = 1\)</span>; pero para que se cumpla la segunda ecuación <span class="math notranslate nohighlight">\(-2 y_0 = \lambda 2 y_0\)</span>, como <span class="math notranslate nohighlight">\(\lambda = 1\)</span>, entonces <span class="math notranslate nohighlight">\(y_0 = 0\)</span>.</p>
+<p>Solo hay dos puntos en la circunferencia con <span class="math notranslate nohighlight">\(y_0 = 0\)</span> que son <span class="math notranslate nohighlight">\((-1, 0)\)</span> y <span class="math notranslate nohighlight">\((1, 0)\)</span>. En ambos se cumple la condición de Lagrange. Son por lo tanto extremos condicionados.</p>
+<p>De la segunda condición <span class="math notranslate nohighlight">\(2 y_0 = - \lambda 2 y_0\)</span>, obtenemos <span class="math notranslate nohighlight">\(\lambda = -1\)</span>; pero para que se cumpla en este caso la primera, <span class="math notranslate nohighlight">\(2 x_0 = 2 \lambda x_0\)</span>, como <span class="math notranslate nohighlight">\(\lambda = -1\)</span>, entonces <span class="math notranslate nohighlight">\(x_0 = 0\)</span>.</p>
+<p>Solo hay dos puntos en la circunferencia con <span class="math notranslate nohighlight">\(x_0 = 0\)</span> que son: <span class="math notranslate nohighlight">\((0, 1)\)</span> y <span class="math notranslate nohighlight">\((0, -1)\)</span>. Son también extremos condicionados</p>
+<p>La función en <span class="math notranslate nohighlight">\((-1, 0)\)</span> y <span class="math notranslate nohighlight">\((1, 0)\)</span> vale <span class="math notranslate nohighlight">\(1\)</span>. Mientras que en <span class="math notranslate nohighlight">\((0, 1)\)</span> y <span class="math notranslate nohighlight">\((0, -1)\)</span> vale <span class="math notranslate nohighlight">\(-1\)</span>. Los dos primeros son máximos condicionados y los dos últimos mínimos condicionados.</p>
+<p><em>Verifica</em>: que es correcto en la celda anterior, colocando <span class="math notranslate nohighlight">\(t = 0, \pi/2, \pi, 3 \pi/2\)</span>, y observa como los gradientes se alinean y coinciden con los valores máximos y mínimos que puede tomar la función en la circunferencia.</p>
+</section>
+</section>
+<section id="aun-hay-mas">
+<h2>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h2>
+<section id="joseph-louis-lagrange">
+<h3>Joseph Louis Lagrange<a class="headerlink" href="#joseph-louis-lagrange" title="Permalink to this heading">#</a></h3>
+<p>Lagrange fue uno de los grandes matématicos y físicos del siglo XVIII y principios del XIX. Fue un hombre de su tiempo, un italiano del norte que recorrió la Europa de su época, y que fue profesor en la gran escuela “École Polytechnique”, recién fundada por Napoleón. Le debemos muchas contribuciones, entre ellas las reformulación de la mecánica Newtoniana. Aquí tienes su entrada en la wikipedia: <a class="reference external" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">J. L. Lagrange</a></p>
+</section>
+<section id="principio-de-minima-accion">
+<h3>Principio de mínima acción<a class="headerlink" href="#principio-de-minima-accion" title="Permalink to this heading">#</a></h3>
+<p>Los máximos y mínimos juegan un papel fundamental en Física. De hecho, la mecánica clásica (y también la moderna) pueden formularse en función del <a class="reference external" href="https://en.wikipedia.org/wiki/Principle_of_least_action">principio de mínima acción</a>, que nos dice que la dinámica de un sistema físico está regida por la búsqueda de la acción mínima, que matemáticamente se define como la integral de un término que se denomina, <strong>Lagrangiano</strong>.</p>
+<p>Este principio se enunció por primera vez por el físico francés Maupertius en el siglo XVIII, y en su versión moderna, en el siglo XX por el físico y profesor americano Richard <strong>Feynman</strong>. Aquí tienes un enlace a una de sus famosas <a class="reference external" href="http://www.feynmanlectures.caltech.edu/II_19.html">clases</a> y su entrada en la wikipedia, <a class="reference external" href="https://en.wikipedia.org/wiki/Richard_Feynman">Feynman</a></p>
+</section>
+<section id="el-metodo-de-minimos-cuadrados">
+<h3>El método de mínimos cuadrados<a class="headerlink" href="#el-metodo-de-minimos-cuadrados" title="Permalink to this heading">#</a></h3>
+<p>Los mínimos y máximos juegan un papel fundamental también en la estimación de parámetros y observables.</p>
+<p>Seguramente has utilizado en técnicas experimental de laboratorio el método de los mínimos cuadrados para hacer el ajuste de unos datos a una línea recta.</p>
+<p>Como sabes la Naturaleza tiene un comportamiento probabilístico y nuestras medidas estás sujetas <em>siempre</em> a las incertidumbres.</p>
+<p>En el método de mínimos cuadrados, se calcula la distancia (al cuadrado) de los valores medidos frente al valor de una función de hipótesis, por ejemplo la recta, que depende de diversos parámetros, (en el caso de la recta, los parámetros son la pendiente, <span class="math notranslate nohighlight">\(a\)</span>, y el umbral en el origen, <span class="math notranslate nohighlight">\(b\)</span>). Estimamos éstos parámetros y sus incertidumbres calculando el mínimo de la suma de las distancias al cuadrado. A esta función la llamamos, <span class="math notranslate nohighlight">\(\chi^2\)</span>, que en el caso de ajuste a una recta, es una función escalar de dos variables, <span class="math notranslate nohighlight">\(a, b\)</span>.</p>
+<p>Esto es, determinamos los parámetros de nuestro modelo como aquellos que hacen que la suma las distancias al cuadrado de los datos con respecto al modelo sea la menor posible.</p>
+<p>En el caso de la recta:</p>
+<p>Sea una muestra de datos <span class="math notranslate nohighlight">\(\{(x_i, y_u), \; i = 1, \dots, n\}\)</span>, con errores <span class="math notranslate nohighlight">\(\sigma_i = \sigma\)</span>,
+que se distribuyen a lo largo de una recta. Sabemos que ésta tiene dos parámetros, <span class="math notranslate nohighlight">\(a\)</span>, la pendiente y <span class="math notranslate nohighlight">\(b\)</span>, el umbral en el origen.</p>
+<div class="math notranslate nohighlight">
+\[
+y(x \, | \, a, b) = a \, x + b
+\]</div>
+<p>y construimos la función escalar <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span> como:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\chi^2(a, b) = \frac{1}{n-2} \, \sum_{i=1}^n \frac{(y_i - y(x_i | a, b))^2}{\sigma^2}  \\ 
+= \frac{1}{n-2} \, \sum_{i=1}^n \frac{(y_i - a \, x_i - b)^2}{\sigma^2}
+\end{split}\]</div>
+<p>donde el término del denominador, <span class="math notranslate nohighlight">\(n-2\)</span>, corresponde a los grados de libertad que son el número de datos, <span class="math notranslate nohighlight">\(n\)</span>, menos el número de parámetros, 2 en este caso (por <span class="math notranslate nohighlight">\(a, b\)</span>).</p>
+<p>Y estimamos los parámetros <span class="math notranslate nohighlight">\(\hat{a}, \hat{b}\)</span>, como aquellos que minimizan la <span class="math notranslate nohighlight">\(\chi^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+(\hat{a}, \hat{b}) \;\;\; \mathrm{t.q.} \;\; \chi^2(\hat{a}, \hat{b}) = \mathrm{min}(\chi^2(a, b))
+\]</div>
+<p>Las siguientes celdas muestran el ajuste a una recta de datos simulados.</p>
+<p>Generamos primero una muestra de datos aleatorios <span class="math notranslate nohighlight">\(\{ (x_i, y_i), \; i= 1, \dots, n \}\)</span>, a lo largo de una recta, cada uno con la misma incertidumbre <span class="math notranslate nohighlight">\(\sigma_i = \sigma\)</span>. Luego estimamos los parámetros, <span class="math notranslate nohighlight">\((\hat{a}, \hat{b})\)</span>, mediante el método de mínimos cuadrados.</p>
+<p>En la figura se dibujan los puntos con su error, la recta verdadera y la recta estimada.</p>
+<p><em>Explora</em> Cambia el número de puntos, o los parámetros verdaderos para ver cómo cambia el ajuste.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span>    <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">optimize</span>
+
+<span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span> <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+    <span class="n">x0</span><span class="p">,</span> <span class="n">xf</span> <span class="o">=</span> <span class="n">xrange</span>
+    <span class="n">xs</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="p">(</span><span class="n">xf</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">*</span><span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">)</span>
+    <span class="n">ys</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">xs</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">scale</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">)</span>
+    <span class="k">return</span> <span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">lsq_fit</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">aguess</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bguess</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">):</span>
+    <span class="n">fres</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">pars</span><span class="p">:</span> <span class="p">(</span><span class="n">ys</span> <span class="o">-</span> <span class="n">pars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">xs</span> <span class="o">-</span> <span class="n">pars</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">sigma</span>
+    <span class="n">x</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">leastsq</span><span class="p">(</span><span class="n">fres</span><span class="p">,</span> <span class="p">(</span><span class="n">aguess</span><span class="p">,</span> <span class="n">bguess</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">x</span>
+
+<span class="k">def</span> <span class="nf">chisq</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">chi2</span> <span class="o">=</span> <span class="mf">0.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ys</span><span class="p">)):</span>
+        <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span>
+        <span class="n">chi2</span> <span class="o">+=</span> <span class="n">dx</span><span class="o">*</span><span class="n">dx</span>
+    <span class="k">return</span> <span class="n">chi2</span><span class="o">/</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ys</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">atrue</span><span class="p">,</span> <span class="n">btrue</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">npoints</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span>
+<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">xs</span><span class="p">,</span> <span class="n">ys</span>     <span class="o">=</span> <span class="n">experiment</span><span class="p">(</span><span class="n">atrue</span><span class="p">,</span> <span class="n">btrue</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span> <span class="n">xrange</span> <span class="o">=</span> <span class="n">xrange</span><span class="p">)</span>
+<span class="n">ahat</span><span class="p">,</span> <span class="n">bhat</span> <span class="o">=</span> <span class="n">lsq_fit</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">sigma</span><span class="p">)</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">yerr</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">)</span>
+<span class="n">ts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">xrange</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">bhat</span>  <span class="o">+</span> <span class="n">ahat</span> <span class="o">*</span><span class="n">ts</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;lsq-fit&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ts</span><span class="p">,</span> <span class="n">btrue</span> <span class="o">+</span> <span class="n">atrue</span><span class="o">*</span><span class="n">ts</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span> <span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;true&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;a = &#39;</span><span class="p">,</span> <span class="n">ahat</span><span class="p">,</span> <span class="s1">&#39;b = &#39;</span><span class="p">,</span> <span class="n">bhat</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">();</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  1.0564221351964749 b =  -0.3269837087423776
+</pre></div>
+</div>
+<img alt="../_images/a5fc12ff1c862a26d2c29b2e64748730264f7f9aec7dc86869161bdd2237ed25.png" src="../_images/a5fc12ff1c862a26d2c29b2e64748730264f7f9aec7dc86869161bdd2237ed25.png" />
+</div>
+</div>
+<p>En la siguiente celda, dibujamos los conjuntos de nivel de la función <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span>.</p>
+<p>Puedes ver para este experimento que los valores estimados nos dan el mínimo de <span class="math notranslate nohighlight">\(\chi^2\)</span> y puedes ver también los conjuntos de nivel a distinto valores, que al ser próximos al mínimo deben ser elipses, y que nos dan una estimación de la incertidumbre de los parámetros <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span>. El valor verdadero es el punto en negro, mientras que el estimado es el punto en rojo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xchi</span> <span class="o">=</span>  <span class="n">chisq</span><span class="p">(</span><span class="n">ahat</span><span class="p">,</span> <span class="n">bhat</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;chisq &#39;</span><span class="p">,</span> <span class="n">xchi</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">chisq</span><span class="p">,</span> <span class="n">contours</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="n">ahat</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">ahat</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="n">zlim</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span>
+           <span class="n">yrange</span> <span class="o">=</span> <span class="p">(</span><span class="n">bhat</span> <span class="o">-</span> <span class="mi">1</span><span class="p">,</span> <span class="n">bhat</span> <span class="o">+</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">ahat</span><span class="p">,</span> <span class="n">bhat</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">);</span> <span class="n">gf</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">atrue</span><span class="p">,</span> <span class="n">btrue</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">();</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">),</span> <span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;b&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  1.0628835913372552
+</pre></div>
+</div>
+<img alt="../_images/afd920acf4cfa3b5f3c24c837b71e10874823676f0fe90d119286df770cf6361.png" src="../_images/afd920acf4cfa3b5f3c24c837b71e10874823676f0fe90d119286df770cf6361.png" />
+</div>
+</div>
+</section>
+<section id="las-redes-neuronales">
+<h3>Las redes neuronales<a class="headerlink" href="#las-redes-neuronales" title="Permalink to this heading">#</a></h3>
+<p>Las redes neuronales son algoritmos matemáticos que <em>aprenden</em> a identificar patrones y clasificar muestras. Hace poco más de una década Google desarrolló una potente red neuronal que distinguía entre imágenes de gatos y perros. Desde entonces, quizás sin que te des cuenta, las redes neuronales están en nuestras vidas.</p>
+<p>La redes neuronales toman el nombre de su similitud con nuestro sistema nervioso.
+Una red está compuesta de neuronas que se disponen en capas. En la figura de la siguiente celda se muestra un esquema de una red neuronal. Cada neurona tienen un conjunto de entradas y una sola salida. Matemáticamente cada neurona es una función escalar, <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}\)</span>, donde <span class="math notranslate nohighlight">\(n\)</span> es el número de entradas. La última capa de la red suele ser una sola neurona y su salida es la respuesta de la red. Matemáticamente toda la red es una función escalar <span class="math notranslate nohighlight">\(\mathrm{R}^N \to \mathrm{R}\)</span>, donde <span class="math notranslate nohighlight">\(N\)</span> es el número de entradas en la primera capa.</p>
+<p>En estos vídeos puedes encontrar una introducción sencillas a las redes neuronales <a class="reference external" href="https://www.youtube.com/watch?v=aircAruvnKk">[&gt;]</a> y a sus métodos de entrenamiento <a class="reference external" href="https://www.youtube.com/watch?v=IHZwWFHWa-w">[&gt;]</a></p>
+<p><strong>Esquema de una red neuronal</strong></p>
+<p>Las neuronas en la primera capa reciben los datos del mundo “exterior” y la neurona de la última capa da la respuesta de la red.</p>
+<a class="reference internal image-reference" href="../_images/NN.png"><img alt="../_images/NN.png" src="../_images/NN.png" style="width: 400px;" /></a>
+<p>Las capas intermedias las podemos considerar <em>ocultas</em>.</p>
+<p>La función escalar de la neurona es habitualmente una sigmoide.</p>
+<p>La sigmoide tiene como parámetros un vector de n-dimensiones, <span class="math notranslate nohighlight">\({\bf a}\)</span>, y un escalar, <span class="math notranslate nohighlight">\(b\)</span>.</p>
+<p>Su forma es la siguiente:</p>
+<div class="math notranslate nohighlight">
+\[
+u( {\bf x} \, | \, {\bf a}, b ) = \frac{1}{1 + e^{-{\bf a x} - b}}
+\]</div>
+<p>Nota que es una función escalar <span class="math notranslate nohighlight">\(\mathrm{R}^n \to \mathrm{R}\)</span> y que su valor está comprendido en el intervalo <span class="math notranslate nohighlight">\([0, 1]\)</span></p>
+<p><em>Explora:</em> Modifica el coeficiente <span class="math notranslate nohighlight">\(a\)</span> en la siguiente celda y observa cómo cambia el respuesta de la sigmoide.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">0</span>
+<span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">1</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">b</span><span class="p">))</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">f</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/af35f96641eae5d5f26c1e904e649bf33b7a073e3fdf68461d04e9cb2145171b.png" src="../_images/af35f96641eae5d5f26c1e904e649bf33b7a073e3fdf68461d04e9cb2145171b.png" />
+</div>
+</div>
+<p><strong>¿Cómo funcionan las redes neuronales?</strong></p>
+<p>Mediante entrenamiento, esto es, minimizando una función escalar que llamamos error.</p>
+<p>Consideremos el caso de la red neuronal que distingue imágenes de perros y gatos.</p>
+<p>La imagen la podemos matematizar dándola como un conjunto de píxeles (como si la imagen fuera un mosaico y cada tesela un <em>pixel</em>), y el valor de cada pixel correspondería por ejemplo a un valor en la escala de grises si la imagen está en blanco y negro. Hemos convertido por lo tanto la imagen en un vector, <span class="math notranslate nohighlight">\({\bf x}\)</span>, que será la entrada a nuestra red.</p>
+<p>La red tendra varias capas con diversas neuronas, por ejemplo <span class="math notranslate nohighlight">\(L\)</span> capas, con <span class="math notranslate nohighlight">\(K\)</span> neuronas en cada capa, y acabará con una neurona final. Ésta dará un valor entre <span class="math notranslate nohighlight">\([0, 1]\)</span>, el 0 corresponderá a la imagen de un gato y 1 a la del perro.</p>
+<p>La red neuronal es pues en sí misma una función escalar que a partir de la imagen inicial <span class="math notranslate nohighlight">\({\bf x}\)</span> nos da una sola respuesta <span class="math notranslate nohighlight">\(y({\bf x} | {\bf a}^{lk}, b^{lk})\)</span>, donde <span class="math notranslate nohighlight">\({\bf a}^{lk}, b^{lk}\)</span> son los parámetros de la neurona que está la capa <span class="math notranslate nohighlight">\(l\)</span> y en la posición <span class="math notranslate nohighlight">\(k\)</span> dentro de esa capa. La respuesta de la red neuronal es por lo tanto una función escalar <span class="math notranslate nohighlight">\(\mathrm{R}^N \to \mathrm{R}\)</span>, siendo <span class="math notranslate nohighlight">\(N\)</span> el número de pixels de nuestras imágenes.</p>
+<p>Construimos una función error a partir de una muestra de imágenes de perros y gatos <span class="math notranslate nohighlight">\(\{ {\bf x}_i, \; i = 1, \dots, M\}\)</span>, donde <span class="math notranslate nohighlight">\(M\)</span> es un número muy grande, y de la respuesta correcta para cada imagen <span class="math notranslate nohighlight">\(\{ y_i, \; i = 1, \dots, M \}\)</span>, donde <span class="math notranslate nohighlight">\(y_i\)</span> será 0 cuando la imagen sea de un gato y 1 de un perro, con la siguiente expresión:</p>
+<div class="math notranslate nohighlight">
+\[
+E({\bf a}^{lk}, b^{lk}) = \frac{1}{M-Q} \, \sum_{i=1}^M (y_i - y({\bf x}_i | {\bf a}^{lk}, b^{lk}))^2
+\]</div>
+<p>La función error es una función escalar <span class="math notranslate nohighlight">\(\mathrm{R}^Q \to R\)</span>, donde <span class="math notranslate nohighlight">\(Q\)</span> es el número total de parámetros de todas las neuronas.</p>
+<p>Date cuenta que en el caso de que la red acertase siempre, la función error valdría 0.</p>
+<p>En el método de mínimos cuadrados, estimamos los parámetros, <span class="math notranslate nohighlight">\((\hat{a}, \hat{b})\)</span> minimizando la función <span class="math notranslate nohighlight">\(\chi^2(a,b)\)</span>, ahora determinaremos los parámetros de la neuronas, minimizando la función error. Esto es, fijaremos los parámetros de las neuronas a aquellos con los que la red se equivoque lo menos posible en la muestra con la que la hemos entrenado.</p>
+<div class="math notranslate nohighlight">
+\[
+(\hat{\bf{a}}^{lk}, \hat{b}^{lk}) \;\;\; \mathrm{t.q.} \;\; E(\hat{\bf{a}}^{lk}, \hat{b}^{lk}) = \mathrm{min}(E({\bf a}^{lk}, b^{lk}))
+\]</div>
+<p>En el ejemplo del ajuste por mínimos cuadrados, la función <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span> dependía de dos parámetros, y podíamos calcularlos analíticamente, pero ahora nuestra función error <span class="math notranslate nohighlight">\(E({\bf a}^{lk}, b^{lk})\)</span> tiene <span class="math notranslate nohighlight">\(Q\)</span> parámetros, que puede ser un número muy grande.</p>
+<p>Sería imposible calcular el mínimo analíticamente, pero los ingeniros, físicos y matemáticos de Google han sido capaces de desarrollar una serie de métodos computacionales muy potentes con los que estimar los parámetros de las neuronas minimizando la función error. ¡Y se basan en calcular <strong>grandientes</strong> y aplicar <strong>la regla de la cadena</strong>!</p>
+<p>Aquí hay un vídeo <a class="reference external" href="https://www.youtube.com/watch?v=IHZwWFHWa-w">[&gt;]</a> que lo explica.</p>
+<p>Una vez la red está “entrenada” o “ha aprendido” (esto es, hemos minimizado su función error), le podemos mostrar otras fotos de gatos y perros y para cada una de ellas, predicirá para nuestro asombro si son perros o gatos. Sea ahora una imagen con vector <span class="math notranslate nohighlight">\({\bf x}\)</span>, la respuesta de la red vendrá dada por  <span class="math notranslate nohighlight">\(y({\bf x} \, | \, \hat{{\bf a}}^{lk}, \hat{b}^{lk})\)</span></p>
+<p><strong>¿Y ésto tiene que ver con la Física?</strong></p>
+<p>¡Mucho! En la actualidad pocos son los análisis en Física de Partículas, por ejemplo, donde no se utilice una red neuronal o un método similar.</p>
+<p>Se utilizan para identificar si una partícula es un electrón o un muón (su hermano más pesado). O si en una interacción hay un bosón de Higgs o no. Para decidir si una interacción es relevante o es del montón.</p>
+<p>Ya te puedes imaginar que las redes neuronales están detrás de algunas aplicaciones como Facebook, Instagram, Spotify, TikTok y de todos los genios matématicos que online intentan predecir tus gustos.</p>
+<p>Si quieres apreder algo más sobre la redes neuronales puedes leer este <a class="reference external" href="http://neuralnetworksanddeeplearning.com/index.html">libro online</a> y puedes experimental con el modulo <a class="reference external" href="https://scikit-learn.org/stable/">scikit-learn</a> de Python.</p>
+<p>La siguiente imagen muestra las trazas de dos eventos de un detector que busca una nueva desintegración nuclear, que correspondería a la imagen de la izquierda, mientras que la de la derecha muestra un evento típico de contaminación o de fondo. ¿Ves las diferencia entre las dos? ¿Nos sería de ayuda un red neuronal para distinguir los dos tipos de eventos, para separar la señal del fondo?</p>
+<a class="reference internal image-reference" href="../_images/NEXT_signal_bkg_mc_event.png"><img alt="../_images/NEXT_signal_bkg_mc_event.png" src="../_images/NEXT_signal_bkg_mc_event.png" style="width: 800px;" /></a>
+<p><strong>¡Esto es todo por ahora!</strong></p>
+</section>
+</section>
+<section id="apendices">
+<h2>Apendices<a class="headerlink" href="#apendices" title="Permalink to this heading">#</a></h2>
+<p>¡Algo más complicado!</p>
+<p><em>Ejercicio</em>: Utiliza Python y las métodos del modulo scipy para calcular los extremos de la función:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x, y) = \frac{x - y}{ 2 x^2 + 8 y^2 + 3}
+\]</div>
+<p>¡Empieza por dibujar la función y sus conjuntos de nivel!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/1e6da6bbb848bfac9128ab4bd47eafeab8d5ef4770231f9b4367dff797aa6da5.png" src="../_images/1e6da6bbb848bfac9128ab4bd47eafeab8d5ef4770231f9b4367dff797aa6da5.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">contour</span><span class="p">(</span><span class="n">fun</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/2a8376c04b6cea784694a480906c6fef5226ed26eecc46e8b719fa15007278b1.png" src="../_images/2a8376c04b6cea784694a480906c6fef5226ed26eecc46e8b719fa15007278b1.png" />
+</div>
+</div>
+<p>De los conjuntos de nivel observamos que hay un mínimo en torno al <span class="math notranslate nohighlight">\((-1, 0)\)</span> y un máximo cerca del <span class="math notranslate nohighlight">\((1, 0)\)</span>, y que los ejes de simetría en los extremos coinciden con los ejes coordenadas.</p>
+<p>En este ejercicio es imposible calcular analíticamente los puntos extremos, y tenemos que utilizar métodos numéricos en Python.</p>
+<p>En las siguientes celdas, primero calculamos numéricamente el punto mínimo y máximo.</p>
+<p>Luego usaremos cálculo simbólico para calcular las derivadas parciales y segundas, para después evaluar la matriz hessiana en los puntos extremos.</p>
+<p>Finalmente calcularemos numéricamente los autovalores y autovectores de la matriz hessiana, y comprobaremos que se trata de un máximo y un mínimo.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">optimize</span>
+<span class="kn">import</span> <span class="nn">scipy.linalg</span>   <span class="k">as</span> <span class="nn">linalg</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">res1</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">res1</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;punto mínimo &#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+<span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">res2</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">x1</span><span class="p">,</span> <span class="n">y1</span> <span class="o">=</span> <span class="n">res2</span><span class="o">.</span><span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;punto máximo &#39;</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto mínimo  -1.0954920902489502 0.2738621986560991
+punto máximo  1.0954920606202636 -0.27386221675122946
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+<span class="n">fx</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">fy</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fx &#39;</span><span class="p">,</span> <span class="n">fx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fy &#39;</span><span class="p">,</span> <span class="n">fy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fx  -4*x*(x - y)/(2*x**2 + 8*y**2 + 3)**2 + 1/(2*x**2 + 8*y**2 + 3)
+fy  -16*y*(x - y)/(2*x**2 + 8*y**2 + 3)**2 - 1/(2*x**2 + 8*y**2 + 3)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fxx</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">fxy</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">fyy</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">fy</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+<span class="n">fyx</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">(</span><span class="n">fy</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fxx &#39;</span><span class="p">,</span> <span class="n">fxx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fxy &#39;</span><span class="p">,</span> <span class="n">fxy</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fyx &#39;</span><span class="p">,</span> <span class="n">fyx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fyy &#39;</span><span class="p">,</span> <span class="n">fyy</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>fxx  32*x**2*(x - y)/(2*x**2 + 8*y**2 + 3)**3 - 8*x/(2*x**2 + 8*y**2 + 3)**2 - 4*(x - y)/(2*x**2 + 8*y**2 + 3)**2
+fxy  128*x*y*(x - y)/(2*x**2 + 8*y**2 + 3)**3 + 4*x/(2*x**2 + 8*y**2 + 3)**2 - 16*y/(2*x**2 + 8*y**2 + 3)**2
+fyx  128*x*y*(x - y)/(2*x**2 + 8*y**2 + 3)**3 + 4*x/(2*x**2 + 8*y**2 + 3)**2 - 16*y/(2*x**2 + 8*y**2 + 3)**2
+fyy  512*y**2*(x - y)/(2*x**2 + 8*y**2 + 3)**3 + 32*y/(2*x**2 + 8*y**2 + 3)**2 - 16*(x - y)/(2*x**2 + 8*y**2 + 3)**2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;punto &#39;</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">)</span>
+<span class="n">hxx</span> <span class="o">=</span> <span class="n">fxx</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y0</span><span class="p">)])</span>
+<span class="n">hxy</span> <span class="o">=</span> <span class="n">fxy</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y0</span><span class="p">)])</span>
+<span class="n">hyx</span> <span class="o">=</span> <span class="n">fyx</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y0</span><span class="p">)])</span>
+<span class="n">hyy</span> <span class="o">=</span> <span class="n">fyy</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x0</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y0</span><span class="p">)])</span>
+<span class="n">h</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="nb">float</span><span class="p">(</span><span class="n">hxx</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">hxy</span><span class="p">)],</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">hyx</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">hyy</span><span class="p">)]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hessiana &#39;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;autovalores&#39;</span><span class="p">,</span> <span class="n">eigvals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;autovector 1 :&#39;</span><span class="p">,</span> <span class="n">eigvecs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;autovector 2 :&#39;</span><span class="p">,</span> <span class="n">eigvecs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  -1.0954920902489502 0.2738621986560991
+hessiana  [[1.52129395e-01 5.62777899e-06]
+ [5.62777899e-06 6.08558515e-01]]
+autovalores [0.15212939+0.j 0.60855852+0.j]
+autovector 1 : [-1.00000000e+00  1.23300174e-05]
+autovector 2 : [-1.23300174e-05 -1.00000000e+00]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;punto &#39;</span><span class="p">,</span> <span class="n">x1</span><span class="p">,</span> <span class="n">y1</span><span class="p">)</span>
+<span class="n">hxx</span> <span class="o">=</span> <span class="n">fxx</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y1</span><span class="p">)])</span>
+<span class="n">hxy</span> <span class="o">=</span> <span class="n">fxy</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y1</span><span class="p">)])</span>
+<span class="n">hyx</span> <span class="o">=</span> <span class="n">fyx</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y1</span><span class="p">)])</span>
+<span class="n">hyy</span> <span class="o">=</span> <span class="n">fyy</span><span class="o">.</span><span class="n">subs</span><span class="p">([(</span><span class="n">x</span><span class="p">,</span> <span class="n">x1</span><span class="p">),</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">y1</span><span class="p">)])</span>
+<span class="n">h</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="nb">float</span><span class="p">(</span><span class="n">hxx</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">hxy</span><span class="p">)],</span> <span class="p">[</span><span class="nb">float</span><span class="p">(</span><span class="n">hyx</span><span class="p">),</span> <span class="nb">float</span><span class="p">(</span><span class="n">hyy</span><span class="p">)]])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hessiana &#39;</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">eigvals</span><span class="p">,</span> <span class="n">eigvecs</span> <span class="o">=</span> <span class="n">linalg</span><span class="o">.</span><span class="n">eig</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;autovalores&#39;</span><span class="p">,</span> <span class="n">eigvals</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;autovector 1 :&#39;</span><span class="p">,</span> <span class="n">eigvecs</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;autovector 2 :&#39;</span><span class="p">,</span> <span class="n">eigvecs</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  1.0954920606202636 -0.27386221675122946
+hessiana  [[-1.52129403e-01 -5.63252983e-06]
+ [-5.63252983e-06 -6.08558504e-01]]
+autovalores [-0.1521294+0.j -0.6085585+0.j]
+autovector 1 : [ 1.00000000e+00 -1.23404266e-05]
+autovector 2 : [1.23404266e-05 1.00000000e+00]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-taylor-de-2o-orden-de-funciones-escalares">Desarrollo de Taylor de 2º orden de funciones escalares.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#revision-de-los-conceptos-de-extremos-minimos-y-maximos">Revisión de los conceptos de extremos, mínimos y máximos.</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#igualdad-de-las-derivadas-segundas-cruzadas">Igualdad de las derivadas segundas cruzadas</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#desarrollo-de-taylor-de-segundo-orden-de-funciones-escalares">Desarrollo de Taylor de segundo orden de funciones escalares</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Mínimos y máximos de funciones escalares</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#clasificacion-de-puntos-extremos">Clasificación de puntos extremos</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#minimos-y-maximos-para-funciones-escalares-de-varias-dimensiones">minimos y máximos para funciones escalares de varias dimensiones</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#minimos-y-maximos-condicionados">Mínimos y máximos condicionados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#multiplicadores-de-lagrange">Multiplicadores de Lagrange</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#joseph-louis-lagrange">Joseph Louis Lagrange</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-minima-accion">Principio de mínima acción</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#el-metodo-de-minimos-cuadrados">El método de mínimos cuadrados</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#las-redes-neuronales">Las redes neuronales</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apendices</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata, X. Cid Vidal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

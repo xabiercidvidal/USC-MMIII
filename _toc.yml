@@ -16,7 +16,9 @@ parts:
   - file: notebooks/tderivadas_parametrizacion_linhas_superficies.ipynb
   - file: notebooks/tderivadas_direccional_diferencial.ipynb
   - file: notebooks/tderivadas_gradiante_xacobiana.ipynb
-  - file: notebooks/tderivadas_coordenadas_cadea.ipynb 
+  - file: notebooks/tderivadas_coordenadas_cadea.ipynb
+  - file: notebooks/tderivadas_min_max.ipynb
+  
 
 
 
