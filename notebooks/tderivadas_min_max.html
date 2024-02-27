@@ -459,7 +459,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Feb 23 16:12:42 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Feb 27 23:14:15 2024
 </pre></div>
 </div>
 </div>
@@ -637,7 +637,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 <h2>Mínimos e máximos das funcións escalares<a class="headerlink" href="#minimos-e-maximos-das-funcions-escalares" title="Permalink to this heading">#</a></h2>
 <p>Como nunha dimensión, chamaremos un punto <strong>extremo</strong> ou <strong>crítico</strong> , <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, dunha función escalar diferenciable, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathbb{R}^n \to \mathbb{R}\)</span>, a aqueles puntos do dominio para os cales gradiente é cero, <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = {\bf 0}\)</span>.</p>
 <p>No exemplo anterior, a función escalar <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 + 4y^2\)</span> ten un extremo en <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
-<p>Observa a gráfica e os conxuntos de nivel da seguinte función, <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 - 4y^2\)</span>. Podes verificar que o punto <span class="math notranslate nohighlight">\((0, 0)\)</span> é un extremo, ten un gradiente cero (o gradiente é <span class="math notranslate nohighlight">\(\nabla f(x, y) = (4x, -8 y)\)</span> ), pero non o é nin máximo nin Como mínimo, é un <strong>punto de sela</strong> . Definimos como tal, o punto extremo dende o cal a función ascende nunha dirección e descende noutra.</p>
+<p>Observa a gráfica e os conxuntos de nivel da seguinte función, <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 - 4y^2\)</span>. Podes verificar que o punto <span class="math notranslate nohighlight">\((0, 0)\)</span> é un extremo, ten un gradiente cero (o gradiente é <span class="math notranslate nohighlight">\(\nabla f(x, y) = (4x, -8 y)\)</span> ), pero non o é nin máximo nin mínimo, é un <strong>punto de sela</strong> . Definimos como tal, o punto extremo dende o cal a función ascende nunha dirección e descende noutra.</p>
 <p><em>Explora</em> e modifica o vector <span class="math notranslate nohighlight">\({\bf v}\)</span> superposto aos conxuntos de nivel e observa como dependendo da dirección de <span class="math notranslate nohighlight">\({\bf v}\)</span> a función finalmente ascende ou descende.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -766,7 +766,7 @@ f({\bf x}_0 + {\bf v}) =  \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &
 \frac{1}{2} {\bf v'}^T \, {\bf H}'({\bf x}_0) \, {\bf v}' =   \frac{1}{2} (v'_x, v'_y) \, \left( \begin{array}{cc} \lambda'_1 &amp; 0 \\ 0 &amp; \lambda'_2\end{array} \right) \, \left( \begin{array}{c} v'_x \\ v'_y \end{array} \right) = 
 \frac{1}{2} \left( \lambda'_1 v'^2_x + \lambda'_2 v'^2_y \right)
 \end{split}\]</div>
-<p>E polo tanto, se os dous autovalores da Hessiana son positivos, <span class="math notranslate nohighlight">\(\lambda'_1 &gt; 0, \lambda'_2 &gt;0\)</span>, o punto extremo <span class="math notranslate nohighlight">\({\bf x}_0\)</span> é mínimo; se ambos son negativos <span class="math notranslate nohighlight">\(\lambda'_2 &gt;0\)</span>, o punto extremo <span class="math notranslate nohighlight">\({\bf x}_0\)</span> é mínimo; si los dos son negativos , é un máximo, e se un é positivo e o outro negativo, é un punto de sela.</p>
+<p>E polo tanto, se os dous autovalores da Hessiana son positivos, <span class="math notranslate nohighlight">\(\lambda'_1 &gt; 0, \lambda'_2 &gt;0\)</span>, o punto extremo <span class="math notranslate nohighlight">\({\bf x}_0\)</span> é mínimo; se ambos son negativos <span class="math notranslate nohighlight">\(\lambda'_2 &gt;0\)</span>, o punto extremo <span class="math notranslate nohighlight">\({\bf x}_0\)</span> é mínimo; se os dous son negativos , é un máximo, e se un é positivo e o outro negativo, é un punto de sela.</p>
 <p>No exemplo anterior, a Hessiana era:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -854,7 +854,7 @@ f(x'_0 + v'_x, \, y'_0 + v'_y) \simeq f(x'_0, y'_0) + \frac{1}{2}\left( \lambda'
  {\bf x} \; / \, \parallel {\bf x} - {\bf x}_0 \parallel \lt \delta \, \Rightarrow f({\bf x}) \le f({\bf x}_0)
  \]</div>
 <p>Finalmente, é <strong>un punto de sela</strong> se en cada bóla centrada en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, hai puntos dentro da bola para os cales o valor da función é maior e outros menores que o valor no punto crítico.</p>
-<p>O punto extremo é un mínimo, se todos os <strong>autovalores</strong> , <span class="math notranslate nohighlight">\({\lambda_i, \, i=1, \dots, n }\)</span>, da súa <strong>matriz hessiana</strong> , <span class="math notranslate nohighlight">\({\bf H}({\bf x_0})\)</span>, son positivos; é un máximo se todos son negativos; e é un punto de sela se uns son negativos e outro positivos.</p>
+<p>O punto extremo é un mínimo, se todos os <strong>autovalores</strong> , <span class="math notranslate nohighlight">\({\lambda_i, \, i=1, \dots, n }\)</span>, da súa <strong>matriz hessiana</strong> , <span class="math notranslate nohighlight">\({\bf H}({\bf x_0})\)</span>, son positivos; é un máximo se todos son negativos; e é un punto de sela se uns son negativos e outros positivos.</p>
 <p>Considera agora unha función escalar <span class="math notranslate nohighlight">\(f(x, y)\)</span> e o punto extremo, <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>, o determinante da matriz Hessiana é negativo. Podes clasificar o extremo, é mínimo, máximo, punto de sela? E se o determinante é positivo?</p>
 <p>Un caso particular do anterior acontece para funcións escalares de dúas dimensións, <span class="math notranslate nohighlight">\(f(x,y)\)</span>.
 Se temos como matriz Hessiana:</p>
@@ -884,6 +884,7 @@ H_{yx} &amp; H_{yy} \\
 <li><p><strong>Se <span class="math notranslate nohighlight">\(\text{det}(H) = 0\)</span></strong>, a proba é inconclusiva.</p></li>
 </ul>
 <p>O motivo é que <span class="math notranslate nohighlight">\(\text{det}(H)=\lambda_1\lambda_2\)</span>, é dicir, o produto dos autovalores. Se o determinante é negativo sabemos que o signo dos autovalores é o mesmo, se é positivo ten que ser igual. O motivo de usar <span class="math notranslate nohighlight">\(H_{xx}\)</span> como referencia vén do <a class="reference external" href="https://en.wikipedia.org/wiki/Sylvester%27s_criterion">criterio de Sylvester</a>.</p>
+<a class="reference internal image-reference" href="https://pbs.twimg.com/media/GHRXJC5WwAAEYpS?format=jpg&amp;name=small"><img alt="https://pbs.twimg.com/media/GHRXJC5WwAAEYpS?format=jpg&amp;name=small" class="align-center" src="https://pbs.twimg.com/media/GHRXJC5WwAAEYpS?format=jpg&amp;name=small" style="width: 400px;" /></a>
 </section>
 </section>
 <section id="minimos-e-maximos-condicionais">
@@ -1087,10 +1088,10 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 1 - 2x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  1.0318126452582432 b =  -0.1284723304295698
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  1.0135846229910064 b =  -0.024836382760009514
 </pre></div>
 </div>
-<img alt="../_images/3678ee807709b6e1cebcfa13f256e45aa48da1437e9b4dbe92031438b0c58df6.png" src="../_images/3678ee807709b6e1cebcfa13f256e45aa48da1437e9b4dbe92031438b0c58df6.png" />
+<img alt="../_images/e4c17a29418c28b81d3361afc6a4b9c3cb7fc6b33a170902f875a1a8da0c2862.png" src="../_images/e4c17a29418c28b81d3361afc6a4b9c3cb7fc6b33a170902f875a1a8da0c2862.png" />
 </div>
 </div>
 <p>Na seguinte cela, debuxamos os conxuntos de nivel da función <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span>.</p>
@@ -1107,10 +1108,10 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 1 - 2x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  0.9168956142822509
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  0.9768798168345345
 </pre></div>
 </div>
-<img alt="../_images/79814b324704e1820445a7c09b955f19cc5ae7835cf964f054a4c837af0aedee.png" src="../_images/79814b324704e1820445a7c09b955f19cc5ae7835cf964f054a4c837af0aedee.png" />
+<img alt="../_images/6328d149e384585ce8a5f778483511d9052f2884fbebc108cdb7b528d2efcc84.png" src="../_images/6328d149e384585ce8a5f778483511d9052f2884fbebc108cdb7b528d2efcc84.png" />
 </div>
 </div>
 </section>
@@ -1319,9 +1320,7 @@ autovector 2 : [-1.23300174e-05 -1.00000000e+00]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  1.0954920606202636 -0.27386221675122946
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hessiana  [[-1.52129403e-01 -5.63252983e-06]
+hessiana  [[-1.52129403e-01 -5.63252983e-06]
  [-5.63252983e-06 -6.08558504e-01]]
 autovalores [-0.1521294+0.j -0.6085585+0.j]
 autovector 1 : [ 1.00000000e+00 -1.23404266e-05]
