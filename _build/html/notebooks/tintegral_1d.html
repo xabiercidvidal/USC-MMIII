@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Integrales en una dimensión &#8212; Métodos Matemáticos III - USC</title>
+    <title>Integrais nunha dimensión &#8212; Métodos Matemáticos III - USC</title>
   
   
   
@@ -66,6 +66,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tintegral_1d';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Métodos de integración" href="tintegral_metodos.html" />
+    <link rel="prev" title="Mínimos e máximos de funcións escalares" href="tderivadas_min_max.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,10 +164,17 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadea.html">Cambio de coordenadas e regra da cadea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos e máximos de funcións escalares</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integrais nunha dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 </ul>
 
     </div>
@@ -398,7 +407,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Integrales en una dimensión</h1>
+    <h1>Integrais nunha dimensión</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,13 +417,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales">Integrales</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrais">Integrais</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particion">Partición</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-riemann">Suma de Riemann</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-riemman">Integral de Riemman</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-teorema-fundamental-del-calculo-integral">Primer teorema fundamental del cálculo integral</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segundo-teorema-fundamental-del-calculo-integral">Segundo teorema fundamental del cálculo integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primeiro-teorema-fundamental-do-calculo-integral">Primeiro teorema fundamental do cálculo integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segundo-teorema-fundamental-do-calculo-integral">Segundo teorema fundamental do cálculo integral</a></li>
 </ul>
 </li>
 </ul>
@@ -428,26 +437,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="integrales-en-una-dimension">
-<h1>Integrales en una dimensión<a class="headerlink" href="#integrales-en-una-dimension" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="integrais-nunha-dimension">
+<h1>Integrais nunha dimensión<a class="headerlink" href="#integrais-nunha-dimension" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Tue Jan 30 15:23:42 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Mar  5 16:10:02 2024
 </pre></div>
 </div>
 </div>
 </div>
-<section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
-<p>Introducir el concepto de suma de Riemann.</p>
-<p>Mostrar algunos ejemplos</p>
-<p>Recordar los métodos de integración</p>
+<section id="obxectivos">
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Introducir o concepto de suma de Riemann.</p></li>
+<li><p>Mostrar algúns exemplos</p></li>
+<li><p>Lembrar os métodos de integración</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
@@ -461,7 +472,6 @@ document.write(`
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
 <span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -470,9 +480,9 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="integrales">
-<h2>Integrales<a class="headerlink" href="#integrales" title="Permalink to this heading">#</a></h2>
-<p>En la siguiente figura, ¿Cómo calcularías el área bajo la gráfica y el eje x?</p>
+<section id="integrais">
+<h2>Integrais<a class="headerlink" href="#integrais" title="Permalink to this heading">#</a></h2>
+<p>Na seguinte figura, como calcularías a área baixo a gráfica e o eixe x?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> 
@@ -487,17 +497,17 @@ document.write(`
 <img alt="../_images/9d3e6aa44ff3c1fb7645300c325d67ad8de42414d1d05fa78e4c347f4bd87ac2.png" src="../_images/9d3e6aa44ff3c1fb7645300c325d67ad8de42414d1d05fa78e4c347f4bd87ac2.png" />
 </div>
 </div>
-<p>Vamos a definir primero qué es una partición de un intervalo.</p>
+<p>Imos primeiro definir o que é unha partición dun intervalo.</p>
 <section id="particion">
 <h3>Partición<a class="headerlink" href="#particion" title="Permalink to this heading">#</a></h3>
-<p>Una partición, <span class="math notranslate nohighlight">\(P\)</span> es un conjunto finito, <span class="math notranslate nohighlight">\(\{x_i; \; i = 0, \dots, n\}\)</span>, de puntos consecutivos en el intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, de tal forma que <span class="math notranslate nohighlight">\(x_0 = a, \; x_n = b\)</span> y <span class="math notranslate nohighlight">\(x_i &lt; x_{i +1} \; \forall i\)</span></p>
-<p>El tamaño o  norma, <span class="math notranslate nohighlight">\(\| P \|\)</span>, de una partición será el tamaño del mayor de sus subintervalos, <span class="math notranslate nohighlight">\(\mathrm{máx}\{x_{i} - x_{i-1}; \; i = 1, \dots, n \}\)</span></p>
-<p>Una partición es más pequeña o más fina que otra si su norma es más pequeña.</p>
-<p>Una partición es regular si <span class="math notranslate nohighlight">\(\Delta x_i = \delta, \; i = 1, \dots, n\)</span>.</p>
+<p>Unha partición, <span class="math notranslate nohighlight">\(P\)</span> é un conxunto finito, <span class="math notranslate nohighlight">\({x_i; \; i = 0, \dots, n}\)</span>, de puntos consecutivos no intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, tal que <span class="math notranslate nohighlight">\(x_0 = a, \; x_n = b\)</span> e <span class="math notranslate nohighlight">\(x_i &lt; x_{i +1} \; \forall i\)</span></p>
+<p>O tamaño ou norma, <span class="math notranslate nohighlight">\(| P |\)</span>, dunha partición será o tamaño do maior dos seus subintervalos, <span class="math notranslate nohighlight">\(\mathrm{máx}\{x_{i} - x_{i-1}; \; i = 1, \dots, n \}\)</span></p>
+<p>Unha partición é máis pequena ou máis fina que outra se a súa norma é menor.</p>
+<p>Unha partición é regular se <span class="math notranslate nohighlight">\(\Delta x_i = \delta, \; i = 1, \dots, n\)</span>.</p>
 </section>
 <section id="suma-de-riemann">
 <h3>Suma de Riemann<a class="headerlink" href="#suma-de-riemann" title="Permalink to this heading">#</a></h3>
-<p>Sea <span class="math notranslate nohighlight">\(P\)</span> una partición del intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, y <span class="math notranslate nohighlight">\(t_i\)</span> un punto en el subintervalo <span class="math notranslate nohighlight">\([x_{i-1}, x_i]\)</span> y <span class="math notranslate nohighlight">\(\Delta x_i = x_{i} - x_{i-1}\)</span> con <span class="math notranslate nohighlight">\(i = 1, \dots, n\)</span>, y <span class="math notranslate nohighlight">\(f(x)\)</span> una función, <span class="math notranslate nohighlight">\(\mathcal{R} \to \mathcal{R}\)</span>; llamamos suma de Riemann a la cantidad:</p>
+<p>Sexa <span class="math notranslate nohighlight">\(P\)</span> unha partición do intervalo <span class="math notranslate nohighlight">\([a, b]\)</span> e <span class="math notranslate nohighlight">\(t_i\)</span> sexa un punto do subintervalo <span class="math notranslate nohighlight">\([x_{i-1}, x_i]\)</span> e <span class="math notranslate nohighlight">\([x_{i-1}, x_i]\)</span> y <span class="math notranslate nohighlight">\(\Delta x_i = x_{i} - x_{i-1}\)</span> con <span class="math notranslate nohighlight">\(i = 1, \dots, n\)</span> e <span class="math notranslate nohighlight">\(f(x)\)</span> unha función, <span class="math notranslate nohighlight">\(\mathbb{R} \to \mathbb{R}\)</span>; Chamamos á suma de Riemann á cantidade:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{S}(f, P) = \sum_{i=1}^n f(t_i) \, \Delta x_i
@@ -517,7 +527,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p><em>Explora:</em> Modifica en la siguiente celda la función, el intervalo, y especialmente el número de subintervalos de la partición regular.</p>
+<p><em>Explora:</em> modifica na seguinte cela a función, o intervalo e, especialmente, o número de subintervalos da partición regular.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rsum</span> <span class="o">=</span> <span class="n">riemann_sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">80</span><span class="p">,</span> <span class="n">draw</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
@@ -526,13 +536,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Riemann Sum 2.00253
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Riemann Sum 1.99569
 </pre></div>
 </div>
-<img alt="../_images/f5616a9b6cebd6bcf5f1ff1e281d70ea761fa9dc9ef38c1edaafee6b87bd061a.png" src="../_images/f5616a9b6cebd6bcf5f1ff1e281d70ea761fa9dc9ef38c1edaafee6b87bd061a.png" />
+<img alt="../_images/05081178d5344ad00b9d05e2caf97ce56a938365e29eb0aef9358720bc146fd5.png" src="../_images/05081178d5344ad00b9d05e2caf97ce56a938365e29eb0aef9358720bc146fd5.png" />
 </div>
 </div>
-<p>En la siguiente celda estudiamos la evolución de la suma de Riemann para particiones regulares cada vez más finas.</p>
+<p>Na seguinte cela estudamos a evolución da suma de Riemann para particións regulares cada vez máis finas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span>   <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -544,95 +554,95 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/be544b1822cc3fe93c42276030cd7b51b367f0fb1bb8acaa752134670f2aef81.png" src="../_images/be544b1822cc3fe93c42276030cd7b51b367f0fb1bb8acaa752134670f2aef81.png" />
+<img alt="../_images/dbf38c108cea3fa46613077f0c7f060f5eff65d6260dc68a932b5cb52c60c7ad.png" src="../_images/dbf38c108cea3fa46613077f0c7f060f5eff65d6260dc68a932b5cb52c60c7ad.png" />
 </div>
 </div>
-<p>Comprobamos que la suma de Riemann para particiones cada vez más finas converge a un determinado valor <span class="math notranslate nohighlight">\(S\)</span>.</p>
+<p>Comprobamos que a suma de Riemann para particións cada vez máis finas converxe a un determinado valor <span class="math notranslate nohighlight">\(S\)</span>.</p>
 </section>
 <section id="integral-de-riemman">
 <h3>Integral de Riemman<a class="headerlink" href="#integral-de-riemman" title="Permalink to this heading">#</a></h3>
-<p>Decimos que la función <span class="math notranslate nohighlight">\(f(x)\)</span> es integrable Rienmann si existe un número <span class="math notranslate nohighlight">\(S\)</span>, o integral de Riemman, tal que <span class="math notranslate nohighlight">\(\forall \epsilon &gt;0\)</span>, existe una partición <span class="math notranslate nohighlight">\(P_\epsilon\)</span> del intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, tal que para una partición más fina que <span class="math notranslate nohighlight">\(P_\epsilon\)</span>, y para cada elección de puntos <span class="math notranslate nohighlight">\(t_i\)</span> del subintervalo <span class="math notranslate nohighlight">\([x_{i-1}, \, x_i]\)</span>, se cumple:</p>
+<p>Dicimos que a función <span class="math notranslate nohighlight">\(f(x)\)</span> é integrable de Rienmann se existe un número <span class="math notranslate nohighlight">\(S\)</span>, ou integral de Riemman, tal que <span class="math notranslate nohighlight">\(\forall \epsilon &gt;0\)</span>, existe unha partición <span class="math notranslate nohighlight">\(P_\epsilon\)</span> do intervalo <span class="math notranslate nohighlight">\([a , b]\)</span>, tal que para unha partición máis fina que <span class="math notranslate nohighlight">\(P_\epsilon\)</span>, e para cada elección de puntos <span class="math notranslate nohighlight">\(t_i\)</span> do subintervalo <span class="math notranslate nohighlight">\([x_{i-1}, \, x_i]\)</span>, temos:</p>
 <div class="math notranslate nohighlight">
 \[
 | \mathcal{S}(f, P) - S | &lt; \epsilon
 \]</div>
-<p>El número <span class="math notranslate nohighlight">\(S\)</span> se representa por:</p>
+<p>O número <span class="math notranslate nohighlight">\(S\)</span> está representado por:</p>
 <div class="math notranslate nohighlight">
 \[
 S = \int_a^b f(x) \; \mathrm{d}x
 \]</div>
-<p>La suma superior de Riemann se define:</p>
+<p>A suma de Riemann superior defínese:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{U}(f, \mathcal{P}) = \sum_{i=1}^n f(x'_i) \; \Delta x_i 
 \]</div>
-<p>donde ahora <span class="math notranslate nohighlight">\(x'_i\)</span> es el valor del subintervalo <span class="math notranslate nohighlight">\([x_{i-1}, \,x_{i}]\)</span> donde la función <span class="math notranslate nohighlight">\(f(x)\)</span> es <em>máxima</em>.</p>
-<p>Y la suma inferior de Riemann:</p>
+<p>onde agora <span class="math notranslate nohighlight">\(x'_i\)</span>  o valor do subintervalo <span class="math notranslate nohighlight">\([x_{i-1}, \,x_{i}]\)</span> onde a función <span class="math notranslate nohighlight">\(f(x)\)</span> é <em>máxima</em> .</p>
+<p>E a suma inferior de Riemann:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}(f, \mathcal{P}) = \sum_{i=1}^n f(x'_i) \, \Delta x_i  
 \]</div>
-<p>donde ahora <span class="math notranslate nohighlight">\(x'_i\)</span> es el valor del intervalo <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span> donde la función <span class="math notranslate nohighlight">\(f(x)\)</span> es <em>mínima</em>.</p>
-<p>Siempre se cumple:</p>
+<p>onde agora <span class="math notranslate nohighlight">\(x'_i\)</span> é o valor do intervalo <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span> onde a función <span class="math notranslate nohighlight">\(f(x)\)</span> é <em>mínima</em>.</p>
+<p>Sempre é certo:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}(f, \mathcal{P}) \le \mathcal{S}(f, \mathcal{P}) \le \mathcal{U}(f, \mathcal{P}) 
 \]</div>
 </section>
-<section id="primer-teorema-fundamental-del-calculo-integral">
-<h3>Primer teorema fundamental del cálculo integral<a class="headerlink" href="#primer-teorema-fundamental-del-calculo-integral" title="Permalink to this heading">#</a></h3>
-<p>Sea <span class="math notranslate nohighlight">\(f(x)\)</span> una función integrable Riemann en el intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>, definimos la función:</p>
+<section id="primeiro-teorema-fundamental-do-calculo-integral">
+<h3>Primeiro teorema fundamental do cálculo integral<a class="headerlink" href="#primeiro-teorema-fundamental-do-calculo-integral" title="Permalink to this heading">#</a></h3>
+<p>Sexa <span class="math notranslate nohighlight">\(f(x)\)</span> unha función integrable de Riemann no intervalo <span class="math notranslate nohighlight">\([a,b]\)</span>, definimos a función:</p>
 <div class="math notranslate nohighlight">
 \[
 F(x) = \int_a^x f(x) \; \mathrm{d}x
 \]</div>
-<p>Si <span class="math notranslate nohighlight">\(f(x)\)</span> es continua en <span class="math notranslate nohighlight">\(c \in (a, b)\)</span>, <span class="math notranslate nohighlight">\(F(x)\)</span> es derivable en <span class="math notranslate nohighlight">\(c\)</span> con derivada: <span class="math notranslate nohighlight">\(F'(c) = f(c)\)</span></p>
+<p>Se <span class="math notranslate nohighlight">\(f(x)\)</span> é continua en <span class="math notranslate nohighlight">\(c \in (a, b)\)</span>, <span class="math notranslate nohighlight">\(F(x)\)</span> é diferenciable en <span class="math notranslate nohighlight">\(c\)</span> con derivada: <span class="math notranslate nohighlight">\(F'(c) = f(c)\)</span></p>
 <p><em>Demostración:</em></p>
 <p>Por definición de derivada:</p>
 <div class="math notranslate nohighlight">
 \[
 F'(c) = \lim_{h\to0} \frac{F(c+h)-F(c)}{h} 
 \]</div>
-<p>En este caso, donde <span class="math notranslate nohighlight">\(h\)</span> es pequeño.</p>
+<p>Neste caso, onde <span class="math notranslate nohighlight">\(h\)</span> é pequeno.</p>
 <div class="math notranslate nohighlight">
 \[
 F(c+h)-F(c)  = \int_a^{c+h} f(x) \; \mathrm{d}x - \int_a^{c} f(x) \; \mathrm{d}x 
 = \int_c^{c+h} f(x) \; \mathrm{d}x \simeq f(t) \, h
 \]</div>
-<p>Si consideramos <span class="math notranslate nohighlight">\(h\)</span> suficientemente pequeño, damos la integral como la suma de Riemann en un intervalo <span class="math notranslate nohighlight">\([c, c+h]\)</span> con punto aletaorio <span class="math notranslate nohighlight">\(t\)</span>. Al hacer <span class="math notranslate nohighlight">\(h \to 0, \; t \to c\)</span>, y:</p>
+<p>Se consideramos <span class="math notranslate nohighlight">\(h\)</span> suficientemente pequeno, damos a integral como suma de Riemann nun intervalo <span class="math notranslate nohighlight">\([c, c+h]\)</span> cun punto aleatorio <span class="math notranslate nohighlight">\(t\)</span>. Ao establecer <span class="math notranslate nohighlight">\(h \to 0, \; t \to c\)</span>, e:</p>
 <div class="math notranslate nohighlight">
 \[
 F'(c) = f(c)
 \]</div>
 </section>
-<section id="segundo-teorema-fundamental-del-calculo-integral">
-<h3>Segundo teorema fundamental del cálculo integral<a class="headerlink" href="#segundo-teorema-fundamental-del-calculo-integral" title="Permalink to this heading">#</a></h3>
-<p>Una función <span class="math notranslate nohighlight">\(F(x)\)</span> se llama <em>primitiva</em> de una función <span class="math notranslate nohighlight">\(f(x)\)</span> en un intervalo abierto <span class="math notranslate nohighlight">\((a,b)\)</span> si <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span> para todo <span class="math notranslate nohighlight">\(x \in (a,b)\)</span>.</p>
-<p>Dos primitivas de una funci’on solo pueden diferir en una constante: <span class="math notranslate nohighlight">\(P(x) = F(x) + C\)</span></p>
-<p><strong>Teorema:</strong> Sea <span class="math notranslate nohighlight">\(f(x)\)</span> integrable Riemann en <span class="math notranslate nohighlight">\([a,b]\)</span>, sea <span class="math notranslate nohighlight">\(P(x)\)</span> una función definida en <span class="math notranslate nohighlight">\([a,b]\)</span>, tal que exista la derivada <span class="math notranslate nohighlight">\(P'(x)\)</span> en <span class="math notranslate nohighlight">\((a,b)\)</span> y cuyo valor sea <span class="math notranslate nohighlight">\(P'(x) = f(x)\)</span>, se cumple:</p>
+<section id="segundo-teorema-fundamental-do-calculo-integral">
+<h3>Segundo teorema fundamental do cálculo integral<a class="headerlink" href="#segundo-teorema-fundamental-do-calculo-integral" title="Permalink to this heading">#</a></h3>
+<p>Unha función <span class="math notranslate nohighlight">\(F(x)\)</span> chámase <em>primitiva</em> dunha función <span class="math notranslate nohighlight">\(f(x)\)</span> nun intervalo aberto <span class="math notranslate nohighlight">\((a,b)\)</span> se <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span>  para todo <span class="math notranslate nohighlight">\(x \in (a,b)\)</span>.</p>
+<p>Dúas primitivas dunha función só poden diferir nunha constante: <span class="math notranslate nohighlight">\(P(x) = F(x) + C\)</span></p>
+<p><strong>Teorema:</strong> Sexa <span class="math notranslate nohighlight">\(f(x)\)</span> integrable de Riemann en <span class="math notranslate nohighlight">\([a,b]\)</span>, sexa <span class="math notranslate nohighlight">\(P(x)\)</span> unha función definida en <span class="math notranslate nohighlight">\([a,b]\)</span>, tal que exista a derivada <span class="math notranslate nohighlight">\(P'(x)\)</span> en <span class="math notranslate nohighlight">\((a,b)\)</span>, con valor <span class="math notranslate nohighlight">\(P'(x) = f(x)\)</span>, temos:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_a^b f(x) \, \mathrm{d}x = \int_a^b P'(x) \;\mathrm{d}x = P(b) - P(a)
 \]</div>
-<p>O lo que es lo mismo, sea <span class="math notranslate nohighlight">\(P(x)\)</span> una primitiva cualquiera de <span class="math notranslate nohighlight">\(f(x)\)</span>, se cumple</p>
+<p>Ou o que é o mesmo, sexa <span class="math notranslate nohighlight">\(P(x)\)</span> calquera primitiva de <span class="math notranslate nohighlight">\(f(x)\)</span>, temos:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_a^b f(x) \, \mathrm{d}x = P(b)-P(a)
 \]</div>
 <p><em>Demostración:</em></p>
-<p>Sea</p>
+<p>Sexa</p>
 <div class="math notranslate nohighlight">
 \[
 F(x) = \int_a^x f(x) \, \mathrm{d}x
 \]</div>
-<p>Se cumple por el teorema anterior <span class="math notranslate nohighlight">\(F'(x)=f(x)\)</span> o que <span class="math notranslate nohighlight">\(F(x)\)</span> es una primitiva de <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
-<p>Dos primitivas difieren por una constante <span class="math notranslate nohighlight">\(C\)</span>:</p>
+<p>Polo teorema anterior <span class="math notranslate nohighlight">\(F'(x)=f(x)\)</span>, ou <span class="math notranslate nohighlight">\(F(x)\)</span> é unha primitiva de <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
+<p>Dúas primitivas difiren por unha constante <span class="math notranslate nohighlight">\(C\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 F(a) = P(a) +C = 0 \\
 F(b) = P(b) + C
 \end{split}\]</div>
-<p>luego:</p>
+<p>logo:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 C = - P(a) \\
@@ -673,6 +683,24 @@ F(b) = P(b) - P(a)
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tderivadas_min_max.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Mínimos e máximos de funcións escalares</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="tintegral_metodos.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Métodos de integración</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -691,13 +719,13 @@ F(b) = P(b) - P(a)
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales">Integrales</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrais">Integrais</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#particion">Partición</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#suma-de-riemann">Suma de Riemann</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#integral-de-riemman">Integral de Riemman</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primer-teorema-fundamental-del-calculo-integral">Primer teorema fundamental del cálculo integral</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segundo-teorema-fundamental-del-calculo-integral">Segundo teorema fundamental del cálculo integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#primeiro-teorema-fundamental-do-calculo-integral">Primeiro teorema fundamental do cálculo integral</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#segundo-teorema-fundamental-do-calculo-integral">Segundo teorema fundamental do cálculo integral</a></li>
 </ul>
 </li>
 </ul>
