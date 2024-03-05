@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_min_max';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integrais nunha dimensión" href="tintegral_1d.html" />
     <link rel="prev" title="Cambio de coordenadas e regra da cadea" href="tderivadas_coordenadas_cadea.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -172,6 +173,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadea.html">Cambio de coordenadas e regra da cadea</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Mínimos e máximos de funcións escalares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 </ul>
 
     </div>
@@ -459,7 +462,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Feb 27 23:14:15 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Mar  5 16:09:37 2024
 </pre></div>
 </div>
 </div>
@@ -912,7 +915,7 @@ H_{yx} &amp; H_{yy} \\
 <p>Imos debuxar o gradiente da función nun punto determinado, que como sabemos nos indica a dirección na que a función experimenta o máximo cambio.</p>
 <div class="math notranslate nohighlight">
 \[
-f(x, y) = x^2 - y^2 \, \Rightarrow \nabla f(x, y) = (2x, 2y)
+f(x, y) = x^2 - y^2 \, \Rightarrow \nabla f(x, y) = (2x,- 2y)
 \]</div>
 <p><em>Considera</em> primeiro o valor <span class="math notranslate nohighlight">\(t = 3 \pi/4\)</span>, que nos dá o punto <span class="math notranslate nohighlight">\(\left( -1/\sqrt{2}, 1/\sqrt{2} \right)\)</span>.</p>
 <p>Se quixeramos dirixirnos nunha dirección na que a función aumentase sen saír do círculo, só poderiamos movernos cara á esquerda (como se a pendiente tirase dun coche que só puidese moverse polo círculo), pero ata cando?</p>
@@ -998,9 +1001,9 @@ f(x, y) = x^2 - y^2 \, \Rightarrow \nabla f(x, y) = (2x, 2y)
 <p>Unha alternativa, válida neste caso pero complicada noutros, pode ser construir</p>
 <div class="math notranslate nohighlight">
 \[
-h(x) = f(x,y(x))= x^2-(1-x^2) = 1 - 2x^2
+h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 \]</div>
-<p>e búscar os puntos extremos de <span class="math notranslate nohighlight">\(h(x)\)</span>. Se o facemos, <span class="math notranslate nohighlight">\(h'(x)=-2x=0 \Rightarrow x=0\)</span>. O que nos da os puntos <span class="math notranslate nohighlight">\((0, 1)\)</span> e <span class="math notranslate nohighlight">\((0, -1)\)</span>. Se construímos <span class="math notranslate nohighlight">\(h(y)=f(y(x),x)\)</span> e a minimizamos chegamos aos outros dous: <span class="math notranslate nohighlight">\((-1, 0)\)</span> e <span class="math notranslate nohighlight">\((1, 0)\)</span>.</p>
+<p>e búscar os puntos extremos de <span class="math notranslate nohighlight">\(h(x)\)</span>. Se o facemos, <span class="math notranslate nohighlight">\(h'(x)=4x=0 \Rightarrow x=0\)</span>. O que nos da os puntos <span class="math notranslate nohighlight">\((0, 1)\)</span> e <span class="math notranslate nohighlight">\((0, -1)\)</span>. Se construímos <span class="math notranslate nohighlight">\(h(y)=f(y(x),x)\)</span> e a minimizamos chegamos aos outros dous: <span class="math notranslate nohighlight">\((-1, 0)\)</span> e <span class="math notranslate nohighlight">\((1, 0)\)</span>.</p>
 </section>
 </section>
 <section id="ainda-hai-mais">
@@ -1088,10 +1091,10 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 1 - 2x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  1.0135846229910064 b =  -0.024836382760009514
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  0.9816073166254264 b =  0.12201591864785263
 </pre></div>
 </div>
-<img alt="../_images/e4c17a29418c28b81d3361afc6a4b9c3cb7fc6b33a170902f875a1a8da0c2862.png" src="../_images/e4c17a29418c28b81d3361afc6a4b9c3cb7fc6b33a170902f875a1a8da0c2862.png" />
+<img alt="../_images/23492e58e56b45dfbf790e484fcffa861ee949063e5ffc16ee5b6fc8f4964c61.png" src="../_images/23492e58e56b45dfbf790e484fcffa861ee949063e5ffc16ee5b6fc8f4964c61.png" />
 </div>
 </div>
 <p>Na seguinte cela, debuxamos os conxuntos de nivel da función <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span>.</p>
@@ -1108,10 +1111,10 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 1 - 2x^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  0.9768798168345345
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  1.1621107188724236
 </pre></div>
 </div>
-<img alt="../_images/6328d149e384585ce8a5f778483511d9052f2884fbebc108cdb7b528d2efcc84.png" src="../_images/6328d149e384585ce8a5f778483511d9052f2884fbebc108cdb7b528d2efcc84.png" />
+<img alt="../_images/2566ca7f67a2e4a4a9ad60b42e9c6589ced75f0dac0f73dd0a68e0cb5eb17fe1.png" src="../_images/2566ca7f67a2e4a4a9ad60b42e9c6589ced75f0dac0f73dd0a68e0cb5eb17fe1.png" />
 </div>
 </div>
 </section>
@@ -1320,7 +1323,9 @@ autovector 2 : [-1.23300174e-05 -1.00000000e+00]
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  1.0954920606202636 -0.27386221675122946
-hessiana  [[-1.52129403e-01 -5.63252983e-06]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hessiana  [[-1.52129403e-01 -5.63252983e-06]
  [-5.63252983e-06 -6.08558504e-01]]
 autovalores [-0.1521294+0.j -0.6085585+0.j]
 autovector 1 : [ 1.00000000e+00 -1.23404266e-05]
@@ -1371,6 +1376,15 @@ autovector 2 : [1.23404266e-05 1.00000000e+00]
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Cambio de coordenadas e regra da cadea</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="tintegral_1d.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integrais nunha dimensión</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

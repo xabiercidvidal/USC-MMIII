@@ -15,3 +15,6 @@
 | Gradiente, matriz xacobiana, funcións diferenciables | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](notebooks/tderivadas_gradiante_xacobiana.ipynb) |
 | Cambio de coordenadas e regra da cadea | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_coordenadas_cadea.ipynb) |
 | Mínimos e máximos de funcións escalares | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_min_max.ipynb) |
+| Integrais nunha dimensión | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tintegral_1d.ipynb) |
+| Métodos de integración | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tintegral_metodos.ipynb) |
+
