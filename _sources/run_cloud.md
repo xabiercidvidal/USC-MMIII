@@ -17,4 +17,4 @@
 | Mínimos e máximos de funcións escalares | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_min_max.ipynb) |
 | Integrais nunha dimensión | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tintegral_1d.ipynb) |
 | Métodos de integración | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tintegral_metodos.ipynb) |
-
+| Métodos de integración | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tintegral_2d.ipynb) |

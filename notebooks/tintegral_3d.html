@@ -166,6 +166,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadea.html">Cambio de coordenadas e regra da cadea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos e máximos de funcións escalares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
 </ul>
 
     </div>
@@ -435,7 +443,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Tue Jan 30 15:24:07 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Fri Mar  8 16:40:00 2024
 </pre></div>
 </div>
 </div>
@@ -520,11 +528,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/ee392bd4f762762b51a74690188c734b3b9baf6a7b72f9b079adc9a0c8d046cc.png" src="../_images/ee392bd4f762762b51a74690188c734b3b9baf6a7b72f9b079adc9a0c8d046cc.png" />
+<img alt="../_images/1b729d20dec2dc12b6d047e00fc813263d3a1fde0b550f3c53f8ba20df655308.png" src="../_images/1b729d20dec2dc12b6d047e00fc813263d3a1fde0b550f3c53f8ba20df655308.png" />
+<img alt="../_images/4174b9b765a94498522424298714614dfe1368deb4e7f4934af308e0e2c83ad8.png" src="../_images/4174b9b765a94498522424298714614dfe1368deb4e7f4934af308e0e2c83ad8.png" />
+<img alt="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" src="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" />
+<img alt="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" src="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" />
 </div>
 </div>
 <p>Vamos a definir el anterior volumen como tipo I.</p>
@@ -540,7 +547,10 @@ El intervalo en <span class="math notranslate nohighlight">\(x\)</span> en <span
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/29f085a4042af3df8610db09218d66c568245d96ff897f3a61f6a31b2ca06467.png" src="../_images/29f085a4042af3df8610db09218d66c568245d96ff897f3a61f6a31b2ca06467.png" />
+<img alt="../_images/1b729d20dec2dc12b6d047e00fc813263d3a1fde0b550f3c53f8ba20df655308.png" src="../_images/1b729d20dec2dc12b6d047e00fc813263d3a1fde0b550f3c53f8ba20df655308.png" />
+<img alt="../_images/e97d7e3cc9a75566401c94e48c3ddf12d48a9ccd17f224572f3ee9b332587294.png" src="../_images/e97d7e3cc9a75566401c94e48c3ddf12d48a9ccd17f224572f3ee9b332587294.png" />
+<img alt="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" src="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" />
+<img alt="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" src="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" />
 </div>
 </div>
 <p>En la figura se muestra el segmento en <span class="math notranslate nohighlight">\(z\)</span> de integracción fijado un punto <span class="math notranslate nohighlight">\((x, y)\)</span>, que corresponde a <span class="math notranslate nohighlight">\([x^2 + y^2, 2].\)</span></p>
@@ -567,11 +577,11 @@ El intervalo en <span class="math notranslate nohighlight">\(x\)</span> en <span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/dfeaed60656f81a33c52d3648f545931fbd59f6b4f2494ce312f6db51082dda2.png" src="../_images/dfeaed60656f81a33c52d3648f545931fbd59f6b4f2494ce312f6db51082dda2.png" />
+<img alt="../_images/b0b60b251d39946861279a6a48cdef629110b15d9216009b1b78f066da28356c.png" src="../_images/b0b60b251d39946861279a6a48cdef629110b15d9216009b1b78f066da28356c.png" />
+<img alt="../_images/0e11e86293017685d4180a06ead678b3b07d6873061ec941eae22c73b427147e.png" src="../_images/0e11e86293017685d4180a06ead678b3b07d6873061ec941eae22c73b427147e.png" />
+<img alt="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" src="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" />
+<img alt="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" src="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" />
+<img alt="../_images/a02ae658edba4af2059ecee6d4e830a21e372edad58623698b0ab26deb743c9b.png" src="../_images/a02ae658edba4af2059ecee6d4e830a21e372edad58623698b0ab26deb743c9b.png" />
 </div>
 </div>
 <p>El volumen queda definido como:</p>
@@ -646,13 +656,12 @@ El intervalo en <span class="math notranslate nohighlight">\(x\)</span> en <span
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/7e6d96acac981d654de98233e80550cecd26f4435ab6d99827c3b0b7ae39ac41.png" src="../_images/7e6d96acac981d654de98233e80550cecd26f4435ab6d99827c3b0b7ae39ac41.png" />
+<img alt="../_images/1b729d20dec2dc12b6d047e00fc813263d3a1fde0b550f3c53f8ba20df655308.png" src="../_images/1b729d20dec2dc12b6d047e00fc813263d3a1fde0b550f3c53f8ba20df655308.png" />
+<img alt="../_images/4174b9b765a94498522424298714614dfe1368deb4e7f4934af308e0e2c83ad8.png" src="../_images/4174b9b765a94498522424298714614dfe1368deb4e7f4934af308e0e2c83ad8.png" />
+<img alt="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" src="../_images/cab71de33e0449f30acf4fa58bfef6bfe4a69853f5ce028d1a4bd9624d36eddf.png" />
+<img alt="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" src="../_images/7c62931129e49f56ae32ad93b0d295556c42ee5aef96a32b44e21bf65b9fa7e3.png" />
+<img alt="../_images/88a5464aa5d42226a4ffd78a3673f5ef9e6584602cbac3060dd3a6349899d41e.png" src="../_images/88a5464aa5d42226a4ffd78a3673f5ef9e6584602cbac3060dd3a6349899d41e.png" />
+<img alt="../_images/17676ce00af7badaabe78a04fe2278065c2ebac42d15d81e0cad305448c5fada.png" src="../_images/17676ce00af7badaabe78a04fe2278065c2ebac42d15d81e0cad305448c5fada.png" />
 </div>
 </div>
 <p>El volumen se puede redefinir como:</p>

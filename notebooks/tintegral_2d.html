@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Integrales en dos dimensiones &#8212; Métodos Matemáticos III - USC</title>
+    <title>Integrais en dúas dimensións &#8212; Métodos Matemáticos III - USC</title>
   
   
   
@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tintegral_2d';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Métodos de integración" href="tintegral_metodos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,10 +163,18 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadea.html">Cambio de coordenadas e regra da cadea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos e máximos de funcións escalares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Integrais en dúas dimensións</a></li>
 </ul>
 
     </div>
@@ -398,7 +407,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Integrales en dos dimensiones</h1>
+    <h1>Integrais en dúas dimensións</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -408,19 +417,19 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-tema">Estructura del tema</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recordatorio-de-la-suma-de-riemann">Recordatorio de la Suma De Riemann</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-do-tema">Estrutura do tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducion">Introdución</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recordatorio-da-suma-de-riemann">Recordatorio da suma de Riemann</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-2d">Integrales 2D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrais-2d">Integrais 2D</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini">Teorema de Fubini</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-cavalieri">Principio de Cavalieri.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-en-una-region-no-rectangular">Integración en una región no rectangular.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-jacobiano">Cambio de variables. Jacobiano</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-nunha-rexion-non-rectangular">Integración nunha rexión non rectangular.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-xacobiano">Cambio de variables. Xacobiano</a></li>
 </ul>
             </nav>
         </div>
@@ -432,21 +441,24 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="integrales-en-dos-dimensiones">
-<h1>Integrales en dos dimensiones<a class="headerlink" href="#integrales-en-dos-dimensiones" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="integrais-en-duas-dimensions">
+<h1>Integrais en dúas dimensións<a class="headerlink" href="#integrais-en-duas-dimensions" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Tue Jan 30 15:23:48 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Mar  8 16:39:23 2024
 </pre></div>
 </div>
 </div>
 </div>
+<p><em>Nota</em></p>
+<p>Para que este notebook funcione en colab, precisamos <a href = "https://www.dropbox.com/scl/fi/wwz2w43kqj0s38gm87roj/graph_utils.py?rlkey=rppkwu9tmbnnsojezzj69p1r0&dl=1"> graph_utils.py</a>. Podes descargalo premendo na ligazón, e subilo a colab:</p>
+<a class="reference internal image-reference" href="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1"><img alt="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1" class="align-center" src="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1" style="width: 200px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
@@ -465,81 +477,81 @@ document.write(`
 </div>
 </div>
 </div>
-<section id="estructura-del-tema">
-<h2>Estructura del tema<a class="headerlink" href="#estructura-del-tema" title="Permalink to this heading">#</a></h2>
+<section id="estrutura-do-tema">
+<h2>Estrutura do tema<a class="headerlink" href="#estrutura-do-tema" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Introducción</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=PJn_TxdpfnM&amp;feature=youtu.be">[&gt;]</a> Integral 2D</p></li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=SdQw3YZLoiw&amp;feature=youtu.be">[&gt;]</a> Teorema de Fubini</p>
+<li><p>Introdución</p></li>
+<li><p>Integral 2D</p></li>
+<li><p>Teorema de Fubini</p>
 <ul>
 <li><p>Principio de Cavalieri</p></li>
 </ul>
 </li>
-<li><p><a class="reference external" href="https://www.youtube.com/watch?v=ocexIJjzmkI">[&gt;]</a> Integrales en regiones no rectangulares</p></li>
-<li><p><a class="reference external" href="https://youtu.be/Q6AmxbCsPsI">[&gt;]</a> Cambio de variables. Jacobiano</p>
+<li><p>Integrais en rexións non rectangulares</p></li>
+<li><p>Cambio de variables. Xacobiano</p>
 <ul>
-<li><p><a class="reference external" href="https://youtu.be/FKZA-RReV-A">[&gt;]</a> ejemplo de cambio a polares</p></li>
+<li><p>Exemplo de cambio a polares</p></li>
 </ul>
 </li>
 </ul>
 </section>
-<section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
-<p>Extender el concepto de integral de Riemann en dos dimensiones</p>
-<p>El Teorema de Fubini: la integral no depende del orden de integración</p>
+<section id="obxectivos">
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<p>Ampliar o concepto de integral de Riemann en dúas dimensións</p>
+<p>Teorema de Fubini: a integral non depende da orde de integración</p>
 <p>Principio de Cavilieri.</p>
-<p>Integrales en regiones no rectangulares.</p>
+<p>Integrais en rexións non rectangulares.</p>
 <p>Cambio de variables, polares.</p>
-<p>Mostrar algunos ejemplos sencillos</p>
+<p>Amosar algúns exemplos sinxelos</p>
 </section>
-<section id="introduccion">
-<h2>Introducción<a class="headerlink" href="#introduccion" title="Permalink to this heading">#</a></h2>
-<section id="recordatorio-de-la-suma-de-riemann">
-<h3>Recordatorio de la Suma De Riemann<a class="headerlink" href="#recordatorio-de-la-suma-de-riemann" title="Permalink to this heading">#</a></h3>
-<p>Para calcular el <em>área</em> bajo una curva de una función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, y el eje <span class="math notranslate nohighlight">\(y=0\)</span> en un intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, habíamos introducido la integral de una dimensión.</p>
-<p>Que la defininmos a partir de la <strong>suma de Riemann</strong>. Dada la partición de un intervalo , y una función, acotada y continua en dicho intervalo, dábamos la suma de Riemann como:</p>
+<section id="introducion">
+<h2>Introdución<a class="headerlink" href="#introducion" title="Permalink to this heading">#</a></h2>
+<section id="recordatorio-da-suma-de-riemann">
+<h3>Recordatorio da suma de Riemann<a class="headerlink" href="#recordatorio-da-suma-de-riemann" title="Permalink to this heading">#</a></h3>
+<p>Para calcular a <em>área</em> baixo unha curva dunha función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, e o eixe <span class="math notranslate nohighlight">\(y=0\)</span> nun intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, introducimos a integral unidimensional.</p>
+<p>Definímola a partir da <strong>suma de Riemann</strong>. Dada a partición dun intervalo, e dunha función, acoutada e continua no devandito intervalo, damos a suma de Riemann como:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{S}(f, \mathcal{P}) = \sum_{i=1, n} f(x'_i) (x_i - x_{i-1})  
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(x'_i\)</span> es un valor aleatorio entre los valores <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span></p>
-<p>También definíamos la suma superior de Riemann como:</p>
+<p>onde <span class="math notranslate nohighlight">\(x'_i\)</span> é un valor aleatorio entre os valores <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span></p>
+<p>Tamén definimos a suma de Riemann superior como:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{U}(f, \mathcal{P}) = \sum_{i=1, n} f(x'_i) (x_i - x_{i-1})  
 \]</div>
-<p>donde ahora <span class="math notranslate nohighlight">\(x'_i\)</span> es el valor del intervalo <span class="math notranslate nohighlight">\([x_i, x_{i-1}]\)</span> donde la función <span class="math notranslate nohighlight">\(f(x)\)</span> es <em>máxima</em>.</p>
-<p>También definíamos la suma inferior de Riemann como:</p>
+<p>onde agora <span class="math notranslate nohighlight">\(x'_i\)</span> é o valor do intervalo <span class="math notranslate nohighlight">\([x_i, x_{i-1}]\)</span> onde a función <span class="math notranslate nohighlight">\(f(x)\)</span> é <em>máxima</em> .</p>
+<p>Tamén definimos a suma inferior de Riemann como:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{L}(f, \mathcal{P}) = \sum_{i=1, n} f(x'_i) (x_i - x_{i-1})  
 \]</div>
-<p>donde ahora <span class="math notranslate nohighlight">\(x'_i\)</span> es el valor del intervalo <span class="math notranslate nohighlight">\([x_i, x_{i-1}]\)</span> donde la función <span class="math notranslate nohighlight">\(f(x)\)</span> es <em>mínima</em>.</p>
-<p>La función tenía integral en el intervalo <span class="math notranslate nohighlight">\([a, b]\)</span> si para particiones cada ver más finas, las tres sumas de Riemann convergían a un determinado valor, la integral.</p>
+<p>onde agora <span class="math notranslate nohighlight">\(x'_i\)</span> é o valor do intervalo <span class="math notranslate nohighlight">\([x_i, x_{i-1}]\)</span> onde a función <span class="math notranslate nohighlight">\(f(x)\)</span> é <em>mínima</em> .</p>
+<p>A función tiña unha integral no intervalo <span class="math notranslate nohighlight">\([a, b]\)</span> se para particións cada vez máis finas, as tres sumas de Riemann converxían a un determinado valor, a integral.</p>
 <div class="math notranslate nohighlight">
 \[
-\int_a^b \, f(x) \, \mathrm{d}x
-\]</div>
-<p>Recordad que siempre se cumple:</p>
+ \int_a^b \, f(x) \, \mathrm{d}x
+ \]</div>
+<p>Lembra que sempre é verdade:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{L}(f, \mathcal{P}) \le \mathcal{S}(f, \mathcal{P}) \le \mathcal{U}(f, \mathcal{P}) 
-\]</div>
+ \mathcal{L}(f, \mathcal{P}) \le \mathcal{S}(f, \mathcal{P}) \le \mathcal{U}(f, \mathcal{P})
+ \]</div>
 </section>
 </section>
-<section id="integrales-2d">
-<h2>Integrales 2D<a class="headerlink" href="#integrales-2d" title="Permalink to this heading">#</a></h2>
-<p>Sabemos el área entre su gráfica de una función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, en un intervalo, <span class="math notranslate nohighlight">\([a, b], \)</span>y el eje <span class="math notranslate nohighlight">\(x\)</span>, corresponde a su integral definida:</p>
+<section id="integrais-2d">
+<h2>Integrais 2D<a class="headerlink" href="#integrais-2d" title="Permalink to this heading">#</a></h2>
+<p>Coñecemos a área entre a súa gráfica dunha función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, nun intervalo, <span class="math notranslate nohighlight">\([a, b], \)</span>e o eixe <span class="math notranslate nohighlight">\(x\)</span>, corresponde á súa integral definida:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{A} = \int_a^b \, f(x) \,\mathrm{d}x  
-\]</div>
-<p>El volumen bajo la gráfica de una función escalar, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, definida en una región, <span class="math notranslate nohighlight">\([a, b]\times [c, d]\)</span> y el plano <span class="math notranslate nohighlight">\((x, y)\)</span>, correspondonderá al la integral definida en dos dimensiones:</p>
+ \mathcal{A} = \int_a^b \, f(x) \,\mathrm{d}x
+ \]</div>
+<p>O volume baixo a gráfica dunha función escalar, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, definida nunha rexión, <span class="math notranslate nohighlight">\([a, b]\times [c, d]\)</span> e o plano <span class="math notranslate nohighlight">\((x, y)\)</span>, corresponden á integral definida en dúas dimensións:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathcal{V} = \int_a^b \int_c^d \, f(x, y) \,\mathrm{d}x \mathrm{d} y
-\]</div>
-<p>Nos preguntamos ahora cuál es volumen bajo la gráfica de la función <span class="math notranslate nohighlight">\(f(x, y)\)</span> y el plano <span class="math notranslate nohighlight">\((x, y)\)</span>. Sea <span class="math notranslate nohighlight">\(f(x, y) = 2 - x^2 - y^2\)</span> y la base dada por <span class="math notranslate nohighlight">\([-1, 1] \times [-1, 1]\)</span></p>
+ \mathcal{V} = \int_a^b \int_c^d \, f(x, y) \,\mathrm{d}x \mathrm{d} y
+ \]</div>
+<p>Preguntámonos agora cal é o volume baixo a gráfica da función <span class="math notranslate nohighlight">\(f(x, y)\)</span> e do plano <span class="math notranslate nohighlight">\((x, y)\)</span>. Sexa <span class="math notranslate nohighlight">\(f(x, y) = 2 - x^2 - y^2\)</span> e a base dada por <span class="math notranslate nohighlight">\([-1, 1] \times [-1, 1]\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">2</span><span class="o">-</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
@@ -548,11 +560,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:70: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/af5d8250d966f361d2e2568b629184cc73f2cef5806e93a7de839aaec2a31c8d.png" src="../_images/af5d8250d966f361d2e2568b629184cc73f2cef5806e93a7de839aaec2a31c8d.png" />
+<img alt="../_images/ed8489e609906baa550abb091054e868e3a09c3711795e539a4ec2d57cefcc49.png" src="../_images/ed8489e609906baa550abb091054e868e3a09c3711795e539a4ec2d57cefcc49.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -562,24 +570,20 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:102: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
 <img alt="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" src="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" />
 </div>
 </div>
-<p>Podemos extender la <strong>suma de Riemann</strong> a la función escalar de dos dimensiones, <span class="math notranslate nohighlight">\(f(x, y)\)</span> en la región <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, a partir de la partición de los intervalos <span class="math notranslate nohighlight">\([a, b], \,[c, d]\)</span></p>
+<p>Podemos estender a <strong>suma de Riemann</strong> á función escalar bidimensional, <span class="math notranslate nohighlight">\(f(x, y)\)</span> na rexión <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, a partir da partición dos intervalos <span class="math notranslate nohighlight">\([ a, b], \,[c, d]\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{S}(f, \mathcal{P}) = \sum_{i=1}^n \sum_{j = 1}^m \, f(x'_i, y'_j) \, \Delta x_i \, \Delta y_j 
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\((x'_i, y'_j)\)</span> es un valor aleatorio entre los valores <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span> e <span class="math notranslate nohighlight">\([y_{j-1}, y_{j}]\)</span>, y <span class="math notranslate nohighlight">\(\Delta x_i = x_i - x_{i-1}, \, \Delta y_j = y_j - y_{j-1}\)</span></p>
-<p>Igualmente definimos la <strong>suma de Riemann superior e inferior</strong>, y definimos la integral si para particiones cada vez más finas, las sumas de Riemann convergen a un determinado valor, la integral:</p>
+<p>onde <span class="math notranslate nohighlight">\((x'_i, y'_j)\)</span> é un valor aleatorio entre os valores <span class="math notranslate nohighlight">\([x_{i-1}, x_{i}]\)</span> e <span class="math notranslate nohighlight">\([y_{j-1}, y_{j} ]\)</span> , e <span class="math notranslate nohighlight">\(\Delta x_i = x_i - x_{i-1}, \, \Delta y_j = y_j - y_{j-1}\)</span></p>
+<p>Así mesmo, definimos a <strong>suma de Riemann superior e inferior</strong> , e definimos a integral se para particións cada vez máis finas, as sumas de Riemann converxen a un determinado valor, a integral:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_a^b \int_c^d \, f(x, y) \, \mathrm{d}x \mathrm{d}y
-\]</div>
+ \int_a^b \int_c^d \, f(x, y) \, \mathrm{d}x \mathrm{d}y
+ \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">riemann_sum</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
@@ -593,7 +597,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>Notar que la notación de la integral recuerda la definición de la suma de Riemann.</p>
+<p>Nótese que a notación da integral lembra a definición da suma de Riemann.</p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{S}(f, \mathcal{P}) = \sum_{i=1}^n \sum_{j = 1}^m \, f(x'_i, y'_j) \; (x_i - x_{i-1}) \; (y_j - y_{j-1}) 
@@ -606,11 +610,11 @@ document.write(`
 \[
 \sum \to \int, \;\;\; \Delta x_i = x_i - x_{i-1} \to \mathrm{d}x, \;\;\; \Delta y_j = y_j - y_{j-1} \to \mathrm{d}y,
 \]</div>
-<p>Notar que las variables de integración son <em>mudas</em>, las únicas variables son los límites de integración <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>.</p>
+<p>Hai que ter en conta que as variables de integración son <em>mudas</em>, as únicas variables son os límites de integración <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>.</p>
 </section>
 <section id="teorema-de-fubini">
 <h2>Teorema de Fubini<a class="headerlink" href="#teorema-de-fubini" title="Permalink to this heading">#</a></h2>
-<p>Nos dice que si una función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, es integrable en una región <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, podemos integral en el orden que consideremos.</p>
+<p>Indícanos que se unha función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, é integrable nunha rexión <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, podemos integrar na orde que consideremos.</p>
 <div class="math notranslate nohighlight">
 \[
 \int_a^b \int_c^d f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_a^b \left[ \int_c^d \, f(x, y) \, \mathrm{d}y \right] \mathrm{d}x = \int_c^d \left[ \int_a^b \, f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
@@ -625,32 +629,22 @@ document.write(`
 <img alt="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" src="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" />
 </div>
 </div>
-<p>Podemos darnos cuenta que el valor entre los corchetes corresponde al área para un determinado valor fijado de <span class="math notranslate nohighlight">\(x\)</span> o de <span class="math notranslate nohighlight">\(y\)</span></p>
+<p>Podemos ver que o valor entre corchetes corresponde á área para un determinado valor fixo de <span class="math notranslate nohighlight">\(x\)</span> ou <span class="math notranslate nohighlight">\(y\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \mathcal{A}(x) =  \int_c^d \, f(x, y) \, \mathrm{d}y , \;\;\; \mathcal{A'}(y)=  \int_a^b \, f(x, y) \, \mathrm{d}x 
 \]</div>
-<p>Así:</p>
+<p>Entón:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_a^b \int_c^d f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_a^b \mathcal{A}(x) \, \mathrm{d}x = \int_c^d \mathcal{A'}(y) \, \mathrm{d}y
 \]</div>
-<p>Esto es:</p>
+<p>Isto é:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_a^b \int_c^d f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_a^b \left[ \int_c^d \, f(x, y) \, \mathrm{d}y \right] \mathrm{d}x = \int_c^d \left[ \int_a^b \, f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
 \]</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">bars3d</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="n">acolor</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/a30832ee57f48c832a0601b26d1617624611a90f6e3e4a85823098ba2b757412.png" src="../_images/a30832ee57f48c832a0601b26d1617624611a90f6e3e4a85823098ba2b757412.png" />
-</div>
-</div>
-<p><em>Ejercicio</em>: Integra <span class="math notranslate nohighlight">\(f(x, y) = x\)</span> en el cuadrado <span class="math notranslate nohighlight">\([0, 1] \times [0, 1]\)</span>.</p>
+<p><em>Exercicio</em> : Integra <span class="math notranslate nohighlight">\(f(x, y) = x\)</span> no cadrado <span class="math notranslate nohighlight">\([0, 1] \times [0, 1]\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span>
@@ -662,7 +656,7 @@ document.write(`
 <img alt="../_images/b739fe965dc4187e7099d2e880f87306c90758c7fab98b4addffaaebef1219d2.png" src="../_images/b739fe965dc4187e7099d2e880f87306c90758c7fab98b4addffaaebef1219d2.png" />
 </div>
 </div>
-<p><em>Ejercicio</em>: Integra la función, <span class="math notranslate nohighlight">\(f(x, y) = y^2 \sin(x)\)</span> en la región, <span class="math notranslate nohighlight">\([0, \pi] \times [0, \pi]\)</span></p>
+<p><em>Exercicio</em> : Integra a función <span class="math notranslate nohighlight">\(f(x, y) = y^2 \sin(x)\)</span> na rexión <span class="math notranslate nohighlight">\([0, \pi] \times [0, \pi]\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span> <span class="o">*</span> <span class="n">y</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -676,43 +670,52 @@ document.write(`
 </div>
 <section id="principio-de-cavalieri">
 <h3>Principio de Cavalieri.<a class="headerlink" href="#principio-de-cavalieri" title="Permalink to this heading">#</a></h3>
-<p>Para cuerpos de revolución, obtenidos de girar una figura alrededor de un eje.</p>
-<p><em>Ejercicio</em>: Calcula el volumen de un cono formado al girar el triángulo que tiene dos lados iguales, como en la figura.</p>
-<p><em>Explora</em>: Considera que para un determinado <span class="math notranslate nohighlight">\(z\)</span>, el radio máximo es <span class="math notranslate nohighlight">\(z^2\)</span>, ¿Cómo quedaría la figura?</p>
+<p>Para corpos de revolución, obtidos facendo xirar unha figura arredor dun eixe.</p>
+<p><em>Exercicio</em> : Calcula o volume dun cono formado facendo xirar o triángulo que ten dous lados iguais, como na figura.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span> 
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">);</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">);</span>
 <span class="n">phi</span> <span class="o">=</span> <span class="mf">0.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span>
 <span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:298: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
 <img alt="../_images/930c85bbbb9bf7eb6c5af544c13375c9f587d116d7354dec466caaa97fcf88d7.png" src="../_images/930c85bbbb9bf7eb6c5af544c13375c9f587d116d7354dec466caaa97fcf88d7.png" />
 </div>
 </div>
+<p><em>Explorar</em> : Considera que para un determinado <span class="math notranslate nohighlight">\(z\)</span>, o raio máximo é <span class="math notranslate nohighlight">\(z^2\)</span>, como sería a figura?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">100</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">2.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span><span class="o">*</span><span class="n">z</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span><span class="o">*</span><span class="n">z</span>  <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span> 
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">);</span>
+<span class="n">phi</span> <span class="o">=</span> <span class="mf">0.</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mf">2.</span>
+<span class="n">trange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">xfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">yfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="mf">1.</span><span class="p">,</span><span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="mf">0.</span><span class="o">*</span><span class="n">t</span>        <span class="p">,</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">zfun</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">phi</span><span class="p">),</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">]);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f5d7774f73812cc5489095a29c5a4a84040564b1d241404b7f52f8ea4b365521.png" src="../_images/f5d7774f73812cc5489095a29c5a4a84040564b1d241404b7f52f8ea4b365521.png" />
+</div>
+</div>
 </section>
 </section>
-<section id="integracion-en-una-region-no-rectangular">
-<h2>Integración en una región no rectangular.<a class="headerlink" href="#integracion-en-una-region-no-rectangular" title="Permalink to this heading">#</a></h2>
-<p>Considera que queremos integrar una función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, en la región, <span class="math notranslate nohighlight">\(R\)</span>, no necesariamente un rectángulo, por ejemplo en el siguiente triángulo:</p>
+<section id="integracion-nunha-rexion-non-rectangular">
+<h2>Integración nunha rexión non rectangular.<a class="headerlink" href="#integracion-nunha-rexion-non-rectangular" title="Permalink to this heading">#</a></h2>
+<p>Considera que queremos integrar unha función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, na rexión, <span class="math notranslate nohighlight">\(R\)</span>, non necesariamente un rectángulo, por exemplo no seguinte triángulo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fx</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
@@ -729,17 +732,17 @@ document.write(`
 <img alt="../_images/c211077a28bda2c2fdfda04d36f63c2b3d49432bc9eb1c7e94836f102f58ba46.png" src="../_images/c211077a28bda2c2fdfda04d36f63c2b3d49432bc9eb1c7e94836f102f58ba46.png" />
 </div>
 </div>
-<p>Podemos definir la región como, los puntos que cumplen</p>
+<p>Podemos definir a rexión como os puntos que cumpren</p>
 <div class="math notranslate nohighlight">
 \[
-\{ 0 \le x \le 1, \;\; 0 \le y \le x \}
-\]</div>
-<p>Y la integral quedaría:</p>
+ { 0 \le x \le 1, \;\; 0 \le y \le x }
+ \]</div>
+<p>E a integral sería:</p>
 <div class="math notranslate nohighlight">
 \[
-\int \int_{R} f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_0^1 \left[ \int_0^x f(x, y) \, \mathrm{d}y \right] \mathrm{d}x
-\]</div>
-<p>Las dos variables ya no son independientes, con esta definición la variable <span class="math notranslate nohighlight">\(y\)</span> depende de la <span class="math notranslate nohighlight">\(x\)</span>. Fijado un valor de <span class="math notranslate nohighlight">\(x\)</span>, el intervalo de integración para la <span class="math notranslate nohighlight">\(y\)</span> es <span class="math notranslate nohighlight">\([0, x]\)</span>.</p>
+ \int \int_{R} f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_0^1 \left[ \int_0^xf(x, y) \, \mathrm{d }y \right] \mathrm{d}x
+ \]</div>
+<p>As dúas variables xa non son independentes, con esta definición a variable <span class="math notranslate nohighlight">\(y\)</span> depende do <span class="math notranslate nohighlight">\(x\)</span>. Dado un valor de <span class="math notranslate nohighlight">\(x\)</span>, o intervalo de integración para <span class="math notranslate nohighlight">\(y\)</span> é <span class="math notranslate nohighlight">\([0, x]\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fx</span>  <span class="o">=</span> <span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">t</span>
@@ -756,12 +759,12 @@ document.write(`
 <img alt="../_images/8f11236a7167f1c676b69d66ff6adb7f3ce1b712f9d71db0a928503dca330e72.png" src="../_images/8f11236a7167f1c676b69d66ff6adb7f3ce1b712f9d71db0a928503dca330e72.png" />
 </div>
 </div>
-<p>O en función de <span class="math notranslate nohighlight">\(y\)</span></p>
+<p>Ou en función de <span class="math notranslate nohighlight">\(y\)</span></p>
 <div class="math notranslate nohighlight">
 \[
-\{ 0 \le y \le 1, \;\; y \le x \le 1 \}
-\]</div>
-<p>La integral queda:</p>
+ { 0 \le e \le 1, \;\; y \le x \le 1 }
+ \]</div>
+<p>A integral queda:</p>
 <div class="math notranslate nohighlight">
 \[
 \int \int_{R} f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_0^1 \left[ \int_{y}^1 f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
@@ -781,7 +784,7 @@ document.write(`
 <img alt="../_images/dec16d6b3871420382986473845841cc650a3c5d484b92e1a3deaa6ba389a04a.png" src="../_images/dec16d6b3871420382986473845841cc650a3c5d484b92e1a3deaa6ba389a04a.png" />
 </div>
 </div>
-<p><em>Ejercicio</em>: Calcula la integral de <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> en el triángulo anterior. ¿A qué corresponde?</p>
+<p><em>Exercicio</em> : Calcula a integral de <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> no triángulo anterior. A que corresponde?</p>
 <p>de tipo I:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -792,40 +795,40 @@ document.write(`
 \[
 \int_0^1 \left[ \int_y^1 \, \mathrm{d}x \right] \mathrm{d}y = \int_0^1 \left. x \right|_y^1 \mathrm{d}y  = \int_0^1 (1-y) \, \mathrm{d}y  = \left. \left( y - \frac{y^2}{2} \right) \right|_0^1 = \frac{1}{2}
 \]</div>
-<p>En general si queremos integral la función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, en una región <span class="math notranslate nohighlight">\(R\)</span>, primero debemos definirla</p>
-<p>de tipo I:</p>
+<p>En xeral, se queremos integrar a función <span class="math notranslate nohighlight">\(f(x, y)\)</span> nunha rexión <span class="math notranslate nohighlight">\(R\)</span>, primeiro debemos definila.</p>
+<p>tipo I:</p>
 <div class="math notranslate nohighlight">
 \[
 \{ a \le x \le b, \;\; \phi_0(x) \le y \le \phi_1(x) \}
 \]</div>
-<p>Donde <span class="math notranslate nohighlight">\(\phi_0 (x)\)</span> y <span class="math notranslate nohighlight">\(\phi_1(x)\)</span> son dos funciones reales que para un valor de <span class="math notranslate nohighlight">\(x\)</span> dan los extremos del intervalo en los que integramos <span class="math notranslate nohighlight">\(y\)</span>.</p>
-<p>o de tipo II:</p>
+<p>Onde <span class="math notranslate nohighlight">\(\phi_0 (x)\)</span> e <span class="math notranslate nohighlight">\(\phi_1(x)\)</span> son dúas funcións reais que para un valor de <span class="math notranslate nohighlight">\(x\)</span> dan os extremos do intervalo no que integramos <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p>ou tipo II:</p>
 <div class="math notranslate nohighlight">
 \[
-\{ c \le y \le d, \;\; \xi_0(y) \le x \le \xi_1(y) \}
-\]</div>
-<p>Algunas regiones admiten los dos tipos de definiciones.</p>
-<p>Si la región, <span class="math notranslate nohighlight">\(R\)</span>, es de tipo I, la integral queda:</p>
+ { c \le y \le d, \;\; \xi_0(y) \le x \le \xi_1(y) }
+ \]</div>
+<p>Algunhas rexións admiten ambos tipos de definicións.</p>
+<p>Se a rexión, <span class="math notranslate nohighlight">\(R\)</span>, é de tipo I, a integral é:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_R f(x, y) \, \mathrm{d}x \mathrm{d} y = \int_a^b \left[ \int_{\phi_0(x)}^{\phi_1(x)} f(x, y) \, \mathrm{d}y \right] \mathrm{d}x
 \]</div>
-<p>Mientras que si es de tipo II:</p>
+<p>Mentres que se é tipo II:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_R f(x, y) \, \mathrm{d}x \mathrm{d} y = \int_c^d \left[ \int_{\xi_0(y)}^{\xi_1(y)} f(x, y) \, \mathrm{d}x \right] \mathrm{d}y
 \]</div>
-<p>En el ejemplo anterior del triángulo, definido como tipo I:</p>
+<p>No exemplo anterior do triángulo, definido como tipo I:</p>
 <div class="math notranslate nohighlight">
 \[
-\phi_0(x) = 0, \;\; \phi_1(x) = x
-\]</div>
+ \phi_0(x) = 0, \;\; \phi_1(x) = x
+ \]</div>
 <p>definido como tipo II:</p>
 <div class="math notranslate nohighlight">
 \[
-\xi_0(y) = y, \;\; \xi_1(y) = 1
-\]</div>
-<p><em>Ejercicio</em>: Calcula la integral <span class="math notranslate nohighlight">\(f(x, y) = y \)</span>, en el triángulo, <span class="math notranslate nohighlight">\(\{0 \le x \le 1,  \; 0 \le y \le x \}\)</span>.</p>
+ \xi_0(y) = y, \;\; \xi_1(y) = 1
+ \]</div>
+<p><em>Exercicio</em> : Calcula a integral <span class="math notranslate nohighlight">\(f(x, y) = y \)</span>, no triángulo, <span class="math notranslate nohighlight">\({0 \le x \le 1, \; 0 \le y \le x }\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span>
@@ -835,15 +838,11 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:70: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/e2516a3fd6998f96505b5c7d70b1224fbce62fb0abf5fba78c2bd9f884f5a129.png" src="../_images/e2516a3fd6998f96505b5c7d70b1224fbce62fb0abf5fba78c2bd9f884f5a129.png" />
+<img alt="../_images/67a1b0b8227187ba1b21fb2a0ddbcc1736daceaec9c13a4ce5e6cc4e39ff6938.png" src="../_images/67a1b0b8227187ba1b21fb2a0ddbcc1736daceaec9c13a4ce5e6cc4e39ff6938.png" />
 </div>
 </div>
-<p><em>Ejercicio</em></p>
-<p>Define la región dada por el cuarto del disco de radio <span class="math notranslate nohighlight">\(a\)</span> en el primer cuadrante.</p>
+<p><em>Exercicio</em></p>
+<p>Define a rexión dada polo cuarto do disco de raio <span class="math notranslate nohighlight">\(a\)</span> no primeiro cuadrante.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>      <span class="o">=</span> <span class="mf">2.</span>
@@ -858,21 +857,21 @@ document.write(`
 <img alt="../_images/77b3d71626b76b5b7a66512056766aa981ea421077157ad3008e6990a544d744.png" src="../_images/77b3d71626b76b5b7a66512056766aa981ea421077157ad3008e6990a544d744.png" />
 </div>
 </div>
-<p>De tipo I, la región se define como:</p>
+<p>Tipo I, a rexión defínese como:</p>
 <div class="math notranslate nohighlight">
 \[
 \{ 0 \le x \le a, \;\; 0 \le y \le \sqrt{a^2 - x^2} \}
 \]</div>
-<p>y de tipo II:</p>
+<p>e tipo II:</p>
 <div class="math notranslate nohighlight">
 \[
 \{ 0 \le y \le a, \;\; 0 \le x \le \sqrt{a^2 - y^2} \}
 \]</div>
-<p>Si queremos calcular la integral de la función, <span class="math notranslate nohighlight">\(f(x, y) = \sqrt{a^2 - y^2}\)</span>, es mas conveniente definir la región de tipo II.</p>
+<p>Se quixesemos calcular a integral da función, <span class="math notranslate nohighlight">\(f(x, y) = \sqrt{a^2 - y^2}\)</span>, é máis conveniente definir a rexión de tipo II.</p>
 <div class="math notranslate nohighlight">
 \[
-\int \int_{R} \sqrt{a^2 - y^2} \mathrm{d}x\mathrm{d} y = \int_0^a \left[ \int_0^{\sqrt{a^2-y^2}} \sqrt{a^2 - y^2} \mathrm{d}x \right] \mathrm{d}y
-\]</div>
+ \int \int_{R} \sqrt{a^2 - y^2} \mathrm{d}x\mathrm{d} y = \int_0^a \left[ \int_0^{\sqrt{a^2-y ^2}} \sqrt{a^2 - y^2} \mathrm{d}x \right] \mathrm{d}y
+ \]</div>
 <div class="math notranslate nohighlight">
 \[
 \int_0^a \left. \sqrt{a^2 - y^2} \, x  \right|_0^{\sqrt{a^2-y^2}} \mathrm{d}y = 
@@ -889,21 +888,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:70: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/5a4f4b30cbdd99fdee1ac7c4365055eb2eec78283c043afd021f8dfb26118fba.png" src="../_images/5a4f4b30cbdd99fdee1ac7c4365055eb2eec78283c043afd021f8dfb26118fba.png" />
+<img alt="../_images/d9f6388f3ac1ae23f9d3fb9f00590df56832bd65c2eec5667f2bdb5a7804a5dd.png" src="../_images/d9f6388f3ac1ae23f9d3fb9f00590df56832bd65c2eec5667f2bdb5a7804a5dd.png" />
 </div>
 </div>
 </section>
-<section id="cambio-de-variables-jacobiano">
-<h2>Cambio de variables. Jacobiano<a class="headerlink" href="#cambio-de-variables-jacobiano" title="Permalink to this heading">#</a></h2>
-<p>En el caso anterior puede ser más conveniente realizar la integral en coordenadas polares. ¿Cómo se integra tras cambiar de coordenadas?</p>
-<p>Observa en las figuras siguientes como la región de una sección del anillo de radio <span class="math notranslate nohighlight">\([0.5, 1]\)</span> y ángulo <span class="math notranslate nohighlight">\([0, \pi/2]\)</span> es una región rectangular en <span class="math notranslate nohighlight">\((r, \phi)\)</span>.</p>
-<p>Sin embargo las particiones rectángulares en <span class="math notranslate nohighlight">\((r, \phi)\)</span> se transforman en polígonos en el plano <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
-<p>Para la integrar necesitamos calcular el volumen de los prismas de la summa de Riemann cuya base son esos polígonos (que al hacer las particiones más pequeñas se convierten el paralelogramos), cuya área viene dada por los dos vectores que definen sus lados.</p>
-<p>En las siguientes celdas te mostramos como se transforman los vectores en las particiones al hacer el cambio de coordenadas.</p>
+<section id="cambio-de-variables-xacobiano">
+<h2>Cambio de variables. Xacobiano<a class="headerlink" href="#cambio-de-variables-xacobiano" title="Permalink to this heading">#</a></h2>
+<p>No caso anterior pode ser máis conveniente realizar a integral en coordenadas polares. Como se integra despois de cambiar as coordenadas?</p>
+<p>Observa nas seguintes figuras como a rexión dunha sección do anel de raio <span class="math notranslate nohighlight">\([0,5, 1]\)</span> e ángulo <span class="math notranslate nohighlight">\([0, \pi/2]\)</span> é unha rexión rectangular en <span class="math notranslate nohighlight">\((r, \phi)\)</span>.</p>
+<p>Non obstante, as particións rectangulares en <span class="math notranslate nohighlight">\((r, \phi)\)</span> transfórmanse en polígonos no plano <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
+<p>Para integrar cómpre calcular o volume dos prismas da summa de Riemann que teñen de base aqueles polígonos (que ao facer as particións máis pequenas se converten en paralelogramos), cunha área que vén dada polos dous vectores que definen os seus lados.</p>
+<p>Nas seguintes celas mostramos como se transforman os vectores nas particións ao cambiar as coordenadas.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
@@ -947,56 +942,56 @@ document.write(`
 <img alt="../_images/26dae34a8eb27b465ac4b62c3ee6db4f2435e71d5b2e4a8156b32761123545b5.png" src="../_images/26dae34a8eb27b465ac4b62c3ee6db4f2435e71d5b2e4a8156b32761123545b5.png" />
 </div>
 </div>
-<p>El área de cada uno de las regiones en el plano <span class="math notranslate nohighlight">\((x, y)\)</span> viene dado por el producto vectorial de los vectores de sus lados.</p>
-<p>Consideremos un cambio de variables <span class="math notranslate nohighlight">\((u, v) \to (x, y)\)</span>. El vector entre <span class="math notranslate nohighlight">\((u_0, v_0)\)</span> y <span class="math notranslate nohighlight">\((u_0 + \Delta u, v_0)\)</span> - uno de los lados de los rectángulos en <span class="math notranslate nohighlight">\((u, v)\)</span>-, se transforma en el vector similar que corresponde a uno de los lados del polígono en <span class="math notranslate nohighlight">\((x,y)\)</span>:</p>
+<p>A área de cada unha das rexións do plano <span class="math notranslate nohighlight">\((x, y)\)</span> vén dada polo produto vectorial dos vectores dos seus lados.</p>
+<p>Consideremos un cambio de variables <span class="math notranslate nohighlight">\((u, v) \to (x, y)\)</span>. O vector entre <span class="math notranslate nohighlight">\((u_0, v_0)\)</span> e <span class="math notranslate nohighlight">\((u_0 + \Delta u, v_0)\)</span> - un dos lados dos rectángulos en <span class="math notranslate nohighlight">\((u, v)\)</span> -, transfórmase no vector semellante que corresponde a un dos lados do polígono en <span class="math notranslate nohighlight">\((x,y)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
-\left (x(u_0+\Delta u, v_0) - x(u_0, v_0), \;\; y(u_0+\Delta u, v_0) - y(u_0, v_0)\right)
-\]</div>
-<p>Y al ser el cambio diferenciable:</p>
+ \left (x(u_0+\Delta u, v_0) - x(u_0, v_0), \;\; y(u_0+\Delta u, v_0) - y(u_0, v_0)\right)
+ \]</div>
+<p>E como o cambio é diferenciable:</p>
 <div class="math notranslate nohighlight">
 \[
 \left(\frac{\partial x}{\partial u}(u_0, v_0) \, \Delta u, \;\; \frac{\partial y}{\partial u} (u_0, v_0) \, \Delta u \right)
 \]</div>
-<p>De igual forma, el vector <span class="math notranslate nohighlight">\((u_0, v_0 + \Delta v) - (u_0, v_0)\)</span>, el otro lado del rectángulo en <span class="math notranslate nohighlight">\((u, v)\)</span>, se transforma en el vector, el otro lado en <span class="math notranslate nohighlight">\((x, y)\)</span>:</p>
+<p>Do mesmo xeito, o vector <span class="math notranslate nohighlight">\((u_0, v_0 + \Delta v) - (u_0, v_0)\)</span>, o outro lado do rectángulo en <span class="math notranslate nohighlight">\((u, v)\)</span>, transfórmase no vector, o outro lado en <span class="math notranslate nohighlight">\((u, v)\)</span>. <span class="math notranslate nohighlight">\((x, y)\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 \left(\frac{\partial x}{\partial v}(u_0, v_0) \, \Delta v, \;\; \frac{\partial y}{\partial v} (u_0, v_0) \, \Delta v \right)
 \]</div>
-<p>Los vectores de los lados en un espacio <span class="math notranslate nohighlight">\((x, y)\)</span> son</p>
+<p>Os vectores dos lados nun espazo <span class="math notranslate nohighlight">\((x, y)\)</span> son</p>
 <div class="math notranslate nohighlight">
 \[
 \left( \frac{\partial x}{\partial u}, \, \frac{\partial y}{ \partial u} \right) \Delta u, \;\; 
 \left( \frac{\partial x}{\partial v}, \, \frac{\partial y}{ \partial v} \right) \Delta v \;\; 
 \]</div>
-<p>Y el área que sustentan viene dada por el valor absoluto de su producto vectorial:</p>
+<p>E a área que soportan vén dada polo valor absoluto do seu produto vectorial:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \left| \begin{array}{cc} \frac{\partial x}{ \partial u} &amp; \frac{\partial x}{\partial v} \\ 
 \frac{\partial y}{ \partial u} &amp; \frac{\partial y}{\partial v} 
 \end{array} \right| \Delta u \Delta v
 \end{split}\]</div>
-<p>Donde,</p>
+<p>Onde,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 J = \left| \begin{array}{cc} \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\ 
 \frac{\partial y}{ \partial u} &amp; \frac{\partial y}{\partial v} 
 \end{array} \right|
 \end{split}\]</div>
-<p>Es el determinante de la matriz jacobiana, o jacobiano.</p>
-<p>Como el diferencial de área siempre tiene que ser positivo, ¡tomaremos el valor absoluto del jacobiano!</p>
-<p>Así, cuando cambiamos de coordenadas</p>
+<p>É o determinante da matriz xacobiana, ou xacobiana.</p>
+<p>Dado que o diferencial de área sempre ten que ser positivo, tomaremos o valor absoluto do xacobiano!</p>
+<p>Así, cando cambiamos de coordenadas</p>
 <div class="math notranslate nohighlight">
 \[
 \int_R f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_{R'} f(u, v) \, |J| \, \mathrm{d}u \mathrm{d} v
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(R'\)</span> es la región definida en el espacio (<span class="math notranslate nohighlight">\(u, v\)</span>), <span class="math notranslate nohighlight">\(f(u, v) = f(x(u, v), y(u, v)) \)</span> es la función en las nuevas coordenadas, y finalmente, el diferencial de área viene dado por:</p>
+<p>onde <span class="math notranslate nohighlight">\(R'\)</span> é a rexión definida no espazo (<span class="math notranslate nohighlight">\(u, v\)</span>), <span class="math notranslate nohighlight">\(f(u, v) = f(x(u, v), y(u, v)) \)</span> é a función no novo coordenadas e, finalmente, a diferencial de área vén dada por:</p>
 <div class="math notranslate nohighlight">
 \[
 \mathrm{d}x \mathrm{d} y \to |J| \mathrm{d} u \mathrm{d}v,
 \]</div>
-<p>donde <span class="math notranslate nohighlight">\(|J|\)</span> es el valor absoluto del jacobiano del cambio de variables.</p>
-<p><em>Ejercicio</em>: Calcula la integral en el anillo comprendido entre los radios <span class="math notranslate nohighlight">\([a, b]\)</span> del primer cuadrante de la función <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> y de la función <span class="math notranslate nohighlight">\(f(x, y) = \log(x^2 + y^2)\)</span></p>
+<p>onde <span class="math notranslate nohighlight">\(|J|\)</span> é o valor absoluto do xacobiano do cambio de variables.</p>
+<p><em>Exercicio</em> : Calcula a integral do anel comprendido entre os raios <span class="math notranslate nohighlight">\([a, b]\)</span> do primeiro cuadrante da función <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> e da función <span class="math notranslate nohighlight">\(f(x, y) = \log ( x^2 + y^2)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rsrange</span><span class="p">,</span> <span class="n">phisrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -1011,52 +1006,52 @@ J = \left| \begin{array}{cc} \frac{\partial x}{\partial u} &amp; \frac{\partial 
 <img alt="../_images/862a0465e9f3bfcc73042e87f6a81f1d652391c3c8f382389f23b03553b61c45.png" src="../_images/862a0465e9f3bfcc73042e87f6a81f1d652391c3c8f382389f23b03553b61c45.png" />
 </div>
 </div>
-<p>El cambio en polares es:</p>
+<p>O cambio a polares é:</p>
 <div class="math notranslate nohighlight">
 \[
 x(r, \phi) = r \cos \phi, \;\; y(r, \phi) = r \sin \phi
 \]</div>
-<p>El Jacobiano del cambio a polares es:</p>
+<p>O xacobiano do cambio a polares é:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \left| \begin{array}{cc} \cos \phi &amp; - r \sin \phi\\ 
 \sin \phi &amp; r \cos \phi \end{array} \right| = r (\cos^2 \phi + \sin^2 \phi) = r
 \end{split}\]</div>
-<p>Fíjate en la siguiente imagen, en cada paralelogramo, uno de los lados es <span class="math notranslate nohighlight">\(\mathrm{d}r\)</span> y el otro <span class="math notranslate nohighlight">\(r \, \mathrm{d}\phi\)</span>. Y por lo tanto el diferencial de área es:</p>
+<p>Observa a seguinte imaxe, en cada paralelogramo, un dos lados é <span class="math notranslate nohighlight">\(\mathrm{d}r\)</span> e o outro <span class="math notranslate nohighlight">\(r \, \mathrm{d}\phi\)</span>. Polo tanto, o diferencial de área é:</p>
 <div class="math notranslate nohighlight">
 \[
 r \mathrm{d}\phi \mathrm{d} r
 \]</div>
-<p>La región de integración está definida en polares:</p>
+<p>A rexión de integración defínese en polares:</p>
 <div class="math notranslate nohighlight">
 \[
 \{ a \le r \le b, \; 0 \le \phi \le \pi/2\}
 \]</div>
-<p>El jacobiano del cambio de coordenadas, que calculamos antes, es: <span class="math notranslate nohighlight">\(J = r\)</span></p>
-<p>para <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> la integral es:</p>
+<p>O xacobiano do cambio de coordenadas, que calculamos antes, é: <span class="math notranslate nohighlight">\(J = r\)</span></p>
+<p>para <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> a integral é:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_a^b \int_0^{\pi/2} r \mathrm{d}r \mathrm{d}\phi = \left. \frac{r^2}{2} \right|_a^b \phi \big|_0^{\pi/2} = \frac{\pi}{4} (b^2 -a^2) 
 \]</div>
-<p>que es equivalente al área de un cuarto del anillo.</p>
-<p>La función, <span class="math notranslate nohighlight">\(f(x, y) = \log(x^2 + y^2)\)</span>, en polares es <span class="math notranslate nohighlight">\(f(r, \phi) = 2 \log r\)</span>. La integral en la sección del anillo</p>
+<p>que equivale á área dun cuarto do anel.</p>
+<p>A función, <span class="math notranslate nohighlight">\(f(x, y) = \log(x^2 + y^2)\)</span>, en polares é <span class="math notranslate nohighlight">\(f(r, \phi) = 2 \log r\)</span>. A integral na sección do anel</p>
 <div class="math notranslate nohighlight">
 \[
-\int_a^b \int_0^{\pi/2}  (2 \log r) \, r \mathrm{d}r \mathrm{d}\phi 
-\]</div>
-<p>La integral en <span class="math notranslate nohighlight">\(\phi\)</span>, es simplemente <span class="math notranslate nohighlight">\(\pi/2\)</span></p>
-<p>La integral en <span class="math notranslate nohighlight">\(r\)</span> se resuelve por partes:</p>
+ \int_a^b \int_0^{\pi/2} (2 \log r) \, r \mathrm{d}r \mathrm{d}\phi
+ \]</div>
+<p>A integral en <span class="math notranslate nohighlight">\(\phi\)</span> é simplemente <span class="math notranslate nohighlight">\(\pi/2\)</span></p>
+<p>A integral en <span class="math notranslate nohighlight">\(r\)</span> resólvese por anacos:</p>
 <div class="math notranslate nohighlight">
 \[
-\int 2 r \log r \, \mathrm{d} r= r^2 \log r - \int r \mathrm{d}r = r^2 \log r - \frac{r^2}{2}
-\]</div>
-<p>Luego la integral completa es:</p>
+ \int 2 r \log r \, \mathrm{d} r= r^2 \log r - \int r \mathrm{d}r = r^2 \log r - \frac{r^2}{2}
+ \]</div>
+<p>Entón a integral completa é:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_a^b \int_0^{\pi/2}  2 r \log r \, \mathrm{d}r \mathrm{d}\phi 
-= \frac{\pi}{2} \left( b^2 \log b - \frac{b^2}{2} - a^2 \log a + \frac{a^2}{2} \right)
-\]</div>
-<p>La siguiente figura muestra la región de integración y la gráfica de la función a integrar en la región.</p>
+ \int_a^b \int_0^{\pi/2} 2 r \log r \, \mathrm{d}r \mathrm{d}\phi
+ = \frac{\pi}{2} \left( b^2 \log b - \frac{b^2}{2} - a^2 \log a + \frac{a^2}{2} \right )
+ \]</div>
+<p>A seguinte figura mostra a rexión de integración e a gráfica da función a integrar na rexión.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mi">20</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
@@ -1069,10 +1064,6 @@ r \mathrm{d}\phi \mathrm{d} r
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:311: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
 <img alt="../_images/c8c02ccbfe368bbab139b43f2ab76ee860ab1d833392c31d4d4968f40c36e1a2.png" src="../_images/c8c02ccbfe368bbab139b43f2ab76ee860ab1d833392c31d4d4968f40c36e1a2.png" />
 </div>
 </div>
@@ -1110,6 +1101,15 @@ r \mathrm{d}\phi \mathrm{d} r
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tintegral_metodos.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Métodos de integración</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -1128,19 +1128,19 @@ r \mathrm{d}\phi \mathrm{d} r
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estructura-del-tema">Estructura del tema</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introduccion">Introducción</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recordatorio-de-la-suma-de-riemann">Recordatorio de la Suma De Riemann</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estrutura-do-tema">Estrutura do tema</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#introducion">Introdución</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#recordatorio-da-suma-de-riemann">Recordatorio da suma de Riemann</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrales-2d">Integrales 2D</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integrais-2d">Integrais 2D</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-fubini">Teorema de Fubini</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#principio-de-cavalieri">Principio de Cavalieri.</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-en-una-region-no-rectangular">Integración en una región no rectangular.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-jacobiano">Cambio de variables. Jacobiano</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integracion-nunha-rexion-non-rectangular">Integración nunha rexión non rectangular.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cambio-de-variables-xacobiano">Cambio de variables. Xacobiano</a></li>
 </ul>
   </nav></div>
 
