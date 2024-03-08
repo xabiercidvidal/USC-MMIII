@@ -20,3 +20,4 @@ parts:
   - file: notebooks/tderivadas_min_max.ipynb
   - file: notebooks/tintegral_1d.ipynb
   - file: notebooks/tintegral_metodos.ipynb
+  - file: notebooks/tintegral_2d.ipynb

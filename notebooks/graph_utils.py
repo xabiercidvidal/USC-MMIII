@@ -104,8 +104,13 @@ def bars3d(fun, xrange = xrange, yrange = xrange, condition = None, zlim = None,
     z0s = np.zeros_like(zms.ravel())
     xwidth, ywidth  = xms[0][1] - xms[0][0], yms[1][0] - yms[0][0]
 
-    fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
-    ax = plt.gca(projection='3d')
+    #fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
+    #ax = plt.gca(projection='3d')
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else:
+        fig,ax = newfig
     crange  = zms
     if (acolor == 'x'): crange = xms
     if (acolor == 'y'): crange = yms
