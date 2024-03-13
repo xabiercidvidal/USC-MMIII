@@ -21,3 +21,5 @@ parts:
   - file: notebooks/tintegral_1d.ipynb
   - file: notebooks/tintegral_metodos.ipynb
   - file: notebooks/tintegral_2d.ipynb
+  - file: notebooks/tintegral_3d.ipynb
+
