@@ -63,7 +63,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/integral_2D_exercise';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/integral_3D_exercise';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -229,7 +229,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/integral_2D_exercise.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/integral_3D_exercise.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -247,7 +247,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/integral_2D_exercise.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/integral_3D_exercise.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -295,7 +295,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/integral_2D_exercise.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/integral_3D_exercise.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -325,7 +325,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/integral_2D_exercise.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/integral_3D_exercise.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -429,63 +429,40 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <p>Sexa <span class="math notranslate nohighlight">\(\rho=\rho_0 e^{-(\frac{x}{a})^2-(\frac{y}{b})^2}\)</span> a ecuación da densidade dun disco, <span class="math notranslate nohighlight">\(S\)</span>, que responde á ecuación <span class="math notranslate nohighlight">\( (\frac{x}{a})^2+(\frac{y}{b})^2=1 \)</span>. Determina a masa do disco.</p>
-<p>A solución pasa por resolver a integral</p>
+  <p><strong>Exame de Métodos Matemáticos III</strong></p>
+<p><strong>Curso 2018-2019, 21/5/2019</strong></p>
+<p>Calcula o volume da cápsula delimitada polos paraboloides <span class="math notranslate nohighlight">\({z=9-x^2-y^2}\)</span> e <span class="math notranslate nohighlight">\({z=3x^2+3y^2-16}\)</span>, ver figura.</p>
+<a class="reference internal image-reference" href="../_images/figura2.png"><img alt="../_images/figura2.png" class="align-center" src="../_images/figura2.png" style="width: 300px;" /></a>
+<p>Como a figura ten simetría de revolución arredor do eixo <span class="math notranslate nohighlight">\(z\)</span> o xeito máis sinxelo de facer esa integral
+é considerar coordenadas cilíndricas,</p>
 <div class="math notranslate nohighlight">
 \[
-M = \int_S{\rho_0 e^{-(\frac{x}{a})^2-(\frac{y}{b})^2}}
+x=r \cos \theta, y=r \sin \theta, z=z. 
 \]</div>
-<p>A integral sobre a elipse ( S ) pode transformarse en coordenadas polares con substitucións axustadas para a elipse:</p>
+<p>Nese sistema o elemento de volume é <span class="math notranslate nohighlight">\({\rm d}V = r {\rm d}r{\rm d}\theta{\rm d}z\)</span>. Os límites de integración
+en <span class="math notranslate nohighlight">\(z\)</span> e <span class="math notranslate nohighlight">\(\theta\)</span> están dados por</p>
 <div class="math notranslate nohighlight">
 \[
-x = a \cdot r \cdot \cos(\theta), \quad y = b \cdot r \cdot \sin(\theta)
+3r^2-16 \leq z \leq 9-r^2,\text{ e}, 0 \leq \theta \leq 2\pi.
 \]</div>
-<p>A Xacobiana da transformación é:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-X = \begin{pmatrix}
-\frac{\partial x}{\partial r} &amp; \frac{\partial x}{\partial \theta} \\
-\frac{\partial y}{\partial r} &amp; \frac{\partial y}{\partial \theta}
-\end{pmatrix} = 
-\begin{pmatrix}
-a \cos(\theta) &amp; -a r \sin(\theta) \\
-b \sin(\theta) &amp; b r \cos(\theta)
-\end{pmatrix}
-\end{split}\]</div>
-<p>e o seu determinante:</p>
+<p>O límite superior en <span class="math notranslate nohighlight">\(r\)</span> está dado pola solución positiva da ecuación</p>
 <div class="math notranslate nohighlight">
 \[
-{\rm det}(X) = abr
+9-r^2=3r^2-16 \Rightarrow 4r^2=25 \Rightarrow r = \frac{5}{2},
 \]</div>
-<p>Así, o elemento diferencial de área transformase como:</p>
+<p>polo que <span class="math notranslate nohighlight">\(0 \leq r \leq 5/2\)</span>.</p>
+<p>O volume da cápsula é</p>
 <div class="math notranslate nohighlight">
 \[
-dA = abr \, dr \, d\theta
+\int_0^{\frac{5}{2}}\int_0^{2\pi}\int_{3r^2-16}^{9-r^2} r{\rm d}z{\rm d}\theta{\rm d}r =
+\int_0^{\frac{5}{2}}\int_0^{2\pi}  r \left. z \right]_{3r^2-16}^{9-r^2} {\rm d}\theta{\rm d}r =
+\int_0^{\frac{5}{2}}\int_0^{2\pi}  r (25-4r^2) {\rm d}\theta{\rm d}r =
 \]</div>
-<p>A integral convértese en:</p>
 <div class="math notranslate nohighlight">
 \[
-\int \int_S \rho_0 e^{-\left(\frac{ar\cos(\theta)}{a}\right)^2 - \left(\frac{br\sin(\theta)}{b}\right)^2} \cdot abr \, dr \, d\theta
-\]</div>
-<p>Simplificando, obtemos:</p>
-<div class="math notranslate nohighlight">
-\[
-\rho_0 ab \int_0^{2\pi} d\theta \int_0^1 e^{-r^2} \cdot r \, dr
-\]</div>
-<p>Necesitamos resolver:</p>
-<div class="math notranslate nohighlight">
-\[
-\int_0^1 r e^{-r^2} \, dr
-\]</div>
-<p>Usando a substitución <span class="math notranslate nohighlight">\(u = r^2 \)</span>, <span class="math notranslate nohighlight">\( du = 2r dr \)</span>, a integral sobre <span class="math notranslate nohighlight">\(r\)</span> convértese en:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{1}{2} \int_0^1 e^{-u} \, du = \frac{1}{2} \left(1 - \frac{1}{e}\right)
-\]</div>
-<p>Finalmente, incorporando as constantes e integrando sobre <span class="math notranslate nohighlight">\(\theta\)</span>, atopamos:</p>
-<div class="math notranslate nohighlight">
-\[
-M = \rho_0 ab \pi \left(1 - \frac{1}{e}\right)
+\int_0^{\frac{5}{2}} r (25-4r^2) \left. \theta \right]_0^{2\pi} {\rm d}r =
+\int_0^{\frac{5}{2}} 2\pi r (25-4r^2) {\rm d}r
+=  \left. -\frac{\pi}{8} (25-4r^2)^2 \right]_0^{\frac{5}{2}} =  -\frac{\pi}{8} (0-25^2) = \pi \frac{625}{8}.
 \]</div>
 
     <script type="text/x-thebe-config">
