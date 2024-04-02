@@ -405,12 +405,14 @@ def arrow3d(x0, y0, z0, vx, vy, vz, ax,color = 'black', head = 0.3):
     return ax
 
 
-def int_fscalar_line(fc, cx, cy, trange = trange, newfig = False):
+def int_fscalar_line(fc, cx, cy, trange = trange, newfig = True):
     ts = np.linspace(*trange)
     xs, ys = cx(ts), cy(ts)
     zs     = fc(xs, ys)
-    fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
-    ax  = plt.gca(projection='3d')
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else: fig,ax = newfig
     ax.plot(xs, ys, zs, color = 'r')
     ax.plot(xs, ys, 0.*zs, color = 'black', alpha = 0.5)
     for i in range(len(xs)):
@@ -419,7 +421,7 @@ def int_fscalar_line(fc, cx, cy, trange = trange, newfig = False):
     ax.set_xlabel('$x$'); ax.set_ylabel('$y$'); #ax.set_aspect('equal');
     return
 
-def int_fvect_line(fx, fy, cx, cy, trange = trange, newfig = False,
+def int_fvect_line(fx, fy, cx, cy, trange = trange, newfig = True,
                    surf = True):
     ts = np.linspace(*trange)
     xs, ys = cx(ts), cy(ts)
@@ -433,10 +435,15 @@ def int_fvect_line(fx, fy, cx, cy, trange = trange, newfig = False,
     zzs = np.array([fxi * dxi + fyi * dyi for fxi, fyi, dxi, dyi in vals])
     intval = np.sum(zzs)
     zs  = np.array([zi/dsi for zi, dsi in zip(zzs, ds)])
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        if surf: ax = fig.add_subplot()
+        else: ax = fig.add_subplot(projection='3d')
+    else: fig,ax = newfig
     fig = plt.figure(figsize = figsize) if newfig else plt.gcf()
     #xs, ys = xs[:-1], ys[:-1]
     if (surf):
-        ax  = plt.gca()
+        #ax  = plt.gca()
         ax.plot(xs, ys, color = 'black', alpha = 0.5)
         #vers = list(zip(xs, fxs))
         #poly = PolyCollection(vers)
@@ -459,7 +466,7 @@ def int_fvect_line(fx, fy, cx, cy, trange = trange, newfig = False,
         #ax.view_init(azim=60.)
         ax.set_xlabel('$x$'); ax.set_ylabel('$y$'); # ax.set_aspect('equal');
     else:
-        ax  = plt.gca(projection='3d')
+        #ax  = plt.gca(projection='3d')
         xs, ys = xs[:-1], ys[:-1]
         ax.plot(xs, ys, zs, color = 'r')
         ax.plot(xs, ys, 0.*zs, color = 'black', alpha = 0.5)

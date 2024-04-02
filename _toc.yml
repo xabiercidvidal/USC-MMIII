@@ -22,4 +22,5 @@ parts:
   - file: notebooks/tintegral_metodos.ipynb
   - file: notebooks/tintegral_2d.ipynb
   - file: notebooks/tintegral_3d.ipynb
+  - file: notebooks/tcalvec_integral_linha.ipynb
 
