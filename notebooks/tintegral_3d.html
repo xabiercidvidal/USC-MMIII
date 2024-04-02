@@ -445,7 +445,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Mon Apr  1 00:10:46 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Apr  2 16:01:11 2024
 </pre></div>
 </div>
 </div>
@@ -529,7 +529,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f201e94daeab51d7cd0212fca5b870b315540f3029e9e07c473fb8ab5c375b49.png" src="../_images/f201e94daeab51d7cd0212fca5b870b315540f3029e9e07c473fb8ab5c375b49.png" />
+<img alt="../_images/ee392bd4f762762b51a74690188c734b3b9baf6a7b72f9b079adc9a0c8d046cc.png" src="../_images/ee392bd4f762762b51a74690188c734b3b9baf6a7b72f9b079adc9a0c8d046cc.png" />
 </div>
 </div>
 <p>Imos definir o volume anterior como tipo I.</p>
@@ -545,7 +545,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a30aa99f63ce0f59e9608e99e3ec31f2ca70e713ac484a9e5f094d9bb9682cb3.png" src="../_images/a30aa99f63ce0f59e9608e99e3ec31f2ca70e713ac484a9e5f094d9bb9682cb3.png" />
+<img alt="../_images/29f085a4042af3df8610db09218d66c568245d96ff897f3a61f6a31b2ca06467.png" src="../_images/29f085a4042af3df8610db09218d66c568245d96ff897f3a61f6a31b2ca06467.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -573,7 +573,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8eeaadee18a864b85f81a7aedc82535202b56174fe3c95a46ea097763afd079d.png" src="../_images/8eeaadee18a864b85f81a7aedc82535202b56174fe3c95a46ea097763afd079d.png" />
+<img alt="../_images/36f4d04f41ed9ac1ba244e6d599ff581e60d35aac4f9bc841d536dd5a291d815.png" src="../_images/36f4d04f41ed9ac1ba244e6d599ff581e60d35aac4f9bc841d536dd5a291d815.png" />
 </div>
 </div>
 <p>O volume defínese como:</p>
@@ -647,7 +647,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d0cc9bce41a97150292a0a9b18e87f9c190a749b3edcf00da672fa5476cde1e7.png" src="../_images/d0cc9bce41a97150292a0a9b18e87f9c190a749b3edcf00da672fa5476cde1e7.png" />
+<img alt="../_images/7e6d96acac981d654de98233e80550cecd26f4435ab6d99827c3b0b7ae39ac41.png" src="../_images/7e6d96acac981d654de98233e80550cecd26f4435ab6d99827c3b0b7ae39ac41.png" />
 </div>
 </div>
 <p>O volume pódese redefinir como:</p>
@@ -740,6 +740,20 @@ x(r, \phi, z) = r \cos \phi, \; y(r, \phi, z) = r \sin \phi, \; z(r, \phi, z) = 
 \int_0^2  \sin \phi \Big|_0^{\pi/2} \left. \frac{r^3}{3} \right|_0^{\sqrt{z}}  \mathrm{d}z
 = \int_0^2 \frac{z^{3/2}}{3} \mathrm{d}z 
 = \left. \frac{2}{15} z^{5/2} \right|_0^2 = \frac{8}{15} \sqrt 2
+\]</div>
+<p>Alternativamente</p>
+<div class="math notranslate nohighlight">
+\[
+\{r^2 \le z \le 2,\; 0 \le \phi \le \pi/2, \, 0 \le r \le \sqrt{2} \}
+\]</div>
+<p>A integral, como <span class="math notranslate nohighlight">\(x = r \cos \phi\)</span>, pasa a ser:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^\sqrt{2} \left[ \int_0^{\pi/2} \left[ \int_2^{r^2} r \cos \phi \, r \mathrm{d}z \right]\mathrm{d}\phi\right] \mathrm{d}r
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_0^2  \sin \phi \Big|_0^{\pi/2} \int_0^\sqrt{2} r^2 (2-r^2) \mathrm{d}r = \frac{2}{3} r^3 \Big|^\sqrt{2}_0 - \frac{1}{5} r^5 \Big|^\sqrt{2}_0 = \frac{4}{3} \sqrt{2} - \frac{4}{5} \sqrt{2} = \frac{20-12}{15}\sqrt{2}= \frac{8}{15} \sqrt 2
 \]</div>
 <p><strong>Cambio a esféricas</strong></p>
 <p>Lembremos o cambio de coordenadas esféricas:</p>
