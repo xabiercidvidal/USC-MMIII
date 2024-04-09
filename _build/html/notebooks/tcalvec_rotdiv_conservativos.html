@@ -422,6 +422,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-nabla">Operador nabla.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos">Campos conservativos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
@@ -446,7 +447,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Apr  9 23:51:01 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Apr  9 15:58:18 2024
 </pre></div>
 </div>
 </div>
@@ -694,7 +695,7 @@ g(y) = \int_{y_0}^y \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y
 <img alt="../_images/e310f638adfb6ec55b203751c0426de890cdeb400f01a36d829f567f70213d1b.png" src="../_images/e310f638adfb6ec55b203751c0426de890cdeb400f01a36d829f567f70213d1b.png" />
 </div>
 </div>
-<p><em>Observa</em> como o seguinte campo vectorial non pode ser conservativo. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que proviría)… e verás que non é posible.</p>
+<p><em>Observa</em> como o seguinte campo vectorial non pode ser conservativo. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que procedía)… e verás que non é posible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
@@ -708,47 +709,77 @@ g(y) = \int_{y_0}^y \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y
 <img alt="../_images/92d0ba3d17dac2fbaff62e655ece52368eacea9623567b385d2db81c3f98bbef.png" src="../_images/92d0ba3d17dac2fbaff62e655ece52368eacea9623567b385d2db81c3f98bbef.png" />
 </div>
 </div>
-<p>É dicir, un campo conservativo provén de, ou pode expresarse, como o gradiente dun campo escalar.
-Se un campo non ten rotacional, é conservativo. E se é conservativo non ten rotacional.</p>
-<p>Mirade o debuxo de Escher, debe ser unha ilusión óptica! porque as escaleiras seguen o gradiente da súa altura e, polo tanto, ao circular ao longo da pista pechada que forman, non poden ter rotacional.</p>
+<p>Esto es, un campo convervativo proviene, o puede expresarse, como el gradiente de un campo escalar.
+Si un campo no tiene rotacional es convervativo. Y si es conservativo no tiene rotacional.</p>
+<p>Observa el dibujo de Escher ¡debe ser una ilusión óptica! porque las escaleras siguen el gradiente de su altura, y por lo tanto al circular a lo largo como la pista cerrada que forman no puede tener rotacional.</p>
 <a class="reference internal image-reference" href="../_images/escher_stairs.jpg"><img alt="../_images/escher_stairs.jpg" src="../_images/escher_stairs.jpg" style="width: 300px;" /></a>
-<p><strong>Teorema</strong> : Sexa <span class="math notranslate nohighlight">\(U(x, y)\)</span> un campo escalar con segundas derivadas continuas, entón a integral do seu gradiente, <span class="math notranslate nohighlight">\(\nabla U\)</span>, ao longo dun camiño, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que une dous puntos, <span class="math notranslate nohighlight">\(A, \, B\)</span> é a diferenza de <span class="math notranslate nohighlight">\(U\)</span> en <span class="math notranslate nohighlight">\(B\)</span> e <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p>É dicir, un campo convervativo provén de, ou pode expresarse, como o gradiente dun campo escalar.</p>
+<p>Se un campo non ten rotación, é convervativo. E se é conservador non ten rotación.</p>
+<p>Mirade o debuxo de Escher, debe ser unha ilusión óptica! porque as escaleiras seguen a pendiente da súa altura e, polo tanto, ao circular pola pista pechada que forman, non poden ser rotativas.</p>
+<p>&lt;img src=”imgs/escher_stairs.jpg” width=”300” /&gt;</p>
+<p><strong>Teorema</strong>: Sea <span class="math notranslate nohighlight">\(U(x, y)\)</span> un campo escalar con derivadas segundas continuas, entonces la integral de su gradiente, <span class="math notranslate nohighlight">\(\nabla U\)</span>, a lo largo de una trayectoria, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que une dos puntos, <span class="math notranslate nohighlight">\(A, \, B\)</span> es la diferencia de <span class="math notranslate nohighlight">\(U\)</span> en <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
- \int_{{\bf c}} \nabla U \, \mathrm{d}{\bf s} = U(B) - U(A)
- \]</div>
+\int_{{\bf c}} \nabla U \, \mathrm{d}{\bf s} = U(B) - U(A)
+\]</div>
+<p><strong>Teorema</strong> : Sexa <span class="math notranslate nohighlight">\(U(x, y)\)</span> un campo escalar con segundas derivadas continuas, despois a integral do seu gradiente, <span class="math notranslate nohighlight">\(\nabla U\)</span>, ao longo dun camiño, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que une dous puntos, <span class="math notranslate nohighlight">\(A, \, B\)</span> é a diferenza de <span class="math notranslate nohighlight">\(U\)</span> en <span class="math notranslate nohighlight">\(B\)</span> e <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[ \int_{{\bf c}} \nabla U \, \mathrm{d}{\bf s} = U(B) - U(A)\]</div>
+<p>Sea <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> línea parametrizada en <span class="math notranslate nohighlight">\(t \in [a, b]\)</span>, donde <span class="math notranslate nohighlight">\({\bf c}(a) = A, \, {\bf c}(b) = B\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{\bf c} \nabla U \, \mathrm{d}{\bf s} 
+= \int_a^b \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) \, \mathrm{d}t 
+\]</div>
+<p>Por la regla de la cadena:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+= \int_a^b \frac{\mathrm{d} U({\bf c}(t))}{\mathrm{d}t} \, \mathrm{d}t = U({\bf c}(t)) \, \Big|_a^b 
+= U({\bf c}(b)) - U({\bf c}(a))  \\ = U(B) - U(A)
+\end{split}\]</div>
 <p>Sexa <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> unha liña parametrizada en <span class="math notranslate nohighlight">\(t \in [a, b]\)</span>, onde <span class="math notranslate nohighlight">\({\bf c}(a) = A, \, {\bf c}(b) = B \)</span>.</p>
 <div class="math notranslate nohighlight">
-\[
- \int_{\bf c} \nabla U \, \mathrm{d}{\bf s}
- = \int_a^b \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) \, \mathrm{d}t
- \]</div>
+\[ \begin{align}\begin{aligned} \int_{\bf c} \nabla U \, \mathrm{d}{\bf s}\\ = \int_a^b \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) \, \mathrm{d}t\end{aligned}\end{align} \]</div>
 <p>Pola regra da cadea:</p>
 <div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} = \int_a^b \frac{\mathrm{d} U({\bf c}(t))}{\mathrm{d}t} \, \mathrm{d}t = U({\bf c}( t)) \, \Big|_a^b\\ = U({\bf c}(b)) - U({\bf c}(a)) \ = U(B) - U(A)\end{aligned}\end{align} \]</div>
+<p><em>Ejemplo</em>: La altura es un campo conservativo. Da igual que camino siguas para llegar a la cumbre de una montaña, puedes seguir caminos más fáciles o más arduos, la diferencia de altura respecto de dónde empezaste siempre será la misma.</p>
+<p><em>Exemplo</em> : a altura é un campo conservativo. Non importa o camiño que sigas para chegar ao alto dunha montaña, podes seguir camiños máis fáciles ou máis arduos, o desnivel con respecto a onde empezaches sempre será o mesmo.</p>
+<section id="aun-hay-mas">
+<h3>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h3>
+<p>Muchas de estas cosas te sonarán por Física General.</p>
+<p>El potencial eléctrico, <span class="math notranslate nohighlight">\(V\)</span>, da lugar a un campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} = - \nabla V\)</span>, que proviene del gradiente y cuyo rotacional es nulo, es por lo tanto un campo conservativo. La integral del campo entro dos puntos es simplemente la diferencia de potencial entre ellos.</p>
+<p>En Física la fuerza sobre un móvil viene del gradiente de una energía potencial, <span class="math notranslate nohighlight">\({\bf F} = - \nabla U\)</span>. De está relación se conserva la energía. Consideremos un móvil, de masa <span class="math notranslate nohighlight">\(m\)</span>, que sigue su trayectoria libre <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> en función del tiempo <span class="math notranslate nohighlight">\(t\)</span>. Su energía total es la energía cinética más la potencial:</p>
+<div class="math notranslate nohighlight">
 \[
- = \int_a^b \frac{\mathrm{d} U({\bf c}(t))}{\mathrm{d}t} \, \mathrm{d}t = U({\bf c}( t)) \, \Big|_a^b
- = U({\bf c}(b)) - U({\bf c}(a)) \ = U(B) - U(A)
- \]</div>
+E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))
+\]</div>
+<p>Si derivamos respecto at <span class="math notranslate nohighlight">\(t\)</span>, y aplicando la regla de la cadena:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\mathrm{d}E}{\mathrm{d}t} = m \, \dot{{\bf c}}(t) \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) 
+= \left[m \, \ddot{{\bf c}}(t)  + \nabla U({\bf c}(t)) \right] \, \dot{{\bf c}}(t) = 0
+\]</div>
+<p>Si se cumple</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf F} = - \nabla U = m \ddot{{\bf c}}
+\]</div>
+<p>que es la primera ley de Newton.</p>
+</section>
 <section id="ainda-hai-mais">
 <h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h3>
 <p>Moitas destas cousas soaránche familiares de Física Xeral.</p>
-<p>O potencial eléctrico, <span class="math notranslate nohighlight">\(V\)</span>, orixina un campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} = - \nabla V\)</span>, que procede do gradiente e que ten rotacional cero, é polo tanto un campo conservativo. A integral do campo entre dous puntos é simplemente a diferenza de potencial entre eles.</p>
+<p>O potencial eléctrico, <span class="math notranslate nohighlight">\(V\)</span>, orixina un campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} = - \nabla V\)</span>, que procede do gradiente e cuxa rotación é cero, é polo tanto un campo conservativo. A integral do campo entre dous puntos é simplemente a diferenza de potencial entre eles.</p>
 <p>En Física a forza sobre un móbil provén do gradiente dunha enerxía potencial, <span class="math notranslate nohighlight">\({\bf F} = - \nabla U\)</span>. A enerxía consérvase a partir desta relación. Consideremos un móbil, de masa <span class="math notranslate nohighlight">\(m\)</span>, que segue o seu camiño libre <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> en función do tempo <span class="math notranslate nohighlight">\(t\)</span>. A súa enerxía total é a enerxía cinética máis o potencial:</p>
 <div class="math notranslate nohighlight">
-\[
- E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))
- \]</div>
+\[ E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))\]</div>
 <p>Se diferenciamos con respecto a en <span class="math notranslate nohighlight">\(t\)</span>, e aplicando a regra da cadea:</p>
 <div class="math notranslate nohighlight">
-\[
- \frac{\mathrm{d}E}{\mathrm{d}t} = m \, \dot{{\bf c}}(t) \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t)
- = \left[m \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \right] \, \dot{{\bf c}}(t) = 0
- \]</div>
+\[ \begin{align}\begin{aligned} \frac{\mathrm{d}E}{\mathrm{d}t} = m \, \dot{{\bf c}}(t) \, \ddot{{\bf c}}(t) + \ nabla U({\bf c}(t)) \, \dot{{\bf c}}(t)\\ = \left[m \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \right] \, \dot{{\bf c}}(t) = 0\end{aligned}\end{align} \]</div>
 <p>Se se cumpre</p>
 <div class="math notranslate nohighlight">
-\[
- {\bf F} = - \nabla U = m \ddot{{\bf c}}
- \]</div>
+\[ {\bf F} = - \nabla U = m \ddot{{\bf c}}\]</div>
 <p>que é a primeira lei de Newton.</p>
 </section>
 </section>
@@ -806,6 +837,7 @@ Se un campo non ten rotacional, é conservativo. E se é conservativo non ten ro
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-nabla">Operador nabla.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos">Campos conservativos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
