@@ -1,0 +1,865 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Operador Nabla. Campos conservativos &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_rotdiv_conservativos';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadea.html">Cambio de coordenadas e regra da cadea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos e máximos de funcións escalares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tcalvec_rotdiv_conservativos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_rotdiv_conservativos.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tcalvec_rotdiv_conservativos.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tcalvec_rotdiv_conservativos.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Operador Nabla. Campos conservativos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-nabla">Operador nabla.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos">Campos conservativos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="operador-nabla-campos-conservativos">
+<h1>Operador Nabla. Campos conservativos<a class="headerlink" href="#operador-nabla-campos-conservativos" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Apr  9 23:51:01 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="obxectivos">
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<p>Introdución do operador nabla, o gradiente, a rotación e a diverxencia dun campo.</p>
+<p>Interpretación da rotación e da diverxencia.</p>
+<p>Relacións entre eles.</p>
+<p><em>Nota</em></p>
+<p>Para que este notebook funcione en colab, precisamos <a href = "https://www.dropbox.com/scl/fi/wwz2w43kqj0s38gm87roj/graph_utils.py?rlkey=rppkwu9tmbnnsojezzj69p1r0&dl=1"> graph_utils.py</a>. Podes descargalo premendo na ligazón, e subilo a colab:</p>
+<a class="reference internal image-reference" href="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1"><img alt="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1" class="align-center" src="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1" style="width: 200px;" /></a>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="operador-nabla">
+<h2>Operador nabla.<a class="headerlink" href="#operador-nabla" title="Permalink to this heading">#</a></h2>
+<p>Definimos o operador nabla:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla = \left( \frac{\partial }{ \partial x}, \frac{\partial }{ \partial y}, \frac{\partial }{\partial z} \right)
+\]</div>
+<p>que pode actuar sobre campos escalares, <span class="math notranslate nohighlight">\(f(x, y, z)\)</span>, dando lugar ao <strong>gradiente</strong> , <span class="math notranslate nohighlight">\(\nabla f(x, y, z)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla f(x, y, z) = \left( \frac{\partial f}{ \partial x}, \frac{\partial f}{ \partial y}, \frac{\partial f}{\partial z} \right)
+\]</div>
+<p>E no gradiente, dando lugar ao <strong>Laplaciano</strong> , <span class="math notranslate nohighlight">\(\nabla^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla (\nabla f) = \nabla^2 f = \frac{\partial^2 f}{\partial x^2} + \frac{\partial^2 f}{\partial y^2} + \frac{\partial^2 f}{\partial z^2}
+\]</div>
+<p>ou en campos vectoriais, <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left(F_x, F_y, F_z \right)\)</span>, o que orixina a <strong>diverxencia</strong> :</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \cdot {\bf F} = \frac{\partial F_x}{\partial x } +\frac{\partial F_y}{\partial y} + \frac{\partial F_z }{\partial z } 
+\]</div>
+<p>e ao <strong>rotacional</strong> :</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla \times {\bf F} = \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+\frac{\partial}{ \partial x} &amp; \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z} \\
+F_x &amp; F_y &amp; F_z \\
+ \end{array} \right| \\
+ = \left(\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z}, \,  \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x}, \, \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right) 
+\end{split}\]</div>
+<p><em>Exercicio</em> : Calcula a curvatura e a diverxencia dos seguintes campos vectoriais: <span class="math notranslate nohighlight">\({\bf F_1}(x, y) = (\pm x, \pm y)\)</span> e <span class="math notranslate nohighlight">\({\bf F_2}(x, y) = ( \pm y, \pm x)\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\nabla \cdot {\bf F_1} = 2\)</span> signo +.</p>
+<p><span class="math notranslate nohighlight">\(\nabla \cdot {\bf F_1} = -2\)</span>  signo -.</p>
+<p><span class="math notranslate nohighlight">\( \nabla \cdot {\bf F_2} =  0 \)</span> para os dous signos.</p>
+<p><em>Pregunta</em> : Considera agora o campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (xy, x+y) /2\)</span>.</p>
+<p><strong>Teorema</strong> : Sexa <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> un campo escalar con derivadas segundas continuas, cúmprese: <span class="math notranslate nohighlight">\(\nabla \times \nabla f = 0\)</span>. O rotacional dun gradiente é cero.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla \times \nabla f  = \left| 
+\begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+\frac{\partial}{ \partial x} &amp;  \frac{\partial}{\partial y} &amp; \frac{\partial}{\partial z}  \\
+\frac{\partial f}{ \partial x} &amp; \frac{\partial f}{\partial y} &amp; \frac{\partial f}{\partial z} 
+\end{array} \right| 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+ = \left( 
+\left(\frac{\partial^2 f}{\partial y\partial z} - \frac{\partial^2 f}{\partial z \partial y}\right), \;
+\left(\frac{\partial^2 f}{\partial z\partial x} - \frac{\partial^2 f}{\partial x \partial z}\right),  \;
+\left(\frac{\partial^2 f}{\partial x\partial y} - \frac{\partial^2 f}{\partial y \partial x}\right) 
+\right)
+\]</div>
+<p>Dado que as segundas derivadas son continuas, as segundas derivadas cruzadas son iguais (Teorema de Schwarz) e, polo tanto:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times \nabla f = 0
+\]</div>
+<p><em>Exemplo:</em> sexa <span class="math notranslate nohighlight">\(f(x, y) = x^2 + y^2\)</span>. O seu gradiente é <span class="math notranslate nohighlight">\(\nabla f (x, y) = (2x, 2y)\)</span>, que ten rotacional cero.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="mi">2</span><span class="o">*</span><span class="n">x</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="mi">2</span><span class="o">*</span><span class="n">y</span>
+<span class="c1"># Create a figure and a set of subplots side by side</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">gf</span><span class="o">.</span><span class="n">contour</span> <span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f0ddf059507ef3fb53a2cfdedc3c99e44b4eb764f8aa3781b8becd7137bc7f7c.png" src="../_images/f0ddf059507ef3fb53a2cfdedc3c99e44b4eb764f8aa3781b8becd7137bc7f7c.png" />
+</div>
+</div>
+<p><em>Pregunta</em> : Demostrar que se as funcións compoñentes do campo vectorial, <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (F_x, F_y, F_z)\)</span> teñen derivadas segundas continuas, acontece que: <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla \times {\bf F}) = 0\)</span>, a diverxencia do rotacional é cero.</p>
+<p><em>Teorema</em> : Sexan <span class="math notranslate nohighlight">\(f,g\)</span> campos escalares, <span class="math notranslate nohighlight">\({\bf F},{\bf G}\)</span> campos vectoriais, con segundas derivadas continuas, e <span class="math notranslate nohighlight">\(c\)</span> unha constante;</p>
+<p><span class="math notranslate nohighlight">\(\nabla (f+g) = \nabla f + \nabla g\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla (cf) = c \, \nabla f \)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla (fg) = (\nabla f) g + f (\nabla g)\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla (f/g) = (\nabla f)g - f(\nabla g)/g^2\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla ({\bf F}+{\bf G}) = \nabla {\bf F} + \nabla {\bf G}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla \times ({\bf F}+{\bf G}) = \nabla \times {\bf F}  + \nabla \times {\bf G}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla (f {\bf F}) = f (\nabla {\bf F}) + (\nabla f) {\bf F}\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla ({\bf F} \times {\bf G}) = {\bf G} \, (\nabla \times {\bf F})  - {\bf F} \, (\nabla \times {\bf G})\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla ( \nabla \times {\bf F}) = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla \times (f {\bf F}) = f \nabla \times {\bf F} + \nabla f \times {\bf F} \)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla \times \nabla f = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla^2 (fg) = f \nabla^2 g  + g \nabla^2 f - 2 (\nabla f) (\nabla g) \)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla (\nabla f \times \nabla g) = 0\)</span></p>
+<p><span class="math notranslate nohighlight">\(\nabla (f \nabla g - g \nabla f) = f \nabla^2 g - g \nabla^2 f\)</span></p>
+</section>
+<section id="campos-conservativos">
+<h2>Campos conservativos<a class="headerlink" href="#campos-conservativos" title="Permalink to this heading">#</a></h2>
+<p>Dicimos que un campo vectorial, <span class="math notranslate nohighlight">\({\bf F}\)</span>, é <strong>conservativo</strong> se para todos os camiños que unen dous puntos do dominio, <span class="math notranslate nohighlight">\(A, \, B\)</span>, a integral do campo ao longo de cada un deles é igual ao mesmo.</p>
+<p>Sexan dúas traxectorias, <span class="math notranslate nohighlight">\({\bf c}_1, \, {\bf c}_2\)</span>, que unen <span class="math notranslate nohighlight">\(A \to B\)</span>, se o campo <span class="math notranslate nohighlight">\({\bf F}\)</span> é conservativo, vale:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{{\bf c}_1} {\bf F} \, \mathrm{d}{\bf s} = \int_{{\bf c}_2} {\bf F} \, \mathrm{d}{\bf s}
+\]</div>
+<p>Ou o que é o mesmo para calquera camiño pechado, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que comeza en <span class="math notranslate nohighlight">\(A\)</span>, chega a <span class="math notranslate nohighlight">\(B\)</span> e volve a <span class="math notranslate nohighlight">\(A\)</span>, a integral é nula:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F} \, \mathrm{d}{\bf s} = 0
+\]</div>
+<p><strong>Teorema</strong>: Sexa un campo <span class="math notranslate nohighlight">\({\bf F}(x, y)\)</span>, é conservativo se e só se:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} = 0
+\]</div>
+<p>Polo teorema de Green, a integral do campo ao longo dunha curva pechada satisfai:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F} \, \mathrm{d}{\bf s} = \int_R \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right) \mathrm{d}x \mathrm{d}y
+\]</div>
+<p>Se se cumpre,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} = 0,
+\]</div>
+<p>entón o campo é conservativo.</p>
+<p>Se nalgunha bola non se cumpre</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_y}{\partial x} = \frac{\partial F_x}{\partial y}
+\]</div>
+<p>entón a integral ao longo da fronteira da bola <span class="math notranslate nohighlight">\(\oint_{{\bf c}} {\bf F}\, \mathrm{d}{\bf s} \neq 0\)</span>, e o campo non é conservativo.</p>
+<p><strong>Exercicio</strong> : Comproba que o campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (2xy + y^3, x^2 + 3xy^2 + y^2)\)</span> é conservativo.</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_x}{ \partial y} = 2x + 3y^2
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_y}{ \partial x} = 2x + 3y^2
+\]</div>
+<p>¡É conservativo!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>   <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/4185be6e194fe1f351825b764c5511a1dde0e7798c33e8c3eb35223cb870b1de.png" src="../_images/4185be6e194fe1f351825b764c5511a1dde0e7798c33e8c3eb35223cb870b1de.png" />
+</div>
+</div>
+<p>Pero é aínda podemos ir un paso máis aló:</p>
+<p><strong>Teorema</strong> : O campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (F_x, F_y)\)</span> é conservativo se e só se, existe un campo escalar <span class="math notranslate nohighlight">\(U(x, y)\)</span> tal que <span class="math notranslate nohighlight">\({\bf F} = \nabla U\)</span>.</p>
+<p>Se <span class="math notranslate nohighlight">\({\bf F}\)</span> é conservativo, entón podemos atopar <span class="math notranslate nohighlight">\(U(x, y)\)</span>. Asumamos que coñecemos <span class="math notranslate nohighlight">\({\bf F}\)</span>. Dado que se cumpre <span class="math notranslate nohighlight">\( F_x = \frac{\partial U}{\partial x}\)</span>, tomemos:</p>
+<div class="math notranslate nohighlight">
+\[
+U(x, y) = \int F_x(x, y) \, \mathrm{d}x + g(y)
+\]</div>
+<p>onde asumimos que <span class="math notranslate nohighlight">\(g(y)\)</span> só é función de <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(F_y\)</span> debe ser:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+F_y(x, y) = \frac{\partial U(x, y)}{\partial y} 
+= \frac{\partial }{\partial y} \left( \int F_x(x, y) \, \mathrm{d}x + g(y) \right) \\
+= \int \frac{\partial F_x(x, y) }{\partial y} \, \mathrm{d}x + \frac{\mathrm{d} g(y)}{\mathrm{d}y}  
+\end{split}\]</div>
+<p>Entón:</p>
+<div class="math notranslate nohighlight">
+\[
+g(y) = \int_{y_0}^y \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y} \, \mathrm{d}x \right) \mathrm{d}y
+\]</div>
+<p>e comprobamos que <span class="math notranslate nohighlight">\(g(y)\)</span> só depende de <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial g(y)}{\partial x} = \int \left( \frac{\partial F_y}{ \partial x} - \frac{\partial F_x}{\partial y}\right) \mathrm{d}y = 0
+\]</div>
+<p>dado que, por ser o campo conservativo, <span class="math notranslate nohighlight">\(\frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} = 0\)</span>.</p>
+<p><strong>Exercicio</strong> : Calcula o campo escalar, <span class="math notranslate nohighlight">\(U(x, y)\)</span>, que ten como campo conservativo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (2xy + y^3, x^2 + 3xy^2 + y^2 )\)</span>.</p>
+<p>Tomamos:</p>
+<div class="math notranslate nohighlight">
+\[
+ U(x, y) = \int (2xy + y^3) \, \mathrm{d}x + g(y) = x^2y + xy^3 + g(y)
+ \]</div>
+<p>onde</p>
+<div class="math notranslate nohighlight">
+\[
+ F_y = \frac{\partial U}{\partial y} \to x^2 + 3xy^2 + 2y = x^2 + 3xy^2 + \frac{\mathrm{d}g(y)}{\mathrm {d} y}
+ \]</div>
+<p>entón:</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{\mathrm{d}g(y)}{\mathrm{d}y} = 2y \to g(y) = y^2 + C
+ \]</div>
+<p>onde <span class="math notranslate nohighlight">\(C\)</span> é unha constante. Entón:</p>
+<div class="math notranslate nohighlight">
+\[
+ U(x, y) = x^2y + xy^3 + y^2 +C
+ \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/e310f638adfb6ec55b203751c0426de890cdeb400f01a36d829f567f70213d1b.png" src="../_images/e310f638adfb6ec55b203751c0426de890cdeb400f01a36d829f567f70213d1b.png" />
+</div>
+</div>
+<p><em>Observa</em> como o seguinte campo vectorial non pode ser conservativo. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que proviría)… e verás que non é posible.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="n">x</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/92d0ba3d17dac2fbaff62e655ece52368eacea9623567b385d2db81c3f98bbef.png" src="../_images/92d0ba3d17dac2fbaff62e655ece52368eacea9623567b385d2db81c3f98bbef.png" />
+</div>
+</div>
+<p>É dicir, un campo conservativo provén de, ou pode expresarse, como o gradiente dun campo escalar.
+Se un campo non ten rotacional, é conservativo. E se é conservativo non ten rotacional.</p>
+<p>Mirade o debuxo de Escher, debe ser unha ilusión óptica! porque as escaleiras seguen o gradiente da súa altura e, polo tanto, ao circular ao longo da pista pechada que forman, non poden ter rotacional.</p>
+<a class="reference internal image-reference" href="../_images/escher_stairs.jpg"><img alt="../_images/escher_stairs.jpg" src="../_images/escher_stairs.jpg" style="width: 300px;" /></a>
+<p><strong>Teorema</strong> : Sexa <span class="math notranslate nohighlight">\(U(x, y)\)</span> un campo escalar con segundas derivadas continuas, entón a integral do seu gradiente, <span class="math notranslate nohighlight">\(\nabla U\)</span>, ao longo dun camiño, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que une dous puntos, <span class="math notranslate nohighlight">\(A, \, B\)</span> é a diferenza de <span class="math notranslate nohighlight">\(U\)</span> en <span class="math notranslate nohighlight">\(B\)</span> e <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_{{\bf c}} \nabla U \, \mathrm{d}{\bf s} = U(B) - U(A)
+ \]</div>
+<p>Sexa <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> unha liña parametrizada en <span class="math notranslate nohighlight">\(t \in [a, b]\)</span>, onde <span class="math notranslate nohighlight">\({\bf c}(a) = A, \, {\bf c}(b) = B \)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_{\bf c} \nabla U \, \mathrm{d}{\bf s}
+ = \int_a^b \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) \, \mathrm{d}t
+ \]</div>
+<p>Pola regra da cadea:</p>
+<div class="math notranslate nohighlight">
+\[
+ = \int_a^b \frac{\mathrm{d} U({\bf c}(t))}{\mathrm{d}t} \, \mathrm{d}t = U({\bf c}( t)) \, \Big|_a^b
+ = U({\bf c}(b)) - U({\bf c}(a)) \ = U(B) - U(A)
+ \]</div>
+<section id="ainda-hai-mais">
+<h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h3>
+<p>Moitas destas cousas soaránche familiares de Física Xeral.</p>
+<p>O potencial eléctrico, <span class="math notranslate nohighlight">\(V\)</span>, orixina un campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} = - \nabla V\)</span>, que procede do gradiente e que ten rotacional cero, é polo tanto un campo conservativo. A integral do campo entre dous puntos é simplemente a diferenza de potencial entre eles.</p>
+<p>En Física a forza sobre un móbil provén do gradiente dunha enerxía potencial, <span class="math notranslate nohighlight">\({\bf F} = - \nabla U\)</span>. A enerxía consérvase a partir desta relación. Consideremos un móbil, de masa <span class="math notranslate nohighlight">\(m\)</span>, que segue o seu camiño libre <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> en función do tempo <span class="math notranslate nohighlight">\(t\)</span>. A súa enerxía total é a enerxía cinética máis o potencial:</p>
+<div class="math notranslate nohighlight">
+\[
+ E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))
+ \]</div>
+<p>Se diferenciamos con respecto a en <span class="math notranslate nohighlight">\(t\)</span>, e aplicando a regra da cadea:</p>
+<div class="math notranslate nohighlight">
+\[
+ \frac{\mathrm{d}E}{\mathrm{d}t} = m \, \dot{{\bf c}}(t) \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t)
+ = \left[m \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \right] \, \dot{{\bf c}}(t) = 0
+ \]</div>
+<p>Se se cumpre</p>
+<div class="math notranslate nohighlight">
+\[
+ {\bf F} = - \nabla U = m \ddot{{\bf c}}
+ \]</div>
+<p>que é a primeira lei de Newton.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-nabla">Operador nabla.</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos">Campos conservativos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata, X. Cid Vidal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
