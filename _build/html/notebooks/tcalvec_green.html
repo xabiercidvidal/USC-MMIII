@@ -427,9 +427,9 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Teorema de Green</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-da-diverxencia-2d">Teorema da diverxencia 2D.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-calculamos-a-integral-de-lina">Paso 1: Calculamos a integral de liña</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-calculamos-a-integral-de-area">Paso 2: Calculamos a integral de área</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-da-diverxencia-2d">Teorema da diverxencia 2D.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-calculamos-a-integral-de-lina">Paso 1: Calculamos a integral de liña</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-calculamos-a-integral-de-area">Paso 2: Calculamos a integral de área</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apéndices</a></li>
 </ul>
 </li>
@@ -454,7 +454,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última actualización  Tue Apr  9 13:24:47 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última actualización  Tue Apr  9 15:58:11 2024
 </pre></div>
 </div>
 </div>
@@ -547,15 +547,15 @@ document.write(`
 <span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_2(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_1(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$a$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-.</span><span class="mi">95</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$b$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$a$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">1.95</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$b$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/35206a1e6647770bc159b0aaacc12a8f25084438302f3337dc8e7eb3f82ebaf7.png" src="../_images/35206a1e6647770bc159b0aaacc12a8f25084438302f3337dc8e7eb3f82ebaf7.png" />
+<img alt="../_images/fdcf04793489ff3344c4f8cbe053a7162aef9e19fd71a08efa2bf9dcb8c58a99.png" src="../_images/fdcf04793489ff3344c4f8cbe053a7162aef9e19fd71a08efa2bf9dcb8c58a99.png" />
 </div>
 </div>
 <p>Calculamos agora a área da rexión:</p>
@@ -608,7 +608,7 @@ document.write(`
 \[
 \int_{{\bf c}_1} y = \int_a^b y_1(x)~~~{\mathrm e} ~~~\int_{{\bf -c}_1} y = \int_b^a y_1(x) = - \int_{{\bf c}_1} y
 \]</div>
-<p><em>Cuestión:</em> Verifica que a integral da función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = (0, x)\)</span> ao longo da fronteira, <span class="math notranslate nohighlight">\({\bf c}(y)\)</span>, en sentido anti-horario, dunha rexión, <span class="math notranslate nohighlight">\(R\)</span>, de <span class="math notranslate nohighlight">\((x, y)\)</span> parametrizada de tipo II, é igual á área de <span class="math notranslate nohighlight">\(R\)</span>.</p>
+<p><em>Pregunta:</em> Verifica que a integral da función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = (0, x)\)</span> ao longo da fronteira, <span class="math notranslate nohighlight">\({\bf c}(y)\)</span>, en sentido anti-horario, dunha rexión, <span class="math notranslate nohighlight">\(R\)</span>, de <span class="math notranslate nohighlight">\((x, y)\)</span> parametrizada de tipo II, é igual á área de <span class="math notranslate nohighlight">\(R\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
 \oint_{{\bf c}} (0, x) \, \mathrm{d} {\bf s} 
@@ -655,15 +655,15 @@ document.write(`
 <span class="n">gf</span><span class="o">.</span><span class="n">line2d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">trange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>  <span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_2(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.75</span><span class="p">,</span> <span class="s2">&quot;$y_1(x)$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">.</span><span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$a$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-.</span><span class="mi">95</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$b$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">1.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$a$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="o">-</span><span class="mf">1.95</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;$b$&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">16</span><span class="p">);</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">([</span><span class="o">-</span><span class="mf">2.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">marker</span><span class="o">=</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span> <span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/35206a1e6647770bc159b0aaacc12a8f25084438302f3337dc8e7eb3f82ebaf7.png" src="../_images/35206a1e6647770bc159b0aaacc12a8f25084438302f3337dc8e7eb3f82ebaf7.png" />
+<img alt="../_images/fdcf04793489ff3344c4f8cbe053a7162aef9e19fd71a08efa2bf9dcb8c58a99.png" src="../_images/fdcf04793489ff3344c4f8cbe053a7162aef9e19fd71a08efa2bf9dcb8c58a99.png" />
 </div>
 </div>
 <p>A integral (fíxate no cambio de signo):</p>
@@ -712,7 +712,7 @@ document.write(`
 \oint_{{\bf c}} \left(F_x(x, y), 0 \right) \mathrm{d} {\bf s} = \int_{R} -\frac{\partial F_x(x, y)}{\partial y} \mathrm{d}x \mathrm{d}y
 \]</div>
 <p>co que verificamos o lema.</p>
-<p><em>Cuestión</em> : verificar agora este segundo lema:</p>
+<p><em>Pregunta</em> : verificar agora este segundo lema:</p>
 <p><strong>Lema</strong> : A integral da función vectorial <span class="math notranslate nohighlight">\({\bf F}(x, y) = \left( 0, F_y(x, y) \right)\)</span> ao longo da curva <span class="math notranslate nohighlight">\({\bf c}\)</span>, que limita unha rexión <span class="math notranslate nohighlight">\(R\)</span>, no sentido antihorario é:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -805,9 +805,8 @@ t \in [0, 2 \pi), \; {\bf c}(t) = \left( \cos t, \sin t\right)
 \]</div>
 <p>que se denomina <strong>teorema da diverxencia</strong> .</p>
 <p><em>Exercicio:</em> Verifica o teorema da diverxencia 2D co campo vectorial <span class="math notranslate nohighlight">\(\mathbf{F} = (x, y)\)</span> nunha circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span> centrada na orixe.</p>
-</section>
 <section id="paso-1-calculamos-a-integral-de-lina">
-<h2>Paso 1: Calculamos a integral de liña<a class="headerlink" href="#paso-1-calculamos-a-integral-de-lina" title="Permalink to this heading">#</a></h2>
+<h3>Paso 1: Calculamos a integral de liña<a class="headerlink" href="#paso-1-calculamos-a-integral-de-lina" title="Permalink to this heading">#</a></h3>
 <p>A parametrización da circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span> é <span class="math notranslate nohighlight">\({\mathbf c}(t) = r( \cos t,\sin t)\)</span>, logo <span class="math notranslate nohighlight">\(\mathrm{d} {\mathbf n} = (\mathrm{d}y,-\mathrm{d}x) = (\dot{y},-\dot{x})\mathrm{d}t = r( \cos t,\sin t) \mathrm{d}t\)</span> .</p>
 <p>Entón <span class="math notranslate nohighlight">\(\mathbf{F} \cdot \mathrm{d} {\mathbf n} = r( \cos t,\sin t) \cdot r( \cos t,\sin t) \mathrm{d}t = r^2 (\cos t^2 +\sin t^2) \mathrm{d}t = r^2 \mathrm{d}t\)</span>. Finalmente</p>
 <div class="math notranslate nohighlight">
@@ -816,13 +815,14 @@ t \in [0, 2 \pi), \; {\bf c}(t) = \left( \cos t, \sin t\right)
 \]</div>
 </section>
 <section id="paso-2-calculamos-a-integral-de-area">
-<h2>Paso 2: Calculamos a integral de área<a class="headerlink" href="#paso-2-calculamos-a-integral-de-area" title="Permalink to this heading">#</a></h2>
+<h3>Paso 2: Calculamos a integral de área<a class="headerlink" href="#paso-2-calculamos-a-integral-de-area" title="Permalink to this heading">#</a></h3>
 <p>Temos <span class="math notranslate nohighlight">\(\frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y} = 1 + 1 = 2 \)</span>. Logo</p>
 <div class="math notranslate nohighlight">
 \[ \int_{R} \left( \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y}\right) \mathrm{d}x\mathrm{d}y = \int_R 2  \mathrm{d}x\mathrm{d}y \]</div>
 <p>Dado que a área da circunferencia é <span class="math notranslate nohighlight">\(\pi r^2\)</span>, o resultado sería</p>
 <div class="math notranslate nohighlight">
 \[ \int_{R} \left( \frac{\partial F_x}{\partial x} + \frac{\partial F_y}{\partial y}\right) \mathrm{d}x\mathrm{d}y = 2 \pi r^2 \]</div>
+</section>
 <section id="apendices">
 <h3>Apéndices<a class="headerlink" href="#apendices" title="Permalink to this heading">#</a></h3>
 <p><strong>Exercicio</strong> : Verifica o teorema de Green para o campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, x^2)\)</span> na rexión definida como: <span class="math notranslate nohighlight">\({0 \le x \le 1, \; x^2 \le y \le x }\)</span>.</p>
@@ -967,9 +967,9 @@ t \in [0, 2 \pi), \; {\bf c}(t) = \left( \cos t, \sin t\right)
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Teorema de Green</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-da-diverxencia-2d">Teorema da diverxencia 2D.</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-calculamos-a-integral-de-lina">Paso 1: Calculamos a integral de liña</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-calculamos-a-integral-de-area">Paso 2: Calculamos a integral de área</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-da-diverxencia-2d">Teorema da diverxencia 2D.</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-1-calculamos-a-integral-de-lina">Paso 1: Calculamos a integral de liña</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#paso-2-calculamos-a-integral-de-area">Paso 2: Calculamos a integral de área</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#apendices">Apéndices</a></li>
 </ul>
 </li>
