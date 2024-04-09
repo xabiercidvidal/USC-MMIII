@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_integral_linha';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Teorema de Green" href="tcalvec_green.html" />
     <link rel="prev" title="Integrais en varias dimensións" href="tintegral_3d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -177,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
 </ul>
 
     </div>
@@ -448,7 +450,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Apr  2 16:09:27 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Apr  9 13:25:40 2024
 </pre></div>
 </div>
 </div>
@@ -540,7 +542,7 @@ s = \int_{{\bf c}} \, \mathrm{d}s = \int_{t_a}^{t_b} | \dot{{\bf c}}(t) | \mathr
  \mathrm{d}s = | {\bf \dot{c}}(t)| \, \mathrm{d}t
  \]</div>
 <p>é o arco diferencial. Ten en conta que é unha cantidade escalar.</p>
-<p>En física, se <span class="math notranslate nohighlight">\(t\)</span> é o tempo, <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> é a traxectoria dun móbil, <span class="math notranslate nohighlight">\({\bf \dot{c}}(t)\)</span> é a velocidade e <span class="math notranslate nohighlight">\( \mathrm {d}{\bf s} = |{\bf \dot{c}}(t)| \, \mathrm{d}t\)</span>, a distancia percorrida diferencial nun diferencial de tempo <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>.</p>
+<p>En física, se <span class="math notranslate nohighlight">\(t\)</span> é o tempo, <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> é a traxectoria dun móbil, <span class="math notranslate nohighlight">\({\bf \dot{c}}(t)\)</span> é a velocidade e <span class="math notranslate nohighlight">\( \mathrm {d}{ s} = |{\bf \dot{c}}(t)| \, \mathrm{d}t\)</span>, a distancia percorrida diferencial nun diferencial de tempo <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>.</p>
 </section>
 <section id="integral-dunha-funcion-escalar-ao-longo-dunha-recta">
 <h3>Integral dunha función escalar ao longo dunha recta<a class="headerlink" href="#integral-dunha-funcion-escalar-ao-longo-dunha-recta" title="Permalink to this heading">#</a></h3>
@@ -708,7 +710,7 @@ f({\bf c} (t))  = (1 + \sin^3 t)
 \[
 {\bf F} \, \mathrm{d}{\bf s} = (F_x, F_y) \, (\mathrm{d}x, \mathrm{d} y) =F_x \mathrm{d}x + F_y \mathrm{d}y \to (F_x \dot{x} + F_y \dot{y}) \, \mathrm{d}t
 \]</div>
-<p><em>Observa</em> : A seguinte figura mostra o campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, 0)\)</span> e a elipse con eixes <span class="math notranslate nohighlight">\(a, b\)</span>, que neste caso percorremos no sentido horario (comezando polo exemplo en ( -a, 0)). Faite unha idea de como é o produto escalar entre o campo <span class="math notranslate nohighlight">\({\bf F}\)</span> e <span class="math notranslate nohighlight">\(\mathrm{d}{\bf s}\)</span> ao longo da elipse. Onde é máis grande? Onde é nulo?</p>
+<p><em>Observa</em> : A seguinte figura mostra o campo <span class="math notranslate nohighlight">\({\bf F}(x, y) = (y, 0)\)</span> e a elipse con eixes <span class="math notranslate nohighlight">\(a, b\)</span>, que neste caso percorremos no sentido horario (comezando por exemplo en ( -a, 0)). Faite unha idea de como é o produto escalar entre o campo <span class="math notranslate nohighlight">\({\bf F}\)</span> e <span class="math notranslate nohighlight">\(\mathrm{d}{\bf s}\)</span> ao longo da elipse. Onde é máis grande? Onde é nulo?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">1.</span>
@@ -822,6 +824,15 @@ f({\bf c} (t))  = (1 + \sin^3 t)
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Integrais en varias dimensións</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="tcalvec_green.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Teorema de Green</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   
