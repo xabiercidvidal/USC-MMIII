@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_rotdiv_conservativos';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Teorema de Green" href="tcalvec_green.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
@@ -177,6 +178,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Operador Nabla. Campos conservativos</a></li>
 </ul>
 
     </div>
@@ -422,7 +424,6 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-nabla">Operador nabla.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos">Campos conservativos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
@@ -447,7 +448,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Tue Apr  9 15:58:18 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Wed Apr 10 11:51:18 2024
 </pre></div>
 </div>
 </div>
@@ -504,7 +505,7 @@ document.write(`
 \[
 \nabla \cdot {\bf F} = \frac{\partial F_x}{\partial x } +\frac{\partial F_y}{\partial y} + \frac{\partial F_z }{\partial z } 
 \]</div>
-<p>e ao <strong>rotacional</strong> :</p>
+<p>e o <strong>rotacional</strong> :</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \nabla \times {\bf F} = \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
@@ -579,8 +580,8 @@ F_x &amp; F_y &amp; F_z \\
 </section>
 <section id="campos-conservativos">
 <h2>Campos conservativos<a class="headerlink" href="#campos-conservativos" title="Permalink to this heading">#</a></h2>
-<p>Dicimos que un campo vectorial, <span class="math notranslate nohighlight">\({\bf F}\)</span>, é <strong>conservativo</strong> se para todos os camiños que unen dous puntos do dominio, <span class="math notranslate nohighlight">\(A, \, B\)</span>, a integral do campo ao longo de cada un deles é igual ao mesmo.</p>
-<p>Sexan dúas traxectorias, <span class="math notranslate nohighlight">\({\bf c}_1, \, {\bf c}_2\)</span>, que unen <span class="math notranslate nohighlight">\(A \to B\)</span>, se o campo <span class="math notranslate nohighlight">\({\bf F}\)</span> é conservativo, vale:</p>
+<p>Dicimos que un campo vectorial, <span class="math notranslate nohighlight">\({\bf F}\)</span>, é <strong>conservativo</strong> se para todos os camiños que unen dous puntos do dominio, <span class="math notranslate nohighlight">\(A, \, B\)</span>, a integral do campo ao longo de cada un deles é igual ao mesmo valor.</p>
+<p>Sexan dúas traxectorias, <span class="math notranslate nohighlight">\({\bf c}_1, \, {\bf c}_2\)</span>, que unen <span class="math notranslate nohighlight">\(A \to B\)</span>, se o campo <span class="math notranslate nohighlight">\({\bf F}\)</span> é conservativo, temos:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_{{\bf c}_1} {\bf F} \, \mathrm{d}{\bf s} = \int_{{\bf c}_2} {\bf F} \, \mathrm{d}{\bf s}
@@ -685,101 +686,87 @@ g(y) = \int_{y_0}^y \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y
  \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>   <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
 <span class="n">fc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span> 
-<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax2</span><span class="p">]);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e310f638adfb6ec55b203751c0426de890cdeb400f01a36d829f567f70213d1b.png" src="../_images/e310f638adfb6ec55b203751c0426de890cdeb400f01a36d829f567f70213d1b.png" />
+<img alt="../_images/db7e0c0b2ee9e36b4b7c9d4f365c7ffc6276ec5adfe79b78446e130fb5018188.png" src="../_images/db7e0c0b2ee9e36b4b7c9d4f365c7ffc6276ec5adfe79b78446e130fb5018188.png" />
 </div>
 </div>
-<p><em>Observa</em> como o seguinte campo vectorial non pode ser conservativo. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que procedía)… e verás que non é posible.</p>
+<p><em>Observa</em>  e compara como os seguinte campo vectoriais, <span class="math notranslate nohighlight">\(F(x,y)=(y,x)\)</span> e <span class="math notranslate nohighlight">\(F(x,y)=(-y,x)\)</span>. Un é conservativo, o outro non. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que proviría)… e verás se é ou non posible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span>
+<span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$F(x,y)=(y,x)$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="n">x</span>
 <span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="n">y</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$F(x,y)=(-y,x)$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/92d0ba3d17dac2fbaff62e655ece52368eacea9623567b385d2db81c3f98bbef.png" src="../_images/92d0ba3d17dac2fbaff62e655ece52368eacea9623567b385d2db81c3f98bbef.png" />
+<img alt="../_images/4b71cb926d43acb124399366e2a7554999f336a78e0209d16724ed60c0501d58.png" src="../_images/4b71cb926d43acb124399366e2a7554999f336a78e0209d16724ed60c0501d58.png" />
 </div>
 </div>
-<p>Esto es, un campo convervativo proviene, o puede expresarse, como el gradiente de un campo escalar.
-Si un campo no tiene rotacional es convervativo. Y si es conservativo no tiene rotacional.</p>
-<p>Observa el dibujo de Escher ¡debe ser una ilusión óptica! porque las escaleras siguen el gradiente de su altura, y por lo tanto al circular a lo largo como la pista cerrada que forman no puede tener rotacional.</p>
+<p>É dicir, un campo conservativo provén de, ou pode expresarse, como o gradiente dun campo escalar.
+Se un campo non ten rotacional, é conservativo. E se é conservativo non ten rotacional.</p>
+<p>Mirade o debuxo de Escher, debe ser unha ilusión óptica! porque as escaleiras seguen o gradiente da súa altura e, polo tanto, ao circular ao longo da pista pechada que forman, non poden ter rotacional.</p>
 <a class="reference internal image-reference" href="../_images/escher_stairs.jpg"><img alt="../_images/escher_stairs.jpg" src="../_images/escher_stairs.jpg" style="width: 300px;" /></a>
-<p>É dicir, un campo convervativo provén de, ou pode expresarse, como o gradiente dun campo escalar.</p>
-<p>Se un campo non ten rotación, é convervativo. E se é conservador non ten rotación.</p>
-<p>Mirade o debuxo de Escher, debe ser unha ilusión óptica! porque as escaleiras seguen a pendiente da súa altura e, polo tanto, ao circular pola pista pechada que forman, non poden ser rotativas.</p>
-<p>&lt;img src=”imgs/escher_stairs.jpg” width=”300” /&gt;</p>
-<p><strong>Teorema</strong>: Sea <span class="math notranslate nohighlight">\(U(x, y)\)</span> un campo escalar con derivadas segundas continuas, entonces la integral de su gradiente, <span class="math notranslate nohighlight">\(\nabla U\)</span>, a lo largo de una trayectoria, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que une dos puntos, <span class="math notranslate nohighlight">\(A, \, B\)</span> es la diferencia de <span class="math notranslate nohighlight">\(U\)</span> en <span class="math notranslate nohighlight">\(B\)</span> y <span class="math notranslate nohighlight">\(A\)</span>.</p>
+<p><strong>Teorema</strong> : Sexa <span class="math notranslate nohighlight">\(U(x, y)\)</span> un campo escalar con segundas derivadas continuas, entón a integral do seu gradiente, <span class="math notranslate nohighlight">\(\nabla U\)</span>, ao longo dun camiño, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que une dous puntos, <span class="math notranslate nohighlight">\(A, \, B\)</span> é a diferenza de <span class="math notranslate nohighlight">\(U\)</span> en <span class="math notranslate nohighlight">\(B\)</span> e <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{{\bf c}} \nabla U \, \mathrm{d}{\bf s} = U(B) - U(A)
-\]</div>
-<p><strong>Teorema</strong> : Sexa <span class="math notranslate nohighlight">\(U(x, y)\)</span> un campo escalar con segundas derivadas continuas, despois a integral do seu gradiente, <span class="math notranslate nohighlight">\(\nabla U\)</span>, ao longo dun camiño, <span class="math notranslate nohighlight">\({\bf c}\)</span>, que une dous puntos, <span class="math notranslate nohighlight">\(A, \, B\)</span> é a diferenza de <span class="math notranslate nohighlight">\(U\)</span> en <span class="math notranslate nohighlight">\(B\)</span> e <span class="math notranslate nohighlight">\(A\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[ \int_{{\bf c}} \nabla U \, \mathrm{d}{\bf s} = U(B) - U(A)\]</div>
-<p>Sea <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> línea parametrizada en <span class="math notranslate nohighlight">\(t \in [a, b]\)</span>, donde <span class="math notranslate nohighlight">\({\bf c}(a) = A, \, {\bf c}(b) = B\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[
-\int_{\bf c} \nabla U \, \mathrm{d}{\bf s} 
-= \int_a^b \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) \, \mathrm{d}t 
-\]</div>
-<p>Por la regla de la cadena:</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-= \int_a^b \frac{\mathrm{d} U({\bf c}(t))}{\mathrm{d}t} \, \mathrm{d}t = U({\bf c}(t)) \, \Big|_a^b 
-= U({\bf c}(b)) - U({\bf c}(a))  \\ = U(B) - U(A)
-\end{split}\]</div>
+ \int_{{\bf c}} \nabla U \, \mathrm{d}{\bf s} = U(B) - U(A)
+ \]</div>
 <p>Sexa <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> unha liña parametrizada en <span class="math notranslate nohighlight">\(t \in [a, b]\)</span>, onde <span class="math notranslate nohighlight">\({\bf c}(a) = A, \, {\bf c}(b) = B \)</span>.</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} \int_{\bf c} \nabla U \, \mathrm{d}{\bf s}\\ = \int_a^b \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) \, \mathrm{d}t\end{aligned}\end{align} \]</div>
+\[
+ \int_{\bf c} \nabla U \, \mathrm{d}{\bf s}
+ = \int_a^b \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) \, \mathrm{d}t
+ \]</div>
 <p>Pola regra da cadea:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} = \int_a^b \frac{\mathrm{d} U({\bf c}(t))}{\mathrm{d}t} \, \mathrm{d}t = U({\bf c}( t)) \, \Big|_a^b\\ = U({\bf c}(b)) - U({\bf c}(a)) \ = U(B) - U(A)\end{aligned}\end{align} \]</div>
-<p><em>Ejemplo</em>: La altura es un campo conservativo. Da igual que camino siguas para llegar a la cumbre de una montaña, puedes seguir caminos más fáciles o más arduos, la diferencia de altura respecto de dónde empezaste siempre será la misma.</p>
-<p><em>Exemplo</em> : a altura é un campo conservativo. Non importa o camiño que sigas para chegar ao alto dunha montaña, podes seguir camiños máis fáciles ou máis arduos, o desnivel con respecto a onde empezaches sempre será o mesmo.</p>
-<section id="aun-hay-mas">
-<h3>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h3>
-<p>Muchas de estas cosas te sonarán por Física General.</p>
-<p>El potencial eléctrico, <span class="math notranslate nohighlight">\(V\)</span>, da lugar a un campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} = - \nabla V\)</span>, que proviene del gradiente y cuyo rotacional es nulo, es por lo tanto un campo conservativo. La integral del campo entro dos puntos es simplemente la diferencia de potencial entre ellos.</p>
-<p>En Física la fuerza sobre un móvil viene del gradiente de una energía potencial, <span class="math notranslate nohighlight">\({\bf F} = - \nabla U\)</span>. De está relación se conserva la energía. Consideremos un móvil, de masa <span class="math notranslate nohighlight">\(m\)</span>, que sigue su trayectoria libre <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> en función del tiempo <span class="math notranslate nohighlight">\(t\)</span>. Su energía total es la energía cinética más la potencial:</p>
-<div class="math notranslate nohighlight">
 \[
-E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))
-\]</div>
-<p>Si derivamos respecto at <span class="math notranslate nohighlight">\(t\)</span>, y aplicando la regla de la cadena:</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\mathrm{d}E}{\mathrm{d}t} = m \, \dot{{\bf c}}(t) \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t) 
-= \left[m \, \ddot{{\bf c}}(t)  + \nabla U({\bf c}(t)) \right] \, \dot{{\bf c}}(t) = 0
-\]</div>
-<p>Si se cumple</p>
-<div class="math notranslate nohighlight">
-\[
-{\bf F} = - \nabla U = m \ddot{{\bf c}}
-\]</div>
-<p>que es la primera ley de Newton.</p>
-</section>
+ = \int_a^b \frac{\mathrm{d} U({\bf c}(t))}{\mathrm{d}t} \, \mathrm{d}t = U({\bf c}( t)) \, \Big|_a^b
+ = U({\bf c}(b)) - U({\bf c}(a)) \ = U(B) - U(A)
+ \]</div>
 <section id="ainda-hai-mais">
 <h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h3>
 <p>Moitas destas cousas soaránche familiares de Física Xeral.</p>
-<p>O potencial eléctrico, <span class="math notranslate nohighlight">\(V\)</span>, orixina un campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} = - \nabla V\)</span>, que procede do gradiente e cuxa rotación é cero, é polo tanto un campo conservativo. A integral do campo entre dous puntos é simplemente a diferenza de potencial entre eles.</p>
+<p>O potencial eléctrico, <span class="math notranslate nohighlight">\(V\)</span>, orixina un campo eléctrico, <span class="math notranslate nohighlight">\({\bf E} = - \nabla V\)</span>, que procede do gradiente e que ten rotacional cero, é polo tanto un campo conservativo. A integral do campo entre dous puntos é simplemente a diferenza de potencial entre eles.</p>
 <p>En Física a forza sobre un móbil provén do gradiente dunha enerxía potencial, <span class="math notranslate nohighlight">\({\bf F} = - \nabla U\)</span>. A enerxía consérvase a partir desta relación. Consideremos un móbil, de masa <span class="math notranslate nohighlight">\(m\)</span>, que segue o seu camiño libre <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> en función do tempo <span class="math notranslate nohighlight">\(t\)</span>. A súa enerxía total é a enerxía cinética máis o potencial:</p>
 <div class="math notranslate nohighlight">
-\[ E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))\]</div>
+\[
+ E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))
+ \]</div>
 <p>Se diferenciamos con respecto a en <span class="math notranslate nohighlight">\(t\)</span>, e aplicando a regra da cadea:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned} \frac{\mathrm{d}E}{\mathrm{d}t} = m \, \dot{{\bf c}}(t) \, \ddot{{\bf c}}(t) + \ nabla U({\bf c}(t)) \, \dot{{\bf c}}(t)\\ = \left[m \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \right] \, \dot{{\bf c}}(t) = 0\end{aligned}\end{align} \]</div>
+\[
+ \frac{\mathrm{d}E}{\mathrm{d}t} = m \, \dot{{\bf c}}(t) \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \, \dot{{\bf c}}(t)
+ = \left[m \, \ddot{{\bf c}}(t) + \nabla U({\bf c}(t)) \right] \, \dot{{\bf c}}(t) = 0
+ \]</div>
 <p>Se se cumpre</p>
 <div class="math notranslate nohighlight">
-\[ {\bf F} = - \nabla U = m \ddot{{\bf c}}\]</div>
+\[
+ {\bf F} = - \nabla U = m \ddot{{\bf c}}
+ \]</div>
 <p>que é a primeira lei de Newton.</p>
 </section>
 </section>
@@ -816,6 +803,15 @@ E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tcalvec_green.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Teorema de Green</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -837,7 +833,6 @@ E(t) = \frac{1}{2} m \dot{{\bf c}}^2(t) + U({\bf c}(t))
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operador-nabla">Operador nabla.</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#campos-conservativos">Campos conservativos</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
