@@ -170,8 +170,11 @@ def quiver2d_in_line2d(fx, fy, cx, cy, trange = xrange, newfig = False,
 
 def quiver3d(fx, fy, fz, xrange = xrange, yrange = xrange, zrange = xrange,
               newfig = False, color = 'r'):
-    fig = plt.figure(figsize=figsize) if newfig else plt.gcf()
-    ax = fig.gca(projection='3d')
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else:
+        fig,ax = newfig
 
     # Make the grid
     x, y, z = np.meshgrid(np.linspace(*xrange),
@@ -185,7 +188,7 @@ def quiver3d(fx, fy, fz, xrange = xrange, yrange = xrange, zrange = xrange,
 
     ax.quiver(x, y, z, u, v, w,  alpha = 0.8, length = 0.3, normalize = True, color = color)
 
-    return
+    return fig,ax
 
 
 def quiver3d_in_wfsurface(fx, fy, fz, sx, sy, sz, urange = xrange, vrange = xrange,
@@ -333,26 +336,26 @@ def wfsurface(funx, funy, funz, urange = xrange, vrange = xrange,
 
 
 
-def wfmasterlines(funx, funy, funz, urange, vrange, ui = 0, vj = 0,
+def wfmasterlines(funx, funy, funz, urange, vrange, axes,ui = 0, vj = 0,
            color='b', alpha = 0.8):
     us = np.linspace(*urange)
     vs = np.linspace(*vrange)
     ums, vms = np.meshgrid(us, vs)
     xms, yms, zms = funx(ums, vms), funy(ums, vms), funz(ums, vms)
     u0, v0 = np.ones(len(us)) * us[ui], np.ones(len(vs)) * vs[vj]
-    ax = plt.gca(projection='3d')
     ulx = lambda u : funx(u, v0)
     uly = lambda u : funy(u, v0)
     ulz = lambda u : funz(u, v0)
-    line3d(ulx, uly, ulz, urange, newfig=False, color = color, alpha = alpha)
+    fig,ax = axes
+    line3d(ulx, uly, ulz, urange, newfig=[fig,ax], color = color, alpha = alpha)
     vlx = lambda v : funx(u0, v)
     vly = lambda v : funy(u0, v)
     vlz = lambda v : funz(u0, v)
-    line3d(vlx, vly, vlz, vrange, newfig=False, color = color, alpha = alpha)
+    line3d(vlx, vly, vlz, vrange, newfig=[fig,ax], color = color, alpha = alpha)
     return
 
 
-def wfaxis(funx, funy, funz, urange, vrange, ui = 0, vj = 0,
+def wfaxis(funx, funy, funz, urange, vrange, ax, ui = 0, vj = 0,
            color='black', alpha = 0.8):
     i, j = ui, vj
     us = np.linspace(*urange)
@@ -367,7 +370,6 @@ def wfaxis(funx, funy, funz, urange, vrange, ui = 0, vj = 0,
     nz =  dxi * dyj - dxj * dyi
     mod = lambda x, y, z: np.sqrt(x*x + y*y + z*z)
     nn = np.sqrt(mod(nx, ny, nz))
-    ax = plt.gca(projection='3d')
     ax.quiver(x0, y0, z0, dxi, dyi, dzi, color = color, lw=2, alpha = alpha)
     ax.quiver(x0, y0, z0, dxj, dyj, dzj, color = color, lw=2, alpha = alpha)
     ax.quiver(x0, y0, z0,  nx/nn,  ny/nn,  nz/nn, color = color, lw=2, alpha = alpha)
