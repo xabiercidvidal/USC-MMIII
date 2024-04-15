@@ -66,6 +66,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_rotdiv_conservativos';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Integral de superficie" href="tcalvec_integral_superficie.html" />
     <link rel="prev" title="Teorema de Green" href="tcalvec_green.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -179,6 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
 </ul>
 
     </div>
@@ -448,15 +450,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Wed Apr 10 11:51:18 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Mon Apr 15 15:11:26 2024
 </pre></div>
 </div>
 </div>
 </div>
 <section id="obxectivos">
 <h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
-<p>Introdución do operador nabla, o gradiente, a rotación e a diverxencia dun campo.</p>
-<p>Interpretación da rotación e da diverxencia.</p>
+<p>Introdución do operador nabla, o gradiente, o rotacional e a diverxencia dun campo.</p>
+<p>Interpretación do rotacional e da diverxencia.</p>
 <p>Relacións entre eles.</p>
 <p><em>Nota</em></p>
 <p>Para que este notebook funcione en colab, precisamos <a href = "https://www.dropbox.com/scl/fi/wwz2w43kqj0s38gm87roj/graph_utils.py?rlkey=rppkwu9tmbnnsojezzj69p1r0&dl=1"> graph_utils.py</a>. Podes descargalo premendo na ligazón, e subilo a colab:</p>
@@ -514,7 +516,7 @@ F_x &amp; F_y &amp; F_z \\
  \end{array} \right| \\
  = \left(\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z}, \,  \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x}, \, \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right) 
 \end{split}\]</div>
-<p><em>Exercicio</em> : Calcula a curvatura e a diverxencia dos seguintes campos vectoriais: <span class="math notranslate nohighlight">\({\bf F_1}(x, y) = (\pm x, \pm y)\)</span> e <span class="math notranslate nohighlight">\({\bf F_2}(x, y) = ( \pm y, \pm x)\)</span>.</p>
+<p><em>Exercicio</em> : Calcula o rotacional e a diverxencia dos seguintes campos vectoriais: <span class="math notranslate nohighlight">\({\bf F_1}(x, y) = (\pm x, \pm y)\)</span> e <span class="math notranslate nohighlight">\({\bf F_2}(x, y) = ( \pm y, \pm x)\)</span>.</p>
 <p><span class="math notranslate nohighlight">\(\nabla \cdot {\bf F_1} = 2\)</span> signo +.</p>
 <p><span class="math notranslate nohighlight">\(\nabla \cdot {\bf F_1} = -2\)</span>  signo -.</p>
 <p><span class="math notranslate nohighlight">\( \nabla \cdot {\bf F_2} =  0 \)</span> para os dous signos.</p>
@@ -655,7 +657,7 @@ F_y(x, y) = \frac{\partial U(x, y)}{\partial y}
 <p>Entón:</p>
 <div class="math notranslate nohighlight">
 \[
-g(y) = \int_{y_0}^y \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y} \, \mathrm{d}x \right) \mathrm{d}y
+g(y) = \int \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y} \, \mathrm{d}x \right) \mathrm{d}y
 \]</div>
 <p>e comprobamos que <span class="math notranslate nohighlight">\(g(y)\)</span> só depende de <span class="math notranslate nohighlight">\(y\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -703,27 +705,31 @@ g(y) = \int_{y_0}^y \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y
 <img alt="../_images/db7e0c0b2ee9e36b4b7c9d4f365c7ffc6276ec5adfe79b78446e130fb5018188.png" src="../_images/db7e0c0b2ee9e36b4b7c9d4f365c7ffc6276ec5adfe79b78446e130fb5018188.png" />
 </div>
 </div>
-<p><em>Observa</em>  e compara como os seguinte campo vectoriais, <span class="math notranslate nohighlight">\(F(x,y)=(y,x)\)</span> e <span class="math notranslate nohighlight">\(F(x,y)=(-y,x)\)</span>. Un é conservativo, o outro non. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que proviría)… e verás se é ou non posible.</p>
+<p><em>Observa</em>  e compara os seguintes campos vectoriais, <span class="math notranslate nohighlight">\(F(x,y)=(y,x)\)</span> e <span class="math notranslate nohighlight">\(F(x,y)=(-y,x)\)</span>. Un é conservativo, o outro non. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que proviría)… e verás se é ou non posible.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">8</span><span class="p">))</span>
-<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># </span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># </span>
 <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span>
 <span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span>
 <span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 <span class="n">bla</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$F(x,y)=(y,x)$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
-<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># </span>
 <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
 <span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="n">x</span>
 <span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="o">-</span><span class="n">y</span>
 <span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="kc">False</span><span class="p">);</span>
 <span class="n">bla</span><span class="o">=</span><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$F(x,y)=(-y,x)$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">fc</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">y</span><span class="o">*</span><span class="n">x</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">graph</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span><span class="n">newfig</span><span class="o">=</span><span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax3</span><span class="p">]);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;$U(x,y)=xy$&quot;</span><span class="p">,</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4b71cb926d43acb124399366e2a7554999f336a78e0209d16724ed60c0501d58.png" src="../_images/4b71cb926d43acb124399366e2a7554999f336a78e0209d16724ed60c0501d58.png" />
+<img alt="../_images/d7cb59deb24c07772985495ff672dd529708d2b16ffeecbcd5cdb79978c0f102.png" src="../_images/d7cb59deb24c07772985495ff672dd529708d2b16ffeecbcd5cdb79978c0f102.png" />
 </div>
 </div>
 <p>É dicir, un campo conservativo provén de, ou pode expresarse, como o gradiente dun campo escalar.
@@ -811,6 +817,15 @@ Se un campo non ten rotacional, é conservativo. E se é conservativo non ten ro
         <p class="prev-next-subtitle">previous</p>
         <p class="prev-next-title">Teorema de Green</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="tcalvec_integral_superficie.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Integral de superficie</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div></div>
   

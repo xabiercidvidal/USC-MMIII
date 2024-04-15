@@ -22,3 +22,4 @@
 | Integral de liña | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_integral_linha.ipynb) |
 | Teorema de Green | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_green.ipynb) |
 | Operador Nabla. Campos conservativos| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_rotdiv_conservativos.ipynb) |
+| Integral de superficie| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_integral_superficie.ipynb) |
