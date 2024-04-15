@@ -1,0 +1,1480 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Teorema de Stockes y Teorema de Gauss &#8212; Métodos Matemáticos III - USC</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_stokes_gauss';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../intro.html">
+                    Introdución
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Notas prácticas</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../notas_practicas.html">Como acceder ás notas</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_parametrizacion_linhas_superficies.html">Parametrización de curvas e superficies</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_direccional_diferencial.html">Derivadas direccionais e funcións derivables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_gradiante_xacobiana.html">Gradiente, matriz xacobiana, funcións diferenciables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_coordenadas_cadea.html">Cambio de coordenadas e regra da cadea</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tderivadas_min_max.html">Mínimos e máximos de funcións escalares</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tcalvec_stokes_gauss.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_stokes_gauss.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onColab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tcalvec_stokes_gauss.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/notebooks/tcalvec_stokes_gauss.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Teorema de Stockes y Teorema de Gauss</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Teorema de Stockes y Teorema de Gauss</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stockes-e-teorema-de-gauss">Teorema de Stockes e Teorema de Gauss</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stockes">Teorema de Stockes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientables">Superficies orientables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Teorema de Stockes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-regulables">Superficies regulables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-strogradski-gauss">Teorema de Strogradski-Gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Teorema de Strogradski-Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="teorema-de-stockes-y-teorema-de-gauss">
+<h1>Teorema de Stockes y Teorema de Gauss<a class="headerlink" href="#teorema-de-stockes-y-teorema-de-gauss" title="Permalink to this heading">#</a></h1>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="teorema-de-stockes-e-teorema-de-gauss">
+<h1>Teorema de Stockes e Teorema de Gauss<a class="headerlink" href="#teorema-de-stockes-e-teorema-de-gauss" title="Permalink to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Mon Apr 15 15:53:36 2024
+</pre></div>
+</div>
+</div>
+</div>
+<section id="objectivos">
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<p>Extender el teorema de Green a 3D. Teorema de Stockes.</p>
+<p>Extender el teorema de la divergencia a 3D. Teorema de Gauss.</p>
+<p>Mostrar algunos ejemplos sencillos.</p>
+</section>
+<section id="obxectivos">
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<p>Extensión do teorema de Green a 3D. Teorema de Stockes.</p>
+<p>Estende o teorema da diverxencia a 3D. Teorema de Gauss.</p>
+<p>Mostra algúns exemplos sinxelos.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="teorema-de-stockes">
+<h2>Teorema de Stockes<a class="headerlink" href="#teorema-de-stockes" title="Permalink to this heading">#</a></h2>
+<section id="superficies-orientables">
+<h3>Superficies orientables<a class="headerlink" href="#superficies-orientables" title="Permalink to this heading">#</a></h3>
+<p>Una superficie es orientable si tiene dos caras, por ejemplo, una hoja de papel.</p>
+<p>Fíjare en la siguiente figura, es una cinta de Moebius y solo tiene una cara.</p>
+<a class="reference internal image-reference" href="../_images/escher-moebius.jpg"><img alt="../_images/escher-moebius.jpg" src="../_images/escher-moebius.jpg" style="width: 300px;" /></a>
+</section>
+</section>
+<section id="id1">
+<h2>Teorema de Stockes<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<section id="superficies-regulables">
+<h3>Superficies regulables<a class="headerlink" href="#superficies-regulables" title="Permalink to this heading">#</a></h3>
+<p>Unha superficie é orientable se ten dous lados, por exemplo, unha folla de papel.</p>
+<p>Fíxate na seguinte figura, é unha franxa de Moebius e só ten un lado.</p>
+<p>&lt;img src=”imgs/escher-moebius.jpg” width=”300”/&gt;</p>
+<p><strong>Orientación dextrógira</strong></p>
+<p>Damos la orientación de una superficie mendiante un giro dextrógiro. Giraremos por la línea de la frontera en sentido anti-horario dejando la superficie siempre a nuestra izquierda.</p>
+<p><em>Observa</em>: la siguiente figura, la superficie y su frontera. El giro dextrógiro seguiría la frontera en sentido contratio al de las agujas del reloj.</p>
+<p><strong>Orientación á dereita</strong></p>
+<p>Damos a orientación dunha superficie mediante unha rotación á dereita. Xiraremos pola liña fronteiriza en sentido contrario ás agullas do reloxo, deixando sempre a superficie á nosa esquerda.</p>
+<p><em>Observa</em> : a seguinte figura, a superficie e o seu bordo. O xiro da dereita seguiría a fronteira en sentido antihorario.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mf">2.</span>
+<span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">R</span><span class="o">*</span><span class="n">R</span> <span class="o">-</span> <span class="n">sx</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sx</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">-</span> <span class="n">sy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> 
+<span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">cz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">phi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
+<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
+</div>
+</div>
+<p><strong>El teorema de Stockes</strong> es la generalización del de Green a 3 dimensiones.</p>
+<p><strong>Teorema</strong>: Sea una superficie <span class="math notranslate nohighlight">\(S\)</span> orientable, cuya frontera <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> se recorre en sentido anti-horario, y parametrizada con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span>, donde <span class="math notranslate nohighlight">\((u, v)\)</span> están definidas en una región <span class="math notranslate nohighlight">\(R\)</span>; y sea un campo vectorial con derivadas primeras continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{S} \nabla \times {\bf F} \, \mathrm{d} \vec{\sigma} = \oint_{\bf c} {\bf F} \, \mathrm{d}{\bf s}
+\]</div>
+<p><strong>O teorema de Stockes</strong> é a xeneralización do teorema de Green a 3 dimensións.</p>
+<p><strong>Teorema</strong> : Sexa unha superficie orientable <span class="math notranslate nohighlight">\(S\)</span>, cuxo límite <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> é atravesado en sentido antihorario, e parametrizado con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span>, onde <span class="math notranslate nohighlight">\((u) , v) \)</span> defínense nunha rexión <span class="math notranslate nohighlight">\(R\)</span>; e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, cúmprese:</p>
+<div class="math notranslate nohighlight">
+\[ \int *{S} \nabla \times {\bf F} \, \mathrm{d} \vec{\sigma} = \oint* {\bf c} {\bf F} \, \mathrm{d}{\bf s}\]</div>
+<ol class="arabic simple">
+<li><p>Consideremos primero un campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x (x, y, z), 0, 0\right)\)</span>, y una superficie orientable <span class="math notranslate nohighlight">\(S\)</span> con frontera <span class="math notranslate nohighlight">\({\bf c}\)</span> parametrizada con <span class="math notranslate nohighlight">\(\sigma(x, y, z(x, y) )\)</span> en una región <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((x, y)\)</span> con frontera <span class="math notranslate nohighlight">\({\bf d}\)</span>.</p></li>
+</ol>
+<p>La integral a lo largo de la frontera <span class="math notranslate nohighlight">\({\bf c}\)</span> en sentido anti-horario es</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{\bf c} {\bf F}(x, y, z) \, \mathrm{d}{\bf s} = \oint_{{\bf d}} F_x(x, y, z(x, y)) \, \mathrm{d}x
+\]</div>
+<p>Donde podemos entender <span class="math notranslate nohighlight">\(F_x(x, y, z(x, y)) = f_x(x, y) \)</span> como una función compuesta que depende de <span class="math notranslate nohighlight">\((x, y)\)</span> directamente e indirectamente via <span class="math notranslate nohighlight">\(z(x, y)\)</span>, y podemos re-expresar el último término de la igualdad con una integral de 2 dimensiones.</p>
+<div class="math notranslate nohighlight">
+\[
+= \oint_{\bf d} f_x(x, y) \, \mathrm{d} x  
+\]</div>
+<ol class="arabic simple">
+<li><p>Consideremos primeiro un campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x (x, y, z), 0, 0\right)\)</span> e unha superficie orientable <span class="math notranslate nohighlight">\(S\)</span> con límite <span class="math notranslate nohighlight">\( {\bf c}\)</span> parametrizado con <span class="math notranslate nohighlight">\(\sigma(x, y, z(x, y) )\)</span> nunha rexión <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((x, y)\)</span> co límite <span class="math notranslate nohighlight">\({\bf d}\)</span>.</p></li>
+</ol>
+<p>A integral ao longo do límite <span class="math notranslate nohighlight">\({\bf c}\)</span> en sentido contrario ás agullas do reloxo é</p>
+<div class="math notranslate nohighlight">
+\[ \oint *{\bf c} {\bf F}(x, y, z) \, \mathrm{d}{\bf s} = \oint* {{\bf d}} F_x(x, y, z(x , y)) \, \mathrm{d}x\]</div>
+<p>Onde podemos entender <span class="math notranslate nohighlight">\(F_x(x, y, z(x, y)) = f_x(x, y) \)</span> como unha función composta que depende de <span class="math notranslate nohighlight">\((x, y)\)</span> directa e indirectamente a través de <span class="math notranslate nohighlight">\(z(x, y) ) \)</span>, e podemos reexpresar o último termo da igualdade cunha integral bidimensional.</p>
+<div class="math notranslate nohighlight">
+\[ = \oint_{\bf d} f_x(x, y) \, \mathrm{d} x\]</div>
+<p>Y aplicar el teorema de Green:</p>
+<div class="math notranslate nohighlight">
+\[
+= \int_{R} - \frac{\partial f_x}{\partial y} \mathrm{d}x \mathrm{d}y
+\]</div>
+<p>Aplicando la regla de la cadena, obtenemos:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial f_x}{\partial y} = \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y}
+\]</div>
+<p>Por otro lado sabemos el vector <span class="math notranslate nohighlight">\({\bf n}\)</span> de una superficie <span class="math notranslate nohighlight">\(\sigma(x, y) = (x, y, z(x, y))\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf n} = \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1\right)
+\]</div>
+<p>E aplica o teorema de Green:</p>
+<div class="math notranslate nohighlight">
+\[ = \int_{R} - \frac{\partial f_x}{\partial y} \mathrm{d}x \mathrm{d}y\]</div>
+<p>Aplicando a regra da cadea, obtemos:</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\partial f_x}{\partial y} = \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y}\]</div>
+<p>Por outra banda, sabemos que o vector <span class="math notranslate nohighlight">\({\bf n}\)</span> dunha superficie <span class="math notranslate nohighlight">\(\sigma(x, y) = (x, y, z(x, y))\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[ {\bf n} = \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1\right)\]</div>
+<p>Luego podemos reescribir:</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\partial F_x}{\partial y}  + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y} 
+=  \left( 0, - \frac{\partial F_x}{\partial z},  \frac{\partial F_x}{\partial y} \right) \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1 \right) 
+\]</div>
+<p>Esto es
+$<span class="math notranslate nohighlight">\(
+= \oint_{{\bf d}} - \left( \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y} \right) \, \mathrm{d}x
+\)</span>$</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{R}  \left( 0, \frac{\partial F_x}{\partial z}, - \frac{\partial F_x}{\partial y} \right) 
+\left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1 \right) \mathrm{d}x \mathrm{d}y 
+= \int_{S} \left( 0, \frac{\partial F_x}{\partial z}, - \frac{\partial F_x}{\partial y}\right) \mathrm{d} \vec{\sigma}
+\]</div>
+<p>Despois podemos reescribir:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y}\\ = \left( 0, - \frac{\partial F_x}{\partial z}, \frac{\partial F_x}{\partial y} \right) \left( - \frac{\partial z}{\partial x }, - \frac{\parcial z}{\parcial y}, 1 \right)\end{aligned}\end{align} \]</div>
+<p>Isto é</p>
+<div class="math notranslate nohighlight">
+\[ = \oint_{{\bf d}} - \left( \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y} } \right) \, \mathrm{d}x\]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_{R} \left( 0, \frac{\partial F_x}{\partial z}, - \frac{\partial F_x}{\partial y} \right)\\ \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1 \right) \mathrm{d}x \mathrm{d}y\\ = \int_{S} \left( 0, \frac{\partial F_x}{\partial z}, - \frac{\partial F_x}{\partial y}\right) \mathrm{d} \vec{\sigma }\end{aligned}\end{align} \]</div>
+<ol class="arabic simple" start="2">
+<li><p>Si consideramos el vector <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, F_y(x, y, z), 0)\)</span> en la misma superficie obtenemos:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\oint_{S} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left(- \frac{\partial F_y}{\partial z}, 0,   \frac{\partial F_y}{\partial x} \right) \, \mathrm{d}\vec{\sigma}
+\]</div>
+<ol class="arabic simple" start="3">
+<li><p>Y finalmente con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, 0, F_z(x, y, z))\)</span> con parametrización de <span class="math notranslate nohighlight">\(S\)</span> en <span class="math notranslate nohighlight">\(\sigma(x, y(x, z), z)\)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[
+\oint_{S} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left(  \frac{\partial F_z}{\partial y}, - \frac{\partial F_z}{\partial x} , 0 \right) \, \mathrm{d}\vec{\sigma}
+\]</div>
+<ol class="arabic simple" start="2">
+<li><p>Se consideramos o vector <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, F_y(x, y, z), 0)\)</span> na mesma superficie obtemos:</p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \oint_{S} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left(- \frac{\partial F_y}{\partial z}, 0, \frac{\partial F_y }{\parcial x} \right) \, \mathrm{d}\vec{\sigma}\]</div>
+<ol class="arabic simple" start="3">
+<li><p>E finalmente con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, 0, F_z(x, y, z))\)</span> coa parametrización de <span class="math notranslate nohighlight">\(S\)</span> en <span class="math notranslate nohighlight">\(\sigma(x, y(x) , z), z) \)</span></p></li>
+</ol>
+<div class="math notranslate nohighlight">
+\[ \oint_{S} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left( \frac{\partial F_z}{\partial y}, - \frac{\partial F_z}{ \parcial x} , 0 \right) \, \mathrm{d}\vec{\sigma}\]</div>
+<p>Y por lo tanto, para <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla \times {\bf F}  
+= \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+ \frac{\partial}{\partial x} &amp;  \frac{\partial}{ \partial y} &amp; \frac{\partial }{\partial z} \\
+ F_x &amp;  F_y &amp; F_z\\
+ \end{array} 
+ \right| 
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}} {\bf F} \, \mathrm{d}{\bf s} = \int_{S}
+\left(\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z}, \,  \frac{\partial F_x}{\partial z} - \frac{\partial F_z}{\partial x}, \, \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right) \mathrm{d} \vec{\sigma}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_S \nabla\times F \, \mathrm{d}\vec{\sigma}
+\]</div>
+<p>con lo que queda demostrado el teorema de Stockes.</p>
+<p>E polo tanto, para <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \nabla \times {\bf F}\\ = \esquerda| \begin{matriz}{ccc} {\bf i} e {\bf j} e {\bf k} \\\ \frac{\partial}{\partial x} e \frac{\partial}{ \partial y} e \frac{\partial }{\partial z} \\\ F_x e F_y e F_z\\\ \end{matriz}\\ \dereito|\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \oint *{{\bf c}} {\bf F} \, \mathrm{d}{\bf s} = \int* {S}\\ \left(\frac{\partial F_z}{\partial y} - \frac{\partial F_y}{\partial z}, \, \frac{\partial F_x}{\partial z} - \frac{\partial F_z }{\partial x}, \, \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y}\right) \mathrm{d} \vec{\sigma}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ = \int_S \nabla\times F \, \mathrm{d}\vec{\sigma}\]</div>
+<p>co que se demostra o teorema de Stockes.</p>
+<p>En la siguiente figura se muestra una la malla, la superficie está dividida en pequeños cuadrados. Consideremoslos infinitesimales. Si aplicamos el teorema de Stockes en cada cuadradito, la circulación en sus lados coincide con el rotacional en el centro por el área diferencial del cuadrado.</p>
+<a class="reference internal image-reference" href="../_images/malla_stockes.jpg"><img alt="../_images/malla_stockes.jpg" src="../_images/malla_stockes.jpg" style="width: 300px;" /></a>
+<p>Si te das cuenta la circulación en dos cuadrados adyacentes se anulan y da como resultado la circulación en la frontera externa. Y esa cantidad debe ser igual a la integral del rotacional en la superficie.</p>
+<p>Date cuenta que si la superficie es maleable, el teorema se aplica igualmente, la circulación en todos los cuadraditos es al final siempre la circulación en su frontera, e igual a la integral del rotacional en la superficie, da igual la forma de ésta.</p>
+<p>A seguinte figura mostra unha malla, a superficie está dividida en pequenos cadrados. Consideremos infinitesimais. Se aplicamos o teorema de Stockes a cada cadrado pequeno, a circulación polos seus lados coincide coa rotación no centro debido á área diferencial do cadrado.</p>
+<p>&lt;img src=”imgs/malla_stockes.jpg” width=”300”/&gt;</p>
+<p>Se observas a circulación en dúas prazas adxacentes, cancelarase unha a outra e provocará a circulación na fronteira exterior. E esa cantidade debe ser igual á integral da rotación na superficie.</p>
+<p>Nótese que se a superficie é maleable, o teorema aplícase por igual, a circulación en todos os cadrados é ao final sempre a circulación no seu borde, e igual á integral da rotación na superficie, a súa forma non importa.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">espira</span><span class="p">():</span>
+    <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+    <span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># -y/2 #+ x/2</span>
+    <span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>   <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">2</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">quiver2d</span><span class="p">(</span><span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
+    <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">square</span><span class="p">(</span> <span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">),</span> <span class="n">xside</span><span class="p">,</span> <span class="n">yside</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span>              <span class="p">,</span>  <span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span>       <span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="n">xside</span>      <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.4</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span>        <span class="p">,</span>  <span class="mf">0.2</span><span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span> <span class="o">+</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">1.0</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">*</span> <span class="n">xside</span><span class="p">,</span>  <span class="mf">0.0</span>       <span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+    <span class="n">gf</span><span class="o">.</span><span class="n">arrow</span> <span class="p">(</span> <span class="n">x0</span>              <span class="p">,</span> <span class="n">y0</span> <span class="o">+</span> <span class="mf">0.6</span> <span class="o">*</span> <span class="n">yside</span><span class="p">,</span>  <span class="mf">0.0</span>        <span class="p">,</span> <span class="o">-</span><span class="mf">0.2</span><span class="o">*</span> <span class="n">yside</span><span class="p">,</span> <span class="n">head</span> <span class="o">=</span> <span class="mf">0.1</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;r&#39;</span><span class="p">);</span>
+    <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span><span class="o">.</span><span class="n">set_aspect</span><span class="p">(</span><span class="s1">&#39;equal&#39;</span><span class="p">,</span> <span class="s1">&#39;box&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Inciso</em></p>
+<p>Vamos a ver una demostración aproximada del teorema de (Green-Stockes)</p>
+<p>Considera la espera de tamaño diferencial, con lados <span class="math notranslate nohighlight">\(\Delta x, \, \Delta y\)</span> con vértice inferior en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. El campo tiene derivadas parciales continuas, por lo que admite el desarrollo de Taylor.</p>
+<p><em>Subsección</em></p>
+<p>Vexamos unha demostración aproximada do teorema (Green-Stockes).</p>
+<p>Considere o tamaño diferencial wait, cos lados <span class="math notranslate nohighlight">\(\Delta x, \, \Delta y\)</span> co vértice inferior en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. O campo ten derivadas parciais continuas, polo que admite a expansión de Taylor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">espira</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" src="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" />
+</div>
+</div>
+<p>Considera la integral por los lados verticales en los que solo partipa <span class="math notranslate nohighlight">\(F_y\)</span>. Nota que el lado de la derecha entra con un (+) y el de la izquierda con un (-) en la circulación. La integral podemos aproximarla:</p>
+<div class="math notranslate nohighlight">
+\[
+F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\partial F_y}{\partial x}(x_0 ,y_0) \, \Delta x \Delta y
+\]</div>
+<p>Considera ahora la integral en los lados horizontales, arriba aparece un signa (-) al desplazarnos hacia la izquierda y abajo un signo (+).</p>
+<div class="math notranslate nohighlight">
+\[
+- F_x(x_0, y_0 + \Delta y) \, \Delta x + F_x(x_0, y_0) \, \Delta x \simeq - \frac{\partial F_x}{\partial y}(x_0 ,y_0) \, \Delta y \Delta x
+\]</div>
+<p>Por lo tanto, la integral a lo largo de la espira infinitesimal es:</p>
+<div class="math notranslate nohighlight">
+\[
+\left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \, \mathrm{d}x \mathrm{d}y
+\]</div>
+<p>Considere a integral ao longo dos lados verticais na que só participa <span class="math notranslate nohighlight">\(F_y\)</span>. Teña en conta que o lado dereito entra cun (+) e o lado esquerdo cun (-) na circulación. Podemos aproximar a integral:</p>
+<div class="math notranslate nohighlight">
+\[ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\partial F_y}{\partial x}(x_0 ,y_0) \, \Delta x \Delta y\]</div>
+<p>Considere agora a integral nos lados horizontais, un signo (-) aparece arriba cando se move á esquerda e un signo (+) aparece debaixo.</p>
+<div class="math notranslate nohighlight">
+\[
+-  F_x(x_0, y_0 + \Delta y) \, \Delta x + F_x(x_0, y_0) \, \Delta x \simeq - \frac{\partial F_x}{\partial y}(x_0 ,y_0) \, \ Delta y \Delta x\]</div>
+<p>Polo tanto, a integral ao longo do bucle infinitesimal é:</p>
+<div class="math notranslate nohighlight">
+\[ \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \, \mathrm{d}x \mathrm{d}y\]</div>
+<p><strong>Ejercicio</strong>: Verificar el teorema de Stockes en la superficie dada por la intersección de un cilindro infinito con eje en la dirección <span class="math notranslate nohighlight">\(z\)</span> y base <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>, y el plano <span class="math notranslate nohighlight">\(x+y+z =1\)</span>, con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y^3, x^3, z^3)\)</span></p>
+<p><strong>Exercicio</strong> : Verifica o teorema de Stockes na superficie dada pola intersección dun cilindro infinito cun eixe na dirección <span class="math notranslate nohighlight">\(z\)</span> e base <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>, e o plano <span class="math notranslate nohighlight">\(x+y+z = 1 \)</span>, con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y^3, x^3, z^3)\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
+<span class="n">s1x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">s1y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">s1z</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">z</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">phi</span>
+<span class="n">rrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">s2x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">s2y</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">s2z</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">s2x</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">-</span> <span class="n">s2y</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> 
+<span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">cz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">cx</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">-</span> <span class="n">cy</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s1x</span><span class="p">,</span> <span class="n">s1y</span><span class="p">,</span> <span class="n">s1z</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/99a3ed41ff000660cd3e4eef89d73cb910eb255ecd9bd5d45e81038b88e4cb62.png" src="../_images/99a3ed41ff000660cd3e4eef89d73cb910eb255ecd9bd5d45e81038b88e4cb62.png" />
+<img alt="../_images/bcb23468ea654704163d770dc93d3a3f77970c48b2087f117dbad8b0386125f6.png" src="../_images/bcb23468ea654704163d770dc93d3a3f77970c48b2087f117dbad8b0386125f6.png" />
+<img alt="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" src="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="o">-</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span> 
+<span class="n">Fy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">x</span><span class="o">**</span><span class="mi">3</span> 
+<span class="n">Fz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">z</span><span class="o">**</span><span class="mi">3</span> 
+<span class="n">Rx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mi">0</span> 
+<span class="n">Ry</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mi">0</span>
+<span class="n">Rz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Rx</span><span class="p">,</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">Rz</span><span class="p">,</span> <span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:197: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/38a4175ca21d05b1138c6f32778dcb43f52d9746e1cb9d0cd6ee10881d4c08d8.png" src="../_images/38a4175ca21d05b1138c6f32778dcb43f52d9746e1cb9d0cd6ee10881d4c08d8.png" />
+<img alt="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" src="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_line3d</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:213: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/cd1c793d80d35181ae3f9927d605f38bbc2776e1f7791044e758f5fa283cee72.png" src="../_images/cd1c793d80d35181ae3f9927d605f38bbc2776e1f7791044e758f5fa283cee72.png" />
+<img alt="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" src="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" />
+</div>
+</div>
+<p>Recordemos que la superficie tiene como base un disco de radio unidad y la intersección con el plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
+<p>Podemos parametrizar la superficie:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma (x, y ) = (x, y, 1 - x -y), \;\;\; x^2 + y^2 \le 1
+\]</div>
+<p>donde:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf n}(x, y) = (1, 1, 1)
+\]</div>
+<p>Y la frontera con la línea:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}(\phi) = (\cos \phi, \sin \phi, 1 - \cos \phi - \sin \phi),\,\,\, \phi \in [0, 2 \pi)
+\]</div>
+<p>donde:</p>
+<div class="math notranslate nohighlight">
+\[
+\dot{{\bf c}}(\phi) = (-\sin \phi, \cos \phi, \sin \phi + \cos \phi)
+\]</div>
+<p>Lembremos que a superficie está baseada nun disco de raio unitario e a intersección co plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
+<p>Podemos parametrizar a superficie:</p>
+<div class="math notranslate nohighlight">
+\[ \sigma (x, y ) = (x, y, 1 - x -y), \;\;\; x^2 + y^2 \le 1\]</div>
+<p>onde:</p>
+<div class="math notranslate nohighlight">
+\[ {\bf n}(x, y) = (1, 1, 1)\]</div>
+<p>E o límite coa liña:</p>
+<div class="math notranslate nohighlight">
+\[ {\bf c}(\phi) = (\cos \phi, \sin \phi, 1 - \cos \phi - \sin \phi),\,\,\, \phi \in [0, 2 \pi )\]</div>
+<p>onde:</p>
+<div class="math notranslate nohighlight">
+\[ \dot{{\bf c}}(\phi) = (-\sin \phi, \cos \phi, \sin \phi + \cos \phi)\]</div>
+<p>El rotacional de <span class="math notranslate nohighlight">\({\bf F} = (-y^3, x^3, z^3)\)</span> es:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla \times {\bf F}  
+= \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+ \frac{\partial}{\partial x} &amp;  \frac{\partial}{ \partial y} &amp; \frac{\partial }{\partial z} \\
+ -y^3 &amp;  x^3 &amp; z^3\\
+ \end{array} 
+ \right| = \left(0, 0, 3 x^2 + 3 y^2\right) 
+\end{split}\]</div>
+<p>La integral en la superfice:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_{S} \nabla \times {\bf F} \, \mathrm{d}\vec{\sigma} = \int_{R} (0, 0, 3 x^2 + 3 y^2) \, (1, 1, 1) \, 
+\mathrm{d}x\mathrm{d}y \\ = \int_R 3 (x^2 + y^2)\, \mathrm{d}x\mathrm{d}y 
+\end{split}\]</div>
+<p>La región <span class="math notranslate nohighlight">\(R\)</span> es el disco de radio unidad, que podemos integrar en polares</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{2\pi} \int_0^1 3 r^2 \, r\mathrm{d}r \mathrm{d}\phi 
+= \frac{3}{4} r^4 \Big|_0^1 2 \pi = \frac{3 \pi}{2}
+\]</div>
+<p>recuerda que el Jacobiano en polares es <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>O rizo de <span class="math notranslate nohighlight">\({\bf F} = (-y^3, x^3, z^3)\)</span> é:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \nabla \times {\bf F}\\ = \esquerda| \begin{matriz}{ccc} {\bf i} e {\bf j} e {\bf k} \\\ \frac{\partial}{\partial x} e \frac{\partial}{ \partial y} e \frac{\partial }{\partial z} \\\ -y^3 e x^3 e z^3\\\ \end{matriz}\\ \dereito| = \left(0, 0, 3 x^2 + 3 y^2\right)\end{aligned}\end{align} \]</div>
+<p>A integral na superficie:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int *{S} \nabla \times {\bf F} \, \mathrm{d}\vec{\sigma} = \int* {R} (0, 0, 3 x^2 + 3 y^2) \, (1, 1, 1) \,\\ \mathrm{d}x\mathrm{d}y \ = \int_R 3 (x^2 + y^2)\, \mathrm{d}x\mathrm{d}y\end{aligned}\end{align} \]</div>
+<p>A rexión <span class="math notranslate nohighlight">\(R\)</span> é o disco de raio unitario, que podemos integrar en polar</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_0^{2\pi} \int_0^1 3 r^2 \, r\mathrm{d}r \mathrm{d}\phi\\ = \frac{3}{4} r^4 \Big|_0^1 2 \pi = \frac{3 \pi}{2}\end{aligned}\end{align} \]</div>
+<p>lembre que o xacobiano en polares é <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>La integral de <span class="math notranslate nohighlight">\({\bf F}\)</span> a lo largo de la frontera:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{{\bf c}}{\bf F} \, \mathrm{d}{\bf s} = 
+\oint_{{\bf c}} - y^3 \mathrm{d}x + x^3 \mathrm{d}y  + z^3 \mathrm{d}z
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^{2\pi}\left(- \sin^3 \phi, \cos^3 \phi, (1 - \cos \phi - \sin \phi)^3  \right) \, \left( -\sin \phi, \cos \phi, \sin \phi - \cos \phi \right)  \mathrm{d}\phi
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^{2\pi} \left( \sin^4 \phi + \cos^4  \phi  + (1 - \cos \phi - \sin \phi)^3 (\sin \phi  - \cos \phi) \right) \, \mathrm{d}\phi
+\]</div>
+<p>Que dividimos en dos integrales:</p>
+<div class="math notranslate nohighlight">
+\[
+ \int_0^{2\pi} (\sin^4 \phi + \cos^4 \phi) \, \mathrm{d}\phi + \int_0^{2\pi} (1-\cos\phi-\sin\phi)^3 (\sin \phi -\cos \phi) \, \mathrm{d}\phi
+\]</div>
+<p>A integral de <span class="math notranslate nohighlight">\({\bf F}\)</span> ao longo do límite:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \oint_{{\bf c}}{\bf F} \, \mathrm{d}{\bf s} =\\ \oint_{{\bf c}} - y^3 \mathrm{d}x + x^3 \mathrm{d}y + z^3 \mathrm{d}z\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ = \int_0^{2\pi}\left(- \sin^3 \phi, \cos^3 \phi, (1 - \cos \phi - \sin \phi)^3 \right) \, \left( -\sin \phi, \cos \phi, \sin \phi - \cos \phi \right) \mathrm{d}\phi\]</div>
+<div class="math notranslate nohighlight">
+\[ = \int_0^{2\pi} \left( \sin^4 \phi + \cos^4 \phi + (1 - \cos \phi - \sin \phi)^3 (\sin \phi - \cos \ phi) \right) \, \mathrm{d}\phi\]</div>
+<p>Que dividimos en dúas integrais:</p>
+<div class="math notranslate nohighlight">
+\[ \int_0^{2\pi} (\sin^4 \phi + \cos^4 \phi) \, \mathrm{d}\phi + \int_0^{2\pi} (1-\cos\phi-\ sin\phi)^3 (\sin \phi -\cos \phi) \, \mathrm{d}\phi\]</div>
+<p>En la primera intergral, si operamos:</p>
+<div class="math notranslate nohighlight">
+\[
+\sin^4 \phi + \cos^4 \phi
+= \frac{1}{4}\left( 1 - \cos 2 \phi \right)^2 + \frac{1}{4}\left(1 + \cos 2\phi \right)^2 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \frac{1}{4} \left( 1 + \cos^2 2\phi - 2 \cos 2 \phi + 1 + \cos^2 2\phi + 2 \cos 2 \phi\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \frac{1}{2} (1 + \cos^2 2 \phi) = \frac{1}{2} \left( 1 + \frac{1}{2} (1 + \cos 4 \phi ) \right)
+\]</div>
+<p>Así:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{2\pi} \left(\frac{3}{4} + \frac{1}{4} \cos 4 \phi \right) \mathrm{d}\phi = \left( \frac{3 \phi}{4} + \frac{1}{16} \sin  4 \phi\right) \Big|_0^{2\pi}  =  \frac{3\pi}{2}
+\]</div>
+<p>La segunda integral se calcula directamente:</p>
+<div class="math notranslate nohighlight">
+\[ 
+ \int_0^{2\pi} (1-\cos\phi-\sin\phi)^3 (\sin \phi -\cos \phi) \, \mathrm{d}\phi
+= \frac{1}{4}\left( 1 - \cos \phi - \sin \phi \right)^4 \Big|_0^{2\pi} = 0
+\]</div>
+<p>Na primeira integral, se operamos:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \sin^4 \phi + \cos^4 \phi\\ = \frac{1}{4}\left( 1 - \cos 2 \phi \right)^2 + \frac{1}{4}\left(1 + \cos 2\phi \right)^2\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac{1}{4} \left( 1 + \cos^2 2\phi - 2 \cos 2 \phi + 1 + \cos^2 2\phi + 2 \cos 2 \phi\right)\]</div>
+<div class="math notranslate nohighlight">
+\[ = \frac{1}{2} (1 + \cos^2 2 \phi) = \frac{1}{2} \left( 1 + \frac{1}{2} (1 + \cos 4 \phi) ) \dereito)\]</div>
+<p>Entón:</p>
+<div class="math notranslate nohighlight">
+\[ \int_0^{2\pi} \left(\frac{3}{4} + \frac{1}{4} \cos 4 \phi \right) \mathrm{d}\phi = \left( \frac{ 3 \phi}{4} + \frac{1}{16} \sin 4 \phi\right) \Big|_0^{2\pi} = \frac{3\pi}{2}\]</div>
+<p>A segunda integral calcúlase directamente:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_0^{2\pi} (1-\cos\phi-\sin\phi)^3 (\sin \phi -\cos \phi) \, \mathrm{d}\phi\\ = \frac{1}{4}\left( 1 - \cos \phi - \sin \phi \right)^4 \Big|_0^{2\pi} = 0\end{aligned}\end{align} \]</div>
+<p><strong>Ejercicio</strong>: Verifica el teorema de Stockes con el campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y, x, 0)\)</span> en la superficie <span class="math notranslate nohighlight">\(z = 4 - x^2 - y^2\)</span> con <span class="math notranslate nohighlight">\(z \ge 0\)</span>.</p>
+<p><strong>Exercicio</strong> : Verifique o teorema de Stockes co campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y, x, 0)\)</span> na superficie <span class="math notranslate nohighlight">\(z = 4 - x^2 - y^2\)</span> con <span class="math notranslate nohighlight">\( z \ge 0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="mi">4</span> <span class="o">-</span> <span class="n">sx</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sx</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">-</span> <span class="n">sy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span>
+<span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> 
+<span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">cz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">phi</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
+<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="o">-</span><span class="mf">1.</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">x</span>
+<span class="n">Fy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">1.</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">y</span>
+<span class="n">Fz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">z</span>
+<span class="n">Rx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">0.</span><span class="o">*</span><span class="n">x</span>
+<span class="n">Ry</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">0.</span><span class="o">*</span><span class="n">y</span>
+<span class="n">Rz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">2.</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Rx</span><span class="p">,</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">Rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_line3d</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:197: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:213: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/34ea0cfc0f76f28b8a9ef74ab383067b3630648b3bfabdc8b54b74424b07cb8b.png" src="../_images/34ea0cfc0f76f28b8a9ef74ab383067b3630648b3bfabdc8b54b74424b07cb8b.png" />
+<img alt="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" src="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" />
+<img alt="../_images/050e28f63790f432a74af25f8affc1d2fb1c4a3815f55e58cb3cacb12067d123.png" src="../_images/050e28f63790f432a74af25f8affc1d2fb1c4a3815f55e58cb3cacb12067d123.png" />
+</div>
+</div>
+<p>Parametrizamos la superficie como una gráfica:</p>
+<div class="math notranslate nohighlight">
+\[
+\sigma(x, y) = \left( x, y, 4 - x^2 - y^2\right)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf n}(x, y) = (2x, 2y, 1)
+\]</div>
+<p>Parametrizamos la frontera, que es la circunferencia de radio 2:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf c}(\phi) = (2 \cos \phi, 2 \sin \phi, 0)
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\dot{{\bf c}} (\phi) = (-2 \sin \phi, 2 \cos \phi, 0)
+\]</div>
+<p>Parametrizamos a superficie como un gráfico:</p>
+<div class="math notranslate nohighlight">
+\[ \sigma(x, y) = \left(x, y, 4 - x^2 - y^2\right)\]</div>
+<div class="math notranslate nohighlight">
+\[ {\bf n}(x, y) = (2x, 2y, 1)\]</div>
+<p>Parametrizamos o bordo, que é o círculo de raio 2:</p>
+<div class="math notranslate nohighlight">
+\[ {\bf c}(\phi) = (2 \cos \phi, 2 \sin \phi, 0)\]</div>
+<div class="math notranslate nohighlight">
+\[ \dot{{\bf c}} (\phi) = (-2 \sin \phi, 2 \cos \phi, 0)\]</div>
+<p>El rotacional:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\nabla \times {\bf F}  
+= \left| \begin{array}{ccc} {\bf i} &amp; {\bf j} &amp; {\bf k} \\
+ \frac{\partial}{\partial x} &amp;  \frac{\partial}{ \partial y} &amp; \frac{\partial }{\partial z} \\
+ -y &amp;  x &amp; 0\\
+ \end{array} 
+ \right| = \left(0, 0, 2\right) 
+\end{split}\]</div>
+<p>La integral del rotacional en la superficie:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_S \nabla \times {\bf F} \, \mathrm{d} \vec{\sigma} = \int_R (0, 0, 2) \, (2x, 2y, 1) \, \mathrm{d}x\mathrm{d}y
+= \int_R 2 \, \mathrm{d}x\mathrm{d}y
+\]</div>
+<p>La región <span class="math notranslate nohighlight">\(R\)</span> es el disco de radio 2, si cambiamos a polares</p>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^2 \int_0^{2\pi} 2 \, r \mathrm{d} r\mathrm{d}\phi = 2 \pi r^2 \Big|_0^2 = 8 \pi
+\]</div>
+<p>A rotación:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \nabla \times {\bf F}\\ = \esquerda| \begin{matriz}{ccc} {\bf i} e {\bf j} e {\bf k} \\\ \frac{\partial}{\partial x} e \frac{\partial}{ \partial y} e \frac{\partial }{\partial z} \\\ -y &amp;amp; x &amp;amp; 0\\\ \end{matriz}\\ \dereito| = \esquerda(0, 0, 2\dereita)\end{aligned}\end{align} \]</div>
+<p>A integral da rotación na superficie:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_S \nabla \times {\bf F} \, \mathrm{d} \vec{\sigma} = \int_R (0, 0, 2) \, (2x, 2y, 1) \, \mathrm{d} x\mathrm{d}y\\ = \int_R 2 \, \mathrm{d}x\mathrm{d}y\end{aligned}\end{align} \]</div>
+<p>A rexión <span class="math notranslate nohighlight">\(R\)</span> é o disco de raio 2, se cambiamos a polar</p>
+<div class="math notranslate nohighlight">
+\[ = \int_0^2 \int_0^{2\pi} 2 \, r \mathrm{d} r\mathrm{d}\phi = 2 \pi r^2 \Big|_0^2 = 8 \pi\]</div>
+<p>Y la integral del campo a lo largo de la frontera:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{\bf c} {\bf F} \, \mathrm{d}{\bf s} = \oint -y \, \mathrm{d}x + x \, \mathrm{d}y
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_0^{2\pi} (-2 \sin \phi, 2 \cos \phi, 0 ) \, (-2 \sin \phi, 2 \cos \phi, 0) \, \mathrm{d}\phi
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+= \int_0^{2\pi} 4 \, (\sin^2 \phi + \cos^2 \phi) \, \mathrm{d}\phi = \int_0^{2\pi}4 \, \mathrm{d}\phi = 8 \pi
+\]</div>
+<p>E a integral do campo ao longo do límite:</p>
+<div class="math notranslate nohighlight">
+\[ \oint_{\bf c} {\bf F} \, \mathrm{d}{\bf s} = \oint -y \, \mathrm{d}x + x \, \mathrm{d}y\]</div>
+<div class="math notranslate nohighlight">
+\[ \int_0^{2\pi} (-2 \sin \phi, 2 \cos \phi, 0 ) \, (-2 \sin \phi, 2 \cos \phi, 0) \, \mathrm{d}\ phi\]</div>
+<div class="math notranslate nohighlight">
+\[ = \int_0^{2\pi} 4 \, (\sin^2 \phi + \cos^2 \phi) \, \mathrm{d}\phi = \int_0^{2\pi}4 \, \mathrm {d}\phi = 8 \pi\]</div>
+</section>
+</section>
+<section id="teorema-de-strogradski-gauss">
+<h2>Teorema de Strogradski-Gauss<a class="headerlink" href="#teorema-de-strogradski-gauss" title="Permalink to this heading">#</a></h2>
+<p>El teorema de Gauss corresponde a la extensión del teorema de la divergencia a 3 dimensiones.</p>
+<p><strong>Teorema</strong>: Sea un volumen regular <span class="math notranslate nohighlight">\(V\)</span>, limitado por una superficie cerrada <span class="math notranslate nohighlight">\(S\)</span>, y sea un campo vectorial con derivadas primeras continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, se cumple:</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_V \nabla \cdot {\bf F} \, \mathrm{d}x\mathrm{d}y\mathrm{d}x
+\]</div>
+<p>donde la superficie cerrada está definida hacia afuera.</p>
+</section>
+<section id="id2">
+<h2>Teorema de Strogradski-Gauss<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>O teorema de Gauss correspóndese coa extensión do teorema da diverxencia a 3 dimensións.</p>
+<p><strong>Teorema</strong> : Sexa un volume regular <span class="math notranslate nohighlight">\(V\)</span>, limitado por unha superficie pechada <span class="math notranslate nohighlight">\(S\)</span>, e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y , F_z \right)\)</span>, mantén:</p>
+<div class="math notranslate nohighlight">
+\[ \oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_V \nabla \cdot {\bf F} \, \mathrm{d}x\mathrm{d}y\ mathrm{d}x\]</div>
+<p>onde a superficie pechada está definida cara a fóra.</p>
+<p>Sea un volumen regular definido por una región <span class="math notranslate nohighlight">\(D\)</span> en <span class="math notranslate nohighlight">\((x, y)\)</span> y <span class="math notranslate nohighlight">\(z_1(x, y) \le z \le z_2(x, y)\)</span>, donde <span class="math notranslate nohighlight">\(z_1(x,y), \, z_2(x,y)\)</span> son dos funciones escalares que nos limitan los valores de <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>Consideremos:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\int_V \frac{\partial F_z}{\partial z} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z 
+= \int_D F_z(x, y, z) \Big|_{z_1}^{z_2} \, \mathrm{d}x\mathrm{d}y \\
+= \int_D  \left[F_z(x, y, z_2(x,y)) - F_z(x, y, z_1(x,y) \right] \mathrm{d}x \mathrm{d}y
+\end{split}\]</div>
+<p>Sexa un volume regular definido por unha rexión <span class="math notranslate nohighlight">\(D\)</span> en <span class="math notranslate nohighlight">\((x, y)\)</span> e <span class="math notranslate nohighlight">\(z_1(x, y) \le z \le z_2(x, y)\)</span>, onde <span class="math notranslate nohighlight">\(z_1(x,y), \ , z_2(x,y)\)</span> son dúas funcións escalares que nos limitan aos valores de <span class="math notranslate nohighlight">\(z\)</span>.</p>
+<p>Consideremos:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_V \frac{\partial F_z}{\partial z} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z\\ = \int_D F *z(x, y, z) \Big|* {z_1}^{z_2} \, \mathrm{d}x\mathrm{d}y \\\ = \int_D \left[F_z(x, y, z_2(x,y)) - F_z(x, y, z_1(x,y) \right] \mathrm{d}x \mathrm{d}y\end{aligned}\end{align} \]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">phirange</span>              <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">theta1range</span><span class="p">,</span> <span class="n">theta2range</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">x</span>
+<span class="n">Fy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">y</span>
+<span class="n">Fz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">z</span>
+<span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">theta1range</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">theta2range</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" src="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" />
+<img alt="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" src="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" />
+</div>
+</div>
+<p>La integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_D F_z\left(x, y, z_2(x, y)\right) \, \mathrm{d}x\mathrm{d}y 
+= \int_{D} F_z \hat{k} \, \frac{\mathrm{d}x\mathrm{d}y}{|\cos \gamma|} \hat{n}
+= \int_{z_2} F_z \hat{k} \, \mathrm{d}\vec{\sigma}
+\]</div>
+<p>Donde hemos introducido el término</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\hat{k} \, \hat{n}}{|\hat{k} \, \hat{n}|} = \frac{\hat{k} \, \hat{n}}{|\cos \gamma|},
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}\vec{\sigma} = \frac{\hat{n}}{|\cos \gamma|} \mathrm{d}x\mathrm{d}y
+\]</div>
+<p><span class="math notranslate nohighlight">\(\hat{n}\)</span> es el verctor unitario normal al diferencial de superficie de la superfice dada por <span class="math notranslate nohighlight">\(z_2\)</span>, y <span class="math notranslate nohighlight">\(\gamma\)</span> el ángulo que forma <span class="math notranslate nohighlight">\(\hat{n}\)</span> con <span class="math notranslate nohighlight">\(\hat{k}\)</span>. Este término es <span class="math notranslate nohighlight">\(1\)</span> para <span class="math notranslate nohighlight">\(z_2\)</span>, y es <span class="math notranslate nohighlight">\(-1\)</span> para <span class="math notranslate nohighlight">\(z_1\)</span> dado que hemos definido la superficie hacia fuera.</p>
+<p>A integral</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_D F_z\left(x, y, z_2(x, y)\right) \, \mathrm{d}x\mathrm{d}y\\ = \int_{D} F_z \hat{k} \, \frac{\mathrm{d}x\mathrm{d}y}{|\cos \gamma|} \hat{n}\\ = \int_{z_2} F_z \hat{k} \, \mathrm{d}\vec{\sigma}\end{aligned}\end{align} \]</div>
+<p>Onde introducimos o termo</p>
+<div class="math notranslate nohighlight">
+\[ \frac{\hat{k} \, \hat{n}}{|\hat{k} \, \hat{n}|} = \frac{\hat{k} \, \hat{n}}{ |\cos \gamma|},\]</div>
+<div class="math notranslate nohighlight">
+\[ \mathrm{d}\vec{\sigma} = \frac{\hat{n}}{|\cos \gamma|} \mathrm{d}x\mathrm{d}y\]</div>
+<p><span class="math notranslate nohighlight">\(\hat{n}\)</span> é o verctor unitario normal á diferencial de superficie da superficie dada por <span class="math notranslate nohighlight">\(z_2\)</span>, e <span class="math notranslate nohighlight">\(\gamma\)</span> é o ángulo que <span class="math notranslate nohighlight">\(\hat{n}\)</span> forma con <span class="math notranslate nohighlight">\(\hat{k}\)</span> . Este termo é de <span class="math notranslate nohighlight">\(1\)</span> para <span class="math notranslate nohighlight">\(z_2\)</span> e é de <span class="math notranslate nohighlight">\(-1\)</span> para <span class="math notranslate nohighlight">\(z_1\)</span> xa que definimos a superficie cara a fóra.</p>
+<p>Así:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_V \frac{\partial F_z}{\partial z} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z 
+= \oint F_z \hat{k} \, \mathrm{d}\vec{\sigma} 
+\]</div>
+<p>Y de forma similar para el resto de sumandos, considerando para cada caso la correspondiente definición de las superficies que limitan el volumen.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_V \frac{\partial F_y}{\partial y} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z 
+= \oint F_y \hat{j} \, \mathrm{d}\vec{\sigma} 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_V \frac{\partial F_x}{\partial x} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z 
+= \oint F_x \hat{i} \, \mathrm{d}\vec{\sigma} 
+\]</div>
+<p>Con lo que queda demostrato el teorema de Gauss.</p>
+<p>Entón:</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_V \frac{\partial F_z}{\partial z} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z\\ = \oint F_z \hat{k} \, \mathrm{d}\vec{\sigma}\end{aligned}\end{align} \]</div>
+<p>E de xeito similar para o resto de engadidos, considerando para cada caso a correspondente definición das superficies que limitan o volume.</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_V \frac{\partial F_y}{\partial y} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z\\ = \oint F_y \hat{j} \, \mathrm{d}\vec{\sigma}\end{aligned}\end{align} \]</div>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_V \frac{\partial F_x}{\partial x} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z\\ = \oint F_x \hat{i} \, \mathrm{d}\vec{\sigma}\end{aligned}\end{align} \]</div>
+<p>Co que queda demostro o teorema de Gauss.</p>
+<p><em>Observa</em> el siguiente cubo construido con cubitos. Si fueran infinitesimales, la integral del flujo en sus caras sería lo mismo que la divergencia en el centro del cubito por su volumen diferencial</p>
+<p>Si los cubitos están adyantes el cálculo de su flujo se anula en las paredes que se tocan, y la suma de los flujos en todos los cubitos es igual a la de las caras de la superficie frontera. ¡Mientras que esa cantidad será igual a la suma de la divergencia en cada cubito por su volumen!</p>
+<a class="reference internal image-reference" href="../_images/cubes_gauss.jpeg"><img alt="../_images/cubes_gauss.jpeg" src="../_images/cubes_gauss.jpeg" style="width: 250px;" /></a>
+<p><em>Observa</em> o seguinte cubo construído con cubos. Se fosen infinitesimais, a integral do fluxo nas súas caras sería a mesma que a diverxencia no centro do cúbito multiplicada polo seu volume diferencial.</p>
+<p>Se os cubos son adxacentes, o cálculo do seu fluxo anulase nas paredes que se tocan, e a suma dos fluxos en todos os cubos é igual á das caras da superficie límite. Aínda que esa cantidade será igual á suma da diverxencia en cada cubo multiplicada polo seu volume!</p>
+<p>&lt;img src=”imgs/cubes_gauss.jpeg” width=”250”/&gt;</p>
+<p><strong>Ejemplo</strong>: Verifica el teorema de Gauss con el campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x, y, z)\)</span> en la esfera de radio unidad.</p>
+<p><em>Observa</em>: Como el campo es radial, igual que los elementos diferenciales de área de la esfera.</p>
+<p><strong>Exemplo</strong> : Verifique o teorema de Gauss co campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x, y, z)\)</span> na esfera de raio unitario.</p>
+<p><em>Observa</em> : Como o campo é radial, o mesmo que os elementos diferenciais da área da esfera.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">x</span>
+<span class="n">Fy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">y</span>
+<span class="n">Fz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">z</span>
+<span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:197: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
+  ax = fig.gca(projection=&#39;3d&#39;)
+</pre></div>
+</div>
+<img alt="../_images/2ca77fb62cb8ac0bd247cee9a696485726e289041b0d10579106019d96a25ad2.png" src="../_images/2ca77fb62cb8ac0bd247cee9a696485726e289041b0d10579106019d96a25ad2.png" />
+<img alt="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" src="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" />
+</div>
+</div>
+<p>a) la divergencia
+<span class="math notranslate nohighlight">\(\nabla \, {\bf F} = 3\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int_V 3 \, \mathrm{d}x \mathrm{d}y \mathrm{d}z = 3 \frac{4 \pi}{3} = 4 \pi
+\]</div>
+<p>b) Si parametrizamos la esfera en coordenadas esféricas, ya vimos que</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf n}(\theta, \phi) = \left(\sin \theta \cos \phi,  \sin \theta \sin \phi, \cos \theta \right) \, \sin \theta
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+{\bf F} (\theta, \phi) = \left(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta \right)
+\]</div>
+<p>Luego:</p>
+<div class="math notranslate nohighlight">
+\[
+{\bf F} \, {\bf n} = \sin \theta
+\]</div>
+<p>Así</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_0^\pi \int_0^{2\pi} \sin \theta \, \mathrm{d}\theta \mathrm{d}\phi = \phi \Big|_0^{2\pi} (-\cos \theta) \Big|_0^{\pi} = 4 \pi
+\]</div>
+<p>a) a diverxencia</p>
+<p><span class="math notranslate nohighlight">\(\nabla \, {\bf F} = 3\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \int_V 3 \, \mathrm{d}x \mathrm{d}y \mathrm{d}z = 3 \frac{4 \pi}{3} = 4 \pi\]</div>
+<p>b) Se parametrizamos a esfera en coordenadas esféricas, xa o vimos</p>
+<div class="math notranslate nohighlight">
+\[ {\bf n}(\theta, \phi) = \left(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta \right) \, \sin \theta\]</div>
+<div class="math notranslate nohighlight">
+\[ {\bf F} (\theta, \phi) = \left(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta \right)\]</div>
+<p>Entón:</p>
+<div class="math notranslate nohighlight">
+\[ {\bf F} \, {\bf n} = \sin \theta\]</div>
+<p>Entón</p>
+<div class="math notranslate nohighlight">
+\[ \oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_0^\pi \int_0^{2\pi} \sin \theta \, \mathrm{d}\theta \mathrm{d}\phi = \phi \Big|_0^{2\pi} (-\cos \theta) \Big|_0^{\pi} = 4 \pi\]</div>
+<p><strong>Ejercicio</strong>: Calcular el flujo del campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (2x, y^2, z^2)\)</span> en la esfera de radio unidad.</p>
+<p><strong>Exercicio</strong> : Calcula o fluxo do campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (2x, y^2, z^2)\)</span> na esfera de raio unitario.</p>
+<p>Aplicamos el teorema de Gauss,</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \, {\bf F} = 2 + 2y + 2z
+\]</div>
+<p>La integral</p>
+<div class="math notranslate nohighlight">
+\[
+\int_V ( 2 + 2 y + 2z) \, \mathrm{d}x\mathrm{d}y\mathrm{d}z
+\]</div>
+<p>Las dos últimas integrales son nulas. Considera la primera. Dividimos el volumen en dos semiesferas <span class="math notranslate nohighlight">\(y \le0\)</span> e <span class="math notranslate nohighlight">\(y \ge 0\)</span>, la integral vale lo mismo en cada semiesfera pero con signo cambiado.</p>
+<div class="math notranslate nohighlight">
+\[
+\int_V  2y \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = \int_V  2z \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 0
+\]</div>
+<p>La integral que resta es simplemente dos veces el volumen de la esfera:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_V  2 \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 2 \frac{4 \pi}{3}
+\]</div>
+<p>Aplicamos o teorema de Gauss,</p>
+<div class="math notranslate nohighlight">
+\[ \nabla \, {\bf F} = 2 + 2y + 2z\]</div>
+<p>A integral</p>
+<div class="math notranslate nohighlight">
+\[ \int_V ( 2 + 2 y + 2z) \, \mathrm{d}x\mathrm{d}y\mathrm{d}z\]</div>
+<p>As dúas últimas integrais son nulas. Considere o primeiro. Dividimos o volume en dous hemisferios <span class="math notranslate nohighlight">\(y \le0\)</span> e <span class="math notranslate nohighlight">\(y \ge 0\)</span>, a integral é a mesma en cada hemisferio pero cun signo cambiado.</p>
+<div class="math notranslate nohighlight">
+\[ \int_V 2y \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = \int_V 2z \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 0\]</div>
+<p>A integral restante é simplemente o dobre do volume da esfera:</p>
+<div class="math notranslate nohighlight">
+\[ \int_V 2 \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 2 \frac{4 \pi}{3}\]</div>
+<p><strong>Ejercicio</strong>: Calcular el flujo del campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x y^2, y x^2, y)\)</span> sobre el cilindro de disco unidad y altura en <span class="math notranslate nohighlight">\(z\)</span> en <span class="math notranslate nohighlight">\([-1, 1]\)</span></p>
+<p><strong>Exercicio</strong> : Calcula o fluxo do campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (xy^2, yx^2, y)\)</span> sobre o cilindro de disco unitario e altura a <span class="math notranslate nohighlight">\(z\)</span> en <span class="math notranslate nohighlight">\([- 1, 1]\)</span></p>
+<p>Aplicamos el teorema de Gauss:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \, {\bf F} = y^2 + x^2
+\]</div>
+<p>La integral del volumen la hacemos en coordenadas cilíndricas, (recuerda que el jacobiano es <span class="math notranslate nohighlight">\(r\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\int_V \nabla \, {\bf F} \, \mathrm{d}x \mathrm{d}y \mathrm{d}z 
+= \int_{-1}^{1} \int_0^{2 \pi}  \int_0^1 r^2\, r\mathrm{d}r \mathrm{d}\phi \mathrm{d}z 
+\]</div>
+<p>Esto es:</p>
+<div class="math notranslate nohighlight">
+\[
+= z \Big|_{-1}^{+1} \phi \Big|_0^{2\pi} \frac{r^4}{4} \Big|_0^1 = \pi
+\]</div>
+<p>Aplicamos o teorema de Gauss:</p>
+<div class="math notranslate nohighlight">
+\[ \nabla \, {\bf F} = y^2 + x^2\]</div>
+<p>Facemos a integral do volume en coordenadas cilíndricas, (lembra que o xacobiano é <span class="math notranslate nohighlight">\(r\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned} \int_V \nabla \, {\bf F} \, \mathrm{d}x \mathrm{d}y \mathrm{d}z\\ = \int_{-1}^{1} \int_0^{2 \pi} \int_0^1 r^2\, r\mathrm{d}r \mathrm{d}\phi \mathrm{d}z\end{aligned}\end{align} \]</div>
+<p>Isto é:</p>
+<div class="math notranslate nohighlight">
+\[ = z \Big|_{-1}^{+1} \phi \Big|_0^{2\pi} \frac{r^4}{4} \Big|_0^1 = \pi\]</div>
+<section id="aun-hay-mas">
+<h3>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h3>
+<p>Carl Friedrich <a class="reference external" href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> fue uno de las grandes matemáticos de la historia, con importantes contribuciones en Física, en Electromagnetismo y en Estadistica. La probabilidad normal, con la que ocurren casi todos los fenémonos de medida, sigue se ley de Gauss.</p>
+<a class="reference internal image-reference" href="../_images/gauss.jpg"><img alt="../_images/gauss.jpg" src="../_images/gauss.jpg" style="width: 200px;" /></a>
+</section>
+<section id="ainda-hai-mais">
+<h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h3>
+<p>Carl Friedrich <a class="reference external" href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> foi un dos grandes matemáticos da historia, con importantes contribucións en Física, Electromagnetismo e Estatística. A probabilidade normal, coa que ocorren case todos os fenómenos de medición, segue a lei de Gauss.</p>
+<p>&lt;img src=”imgs/gauss.jpg” width=”200”/&gt;</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./notebooks"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Teorema de Stockes y Teorema de Gauss</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stockes-e-teorema-de-gauss">Teorema de Stockes e Teorema de Gauss</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stockes">Teorema de Stockes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientables">Superficies orientables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Teorema de Stockes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-regulables">Superficies regulables</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-strogradski-gauss">Teorema de Strogradski-Gauss</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Teorema de Strogradski-Gauss</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By José Ángel Hernando Morata, X. Cid Vidal
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
