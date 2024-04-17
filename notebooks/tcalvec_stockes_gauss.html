@@ -174,6 +174,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
 </ul>
 
     </div>
@@ -446,7 +452,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Fri Mar  8 16:30:38 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Wed Apr 17 16:55:29 2024
 </pre></div>
 </div>
 </div>
@@ -599,7 +605,7 @@ $<span class="math notranslate nohighlight">\(
 \]</div>
 <p>con lo que queda demostrado el teorema de Stockes.</p>
 <p>En la siguiente figura se muestra una la malla, la superficie está dividida en pequeños cuadrados. Consideremoslos infinitesimales. Si aplicamos el teorema de Stockes en cada cuadradito, la circulación en sus lados coincide con el rotacional en el centro por el área diferencial del cuadrado.</p>
-<a class="reference internal image-reference" href="../_images/malla_stockes.jpg"><img alt="../_images/malla_stockes.jpg" src="../_images/malla_stockes.jpg" style="width: 300px;" /></a>
+<a class="reference internal image-reference" href="notebooks/imgs/malla_stockes.jpg"><img alt="notebooks/imgs/malla_stockes.jpg" src="notebooks/imgs/malla_stockes.jpg" style="width: 300px;" /></a>
 <p>Si te das cuenta la circulación en dos cuadrados adyacentes se anulan y da como resultado la circulación en la frontera externa. Y esa cantidad debe ser igual a la integral del rotacional en la superficie.</p>
 <p>Date cuenta que si la superficie es maleable, el teorema se aplica igualmente, la circulación en todos los cuadraditos es al final siempre la circulación en su frontera, e igual a la integral del rotacional en la superficie, da igual la forma de ésta.</p>
 <div class="cell docutils container">
@@ -701,11 +707,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:194: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = fig.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/38a4175ca21d05b1138c6f32778dcb43f52d9746e1cb9d0cd6ee10881d4c08d8.png" src="../_images/38a4175ca21d05b1138c6f32778dcb43f52d9746e1cb9d0cd6ee10881d4c08d8.png" />
+<img alt="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" src="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" />
 <img alt="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" src="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" />
 </div>
 </div>
@@ -718,11 +720,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:210: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = fig.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/cd1c793d80d35181ae3f9927d605f38bbc2776e1f7791044e758f5fa283cee72.png" src="../_images/cd1c793d80d35181ae3f9927d605f38bbc2776e1f7791044e758f5fa283cee72.png" />
+<img alt="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" src="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" />
 <img alt="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" src="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" />
 </div>
 </div>
@@ -863,17 +861,10 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:194: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = fig.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:210: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = fig.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/34ea0cfc0f76f28b8a9ef74ab383067b3630648b3bfabdc8b54b74424b07cb8b.png" src="../_images/34ea0cfc0f76f28b8a9ef74ab383067b3630648b3bfabdc8b54b74424b07cb8b.png" />
+<img alt="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" src="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" />
 <img alt="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" src="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" />
-<img alt="../_images/050e28f63790f432a74af25f8affc1d2fb1c4a3815f55e58cb3cacb12067d123.png" src="../_images/050e28f63790f432a74af25f8affc1d2fb1c4a3815f55e58cb3cacb12067d123.png" />
+<img alt="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" src="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" />
+<img alt="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" src="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" />
 </div>
 </div>
 <p>Parametrizamos la superficie como una gráfica:</p>
@@ -1022,11 +1013,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:194: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = fig.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/2ca77fb62cb8ac0bd247cee9a696485726e289041b0d10579106019d96a25ad2.png" src="../_images/2ca77fb62cb8ac0bd247cee9a696485726e289041b0d10579106019d96a25ad2.png" />
+<img alt="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" src="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" />
 <img alt="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" src="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" />
 </div>
 </div>
