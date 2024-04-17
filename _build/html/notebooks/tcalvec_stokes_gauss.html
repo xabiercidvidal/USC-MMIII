@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Teorema de Stockes y Teorema de Gauss &#8212; Métodos Matemáticos III - USC</title>
+    <title>Teorema de Stokes e Teorema de Gauss &#8212; Métodos Matemáticos III - USC</title>
   
   
   
@@ -63,9 +63,10 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_stockes_gauss';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_stokes_gauss';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Integral de superficie" href="tcalvec_integral_superficie.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -162,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="../run_cloud.html">Executar os apuntes na nube</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Derivadas en varias dimensións</span></p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_introducion.html">Cuestións iniciais</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_funcion_escalar_vectorial.html">Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tderivadas_limites_continuidade.html">Límite e continuidade das funcións escalares e vectoriais</a></li>
@@ -179,7 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Teorema de Stokes e Teorema de Gauss</a></li>
 </ul>
 
     </div>
@@ -234,7 +235,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tcalvec_stockes_gauss.ipynb" target="_blank"
+      <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tcalvec_stokes_gauss.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onBinder"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -252,7 +253,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_stockes_gauss.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_stokes_gauss.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -300,7 +301,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tcalvec_stockes_gauss.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/xabiercidvidal/USC-MMIII/issues/new?title=Issue%20on%20page%20%2Fnotebooks/tcalvec_stokes_gauss.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -330,7 +331,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../_sources/notebooks/tcalvec_stockes_gauss.ipynb" target="_blank"
+      <li><a href="../_sources/notebooks/tcalvec_stokes_gauss.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -412,7 +413,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Teorema de Stockes y Teorema de Gauss</h1>
+    <h1>Teorema de Stokes e Teorema de Gauss</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -422,13 +423,13 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stockes">Teorema de Stockes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientables">Superficies orientables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stokes">Teorema de Stokes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-regulables">Superficies regulables</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-strogradski-gauss">Teorema de Strogradski-Gauss</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
 </ul>
@@ -442,26 +443,29 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="teorema-de-stockes-y-teorema-de-gauss">
-<h1>Teorema de Stockes y Teorema de Gauss<a class="headerlink" href="#teorema-de-stockes-y-teorema-de-gauss" title="Permalink to this heading">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="teorema-de-stokes-e-teorema-de-gauss">
+<h1>Teorema de Stokes e Teorema de Gauss<a class="headerlink" href="#teorema-de-stokes-e-teorema-de-gauss" title="Permalink to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Wed Apr 17 16:55:29 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Wed Apr 17 16:56:19 2024
 </pre></div>
 </div>
 </div>
 </div>
-<section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
-<p>Extender el teorema de Green a 3D. Teorema de Stockes.</p>
-<p>Extender el teorema de la divergencia a 3D. Teorema de Gauss.</p>
-<p>Mostrar algunos ejemplos sencillos.</p>
+<section id="obxectivos">
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<p>Extensión do teorema de Green a 3D. Teorema de Stokes.</p>
+<p>Estender o teorema da diverxencia a 3D. Teorema de Gauss.</p>
+<p>Mostrar algúns exemplos sinxelos.</p>
+<p><em>Nota</em></p>
+<p>Para que este notebook funcione en colab, precisamos <a href = "https://www.dropbox.com/scl/fi/wwz2w43kqj0s38gm87roj/graph_utils.py?rlkey=rppkwu9tmbnnsojezzj69p1r0&dl=1"> graph_utils.py</a>. Podes descargalo premendo na ligazón, e subilo a colab:</p>
+<a class="reference internal image-reference" href="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1"><img alt="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1" class="align-center" src="https://www.dropbox.com/scl/fi/b35vcated0f9lwrw4jy01/colab_upload.jpg?rlkey=l1ag15r0ovkg2dsefze117k1y&amp;raw=1" style="width: 200px;" /></a>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
@@ -484,16 +488,16 @@ document.write(`
 </div>
 </div>
 </section>
-<section id="teorema-de-stockes">
-<h2>Teorema de Stockes<a class="headerlink" href="#teorema-de-stockes" title="Permalink to this heading">#</a></h2>
-<section id="superficies-orientables">
-<h3>Superficies orientables<a class="headerlink" href="#superficies-orientables" title="Permalink to this heading">#</a></h3>
-<p>Una superficie es orientable si tiene dos caras, por ejemplo, una hoja de papel.</p>
-<p>Fíjare en la siguiente figura, es una cinta de Moebius y solo tiene una cara.</p>
+<section id="teorema-de-stokes">
+<h2>Teorema de Stokes<a class="headerlink" href="#teorema-de-stokes" title="Permalink to this heading">#</a></h2>
+<section id="superficies-regulables">
+<h3>Superficies regulables<a class="headerlink" href="#superficies-regulables" title="Permalink to this heading">#</a></h3>
+<p>Unha superficie é orientable se ten dous lados, por exemplo, unha folla de papel.</p>
+<p>Fíxate na seguinte figura, é unha banda de Moebius e só ten un lado.</p>
 <a class="reference internal image-reference" href="../_images/escher-moebius.jpg"><img alt="../_images/escher-moebius.jpg" src="../_images/escher-moebius.jpg" style="width: 300px;" /></a>
-<p><strong>Orientación dextrógira</strong></p>
-<p>Damos la orientación de una superficie mendiante un giro dextrógiro. Giraremos por la línea de la frontera en sentido anti-horario dejando la superficie siempre a nuestra izquierda.</p>
-<p><em>Observa</em>: la siguiente figura, la superficie y su frontera. El giro dextrógiro seguiría la frontera en sentido contratio al de las agujas del reloj.</p>
+<p><strong>Orientación á dereita</strong></p>
+<p>Damos a orientación dunha superficie mediante unha rotación á dereita. Xiraremos pola liña fronteiriza en sentido contrario ás agullas do reloxo, deixando sempre a superficie á nosa esquerda.</p>
+<p><em>Observa</em> : a seguinte figura, a superficie e o seu bordo. O xiro da dereita seguiría a fronteira en sentido antihorario. Máis detalles poden verse <a href = "https://mathinsight.org/stokes_theorem_orientation"> aquí</a>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mf">2.</span>
@@ -504,87 +508,80 @@ document.write(`
 <span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> 
 <span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="n">R</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">cz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">phi</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
-<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
+<img alt="../_images/9f6cf127fd732ce32f7343540acd87a55ed109485a9af6fd34442dcebd1a1e4d.png" src="../_images/9f6cf127fd732ce32f7343540acd87a55ed109485a9af6fd34442dcebd1a1e4d.png" />
 </div>
 </div>
-<p><strong>El teorema de Stockes</strong> es la generalización del de Green a 3 dimensiones.</p>
-<p><strong>Teorema</strong>: Sea una superficie <span class="math notranslate nohighlight">\(S\)</span> orientable, cuya frontera <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> se recorre en sentido anti-horario, y parametrizada con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span>, donde <span class="math notranslate nohighlight">\((u, v)\)</span> están definidas en una región <span class="math notranslate nohighlight">\(R\)</span>; y sea un campo vectorial con derivadas primeras continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, se cumple:</p>
+<p><strong>O teorema de Stokes</strong> é a xeneralización do teorema de Green a 3 dimensións.</p>
+<p><strong>Teorema</strong> : Sexa unha superficie orientable <span class="math notranslate nohighlight">\(S\)</span>, que ten unha fronteira <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> que podemos atravesar en sentido antihorario, e parametrizar con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span>, onde <span class="math notranslate nohighlight">\((u) , v) \)</span> se definen nunha rexión <span class="math notranslate nohighlight">\(R\)</span>; e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, cúmprese:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_{S} \nabla \times {\bf F} \, \mathrm{d} \vec{\sigma} = \oint_{\bf c} {\bf F} \, \mathrm{d}{\bf s}
 \]</div>
 <ol class="arabic simple">
-<li><p>Consideremos primero un campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x (x, y, z), 0, 0\right)\)</span>, y una superficie orientable <span class="math notranslate nohighlight">\(S\)</span> con frontera <span class="math notranslate nohighlight">\({\bf c}\)</span> parametrizada con <span class="math notranslate nohighlight">\(\sigma(x, y, z(x, y) )\)</span> en una región <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((x, y)\)</span> con frontera <span class="math notranslate nohighlight">\({\bf d}\)</span>.</p></li>
+<li><p>Consideremos primeiro un campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x (x, y, z), 0, 0\right)\)</span> e unha superficie orientable <span class="math notranslate nohighlight">\(S\)</span> con límite <span class="math notranslate nohighlight">\( {\bf c}\)</span> parametrizado con <span class="math notranslate nohighlight">\(\sigma(x, y, z(x, y) )\)</span> nunha rexión <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((x, y)\)</span> con fronteira <span class="math notranslate nohighlight">\({\bf d}\)</span>.</p></li>
 </ol>
-<p>La integral a lo largo de la frontera <span class="math notranslate nohighlight">\({\bf c}\)</span> en sentido anti-horario es</p>
+<p>A integral ao longo do límite <span class="math notranslate nohighlight">\({\bf c}\)</span> en sentido contrario ás agullas do reloxo é</p>
 <div class="math notranslate nohighlight">
 \[
 \oint_{\bf c} {\bf F}(x, y, z) \, \mathrm{d}{\bf s} = \oint_{{\bf d}} F_x(x, y, z(x, y)) \, \mathrm{d}x
 \]</div>
-<p>Donde podemos entender <span class="math notranslate nohighlight">\(F_x(x, y, z(x, y)) = f_x(x, y) \)</span> como una función compuesta que depende de <span class="math notranslate nohighlight">\((x, y)\)</span> directamente e indirectamente via <span class="math notranslate nohighlight">\(z(x, y)\)</span>, y podemos re-expresar el último término de la igualdad con una integral de 2 dimensiones.</p>
+<p>onde podemos entender <span class="math notranslate nohighlight">\(F_x(x, y, z(x, y)) = f_x(x, y) \)</span> como unha función composta que depende de <span class="math notranslate nohighlight">\((x, y)\)</span> directa e indirectamente a través de <span class="math notranslate nohighlight">\(z(x, y) ) \)</span>, e podemos reexpresar o último termo da igualdade cunha integral bidimensional.</p>
 <div class="math notranslate nohighlight">
 \[
 = \oint_{\bf d} f_x(x, y) \, \mathrm{d} x  
 \]</div>
-<p>Y aplicar el teorema de Green:</p>
+<p>E aplicando o teorema de Green:</p>
 <div class="math notranslate nohighlight">
 \[
-= \int_{R} - \frac{\partial f_x}{\partial y} \mathrm{d}x \mathrm{d}y
-\]</div>
-<p>Aplicando la regla de la cadena, obtenemos:</p>
+ \oint_{\bf c} {\bf F}(x, y, z) \, \mathrm{d}{\bf s} = \int_{R} - \frac{\partial f_x}{\partial y} \mathrm{d}x \mathrm{d}y
+ \]</div>
+<p>Aplicando a regra da cadea, obtemos:</p>
 <div class="math notranslate nohighlight">
 \[
-\frac{\partial f_x}{\partial y} = \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y}
-\]</div>
-<p>Por otro lado sabemos el vector <span class="math notranslate nohighlight">\({\bf n}\)</span> de una superficie <span class="math notranslate nohighlight">\(\sigma(x, y) = (x, y, z(x, y))\)</span> es:</p>
+ \frac{\partial f_x}{\partial y} = \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y}
+ \]</div>
+<p>Por outra banda, sabemos que o vector <span class="math notranslate nohighlight">\({\bf n}\)</span> dunha superficie <span class="math notranslate nohighlight">\(\sigma(x, y) = (x, y, z(x, y))\)</span> é:</p>
 <div class="math notranslate nohighlight">
 \[
-{\bf n} = \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1\right)
-\]</div>
-<p>Luego podemos reescribir:</p>
+ {\bf n} = \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1\right)
+ \]</div>
+<p>Despois podemos reescribir:</p>
 <div class="math notranslate nohighlight">
 \[
 \frac{\partial F_x}{\partial y}  + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y} 
 =  \left( 0, - \frac{\partial F_x}{\partial z},  \frac{\partial F_x}{\partial y} \right) \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1 \right) 
 \]</div>
-<p>Esto es
+<p>Isto é:
 $<span class="math notranslate nohighlight">\(
-= \oint_{{\bf d}} - \left( \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y} \right) \, \mathrm{d}x
+ \oint_{\bf c} {\bf F}(x, y, z) \, \mathrm{d}{\bf s} = \int_{R} - \left( \frac{\partial F_x}{\partial y} + \frac{\partial F_x}{\partial z} \frac{\partial z}{\partial y} \right) \, \mathrm{d}x \, \mathrm{d}y
 \)</span>$</p>
 <div class="math notranslate nohighlight">
 \[
-\int_{R}  \left( 0, \frac{\partial F_x}{\partial z}, - \frac{\partial F_x}{\partial y} \right) 
+= \int_{R}  \left( 0, \frac{\partial F_x}{\partial z}, - \frac{\partial F_x}{\partial y} \right) 
 \left( - \frac{\partial z}{\partial x}, - \frac{\partial z}{\partial y}, 1 \right) \mathrm{d}x \mathrm{d}y 
 = \int_{S} \left( 0, \frac{\partial F_x}{\partial z}, - \frac{\partial F_x}{\partial y}\right) \mathrm{d} \vec{\sigma}
 \]</div>
 <ol class="arabic simple" start="2">
-<li><p>Si consideramos el vector <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, F_y(x, y, z), 0)\)</span> en la misma superficie obtenemos:</p></li>
+<li><p>Se consideramos o vector <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, F_y(x, y, z), 0)\)</span> na mesma superficie obtemos:</p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
-\oint_{S} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left(- \frac{\partial F_y}{\partial z}, 0,   \frac{\partial F_y}{\partial x} \right) \, \mathrm{d}\vec{\sigma}
-\]</div>
+ \oint_{c} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left(- \frac{\partial F_y}{\partial z}, 0, \frac{\partial F_y }{\partial x} \right) \, \mathrm{d}\vec{\sigma}
+ \]</div>
 <ol class="arabic simple" start="3">
-<li><p>Y finalmente con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, 0, F_z(x, y, z))\)</span> con parametrización de <span class="math notranslate nohighlight">\(S\)</span> en <span class="math notranslate nohighlight">\(\sigma(x, y(x, z), z)\)</span></p></li>
+<li><p>E finalmente con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (0, 0, F_z(x, y, z))\)</span> coa parametrización de <span class="math notranslate nohighlight">\(S\)</span> en <span class="math notranslate nohighlight">\(\sigma(x, y(x, z), z)\)</span></p></li>
 </ol>
 <div class="math notranslate nohighlight">
 \[
-\oint_{S} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left(  \frac{\partial F_z}{\partial y}, - \frac{\partial F_z}{\partial x} , 0 \right) \, \mathrm{d}\vec{\sigma}
-\]</div>
-<p>Y por lo tanto, para <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span></p>
+ \oint_{c} {\bf F} \, \mathrm{d}{\bf s} = \int_S \left( \frac{\partial F_z}{\partial y}, - \frac{\partial F_z}{ \partial x} , 0 \right) \, \mathrm{d}\vec{\sigma}
+ \]</div>
+<p>E polo tanto, para <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span></p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \nabla \times {\bf F}  
@@ -603,11 +600,10 @@ $<span class="math notranslate nohighlight">\(
 \[
 = \int_S \nabla\times F \, \mathrm{d}\vec{\sigma}
 \]</div>
-<p>con lo que queda demostrado el teorema de Stockes.</p>
-<p>En la siguiente figura se muestra una la malla, la superficie está dividida en pequeños cuadrados. Consideremoslos infinitesimales. Si aplicamos el teorema de Stockes en cada cuadradito, la circulación en sus lados coincide con el rotacional en el centro por el área diferencial del cuadrado.</p>
-<a class="reference internal image-reference" href="notebooks/imgs/malla_stockes.jpg"><img alt="notebooks/imgs/malla_stockes.jpg" src="notebooks/imgs/malla_stockes.jpg" style="width: 300px;" /></a>
-<p>Si te das cuenta la circulación en dos cuadrados adyacentes se anulan y da como resultado la circulación en la frontera externa. Y esa cantidad debe ser igual a la integral del rotacional en la superficie.</p>
-<p>Date cuenta que si la superficie es maleable, el teorema se aplica igualmente, la circulación en todos los cuadraditos es al final siempre la circulación en su frontera, e igual a la integral del rotacional en la superficie, da igual la forma de ésta.</p>
+<p>co que se demostra o teorema de Stokes.</p>
+<p><em>Inciso</em></p>
+<p>Vexamos unha demostración aproximada do teorema (Green-Stokes).</p>
+<p>Considere a espira de tamaño diferencial, cos lados <span class="math notranslate nohighlight">\(\Delta x, \, \Delta y\)</span> co vértice inferior en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. O campo ten derivadas parciais continuas, polo que admite a expansión de Taylor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">espira</span><span class="p">():</span>
@@ -626,9 +622,6 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 </div>
-<p><em>Inciso</em></p>
-<p>Vamos a ver una demostración aproximada del teorema de (Green-Stockes)</p>
-<p>Considera la espera de tamaño diferencial, con lados <span class="math notranslate nohighlight">\(\Delta x, \, \Delta y\)</span> con vértice inferior en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. El campo tiene derivadas parciales continuas, por lo que admite el desarrollo de Taylor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">espira</span><span class="p">()</span>
@@ -639,22 +632,22 @@ $<span class="math notranslate nohighlight">\(
 <img alt="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" src="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" />
 </div>
 </div>
-<p>Considera la integral por los lados verticales en los que solo partipa <span class="math notranslate nohighlight">\(F_y\)</span>. Nota que el lado de la derecha entra con un (+) y el de la izquierda con un (-) en la circulación. La integral podemos aproximarla:</p>
+<p>Considera a integral ao longo dos lados verticais na que só participa <span class="math notranslate nohighlight">\(F_y\)</span>. Ten en conta que o lado dereito entra cun (+) e o lado esquerdo cun (-) na circulación. Podemos aproximar a integral:</p>
 <div class="math notranslate nohighlight">
 \[
 F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\partial F_y}{\partial x}(x_0 ,y_0) \, \Delta x \Delta y
 \]</div>
-<p>Considera ahora la integral en los lados horizontales, arriba aparece un signa (-) al desplazarnos hacia la izquierda y abajo un signo (+).</p>
+<p>Considera agora a integral nos lados horizontais, un signo (-) aparece arriba cando se move á esquerda e un signo (+) aparece debaixo.</p>
 <div class="math notranslate nohighlight">
 \[
 - F_x(x_0, y_0 + \Delta y) \, \Delta x + F_x(x_0, y_0) \, \Delta x \simeq - \frac{\partial F_x}{\partial y}(x_0 ,y_0) \, \Delta y \Delta x
 \]</div>
-<p>Por lo tanto, la integral a lo largo de la espira infinitesimal es:</p>
+<p>Polo tanto, a integral ao longo da espira infinitesimal é:</p>
 <div class="math notranslate nohighlight">
 \[
 \left( \frac{\partial F_y}{\partial x} - \frac{\partial F_x}{\partial y} \right) \, \mathrm{d}x \mathrm{d}y
 \]</div>
-<p><strong>Ejercicio</strong>: Verificar el teorema de Stockes en la superficie dada por la intersección de un cilindro infinito con eje en la dirección <span class="math notranslate nohighlight">\(z\)</span> y base <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>, y el plano <span class="math notranslate nohighlight">\(x+y+z =1\)</span>, con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y^3, x^3, z^3)\)</span></p>
+<p><strong>Exercicio</strong> : Verifica o teorema de Stokes na superficie dada pola intersección dun cilindro infinito cun eixe na dirección <span class="math notranslate nohighlight">\(z\)</span> e base <span class="math notranslate nohighlight">\(x^2 + y^2 = 1\)</span>, e o plano <span class="math notranslate nohighlight">\(x+y+z = 1 \)</span>, con <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y^3, x^3, z^3)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">30</span><span class="p">),</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">30</span><span class="p">)</span>
@@ -668,29 +661,11 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 <span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> 
 <span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">cz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">cx</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> <span class="o">-</span> <span class="n">cy</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s1x</span><span class="p">,</span> <span class="n">s1y</span><span class="p">,</span> <span class="n">s1z</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/99a3ed41ff000660cd3e4eef89d73cb910eb255ecd9bd5d45e81038b88e4cb62.png" src="../_images/99a3ed41ff000660cd3e4eef89d73cb910eb255ecd9bd5d45e81038b88e4cb62.png" />
-<img alt="../_images/bcb23468ea654704163d770dc93d3a3f77970c48b2087f117dbad8b0386125f6.png" src="../_images/bcb23468ea654704163d770dc93d3a3f77970c48b2087f117dbad8b0386125f6.png" />
-<img alt="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" src="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="o">-</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span> 
+<span class="c1">#Campo</span>
+<span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="o">-</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span> 
 <span class="n">Fy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">x</span><span class="o">**</span><span class="mi">3</span> 
 <span class="n">Fz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="n">z</span><span class="o">**</span><span class="mi">3</span> 
+<span class="c1">#Rotacional</span>
 <span class="n">Rx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mi">0</span> 
 <span class="n">Ry</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mi">0</span>
 <span class="n">Rz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mi">3</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">3</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span>
@@ -700,52 +675,54 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Rx</span><span class="p">,</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">Rz</span><span class="p">,</span> <span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## figura</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s1x</span><span class="p">,</span> <span class="n">s1y</span><span class="p">,</span> <span class="n">s1z</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax1</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;orange&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax1</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax1</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Definición da superficie&quot;</span><span class="p">)</span>
+<span class="c1">## integral de superficie</span>
+<span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>  <span class="c1"># </span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Rx</span><span class="p">,</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">Rz</span><span class="p">,</span> <span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span>  <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax2</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">s2x</span><span class="p">,</span> <span class="n">s2y</span><span class="p">,</span> <span class="n">s2z</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax2</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nabla x \vec</span><span class="si">{F}</span><span class="s2">$&quot;</span><span class="o">+</span><span class="s2">&quot; sobre a superficie&quot;</span><span class="p">)</span>
+<span class="c1">## integral de linha</span>
+<span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span>  <span class="c1"># </span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_line3d</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax3</span><span class="p">],</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax3</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\vec</span><span class="si">{F}</span><span class="s2">$ sobre a fronteira&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" src="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" />
-<img alt="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" src="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" />
+<img alt="../_images/e4cea9ea584787fb9bdedbd65b51954f865bbfbba357d2e86a27730235eb547a.png" src="../_images/e4cea9ea584787fb9bdedbd65b51954f865bbfbba357d2e86a27730235eb547a.png" />
 </div>
 </div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_line3d</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" src="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" />
-<img alt="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" src="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" />
-</div>
-</div>
-<p>Recordemos que la superficie tiene como base un disco de radio unidad y la intersección con el plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
-<p>Podemos parametrizar la superficie:</p>
+<p>Lembremos que a superficie está baseada nun disco de raio unitario e a intersección co plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
+<p>Podemos parametrizar a superficie:</p>
 <div class="math notranslate nohighlight">
 \[
-\sigma (x, y ) = (x, y, 1 - x -y), \;\;\; x^2 + y^2 \le 1
-\]</div>
-<p>donde:</p>
+ \sigma (x, y ) = (x, y, 1 - x -y), \;\;\; x^2 + y^2 \le 1
+ \]</div>
+<p>onde:</p>
 <div class="math notranslate nohighlight">
 \[
-{\bf n}(x, y) = (1, 1, 1)
-\]</div>
-<p>Y la frontera con la línea:</p>
+ {\bf n}(x, y) = (1, 1, 1)
+ \]</div>
+<p>E o borde coa curva:</p>
 <div class="math notranslate nohighlight">
 \[
-{\bf c}(\phi) = (\cos \phi, \sin \phi, 1 - \cos \phi - \sin \phi),\,\,\, \phi \in [0, 2 \pi)
-\]</div>
-<p>donde:</p>
+ {\bf c}(\phi) = (\cos \phi, \sin \phi, 1 - \cos \phi - \sin \phi),\,\,\, \phi \in [0, 2 \pi )
+ \]</div>
+<p>onde:</p>
 <div class="math notranslate nohighlight">
 \[
-\dot{{\bf c}}(\phi) = (-\sin \phi, \cos \phi, \sin \phi + \cos \phi)
-\]</div>
-<p>El rotacional de <span class="math notranslate nohighlight">\({\bf F} = (-y^3, x^3, z^3)\)</span> es:</p>
+ \dot{{\bf c}}(\phi) = (-\sin \phi, \cos \phi, \sin \phi + \cos \phi)
+ \]</div>
+<p>O rotacional de <span class="math notranslate nohighlight">\({\bf F} = (-y^3, x^3, z^3)\)</span> é:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \nabla \times {\bf F}  
@@ -755,20 +732,20 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
  \end{array} 
  \right| = \left(0, 0, 3 x^2 + 3 y^2\right) 
 \end{split}\]</div>
-<p>La integral en la superfice:</p>
+<p>A integral na superficie:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \int_{S} \nabla \times {\bf F} \, \mathrm{d}\vec{\sigma} = \int_{R} (0, 0, 3 x^2 + 3 y^2) \, (1, 1, 1) \, 
 \mathrm{d}x\mathrm{d}y \\ = \int_R 3 (x^2 + y^2)\, \mathrm{d}x\mathrm{d}y 
 \end{split}\]</div>
-<p>La región <span class="math notranslate nohighlight">\(R\)</span> es el disco de radio unidad, que podemos integrar en polares</p>
+<p>A rexión <span class="math notranslate nohighlight">\(R\)</span> é o disco de raio unitario, que podemos integrar en polares</p>
 <div class="math notranslate nohighlight">
 \[
 \int_0^{2\pi} \int_0^1 3 r^2 \, r\mathrm{d}r \mathrm{d}\phi 
 = \frac{3}{4} r^4 \Big|_0^1 2 \pi = \frac{3 \pi}{2}
 \]</div>
-<p>recuerda que el Jacobiano en polares es <span class="math notranslate nohighlight">\(r\)</span>.</p>
-<p>La integral de <span class="math notranslate nohighlight">\({\bf F}\)</span> a lo largo de la frontera:</p>
+<p>lembra que o xacobiano en polares é <span class="math notranslate nohighlight">\(r\)</span>.</p>
+<p>A integral de <span class="math notranslate nohighlight">\({\bf F}\)</span> ao longo da fronteira:</p>
 <div class="math notranslate nohighlight">
 \[
 \oint_{{\bf c}}{\bf F} \, \mathrm{d}{\bf s} = 
@@ -782,12 +759,12 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 \[
 = \int_0^{2\pi} \left( \sin^4 \phi + \cos^4  \phi  + (1 - \cos \phi - \sin \phi)^3 (\sin \phi  - \cos \phi) \right) \, \mathrm{d}\phi
 \]</div>
-<p>Que dividimos en dos integrales:</p>
+<p>Que dividimos en dúas integrais:</p>
 <div class="math notranslate nohighlight">
 \[
  \int_0^{2\pi} (\sin^4 \phi + \cos^4 \phi) \, \mathrm{d}\phi + \int_0^{2\pi} (1-\cos\phi-\sin\phi)^3 (\sin \phi -\cos \phi) \, \mathrm{d}\phi
 \]</div>
-<p>En la primera intergral, si operamos:</p>
+<p>Na primeira integral, se operamos:</p>
 <div class="math notranslate nohighlight">
 \[
 \sin^4 \phi + \cos^4 \phi
@@ -801,18 +778,18 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 \[
 = \frac{1}{2} (1 + \cos^2 2 \phi) = \frac{1}{2} \left( 1 + \frac{1}{2} (1 + \cos 4 \phi ) \right)
 \]</div>
-<p>Así:</p>
+<p>Entón:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_0^{2\pi} \left(\frac{3}{4} + \frac{1}{4} \cos 4 \phi \right) \mathrm{d}\phi = \left( \frac{3 \phi}{4} + \frac{1}{16} \sin  4 \phi\right) \Big|_0^{2\pi}  =  \frac{3\pi}{2}
 \]</div>
-<p>La segunda integral se calcula directamente:</p>
+<p>A segunda integral calcúlase directamente:</p>
 <div class="math notranslate nohighlight">
 \[ 
  \int_0^{2\pi} (1-\cos\phi-\sin\phi)^3 (\sin \phi -\cos \phi) \, \mathrm{d}\phi
 = \frac{1}{4}\left( 1 - \cos \phi - \sin \phi \right)^4 \Big|_0^{2\pi} = 0
 \]</div>
-<p><strong>Ejercicio</strong>: Verifica el teorema de Stockes con el campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y, x, 0)\)</span> en la superficie <span class="math notranslate nohighlight">\(z = 4 - x^2 - y^2\)</span> con <span class="math notranslate nohighlight">\(z \ge 0\)</span>.</p>
+<p><strong>Exercicio</strong> : Verifica o teorema de Stokes co campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (-y, x, 0)\)</span> na superficie <span class="math notranslate nohighlight">\(z = 4 - x^2 - y^2\)</span> con <span class="math notranslate nohighlight">\( z \ge 0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
@@ -821,28 +798,12 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 <span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span> 
 <span class="n">cy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">2.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">cz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span> <span class="o">*</span> <span class="n">phi</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
-<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="o">-</span><span class="mf">1.</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">x</span>
+<span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="c1">#Campo</span>
+<span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="o">-</span><span class="mf">1.</span><span class="o">*</span><span class="n">y</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">x</span>
 <span class="n">Fy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">1.</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">y</span>
 <span class="n">Fz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">0.</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">z</span>
+<span class="c1">#Rotacional</span>
 <span class="n">Rx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">0.</span><span class="o">*</span><span class="n">x</span>
 <span class="n">Ry</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">0.</span><span class="o">*</span><span class="n">y</span>
 <span class="n">Rz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span>  <span class="mf">2.</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">z</span>
@@ -852,22 +813,31 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Rx</span><span class="p">,</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">Rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_line3d</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## superficie</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">12</span><span class="p">))</span>
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">16</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax1</span><span class="p">],</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax1</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Definición da superficie&quot;</span><span class="p">)</span>
+<span class="c1">## integral de superficie</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Rx</span><span class="p">,</span> <span class="n">Ry</span><span class="p">,</span> <span class="n">Rz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax2</span><span class="p">],</span><span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax2</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.8</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax2</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\nabla x \vec</span><span class="si">{F}</span><span class="s2">$&quot;</span><span class="o">+</span><span class="s2">&quot; sobre a superficie&quot;</span><span class="p">)</span>
+<span class="c1"># integral de linha</span>
+<span class="n">ax3</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span><span class="n">projection</span><span class="o">=</span><span class="s2">&quot;3d&quot;</span><span class="p">)</span> <span class="c1"># </span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax3</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_line3d</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span><span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax3</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;blue&#39;</span><span class="p">);</span>
+<span class="n">bla</span><span class="o">=</span><span class="n">ax3</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;$\vec</span><span class="si">{F}</span><span class="s2">$ sobre a fronteira&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" src="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" />
-<img alt="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" src="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" />
-<img alt="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" src="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" />
-<img alt="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" src="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" />
+<img alt="../_images/bd04389f1fbc7f616441b2c2234b6ba3d4e53c4a86aa7553b091089b1a36dd41.png" src="../_images/bd04389f1fbc7f616441b2c2234b6ba3d4e53c4a86aa7553b091089b1a36dd41.png" />
 </div>
 </div>
-<p>Parametrizamos la superficie como una gráfica:</p>
+<p>Parametrizamos a superficie como unha gráfica:</p>
 <div class="math notranslate nohighlight">
 \[
 \sigma(x, y) = \left( x, y, 4 - x^2 - y^2\right)
@@ -876,7 +846,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 \[
 {\bf n}(x, y) = (2x, 2y, 1)
 \]</div>
-<p>Parametrizamos la frontera, que es la circunferencia de radio 2:</p>
+<p>Parametrizamos a fronteira, que é a circunferencia de raio 2:</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf c}(\phi) = (2 \cos \phi, 2 \sin \phi, 0)
@@ -885,7 +855,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 \[
 \dot{{\bf c}} (\phi) = (-2 \sin \phi, 2 \cos \phi, 0)
 \]</div>
-<p>El rotacional:</p>
+<p>O rotacional:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \nabla \times {\bf F}  
@@ -895,18 +865,18 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
  \end{array} 
  \right| = \left(0, 0, 2\right) 
 \end{split}\]</div>
-<p>La integral del rotacional en la superficie:</p>
+<p>A integral do rotacional na superficie:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_S \nabla \times {\bf F} \, \mathrm{d} \vec{\sigma} = \int_R (0, 0, 2) \, (2x, 2y, 1) \, \mathrm{d}x\mathrm{d}y
 = \int_R 2 \, \mathrm{d}x\mathrm{d}y
 \]</div>
-<p>La región <span class="math notranslate nohighlight">\(R\)</span> es el disco de radio 2, si cambiamos a polares</p>
+<p>A rexión <span class="math notranslate nohighlight">\(R\)</span> é o disco de raio 2, se cambiamos a polares</p>
 <div class="math notranslate nohighlight">
 \[
 = \int_0^2 \int_0^{2\pi} 2 \, r \mathrm{d} r\mathrm{d}\phi = 2 \pi r^2 \Big|_0^2 = 8 \pi
 \]</div>
-<p>Y la integral del campo a lo largo de la frontera:</p>
+<p>E a integral do campo ao longo da fronteira:</p>
 <div class="math notranslate nohighlight">
 \[
 \oint_{\bf c} {\bf F} \, \mathrm{d}{\bf s} = \oint -y \, \mathrm{d}x + x \, \mathrm{d}y
@@ -923,14 +893,14 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </section>
 <section id="teorema-de-strogradski-gauss">
 <h2>Teorema de Strogradski-Gauss<a class="headerlink" href="#teorema-de-strogradski-gauss" title="Permalink to this heading">#</a></h2>
-<p>El teorema de Gauss corresponde a la extensión del teorema de la divergencia a 3 dimensiones.</p>
-<p><strong>Teorema</strong>: Sea un volumen regular <span class="math notranslate nohighlight">\(V\)</span>, limitado por una superficie cerrada <span class="math notranslate nohighlight">\(S\)</span>, y sea un campo vectorial con derivadas primeras continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, se cumple:</p>
+<p>O teorema de Gauss correspóndese coa extensión do teorema da diverxencia a 3 dimensións.</p>
+<p><strong>Teorema</strong> : Sexa un volume regular <span class="math notranslate nohighlight">\(V\)</span>, limitado por unha superficie pechada <span class="math notranslate nohighlight">\(S\)</span>, e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y , F_z \right)\)</span>, mantén:</p>
 <div class="math notranslate nohighlight">
 \[
-\oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_V \nabla \cdot {\bf F} \, \mathrm{d}x\mathrm{d}y\mathrm{d}x
-\]</div>
-<p>donde la superficie cerrada está definida hacia afuera.</p>
-<p>Sea un volumen regular definido por una región <span class="math notranslate nohighlight">\(D\)</span> en <span class="math notranslate nohighlight">\((x, y)\)</span> y <span class="math notranslate nohighlight">\(z_1(x, y) \le z \le z_2(x, y)\)</span>, donde <span class="math notranslate nohighlight">\(z_1(x,y), \, z_2(x,y)\)</span> son dos funciones escalares que nos limitan los valores de <span class="math notranslate nohighlight">\(z\)</span>.</p>
+ \oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_V \nabla \cdot {\bf F} \, \mathrm{d}x\mathrm{d}y \mathrm{d}x
+ \]</div>
+<p>onde a superficie pechada está definida cara a fóra.</p>
+<p>Sexa un volume regular definido por unha rexión <span class="math notranslate nohighlight">\(D\)</span> en <span class="math notranslate nohighlight">\((x, y)\)</span> e <span class="math notranslate nohighlight">\(z_1(x, y) \le z \le z_2(x, y)\)</span>, onde <span class="math notranslate nohighlight">\(z_1(x,y), \, z_2(x,y)\)</span> son dúas funcións escalares que nos limitan os valores de <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <p>Consideremos:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -948,56 +918,81 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 <span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">sy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">sz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">theta1range</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">theta2range</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">theta1range</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">theta2range</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" src="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" />
-<img alt="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" src="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" />
+<img alt="../_images/9264062434b44cb23f069f3a6bc6e6cc6e1888f2223988839a0588ac10e9ee77.png" src="../_images/9264062434b44cb23f069f3a6bc6e6cc6e1888f2223988839a0588ac10e9ee77.png" />
 </div>
 </div>
-<p>La integral</p>
+<p><em>Cando falabamos de integrais de superficie, dicíamos</em> : a seguinte figura, onde se representa a gráfica da función <span class="math notranslate nohighlight">\(f(x, y) = x^2 + y^2\)</span>, e se debuxa unha partición da rexión <span class="math notranslate nohighlight">\((x, y)\)</span>. Para cada un dos rectángulos da gráfica, que é unha pequena sección dun plano, damos a súa área como:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d} \sigma =
+\sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y} \right)^2} \, \mathrm{d}x \mathrm{d}y
+\]</div>
+<p>Mentres que a área dos rectángulos en <span class="math notranslate nohighlight">\((x, y) \)</span> que os soportan é
+<span class="math notranslate nohighlight">\(
+ \mathrm{d}x\mathrm{d}y
+ \)</span></p>
+<p>Podemos reescribir:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{d}x \mathrm{d}y = \mathrm{d}\sigma \; {\cos \gamma}, \;\;
+\cos \gamma = \frac{1}{\sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y} \right)^2}}
+\]</div>
+<p>Onde <span class="math notranslate nohighlight">\(\gamma\)</span> é agora o ángulo que forma a normal, <span class="math notranslate nohighlight">\({\bf n}\)</span>, co eixo <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(\cos \gamma = \hat{k} \hat{n}\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+<span class="n">xfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span>
+<span class="n">yfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">y</span>
+<span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span>
+<span class="n">zero</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="p">:</span> <span class="mi">0</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="mi">0</span><span class="o">*</span><span class="n">y</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfaxis</span>   <span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">ax</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zero</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;b&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/7b1fd120966a0c58150787129a9d218d490682f38a9afa278ad043e71fca4c49.png" src="../_images/7b1fd120966a0c58150787129a9d218d490682f38a9afa278ad043e71fca4c49.png" />
+</div>
+</div>
+<p>A integral</p>
 <div class="math notranslate nohighlight">
 \[
 \int_D F_z\left(x, y, z_2(x, y)\right) \, \mathrm{d}x\mathrm{d}y 
-= \int_{D} F_z \hat{k} \, \frac{\mathrm{d}x\mathrm{d}y}{|\cos \gamma|} \hat{n}
+= \int_{D} F_z  \cos \gamma \mathrm{d}\sigma
 = \int_{z_2} F_z \hat{k} \, \mathrm{d}\vec{\sigma}
 \]</div>
-<p>Donde hemos introducido el término</p>
-<div class="math notranslate nohighlight">
-\[
-\frac{\hat{k} \, \hat{n}}{|\hat{k} \, \hat{n}|} = \frac{\hat{k} \, \hat{n}}{|\cos \gamma|},
-\]</div>
-<div class="math notranslate nohighlight">
-\[
-\mathrm{d}\vec{\sigma} = \frac{\hat{n}}{|\cos \gamma|} \mathrm{d}x\mathrm{d}y
-\]</div>
-<p><span class="math notranslate nohighlight">\(\hat{n}\)</span> es el verctor unitario normal al diferencial de superficie de la superfice dada por <span class="math notranslate nohighlight">\(z_2\)</span>, y <span class="math notranslate nohighlight">\(\gamma\)</span> el ángulo que forma <span class="math notranslate nohighlight">\(\hat{n}\)</span> con <span class="math notranslate nohighlight">\(\hat{k}\)</span>. Este término es <span class="math notranslate nohighlight">\(1\)</span> para <span class="math notranslate nohighlight">\(z_2\)</span>, y es <span class="math notranslate nohighlight">\(-1\)</span> para <span class="math notranslate nohighlight">\(z_1\)</span> dado que hemos definido la superficie hacia fuera.</p>
-<p>Así:</p>
+<p>Onde <span class="math notranslate nohighlight">\(\cos \gamma~\mathrm{d}\sigma = \hat{k} \cdot \hat{n}~\mathrm{d}\sigma = \hat{k} \cdot \mathrm{d}\vec{\sigma}\)</span>.</p>
+<p>Lembramos que <span class="math notranslate nohighlight">\(\hat{n}\)</span> é o vector unitario normal á diferencial de superficie da superficie dada por <span class="math notranslate nohighlight">\(z_2\)</span>, e <span class="math notranslate nohighlight">\(\gamma\)</span> é o ángulo que <span class="math notranslate nohighlight">\(\hat{n}\)</span> forma con <span class="math notranslate nohighlight">\(\hat{k}\)</span> . Este termo é de <span class="math notranslate nohighlight">\(1\)</span> para <span class="math notranslate nohighlight">\(z_2\)</span> e é de <span class="math notranslate nohighlight">\(-1\)</span> para <span class="math notranslate nohighlight">\(z_1\)</span> xa que definimos a superficie cara fóra.</p>
+<p>Entón:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_V \frac{\partial F_z}{\partial z} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z 
-= \oint F_z \hat{k} \, \mathrm{d}\vec{\sigma} 
+= \int_{S} F_z \hat{k} \, \mathrm{d}\vec{\sigma} 
 \]</div>
-<p>Y de forma similar para el resto de sumandos, considerando para cada caso la correspondiente definición de las superficies que limitan el volumen.</p>
+<p>E de xeito similar para o resto de termos, considerando para cada caso a correspondente definición das superficies que limitan o volume.</p>
 <div class="math notranslate nohighlight">
 \[
 \int_V \frac{\partial F_y}{\partial y} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z 
-= \oint F_y \hat{j} \, \mathrm{d}\vec{\sigma} 
+= \int_{S} F_y \hat{j} \, \mathrm{d}\vec{\sigma} 
 \]</div>
 <div class="math notranslate nohighlight">
 \[
 \int_V \frac{\partial F_x}{\partial x} \, \mathrm{d}x\mathrm{d}y\mathrm{d}z 
-= \oint F_x \hat{i} \, \mathrm{d}\vec{\sigma} 
+= \int_{S} F_x \hat{i} \, \mathrm{d}\vec{\sigma} 
 \]</div>
-<p>Con lo que queda demostrato el teorema de Gauss.</p>
-<p><em>Observa</em> el siguiente cubo construido con cubitos. Si fueran infinitesimales, la integral del flujo en sus caras sería lo mismo que la divergencia en el centro del cubito por su volumen diferencial</p>
-<p>Si los cubitos están adyantes el cálculo de su flujo se anula en las paredes que se tocan, y la suma de los flujos en todos los cubitos es igual a la de las caras de la superficie frontera. ¡Mientras que esa cantidad será igual a la suma de la divergencia en cada cubito por su volumen!</p>
+<p>Co que fica demostrado o teorema de Gauss.</p>
+<p><em>Observa</em> o seguinte cubo construído con cubos. Se fosen infinitesimais, a integral do fluxo nas súas caras sería a mesma que a diverxencia no centro do cúbito multiplicada polo seu volume diferencial.</p>
+<p>Se os cubos son adxacentes, o cálculo do seu fluxo anúlase nas paredes que se tocan, e a suma dos fluxos en todos os cubos é igual á das caras da superficie límite. Aínda que esa cantidade será igual á suma da diverxencia en cada cubo multiplicada polo seu volume!</p>
 <a class="reference internal image-reference" href="../_images/cubes_gauss.jpeg"><img alt="../_images/cubes_gauss.jpeg" src="../_images/cubes_gauss.jpeg" style="width: 250px;" /></a>
-<p><strong>Ejemplo</strong>: Verifica el teorema de Gauss con el campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x, y, z)\)</span> en la esfera de radio unidad.</p>
-<p><em>Observa</em>: Como el campo es radial, igual que los elementos diferenciales de área de la esfera.</p>
+<p><strong>Exemplo</strong> : Verifica o teorema de Gauss co campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x, y, z)\)</span> na esfera de raio unitario.</p>
+<p><em>Observa</em> : Como o campo é radial, o mesmo que os elementos diferenciais da área da esfera.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">18</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">18</span><span class="p">)</span>
@@ -1007,23 +1002,22 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 <span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">sy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
 <span class="n">sz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">theta</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span>  <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">theta</span><span class="p">)</span> 
-<span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
+<span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">quiver3d_in_wfsurface</span><span class="p">(</span><span class="n">Fx</span><span class="p">,</span> <span class="n">Fy</span><span class="p">,</span> <span class="n">Fz</span><span class="p">,</span> <span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">thetarange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;orange&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" src="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" />
-<img alt="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" src="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" />
+<img alt="../_images/aae11ac9bb262b5a916aaa48ca1a3bfe231774a5685053a2194da1c14c6c8005.png" src="../_images/aae11ac9bb262b5a916aaa48ca1a3bfe231774a5685053a2194da1c14c6c8005.png" />
 </div>
 </div>
-<p>a) la divergencia
+<p>a) a diverxencia
 <span class="math notranslate nohighlight">\(\nabla \, {\bf F} = 3\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 \int_V 3 \, \mathrm{d}x \mathrm{d}y \mathrm{d}z = 3 \frac{4 \pi}{3} = 4 \pi
 \]</div>
-<p>b) Si parametrizamos la esfera en coordenadas esféricas, ya vimos que</p>
+<p>b) Se parametrizamos a esfera en coordenadas esféricas, xa vimos que</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf n}(\theta, \phi) = \left(\sin \theta \cos \phi,  \sin \theta \sin \phi, \cos \theta \right) \, \sin \theta
@@ -1032,57 +1026,57 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 \[
 {\bf F} (\theta, \phi) = \left(\sin \theta \cos \phi, \sin \theta \sin \phi, \cos \theta \right)
 \]</div>
-<p>Luego:</p>
+<p>Logo:</p>
 <div class="math notranslate nohighlight">
 \[
 {\bf F} \, {\bf n} = \sin \theta
 \]</div>
-<p>Así</p>
+<p>Entón:</p>
 <div class="math notranslate nohighlight">
 \[
 \oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_0^\pi \int_0^{2\pi} \sin \theta \, \mathrm{d}\theta \mathrm{d}\phi = \phi \Big|_0^{2\pi} (-\cos \theta) \Big|_0^{\pi} = 4 \pi
 \]</div>
-<p><strong>Ejercicio</strong>: Calcular el flujo del campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (2x, y^2, z^2)\)</span> en la esfera de radio unidad.</p>
-<p>Aplicamos el teorema de Gauss,</p>
+<p><strong>Exercicio</strong> : Calcula o fluxo do campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (2x, y^2, z^2)\)</span> na esfera de raio unitario.</p>
+<p>Aplicamos o teorema de Gauss,</p>
 <div class="math notranslate nohighlight">
 \[
-\nabla \, {\bf F} = 2 + 2y + 2z
-\]</div>
-<p>La integral</p>
+ \nabla \, {\bf F} = 2 + 2y + 2z
+ \]</div>
+<p>A integral</p>
 <div class="math notranslate nohighlight">
 \[
-\int_V ( 2 + 2 y + 2z) \, \mathrm{d}x\mathrm{d}y\mathrm{d}z
-\]</div>
-<p>Las dos últimas integrales son nulas. Considera la primera. Dividimos el volumen en dos semiesferas <span class="math notranslate nohighlight">\(y \le0\)</span> e <span class="math notranslate nohighlight">\(y \ge 0\)</span>, la integral vale lo mismo en cada semiesfera pero con signo cambiado.</p>
+ \int_V ( 2 + 2 y + 2z) \, \mathrm{d}x\mathrm{d}y\mathrm{d}z
+ \]</div>
+<p>As dúas últimas integrais son nulas. Considera o primeira. Dividimos o volume en dous hemisferios <span class="math notranslate nohighlight">\(y \le0\)</span> e <span class="math notranslate nohighlight">\(y \ge 0\)</span>, a integral é a mesma en cada hemisferio pero cun signo cambiado.</p>
 <div class="math notranslate nohighlight">
 \[
-\int_V  2y \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = \int_V  2z \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 0
-\]</div>
-<p>La integral que resta es simplemente dos veces el volumen de la esfera:</p>
+ \int_V 2y \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = \int_V 2z \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 0
+ \]</div>
+<p>A integral restante é simplemente o dobre do volume da esfera:</p>
 <div class="math notranslate nohighlight">
 \[
-\int_V  2 \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 2 \frac{4 \pi}{3}
-\]</div>
-<p><strong>Ejercicio</strong>: Calcular el flujo del campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x y^2, y x^2, y)\)</span> sobre el cilindro de disco unidad y altura en <span class="math notranslate nohighlight">\(z\)</span> en <span class="math notranslate nohighlight">\([-1, 1]\)</span></p>
-<p>Aplicamos el teorema de Gauss:</p>
+ \int_V 2 \, \mathrm{d}x\mathrm{d}y\mathrm{d}z = 2 \frac{4 \pi}{3}
+ \]</div>
+<p><strong>Exercicio</strong> : Calcula o fluxo do campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (xy^2, yx^2, y)\)</span> sobre o cilindro de disco unitario e altura a <span class="math notranslate nohighlight">\(z\)</span> en <span class="math notranslate nohighlight">\([- 1, 1]\)</span></p>
+<p>Aplicamos o teorema de Gauss:</p>
 <div class="math notranslate nohighlight">
 \[
-\nabla \, {\bf F} = y^2 + x^2
-\]</div>
-<p>La integral del volumen la hacemos en coordenadas cilíndricas, (recuerda que el jacobiano es <span class="math notranslate nohighlight">\(r\)</span>):</p>
+ \nabla \, {\bf F} = y^2 + x^2
+ \]</div>
+<p>Facemos a integral do volume en coordenadas cilíndricas, (lembra que o xacobiano é <span class="math notranslate nohighlight">\(r\)</span>):</p>
 <div class="math notranslate nohighlight">
 \[
-\int_V \nabla \, {\bf F} \, \mathrm{d}x \mathrm{d}y \mathrm{d}z 
-= \int_{-1}^{1} \int_0^{2 \pi}  \int_0^1 r^2\, r\mathrm{d}r \mathrm{d}\phi \mathrm{d}z 
-\]</div>
-<p>Esto es:</p>
+ \int_V \nabla \, {\bf F} \, \mathrm{d}x \mathrm{d}y \mathrm{d}z
+ = \int_{-1}^{1} \int_0^{2 \pi} \int_0^1 r^2\, r\mathrm{d}r \mathrm{d}\phi \mathrm{d}z
+ \]</div>
+<p>Isto é:</p>
 <div class="math notranslate nohighlight">
 \[
-= z \Big|_{-1}^{+1} \phi \Big|_0^{2\pi} \frac{r^4}{4} \Big|_0^1 = \pi
-\]</div>
-<section id="aun-hay-mas">
-<h3>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h3>
-<p>Carl Friedrich <a class="reference external" href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> fue uno de las grandes matemáticos de la historia, con importantes contribuciones en Física, en Electromagnetismo y en Estadistica. La probabilidad normal, con la que ocurren casi todos los fenémonos de medida, sigue se ley de Gauss.</p>
+ = z \Big|_{-1}^{+1} \phi \Big|_0^{2\pi} \frac{r^4}{4} \Big|_0^1 = \pi
+ \]</div>
+<section id="ainda-hai-mais">
+<h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h3>
+<p>Carl Friedrich <a class="reference external" href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> foi un dos grandes matemáticos da historia, con importantes contribucións en Física, Electromagnetismo e Estatística. A probabilidade normal, coa que ocorren case todos os fenómenos de medición, segue a lei de Gauss.</p>
 <a class="reference internal image-reference" href="../_images/gauss.jpg"><img alt="../_images/gauss.jpg" src="../_images/gauss.jpg" style="width: 200px;" /></a>
 </section>
 </section>
@@ -1119,6 +1113,15 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
   
     <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="tcalvec_integral_superficie.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Integral de superficie</p>
+      </div>
+    </a>
 </div></div>
   
 </div>
@@ -1137,13 +1140,13 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectivos">Objectivos</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stockes">Teorema de Stockes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientables">Superficies orientables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stokes">Teorema de Stokes</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-regulables">Superficies regulables</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-strogradski-gauss">Teorema de Strogradski-Gauss</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#aun-hay-mas">¡Aún hay más!</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ainda-hai-mais">Aínda hai máis!</a></li>
 </ul>
 </li>
 </ul>

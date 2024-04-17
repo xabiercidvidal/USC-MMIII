@@ -26,3 +26,4 @@ parts:
   - file: notebooks/tcalvec_green.ipynb
   - file: notebooks/tcalvec_rotdiv_conservativos.ipynb
   - file: notebooks/tcalvec_integral_superficie.ipynb
+  - file: notebooks/tcalvec_stokes_gauss.ipynb

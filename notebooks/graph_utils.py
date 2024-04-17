@@ -192,9 +192,12 @@ def quiver3d(fx, fy, fz, xrange = xrange, yrange = xrange, zrange = xrange,
 
 
 def quiver3d_in_wfsurface(fx, fy, fz, sx, sy, sz, urange = xrange, vrange = xrange,
-                         newfig = False, alpha = 0.8, color = 'r'):
-    fig = plt.figure(figsize=figsize) if newfig else plt.gcf()
-    ax = fig.gca(projection='3d')
+                         newfig = True, alpha = 0.8, color = 'r'):
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else:
+        fig,ax = newfig
 
     # Make the grid
     u, v  = np.meshgrid(np.linspace(*urange), np.linspace(*vrange))
@@ -204,13 +207,16 @@ def quiver3d_in_wfsurface(fx, fy, fz, sx, sy, sz, urange = xrange, vrange = xran
 
     ax.quiver(x, y, z, vx, vy, vz,  alpha = alpha, length = 0.3, normalize = True, color = color)
 
-    return
+    return fig,ax
 
 
 def quiver3d_in_line3d(fx, fy, fz, cx, cy, cz, trange = xrange,
-                         newfig = False, alpha = 0.8, color = 'r'):
-    fig = plt.figure(figsize=figsize) if newfig else plt.gcf()
-    ax = fig.gca(projection='3d')
+                         newfig = True, alpha = 0.8, color = 'r'):
+    if isinstance(newfig,bool):
+        fig = plt.figure(figsize=figsize)
+        ax = fig.add_subplot(projection='3d')
+    else:
+        fig,ax = newfig
 
     # Make the grid
     t = np.linspace(*trange)
@@ -220,7 +226,7 @@ def quiver3d_in_line3d(fx, fy, fz, cx, cy, cz, trange = xrange,
 
     ax.quiver(x, y, z, vx, vy, vz,  alpha = alpha, length = 0.3, normalize = True, color = color)
 
-    return
+    return fig,ax
 
 def dot(x0, y0, color = 'black'):
     ax = plt.gca()
