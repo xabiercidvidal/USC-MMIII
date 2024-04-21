@@ -425,7 +425,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stokes">Teorema de Stokes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-regulables">Superficies regulables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientables">Superficies orientables</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-strogradski-gauss">Teorema de Strogradski-Gauss</a><ul class="nav section-nav flex-column">
@@ -453,7 +453,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Wed Apr 17 16:56:19 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sun Apr 21 23:26:26 2024
 </pre></div>
 </div>
 </div>
@@ -490,8 +490,8 @@ document.write(`
 </section>
 <section id="teorema-de-stokes">
 <h2>Teorema de Stokes<a class="headerlink" href="#teorema-de-stokes" title="Permalink to this heading">#</a></h2>
-<section id="superficies-regulables">
-<h3>Superficies regulables<a class="headerlink" href="#superficies-regulables" title="Permalink to this heading">#</a></h3>
+<section id="superficies-orientables">
+<h3>Superficies orientables<a class="headerlink" href="#superficies-orientables" title="Permalink to this heading">#</a></h3>
 <p>Unha superficie é orientable se ten dous lados, por exemplo, unha folla de papel.</p>
 <p>Fíxate na seguinte figura, é unha banda de Moebius e só ten un lado.</p>
 <a class="reference internal image-reference" href="../_images/escher-moebius.jpg"><img alt="../_images/escher-moebius.jpg" src="../_images/escher-moebius.jpg" style="width: 300px;" /></a>
@@ -518,7 +518,7 @@ document.write(`
 </div>
 </div>
 <p><strong>O teorema de Stokes</strong> é a xeneralización do teorema de Green a 3 dimensións.</p>
-<p><strong>Teorema</strong> : Sexa unha superficie orientable <span class="math notranslate nohighlight">\(S\)</span>, que ten unha fronteira <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> que podemos atravesar en sentido antihorario, e parametrizar con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span>, onde <span class="math notranslate nohighlight">\((u) , v) \)</span> se definen nunha rexión <span class="math notranslate nohighlight">\(R\)</span>; e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, cúmprese:</p>
+<p><strong>Teorema</strong> : Sexa unha superficie orientable <span class="math notranslate nohighlight">\(S\)</span>, que ten unha fronteira <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> que podemos atravesar en sentido antihorario, e parametrizar con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span>, onde <span class="math notranslate nohighlight">\((u , v) \)</span> se definen nunha rexión <span class="math notranslate nohighlight">\(R\)</span>; e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, cúmprese:</p>
 <div class="math notranslate nohighlight">
 \[
 \int_{S} \nabla \times {\bf F} \, \mathrm{d} \vec{\sigma} = \oint_{\bf c} {\bf F} \, \mathrm{d}{\bf s}
@@ -603,7 +603,7 @@ $<span class="math notranslate nohighlight">\(
 <p>co que se demostra o teorema de Stokes.</p>
 <p><em>Inciso</em></p>
 <p>Vexamos unha demostración aproximada do teorema (Green-Stokes).</p>
-<p>Considere a espira de tamaño diferencial, cos lados <span class="math notranslate nohighlight">\(\Delta x, \, \Delta y\)</span> co vértice inferior en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. O campo ten derivadas parciais continuas, polo que admite a expansión de Taylor.</p>
+<p>Considera a espira de tamaño diferencial, cos lados <span class="math notranslate nohighlight">\(\Delta x, \, \Delta y\)</span> co vértice inferior en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. O campo ten derivadas parciais continuas, polo que admite a expansión de Taylor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">espira</span><span class="p">():</span>
@@ -698,7 +698,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e4cea9ea584787fb9bdedbd65b51954f865bbfbba357d2e86a27730235eb547a.png" src="../_images/e4cea9ea584787fb9bdedbd65b51954f865bbfbba357d2e86a27730235eb547a.png" />
+<img alt="../_images/c548c1f2e2a82239114e06c08189f62e454cde74578968baa6e98a29de6ec4fc.png" src="../_images/c548c1f2e2a82239114e06c08189f62e454cde74578968baa6e98a29de6ec4fc.png" />
 </div>
 </div>
 <p>Lembremos que a superficie está baseada nun disco de raio unitario e a intersección co plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
@@ -720,7 +720,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 <p>onde:</p>
 <div class="math notranslate nohighlight">
 \[
- \dot{{\bf c}}(\phi) = (-\sin \phi, \cos \phi, \sin \phi + \cos \phi)
+ \dot{{\bf c}}(\phi) = (-\sin \phi, \cos \phi, \sin \phi - \cos \phi)
  \]</div>
 <p>O rotacional de <span class="math notranslate nohighlight">\({\bf F} = (-y^3, x^3, z^3)\)</span> é:</p>
 <div class="math notranslate nohighlight">
@@ -894,12 +894,12 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 <section id="teorema-de-strogradski-gauss">
 <h2>Teorema de Strogradski-Gauss<a class="headerlink" href="#teorema-de-strogradski-gauss" title="Permalink to this heading">#</a></h2>
 <p>O teorema de Gauss correspóndese coa extensión do teorema da diverxencia a 3 dimensións.</p>
-<p><strong>Teorema</strong> : Sexa un volume regular <span class="math notranslate nohighlight">\(V\)</span>, limitado por unha superficie pechada <span class="math notranslate nohighlight">\(S\)</span>, e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y , F_z \right)\)</span>, mantén:</p>
+<p><strong>Teorema</strong> : Sexa un volume regular <span class="math notranslate nohighlight">\(V\)</span>, limitado por unha superficie pechada <span class="math notranslate nohighlight">\(S\)</span>, e sexa un campo vectorial con primeiras derivadas continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y , F_z \right)\)</span>, temos:</p>
 <div class="math notranslate nohighlight">
 \[
  \oint_{S} {\bf F} \, \mathrm{d}\vec{\sigma} = \int_V \nabla \cdot {\bf F} \, \mathrm{d}x\mathrm{d}y \mathrm{d}x
  \]</div>
-<p>onde a superficie pechada está definida cara a fóra.</p>
+<p>onde a superficie pechada está definida cara fóra.</p>
 <p>Sexa un volume regular definido por unha rexión <span class="math notranslate nohighlight">\(D\)</span> en <span class="math notranslate nohighlight">\((x, y)\)</span> e <span class="math notranslate nohighlight">\(z_1(x, y) \le z \le z_2(x, y)\)</span>, onde <span class="math notranslate nohighlight">\(z_1(x,y), \, z_2(x,y)\)</span> son dúas funcións escalares que nos limitan os valores de <span class="math notranslate nohighlight">\(z\)</span>.</p>
 <p>Consideremos:</p>
 <div class="math notranslate nohighlight">
@@ -958,7 +958,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7b1fd120966a0c58150787129a9d218d490682f38a9afa278ad043e71fca4c49.png" src="../_images/7b1fd120966a0c58150787129a9d218d490682f38a9afa278ad043e71fca4c49.png" />
+<img alt="../_images/2f90dad334e52636930bbeee8e18ba38815dd8a7dd77176e871215b40466903a.png" src="../_images/2f90dad334e52636930bbeee8e18ba38815dd8a7dd77176e871215b40466903a.png" />
 </div>
 </div>
 <p>A integral</p>
@@ -988,7 +988,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 = \int_{S} F_x \hat{i} \, \mathrm{d}\vec{\sigma} 
 \]</div>
 <p>Co que fica demostrado o teorema de Gauss.</p>
-<p><em>Observa</em> o seguinte cubo construído con cubos. Se fosen infinitesimais, a integral do fluxo nas súas caras sería a mesma que a diverxencia no centro do cúbito multiplicada polo seu volume diferencial.</p>
+<p><em>Observa</em> o seguinte cubo construído con cubos. Se fosen infinitesimais, a integral do fluxo nas súas caras sería a mesma que a diverxencia no centro do cubiño multiplicada polo seu volume diferencial.</p>
 <p>Se os cubos son adxacentes, o cálculo do seu fluxo anúlase nas paredes que se tocan, e a suma dos fluxos en todos os cubos é igual á das caras da superficie límite. Aínda que esa cantidade será igual á suma da diverxencia en cada cubo multiplicada polo seu volume!</p>
 <a class="reference internal image-reference" href="../_images/cubes_gauss.jpeg"><img alt="../_images/cubes_gauss.jpeg" src="../_images/cubes_gauss.jpeg" style="width: 250px;" /></a>
 <p><strong>Exemplo</strong> : Verifica o teorema de Gauss co campo <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (x, y, z)\)</span> na esfera de raio unitario.</p>
@@ -1142,7 +1142,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#obxectivos">Obxectivos</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-stokes">Teorema de Stokes</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-regulables">Superficies regulables</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#superficies-orientables">Superficies orientables</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teorema-de-strogradski-gauss">Teorema de Strogradski-Gauss</a><ul class="nav section-nav flex-column">
