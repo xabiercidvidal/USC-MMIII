@@ -24,3 +24,4 @@
 | Operador Nabla. Campos conservativos| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_rotdiv_conservativos.ipynb) |
 | Integral de superficie| [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_integral_superficie.ipynb) |
 | Teorema de Stokes e Teorema de Gauss | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_stokes_gauss.ipynb) |
+| Series de Fourier | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tfourier.ipynb) |

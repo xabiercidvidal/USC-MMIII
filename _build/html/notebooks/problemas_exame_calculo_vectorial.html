@@ -180,6 +180,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -449,7 +450,28 @@ $$
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions">
+  <div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
+<span class="o">%</span><span class="k">matplotlib</span> inline
+<span class="o">%</span><span class="k">reload_ext</span> autoreload
+<span class="o">%</span><span class="k">autoreload</span> 2
+
+<span class="c1"># numpy and matplotlib</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+
+<span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
+<span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<section id="razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions">
 <h1>Razoa se son verdadeiras ou falsas as seguintes afirmacións:<a class="headerlink" href="#razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions" title="Permalink to this heading">#</a></h1>
 <div class="math notranslate nohighlight">
 \[
@@ -532,7 +554,7 @@ negativo en \)</span>{\rm d}\vec{S}$.</p>
 $<span class="math notranslate nohighlight">\(
 \vec{\nabla} \times \vec{F} =  \left|
 \begin{array}{ccc}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \\
+\hat{i} &amp; \hat{j} &amp; \hat{k} \
 \frac{\partial \phantom{F}}{\partial x} &amp; \frac{\partial \phantom{F}}{\partial y} &amp; \frac{\partial \phantom{F}}{\partial z} \\
 F_x &amp; F_y &amp; F_z
 \end{array}
@@ -554,7 +576,7 @@ z &amp; x &amp; y
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-=\left(\int_0^1 u{\rm d}u\right)\left(\int_0^{\pi/2}(\cos v, \sin v,-1){\rm d}v\right) = \left. \frac{u^2}{2}\right]_0^1 \left. \left(\sin v-\cos v-v\right)\right]_0^{\pi/2}
+=\left(\int_0^1 u{\rm d}u\right)\left(\int_0^{\pi/2}(\cos v + \sin v -1){\rm d}v\right) = \left. \frac{u^2}{2}\right]_0^1 \left. \left(\sin v-\cos v-v\right)\right]_0^{\pi/2}
 =\frac{1}{2}\left(2-\frac{\pi}{2}\right) = 1-\frac{\pi}{4}
 \]</div>
 <p>A superficie cumpre <span class="math notranslate nohighlight">\(x^2+y^2 = z^2\)</span>, é dicir, é un cuarto dun cono que vai desde <span class="math notranslate nohighlight">\(z=0\)</span> ata <span class="math notranslate nohighlight">\(z=1\)</span>, collendo so o primeiro cadrante.
@@ -612,6 +634,59 @@ $<span class="math notranslate nohighlight">\(
 \bar{F}=\left(2-x^{2}yz+y^{3},xy^{2}z+ye^{z},y^{2}+z-e^{z}\right)
 \]</div>
 <p>e a superficie é <span class="math notranslate nohighlight">\(y^{2}+z^{2}=x^{2}\)</span> entre os planos <span class="math notranslate nohighlight">\(x=1\)</span> e <span class="math notranslate nohighlight">\(x=2\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">R</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">R</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">40</span><span class="p">)</span>
+<span class="c1">## surface</span>
+<span class="n">sy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">sy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sy</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span> <span class="o">+</span> <span class="n">sz</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">)</span><span class="o">*</span><span class="n">sz</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">))</span>
+<span class="c1">## field</span>
+<span class="n">Fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span> <span class="mi">2</span><span class="o">-</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">z</span><span class="o">+</span><span class="n">y</span><span class="o">**</span><span class="mi">3</span>
+<span class="n">Fy</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">z</span><span class="o">+</span><span class="n">y</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="n">Fz</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">z</span><span class="p">:</span> <span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">z</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="c1">## limits</span>
+<span class="n">cx1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">phi</span>
+<span class="n">cy1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">cz1</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">cx2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">+</span> <span class="mf">0.</span><span class="o">*</span><span class="n">phi</span>
+<span class="n">cy2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+<span class="n">cz2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span>    <span class="p">:</span> <span class="mi">1</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phi</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">sy</span><span class="p">,</span> <span class="n">sz</span><span class="p">,</span> <span class="n">rrange</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+<span class="c1">#gf.quiver3d_in_wfsurface(Fx, Fy, Fz, sx, sy, sz,  rrange, phirange, newfig = [fig,ax], alpha = 0.5, color = &#39;yellow&#39;);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx1</span><span class="p">,</span> <span class="n">cy1</span><span class="p">,</span> <span class="n">cz1</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx2</span><span class="p">,</span> <span class="n">cy2</span><span class="p">,</span> <span class="n">cz2</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/edb0a67af6b6050c76a92cc52377bbe789bc06f7e52553c87d991614694ea882.png" src="../_images/edb0a67af6b6050c76a92cc52377bbe789bc06f7e52553c87d991614694ea882.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">f2b26d5c28ee</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
+
+<span class="ne">NameError</span>: name &#39;cx&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 <p>O Teorema da Diverxencia danos:</p>
 <div class="math notranslate nohighlight">
 \[
