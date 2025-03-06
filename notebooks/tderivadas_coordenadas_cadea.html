@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Cambio de coordenadas e regra da cadea &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_coordenadas_cadea';</script>
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Gradiente, matriz xacobiana, funcións diferenciables" href="tderivadas_gradiante_xacobiana.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,6 +188,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -184,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -200,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -232,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_coordenadas_cadea.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -250,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_coordenadas_cadea.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -378,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -438,10 +456,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cambio-de-coordenadas-e-regra-da-cadea">
-<h1>Cambio de coordenadas e regra da cadea<a class="headerlink" href="#cambio-de-coordenadas-e-regra-da-cadea" title="Permalink to this heading">#</a></h1>
+<h1>Cambio de coordenadas e regra da cadea<a class="headerlink" href="#cambio-de-coordenadas-e-regra-da-cadea" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -450,13 +468,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Fri Mar  8 16:31:12 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:01:05 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="obxectivos">
-<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Link to this heading">#</a></h2>
 <p>Aprende a facer cambios de coordenadas</p>
 <p>Mostra a regra da cadea e algúns usos.</p>
 <p><em>Nota</em></p>
@@ -483,7 +501,7 @@ document.write(`
 </div>
 </section>
 <section id="cambio-de-variables">
-<h2>Cambio de variables<a class="headerlink" href="#cambio-de-variables" title="Permalink to this heading">#</a></h2>
+<h2>Cambio de variables<a class="headerlink" href="#cambio-de-variables" title="Link to this heading">#</a></h2>
 <p>A seguinte función é o potencial dunha carga eléctrica, <span class="math notranslate nohighlight">\(q\)</span> no espazo:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -515,7 +533,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/261364d945b6d941ccc546eaf7880c52f5e14f3831731e32f0e8dd7b32a75153.png" src="../_images/261364d945b6d941ccc546eaf7880c52f5e14f3831731e32f0e8dd7b32a75153.png" />
+<img alt="../_images/9f912c3d5693edcc87756416071f03f711353e7c47c7dea49e693cc3e3dd08c8.png" src="../_images/9f912c3d5693edcc87756416071f03f711353e7c47c7dea49e693cc3e3dd08c8.png" />
 </div>
 </div>
 <p>Podemos dar todos os puntos, <span class="math notranslate nohighlight">\((x, y, z)\)</span>, dun espazo <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> en <em>coordenadas cilíndricas</em> , onde expresamos as coordenadas <span class="math notranslate nohighlight">\((x, y)\)</span> por, <span class="math notranslate nohighlight">\((r, \phi)\)</span> onde <span class="math notranslate nohighlight">\(r\)</span> é a distancia á orixe e <span class="math notranslate nohighlight">\(\phi\)</span> o ángulo co eixe <span class="math notranslate nohighlight">\(x\)</span>. Mentres mantemos a coordenada <span class="math notranslate nohighlight">\(z\)</span>. Isto é:</p>
@@ -556,7 +574,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0ca2e9840e118dfe24919b42583b8d6e3d1dbed0073a3f3203bd225c5a35c61e.png" src="../_images/0ca2e9840e118dfe24919b42583b8d6e3d1dbed0073a3f3203bd225c5a35c61e.png" />
+<img alt="../_images/db0f64d6f4a4a9b0abdb95cee120a4bc8a7e645a04c9da216d12246f7bda72ef.png" src="../_images/db0f64d6f4a4a9b0abdb95cee120a4bc8a7e645a04c9da216d12246f7bda72ef.png" />
 </div>
 </div>
 <p><em>As coordenadas esféricas</em> permítennos asociar calquera punto do espazo, <span class="math notranslate nohighlight">\((x, y, z)\)</span>, de <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, a un raio, <span class="math notranslate nohighlight">\(r\)</span>, a distancia do punto desde a orixe, o ángulo <span class="math notranslate nohighlight">\( \theta\)</span> que forma o punto co eixe <span class="math notranslate nohighlight">\(z\)</span>, e o ángulo que forma a proxección do punto no plano <span class="math notranslate nohighlight">\((x, y)\)</span> no eixe <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -575,12 +593,12 @@ document.write(`
  r = \sqrt{x^2 + y^2 + z^2}, \;\, \cos \phi = \frac{x}{\sqrt{x^2 + y^2}}, \;\, \cos \theta = \frac{z}{\sqrt{x^2 + y^2 + z^2}}
  \]</div>
 <section id="cambios-de-coordenadas">
-<h3>Cambios de coordenadas<a class="headerlink" href="#cambios-de-coordenadas" title="Permalink to this heading">#</a></h3>
+<h3>Cambios de coordenadas<a class="headerlink" href="#cambios-de-coordenadas" title="Link to this heading">#</a></h3>
 <p>Os cambios de coordenadas son polo tanto funcións vectoriais, <span class="math notranslate nohighlight">\({\bf f}: \mathbb{R}^n \to \mathbb{R}^n\)</span>, diferenciables, bixectivas (agás algún punto singular) e que admiten tamén unha función inversa, tamén diferenciable.</p>
 <p><em>Nota:</em> unha función bixectiva asocia cada punto do espazo inicial cun punto diferente do espazo da imaxe, e cada punto do espazo da imaxe ten un punto no inicial. Ten en conta que hai algúns puntos singulares que non cumpren con isto, como os polos no cambio a esférico e cando <span class="math notranslate nohighlight">\(r = 0\)</span> para ambos. Non obstante, isto non nos impide cubrir completamente o espazo <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span></p>
 </section>
 <section id="matriz-de-cambio-de-coordenadas-xacobianas">
-<h3>Matriz de cambio de coordenadas xacobianas<a class="headerlink" href="#matriz-de-cambio-de-coordenadas-xacobianas" title="Permalink to this heading">#</a></h3>
+<h3>Matriz de cambio de coordenadas xacobianas<a class="headerlink" href="#matriz-de-cambio-de-coordenadas-xacobianas" title="Link to this heading">#</a></h3>
 <p>Imos calcular a matriz xacobiana dos cambios de coordenadas a cilíndricas.</p>
 <p>A función vectorial do cambio de coordenadas a cilíndricas é:</p>
 <div class="math notranslate nohighlight">
@@ -613,7 +631,7 @@ document.write(`
 </section>
 </section>
 <section id="a-regra-da-cadea">
-<h2>A regra da cadea<a class="headerlink" href="#a-regra-da-cadea" title="Permalink to this heading">#</a></h2>
+<h2>A regra da cadea<a class="headerlink" href="#a-regra-da-cadea" title="Link to this heading">#</a></h2>
 <p>En certos casos temos unha función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, da que coñecemos a súa derivada, <span class="math notranslate nohighlight">\({\bf Df}({\bf x})\)</span>, e preguntámonos cal será a súa derivada en coordenadas cilíndricas ou esféricas.</p>
 <p>Existe unha relación sinxela entre a derivada da función nas novas coordenadas e a derivada nas coordenadas cartesianas?</p>
 <p>A resposta é a regra da cadea, que nos di que a nova derivada é o produto da derivada da primeira función e a derivada, a matriz xacobiana, do cambio de variables:</p>
@@ -624,7 +642,7 @@ document.write(`
  \]</div>
 <p>O produto dos derivadas!</p>
 <section id="teorema-da-regra-da-cadea">
-<h3>Teorema da regra da cadea<a class="headerlink" href="#teorema-da-regra-da-cadea" title="Permalink to this heading">#</a></h3>
+<h3>Teorema da regra da cadea<a class="headerlink" href="#teorema-da-regra-da-cadea" title="Link to this heading">#</a></h3>
 <p><em>Teorema</em>: Sexa <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathbb{R}^n \to \mathbb{R}^m\)</span>, <span class="math notranslate nohighlight">\(A\)</span> un conxunto aberto de <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, e <span class="math notranslate nohighlight">\({\bf f}: B \subset \mathbb{R}^m \to \mathbb{R}^p\)</span>, <span class="math notranslate nohighlight">\(B\)</span> un conxunto aberto de <span class="math notranslate nohighlight">\(\mathbb{R}^m\)</span>, onde o dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span> se inclúe no intervalo de <span class="math notranslate nohighlight">\({\bf g}\)</span>. Se <span class="math notranslate nohighlight">\({\bf g}\)</span> é diferenciable nun punto <span class="math notranslate nohighlight">\({\bf x}\)</span> interior a <span class="math notranslate nohighlight">\(A\)</span> e <span class="math notranslate nohighlight">\({\bf f}\)</span> o é no punto <span class="math notranslate nohighlight">\({\bf g}({\bf x})\)</span>, entón, a función de composición <span class="math notranslate nohighlight">\({\bf h} = {\bf f} \circ {\bf g}: A \subset \mathbb{R}^n \to \mathbb{R}^p\)</span>, definida como: <span class="math notranslate nohighlight">\({\bf h}({\bf x})= {\bf f} \circ {\bf g} ({\bf x}) = {\bf f} \left( {\bf g}({\bf x}) \right)\)</span>, é diferenciable en <span class="math notranslate nohighlight">\({\bf x}\)</span> e o seu diferencial é:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -739,12 +757,12 @@ f'_x(x_0, y_0, z_0) \, (x - x_0) \, + \, f'_y(x_0, y_0, z_0) \, (y - y_0) + \, f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradiente   : (8.659560562354932e-17, -1.414213562373095, 1.4142135623730951)
-v-paralelo  : (0.7071067811865475, 4.329780281177466e-17, 0.0)
-v-meridiano : (4.329780281177467e-17, -0.7071067811865476, -0.7071067811865475)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradiente   : (np.float64(8.659560562354932e-17), np.float64(-1.414213562373095), np.float64(1.4142135623730951))
+v-paralelo  : (np.float64(0.7071067811865475), np.float64(4.329780281177466e-17), 0.0)
+v-meridiano : (np.float64(4.329780281177467e-17), np.float64(-0.7071067811865476), np.float64(-0.7071067811865475))
 </pre></div>
 </div>
-<img alt="../_images/b0319df9dc7f98ea5d031054abc81332abf06376b693ccffd75747fc07636cbb.png" src="../_images/b0319df9dc7f98ea5d031054abc81332abf06376b693ccffd75747fc07636cbb.png" />
+<img alt="../_images/c34e6d3a1e7eb4cf5d86e7a8404130aeb4ccca01104e99a891e240e3f8f04f90.png" src="../_images/c34e6d3a1e7eb4cf5d86e7a8404130aeb4ccca01104e99a891e240e3f8f04f90.png" />
 </div>
 </div>
 <p><em>Exercicio</em> : Sexa a función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span>, e o punto <span class="math notranslate nohighlight">\({\bf x}_0 = \left(0, -1/{\sqrt {2}}, 1/{\sqrt{2}} \right)\)</span>, calcula o plano tanxente do conxunto de nivel da función á que pertence o punto.</p>
@@ -775,7 +793,7 @@ v-meridiano : (4.329780281177467e-17, -0.7071067811865476, -0.7071067811865475)
 </section>
 </section>
 <section id="apendice">
-<h2>Apéndice<a class="headerlink" href="#apendice" title="Permalink to this heading">#</a></h2>
+<h2>Apéndice<a class="headerlink" href="#apendice" title="Link to this heading">#</a></h2>
 <p><em>Proba</em> da regra da cadea</p>
 <p>As dúas funcións son diferenciables:</p>
 <div class="math notranslate nohighlight">
@@ -847,11 +865,10 @@ v-meridiano : (4.329780281177467e-17, -0.7071067811865476, -0.7071067811865475)
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tderivadas_gradiante_xacobiana.html"
@@ -871,17 +888,16 @@ v-meridiano : (4.329780281177467e-17, -0.7071067811865476, -0.7071067811865475)
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -921,6 +937,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -947,8 +964,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

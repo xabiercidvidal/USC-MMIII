@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Integral de línea &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_integral_linea';</script>
@@ -68,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,23 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,16 +99,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -129,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -174,6 +188,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -182,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -198,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -230,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tcalvec_integral_linea.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -248,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_integral_linea.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -376,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -432,10 +452,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integral-de-linea">
-<h1>Integral de línea<a class="headerlink" href="#integral-de-linea" title="Permalink to this heading">#</a></h1>
+<h1>Integral de línea<a class="headerlink" href="#integral-de-linea" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -444,7 +464,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Fri Mar  8 16:29:34 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Mar  6 17:00:49 2025
 </pre></div>
 </div>
 </div>
@@ -459,7 +479,7 @@ document.write(`
 </li>
 </ul>
 <section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Link to this heading">#</a></h2>
 <p>Revisar la parametrización de líneas o trayectorias.</p>
 <p>Definir la integral de una función escalar y vectorial a lo largo de una línea.</p>
 <p>Mostrar algunos ejemplos sencillos.</p>
@@ -486,9 +506,9 @@ document.write(`
 </div>
 </section>
 <section id="id1">
-<h2>Integral de línea<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
+<h2>Integral de línea<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <section id="revision-de-parametrizacion-de-lineas">
-<h3>Revisión de parametrización de líneas.<a class="headerlink" href="#revision-de-parametrizacion-de-lineas" title="Permalink to this heading">#</a></h3>
+<h3>Revisión de parametrización de líneas.<a class="headerlink" href="#revision-de-parametrizacion-de-lineas" title="Link to this heading">#</a></h3>
 <p>Hemos visto con anterioridad que podemos parametrizar una línea, <span class="math notranslate nohighlight">\({\bf c}(t)\)</span>, de un espacio <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n&gt;1\)</span>, como una función vectorial definida en un intervalo <span class="math notranslate nohighlight">\([t_a, t_b]\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}\)</span>.</p>
 <p><em>Ejemplo</em>: parametrización de una circunferencia de radio <span class="math notranslate nohighlight">\(r\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -514,7 +534,7 @@ t \in [0, 2 n \pi] \to \left( r \cos \omega t, r \sin \omega t, v_z t \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/00dea26d5c8c321bffeafcd5abf635ebe255f407fd013c32c53ed0441490ce70.png" src="../_images/00dea26d5c8c321bffeafcd5abf635ebe255f407fd013c32c53ed0441490ce70.png" />
+<img alt="../_images/4a6c57c0358ee1415ae8224dd534809fa9ff32766d3be2121696cc15e9c8bf57.png" src="../_images/4a6c57c0358ee1415ae8224dd534809fa9ff32766d3be2121696cc15e9c8bf57.png" />
 </div>
 </div>
 <p>Calculamos en su momento la longitud de arco, <span class="math notranslate nohighlight">\(s\)</span>, de una línea, mediante la integral en una dimensión dada por:</p>
@@ -538,7 +558,7 @@ s = \int_{{\bf c}} \, \mathrm{d}s = \int_{t_a}^{t_b} | \dot{{\bf c}}(t) | \mathr
 <p>En física, si <span class="math notranslate nohighlight">\(t\)</span> es el tiempo, <span class="math notranslate nohighlight">\({\bf c}(t)\)</span> es la trayectoria de un móvil, <span class="math notranslate nohighlight">\({\bf \dot{c}}(t)\)</span>, es la velocidad, y <span class="math notranslate nohighlight">\(\mathrm{d}{\bf s} = |{\bf \dot{c}}(t)| \, \mathrm{d}t\)</span>, el diferencial de distancia recorrida en un diferencial de tiempo <span class="math notranslate nohighlight">\(\mathrm{d}t\)</span>.</p>
 </section>
 <section id="integral-de-una-funcion-escalar-a-lo-largo-de-una-linea">
-<h3>Integral de una función escalar a lo largo de una línea<a class="headerlink" href="#integral-de-una-funcion-escalar-a-lo-largo-de-una-linea" title="Permalink to this heading">#</a></h3>
+<h3>Integral de una función escalar a lo largo de una línea<a class="headerlink" href="#integral-de-una-funcion-escalar-a-lo-largo-de-una-linea" title="Link to this heading">#</a></h3>
 <p>El una famosa escena de la novela “Las aventuras de Tom Sowyer”, la tía de Tom le obliga a pintar la valla de la casa como castigo por una de sus travesuras, pero Tom, que es un pícaro, convence a sus amigos para que la pinten por él diciéndoles que pintar es muy divertido, ¡todo un <em>influencer</em> para la época!, pero ¿sabría Tom calcular la superficie de la valla? <a class="reference external" href="https://www.youtube.com/watch?v=kmJLCvp4UD4">[&gt;]</a></p>
 <p>Consideremos que la valla se asienta sobre una línea, <span class="math notranslate nohighlight">\({\bf c}(t)\)</span>, y tiene un altura, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, en cada punto de esa línea, <span class="math notranslate nohighlight">\(f({\bf c}(t))\)</span>. El área de la valla, <span class="math notranslate nohighlight">\(\mathcal{A}\)</span>, será la integral de la altura, <span class="math notranslate nohighlight">\(f(x, y)\)</span> por el diferencial de arco, <span class="math notranslate nohighlight">\(\mathrm{d}s = |{\bf \dot{c}}| \, \mathrm{d}t\)</span>, a lo largo de la línea.</p>
 <div class="math notranslate nohighlight">
@@ -558,11 +578,7 @@ s = \int_{{\bf c}} \, \mathrm{d}s = \int_{t_a}^{t_b} | \dot{{\bf c}}(t) | \mathr
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:413: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/dcda2f70e9db4a7ea5ac5bf05bdc2c1cce5189418fd78e0a62098377d7b2e229.png" src="../_images/dcda2f70e9db4a7ea5ac5bf05bdc2c1cce5189418fd78e0a62098377d7b2e229.png" />
+<img alt="../_images/164af52ee128717beba2ea157451f61bb497620b007ee4e88713f3366faa95ac.png" src="../_images/164af52ee128717beba2ea157451f61bb497620b007ee4e88713f3366faa95ac.png" />
 </div>
 </div>
 <p>La circunferencia de radio unidad puede parametrizarse con:</p>
@@ -613,16 +629,12 @@ f({\bf c} (t))  = (1 + \sin^3 t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:413: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax  = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/f9a1d054d06df6116b20846dd3d5eb350114d9b9c6a9e1c7f50d9594a15bbdaa.png" src="../_images/f9a1d054d06df6116b20846dd3d5eb350114d9b9c6a9e1c7f50d9594a15bbdaa.png" />
+<img alt="../_images/df8fa8f7769fb46481b50e9fe9f7a201da5388e9590bb050392641591f4c5343.png" src="../_images/df8fa8f7769fb46481b50e9fe9f7a201da5388e9590bb050392641591f4c5343.png" />
 </div>
 </div>
 </section>
 <section id="integral-de-una-funcion-vectorial-a-lo-largo-de-una-linea">
-<h3>Integral de una función vectorial a lo largo de una línea<a class="headerlink" href="#integral-de-una-funcion-vectorial-a-lo-largo-de-una-linea" title="Permalink to this heading">#</a></h3>
+<h3>Integral de una función vectorial a lo largo de una línea<a class="headerlink" href="#integral-de-una-funcion-vectorial-a-lo-largo-de-una-linea" title="Link to this heading">#</a></h3>
 <p>Definimos la integral de una función vectoral, <span class="math notranslate nohighlight">\({\bf F}({\bf x})\)</span>, a lo largo de una línea, <span class="math notranslate nohighlight">\({\bf c}(t)\)</span>, con <span class="math notranslate nohighlight">\(t \in [t_a, t_b]\)</span>, como:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -645,7 +657,7 @@ Calcular la integral a lo largo de una línea horizonal, otra vertical y en la d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/98d58e704b97ec8b4890e82ab94df8b7be6c4a10d6e5d86b2edde30c69fb32ee.png" src="../_images/98d58e704b97ec8b4890e82ab94df8b7be6c4a10d6e5d86b2edde30c69fb32ee.png" />
+<img alt="../_images/88a0b5b6cb5dd3b81bdb9123b359df3e6024427187244bb09fbdc532e66082ec.png" src="../_images/88a0b5b6cb5dd3b81bdb9123b359df3e6024427187244bb09fbdc532e66082ec.png" />
 </div>
 </div>
 <p><em>Ejemplo</em>: Calcula la integral de la función <span class="math notranslate nohighlight">\({\bf F}(x,y) = (x, y)\)</span> a lo largo de la circunferencia de radio unidad.</p>
@@ -664,7 +676,7 @@ Calcular la integral a lo largo de una línea horizonal, otra vertical y en la d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/97d7b108ea9a54d76dd09f70ad49b5830c0f8dffe2dfddbac09607d457446486.png" src="../_images/97d7b108ea9a54d76dd09f70ad49b5830c0f8dffe2dfddbac09607d457446486.png" />
+<img alt="../_images/d40a9c47bd83a7b2c547f319d5d17ef412cfb2cdd7f62ffb3a668d90b688e905.png" src="../_images/d40a9c47bd83a7b2c547f319d5d17ef412cfb2cdd7f62ffb3a668d90b688e905.png" />
 </div>
 </div>
 <p>En la literatura es normal encontrar la expresión:</p>
@@ -694,7 +706,7 @@ Calcular la integral a lo largo de una línea horizonal, otra vertical y en la d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/21f4c4702a76949e192d1376e1d8a8c12374d0fc4b81d944e9d0f3388e5bd13c.png" src="../_images/21f4c4702a76949e192d1376e1d8a8c12374d0fc4b81d944e9d0f3388e5bd13c.png" />
+<img alt="../_images/70cf1b36442d0bfe1a111627c1e108f747c503a1d6a30161f2c25c33ab9b74c8.png" src="../_images/70cf1b36442d0bfe1a111627c1e108f747c503a1d6a30161f2c25c33ab9b74c8.png" />
 </div>
 </div>
 <p><em>Ejercicio</em>: Integra ahora <span class="math notranslate nohighlight">\({\bf F}(x, y) = (-y, 0)\)</span> en la elipse de exes <span class="math notranslate nohighlight">\(a, b\)</span>, recorrida en sentido anti-horario.</p>
@@ -778,23 +790,21 @@ Calcular la integral a lo largo de una línea horizonal, otra vertical y en la d
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -830,6 +840,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -856,8 +867,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

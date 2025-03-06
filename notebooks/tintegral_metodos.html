@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Métodos de integración &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tintegral_metodos';</script>
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Integrais nunha dimensión" href="tintegral_1d.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,6 +188,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -184,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -200,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -232,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tintegral_metodos.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -250,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tintegral_metodos.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -378,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -448,10 +466,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="metodos-de-integracion">
-<h1>Métodos de integración<a class="headerlink" href="#metodos-de-integracion" title="Permalink to this heading">#</a></h1>
+<h1>Métodos de integración<a class="headerlink" href="#metodos-de-integracion" title="Link to this heading">#</a></h1>
 <p>Das notas da prof. Pilar Hernández Gamazo (U. de València)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -461,13 +479,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Mar  8 16:40:14 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:02:19 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="obxectivos">
-<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Link to this heading">#</a></h2>
 <p>Presentar e mostrar con exemplos sinxelos os distintos métodos de integración</p>
 <ul class="simple">
 <li><p>Integrais inmediatas,</p></li>
@@ -500,7 +518,7 @@ document.write(`
 </div>
 </section>
 <section id="integrais-inmediatas">
-<h2>Integrais inmediatas<a class="headerlink" href="#integrais-inmediatas" title="Permalink to this heading">#</a></h2>
+<h2>Integrais inmediatas<a class="headerlink" href="#integrais-inmediatas" title="Link to this heading">#</a></h2>
 <p>Algunhas integrais son inmediatas grazas ao 1o teorema do cálculo integral que nos di que se <span class="math notranslate nohighlight">\(f(x)\)</span> é unha función continua.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -546,7 +564,7 @@ F(x) = \int_a^x f(x) \, \mathrm{d}x \;\; \Rightarrow \;\; F'(x) = f(x)
 \end{split}\]</div>
 </section>
 <section id="integracion-por-partes">
-<h2>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Permalink to this heading">#</a></h2>
+<h2>Integración por partes<a class="headerlink" href="#integracion-por-partes" title="Link to this heading">#</a></h2>
 <p>Sexan <span class="math notranslate nohighlight">\(f(x), \, g(x)\)</span> funcións continuas, entón temos:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -570,7 +588,7 @@ f(x) \, g(x) = \int \left[f(x) \, g(x)\right]' \, \mathrm{d}x = \int f'(x) \, g(
 \]</div>
 </section>
 <section id="integrais-por-substitucion">
-<h2>Integrais por substitución<a class="headerlink" href="#integrais-por-substitucion" title="Permalink to this heading">#</a></h2>
+<h2>Integrais por substitución<a class="headerlink" href="#integrais-por-substitucion" title="Link to this heading">#</a></h2>
 <p>Sexan <span class="math notranslate nohighlight">\(f(x), g'(x)\)</span> continuas e <span class="math notranslate nohighlight">\(F(x)\)</span> primitiva de <span class="math notranslate nohighlight">\(f(x)\)</span>, <span class="math notranslate nohighlight">\(F'(x) = f(x)\)</span>, temos:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -627,7 +645,7 @@ f(g(x)) \, g'(x) = \frac{1}{x\log x}
 </div>
 </section>
 <section id="integracion-de-funcions-racionais">
-<h2>Integración de funcións racionais<a class="headerlink" href="#integracion-de-funcions-racionais" title="Permalink to this heading">#</a></h2>
+<h2>Integración de funcións racionais<a class="headerlink" href="#integracion-de-funcions-racionais" title="Link to this heading">#</a></h2>
 <p>Estas integrais son:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -648,7 +666,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 </ol>
 <p><em>Pregunta:</em> no caso de que a razón entre os polinomios sexa <span class="math notranslate nohighlight">\(n \ge m\)</span>, como farías a integral?</p>
 <section id="descomposicion-polinomica">
-<h3>Descomposición polinómica<a class="headerlink" href="#descomposicion-polinomica" title="Permalink to this heading">#</a></h3>
+<h3>Descomposición polinómica<a class="headerlink" href="#descomposicion-polinomica" title="Link to this heading">#</a></h3>
 <p>O polinomio denominador pódese descompoñer no produto de polinomios:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -677,7 +695,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
  \]</div>
 </section>
 <section id="suma-de-razons-mais-sinxelas">
-<h3>Suma de razóns máis sinxelas<a class="headerlink" href="#suma-de-razons-mais-sinxelas" title="Permalink to this heading">#</a></h3>
+<h3>Suma de razóns máis sinxelas<a class="headerlink" href="#suma-de-razons-mais-sinxelas" title="Link to this heading">#</a></h3>
 <p>Dada a descomposición de <span class="math notranslate nohighlight">\(Q_m(x)\)</span>, a razón de polinomios pódese expresar como a suma de fraccións máis sinxelas de polinomios::</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -718,7 +736,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
  \]</div>
 </section>
 <section id="integrais-das-razons-mais-sinxelas">
-<h3>Integrais das razóns máis sinxelas<a class="headerlink" href="#integrais-das-razons-mais-sinxelas" title="Permalink to this heading">#</a></h3>
+<h3>Integrais das razóns máis sinxelas<a class="headerlink" href="#integrais-das-razons-mais-sinxelas" title="Link to this heading">#</a></h3>
 <p>A integral dunha razón de polinomios, despois de descompoñela na suma de razóns máis sinxelas, implica as seguintes integrais posibles:</p>
 <p>Para raíces reais con <span class="math notranslate nohighlight">\(n=1\)</span></p>
 <div class="math notranslate nohighlight">
@@ -804,9 +822,9 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 </section>
 </section>
 <section id="integrais-trigonometricas">
-<h2>Integrais trigonométricas<a class="headerlink" href="#integrais-trigonometricas" title="Permalink to this heading">#</a></h2>
+<h2>Integrais trigonométricas<a class="headerlink" href="#integrais-trigonometricas" title="Link to this heading">#</a></h2>
 <section id="integrais-con-produtos-de-sin-x-e-cos-x">
-<h3>Integrais con produtos de <span class="math notranslate nohighlight">\(\sin x\)</span> e <span class="math notranslate nohighlight">\(\cos x\)</span><a class="headerlink" href="#integrais-con-produtos-de-sin-x-e-cos-x" title="Permalink to this heading">#</a></h3>
+<h3>Integrais con produtos de <span class="math notranslate nohighlight">\(\sin x\)</span> e <span class="math notranslate nohighlight">\(\cos x\)</span><a class="headerlink" href="#integrais-con-produtos-de-sin-x-e-cos-x" title="Link to this heading">#</a></h3>
 <p>Integrais da forma:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -838,7 +856,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
  \]</div>
 </section>
 <section id="integrais-con-produtos-de-sin-ax-e-cos-bx">
-<h3>Integrais con produtos de <span class="math notranslate nohighlight">\(\sin ax\)</span> e <span class="math notranslate nohighlight">\(\cos bx\)</span><a class="headerlink" href="#integrais-con-produtos-de-sin-ax-e-cos-bx" title="Permalink to this heading">#</a></h3>
+<h3>Integrais con produtos de <span class="math notranslate nohighlight">\(\sin ax\)</span> e <span class="math notranslate nohighlight">\(\cos bx\)</span><a class="headerlink" href="#integrais-con-produtos-de-sin-ax-e-cos-bx" title="Link to this heading">#</a></h3>
 <p>Aplicaremos as relacións trigonométricas:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -848,7 +866,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
  \end{split}\]</div>
 </section>
 <section id="integrais-racionais-con-cos-x-ou-sin-x">
-<h3>Integrais racionais con <span class="math notranslate nohighlight">\(\cos x\)</span> ou <span class="math notranslate nohighlight">\(\sin x\)</span><a class="headerlink" href="#integrais-racionais-con-cos-x-ou-sin-x" title="Permalink to this heading">#</a></h3>
+<h3>Integrais racionais con <span class="math notranslate nohighlight">\(\cos x\)</span> ou <span class="math notranslate nohighlight">\(\sin x\)</span><a class="headerlink" href="#integrais-racionais-con-cos-x-ou-sin-x" title="Link to this heading">#</a></h3>
 <p>Pódense transformar en razóns de polinomios co cambio:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -884,14 +902,14 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 </section>
 </section>
 <section id="integrais-impropias">
-<h2>Integrais impropias<a class="headerlink" href="#integrais-impropias" title="Permalink to this heading">#</a></h2>
+<h2>Integrais impropias<a class="headerlink" href="#integrais-impropias" title="Link to this heading">#</a></h2>
 <p>Chamamos integrais impropias a aquelas nas que:</p>
 <ul class="simple">
 <li><p>un ou ambos límites de integración son <span class="math notranslate nohighlight">\(\pm \infty\)</span>,</p></li>
 <li><p>A función que se vai integrar non está limitada por ningún dos valores do intervalo de integración.</p></li>
 </ul>
 <section id="limites-de-integracion-no-infinito">
-<h3>Límites de integración no infinito<a class="headerlink" href="#limites-de-integracion-no-infinito" title="Permalink to this heading">#</a></h3>
+<h3>Límites de integración no infinito<a class="headerlink" href="#limites-de-integracion-no-infinito" title="Link to this heading">#</a></h3>
 <p>No caso de que un dos límites sexa <span class="math notranslate nohighlight">\(\pm \infty\)</span>, calculamos as integrais como límite:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -923,7 +941,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2ae0c227c598fb283b1b2d0af578c044ef5f4fa15e865f8b7a193b4fd2d685a3.png" src="../_images/2ae0c227c598fb283b1b2d0af578c044ef5f4fa15e865f8b7a193b4fd2d685a3.png" />
+<img alt="../_images/beca8abdca05134d5dc7e7a2a841354e4dd3bbe3a745574b722818a225c7757e.png" src="../_images/beca8abdca05134d5dc7e7a2a841354e4dd3bbe3a745574b722818a225c7757e.png" />
 </div>
 </div>
 <p><em>Exemplo:</em> Calcula a integral impropia:</p>
@@ -950,12 +968,12 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/22880ecbb049b8300fb7a5dbc8b44503bd92f9f3a633a2348a96674c854e2fa5.png" src="../_images/22880ecbb049b8300fb7a5dbc8b44503bd92f9f3a633a2348a96674c854e2fa5.png" />
+<img alt="../_images/9bdd67abe9533c4d820d6b4b1c9240bf7a303d75da68225e45b9f9264f130803.png" src="../_images/9bdd67abe9533c4d820d6b4b1c9240bf7a303d75da68225e45b9f9264f130803.png" />
 </div>
 </div>
 </section>
 <section id="funcions-non-acoutadas">
-<h3>Funcións non acoutadas<a class="headerlink" href="#funcions-non-acoutadas" title="Permalink to this heading">#</a></h3>
+<h3>Funcións non acoutadas<a class="headerlink" href="#funcions-non-acoutadas" title="Link to this heading">#</a></h3>
 <p>Se a función non está acoutada ao final do intervalo, recorremos de novo ao cálculo dos límites.</p>
 <p>Por exemplo, se a función non está limitada a <span class="math notranslate nohighlight">\(b\)</span>, o extremo superior do intervalo, entón:</p>
 <div class="math notranslate nohighlight">
@@ -1005,7 +1023,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3866a5708eb06101a1a714ab0e7a48ed3f47327d0e30cb2b4fd7b2f7c8ec7825.png" src="../_images/3866a5708eb06101a1a714ab0e7a48ed3f47327d0e30cb2b4fd7b2f7c8ec7825.png" />
+<img alt="../_images/45fde0e7bf5107bcb8252b117ed251bf47e13b106551cd2ffa20d8482be5d284.png" src="../_images/45fde0e7bf5107bcb8252b117ed251bf47e13b106551cd2ffa20d8482be5d284.png" />
 </div>
 </div>
 <p><em>Exemplo</em> : Calcula a integral impropia</p>
@@ -1051,7 +1069,7 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9dcc9346fc1ba16d7c11630c6a4098d72965327c68c3031e79219e04d7069108.png" src="../_images/9dcc9346fc1ba16d7c11630c6a4098d72965327c68c3031e79219e04d7069108.png" />
+<img alt="../_images/223a2940369ffe0ac54c9d4d50286a1437170b7f5e0cffc2d016650dfafc69a8.png" src="../_images/223a2940369ffe0ac54c9d4d50286a1437170b7f5e0cffc2d016650dfafc69a8.png" />
 </div>
 </div>
 </section>
@@ -1083,11 +1101,10 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tintegral_1d.html"
@@ -1107,17 +1124,16 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1167,6 +1183,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -1193,8 +1210,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

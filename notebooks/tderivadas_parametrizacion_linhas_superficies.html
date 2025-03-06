@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Parametrización de curvas e superficies &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_parametrizacion_linhas_superficies';</script>
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Límite e continuidade das funcións escalares e vectoriais" href="tderivadas_limites_continuidade.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,6 +188,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -184,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -200,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -232,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_parametrizacion_linhas_superficies.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -250,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_parametrizacion_linhas_superficies.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -378,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -434,10 +452,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="parametrizacion-de-curvas-e-superficies">
-<h1>Parametrización de curvas e superficies<a class="headerlink" href="#parametrizacion-de-curvas-e-superficies" title="Permalink to this heading">#</a></h1>
+<h1>Parametrización de curvas e superficies<a class="headerlink" href="#parametrizacion-de-curvas-e-superficies" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -446,13 +464,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Mar  8 16:38:47 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:01:58 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="obxectivos">
-<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Link to this heading">#</a></h2>
 <p>Presentar para introducir os conceptos de:</p>
 <ul class="simple">
 <li><p>Parametrización de curvas</p></li>
@@ -479,7 +497,7 @@ document.write(`
 </div>
 </section>
 <section id="parametrizacion-de-curvas">
-<h2>Parametrización de curvas<a class="headerlink" href="#parametrizacion-de-curvas" title="Permalink to this heading">#</a></h2>
+<h2>Parametrización de curvas<a class="headerlink" href="#parametrizacion-de-curvas" title="Link to this heading">#</a></h2>
 <p>Considera a seguinte función:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -501,7 +519,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/376be12a43057ebcfc43fda3504be73e9e4f7e3519b868c50418e8dd15ee4e3c.png" src="../_images/376be12a43057ebcfc43fda3504be73e9e4f7e3519b868c50418e8dd15ee4e3c.png" />
+<img alt="../_images/1ca8c93566e4c2cd72b1942ec3e3dd0b4c446214ecbc45c0c0a49ae16692c66a.png" src="../_images/1ca8c93566e4c2cd72b1942ec3e3dd0b4c446214ecbc45c0c0a49ae16692c66a.png" />
 </div>
 </div>
 <p>En xeral, podemos expresar unha curva no espazo, sempre que non se corte a si mesma, mediante unha función vectorial que asigna a valores adxacentes de <span class="math notranslate nohighlight">\(t\)</span> dentro dun intervalo, intervalo, <span class="math notranslate nohighlight">\([t_0, t_{e}]\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, puntos contiguos, <span class="math notranslate nohighlight">\({\bf r}(t)\)</span>, no espazo <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n &gt;1\)</span>.</p>
@@ -530,7 +548,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7eda0b048987867a7f8100baeeed402a59b23a0bdb6bf407c3dd59879f38d5ac.png" src="../_images/7eda0b048987867a7f8100baeeed402a59b23a0bdb6bf407c3dd59879f38d5ac.png" />
+<img alt="../_images/029115584d338729302ab7556870e024aeb0c3c08505425aee30cf4bf92fb3ed.png" src="../_images/029115584d338729302ab7556870e024aeb0c3c08505425aee30cf4bf92fb3ed.png" />
 </div>
 </div>
 <p><strong>Explora</strong> como cambia a traxectoria variando os parámetros <span class="math notranslate nohighlight">\(r, \omega, v_z\)</span> e o intervalo de <span class="math notranslate nohighlight">\(t\)</span>.</p>
@@ -579,11 +597,11 @@ y(t) = r - r \cos(\omega t) =r \, [1 - \cos(v_x t/r)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f283694c49fafec2b04e49299722273a0bda0df7f4a087f40b9e6bc4835511d3.png" src="../_images/f283694c49fafec2b04e49299722273a0bda0df7f4a087f40b9e6bc4835511d3.png" />
+<img alt="../_images/88518ca07dc65d46987514862bd40b85da438f7055e7d9ff34483caf7f0c499d.png" src="../_images/88518ca07dc65d46987514862bd40b85da438f7055e7d9ff34483caf7f0c499d.png" />
 </div>
 </div>
 <section id="lonxitude-do-arco">
-<h3>Lonxitude do arco<a class="headerlink" href="#lonxitude-do-arco" title="Permalink to this heading">#</a></h3>
+<h3>Lonxitude do arco<a class="headerlink" href="#lonxitude-do-arco" title="Link to this heading">#</a></h3>
 <p>Mira o código <em>de Python</em> co que debuxamos a circunferencia anteriormente. A figura <em>parece</em> unha circunferencia. Pero en realidade estamos debuxando segmentos que unen puntos da circunferencia, só que están tan preto que o resultado final está <em>preto</em> dun círculo.</p>
 <p>Na seguinte figura móstrase un apartado dese debuxo, onde marcamos os puntos para que se vexan con maior claridade os segmentos.</p>
 <div class="cell docutils container">
@@ -600,7 +618,7 @@ y(t) = r - r \cos(\omega t) =r \, [1 - \cos(v_x t/r)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f7059e9cf935e747101c86eb42924143fcc0a247a27963d4e16656be11609d77.png" src="../_images/f7059e9cf935e747101c86eb42924143fcc0a247a27963d4e16656be11609d77.png" />
+<img alt="../_images/d244efbc1369d8aaa590ba198600fe3b4a75c7bbed948152231002f0081a16ba.png" src="../_images/d244efbc1369d8aaa590ba198600fe3b4a75c7bbed948152231002f0081a16ba.png" />
 </div>
 </div>
 <p>Agora considera que queremos calcular a lonxitude da circunferencia a partir destes segmentos. Saberías como facelo? Bastaría con calcular a lonxitude de cada un destes segmentos e despois sumalos.</p>
@@ -620,7 +638,7 @@ y(t) = r - r \cos(\omega t) =r \, [1 - \cos(v_x t/r)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lonxitude da circunferencia  6.27888155810987
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lonxitude da circunferencia  6.2788815581098705
 a lonxitud dunha circunferencia de raio unidade é  6.283185307179586
 </pre></div>
 </div>
@@ -678,7 +696,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </section>
 </section>
 <section id="introducion-a-parametrizacion-de-superficies">
-<h2>Introdución á parametrización de superficies<a class="headerlink" href="#introducion-a-parametrizacion-de-superficies" title="Permalink to this heading">#</a></h2>
+<h2>Introdución á parametrización de superficies<a class="headerlink" href="#introducion-a-parametrizacion-de-superficies" title="Link to this heading">#</a></h2>
 <p>Observa a seguinte figura. É a superficie do lado dun cilindro vertical cunha base igual a un disco. Observa como se debuxa a superficie.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -695,7 +713,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4a667aef4b8d5304b2e7681ed5c3acb911ef49b7b6ae5464f12e064fdb76929e.png" src="../_images/4a667aef4b8d5304b2e7681ed5c3acb911ef49b7b6ae5464f12e064fdb76929e.png" />
+<img alt="../_images/fd0806e71875952f9a0cf482c246e22dabb9d219f8dd2e6898cdab1e81ef9638.png" src="../_images/fd0806e71875952f9a0cf482c246e22dabb9d219f8dd2e6898cdab1e81ef9638.png" />
 </div>
 </div>
 <p>Se cortas a parede do cilindro ao longo dunha liña vertical e o despregases, terías unha folla cadrada.</p>
@@ -728,7 +746,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7a170e525eec3a5bd02f22aa499e4cf846b1c6569094a7e6e073cfd3c01868f9.png" src="../_images/7a170e525eec3a5bd02f22aa499e4cf846b1c6569094a7e6e073cfd3c01868f9.png" />
+<img alt="../_images/79a38be35d1d91110568c2cd99624855f017ec77d02af82d3721e0d10dd5db05.png" src="../_images/79a38be35d1d91110568c2cd99624855f017ec77d02af82d3721e0d10dd5db05.png" />
 </div>
 </div>
 <p>Neste caso, a rexión <span class="math notranslate nohighlight">\(\mathcal{R} = [-2, 2] \times [-2, 2]\)</span> é a área en vermello, e as variables <span class="math notranslate nohighlight">\((u, v)\)</span> son simplemente <span class="math notranslate nohighlight">\((x, y )\)</span>. A superficie é azul e a súa parametrización é moi sinxela:</p>
@@ -754,7 +772,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f9e2abab932e4b33945c14dc49b04dc1a460fb2d7103564ce0800047a1fdf8fa.png" src="../_images/f9e2abab932e4b33945c14dc49b04dc1a460fb2d7103564ce0800047a1fdf8fa.png" />
+<img alt="../_images/2d896db79a8fe4e1a04b68a344a3055270a8690f9890e79e66b1f55535d20595.png" src="../_images/2d896db79a8fe4e1a04b68a344a3055270a8690f9890e79e66b1f55535d20595.png" />
 </div>
 </div>
 <p><em>solución</em> : A rexión <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> vén dada polas variables <span class="math notranslate nohighlight">\(\theta, \phi\)</span> que toman valores nos intervalos <span class="math notranslate nohighlight">\(\theta \in [0, \pi]\)</span> e <span class="math notranslate nohighlight">\(\phi \in [0 , 2 \pi)\)</span>.</p>
@@ -778,12 +796,12 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 <p><strong>Cónicas e cuádricas</strong></p>
 </section>
 <section id="ainda-hai-mais">
-<h2>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h2>
+<h2>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Link to this heading">#</a></h2>
 <p>Supoño que sabes que unha partícula cargada cando entra nun campo magnético uniforme describe normalmente unha hélice, como a que debuxamos antes.</p>
 <p>Na física de partículas, a hélice xoga un papel fundamental.</p>
 <p>Mira esta imaxe dunha colisión de protóns no detector <a class="reference external" href="https://atlas.cern">ATLAS</a> , onde se reconstrúen as traxectorias de diferentes partículas.</p>
 <p>As partículas están dentro dun campo magnético uniforme, polo que describen hélices. Con diferentes cargas as hélices xiran en sentidos opostos. Non ves hélices porque é a proxección no plano <span class="math notranslate nohighlight">\((x, y)\)</span> e porque non dan un xiro completo. As partículas máis enerxéticas teñen a hélice moi aberta e as menos enerxéticas a hélice máis pechada.</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p></p></th>
 </tr>
@@ -795,6 +813,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </tr>
 </tbody>
 </table>
+</div>
 <p>A imaxe correspóndese cun dos primeiros eventos cun Higgs que tomou o detector ATLAS en xuño de 2012, onde o bosón de Higgs decae a dous muóns (en vermello) e dous electróns (en verde). Por suposto, hai moitas máis partículas que as que proceden do Higgs.</p>
 <p><strong>Isto é todo por agora!</strong></p>
 </section>
@@ -825,11 +844,10 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tderivadas_limites_continuidade.html"
@@ -849,17 +867,16 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -895,6 +912,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -921,8 +939,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Límite y continuidad de funciones escalares y vectoriales &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_limites_continuidad';</script>
@@ -68,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,23 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,16 +99,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -129,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -174,6 +188,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -182,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -198,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -230,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_limites_continuidad.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -248,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_limites_continuidad.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -376,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -433,10 +453,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="limite-y-continuidad-de-funciones-escalares-y-vectoriales">
-<h1>Límite y continuidad de funciones escalares y vectoriales<a class="headerlink" href="#limite-y-continuidad-de-funciones-escalares-y-vectoriales" title="Permalink to this heading">#</a></h1>
+<h1>Límite y continuidad de funciones escalares y vectoriales<a class="headerlink" href="#limite-y-continuidad-de-funciones-escalares-y-vectoriales" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -445,13 +465,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Fri Mar  8 16:34:46 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Mar  6 17:01:27 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Link to this heading">#</a></h2>
 <p>Recordar los conceptos de límite y continuidad en funciones de una dimensión.</p>
 <p>Y extenderlos a funciones escalares y vectoriales.</p>
 <p>Presentar algún ejemplo de cómo estimar los posibles límites de una función escalar.</p>
@@ -474,9 +494,9 @@ document.write(`
 </div>
 </section>
 <section id="limite-de-funciones-escalares-y-vectoriales">
-<h2>Límite de funciones escalares y vectoriales<a class="headerlink" href="#limite-de-funciones-escalares-y-vectoriales" title="Permalink to this heading">#</a></h2>
+<h2>Límite de funciones escalares y vectoriales<a class="headerlink" href="#limite-de-funciones-escalares-y-vectoriales" title="Link to this heading">#</a></h2>
 <section id="bola">
-<h3>Bola<a class="headerlink" href="#bola" title="Permalink to this heading">#</a></h3>
+<h3>Bola<a class="headerlink" href="#bola" title="Link to this heading">#</a></h3>
 <p>Antes de estudiar los límites debemos definir un nuevo concepto: <strong>bola</strong>.</p>
 <p>En una dimensión, la distancia entre dos valores reales, <span class="math notranslate nohighlight">\(x\)</span> y <span class="math notranslate nohighlight">\(x_0\)</span>, venía dada por el valor absoluto: <span class="math notranslate nohighlight">\(|x -  x_0|\)</span>.</p>
 <p>En un espacio real de n-dimensiones, <span class="math notranslate nohighlight">\(\mathrm{R}^n\)</span>, <span class="math notranslate nohighlight">\(n &gt;1\)</span>, la distancia euclídea entre dos puntos, <span class="math notranslate nohighlight">\({\bf x}\)</span> y <span class="math notranslate nohighlight">\({\bf x}_0\)</span> es la norma del vector <span class="math notranslate nohighlight">\({\bf x}- {\bf x}_0\)</span>:</p>
@@ -521,13 +541,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/10bf370328669538467e1570c6bb84cbf9ff7087068bb49915aed076081453da.png" src="../_images/10bf370328669538467e1570c6bb84cbf9ff7087068bb49915aed076081453da.png" />
+<img alt="../_images/3eb6504fe7a4e49f769b791dbf3f58fc8a58e7fa89b630b43188f524fb390c54.png" src="../_images/3eb6504fe7a4e49f769b791dbf3f58fc8a58e7fa89b630b43188f524fb390c54.png" />
 </div>
 </div>
 </section>
 </section>
 <section id="limites">
-<h2>Límites<a class="headerlink" href="#limites" title="Permalink to this heading">#</a></h2>
+<h2>Límites<a class="headerlink" href="#limites" title="Link to this heading">#</a></h2>
 <p>Vamos a revisar la definición de límite de una dimensión.</p>
 <p>Para una función <span class="math notranslate nohighlight">\(f(x)\)</span> decíamos que existía el límite en un punto <span class="math notranslate nohighlight">\(x_{0}\)</span> del dominio o de la frontera de éste, si al aproximarnos a él, la función “se aproximaba a un valor <span class="math notranslate nohighlight">\(b\)</span>”.</p>
 <p>Matemáticamente, poníamos una condición.</p>
@@ -555,7 +575,7 @@ f(x) = \frac{\sin x}{x}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" src="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" />
+<img alt="../_images/f365ee3fe88a3dc002914b35647e2e7b59455be6256886318bf45d3c97bbc456.png" src="../_images/f365ee3fe88a3dc002914b35647e2e7b59455be6256886318bf45d3c97bbc456.png" />
 </div>
 </div>
 <p>Decimos que una función escalar <span class="math notranslate nohighlight">\(f({\bf x}\)</span>) tiene límite en un punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, de su dominio o frontera del mismo y vale <span class="math notranslate nohighlight">\(b\)</span>, si:</p>
@@ -594,7 +614,7 @@ f(x, y) = \frac{\sin \sqrt{x^2 + y^2}}{ \sqrt{x^2 + y^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" src="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" />
+<img alt="../_images/aa69e31ff35997f4a1e623c7140ca25d4d9ec5596b86a07d08904a8c94cd6844.png" src="../_images/aa69e31ff35997f4a1e623c7140ca25d4d9ec5596b86a07d08904a8c94cd6844.png" />
 </div>
 </div>
 <p>La siguiente celda te permite variar el valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> y te muestra la gráfica con los puntos que están cerca del límite a una distancia menor que <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
@@ -614,11 +634,11 @@ f(x, y) = \frac{\sin \sqrt{x^2 + y^2}}{ \sqrt{x^2 + y^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/jupyter/lib/python3.7/site-packages/ipykernel_launcher.py:8: MatplotlibDeprecationWarning: Starting from Matplotlib 3.6, colorbar() will steal space from the mappable&#39;s axes, rather than from the current axes, to place the colorbar.  To silence this warning, explicitly pass the &#39;ax&#39; argument to colorbar().
-  
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/rx/82jfsqxj6ms7ll1_lj0dmr5r0000gq/T/ipykernel_27270/2511310414.py:8: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 3 Axes&gt; than &lt;Figure size 640x480 with 1 Axes&gt; which fig.colorbar is called on.
+  ax.set_xlabel(&#39;x&#39;); ax.set_ylabel(&#39;y&#39;); fig.colorbar(sf);
 </pre></div>
 </div>
-<img alt="../_images/212dd013972cdc9cc61ece71a5d04c66d049543bcb7c10e7d77a3496a97bc178.png" src="../_images/212dd013972cdc9cc61ece71a5d04c66d049543bcb7c10e7d77a3496a97bc178.png" />
+<img alt="../_images/a6d438d084671534fdc61c396066daa064cebc9c0b2459fc1c8bbe47c29a917d.png" src="../_images/a6d438d084671534fdc61c396066daa064cebc9c0b2459fc1c8bbe47c29a917d.png" />
 </div>
 </div>
 <p>Para calcular los límites utilizaremos una aproximación.</p>
@@ -645,7 +665,7 @@ f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" src="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" />
+<img alt="../_images/a1548ddb919268d4dea7efdb5240d4eff4fdd99a2b15635ac6fd118d268c3f59.png" src="../_images/a1548ddb919268d4dea7efdb5240d4eff4fdd99a2b15635ac6fd118d268c3f59.png" />
 </div>
 </div>
 <p>Calculamos ahora el límite en el origen aproximandonos por todas la rectas que pasan por el origen, que podemos dar en:</p>
@@ -700,7 +720,7 @@ f(x, y) = \frac{x y}{x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" src="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" />
+<img alt="../_images/595a11875531e9491386144972c269eabf79f589a027037e709a01ba5b170b24.png" src="../_images/595a11875531e9491386144972c269eabf79f589a027037e709a01ba5b170b24.png" />
 </div>
 </div>
 <p>Dibujamos ahora los conjuntos de nivel. ¿Son rectas? ¿Qué pasa si te aproximas ahora al origen por cada una de esas rectas?</p>
@@ -716,7 +736,7 @@ f(x, y) = \frac{x y}{x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" src="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" />
+<img alt="../_images/7e3129a8b16b9707ffc392191d5a5f864ea81bd343d558054bc8f8d4a3c307ce.png" src="../_images/7e3129a8b16b9707ffc392191d5a5f864ea81bd343d558054bc8f8d4a3c307ce.png" />
 </div>
 </div>
 <p><em>solución</em>:</p>
@@ -777,7 +797,7 @@ iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
 <p>¿Tiene límite en el origen?</p>
 </section>
 <section id="continuidad">
-<h2>Continuidad<a class="headerlink" href="#continuidad" title="Permalink to this heading">#</a></h2>
+<h2>Continuidad<a class="headerlink" href="#continuidad" title="Link to this heading">#</a></h2>
 <p>En funciones de una dimensión, decíamos que la función era continua en un punto, <span class="math notranslate nohighlight">\(x_0\)</span>, si pertenecía a su dominio, y el valor de la función en ese punto, <span class="math notranslate nohighlight">\(f(x_0)\)</span>, coincide con el límite <span class="math notranslate nohighlight">\(\lim_{x \to x_0} f(x) = f(x_0)\)</span></p>
 <p>Para una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, diremos que es continua en <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, si el punto está en el dominio y el valor de la función y el límite coinciden:</p>
 <div class="math notranslate nohighlight">
@@ -804,7 +824,7 @@ iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
 <p><strong>¡Esto es todo por ahora!</strong></p>
 </section>
 <section id="apendice">
-<h2>Apéndice<a class="headerlink" href="#apendice" title="Permalink to this heading">#</a></h2>
+<h2>Apéndice<a class="headerlink" href="#apendice" title="Link to this heading">#</a></h2>
 <p><strong>teorema</strong></p>
 <p>Sea <span class="math notranslate nohighlight">\({\bf g}: A \subset \mathrm{R}^n \to \mathrm{R}^m\)</span> y <span class="math notranslate nohighlight">\({\bf f}:B \subset \mathrm{R}^m \to \mathrm{R}^p\)</span>, donde suponemos que el rango de <span class="math notranslate nohighlight">\({\bf g}\)</span> está en el dominio de <span class="math notranslate nohighlight">\({\bf f}\)</span>, B. Si <span class="math notranslate nohighlight">\({\bf g(x)}\)</span> es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span> y <span class="math notranslate nohighlight">\({\bf f(y)}\)</span> lo es en <span class="math notranslate nohighlight">\({\bf g(a)}\)</span>, entonces la función compuesta <span class="math notranslate nohighlight">\({\bf  f \circ g}: A \subset \mathbf{R}^n \to \mathbf{R}^p\)</span> es continua en <span class="math notranslate nohighlight">\({\bf a}\)</span>.</p>
 <p><em>demostracion:</em></p>
@@ -854,23 +874,21 @@ iv) \;\; \lim_{{\bf x} \to {\bf a}} \| {\bf f}({\bf x}) \| = \| {\bf b} \|
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -907,6 +925,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -933,8 +952,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

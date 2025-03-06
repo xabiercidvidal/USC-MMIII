@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Mínimos e máximos de funcións escalares &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_min_max';</script>
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Cambio de coordenadas e regra da cadea" href="tderivadas_coordenadas_cadea.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -179,6 +191,10 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -187,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_min_max.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -253,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_min_max.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -381,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -454,10 +469,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="minimos-e-maximos-de-funcions-escalares">
-<h1>Mínimos e máximos de funcións escalares<a class="headerlink" href="#minimos-e-maximos-de-funcions-escalares" title="Permalink to this heading">#</a></h1>
+<h1>Mínimos e máximos de funcións escalares<a class="headerlink" href="#minimos-e-maximos-de-funcions-escalares" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -466,13 +481,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Apr  9 13:26:19 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:01:48 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="obxectivos">
-<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Lembrar o concepto de mínimo e máximo dunha función real e como se calcula.</p></li>
 <li><p>Introducir a expansión de Taylor de segunda orde das funcións escalares e a matriz de Hesse.</p></li>
@@ -508,9 +523,9 @@ document.write(`
 </div>
 </section>
 <section id="desenvolvemento-de-taylor-de-bf-2-rm-bf-a-orde-de-funcions-escalares">
-<h2>Desenvolvemento de Taylor de <span class="math notranslate nohighlight">\(\bf 2^{\rm \bf a}\)</span> orde de funcións escalares.<a class="headerlink" href="#desenvolvemento-de-taylor-de-bf-2-rm-bf-a-orde-de-funcions-escalares" title="Permalink to this heading">#</a></h2>
+<h2>Desenvolvemento de Taylor de <span class="math notranslate nohighlight">\(\bf 2^{\rm \bf a}\)</span> orde de funcións escalares.<a class="headerlink" href="#desenvolvemento-de-taylor-de-bf-2-rm-bf-a-orde-de-funcions-escalares" title="Link to this heading">#</a></h2>
 <section id="revision-dos-conceptos-de-extremos-minimos-e-maximos">
-<h3>Revisión dos conceptos de extremos, mínimos e máximos.<a class="headerlink" href="#revision-dos-conceptos-de-extremos-minimos-e-maximos" title="Permalink to this heading">#</a></h3>
+<h3>Revisión dos conceptos de extremos, mínimos e máximos.<a class="headerlink" href="#revision-dos-conceptos-de-extremos-minimos-e-maximos" title="Link to this heading">#</a></h3>
 <p>Para as funcións reais, <span class="math notranslate nohighlight">\(f(x)\)</span>, tiñamos definido como mínimo local, ese valor <span class="math notranslate nohighlight">\(x_0\)</span> do dominio tal que nos valores dun intervalo ao seu redor, de ancho <span class="math notranslate nohighlight">\(h\)</span>, a función é maior ou igual a en <span class="math notranslate nohighlight">\(x_0\)</span>. De xeito semellante definimos o máximo local.</p>
 <p>Chamamos mínimo local:</p>
 <div class="math notranslate nohighlight">
@@ -535,7 +550,7 @@ x \in [x_0 - h, x_0 + h] \Rightarrow f(x) \le f(x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4c3c15ad98ace6be397f227c383876e0a9cce8386c30df0c44f39616fbd9c886.png" src="../_images/4c3c15ad98ace6be397f227c383876e0a9cce8386c30df0c44f39616fbd9c886.png" />
+<img alt="../_images/c5549e8be3aa69bade6d310b34f8860f6b4cec1f864d6afdd65e6db507afde1f.png" src="../_images/c5549e8be3aa69bade6d310b34f8860f6b4cec1f864d6afdd65e6db507afde1f.png" />
 </div>
 </div>
 <p>Neste caso, con <span class="math notranslate nohighlight">\(f(x) = x^2 + 2x - 1\)</span>, a condición de extremo: <span class="math notranslate nohighlight">\(f'(x_0) = 2 x_0 + 2 = 0\)</span>, o que resulta en <span class="math notranslate nohighlight">\(x_0 = -1\)</span>.</p>
@@ -552,7 +567,7 @@ f(x_0 + h) \simeq f(x_0) + f'(x_0) h + \frac{1}{2} f''(x_0) h^2
 <p>E entón, o segundo sumando, <span class="math notranslate nohighlight">\(\frac{1}{2} f''(x_0) h^2\)</span>, é positivo ou negativo dependendo do signo da segunda derivada, <span class="math notranslate nohighlight">\(f''(x_0)\)</span>. De aí a condición de mínimo ou máximo.</p>
 </section>
 <section id="igualdade-de-derivadas-segundas-cruzadas">
-<h3>Igualdade de derivadas segundas cruzadas<a class="headerlink" href="#igualdade-de-derivadas-segundas-cruzadas" title="Permalink to this heading">#</a></h3>
+<h3>Igualdade de derivadas segundas cruzadas<a class="headerlink" href="#igualdade-de-derivadas-segundas-cruzadas" title="Link to this heading">#</a></h3>
 <p>Antes de abordar a expansión de Taylor das funcións escalares de segunda orde, vexamos este importante teorema (<strong>teorema de Schwarz</strong>):</p>
 <p><em>Teorema</em> : Sexa <span class="math notranslate nohighlight">\(f({\bf x})\)</span> unha función escalar de <span class="math notranslate nohighlight">\(\mathbb{R}^n \to \mathbb{R}\)</span>, se as segundas derivadas son continuas nunha bola centrada nun punto, <span class="math notranslate nohighlight">\( { \bf x}_0\)</span>, é certo que as derivadas cruzadas son iguais:</p>
 <div class="math notranslate nohighlight">
@@ -564,7 +579,7 @@ f(x_0 + h) \simeq f(x_0) + f'(x_0) h + \frac{1}{2} f''(x_0) h^2
 </section>
 </section>
 <section id="expansion-de-taylor-de-segunda-orde-de-funcions-escalares">
-<h2>Expansión de Taylor de segunda orde de funcións escalares<a class="headerlink" href="#expansion-de-taylor-de-segunda-orde-de-funcions-escalares" title="Permalink to this heading">#</a></h2>
+<h2>Expansión de Taylor de segunda orde de funcións escalares<a class="headerlink" href="#expansion-de-taylor-de-segunda-orde-de-funcions-escalares" title="Link to this heading">#</a></h2>
 <p>Sexa unha función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathbb{R}^n \to \mathbb{R}\)</span>, con derivadas segundas continuas nun punto interior, <span class="math notranslate nohighlight">\({\bf x} _0 \)</span>, do dominio, a función pódese aproximar nun punto “preto”, <span class="math notranslate nohighlight">\({\bf x}\)</span>, separado de <span class="math notranslate nohighlight">\({\bf x}_0\)</span> por un vector “pequeno” <span class="math notranslate nohighlight">\({\bf v}\)</span> , pola súa <strong>expansión de Taylor de segunda orde</strong> :</p>
 <div class="math notranslate nohighlight">
 \[
@@ -626,7 +641,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f2a8a255e865ac903a80f01ff6666c24d203c57461cfebe5a57ad0c5604d8ba9.png" src="../_images/f2a8a255e865ac903a80f01ff6666c24d203c57461cfebe5a57ad0c5604d8ba9.png" />
+<img alt="../_images/30695daea19a5d8c55ba151d696e81f211a2114d414622a83555b903062f34e5.png" src="../_images/30695daea19a5d8c55ba151d696e81f211a2114d414622a83555b903062f34e5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -636,12 +651,12 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/233212d0d6b33738fcd9d3521e4a210884e2179169dce735c38ba20821e8235f.png" src="../_images/233212d0d6b33738fcd9d3521e4a210884e2179169dce735c38ba20821e8235f.png" />
+<img alt="../_images/ab93e0285128f5dbc57486344041104fde2f46a94cd454e35972cbccf687a0ca.png" src="../_images/ab93e0285128f5dbc57486344041104fde2f46a94cd454e35972cbccf687a0ca.png" />
 </div>
 </div>
 </section>
 <section id="minimos-e-maximos-das-funcions-escalares">
-<h2>Mínimos e máximos das funcións escalares<a class="headerlink" href="#minimos-e-maximos-das-funcions-escalares" title="Permalink to this heading">#</a></h2>
+<h2>Mínimos e máximos das funcións escalares<a class="headerlink" href="#minimos-e-maximos-das-funcions-escalares" title="Link to this heading">#</a></h2>
 <p>Como nunha dimensión, chamaremos un punto <strong>extremo</strong> ou <strong>crítico</strong> , <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, dunha función escalar diferenciable, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathbb{R}^n \to \mathbb{R}\)</span>, a aqueles puntos do dominio para os cales gradiente é cero, <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = {\bf 0}\)</span>.</p>
 <p>No exemplo anterior, a función escalar <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 + 4y^2\)</span> ten un extremo en <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
 <p>Observa a gráfica e os conxuntos de nivel da seguinte función, <span class="math notranslate nohighlight">\(f(x, y) = 2x^2 - 4y^2\)</span>. Podes verificar que o punto <span class="math notranslate nohighlight">\((0, 0)\)</span> é un extremo, ten un gradiente cero (o gradiente é <span class="math notranslate nohighlight">\(\nabla f(x, y) = (4x, -8 y)\)</span> ), pero non o é nin máximo nin mínimo, é un <strong>punto de sela</strong> . Definimos como tal, o punto extremo dende o cal a función ascende nunha dirección e descende noutra.</p>
@@ -654,7 +669,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6ec77d1ecfec14d3f263db2dfd1c4dcf65fee91de6c945a0d10634f776f1da44.png" src="../_images/6ec77d1ecfec14d3f263db2dfd1c4dcf65fee91de6c945a0d10634f776f1da44.png" />
+<img alt="../_images/e8837d1f31cdc5ee62cfb146c965fc27356dd20a0e4b25faed45d24d767b5441.png" src="../_images/e8837d1f31cdc5ee62cfb146c965fc27356dd20a0e4b25faed45d24d767b5441.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -667,7 +682,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eb4bb90ca78e0da7135398cc7e66c71a819e3ac8f112d0d2784c15f737ab1bfd.png" src="../_images/eb4bb90ca78e0da7135398cc7e66c71a819e3ac8f112d0d2784c15f737ab1bfd.png" />
+<img alt="../_images/b395ffa84b5df122c6b5b9cf0c47c0f4f15c6415ba7c901eb57b17b913206313.png" src="../_images/b395ffa84b5df122c6b5b9cf0c47c0f4f15c6415ba7c901eb57b17b913206313.png" />
 </div>
 </div>
 <p><em>Exercicio</em> : Da a expansión de Taylor de segunda orde da función <span class="math notranslate nohighlight">\(f(x, y) = 2 x^2 - 4 y^2\)</span> no punto de sela <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
@@ -694,7 +709,7 @@ f({\bf x}_0 + {\bf v}) =  \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &
 \end{split}\]</div>
 <p>Onde vemos que se avanzamos <em>só</em> na dirección <span class="math notranslate nohighlight">\(x\)</span> a función ascende, mentres que se avanzamos <em>só</em> na dirección <span class="math notranslate nohighlight">\(y\)</span> descende. É polo tanto un punto de sela.</p>
 <section id="clasificacion-de-puntos-extremos">
-<h3>Clasificación de puntos extremos<a class="headerlink" href="#clasificacion-de-puntos-extremos" title="Permalink to this heading">#</a></h3>
+<h3>Clasificación de puntos extremos<a class="headerlink" href="#clasificacion-de-puntos-extremos" title="Link to this heading">#</a></h3>
 <p>Os puntos extremos dunha función escalar serán máximos, mínimos ou puntos de sela, dependendo do valor do termo da matriz de Hesse da súa expansión de Taylor:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -731,7 +746,7 @@ f({\bf x}_0 + {\bf v}) =  \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/05b4ab67ed7171a92f7ae3792bf3c5aa6bf61a41aefaf1e1c06f26c67e99c15b.png" src="../_images/05b4ab67ed7171a92f7ae3792bf3c5aa6bf61a41aefaf1e1c06f26c67e99c15b.png" />
+<img alt="../_images/2e324c7ed704c1095a2cfbbe7d077160507cdc5cb7cfd9fb54df2c6990be57a8.png" src="../_images/2e324c7ed704c1095a2cfbbe7d077160507cdc5cb7cfd9fb54df2c6990be57a8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -741,7 +756,7 @@ f({\bf x}_0 + {\bf v}) =  \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b0d45456499af8f1c4a3780612255fba09139d7170cd300db071244153e9783f.png" src="../_images/b0d45456499af8f1c4a3780612255fba09139d7170cd300db071244153e9783f.png" />
+<img alt="../_images/7ab3db33c9dc98f9ba9aa0f9cf203b648f7d6710a451e9d57e2d57b4a3348793.png" src="../_images/7ab3db33c9dc98f9ba9aa0f9cf203b648f7d6710a451e9d57e2d57b4a3348793.png" />
 </div>
 </div>
 <p>¿E se a Hesiana no punto extremo, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, non é diagonal?</p>
@@ -834,7 +849,7 @@ f({\bf x}_0 + {\bf v}) =  \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ae87edf33561fc2cc50f8e96b8100962055914edd388294e8b0ce11c56144019.png" src="../_images/ae87edf33561fc2cc50f8e96b8100962055914edd388294e8b0ce11c56144019.png" />
+<img alt="../_images/9995065168a86e8f0ab1cbc4f7b6de7a8902f4bcb2bf7fe42c42fe9d0cc7325b.png" src="../_images/9995065168a86e8f0ab1cbc4f7b6de7a8902f4bcb2bf7fe42c42fe9d0cc7325b.png" />
 </div>
 </div>
 <p>A expansión de Taylor de segunda orde arredor dun punto extremo <em>sempre</em> ten eixes de simetría, que veñen dados polos autovectores.</p>
@@ -848,7 +863,7 @@ f(x'_0 + v'_x, \, y'_0 + v'_y) \simeq f(x'_0, y'_0) + \frac{1}{2}\left( \lambda'
 <p>Ou tamén podemos asocialos cos eixes das elipses dos conxuntos de nivel. O eixe da elipse é maior para os autovalores máis pequenos.</p>
 </section>
 <section id="minimos-e-maximos-para-funcions-escalares-de-varias-dimensions">
-<h3>Mínimos e máximos para funcións escalares de varias dimensións<a class="headerlink" href="#minimos-e-maximos-para-funcions-escalares-de-varias-dimensions" title="Permalink to this heading">#</a></h3>
+<h3>Mínimos e máximos para funcións escalares de varias dimensións<a class="headerlink" href="#minimos-e-maximos-para-funcions-escalares-de-varias-dimensions" title="Link to this heading">#</a></h3>
 <p>Sexa a función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, de <span class="math notranslate nohighlight">\(\mathbb{R}^n \to \mathbb{R}\)</span>, un punto <span class="math notranslate nohighlight">\({\bf x}_0\)</span> é <strong>extremo</strong> ou <strong>crítico</strong> se o seu gradiente é nulo, <span class="math notranslate nohighlight">\(\nabla f ({\bf x}_0) = {\bf 0}\)</span>.</p>
 <p>Dicimos que un punto extremo é <strong>un mínimo local</strong> se todos os puntos dentro dunha bola de tamaño <span class="math notranslate nohighlight">\(\delta\)</span>, centrada en <span class="math notranslate nohighlight">\({\bf x}_0\)</span> teñen un valor da función menor ou igual ao de <span class="math notranslate nohighlight">\({\bf x} _0 \)</span></p>
 <div class="math notranslate nohighlight">
@@ -895,7 +910,7 @@ H_{yx} &amp; H_{yy} \\
 </section>
 </section>
 <section id="minimos-e-maximos-condicionais">
-<h2>Mínimos e máximos condicionais<a class="headerlink" href="#minimos-e-maximos-condicionais" title="Permalink to this heading">#</a></h2>
+<h2>Mínimos e máximos condicionais<a class="headerlink" href="#minimos-e-maximos-condicionais" title="Link to this heading">#</a></h2>
 <p>Considera o caso de que queremos calcular os extremos dunha función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, pero non en todo o seu dominio, senón nunha parte del. Neste caso fálase de <strong>extremos condicionados</strong> .</p>
 <p>Por exemplo, sexa a función: <span class="math notranslate nohighlight">\(f(x, y) = x^2 - y^2\)</span>, e queremos calcular os seus extremos no círculo de raio unitario, é dicir, nos puntos que satisfan <span class="math notranslate nohighlight">\(x^ 2 + y ^2 = \)</span>1.</p>
 <p>A seguinte cela debuxa os conxuntos de nivel da función e do círculo. Como podes ver, parametrizamos a circunferencia en función de <span class="math notranslate nohighlight">\(t\)</span> que toma os valores en <span class="math notranslate nohighlight">\([0, 2 \pi)\)</span>.</p>
@@ -913,7 +928,7 @@ H_{yx} &amp; H_{yy} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/25b64e7965cd333963f2e2787d3e36288aa7ac426fbc105f8001155d5bba2e02.png" src="../_images/25b64e7965cd333963f2e2787d3e36288aa7ac426fbc105f8001155d5bba2e02.png" />
+<img alt="../_images/d9990eda98ecdf1e92807a754036f3edacba423f9716f01fc59d5a905aa8c323.png" src="../_images/d9990eda98ecdf1e92807a754036f3edacba423f9716f01fc59d5a905aa8c323.png" />
 </div>
 </div>
 <p>Imos debuxar o gradiente da función nun punto determinado, que como sabemos nos indica a dirección na que a función experimenta o máximo cambio.</p>
@@ -938,7 +953,7 @@ f(x, y) = x^2 - y^2 \, \Rightarrow \nabla f(x, y) = (2x,- 2y)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d6c51e31028c4b69cdb1231fd27fdfc49d2677c4073497c4a8bc2b98b43f8369.png" src="../_images/d6c51e31028c4b69cdb1231fd27fdfc49d2677c4073497c4a8bc2b98b43f8369.png" />
+<img alt="../_images/f5a1f0200858984b1521833aee792695ce7505fd783c68d417def5e839b97c5d.png" src="../_images/f5a1f0200858984b1521833aee792695ce7505fd783c68d417def5e839b97c5d.png" />
 </div>
 </div>
 <p>Se observas, o extremo da función coincide no punto para o cal o gradiente é <em>ortogonal</em> ao círculo.</p>
@@ -970,11 +985,11 @@ f(x, y) = x^2 - y^2 \, \Rightarrow \nabla f(x, y) = (2x,- 2y)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7752f747ebdfaccb867ae811bf878bc01ccffe7e2d9a4113f3b19d74c908ec5a.png" src="../_images/7752f747ebdfaccb867ae811bf878bc01ccffe7e2d9a4113f3b19d74c908ec5a.png" />
+<img alt="../_images/68e4ca68901dad6d2d61a917b3c2b65ae056da067401a4c02951a3a0e2fb98e1.png" src="../_images/68e4ca68901dad6d2d61a917b3c2b65ae056da067401a4c02951a3a0e2fb98e1.png" />
 </div>
 </div>
 <section id="multiplicadores-de-lagrange">
-<h3>Multiplicadores de Lagrange<a class="headerlink" href="#multiplicadores-de-lagrange" title="Permalink to this heading">#</a></h3>
+<h3>Multiplicadores de Lagrange<a class="headerlink" href="#multiplicadores-de-lagrange" title="Link to this heading">#</a></h3>
 <p>Sexa unha función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, o extremo, <span class="math notranslate nohighlight">\({\bf x_0}\)</span> desa función, onde <span class="math notranslate nohighlight">\({\bf x}_0\)</span> pertence aos conxuntos de nivel dados por <span class="math notranslate nohighlight">\(g( {\bf x}) = c\)</span>, cumpre que:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1011,20 +1026,20 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </section>
 </section>
 <section id="ainda-hai-mais">
-<h2>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h2>
+<h2>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Link to this heading">#</a></h2>
 <section id="joseph-louis-lagrange">
-<h3>Joseph Louis Lagrange<a class="headerlink" href="#joseph-louis-lagrange" title="Permalink to this heading">#</a></h3>
+<h3>Joseph Louis Lagrange<a class="headerlink" href="#joseph-louis-lagrange" title="Link to this heading">#</a></h3>
 <p>Lagrange foi un dos grandes matemáticos e físicos dos séculos XVIII e principios do XIX. Era un home da súa época, un italiano do norte que percorreu a Europa do seu tempo, e que foi profesor na gran escola “École Polytechnique”, recentemente fundada por Napoleón. Debémoslle moitas contribucións, entre elas a reformulación da mecánica newtoniana. Aquí está a súa entrada na Wikipedia: <a class="reference external" href="https://en.wikipedia.org/wiki/Joseph-Louis_Lagrange">JL Lagrange</a></p>
 <a class="reference internal image-reference" href="https://www.biografiasyvidas.com/biografia/l/fotos/lagrange.jpg"><img alt="https://www.biografiasyvidas.com/biografia/l/fotos/lagrange.jpg" class="align-center" src="https://www.biografiasyvidas.com/biografia/l/fotos/lagrange.jpg" style="width: 300px;" /></a>
 </section>
 <section id="principio-de-minima-accion">
-<h3>Principio de mínima acción<a class="headerlink" href="#principio-de-minima-accion" title="Permalink to this heading">#</a></h3>
+<h3>Principio de mínima acción<a class="headerlink" href="#principio-de-minima-accion" title="Link to this heading">#</a></h3>
 <p>Os máximos e os mínimos xogan un papel fundamental na Física. De feito, a mecánica clásica (e tamén moderna) pode formularse en función do <a class="reference external" href="https://en.wikipedia.org/wiki/Principle_of_least_action">principio de mínima acción</a> , que nos di que a dinámica dun sistema físico está rexida pola busca da menor acción, que se define matemáticamente como a integral dun termo chamado <strong>Lagrangiano</strong> .</p>
 <p>Este principio foi declarado por primeira vez polo físico francés Maupertius no século XVIII, e na súa versión moderna, no século XX polo físico e profesor estadounidense Richard <strong>Feynman</strong> . Aquí tes unha ligazón a unha das súas famosas <a class="reference external" href="http://www.feynmanlectures.caltech.edu/II_19.html">clases</a> e á súa entrada na Wikipedia, <a class="reference external" href="https://en.wikipedia.org/wiki/Richard_Feynman">Feynman</a></p>
 <a class="reference internal image-reference" href="https://visit.cern/sites/default/files/inline-images/postcard_formula_500.png"><img alt="https://visit.cern/sites/default/files/inline-images/postcard_formula_500.png" class="align-center" src="https://visit.cern/sites/default/files/inline-images/postcard_formula_500.png" style="width: 300px;" /></a>
 </section>
 <section id="o-metodo-dos-minimos-cadrados">
-<h3>O método dos mínimos cadrados<a class="headerlink" href="#o-metodo-dos-minimos-cadrados" title="Permalink to this heading">#</a></h3>
+<h3>O método dos mínimos cadrados<a class="headerlink" href="#o-metodo-dos-minimos-cadrados" title="Link to this heading">#</a></h3>
 <p>Os mínimos e os máximos tamén xogan un papel fundamental na estimación de parámetros e observables.</p>
 <p>Probablemente utilizastes o método dos mínimos cadrados nas técnicas experimentais de laboratorio para axustar os datos a unha liña recta.</p>
 <p>Como sabedes, a Natureza ten un comportamento probabilístico e as nosas medicións <em>sempre</em> están suxeitas a incertezas.</p>
@@ -1095,10 +1110,10 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  0.9818280340008084 b =  0.013398484756474736
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  0.994524723856266 b =  0.1130531056852765
 </pre></div>
 </div>
-<img alt="../_images/b37a0865999d8e8c4e3a98dcf828f2fe840d5e1698346ea4dff8ed11b8fcdbc9.png" src="../_images/b37a0865999d8e8c4e3a98dcf828f2fe840d5e1698346ea4dff8ed11b8fcdbc9.png" />
+<img alt="../_images/eabe9d477fd9635c1ef7aaafc8ab1f0291ee81a89cbcb0e5e7e17ccfad083237.png" src="../_images/eabe9d477fd9635c1ef7aaafc8ab1f0291ee81a89cbcb0e5e7e17ccfad083237.png" />
 </div>
 </div>
 <p>Na seguinte cela, debuxamos os conxuntos de nivel da función <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span>.</p>
@@ -1115,15 +1130,15 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  0.8168049060145465
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  1.2428203109972278
 </pre></div>
 </div>
-<img alt="../_images/e45ba4dd5a0a30a5b553e1fce552f423f42ced07fdada3ab3483991e9b4cc1b6.png" src="../_images/e45ba4dd5a0a30a5b553e1fce552f423f42ced07fdada3ab3483991e9b4cc1b6.png" />
+<img alt="../_images/becfc60f31e7940ebc1f5478e59bf615b623c0c7ee04421d02043bcf63918056.png" src="../_images/becfc60f31e7940ebc1f5478e59bf615b623c0c7ee04421d02043bcf63918056.png" />
 </div>
 </div>
 </section>
 <section id="as-redes-neuronais">
-<h3>As redes neuronais<a class="headerlink" href="#as-redes-neuronais" title="Permalink to this heading">#</a></h3>
+<h3>As redes neuronais<a class="headerlink" href="#as-redes-neuronais" title="Link to this heading">#</a></h3>
 <p>As redes neuronais son algoritmos matemáticos que <em>aprenden</em> a identificar patróns e clasificar mostras. O concepto leva aí desde mediados do século pasado, pero comezou a despegar desde <span class="math notranslate nohighlight">\(\sim\)</span>2010. Por exemplo, algo máis dunha década Google desenvolveu unha poderosa rede neuronal que distinguía as imaxes de gatos e cans. Desde entón as redes neuronais xa forman parate das nas nosas vidas.</p>
 <p>As redes neuronais toman o seu nome pola súa semellanza co noso sistema nervioso.</p>
 <p>Unha rede está formada por neuronas que están dispostas en capas. A figura da seguinte cela mostra un esquema dunha rede neuronal. Cada neurona ten un conxunto de entradas e unha única saída. Matemáticamente, cada neurona é unha función escalar, <span class="math notranslate nohighlight">\(\mathbb{R}^n \to \mathbb{R}\)</span>, onde <span class="math notranslate nohighlight">\(n\)</span> é o número de entradas. A última capa da rede adoita ser unha única neurona e a súa saída é a resposta da rede. Matemáticamente, toda a rede é unha función escalar <span class="math notranslate nohighlight">\(\mathbb{R}^N \to \mathbb{R}\)</span>, onde <span class="math notranslate nohighlight">\(N\)</span> é o número de entradas na primeira capa.</p>
@@ -1150,7 +1165,7 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/af35f96641eae5d5f26c1e904e649bf33b7a073e3fdf68461d04e9cb2145171b.png" src="../_images/af35f96641eae5d5f26c1e904e649bf33b7a073e3fdf68461d04e9cb2145171b.png" />
+<img alt="../_images/606d3249710cb995f2e5044ed91b082dfc88cc098dcdbf663b56271fbf634168.png" src="../_images/606d3249710cb995f2e5044ed91b082dfc88cc098dcdbf663b56271fbf634168.png" />
 </div>
 </div>
 <p><strong>Como funcionan as redes neuronais?</strong></p>
@@ -1186,7 +1201,7 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </section>
 </section>
 <section id="apendices">
-<h2>Apéndices<a class="headerlink" href="#apendices" title="Permalink to this heading">#</a></h2>
+<h2>Apéndices<a class="headerlink" href="#apendices" title="Link to this heading">#</a></h2>
 <p>Algo máis complicado!</p>
 <p><em>Exercicio</em> : Usa Python e os métodos do módulo scipy para calcular os extremos da función:</p>
 <div class="math notranslate nohighlight">
@@ -1202,7 +1217,7 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1e6da6bbb848bfac9128ab4bd47eafeab8d5ef4770231f9b4367dff797aa6da5.png" src="../_images/1e6da6bbb848bfac9128ab4bd47eafeab8d5ef4770231f9b4367dff797aa6da5.png" />
+<img alt="../_images/a64392c83317ae5a93c17358a8ef67374b8dbf28d8d16d076028d20609d15274.png" src="../_images/a64392c83317ae5a93c17358a8ef67374b8dbf28d8d16d076028d20609d15274.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1212,7 +1227,7 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2a8376c04b6cea784694a480906c6fef5226ed26eecc46e8b719fa15007278b1.png" src="../_images/2a8376c04b6cea784694a480906c6fef5226ed26eecc46e8b719fa15007278b1.png" />
+<img alt="../_images/74f4fb5d35dfa3ae33f2bb48d607d72b772003c401ce8078180b327ef30ca53f.png" src="../_images/74f4fb5d35dfa3ae33f2bb48d607d72b772003c401ce8078180b327ef30ca53f.png" />
 </div>
 </div>
 <p>Dos conxuntos de nivel observamos que hai un mínimo arredor de <span class="math notranslate nohighlight">\((-1, 0)\)</span> e un máximo preto de <span class="math notranslate nohighlight">\((1, 0)\)</span>, e que os eixes de simetría nos extremos coinciden cos eixes de coordenadas.</p>
@@ -1236,8 +1251,8 @@ h(x) = f(x,y(x))= x^2-(1-x^2) = 4x^2-1
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto mínimo  -1.0954920902489502 0.2738621986560991
-punto máximo  1.0954920606202636 -0.27386221675122946
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto mínimo  -1.0954920902489504 0.27386219865609934
+punto máximo  1.09549208306744 -0.2738622105039066
 </pre></div>
 </div>
 </div>
@@ -1299,7 +1314,7 @@ fyy  512*y**2*(x - y)/(2*x**2 + 8*y**2 + 3)**3 + 32*y/(2*x**2 + 8*y**2 + 3)**2 -
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  -1.0954920902489502 0.2738621986560991
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  -1.0954920902489504 0.27386219865609934
 hessiana  [[1.52129395e-01 5.62777899e-06]
  [5.62777899e-06 6.08558515e-01]]
 autovalores [0.15212939+0.j 0.60855852+0.j]
@@ -1326,14 +1341,12 @@ autovector 2 : [-1.23300174e-05 -1.00000000e+00]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  1.0954920606202636 -0.27386221675122946
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hessiana  [[-1.52129403e-01 -5.63252983e-06]
- [-5.63252983e-06 -6.08558504e-01]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  1.09549208306744 -0.2738622105039066
+hessiana  [[-1.52129396e-01 -5.63224688e-06]
+ [-5.63224688e-06 -6.08558503e-01]]
 autovalores [-0.1521294+0.j -0.6085585+0.j]
-autovector 1 : [ 1.00000000e+00 -1.23404266e-05]
-autovector 2 : [1.23404266e-05 1.00000000e+00]
+autovector 1 : [ 1.00000000e+00 -1.23398065e-05]
+autovector 2 : [1.23398065e-05 1.00000000e+00]
 </pre></div>
 </div>
 </div>
@@ -1366,11 +1379,10 @@ autovector 2 : [1.23404266e-05 1.00000000e+00]
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tderivadas_coordenadas_cadea.html"
@@ -1390,17 +1402,16 @@ autovector 2 : [1.23404266e-05 1.00000000e+00]
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1453,6 +1464,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -1479,8 +1491,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

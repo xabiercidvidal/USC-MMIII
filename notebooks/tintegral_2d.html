@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Integrais en dúas dimensións &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tintegral_2d';</script>
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Métodos de integración" href="tintegral_metodos.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -177,6 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Integrais en dúas dimensións</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -185,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -201,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -233,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tintegral_2d.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -251,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tintegral_2d.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -379,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -441,10 +458,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integrais-en-duas-dimensions">
-<h1>Integrais en dúas dimensións<a class="headerlink" href="#integrais-en-duas-dimensions" title="Permalink to this heading">#</a></h1>
+<h1>Integrais en dúas dimensións<a class="headerlink" href="#integrais-en-duas-dimensions" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -453,7 +470,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Mon Apr  1 00:10:41 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:02:07 2025
 </pre></div>
 </div>
 </div>
@@ -480,7 +497,7 @@ document.write(`
 </div>
 </div>
 <section id="estrutura-do-tema">
-<h2>Estrutura do tema<a class="headerlink" href="#estrutura-do-tema" title="Permalink to this heading">#</a></h2>
+<h2>Estrutura do tema<a class="headerlink" href="#estrutura-do-tema" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Introdución</p></li>
 <li><p>Integral 2D</p></li>
@@ -498,7 +515,7 @@ document.write(`
 </ul>
 </section>
 <section id="obxectivos">
-<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Link to this heading">#</a></h2>
 <p>Ampliar o concepto de integral de Riemann en dúas dimensións</p>
 <p>Teorema de Fubini: a integral non depende da orde de integración</p>
 <p>Principio de Cavilieri.</p>
@@ -507,9 +524,9 @@ document.write(`
 <p>Amosar algúns exemplos sinxelos</p>
 </section>
 <section id="introducion">
-<h2>Introdución<a class="headerlink" href="#introducion" title="Permalink to this heading">#</a></h2>
+<h2>Introdución<a class="headerlink" href="#introducion" title="Link to this heading">#</a></h2>
 <section id="recordatorio-da-suma-de-riemann">
-<h3>Recordatorio da suma de Riemann<a class="headerlink" href="#recordatorio-da-suma-de-riemann" title="Permalink to this heading">#</a></h3>
+<h3>Recordatorio da suma de Riemann<a class="headerlink" href="#recordatorio-da-suma-de-riemann" title="Link to this heading">#</a></h3>
 <p>Para calcular a <em>área</em> baixo unha curva dunha función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, e o eixe <span class="math notranslate nohighlight">\(y=0\)</span> nun intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, introducimos a integral unidimensional.</p>
 <p>Definímola a partir da <strong>suma de Riemann</strong>. Dada a partición dun intervalo, e dunha función, acoutada e continua no devandito intervalo, damos a suma de Riemann como:</p>
 <div class="math notranslate nohighlight">
@@ -542,7 +559,7 @@ document.write(`
 </section>
 </section>
 <section id="integrais-2d">
-<h2>Integrais 2D<a class="headerlink" href="#integrais-2d" title="Permalink to this heading">#</a></h2>
+<h2>Integrais 2D<a class="headerlink" href="#integrais-2d" title="Link to this heading">#</a></h2>
 <p>Coñecemos a área entre a súa gráfica dunha función real, <span class="math notranslate nohighlight">\(f(x)\)</span>, nun intervalo, <span class="math notranslate nohighlight">\([a, b], \)</span>e o eixe <span class="math notranslate nohighlight">\(x\)</span>, corresponde á súa integral definida:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -562,7 +579,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ed8489e609906baa550abb091054e868e3a09c3711795e539a4ec2d57cefcc49.png" src="../_images/ed8489e609906baa550abb091054e868e3a09c3711795e539a4ec2d57cefcc49.png" />
+<img alt="../_images/31d7650e6b1848817d45b0f55fe5f5b3d809a6bcf6b7de4197a8bf08a26d62af.png" src="../_images/31d7650e6b1848817d45b0f55fe5f5b3d809a6bcf6b7de4197a8bf08a26d62af.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -572,7 +589,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" src="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" />
+<img alt="../_images/2b69c07952718aa3280b39d6fc11fe23c77e6b558fd5f9170156c184e8bbb8fc.png" src="../_images/2b69c07952718aa3280b39d6fc11fe23c77e6b558fd5f9170156c184e8bbb8fc.png" />
 </div>
 </div>
 <p>Podemos estender a <strong>suma de Riemann</strong> á función escalar bidimensional, <span class="math notranslate nohighlight">\(f(x, y)\)</span> na rexión <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, a partir da partición dos intervalos <span class="math notranslate nohighlight">\([ a, b], \,[c, d]\)</span></p>
@@ -615,7 +632,7 @@ document.write(`
 <p>Hai que ter en conta que as variables de integración son <em>mudas</em>, as únicas variables son os límites de integración <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>.</p>
 </section>
 <section id="teorema-de-fubini">
-<h2>Teorema de Fubini<a class="headerlink" href="#teorema-de-fubini" title="Permalink to this heading">#</a></h2>
+<h2>Teorema de Fubini<a class="headerlink" href="#teorema-de-fubini" title="Link to this heading">#</a></h2>
 <p>Indícanos que se unha función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, é integrable nunha rexión <span class="math notranslate nohighlight">\([a, b] \times [c, d]\)</span>, podemos integrar na orde que consideremos.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -628,7 +645,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" src="../_images/76e6575467d33233424f58ccde3029a59309b01ceac237d17a42d7b536430f91.png" />
+<img alt="../_images/2b69c07952718aa3280b39d6fc11fe23c77e6b558fd5f9170156c184e8bbb8fc.png" src="../_images/2b69c07952718aa3280b39d6fc11fe23c77e6b558fd5f9170156c184e8bbb8fc.png" />
 </div>
 </div>
 <p>Podemos ver que o valor entre corchetes corresponde á área para un determinado valor fixo de <span class="math notranslate nohighlight">\(x\)</span> ou <span class="math notranslate nohighlight">\(y\)</span></p>
@@ -660,7 +677,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \frac{1}{2}\]</div>
-<img alt="../_images/f2f9e64ee4b43d4b2891f7e86fc4842c5024a8adbdd3d6260ac6b499d176c42a.png" src="../_images/f2f9e64ee4b43d4b2891f7e86fc4842c5024a8adbdd3d6260ac6b499d176c42a.png" />
+<img alt="../_images/882c5060c9d019c82f5c438f2970e038bade50975ec8957c6b831487833f628f.png" src="../_images/882c5060c9d019c82f5c438f2970e038bade50975ec8957c6b831487833f628f.png" />
 </div>
 </div>
 <p><em>Exercicio</em> : Integra a función <span class="math notranslate nohighlight">\(f(x, y) = y^2 \sin(x)\)</span> na rexión <span class="math notranslate nohighlight">\([0, \pi] \times [0, \pi]\)</span></p>
@@ -675,11 +692,11 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \frac{2 \pi^{3}}{3}\]</div>
-<img alt="../_images/0da2fd0eae92481a4e3f7ca496cbf85683ab140cebebd67826b5a5403ddff4ed.png" src="../_images/0da2fd0eae92481a4e3f7ca496cbf85683ab140cebebd67826b5a5403ddff4ed.png" />
+<img alt="../_images/ec5ad63431dea4361449594a28afce344e5f0affe616086ff413bc0067c83fd7.png" src="../_images/ec5ad63431dea4361449594a28afce344e5f0affe616086ff413bc0067c83fd7.png" />
 </div>
 </div>
 <section id="principio-de-cavalieri">
-<h3>Principio de Cavalieri.<a class="headerlink" href="#principio-de-cavalieri" title="Permalink to this heading">#</a></h3>
+<h3>Principio de Cavalieri.<a class="headerlink" href="#principio-de-cavalieri" title="Link to this heading">#</a></h3>
 <p>Para corpos de revolución, obtidos facendo xirar unha figura arredor dun eixe.</p>
 <p><em>Exercicio</em> : Calcula o volume dun cono formado facendo xirar o triángulo que ten dous lados iguais, como na figura.</p>
 <div class="cell docutils container">
@@ -700,10 +717,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x127f0f990&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x1133becd0&gt;]
 </pre></div>
 </div>
-<img alt="../_images/6c4702affa7da3145475cdefba99f105945d76055bfb74d2da4b8d804faabcac.png" src="../_images/6c4702affa7da3145475cdefba99f105945d76055bfb74d2da4b8d804faabcac.png" />
+<img alt="../_images/b32de42070b037096d0460e6c07ae6f81e3ab72aca0f9af5bcfc7d498f0eba0c.png" src="../_images/b32de42070b037096d0460e6c07ae6f81e3ab72aca0f9af5bcfc7d498f0eba0c.png" />
 </div>
 </div>
 <p><em>Explorar</em> : Considera que para un determinado <span class="math notranslate nohighlight">\(z\)</span>, o raio máximo é <span class="math notranslate nohighlight">\(z^2\)</span>, como sería a figura?</p>
@@ -723,14 +740,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b595720626961e98cbbec899328630d56e787f1728d8d04d3ec67a14a58c5a6f.png" src="../_images/b595720626961e98cbbec899328630d56e787f1728d8d04d3ec67a14a58c5a6f.png" />
+<img alt="../_images/66ad5b9ff0e4d7e9d794a3327cf1c731d1bf8e17cbbbb2462fcb540a385012ff.png" src="../_images/66ad5b9ff0e4d7e9d794a3327cf1c731d1bf8e17cbbbb2462fcb540a385012ff.png" />
 </div>
 </div>
 <a class="reference internal image-reference" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWfcH880DXxljWDqOPAv-qQK3sCnCyFjYkw2z8KXSrY7i_xhnipYTuOnNMNEcoUZjw2EzjrPcoBR2Tim1NcMLB4QYRg2K1a0EgUDF00J7MpmiZX70y7q8Pmln2TzJPkGhl_lABq1ExBgKaHsmUXm3VqTW5Nknccve3BGFgCh5JKnEj-r171bmi8SSs/s752/o-principio-de-cavalieri.png"><img alt="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWfcH880DXxljWDqOPAv-qQK3sCnCyFjYkw2z8KXSrY7i_xhnipYTuOnNMNEcoUZjw2EzjrPcoBR2Tim1NcMLB4QYRg2K1a0EgUDF00J7MpmiZX70y7q8Pmln2TzJPkGhl_lABq1ExBgKaHsmUXm3VqTW5Nknccve3BGFgCh5JKnEj-r171bmi8SSs/s752/o-principio-de-cavalieri.png" class="align-center" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWfcH880DXxljWDqOPAv-qQK3sCnCyFjYkw2z8KXSrY7i_xhnipYTuOnNMNEcoUZjw2EzjrPcoBR2Tim1NcMLB4QYRg2K1a0EgUDF00J7MpmiZX70y7q8Pmln2TzJPkGhl_lABq1ExBgKaHsmUXm3VqTW5Nknccve3BGFgCh5JKnEj-r171bmi8SSs/s752/o-principio-de-cavalieri.png" style="width: 800px;" /></a>
 </section>
 </section>
 <section id="integracion-nunha-rexion-non-rectangular">
-<h2>Integración nunha rexión non rectangular.<a class="headerlink" href="#integracion-nunha-rexion-non-rectangular" title="Permalink to this heading">#</a></h2>
+<h2>Integración nunha rexión non rectangular.<a class="headerlink" href="#integracion-nunha-rexion-non-rectangular" title="Link to this heading">#</a></h2>
 <p>Considera que queremos integrar unha función, <span class="math notranslate nohighlight">\(f(x, y)\)</span>, na rexión, <span class="math notranslate nohighlight">\(R\)</span>, non necesariamente un rectángulo, por exemplo no seguinte triángulo:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -745,7 +762,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c211077a28bda2c2fdfda04d36f63c2b3d49432bc9eb1c7e94836f102f58ba46.png" src="../_images/c211077a28bda2c2fdfda04d36f63c2b3d49432bc9eb1c7e94836f102f58ba46.png" />
+<img alt="../_images/36ab2130d3156208098fdd4fe32997222dc22c4fedc021691f97930d74976cd4.png" src="../_images/36ab2130d3156208098fdd4fe32997222dc22c4fedc021691f97930d74976cd4.png" />
 </div>
 </div>
 <p>Podemos definir a rexión como os puntos que cumpren</p>
@@ -772,7 +789,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8f11236a7167f1c676b69d66ff6adb7f3ce1b712f9d71db0a928503dca330e72.png" src="../_images/8f11236a7167f1c676b69d66ff6adb7f3ce1b712f9d71db0a928503dca330e72.png" />
+<img alt="../_images/10594bf9f231ceefcbd44424bbebe6e8f471ee49f0fd4807bd73ad014b78d079.png" src="../_images/10594bf9f231ceefcbd44424bbebe6e8f471ee49f0fd4807bd73ad014b78d079.png" />
 </div>
 </div>
 <p>Ou en función de <span class="math notranslate nohighlight">\(y\)</span></p>
@@ -797,7 +814,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dec16d6b3871420382986473845841cc650a3c5d484b92e1a3deaa6ba389a04a.png" src="../_images/dec16d6b3871420382986473845841cc650a3c5d484b92e1a3deaa6ba389a04a.png" />
+<img alt="../_images/f4635d00bf46d11a8ef2dc76fa7d9295b893b185ea865ce410af8e595e31031f.png" src="../_images/f4635d00bf46d11a8ef2dc76fa7d9295b893b185ea865ce410af8e595e31031f.png" />
 </div>
 </div>
 <p><em>Exercicio</em> : Calcula a integral de <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> no triángulo anterior. A que corresponde?</p>
@@ -857,7 +874,7 @@ document.write(`
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
 \[\displaystyle \frac{1}{6}\]</div>
-<img alt="../_images/67a1b0b8227187ba1b21fb2a0ddbcc1736daceaec9c13a4ce5e6cc4e39ff6938.png" src="../_images/67a1b0b8227187ba1b21fb2a0ddbcc1736daceaec9c13a4ce5e6cc4e39ff6938.png" />
+<img alt="../_images/e1a1fba02895d997536357e892d42df981ea65d29c246e066b1a8d7c49f896c8.png" src="../_images/e1a1fba02895d997536357e892d42df981ea65d29c246e066b1a8d7c49f896c8.png" />
 </div>
 </div>
 <p><em>Exercicio</em></p>
@@ -873,7 +890,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/77b3d71626b76b5b7a66512056766aa981ea421077157ad3008e6990a544d744.png" src="../_images/77b3d71626b76b5b7a66512056766aa981ea421077157ad3008e6990a544d744.png" />
+<img alt="../_images/c667b973dfe52c56607d299cd6c5294be6c5327a24e924dd78bf06e235a47daa.png" src="../_images/c667b973dfe52c56607d299cd6c5294be6c5327a24e924dd78bf06e235a47daa.png" />
 </div>
 </div>
 <p>Tipo I, a rexión defínese como:</p>
@@ -907,12 +924,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d9f6388f3ac1ae23f9d3fb9f00590df56832bd65c2eec5667f2bdb5a7804a5dd.png" src="../_images/d9f6388f3ac1ae23f9d3fb9f00590df56832bd65c2eec5667f2bdb5a7804a5dd.png" />
+<img alt="../_images/2f51abebc6ff58927196a6cb68516286f87e81a166ca1a56b089f809ac4a09f4.png" src="../_images/2f51abebc6ff58927196a6cb68516286f87e81a166ca1a56b089f809ac4a09f4.png" />
 </div>
 </div>
 </section>
 <section id="cambio-de-variables-xacobiano">
-<h2>Cambio de variables. Xacobiano<a class="headerlink" href="#cambio-de-variables-xacobiano" title="Permalink to this heading">#</a></h2>
+<h2>Cambio de variables. Xacobiano<a class="headerlink" href="#cambio-de-variables-xacobiano" title="Link to this heading">#</a></h2>
 <p>No caso anterior pode ser máis conveniente realizar a integral en coordenadas polares. Como se integra despois de cambiar as coordenadas?</p>
 <p>Observa nas seguintes figuras como a rexión dunha sección do anel de raio <span class="math notranslate nohighlight">\([0.5, 1]\)</span> e ángulo <span class="math notranslate nohighlight">\([0, \pi/2]\)</span> é unha rexión rectangular en <span class="math notranslate nohighlight">\((r, \phi)\)</span>.</p>
 <p>Non obstante, as particións rectangulares en <span class="math notranslate nohighlight">\((r, \phi)\)</span> transfórmanse en polígonos no plano <span class="math notranslate nohighlight">\((x, y)\)</span>.</p>
@@ -934,7 +951,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0dcef5c8fcd3e0f879d6c880349c401df4b139366ced95b7b301a6b2abc0fad2.png" src="../_images/0dcef5c8fcd3e0f879d6c880349c401df4b139366ced95b7b301a6b2abc0fad2.png" />
+<img alt="../_images/6d0ad6b864a5d66666cdf1d094a2d65e22ebe80f5ecd23b9496be80b9f168118.png" src="../_images/6d0ad6b864a5d66666cdf1d094a2d65e22ebe80f5ecd23b9496be80b9f168118.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -958,7 +975,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/26dae34a8eb27b465ac4b62c3ee6db4f2435e71d5b2e4a8156b32761123545b5.png" src="../_images/26dae34a8eb27b465ac4b62c3ee6db4f2435e71d5b2e4a8156b32761123545b5.png" />
+<img alt="../_images/783a6dc5b069697a412eb9530006919ac269012d8ad76ee120ad360d819aa659.png" src="../_images/783a6dc5b069697a412eb9530006919ac269012d8ad76ee120ad360d819aa659.png" />
 </div>
 </div>
 <p>A área de cada unha das rexións do plano <span class="math notranslate nohighlight">\((x, y)\)</span> vén dada polo produto vectorial dos vectores dos seus lados.</p>
@@ -1022,7 +1039,7 @@ J = \left| \begin{array}{cc} \frac{\partial x}{\partial u} &amp; \frac{\partial 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/862a0465e9f3bfcc73042e87f6a81f1d652391c3c8f382389f23b03553b61c45.png" src="../_images/862a0465e9f3bfcc73042e87f6a81f1d652391c3c8f382389f23b03553b61c45.png" />
+<img alt="../_images/dc7a79d39683031dbe7ec39d1bd327206a44bec6f4fc68a28d96a9c31851dfe9.png" src="../_images/dc7a79d39683031dbe7ec39d1bd327206a44bec6f4fc68a28d96a9c31851dfe9.png" />
 </div>
 </div>
 <p>O cambio a polares é:</p>
@@ -1083,7 +1100,7 @@ r \mathrm{d}\phi \mathrm{d} r
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9ff2d9ccf99a90b84c59bc1d5e6674d82ed8e9d395a3354a042b8f3066e6010e.png" src="../_images/9ff2d9ccf99a90b84c59bc1d5e6674d82ed8e9d395a3354a042b8f3066e6010e.png" />
+<img alt="../_images/b7f03bb82666366e30377b0076dc9ff5ad169c4dee8d5d3c6ff27139250e9627.png" src="../_images/b7f03bb82666366e30377b0076dc9ff5ad169c4dee8d5d3c6ff27139250e9627.png" />
 </div>
 </div>
 </section>
@@ -1114,11 +1131,10 @@ r \mathrm{d}\phi \mathrm{d} r
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tintegral_metodos.html"
@@ -1138,17 +1154,16 @@ r \mathrm{d}\phi \mathrm{d} r
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1190,6 +1205,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -1216,8 +1232,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
