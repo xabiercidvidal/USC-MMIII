@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais. &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_funcion_escalar_vectorial';</script>
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Cuestións iniciais" href="tderivadas_introducion.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -176,6 +188,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_1d.html">Integrais nunha dimensión</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -184,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -200,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -232,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_funcion_escalar_vectorial.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -250,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_funcion_escalar_vectorial.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -378,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -439,10 +457,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="funcions-escalares-graficos-conxuntos-de-nivel-e-funcions-vectoriais">
-<h1>Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.<a class="headerlink" href="#funcions-escalares-graficos-conxuntos-de-nivel-e-funcions-vectoriais" title="Permalink to this heading">#</a></h1>
+<h1>Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.<a class="headerlink" href="#funcions-escalares-graficos-conxuntos-de-nivel-e-funcions-vectoriais" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -451,13 +469,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Fri Mar  8 16:32:56 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:01:17 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="obxectivos">
-<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Link to this heading">#</a></h2>
 <p>Presentar os conceptos de</p>
 <ul class="simple">
 <li><p>funcións escalares e a gráfica dunha función escalar</p></li>
@@ -491,7 +509,7 @@ document.write(`
 </div>
 </section>
 <section id="funcions-escalares">
-<h2>Funcións escalares<a class="headerlink" href="#funcions-escalares" title="Permalink to this heading">#</a></h2>
+<h2>Funcións escalares<a class="headerlink" href="#funcions-escalares" title="Link to this heading">#</a></h2>
 <p>Observa a seguinte figura:</p>
 <ul class="simple">
 <li><p>Viches algunha función en Física semellante á que estamos debuxando?</p></li>
@@ -526,7 +544,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/822291a89274a8877ebd707c11b803024c73d93454ede8936e974f90542675cf.png" src="../_images/822291a89274a8877ebd707c11b803024c73d93454ede8936e974f90542675cf.png" />
+<img alt="../_images/5a2e8474ac7c33cac03493a42b6d52f520b6e1186bfdc2e378e6c51525305092.png" src="../_images/5a2e8474ac7c33cac03493a42b6d52f520b6e1186bfdc2e378e6c51525305092.png" />
 </div>
 </div>
 <p>É o potencial electromagnético dunha carga no plano</p>
@@ -544,7 +562,7 @@ V(x, y) = k \frac{q}{\sqrt{x^2 + y^2}}
 \]</div>
 <p>O potencial eléctrico anterior é unha función escalar de <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, onde o dominio é todo <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> menos a orixe, <span class="math notranslate nohighlight">\((0, 0)\)</span>, onde a función non está definida.</p>
 <section id="grafico-dunha-funcion">
-<h3>Gráfico dunha función<a class="headerlink" href="#grafico-dunha-funcion" title="Permalink to this heading">#</a></h3>
+<h3>Gráfico dunha función<a class="headerlink" href="#grafico-dunha-funcion" title="Link to this heading">#</a></h3>
 <p>A figura anterior é a <strong>gráfica</strong> do potencial eléctrico dunha carga.</p>
 <p>Sexa <span class="math notranslate nohighlight">\(f(x, y)\)</span> unha función escalar co dominio <span class="math notranslate nohighlight">\(\mathcal{D}\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>, a gráfica da función son os puntos de <span class="math notranslate nohighlight">\(\mathbb{R}^3 \)</span> dados por:</p>
 <div class="math notranslate nohighlight">
@@ -555,7 +573,7 @@ V(x, y) = k \frac{q}{\sqrt{x^2 + y^2}}
 <p>Os humanos somos algo limitados, só podemos “ver” os gráficos de funcións escalares bidimensionais!</p>
 </section>
 <section id="conxuntos-de-nivel">
-<h3>Conxuntos de nivel<a class="headerlink" href="#conxuntos-de-nivel" title="Permalink to this heading">#</a></h3>
+<h3>Conxuntos de nivel<a class="headerlink" href="#conxuntos-de-nivel" title="Link to this heading">#</a></h3>
 <p>Se observas, o valor do potencial eléctrico é o mesmo para todos os puntos dun círculo centrado na orixe. Dicimos que son puntos equipotenciais.</p>
 <p>Doutra maneira, se calculamos cales son os puntos para os cales a función vale un determinado valor <span class="math notranslate nohighlight">\(c\)</span>, é dicir <span class="math notranslate nohighlight">\(f(x, y) = c\)</span>, obtemos a ecuación dunha circunferencia:</p>
 <div class="math notranslate nohighlight">
@@ -583,7 +601,7 @@ Isto é:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8a3d8a561f01b122b0aad2bcdff4bafdafcd4e52ba006bbb9cd04e4abe35e01e.png" src="../_images/8a3d8a561f01b122b0aad2bcdff4bafdafcd4e52ba006bbb9cd04e4abe35e01e.png" />
+<img alt="../_images/d1ea07e23f2c9c3d29389cd6fdf8098c54976230e1d8b2756a7081ad0bef3956.png" src="../_images/d1ea07e23f2c9c3d29389cd6fdf8098c54976230e1d8b2756a7081ad0bef3956.png" />
 </div>
 </div>
 <p><em>Pregunta</em>: No caso do potencial eléctrico tridimensional dunha carga situada na orixe, que figura xeométrica forman os seus conxuntos de nivel?</p>
@@ -604,7 +622,7 @@ Isto é:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/eca696bb60798193891455b5349352d0a9e85002adcd8e5e253ff743ea6d9a3f.png" src="../_images/eca696bb60798193891455b5349352d0a9e85002adcd8e5e253ff743ea6d9a3f.png" />
+<img alt="../_images/586c0638a1c23aa7987a26d8c9c38a927859620cba2b11befb91801d96840e7f.png" src="../_images/586c0638a1c23aa7987a26d8c9c38a927859620cba2b11befb91801d96840e7f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -618,7 +636,7 @@ Isto é:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ab342ce00a3e714afcc9e49f94f8533569a9f52bed0932ec246b5179194aa50.png" src="../_images/1ab342ce00a3e714afcc9e49f94f8533569a9f52bed0932ec246b5179194aa50.png" />
+<img alt="../_images/88a5c1f3c5fc103398cbcacf3c360391c206c4225ed36ec44c46ddf702f68df3.png" src="../_images/88a5c1f3c5fc103398cbcacf3c360391c206c4225ed36ec44c46ddf702f68df3.png" />
 </div>
 </div>
 <p><em>Solución</em>: O dominio é todo <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
@@ -648,7 +666,7 @@ x^{2} + y^{2} = c
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a  1.0 , b = 2.0
 </pre></div>
 </div>
-<img alt="../_images/c24e17c79ef440cf039ef22ed60d7b26844389b6860e549646e7fca3a76048ee.png" src="../_images/c24e17c79ef440cf039ef22ed60d7b26844389b6860e549646e7fca3a76048ee.png" />
+<img alt="../_images/56d077f14763c445a7abe77b77901e120055da83d7cfa8f81f43f0b717d79e07.png" src="../_images/56d077f14763c445a7abe77b77901e120055da83d7cfa8f81f43f0b717d79e07.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -661,7 +679,7 @@ x^{2} + y^{2} = c
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/73e2ccb87d74c3b860c552fe7b4f5838e5a203ce12547207073d04187d8eb011.png" src="../_images/73e2ccb87d74c3b860c552fe7b4f5838e5a203ce12547207073d04187d8eb011.png" />
+<img alt="../_images/4664f822b599ba435850cc338fcd18723cd03a6265d0e6f9753105acfcbc3e23.png" src="../_images/4664f822b599ba435850cc338fcd18723cd03a6265d0e6f9753105acfcbc3e23.png" />
 </div>
 </div>
 <p><em>Solución</em>: os conxuntos de nivel son elipses (<span class="math notranslate nohighlight">\(c &gt;0)\)</span>:</p>
@@ -685,7 +703,7 @@ x^{2} + y^{2} = c
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7e8a312c3426cc5643607895bdac96766daaa43bb4e4cad37d1c6efd19a29678.png" src="../_images/7e8a312c3426cc5643607895bdac96766daaa43bb4e4cad37d1c6efd19a29678.png" />
+<img alt="../_images/37866f50c8a15c2ba23a901ae558568282bfe0984e7e529cd6f5f787d497b978.png" src="../_images/37866f50c8a15c2ba23a901ae558568282bfe0984e7e529cd6f5f787d497b978.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -698,7 +716,7 @@ x^{2} + y^{2} = c
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6e8e83301451f491789ca671ea3ab18c8bbc710820ead33f7765d860dfd060d2.png" src="../_images/6e8e83301451f491789ca671ea3ab18c8bbc710820ead33f7765d860dfd060d2.png" />
+<img alt="../_images/a2bd059e470230d83fe963a9e8ba520c623a28b34918007f6fbd1bc34063edfb.png" src="../_images/a2bd059e470230d83fe963a9e8ba520c623a28b34918007f6fbd1bc34063edfb.png" />
 </div>
 </div>
 <p><em>Solución</em>: Os conxuntos de nivel son hipérbolas:</p>
@@ -747,7 +765,7 @@ y = \pm x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a366871befa9be353c6765e457f7bb546754222380e77313cd3dc0461eed763e.png" src="../_images/a366871befa9be353c6765e457f7bb546754222380e77313cd3dc0461eed763e.png" />
+<img alt="../_images/743a87a0bff36fd2f2344efb9f2ce5c6b4b6704e017d5ae3b1418e598a05c01a.png" src="../_images/743a87a0bff36fd2f2344efb9f2ce5c6b4b6704e017d5ae3b1418e598a05c01a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -760,14 +778,18 @@ y = \pm x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/edbdc383fdb6aec19a51e166c09cd2a217cb876adcb1a5fa2f3c762119e5ae0e.png" src="../_images/edbdc383fdb6aec19a51e166c09cd2a217cb876adcb1a5fa2f3c762119e5ae0e.png" />
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/rx/82jfsqxj6ms7ll1_lj0dmr5r0000gq/T/ipykernel_27255/803566706.py:4: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 2 Axes&gt; than &lt;Figure size 640x480 with 2 Axes&gt; which fig.colorbar is called on.
+  fig.colorbar(sf,ax=plt.gca()); plt.axis(&#39;equal&#39;); plt.tight_layout();
+</pre></div>
+</div>
+<img alt="../_images/0b8bac3d3da7df00e44dc018e9c550ee49f2537108ad9e3d1c18914c19434ff0.png" src="../_images/0b8bac3d3da7df00e44dc018e9c550ee49f2537108ad9e3d1c18914c19434ff0.png" />
 </div>
 </div>
 <p><em>Pregunta</em>: Que indica que os conxuntos de nivel estean moi preto uns dos outros? E cando están separados?</p>
 </section>
 </section>
 <section id="funcions-vectoriais">
-<h2>Funcións vectoriais<a class="headerlink" href="#funcions-vectoriais" title="Permalink to this heading">#</a></h2>
+<h2>Funcións vectoriais<a class="headerlink" href="#funcions-vectoriais" title="Link to this heading">#</a></h2>
 <p>Considera a seguinte función que seguramente xa teñas visto antes en Física Xeral.</p>
 <p>É o campo eléctrico dunha carga <span class="math notranslate nohighlight">\(q\)</span> centrada na orixe <span class="math notranslate nohighlight">\((0, 0, 0)\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -787,7 +809,7 @@ y = \pm x
 \]</div>
 <p>Ten en conta que <span class="math notranslate nohighlight">\(n \ge 1\)</span> e <span class="math notranslate nohighlight">\( m &gt;1\)</span>.</p>
 <section id="funcions-dos-componentes">
-<h3>Funcións dos compoñentes<a class="headerlink" href="#funcions-dos-componentes" title="Permalink to this heading">#</a></h3>
+<h3>Funcións dos compoñentes<a class="headerlink" href="#funcions-dos-componentes" title="Link to this heading">#</a></h3>
 <p>Se observas o campo eléctrico, <span class="math notranslate nohighlight">\({\bf E}({\bf x})\)</span> expresámolo como tres funcións escalares:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -811,7 +833,7 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 <p><em>Nota</em>: Para indicar valores ou funcións vectoriais usamos letras en negra, mentres que usamos tipos normais para valores escalares ou funcións.</p>
 </section>
 <section id="como-debuxar-un-campo-vectorial">
-<h3>Como debuxar un campo vectorial?<a class="headerlink" href="#como-debuxar-un-campo-vectorial" title="Permalink to this heading">#</a></h3>
+<h3>Como debuxar un campo vectorial?<a class="headerlink" href="#como-debuxar-un-campo-vectorial" title="Link to this heading">#</a></h3>
 <p>En realidade, non podemos debuxar correctamente un campo vectorial.</p>
 <p>Porén, podemos ‘visualizar’ un campo vectorial colocando uns pequenos vectores ou frechas no espazo inicial, que polo seu tamaño, grosor ou cor nos indican en que dirección vai o campo e cal é o seu módulo. Aínda que só podemos facelo en <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span> e <em>mal</em> en <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>!</p>
 <p>A seguinte figura tenta visualizar o campo eléctrico dunha carga en dúas dimensións.</p>
@@ -847,7 +869,7 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/351df95f56b858ec2891878aefbd674b59e1f24e83e0f1aac99df2e458adb6d3.png" src="../_images/351df95f56b858ec2891878aefbd674b59e1f24e83e0f1aac99df2e458adb6d3.png" />
+<img alt="../_images/b4977f53526dc656a807d83a0c4150f4b90dc173b87333e5ac9446a82ef90434.png" src="../_images/b4977f53526dc656a807d83a0c4150f4b90dc173b87333e5ac9446a82ef90434.png" />
 </div>
 </div>
 <p>O campo eléctrico é radial e vaise debilitando a medida que nos afastamos da carga.</p>
@@ -890,16 +912,16 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/59d0dfad56701f733cb067ab8ff5d2042bfa76c6d8412eb514b56e4a3189c85a.png" src="../_images/59d0dfad56701f733cb067ab8ff5d2042bfa76c6d8412eb514b56e4a3189c85a.png" />
+<img alt="../_images/2690fe00402aedbe7dfc20df3733cf82699dfacaa411fb93834de9f2f279210a.png" src="../_images/2690fe00402aedbe7dfc20df3733cf82699dfacaa411fb93834de9f2f279210a.png" />
 </div>
 </div>
 <p>As liñas de campo eléctrico dun dipolo saen da carga positiva e morren na carga negativa.</p>
 </section>
 <section id="ainda-hai-mais">
-<h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Permalink to this heading">#</a></h3>
+<h3>Aínda hai máis!<a class="headerlink" href="#ainda-hai-mais" title="Link to this heading">#</a></h3>
 <p>O concepto de conxunto de curvas de nivel é bastante común, seguro que coñeces os mapas de contornos que representan unha zona topográfica en función das súas curvas de nivel. Cando as liñas están moi xuntas significa que a pendente sobe bruscamente, mentres que cando están moi afastadas indica que a pendente é moi suave, unha falsa chaira.</p>
 <p>A imaxe mostra o mapa topográfico da zona de Canfranc, nos Pirineos, onde se atopa o Laboratorio Subterráneo de Canfranc baixo o monte “El Tobazo” onde, entre outras cousas, se estuda a natureza do neutrino ou se existe materia escura. A ligazón ao laboratorio é <a class="reference external" href="https://lsc-canfranc.es">este</a>. Mira o empinado que son as pistas xunto á estación internacional de Canfranc, logo míraas na <a class="reference external" href="http://notatherdesk.com/travel/exploring-canfranc-railway-station/">foto</a></p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head text-center"><p></p></th>
 </tr>
@@ -911,6 +933,7 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 </tr>
 </tbody>
 </table>
+</div>
 <p>Tamén podes visitar a páxina do <a class="reference external" href="https://www.meteogalicia.gal/web/home">tempo</a> de Galicia e ver como debuxan as funcións escalares da presión e as funcións vectoriais dos ventos.</p>
 <p><strong>Isto é todo por agora!</strong></p>
 </section>
@@ -942,11 +965,10 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tderivadas_introducion.html"
@@ -966,17 +988,16 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1017,6 +1038,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -1043,8 +1065,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,66 +1,65 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Razoa se son verdadeiras ou falsas as seguintes afirmacións: &#8212; Métodos Matemáticos III - USC</title>
+    <title>Exercicios de exame &#8212; Métodos Matemáticos III - USC</title>
   
   
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/problemas_exame_calculo_vectorial';</script>
@@ -68,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,23 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,16 +99,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -129,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -189,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -205,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -237,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/problemas_exame_calculo_vectorial.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -255,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/problemas_exame_calculo_vectorial.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -383,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -413,7 +426,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Razoa se son verdadeiras ou falsas as seguintes afirmacións:</h1>
+    <h1>Exercicios de exame</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -423,9 +436,12 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verifica-o-teorema-de-stokes-para-a-superficie">Verifica o teorema de Stokes para a superficie</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercicios de exame</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifica-o-teorema-de-stokes-para-a-superficie">Verifica o teorema de Stokes para a superficie</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-esa-superficie-rm-d-vec-s-pm-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-s-x-partial-u-frac-partial-s-y-partial-u-frac-partial-s-z-partial-v-frac-partial-s-x-partial-v-frac-partial-s-y-partial-v-frac-partial-s-z-partial-v-end-array-right-rm-d-u-rm-d-v">Para esa superficie
 $$
 {\rm d}\vec{S} = \pm \left|
@@ -434,8 +450,24 @@ $$
 \frac{\partial S_x}{\partial u} &amp; \frac{\partial S_y}{\partial u} &amp; \frac{\partial S_z}{\partial v} \
 \frac{\partial S_x}{\partial v} &amp; \frac{\partial S_y}{\partial v} &amp; \frac{\partial S_z}{\partial v}
 \end{array}
-\right| {\rm d}u{\rm d}v</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular">Calcular</a></li>
+\right| {\rm d}u{\rm d}v</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#por-outra-banda-vec-nabla-times-vec-f-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-phantom-f-partial-x-frac-partial-phantom-f-partial-y-frac-partial-phantom-f-partial-z-f-x-f-y-f-z-end-array-right">Por outra banda
+$$
+\vec{\nabla} \times \vec{F}  =
+\left|
+\begin{array}{ccc}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \
+\frac{\partial \phantom{F}}{\partial x} &amp; \frac{\partial \phantom{F}}{\partial y} &amp; \frac{\partial \phantom{F}}{\partial z} \
+F_x &amp; F_y &amp; F_z \
+\end{array}
+\right|</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-non-de-exame">Exercicios non de exame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular">Calcular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Calcular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Calcular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificar">Verificar</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -448,9 +480,11 @@ $$
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
-  <div class="cell docutils container">
+  <section id="exercicios-de-exame">
+<h1>Exercicios de exame<a class="headerlink" href="#exercicios-de-exame" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># general imports</span>
 <span class="o">%</span><span class="k">matplotlib</span> inline
@@ -472,7 +506,7 @@ $$
 </div>
 </div>
 <section id="razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions">
-<h1>Razoa se son verdadeiras ou falsas as seguintes afirmacións:<a class="headerlink" href="#razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions" title="Permalink to this heading">#</a></h1>
+<h2>Razoa se son verdadeiras ou falsas as seguintes afirmacións:<a class="headerlink" href="#razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
 \mathrm{a)}~\frac{2}{\pi} \leq  \int_0^{\frac{\pi}{2}} \frac{\sin x}{x} \mathrm{d}x.
@@ -488,7 +522,7 @@ x \leq \frac{\pi}{2} \Rightarrow \frac{2}{\pi} \leq \frac{1}{x} \Rightarrow \fra
 \]</div>
 </section>
 <section id="id1">
-<h1>Razoa se son verdadeiras ou falsas as seguintes afirmacións:<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h2>Razoa se son verdadeiras ou falsas as seguintes afirmacións:<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
 <p>b) A rexión <span class="math notranslate nohighlight">\(D\)</span> da figura ten unha área de 7 unidades. Sexa o campo vectorial <span class="math notranslate nohighlight">\({\vec{F}(x,y)=(-y,x)}\)</span>, entón</p>
 <div class="math notranslate nohighlight">
 \[
@@ -512,7 +546,7 @@ x \leq \frac{\pi}{2} \Rightarrow \frac{2}{\pi} \leq \frac{1}{x} \Rightarrow \fra
 e a afirmación é verdadeira.</p>
 </section>
 <section id="verifica-o-teorema-de-stokes-para-a-superficie">
-<h1>Verifica o teorema de Stokes para a superficie<a class="headerlink" href="#verifica-o-teorema-de-stokes-para-a-superficie" title="Permalink to this heading">#</a></h1>
+<h2>Verifica o teorema de Stokes para a superficie<a class="headerlink" href="#verifica-o-teorema-de-stokes-para-a-superficie" title="Link to this heading">#</a></h2>
 <div class="math notranslate nohighlight">
 \[
 \vec{S}(u,v) = (u \cos v, u \sin v, u),
@@ -529,6 +563,7 @@ $<span class="math notranslate nohighlight">\(
 onde \)</span>C$ é a curva que rodea a superficie percorrida segundo a prescrición da man dereita (ver a figura).</p>
 <a class="reference internal image-reference" href="../_images/figura3.png"><img alt="../_images/figura3.png" class="align-center" src="../_images/figura3.png" style="width: 200px;" /></a>
 </section>
+</section>
 <section class="tex2jax_ignore mathjax_ignore" id="para-esa-superficie-rm-d-vec-s-pm-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-s-x-partial-u-frac-partial-s-y-partial-u-frac-partial-s-z-partial-v-frac-partial-s-x-partial-v-frac-partial-s-y-partial-v-frac-partial-s-z-partial-v-end-array-right-rm-d-u-rm-d-v">
 <h1>Para esa superficie
 $$
@@ -538,7 +573,7 @@ $$
 \frac{\partial S_x}{\partial u} &amp; \frac{\partial S_y}{\partial u} &amp; \frac{\partial S_z}{\partial v} \
 \frac{\partial S_x}{\partial v} &amp; \frac{\partial S_y}{\partial v} &amp; \frac{\partial S_z}{\partial v}
 \end{array}
-\right| {\rm d}u{\rm d}v<a class="headerlink" href="#para-esa-superficie-rm-d-vec-s-pm-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-s-x-partial-u-frac-partial-s-y-partial-u-frac-partial-s-z-partial-v-frac-partial-s-x-partial-v-frac-partial-s-y-partial-v-frac-partial-s-z-partial-v-end-array-right-rm-d-u-rm-d-v" title="Permalink to this heading">#</a></h1>
+\right| {\rm d}u{\rm d}v<a class="headerlink" href="#para-esa-superficie-rm-d-vec-s-pm-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-s-x-partial-u-frac-partial-s-y-partial-u-frac-partial-s-z-partial-v-frac-partial-s-x-partial-v-frac-partial-s-y-partial-v-frac-partial-s-z-partial-v-end-array-right-rm-d-u-rm-d-v" title="Link to this heading">#</a></h1>
 <p>\pm \left|
 \begin{array}{ccc}
 \hat{i} &amp; \hat{j} &amp; \hat{k} \
@@ -550,24 +585,27 @@ $$
 $<span class="math notranslate nohighlight">\(
 Temos arbitrariedade para escoller a orientación da superficie. Se escollemos a da figura temos que tomar o signo
 negativo en \)</span>{\rm d}\vec{S}$.</p>
-<p>Por outra banda
-$<span class="math notranslate nohighlight">\(
-\vec{\nabla} \times \vec{F} =  \left|
-\begin{array}{ccc}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \
-\frac{\partial \phantom{F}}{\partial x} &amp; \frac{\partial \phantom{F}}{\partial y} &amp; \frac{\partial \phantom{F}}{\partial z} \\
-F_x &amp; F_y &amp; F_z
-\end{array}
-\right| =
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="por-outra-banda-vec-nabla-times-vec-f-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-phantom-f-partial-x-frac-partial-phantom-f-partial-y-frac-partial-phantom-f-partial-z-f-x-f-y-f-z-end-array-right">
+<h1>Por outra banda
+$$
+\vec{\nabla} \times \vec{F}  =
 \left|
 \begin{array}{ccc}
-\hat{i} &amp; \hat{j} &amp; \hat{k} \\
-\frac{\partial \phantom{F}}{\partial x} &amp; \frac{\partial \phantom{F}}{\partial y} &amp; \frac{\partial \phantom{F}}{\partial z} \\ 
+\hat{i} &amp; \hat{j} &amp; \hat{k} \
+\frac{\partial \phantom{F}}{\partial x} &amp; \frac{\partial \phantom{F}}{\partial y} &amp; \frac{\partial \phantom{F}}{\partial z} \
+F_x &amp; F_y &amp; F_z \
+\end{array}
+\right|<a class="headerlink" href="#por-outra-banda-vec-nabla-times-vec-f-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-phantom-f-partial-x-frac-partial-phantom-f-partial-y-frac-partial-phantom-f-partial-z-f-x-f-y-f-z-end-array-right" title="Link to this heading">#</a></h1>
+<p>\left|
+\begin{array}{ccc}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \
+\frac{\partial \phantom{F}}{\partial x} &amp; \frac{\partial \phantom{F}}{\partial y} &amp; \frac{\partial \phantom{F}}{\partial z} \
 z &amp; x &amp; y
 \end{array}
 \right| = \frac{\partial y}{\partial y} \hat{i} +  \frac{\partial z}{\partial z} \hat{j} +  \frac{\partial x}{\partial x} \hat{k}
 = (1,1,1),
-\)</span>$</p>
+$$</p>
 <p>e por tanto, coa prescrición escollida,</p>
 <div class="math notranslate nohighlight">
 \[
@@ -622,8 +660,36 @@ $<span class="math notranslate nohighlight">\(
 = \frac{1}{2}+1-\frac{\pi}{4}-\frac{1}{2}=1-\frac{\pi}{4}.
 \]</div>
 <p>Polo que queda verificado o teorema de Stokes para este problema.</p>
+<section id="exercicios-non-de-exame">
+<h2>Exercicios non de exame<a class="headerlink" href="#exercicios-non-de-exame" title="Link to this heading">#</a></h2>
 <section id="calcular">
-<h2>Calcular<a class="headerlink" href="#calcular" title="Permalink to this heading">#</a></h2>
+<h3>Calcular<a class="headerlink" href="#calcular" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\( \int\limits_Vz^2 dx\ dy\ dz \)</span>, onde <span class="math notranslate nohighlight">\(V\)</span> é a parte dunha esfera de raio 2 que resta tras sustraerlle un cilindro de raio 1.</p>
+<p>A figura ten esta forma</p>
+<a class="reference internal image-reference" href="https://i.stack.imgur.com/WDv4W.png"><img alt="https://i.stack.imgur.com/WDv4W.png" class="align-center" src="https://i.stack.imgur.com/WDv4W.png" style="width: 300px;" /></a>
+<p>con parametrización</p>
+<div class="math notranslate nohighlight">
+\[
+V=\{(x,y,z) \in \mathbb{R}^3 | x^2 + y^2 + z^2 \leq 4, \ \ x^2+y^2\geq 1\}.
+\]</div>
+<p>En coordenadas cilíndricas temos:</p>
+<div class="math notranslate nohighlight">
+\[
+r^2+z^2 \leq 4 \; \text{e} \; r^2\geq 1\Rightarrow  -\sqrt{3}\leq z \leq \sqrt{3}  \; \text{e} \; 1\leq r \leq \sqrt{4-z^2}.
+\]</div>
+<p>Co que</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\int\limits_Vz^2\ dx\ dy\ dz&amp;=\int_0^{2\pi}\int_{-\sqrt{3}}^\sqrt{3}\int\limits_1^{\sqrt{4-z^2}} z^2 r \cdot dr\ dz\ d\varphi\\
+&amp;=2\pi\int\limits_{-\sqrt{3}}^\sqrt{3}z^2\frac{1}{2}[(4-z^2)-1 ]dz\\
+&amp;=\pi\int\limits_{-\sqrt{3}}^\sqrt{3} (3z^2-z^4) dz=\pi[z^3-\frac{1}{5}z^5]_{-\sqrt{3}}^\sqrt{3}\\
+&amp;= \pi [(z^3(1-\frac{1}{5}z^2)]_{-\sqrt{3}}^\sqrt{3} = 2\pi 3^{\frac{3}{2}} \frac{2}{5} =\frac{12\sqrt{3}}{5}\pi
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="id2">
+<h3>Calcular<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
 <div class="math notranslate nohighlight">
 \[
 \int_S \bar{F}\cdot d\bar S
@@ -667,7 +733,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/edb0a67af6b6050c76a92cc52377bbe789bc06f7e52553c87d991614694ea882.png" src="../_images/edb0a67af6b6050c76a92cc52377bbe789bc06f7e52553c87d991614694ea882.png" />
+<img alt="../_images/5982512cf653246cbce3ab8a30c92ca28a837d341b0c1936ba3cff31e2310266.png" src="../_images/5982512cf653246cbce3ab8a30c92ca28a837d341b0c1936ba3cff31e2310266.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -679,7 +745,7 @@ $<span class="math notranslate nohighlight">\(
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">4</span><span class="o">-</span><span class="n">f2b26d5c28ee</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">gf</span><span class="o">.</span><span class="n">line3d</span>   <span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">cy</span><span class="p">,</span> <span class="n">cz</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="p">[</span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.4</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;black&#39;</span><span class="p">);</span>
 
 <span class="ne">NameError</span>: name &#39;cx&#39; is not defined
@@ -751,6 +817,121 @@ Dado que estamos integrando sobre círculos, transformamos a coordenadas polares
 =-\frac{11}{3}\pi
 \end{split}\]</div>
 </section>
+<section id="id3">
+<h3>Calcular<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<p>Verificar o teorema da diverxencia para o campo vectorial <span class="math notranslate nohighlight">\(\bf{F}\left({x,y,z} \right) = x{y^2}{\bf{i}} + y{x^2}{\bf{j }} + e{\bf{k}}\)</span> e a superficie S, limitada por <span class="math notranslate nohighlight">\(z = \sqrt {{x^2} + {y^2}}\)</span> e <span class="math notranslate nohighlight">\(z = 4\)</span>.</p>
+<p>A superficie está en coordenadas cilíndricas <span class="math notranslate nohighlight">\(z=r\)</span>, polo que, <span class="math notranslate nohighlight">\(\nabla\cdot{\bf F}=y^2+x^2=r^2\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+\int_V\nabla\cdot{\bf F}dv=\int_0^{2\pi}\int_0^4\int_0^zr^3drdzd\theta
+=\int_0^{2\pi}\int_0^4\dfrac{z^4}{4}dzd\theta=512\pi/5
+\]</div>
+<p>A parte da superficie do teorema da diverxencia: Para o cono: como <span class="math notranslate nohighlight">\(z=r\)</span>, o vector da supreficie en coordenadas cartesianas é <span class="math notranslate nohighlight">\({\bf r}=(u\cos v,u\sin v,u), 0\leq v\lt2\pi\)</span> e <span class="math notranslate nohighlight">\(0\lt u\lt4\)</span>. Por outra banda <span class="math notranslate nohighlight">\({\bf} F=(u^3\cos v\sin^2v,u^3\sin v\cos^2v,e)\)</span>. Para os vectores tanxentes:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf r}_u=\dfrac{\partial {\bf r}}{\partial u}=(\cos v,\sin v,1) \\
+{\bf r}_v=\dfrac{\partial {\bf r}}{\partial v}=(-u\sin v,u\cos v,0)\\
+\end{split}\]</div>
+<p>Necesitamos o vector normal apuntando cara fóra. Como <span class="math notranslate nohighlight">\({\bf r}_u\)</span> apunta a r crecente, <span class="math notranslate nohighlight">\({\bf r}_v\)</span> apunta no sentido antihorario e son ortogonais, a normal apuntando cara fóra é <span class="math notranslate nohighlight">\({\bf r}_v\times{\bf r}_u\)</span></p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf r}_v\times{\bf r}_u=(u\cos v,u\sin v,-u)~\text{e}~ d{\bf S}=(u\cos v,u\sin v,-u )dudv \\
+{\bf F}\cdot{\bf r}_v\times{\bf r}_u=2u^4\cos^2v\sin^2v-eu
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_{S_1}{\bf F}\cdot d{\bf S}=\int_{S_1}{\bf F}\cdot{\bf r}_v\times{\bf r}_ududv=\int_0^{ 2\pi}\int_0^4(2u^4\cos^2v\sin^2v-eu)dudv
+\]</div>
+<p>Para o disco: o vector da superficie é <span class="math notranslate nohighlight">\({\bf r}=(u\cos v,u\sin v,4)\)</span>, <span class="math notranslate nohighlight">\(0\leq v\lt2\pi\)</span> e <span class="math notranslate nohighlight">\(0\lt u\lt4\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf r}_u=\dfrac{\partial {\bf r}}{\partial u}=(\cos v,\sin v,0)\\
+{\bf r}_v=\dfrac{\partial {\bf r}}{\partial v}=(-u\sin v,u\cos v,0)
+\end{split}\]</div>
+<p>O vector normal que apunta cara a fóra é</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+{\bf r}_u\times{\bf r}_v=(0,0,u)~\text{e}~ d{\bf S}=(0,0,u)dudv \\
+{\bf F}\cdot{\bf r}_u\times{\bf r}_v=eu
+\end{split}\]</div>
+<div class="math notranslate nohighlight">
+\[
+\int_{S_2}{\bf F}\cdot d{\bf S}=\int_{S_2}{\bf F}\cdot{\bf r}_v\times{\bf r}_ududv=\int_0^{ 2\pi}\int_0^4eu\;dudv
+\]</div>
+<p>E para o fluxo total:</p>
+<div class="math notranslate nohighlight">
+\[
+\int_{S}{\bf F}\cdot d{\bf S}=\int_{S_1}{\bf F}\cdot d{\bf S}+\int_{S_2}{\bf F}\cdot d{\bf S}=\int_0^{2\pi}\int_0^42u^4\cos^2v\sin^2v\;dudv=512\pi/5
+\]</div>
+</section>
+<section id="verificar">
+<h3>Verificar<a class="headerlink" href="#verificar" title="Link to this heading">#</a></h3>
+<p>o teorema de Stokes para o campo vectorial
+<span class="math notranslate nohighlight">\(\vec{F} = (y, −x, xyz)\)</span>
+e a superficie aberta dada en coordenadas polares cilíndricas por <span class="math notranslate nohighlight">\(r + z = a\)</span>, con <span class="math notranslate nohighlight">\(z &gt; 0\)</span> e <span class="math notranslate nohighlight">\(a &gt; 0\)</span></p>
+<p>En primeiro lugar, enunciamos o teorema de Stokes:
+$<span class="math notranslate nohighlight">\(
+\oint_\Gamma \vec{F} \cdot d\vec{\Gamma} = \iint_S \nabla \times \vec{F} \cdot d\vec{S}
+\)</span>$</p>
+<p>Antes de comezar a calcular integrais, débese visualizar a xeometría do problema.
+Neste caso, S representa unha xeometría de cono, para a cal a altura é <span class="math notranslate nohighlight">\(a\)</span> e a súa base
+está centrada en <span class="math notranslate nohighlight">\((0,0,0)\)</span>, mentres que <span class="math notranslate nohighlight">\(\Gamma\)</span> representa o seu límite,
+é dicir, unha circunferencia cuxo raio é <span class="math notranslate nohighlight">\(a\)</span> e está centrada na orixe.</p>
+<p>Neste caso, a parte máis sinxela é o lado esquerdo, que se obtén inmediatamente
+(tendo en conta a relación entre <span class="math notranslate nohighlight">\((x,y)\)</span> e <span class="math notranslate nohighlight">\((r,\theta)\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\oint_\Gamma \vec{F} \cdot d\vec{\Gamma} = \int_0^{2\pi} \left( y ,
+ -x ,
+ xyz \right) \cdot \left(
+ -\sin(\theta),
+ \cos(\theta),
+ 0  \right) a d\theta = \int_0^{2\pi} \left(
+ a\sin(\theta),
+ -a\cos(\theta),
+ 0 \right) \cdot \left(
+ -\sin(\theta),
+ \cos(\theta),
+ 0 \right) a d\theta
+ \]</div>
+<p>O que leva a:
+$<span class="math notranslate nohighlight">\(
+\oint_\Gamma F \cdot d\Gamma = \int_0^{2\pi} -a^2 (\cos^2(\theta)+\sin^2(\theta)) d\theta = -2\pi a^2
+\)</span>$</p>
+<p>Queda por demostrar o lado dereito. Primeiro, comeza a calcular o rotacional do campo <span class="math notranslate nohighlight">\(\vec{F}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times \vec{F} = \left( 
+ xz ,
+ -yz ,
+ -2 \right) = \left( 
+ zr\cos(\theta) ,
+ -zr\sin(\theta),
+ -2  \right)
+ \]</div>
+<p>Unha vez calculado o rotacional, continuamos con <span class="math notranslate nohighlight">\(d\vec{S}\)</span>. Como temos un gráfico <span class="math notranslate nohighlight">\(z=f(x,y)=a-r = a - \sqrt{x^2+y^2}\)</span>, cúmprese</p>
+<div class="math notranslate nohighlight">
+\[
+\vec{n}=\left(-\frac{\partial{f}}{\partial{x}},-\frac{\partial{f}}{\partial{y}},1\right) = \left(\frac{x}{\sqrt{x^2+y^2}},\frac{y}{\sqrt{x^2+y^2}},1\right) = \left(\cos(\theta),\sin(\theta),1\right)
+\]</div>
+<p>Co que <span class="math notranslate nohighlight">\(d\vec{S} = \vec{n} dxdy = \left(\cos(\theta),\sin(\theta),1\right) r dz d\theta\)</span></p>
+<p>Unha vez que temos <span class="math notranslate nohighlight">\(\nabla \times \vec{F}\)</span> e <span class="math notranslate nohighlight">\(d\vec{S}\)</span>, podemos calcular o termo integral <span class="math notranslate nohighlight">\(\nabla \times \vec{F} \cdot d\vec{S}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\nabla \times \vec{F} \cdot d\vec{S} = [zr(\cos^2(\theta)-\sin^2(\theta))-2]rdzd\theta
+\]</div>
+<p>Este termo ten que ser avaliado en todo S. Podemos parametrizar S con <span class="math notranslate nohighlight">\(\theta\)</span> e <span class="math notranslate nohighlight">\(r\)</span> e lembrando que <span class="math notranslate nohighlight">\(r=a-z\)</span>, é dicir, <span class="math notranslate nohighlight">\(S= \left\{ (r,\theta,z) \vert 0 \leq z \leq a , 0 \leq \theta &lt; 2\pi, r = a-z\right\}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S \nabla \times \vec{F} \cdot d\vec{S} = \int_0^{2\pi} \int_0^a [z(a-z)(\cos^2(\theta)-\sin^2(\theta))-2] (a-z)dz d\theta
+\]</div>
+<p>Como <span class="math notranslate nohighlight">\(\int_0^{2\pi} (\cos^2(\theta)-\sin^2(\theta)) d\theta = 0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\iint_S \nabla \times \vec{F} \cdot d\vec{S} = \int_0^{2\pi} \int_0^a -2(a-z)dz d\theta = -2\pi a^2
+\]</div>
+</section>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -778,23 +959,21 @@ Dado que estamos integrando sobre círculos, transformamos a coordenadas polares
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -802,9 +981,12 @@ Dado que estamos integrando sobre círculos, transformamos a coordenadas polares
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#verifica-o-teorema-de-stokes-para-a-superficie">Verifica o teorema de Stokes para a superficie</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Exercicios de exame</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#razoa-se-son-verdadeiras-ou-falsas-as-seguintes-afirmacions">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">Razoa se son verdadeiras ou falsas as seguintes afirmacións:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#verifica-o-teorema-de-stokes-para-a-superficie">Verifica o teorema de Stokes para a superficie</a></li>
+</ul>
+</li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#para-esa-superficie-rm-d-vec-s-pm-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-s-x-partial-u-frac-partial-s-y-partial-u-frac-partial-s-z-partial-v-frac-partial-s-x-partial-v-frac-partial-s-y-partial-v-frac-partial-s-z-partial-v-end-array-right-rm-d-u-rm-d-v">Para esa superficie
 $$
 {\rm d}\vec{S} = \pm \left|
@@ -813,8 +995,24 @@ $$
 \frac{\partial S_x}{\partial u} &amp; \frac{\partial S_y}{\partial u} &amp; \frac{\partial S_z}{\partial v} \
 \frac{\partial S_x}{\partial v} &amp; \frac{\partial S_y}{\partial v} &amp; \frac{\partial S_z}{\partial v}
 \end{array}
-\right| {\rm d}u{\rm d}v</a><ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular">Calcular</a></li>
+\right| {\rm d}u{\rm d}v</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#por-outra-banda-vec-nabla-times-vec-f-left-begin-array-ccc-hat-i-hat-j-hat-k-frac-partial-phantom-f-partial-x-frac-partial-phantom-f-partial-y-frac-partial-phantom-f-partial-z-f-x-f-y-f-z-end-array-right">Por outra banda
+$$
+\vec{\nabla} \times \vec{F}  =
+\left|
+\begin{array}{ccc}
+\hat{i} &amp; \hat{j} &amp; \hat{k} \
+\frac{\partial \phantom{F}}{\partial x} &amp; \frac{\partial \phantom{F}}{\partial y} &amp; \frac{\partial \phantom{F}}{\partial z} \
+F_x &amp; F_y &amp; F_z \
+\end{array}
+\right|</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercicios-non-de-exame">Exercicios non de exame</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#calcular">Calcular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">Calcular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">Calcular</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#verificar">Verificar</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -839,6 +1037,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -865,8 +1064,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

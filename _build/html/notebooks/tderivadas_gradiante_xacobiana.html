@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Gradiente, matriz xacobiana, funcións diferenciables &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tderivadas_gradiante_xacobiana';</script>
@@ -70,6 +69,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="prev" title="Derivadas direccionais e funcións derivables" href="tderivadas_direccional_diferencial.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -77,23 +77,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -101,7 +94,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -109,16 +101,25 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -131,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -143,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -177,6 +189,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tintegral_metodos.html">Métodos de integración</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_2d.html">Integrais en dúas dimensións</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tintegral_3d.html">Integrais en varias dimensións</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_linha.html">Integral de liña</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -185,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -201,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -233,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tderivadas_gradiante_xacobiana.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -251,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tderivadas_gradiante_xacobiana.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -379,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -436,10 +453,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="gradiente-matriz-xacobiana-funcions-diferenciables">
-<h1>Gradiente, matriz xacobiana, funcións diferenciables<a class="headerlink" href="#gradiente-matriz-xacobiana-funcions-diferenciables" title="Permalink to this heading">#</a></h1>
+<h1>Gradiente, matriz xacobiana, funcións diferenciables<a class="headerlink" href="#gradiente-matriz-xacobiana-funcions-diferenciables" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -448,13 +465,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Mon Apr  1 00:10:38 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:01:23 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="obxectivos">
-<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Permalink to this heading">#</a></h2>
+<h2>Obxectivos<a class="headerlink" href="#obxectivos" title="Link to this heading">#</a></h2>
 <p>Presentar os conceptos de:</p>
 <ul class="simple">
 <li><p>gradiente e matriz xacobiana</p></li>
@@ -492,7 +509,7 @@ document.write(`
 </div>
 </section>
 <section id="gradiente">
-<h2>Gradiente<a class="headerlink" href="#gradiente" title="Permalink to this heading">#</a></h2>
+<h2>Gradiente<a class="headerlink" href="#gradiente" title="Link to this heading">#</a></h2>
 <p>Para unha función escalar diferenciable <span class="math notranslate nohighlight">\(f(x, y)\)</span>, demos a expansión de Taylor nun punto <span class="math notranslate nohighlight">\((x_0, y_0)\)</span> se movemos un vector <span class="math notranslate nohighlight">\((v _x, v_y)\)</span> no espazo orixe.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -534,7 +551,7 @@ f((x_0, y_0) + (v_x, v_y)) \simeq f(x_0, y_0) + \left(f'_x(x_0, y_0), \, f'_y (x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/746963ff653d536229720c674a2ff227e4b703155a7b0fe5a063a1aefa0dbbda.png" src="../_images/746963ff653d536229720c674a2ff227e4b703155a7b0fe5a063a1aefa0dbbda.png" />
+<img alt="../_images/4b2c5c71f0f547ebf66ffff29c144b093d3f0046d32d94fd954814fe1443712f.png" src="../_images/4b2c5c71f0f547ebf66ffff29c144b093d3f0046d32d94fd954814fe1443712f.png" />
 </div>
 </div>
 <p>Por suposto, o que vimos para funcións escalares bidimensionais é valido para calquera dimensión.</p>
@@ -596,7 +613,7 @@ f((x_0, y_0) + (v_x, v_y)) \simeq f(x_0, y_0) + \left(f'_x(x_0, y_0), \, f'_y (x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c09c8883d5bb2c55a99bc863fb41b6e1022f0664a6ecd480b0edc7f3d501c6b9.png" src="../_images/c09c8883d5bb2c55a99bc863fb41b6e1022f0664a6ecd480b0edc7f3d501c6b9.png" />
+<img alt="../_images/dd4b5e9348cc22f8de8a64f68bb8798e5bb6a54ca21552270e01b5b910d1532c.png" src="../_images/dd4b5e9348cc22f8de8a64f68bb8798e5bb6a54ca21552270e01b5b910d1532c.png" />
 </div>
 </div>
 <p>A seguinte cela permíteche debuxar o potencial dun conxunto de cargas. O debuxo corresponde a dúas cargas negativas situadas no eixe vertical separadas por 2 unidades.</p>
@@ -614,12 +631,12 @@ f((x_0, y_0) + (v_x, v_y)) \simeq f(x_0, y_0) + \left(f'_x(x_0, y_0), \, f'_y (x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ac8c98e92470f99d81fb61c30006caeb2687dbccca831ffd5d3cfa4d0362d417.png" src="../_images/ac8c98e92470f99d81fb61c30006caeb2687dbccca831ffd5d3cfa4d0362d417.png" />
+<img alt="../_images/e4bc9188ac222fc92902ad47d5b6bdac7b6357e4436bc930c436be18b729a6fe.png" src="../_images/e4bc9188ac222fc92902ad47d5b6bdac7b6357e4436bc930c436be18b729a6fe.png" />
 </div>
 </div>
 </section>
 <section id="matriz-xacobiana">
-<h2>Matriz Xacobiana<a class="headerlink" href="#matriz-xacobiana" title="Permalink to this heading">#</a></h2>
+<h2>Matriz Xacobiana<a class="headerlink" href="#matriz-xacobiana" title="Link to this heading">#</a></h2>
 <p>Unha función vectorial é diferenciable se e só se cada unha das súas funcións compoñentes é diferenciable.</p>
 <p>Sexa unha función vectorial, <span class="math notranslate nohighlight">\({\bf f}({\bf x})\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}^n \to \mathbb{R}^m\)</span>, que é diferenciable nun punto <span class="math notranslate nohighlight">\({\bf x }_0 \)</span></p>
 <p>cada unha das súas funcións compoñentes debe ser diferenciable, poñémolas unha debaixo da outra:</p>
@@ -725,12 +742,12 @@ f_m( {\bf x}_0 + {\bf v}) \approx f_m({\bf x}_0) + \sum_{i=1, n} \frac{\partial 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fb52accd0020ac25d84e4836120b61d7c03c820cceaa8949ec61c554a5286779.png" src="../_images/fb52accd0020ac25d84e4836120b61d7c03c820cceaa8949ec61c554a5286779.png" />
+<img alt="../_images/6448392b80bebafc5babaf6652501b70149ed53c956c909e43e9fe5313332226.png" src="../_images/6448392b80bebafc5babaf6652501b70149ed53c956c909e43e9fe5313332226.png" />
 </div>
 </div>
 </section>
 <section id="funcion-diferenciable">
-<h2>Función diferenciable<a class="headerlink" href="#funcion-diferenciable" title="Permalink to this heading">#</a></h2>
+<h2>Función diferenciable<a class="headerlink" href="#funcion-diferenciable" title="Link to this heading">#</a></h2>
 <p>Vimos como son as funcións diferenciables, pero como as definimos matemáticamente? Cando unha función será diferenciable?</p>
 <p>Sexa <span class="math notranslate nohighlight">\({\bf f}: D \subset \mathbb{R}^n \to \mathbb{R}^m\)</span>, dicimos que a función é <strong>diferenciable</strong> nun punto <span class="math notranslate nohighlight">\({\bf x}\)</span> interior a <span class="math notranslate nohighlight">\(D\)</span> se nunha bola centrada en <span class="math notranslate nohighlight">\({\bf x}\)</span> de raio <span class="math notranslate nohighlight">\(r\)</span> e para os vectores que satisfacen <span class="math notranslate nohighlight">\(\| {\bf v} \| &lt; r\)</span>,  existe unha <em>transformación lineal</em> <span class="math notranslate nohighlight">\({\bf T_x}: \mathbb{R}^n \to \mathbb{R}^m\)</span> e unha <em>función de erro</em>, <span class="math notranslate nohighlight">\({\bf E}:\mathbb{R}^n \to \mathbb{R}^m\)</span>,  <span class="math notranslate nohighlight">\({\bf E}({\bf x},{\bf v})\)</span>, tales que:</p>
 <div class="math notranslate nohighlight">
@@ -799,7 +816,7 @@ iv) \;\;\; f ({\bf x})/g ({\bf x}); \;\;\; {\text si } \; g({\bf x}) \not= 0\;\;
 \frac{\nabla f({\bf x}) g({\bf x}) - f({\bf x}) \nabla g({\bf x})}{g^2({\bf x})} 
 \]</div>
 <section id="condicion-suficiente-de-diferenciabilidade">
-<h3>Condición suficiente de diferenciabilidade<a class="headerlink" href="#condicion-suficiente-de-diferenciabilidade" title="Permalink to this heading">#</a></h3>
+<h3>Condición suficiente de diferenciabilidade<a class="headerlink" href="#condicion-suficiente-de-diferenciabilidade" title="Link to this heading">#</a></h3>
 <p>Se lembras que unha función real dunha dimensión, <span class="math notranslate nohighlight">\(f(x)\)</span>, era diferenciable, tiña expansión de Taylor, nun punto interior, <span class="math notranslate nohighlight">\(x\)</span>, se a súa derivada, <span class="math notranslate nohighlight">\(f'(x)\)</span>, era continua nun intervalo centrado nese punto <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>Agora, para as funcións escalares, cúmprese:</p>
 <p><em>Teorema</em> :</p>
@@ -813,7 +830,7 @@ iv) \;\;\; f ({\bf x})/g ({\bf x}); \;\;\; {\text si } \; g({\bf x}) \not= 0\;\;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c7643cd77c21cf3817d4470c11cb1866d3daf3afa2f0b3933849457487ce0f94.png" src="../_images/c7643cd77c21cf3817d4470c11cb1866d3daf3afa2f0b3933849457487ce0f94.png" />
+<img alt="../_images/c5f2c08af4a0a1846395b47cfbbed86eb2cd23550c5bf7028eec1469c0816c32.png" src="../_images/c5f2c08af4a0a1846395b47cfbbed86eb2cd23550c5bf7028eec1469c0816c32.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -824,14 +841,14 @@ iv) \;\;\; f ({\bf x})/g ({\bf x}); \;\;\; {\text si } \; g({\bf x}) \not= 0\;\;
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bcacd00279242e12bb2ef19eee1b5eb447bcbf7be6baa901fad073296e1efc12.png" src="../_images/bcacd00279242e12bb2ef19eee1b5eb447bcbf7be6baa901fad073296e1efc12.png" />
+<img alt="../_images/1e379f8f2e0ff2980f7052fa3f0df023eb6ab9dc9284903a0518a04b9c0cb5e5.png" src="../_images/1e379f8f2e0ff2980f7052fa3f0df023eb6ab9dc9284903a0518a04b9c0cb5e5.png" />
 </div>
 </div>
 <p><strong>Isto é todo por agora!</strong></p>
 </section>
 </section>
 <section id="apendices">
-<h2>Apendices<a class="headerlink" href="#apendices" title="Permalink to this heading">#</a></h2>
+<h2>Apendices<a class="headerlink" href="#apendices" title="Link to this heading">#</a></h2>
 <p><em>Proba</em> da condición suficiente de diferenciabilidade</p>
 <p>Demostrarémolo só en funcións escalares.</p>
 <p>Queremos verificar</p>
@@ -919,11 +936,10 @@ f({\bf x} + {\bf v}) =  f({\bf x}) + \nabla f({\bf x}) \, {\bf v} + \parallel {\
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="tderivadas_direccional_diferencial.html"
@@ -943,17 +959,16 @@ f({\bf x} + {\bf v}) =  f({\bf x}) + \nabla f({\bf x}) \, {\bf v} + \parallel {\
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -990,6 +1005,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -1016,8 +1032,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

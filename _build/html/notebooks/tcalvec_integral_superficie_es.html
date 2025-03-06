@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Integral de superficie &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_integral_superficie_es';</script>
@@ -68,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,23 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,16 +99,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -129,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -179,6 +193,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_green.html">Teorema de Green</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_rotdiv_conservativos.html">Operador Nabla. Campos conservativos</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tcalvec_integral_superficie.html">Integral de superficie</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tcalvec_stokes_gauss.html">Teorema de Stokes e Teorema de Gauss</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tfourier.html">Serie de Fourier</a></li>
 </ul>
 
     </div>
@@ -187,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tcalvec_integral_superficie_es.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -253,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_integral_superficie_es.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -381,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -438,10 +453,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="integral-de-superficie">
-<h1>Integral de superficie<a class="headerlink" href="#integral-de-superficie" title="Permalink to this heading">#</a></h1>
+<h1>Integral de superficie<a class="headerlink" href="#integral-de-superficie" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -450,13 +465,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Mon Apr 15 15:11:05 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Mar  6 17:00:54 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Link to this heading">#</a></h2>
 <p>Revisar la parametrización de superficies.</p>
 <p>Definir la integral de una función escalar y vectorial en una superficie.</p>
 <p>Mostrar algunos ejemplos sencillos.</p>
@@ -483,9 +498,9 @@ document.write(`
 </div>
 </section>
 <section id="integral-en-una-superficies">
-<h2>Integral en una superficies<a class="headerlink" href="#integral-en-una-superficies" title="Permalink to this heading">#</a></h2>
+<h2>Integral en una superficies<a class="headerlink" href="#integral-en-una-superficies" title="Link to this heading">#</a></h2>
 <section id="revision-de-parametrizacion-de-superficies">
-<h3>Revisión de parametrización de superficies.<a class="headerlink" href="#revision-de-parametrizacion-de-superficies" title="Permalink to this heading">#</a></h3>
+<h3>Revisión de parametrización de superficies.<a class="headerlink" href="#revision-de-parametrizacion-de-superficies" title="Link to this heading">#</a></h3>
 <p>Hemos visto con anterioridad que podemos parametrizar una superficie, <span class="math notranslate nohighlight">\({\bf \sigma}(u, v)\)</span>, de un espacio <span class="math notranslate nohighlight">\(\mathrm{R}^3\)</span> como una función vectorial definida en un región <span class="math notranslate nohighlight">\(R\)</span> de un espacio <span class="math notranslate nohighlight">\((u, v)\)</span> de <span class="math notranslate nohighlight">\(\mathrm{R}^2\)</span>.</p>
 <div class="math notranslate nohighlight">
 \[
@@ -511,7 +526,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0ac7cd4f4bc301e2035a8b1fee1e44c4f61b82220533d68753b1ed5aed163ae1.png" src="../_images/0ac7cd4f4bc301e2035a8b1fee1e44c4f61b82220533d68753b1ed5aed163ae1.png" />
+<img alt="../_images/62624a1e4298f4ba483ae4c6ca0295a485be830c5c8f1e362f42e9b1429da4a0.png" src="../_images/62624a1e4298f4ba483ae4c6ca0295a485be830c5c8f1e362f42e9b1429da4a0.png" />
 </div>
 </div>
 <p><em>Ejemplo</em>: Parametrización de una esfera centrada en el origen de radio <span class="math notranslate nohighlight">\(r\)</span>.</p>
@@ -532,7 +547,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88d9c7dd17229f6f383a83d27b2a64dc57a490e71ebf7b9f49d6225892d08911.png" src="../_images/88d9c7dd17229f6f383a83d27b2a64dc57a490e71ebf7b9f49d6225892d08911.png" />
+<img alt="../_images/90b8eff3bc96b4ab5346f762087ebca7876590b59082be3d2e69f2b7a5c1f2e9.png" src="../_images/90b8eff3bc96b4ab5346f762087ebca7876590b59082be3d2e69f2b7a5c1f2e9.png" />
 </div>
 </div>
 <p>La superficie se construye a partir de líneas maestras. Fijado un valor de <span class="math notranslate nohighlight">\(u = u'\)</span>, si recorremos <span class="math notranslate nohighlight">\(v\)</span> en su rango, <span class="math notranslate nohighlight">\([v_0, v_1]\)</span> obtenenos las líneas maestras a lo largo de <span class="math notranslate nohighlight">\(v\)</span>.</p>
@@ -562,13 +577,17 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:343: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">zfun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">phi</span><span class="p">,</span> <span class="n">z</span> <span class="p">:</span> <span class="n">z</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfsurface</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.6</span><span class="p">);</span>
+<span class="ne">----&gt; </span><span class="mi">9</span> <span class="n">gf</span><span class="o">.</span><span class="n">wfmasterlines</span><span class="p">(</span><span class="n">xfun</span><span class="p">,</span> <span class="n">yfun</span><span class="p">,</span> <span class="n">zfun</span><span class="p">,</span> <span class="n">phirange</span><span class="p">,</span> <span class="n">zrange</span><span class="p">,</span> <span class="n">ui</span> <span class="o">=</span> <span class="n">phii</span><span class="p">,</span> <span class="n">vj</span> <span class="o">=</span> <span class="n">zj</span><span class="p">);</span>
+
+<span class="ne">TypeError</span>: wfmasterlines() missing 1 required positional argument: &#39;axes&#39;
 </pre></div>
 </div>
-<img alt="../_images/dbd075b70a30fce21865612ae9ed487987d9870f0fe30122ab87f122e9c3282b.png" src="../_images/dbd075b70a30fce21865612ae9ed487987d9870f0fe30122ab87f122e9c3282b.png" />
-<img alt="../_images/b9a7d1fb157a552d16da6fd3c344038c35f4ce8f422e9168317b6dac10f1e52e.png" src="../_images/b9a7d1fb157a552d16da6fd3c344038c35f4ce8f422e9168317b6dac10f1e52e.png" />
-<img alt="../_images/ce3e99c11f2be8c1d5df9095636a0b33f825613b5f4e7a0ad8112bd5c97d920e.png" src="../_images/ce3e99c11f2be8c1d5df9095636a0b33f825613b5f4e7a0ad8112bd5c97d920e.png" />
+<img alt="../_images/89960ec87269839180eda1d9dc3b32b6aa09b7948bd03fe225c8a1ad6f3f32ef.png" src="../_images/89960ec87269839180eda1d9dc3b32b6aa09b7948bd03fe225c8a1ad6f3f32ef.png" />
 </div>
 </div>
 <p><em>Observa</em>: En la siguiente figura están marcadas dos de las líneas maestras de la esfera.</p>
@@ -591,13 +610,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:343: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/cc0370fd82d5e65d5c5d46417daf14c13008f1c42d4393cfe870c0b20d1e1d98.png" src="../_images/cc0370fd82d5e65d5c5d46417daf14c13008f1c42d4393cfe870c0b20d1e1d98.png" />
-<img alt="../_images/6bf6401bb7a6c6030f6a55a9de9908b68b69a988e21f957efe85f070512bbf2b.png" src="../_images/6bf6401bb7a6c6030f6a55a9de9908b68b69a988e21f957efe85f070512bbf2b.png" />
-<img alt="../_images/0587b50e33e749bf6de25f57233357b5587e7df337287accc34e205c0996cc0e.png" src="../_images/0587b50e33e749bf6de25f57233357b5587e7df337287accc34e205c0996cc0e.png" />
+<img alt="../_images/1320ba6d38d023c19f32effa48065b94f91049eb962a89a18804a9e4c8b4b737.png" src="../_images/1320ba6d38d023c19f32effa48065b94f91049eb962a89a18804a9e4c8b4b737.png" />
 </div>
 </div>
 <p>En un punto <span class="math notranslate nohighlight">\((u, v)\)</span> podemos obtenemos los vectores tangentes a las líneas en ese punto.</p>
@@ -641,11 +654,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:370: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = plt.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/e459164406b4854d28eb9ff5fbe9691994ceabeda8c377e6bcc86f1db25a2f8a.png" src="../_images/e459164406b4854d28eb9ff5fbe9691994ceabeda8c377e6bcc86f1db25a2f8a.png" />
+<img alt="../_images/6ccc7851bc6da296520906cc6c342233b1d0f80d489ec96b9d68e4de5b23ba5e.png" src="../_images/6ccc7851bc6da296520906cc6c342233b1d0f80d489ec96b9d68e4de5b23ba5e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -663,7 +672,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2aa111215282a429161b9b9107bcc17240c436cabfe3e9a22501683ad1d4ca98.png" src="../_images/2aa111215282a429161b9b9107bcc17240c436cabfe3e9a22501683ad1d4ca98.png" />
+<img alt="../_images/f5e4f2abe49db8d516d2303df4070925ad533dc375afd9d4557bc3a54914c408.png" src="../_images/f5e4f2abe49db8d516d2303df4070925ad533dc375afd9d4557bc3a54914c408.png" />
 </div>
 </div>
 <p><em>Cuestión:</em> ¿Es la siguiente superficie regular?</p>
@@ -683,7 +692,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/442102f9d87c4bacf0b02d4016db9ae0ebec38191452d9c571b79a17fa1f66e8.png" src="../_images/442102f9d87c4bacf0b02d4016db9ae0ebec38191452d9c571b79a17fa1f66e8.png" />
+<img alt="../_images/40b8a9c715fafe68a788ae6b96a04f9e72695bc7eec66b71233562626e2a934d.png" src="../_images/40b8a9c715fafe68a788ae6b96a04f9e72695bc7eec66b71233562626e2a934d.png" />
 </div>
 </div>
 <p>Si consideramos ahora en un punto <span class="math notranslate nohighlight">\((u, v)\)</span> los elementos diferenciales de arco en las dos líneas maestras son:</p>
@@ -743,7 +752,7 @@ S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}
 \]</div>
 </section>
 <section id="parametrizacion-de-la-superficie-de-una-grafica">
-<h3>Parametrización de la superficie de una gráfica.<a class="headerlink" href="#parametrizacion-de-la-superficie-de-una-grafica" title="Permalink to this heading">#</a></h3>
+<h3>Parametrización de la superficie de una gráfica.<a class="headerlink" href="#parametrizacion-de-la-superficie-de-una-grafica" title="Link to this heading">#</a></h3>
 <p>Podemos considerar la gráfica de una función <span class="math notranslate nohighlight">\(f(x, y)\)</span> definida en una reción <span class="math notranslate nohighlight">\(R\)</span> como la parametrización de una superficie con <span class="math notranslate nohighlight">\((x, y)\)</span></p>
 <div class="math notranslate nohighlight">
 \[
@@ -804,8 +813,7 @@ S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c2affb78666b6eb67eb33ef4fb1050be5cca7c4f764608f07ae314cef8fd51e6.png" src="../_images/c2affb78666b6eb67eb33ef4fb1050be5cca7c4f764608f07ae314cef8fd51e6.png" />
-<img alt="../_images/4dd87048a4831ab065c3a14f04880390fed8f995bc2a0263506299ee38f5e9a5.png" src="../_images/4dd87048a4831ab065c3a14f04880390fed8f995bc2a0263506299ee38f5e9a5.png" />
+<img alt="../_images/e6ce5d69f040a06e130c97d869e9dae37bc79d5d5b57b9c8c6a0c7da06102e58.png" src="../_images/e6ce5d69f040a06e130c97d869e9dae37bc79d5d5b57b9c8c6a0c7da06102e58.png" />
 </div>
 </div>
 <p><em>Ejercicio</em>: Verifica que <span class="math notranslate nohighlight">\(\gamma\)</span> es dicho ángulo para gráficas de planos</p>
@@ -831,13 +839,12 @@ S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gamma 0.7853981633974483 cos(gamma) 0.7071067811865476
 </pre></div>
 </div>
-<img alt="../_images/5e3de9770ca2e0a89f69be958bb55aa7dbfe7fe0a08ebc7e92a9bd7e64a23183.png" src="../_images/5e3de9770ca2e0a89f69be958bb55aa7dbfe7fe0a08ebc7e92a9bd7e64a23183.png" />
-<img alt="../_images/c3d73ac78a9589822b08ae7e0e455b33a748e5ca03069e1b199aaae778aaa4b3.png" src="../_images/c3d73ac78a9589822b08ae7e0e455b33a748e5ca03069e1b199aaae778aaa4b3.png" />
+<img alt="../_images/8e0e717c2d1d82534e54ea6aed4ebe8c6b4fe3547f55543b0b45484ff4229e3b.png" src="../_images/8e0e717c2d1d82534e54ea6aed4ebe8c6b4fe3547f55543b0b45484ff4229e3b.png" />
 </div>
 </div>
 </section>
 <section id="integral-de-una-funcion-escalar-en-una-superfice">
-<h3>Integral de una función escalar en una superfice<a class="headerlink" href="#integral-de-una-funcion-escalar-en-una-superfice" title="Permalink to this heading">#</a></h3>
+<h3>Integral de una función escalar en una superfice<a class="headerlink" href="#integral-de-una-funcion-escalar-en-una-superfice" title="Link to this heading">#</a></h3>
 <p>Sea <span class="math notranslate nohighlight">\(S\)</span> una superficie parametrizada con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> en una region <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((u, v)\)</span>, y <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> una función escalar definida en los puntos de la superficie. Llamamos integral de la función <span class="math notranslate nohighlight">\(f(x, y, z)\)</span> en la superficie <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> a:</p>
 <div class="math notranslate nohighlight">
 \[
@@ -857,7 +864,7 @@ S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/510c5b15786ea4337f9e672d3e7d7fd71681231fb4b94b8f3131669573b3bace.png" src="../_images/510c5b15786ea4337f9e672d3e7d7fd71681231fb4b94b8f3131669573b3bace.png" />
+<img alt="../_images/8b609da65cbab099fe2734e75796aea56faf7cc2305eef7da9256a18364f3d5d.png" src="../_images/8b609da65cbab099fe2734e75796aea56faf7cc2305eef7da9256a18364f3d5d.png" />
 </div>
 </div>
 <p>A partir de la superficie parametrizada:</p>
@@ -906,7 +913,7 @@ f(\sigma(r, \theta)) = \sqrt{ r^2 \cos^2 \theta + r^2 \sin^2 \theta + 1} = \sqr
 \]</div>
 </section>
 <section id="integral-de-una-funcion-vectorial-a-traves-de-una-superfice">
-<h3>Integral de una función vectorial a través de una superfice<a class="headerlink" href="#integral-de-una-funcion-vectorial-a-traves-de-una-superfice" title="Permalink to this heading">#</a></h3>
+<h3>Integral de una función vectorial a través de una superfice<a class="headerlink" href="#integral-de-una-funcion-vectorial-a-traves-de-una-superfice" title="Link to this heading">#</a></h3>
 <p>Sea <span class="math notranslate nohighlight">\(S\)</span> una superficie parametrizada con <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> en una region <span class="math notranslate nohighlight">\(R\)</span> de <span class="math notranslate nohighlight">\((u, v)\)</span>, y <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left(F_x, F_y, F_z \right)\)</span> una función vectorial definida en los puntos de la superficie.
 Llamamos integral de la función <span class="math notranslate nohighlight">\({\bf F}(x, y, z)\)</span> a través de la superficie <span class="math notranslate nohighlight">\(\sigma(u, v)\)</span> a:</p>
 <div class="math notranslate nohighlight">
@@ -933,12 +940,7 @@ Llamamos integral de la función <span class="math notranslate nohighlight">\({\
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/Library/CloudStorage/OneDrive-UniversidadedeSantiagodeCompostela/Docencia/PCD_PTU/MM3/2324/USC-MMIII/notebooks/graph_utils.py:174: MatplotlibDeprecationWarning: Calling gca() with keyword arguments was deprecated in Matplotlib 3.4. Starting two minor releases later, gca() will take no keyword arguments. The gca() function should only be used to get the current axes, or if no axes exist, create new axes with default keyword arguments. To create a new axes with non-default arguments, use plt.axes() or plt.subplot().
-  ax = fig.gca(projection=&#39;3d&#39;)
-</pre></div>
-</div>
-<img alt="../_images/7eab0a5e01f73f2b6f389ba94c2fbdb3fe32a58ab11b92b9398b7f0f48bf9da4.png" src="../_images/7eab0a5e01f73f2b6f389ba94c2fbdb3fe32a58ab11b92b9398b7f0f48bf9da4.png" />
-<img alt="../_images/17b8de2654fbd9135ea0421d44ca9f4172bd895f36c5affa5b6fa5fe3812a494.png" src="../_images/17b8de2654fbd9135ea0421d44ca9f4172bd895f36c5affa5b6fa5fe3812a494.png" />
+<img alt="../_images/d3308971f761751cc01a77e63a0287f99d5476c6e839e9347db932e028fdcabd.png" src="../_images/d3308971f761751cc01a77e63a0287f99d5476c6e839e9347db932e028fdcabd.png" />
 </div>
 </div>
 <p>Vimos antes que:</p>
@@ -996,23 +998,21 @@ Llamamos integral de la función <span class="math notranslate nohighlight">\({\
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1049,6 +1049,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -1075,8 +1076,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>

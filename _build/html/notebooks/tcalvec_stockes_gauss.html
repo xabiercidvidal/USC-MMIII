@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Teorema de Stockes y Teorema de Gauss &#8212; Métodos Matemáticos III - USC</title>
   
@@ -15,52 +14,52 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
-  <link href="../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
-
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
-  
+  <!-- So that users can add custom icons -->
+  <script src="../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks/tcalvec_stockes_gauss';</script>
@@ -68,6 +67,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="search" title="Search" href="../search.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
   </head>
   
   
@@ -75,23 +75,16 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+  <div id="pst-scroll-pixel-helper"></div>
   
-  <input type="checkbox"
-          class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
   
-  <div class="search-button__wrapper">
-    <div class="search-button__overlay"></div>
-    <div class="search-button__search-container">
+  <dialog id="pst-search-dialog">
+    
 <form class="bd-search d-flex align-items-center"
       action="../search.html"
       method="get">
@@ -99,7 +92,6 @@ const thebe_selector_output = ".output, .cell_output"
   <input type="search"
          class="form-control"
          name="q"
-         id="search-input"
          placeholder="Search this book..."
          aria-label="Search this book..."
          autocomplete="off"
@@ -107,16 +99,27 @@ const thebe_selector_output = ".output, .cell_output"
          autocapitalize="off"
          spellcheck="false"/>
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
-</form></div>
-  </div>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
       
-      <div class="bd-sidebar-primary bd-sidebar">
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
         
 
   
@@ -129,9 +132,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../intro.html">
+  
   
   
   
@@ -141,12 +148,19 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../_static/logo.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Métodos Matemáticos III - USC - Home"/>
+    <img src="../_static/logo.png" class="logo__image only-dark pst-js-only" alt="Métodos Matemáticos III - USC - Home"/>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -189,14 +203,19 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
   </div>
-  
-  <div id="rtd-footer-container"></div>
 
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -205,14 +224,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -237,14 +256,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://mybinder.org/v2/gh/xabiercidvidal/USC-MMIII/main?urlpath=tree/notebooks/tcalvec_stockes_gauss.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onBinder"
+   title="Launch on Binder"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_binder.svg">
+    <img alt="Binder logo" src="../_static/images/logo_binder.svg">
   </span>
 <span class="btn__text-container">Binder</span>
 </a>
@@ -255,14 +274,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/xabiercidvidal/USC-MMIII/blob/main/notebooks/tcalvec_stockes_gauss.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -383,26 +402,20 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
-<script>
-document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
-  </button>
-`);
-</script>
 
-<script>
-document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-  </button>
-`);
-</script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -441,10 +454,10 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="teorema-de-stockes-y-teorema-de-gauss">
-<h1>Teorema de Stockes y Teorema de Gauss<a class="headerlink" href="#teorema-de-stockes-y-teorema-de-gauss" title="Permalink to this heading">#</a></h1>
+<h1>Teorema de Stockes y Teorema de Gauss<a class="headerlink" href="#teorema-de-stockes-y-teorema-de-gauss" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
@@ -453,13 +466,13 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Sat Apr 27 15:33:07 2024
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Mar  6 17:01:00 2025
 </pre></div>
 </div>
 </div>
 </div>
 <section id="objectivos">
-<h2>Objectivos<a class="headerlink" href="#objectivos" title="Permalink to this heading">#</a></h2>
+<h2>Objectivos<a class="headerlink" href="#objectivos" title="Link to this heading">#</a></h2>
 <p>Extender el teorema de Green a 3D. Teorema de Stockes.</p>
 <p>Extender el teorema de la divergencia a 3D. Teorema de Gauss.</p>
 <p>Mostrar algunos ejemplos sencillos.</p>
@@ -486,9 +499,9 @@ document.write(`
 </div>
 </section>
 <section id="teorema-de-stockes">
-<h2>Teorema de Stockes<a class="headerlink" href="#teorema-de-stockes" title="Permalink to this heading">#</a></h2>
+<h2>Teorema de Stockes<a class="headerlink" href="#teorema-de-stockes" title="Link to this heading">#</a></h2>
 <section id="superficies-orientables">
-<h3>Superficies orientables<a class="headerlink" href="#superficies-orientables" title="Permalink to this heading">#</a></h3>
+<h3>Superficies orientables<a class="headerlink" href="#superficies-orientables" title="Link to this heading">#</a></h3>
 <p>Una superficie es orientable si tiene dos caras, por ejemplo, una hoja de papel.</p>
 <p>Fíjare en la siguiente figura, es una cinta de Moebius y solo tiene una cara.</p>
 <a class="reference internal image-reference" href="../_images/escher-moebius.jpg"><img alt="../_images/escher-moebius.jpg" src="../_images/escher-moebius.jpg" style="width: 300px;" /></a>
@@ -517,8 +530,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
-<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
+<img alt="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" src="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" />
+<img alt="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" src="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" />
 </div>
 </div>
 <p><strong>El teorema de Stockes</strong> es la generalización del de Green a 3 dimensiones.</p>
@@ -637,7 +650,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" src="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" />
+<img alt="../_images/3e32860a9ef5c9332a08ff0ba0222e7b3b532c08e24b1418f8d39b6380279b49.png" src="../_images/3e32860a9ef5c9332a08ff0ba0222e7b3b532c08e24b1418f8d39b6380279b49.png" />
 </div>
 </div>
 <p>Considera la integral por los lados verticales en los que solo partipa <span class="math notranslate nohighlight">\(F_y\)</span>. Nota que el lado de la derecha entra con un (+) y el de la izquierda con un (-) en la circulación. La integral podemos aproximarla:</p>
@@ -682,9 +695,9 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/201e003656486a50753b36d7d51295235f61e5b2b0b5545ffa3d4b0203905fd9.png" src="../_images/201e003656486a50753b36d7d51295235f61e5b2b0b5545ffa3d4b0203905fd9.png" />
-<img alt="../_images/5b157a79e768e72aa4e32b880e4b271b4fb40497642332fd910f29a196a79e27.png" src="../_images/5b157a79e768e72aa4e32b880e4b271b4fb40497642332fd910f29a196a79e27.png" />
-<img alt="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" src="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" />
+<img alt="../_images/ce4ecb552f4ca28028f711ee3957ceaabe36c6fc9dc5098d96694b521dd888a5.png" src="../_images/ce4ecb552f4ca28028f711ee3957ceaabe36c6fc9dc5098d96694b521dd888a5.png" />
+<img alt="../_images/8c72327a36fcf05f1f0a80e9c89ba009790a3333e837ffa193fb7a1c843d990d.png" src="../_images/8c72327a36fcf05f1f0a80e9c89ba009790a3333e837ffa193fb7a1c843d990d.png" />
+<img alt="../_images/0b1cd8526b37b318572dfa41a868d5917589dc5e51a848baba8204b6b0249885.png" src="../_images/0b1cd8526b37b318572dfa41a868d5917589dc5e51a848baba8204b6b0249885.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -708,8 +721,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" src="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" />
-<img alt="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" src="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" />
+<img alt="../_images/f71a6af81aff17277b17b9a62ee2c766c7975ef836117fd50ac563c4e9a9780d.png" src="../_images/f71a6af81aff17277b17b9a62ee2c766c7975ef836117fd50ac563c4e9a9780d.png" />
+<img alt="../_images/24338cd746e30aa771d44293f66c71400174532120787f8985dfff1c3054de97.png" src="../_images/24338cd746e30aa771d44293f66c71400174532120787f8985dfff1c3054de97.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -721,8 +734,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" src="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" />
-<img alt="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" src="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" />
+<img alt="../_images/e0e8c7dc22b6436ffd63a63033d982eddfedab32e3ccbf8d2da0be9a5350f700.png" src="../_images/e0e8c7dc22b6436ffd63a63033d982eddfedab32e3ccbf8d2da0be9a5350f700.png" />
+<img alt="../_images/bf130c0754a5c82337217595b482fc2078d58e420799a98ca6e941795ddd203e.png" src="../_images/bf130c0754a5c82337217595b482fc2078d58e420799a98ca6e941795ddd203e.png" />
 </div>
 </div>
 <p>Recordemos que la superficie tiene como base un disco de radio unidad y la intersección con el plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
@@ -835,8 +848,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
-<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
+<img alt="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" src="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" />
+<img alt="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" src="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -862,10 +875,10 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" src="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" />
-<img alt="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" src="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" />
-<img alt="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" src="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" />
-<img alt="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" src="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" />
+<img alt="../_images/090d3f203e042ab8bcc87fb712187c74247991c62797d1d97c2736b4c6021a5c.png" src="../_images/090d3f203e042ab8bcc87fb712187c74247991c62797d1d97c2736b4c6021a5c.png" />
+<img alt="../_images/92dd0f4da295565698583f5a2eb3f423c86a85fd1076ca61062484213411f304.png" src="../_images/92dd0f4da295565698583f5a2eb3f423c86a85fd1076ca61062484213411f304.png" />
+<img alt="../_images/808fa1927a1396f42cd8c58c0a40b147993e120a86c6d4175749f012018ca967.png" src="../_images/808fa1927a1396f42cd8c58c0a40b147993e120a86c6d4175749f012018ca967.png" />
+<img alt="../_images/23298490e4fc01f5bce0ab9d9a5b6ce6435d6175d04a73378a446e5b9473bdd8.png" src="../_images/23298490e4fc01f5bce0ab9d9a5b6ce6435d6175d04a73378a446e5b9473bdd8.png" />
 </div>
 </div>
 <p>Parametrizamos la superficie como una gráfica:</p>
@@ -923,7 +936,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </section>
 </section>
 <section id="teorema-de-strogradski-gauss">
-<h2>Teorema de Strogradski-Gauss<a class="headerlink" href="#teorema-de-strogradski-gauss" title="Permalink to this heading">#</a></h2>
+<h2>Teorema de Strogradski-Gauss<a class="headerlink" href="#teorema-de-strogradski-gauss" title="Link to this heading">#</a></h2>
 <p>El teorema de Gauss corresponde a la extensión del teorema de la divergencia a 3 dimensiones.</p>
 <p><strong>Teorema</strong>: Sea un volumen regular <span class="math notranslate nohighlight">\(V\)</span>, limitado por una superficie cerrada <span class="math notranslate nohighlight">\(S\)</span>, y sea un campo vectorial con derivadas primeras continuas <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = \left( F_x, F_y, F_z \right)\)</span>, se cumple:</p>
 <div class="math notranslate nohighlight">
@@ -955,8 +968,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" src="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" />
-<img alt="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" src="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" />
+<img alt="../_images/b3936f779ba2e36d252888c83a5e69811b5f984c41615c1defc361d5c23d496c.png" src="../_images/b3936f779ba2e36d252888c83a5e69811b5f984c41615c1defc361d5c23d496c.png" />
+<img alt="../_images/8d70aa333fe47ffe3132e03d5676d9f3664c9920d5229cd56594568586dde7a8.png" src="../_images/8d70aa333fe47ffe3132e03d5676d9f3664c9920d5229cd56594568586dde7a8.png" />
 </div>
 </div>
 <p>La integral</p>
@@ -1014,8 +1027,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" src="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" />
-<img alt="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" src="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" />
+<img alt="../_images/92bfc45d7dd364f3698f89877bd6697d50eb4c8d9dd83177ceb661a04f01ab1a.png" src="../_images/92bfc45d7dd364f3698f89877bd6697d50eb4c8d9dd83177ceb661a04f01ab1a.png" />
+<img alt="../_images/d2a2d8b738d4bb9aaecfe3e94cf15c3061c328dd34e08b20d4d5b9263ea1b8d0.png" src="../_images/d2a2d8b738d4bb9aaecfe3e94cf15c3061c328dd34e08b20d4d5b9263ea1b8d0.png" />
 </div>
 </div>
 <p>a) la divergencia
@@ -1082,7 +1095,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 = z \Big|_{-1}^{+1} \phi \Big|_0^{2\pi} \frac{r^4}{4} \Big|_0^1 = \pi
 \]</div>
 <section id="aun-hay-mas">
-<h3>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Permalink to this heading">#</a></h3>
+<h3>¡Aún hay más!<a class="headerlink" href="#aun-hay-mas" title="Link to this heading">#</a></h3>
 <p>Carl Friedrich <a class="reference external" href="https://en.wikipedia.org/wiki/Carl_Friedrich_Gauss">Gauss</a> fue uno de las grandes matemáticos de la historia, con importantes contribuciones en Física, en Electromagnetismo y en Estadistica. La probabilidad normal, con la que ocurren casi todos los fenémonos de medida, sigue se ley de Gauss.</p>
 <a class="reference internal image-reference" href="../_images/gauss.jpg"><img alt="../_images/gauss.jpg" src="../_images/gauss.jpg" style="width: 200px;" /></a>
 </section>
@@ -1114,23 +1127,21 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer d-print-none">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1168,6 +1179,7 @@ By José Ángel Hernando Morata, X. Cid Vidal
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright USC - J.A. Hernando, X. Cid Vidal - 2024.
@@ -1194,8 +1206,8 @@ By José Ángel Hernando Morata, X. Cid Vidal
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script defer src="../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
 
   <footer class="bd-footer">
   </footer>
