@@ -466,7 +466,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:02:04 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Mar  7 13:56:44 2025
 </pre></div>
 </div>
 </div>
@@ -494,6 +494,24 @@
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Javascript</span>
+
+<span class="c1">## potential fix to display latex in google colab</span>
+<span class="k">def</span> <span class="nf">fix_mathjax</span><span class="p">():</span>
+    <span class="k">if</span> <span class="s2">&quot;google.colab&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">Javascript</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">            MathJax.Hub.Queue([&quot;setRenderer&quot;, MathJax.Hub, &quot;CommonHTML&quot;]);</span>
+<span class="s2">            MathJax.Hub.Queue([&quot;Rerender&quot;, MathJax.Hub]);</span>
+<span class="s2">        &quot;&quot;&quot;</span><span class="p">))</span>
+
+<span class="n">fix_mathjax</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
@@ -555,10 +573,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Riemann Sum 1.99990
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Riemann Sum 1.99444
 </pre></div>
 </div>
-<img alt="../_images/901a0fd625ab4440d785ec2652a2870e30e2e304168df673b20320ab0adbe318.png" src="../_images/901a0fd625ab4440d785ec2652a2870e30e2e304168df673b20320ab0adbe318.png" />
+<img alt="../_images/39169179e586a1f6bab602bce4d4d8c215b3c028700944b986562a425c244b77.png" src="../_images/39169179e586a1f6bab602bce4d4d8c215b3c028700944b986562a425c244b77.png" />
 </div>
 </div>
 <p>Na seguinte cela estudamos a evolución da suma de Riemann para particións regulares cada vez máis finas.</p>
@@ -573,7 +591,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f3ecd2ce497a59bc39c5eaa824e945db3b2cfc872f235dcf3017e2fd0786e8b5.png" src="../_images/f3ecd2ce497a59bc39c5eaa824e945db3b2cfc872f235dcf3017e2fd0786e8b5.png" />
+<img alt="../_images/c1803f853796cde5a4bcdc6bf8fc7cca45fbaf20d10ff32c932ad0dac6f0cdee.png" src="../_images/c1803f853796cde5a4bcdc6bf8fc7cca45fbaf20d10ff32c932ad0dac6f0cdee.png" />
 </div>
 </div>
 <p>Comprobamos que a suma de Riemann para particións cada vez máis finas converxe a un determinado valor <span class="math notranslate nohighlight">\(S\)</span>.</p>
@@ -657,16 +675,29 @@ F(x) = \int_a^x f(x) \, \mathrm{d}x
 <p>Polo teorema anterior <span class="math notranslate nohighlight">\(F'(x)=f(x)\)</span>, ou <span class="math notranslate nohighlight">\(F(x)\)</span> é unha primitiva de <span class="math notranslate nohighlight">\(f(x)\)</span>.</p>
 <p>Dúas primitivas difiren por unha constante <span class="math notranslate nohighlight">\(C\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-F(a) = P(a) +C = 0 \\
+\[
+F(a) = P(a) + C = 0 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 F(b) = P(b) + C
-\end{split}\]</div>
+\]</div>
 <p>logo:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-C = - P(a) \\
+\[
+C = - P(a) 
+\]</div>
+<div class="math notranslate nohighlight">
+\[
 F(b) = P(b) - P(a)
-\end{split}\]</div>
+\]</div>
+<p><strong>Corolario</strong>: Sexa <span class="math notranslate nohighlight">\( F(x) = \int_{a}^{\phi(x)} f(t) \, dt \)</span>, e sexa <span class="math notranslate nohighlight">\( \phi(x) \)</span> derivable en <span class="math notranslate nohighlight">\( c \)</span> e <span class="math notranslate nohighlight">\( f\)</span> continua en <span class="math notranslate nohighlight">\( \phi(c)\)</span>.<br />
+Entón</p>
+<div class="math notranslate nohighlight">
+\[
+F'(c) = f(\phi(c)) \cdot \phi'(c)
+\]</div>
+<p><em>Demostración:</em> Pola regra da cadea e primeiro teorema fundamental do cálculo.</p>
 </section>
 </section>
 </section>
