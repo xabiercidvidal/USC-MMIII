@@ -479,7 +479,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Mar  7 13:56:51 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Mar 11 16:47:34 2025
 </pre></div>
 </div>
 </div>
@@ -527,11 +527,11 @@ F(x) = \int_a^x f(x) \, \mathrm{d}x \;\; \Rightarrow \;\; F'(x) = f(x)
 <p>Integrais inmediatas triviais</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\int x^n \, \mathrm{d}x = \frac{1}{n+1} x^{n+1}, \, \mathrm{si} \, n \ne -1,\\
+\int x^n \, \mathrm{d}x = \frac{1}{n+1} x^{n+1}, \, \mathrm{se} \, n \ne -1,\\
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-\int e^x \, \mathrm{d}x = e^x , \; \int \frac{1}{x} \, \mathrm{d}x = \log x, \, \mathrm{si} \, x \gt 0 \\
+\int e^x \, \mathrm{d}x = e^x , \; \int \frac{1}{x} \, \mathrm{d}x = \log x, \, \mathrm{se} \, x \gt 0 \\
 \end{split}\]</div>
 <div class="math notranslate nohighlight">
 \[
@@ -542,7 +542,7 @@ F(x) = \int_a^x f(x) \, \mathrm{d}x \;\; \Rightarrow \;\; F'(x) = f(x)
 <p>Outras integrais inmediatas non tan triviais:</p>
 <div class="math notranslate nohighlight">
 \[
-\int \frac{1}{1+x^2} \, \mathrm{d}x = \arctan x, \; \int \frac{1}{\sqrt{1-x^2}} \, \mathrm{d}x = \arcsin x, \, \mathrm{si} \, -1 \lt x \lt 1,
+\int \frac{1}{1+x^2} \, \mathrm{d}x = \arctan x, \; \int \frac{1}{\sqrt{1-x^2}} \, \mathrm{d}x = \arcsin x, \, \mathrm{se} \, -1 \lt x \lt 1,
 \]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -577,15 +577,12 @@ f(x) \, g(x) = \int \left[f(x) \, g(x)\right]' \, \mathrm{d}x = \int f'(x) \, g(
 \]</div>
 <p><em>Exercicio:</em> Calcula</p>
 <div class="math notranslate nohighlight">
-\[
-\int x \, e^x \, \mathrm{d}x
-\]</div>
+\[ \int x \sin(x) \, \mathrm{d}x \]</div>
 <p><em>Solución:</em></p>
-<p>tomamos: <span class="math notranslate nohighlight">\(f(x) = x, \; g'(x) = e^x\)</span>, así <span class="math notranslate nohighlight">\(f'(x) = 1, \; g(x) = e^x\)</span>, entón:</p>
+<p>tomamos: <span class="math notranslate nohighlight">\(f(x) = x, \; g'(x) = \sin(x)\)</span>, así <span class="math notranslate nohighlight">\(f'(x) = 1, \; g(x) = -\cos(x)\)</span>, entón:</p>
 <div class="math notranslate nohighlight">
 \[
-\int x \, e^x \, \mathrm{d}x = x \, e^x - \int e^x \mathrm{dx} = x \, e^x - e^x  = e^x \, (x - 1).
-\]</div>
+\int x \sin(x) \, dx = x (-\cos(x)) - \int (-\cos(x)) \, dx  = -x \cos(x) + \sin(x) + C \]</div>
 </section>
 <section id="integrais-por-substitucion">
 <h2>Integrais por substitución<a class="headerlink" href="#integrais-por-substitucion" title="Link to this heading">#</a></h2>
@@ -602,45 +599,45 @@ F(g(x))' = F'(g(x)) \, f'(x) = f(g(x)) \, g'(x)
 <p><em>Exercicio</em>: Calcula</p>
 <div class="math notranslate nohighlight">
 \[
-\int \frac{1}{x \log x} \mathrm{d}x 
+\int (2x e^{x^2}) \, \mathrm{d}x
 \]</div>
 <p><em>Solución</em>:</p>
 <p>Se tomamos:</p>
 <div class="math notranslate nohighlight">
 \[
-f(x) = \frac{1}{x}, \; g'(x) = \frac{1}{x} \Rightarrow F(x) = \log(x), \, g(x) = \log(x)
+f(x) = e^x, \; g'(x) = 2x \Rightarrow F(x) = e^x, \, g(x) = x^2
 \]</div>
 <p>Polo tanto:</p>
 <div class="math notranslate nohighlight">
 \[
-f(g(x)) \, g'(x) = \frac{1}{x\log x}
+f(g(x)) \, g'(x) = 2x e^{x^2}
 \]</div>
 <div class="math notranslate nohighlight">
 \[
-\int \frac{1}{x \log x} \mathrm{d}x = \log (\log x)
+\int (2x e^{x^2}) \, \mathrm{d}x = e^{x^2} +C
 \]</div>
 <p>De forma equivalente podemos facer o seguinte cambio de variable:</p>
 <div class="math notranslate nohighlight">
 \[
- u = \log x \Rightarrow \mathrm{d}u = \frac{1}{x} \, \mathrm{d}x
+ u = x^2 \Rightarrow \mathrm{d}u = 2x \, \mathrm{d}x
  \]</div>
 <p>Polo tanto</p>
 <div class="math notranslate nohighlight">
 \[
- \int \frac{1}{x \log x} \, \mathrm{d}x = \int \frac{1}{u} \, \mathrm{d}u = \log u = \log(\log x)
+\int (2x e^{x^2}) \, \mathrm{d}x = \int e^u \, \mathrm{d}u = e^u + C = e^{x^2}+C
  \]</div>
 <p>Na seguinte cela verificaremos a integral con <em>SymPy</em> .</p>
 <p><em>SymPy</em> é un módulo <em>de Python</em> que nos permite calcular derivadas, integrais, etc con cálculo simbólico.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">sp</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
-<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;1/(x*log(x))&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
+<span class="n">sp</span><span class="o">.</span><span class="n">integrate</span><span class="p">(</span><span class="s2">&quot;2*x*exp(x^2)&quot;</span><span class="p">,</span> <span class="n">x</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_latex math notranslate nohighlight">
-\[\displaystyle \log{\left(\log{\left(x \right)} \right)}\]</div>
+\[\displaystyle e^{x^{2}}\]</div>
 </div>
 </div>
 </section>
@@ -1085,16 +1082,16 @@ Q_m(x) = x^m + b_{m-1} x^{m-1} + \dots + b_{0}
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "my-local-env"
         },
         kernelOptions: {
-            name: "python3",
+            name: "my-local-env",
             path: "./notebooks"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'my-local-env'</script>
 
                 </article>
               
