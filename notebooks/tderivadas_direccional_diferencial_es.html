@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -460,13 +460,13 @@
 <h1>Derivada direccional y funciones diferenciables<a class="headerlink" href="#derivada-direccional-y-funciones-diferenciables" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Mar  6 17:01:13 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Sat Mar 15 23:55:35 2025
 </pre></div>
 </div>
 </div>
@@ -490,12 +490,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -523,7 +523,7 @@ que pasa por el origen y que tiene pendiente <span class="math notranslate nohig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" src="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" />
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
 </div>
 </div>
 <p>La siguiente figura muestra los conjuntos de nivel del plano, que son rectas.</p>
@@ -543,7 +543,7 @@ que pasa por el origen y que tiene pendiente <span class="math notranslate nohig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ff2375035184c132bbb8818f24e7b1e33d0eda7ba828aef858229d192f4b6c5.png" src="../_images/8ff2375035184c132bbb8818f24e7b1e33d0eda7ba828aef858229d192f4b6c5.png" />
+<img alt="../_images/2a1e29396e0bd70aa29057d9b618afa0ea00e103af124735fbda6387ddbeef68.png" src="../_images/2a1e29396e0bd70aa29057d9b618afa0ea00e103af124735fbda6387ddbeef68.png" />
 </div>
 </div>
 <p>Has podido comprobar que la pendiente cambia con el vector <span class="math notranslate nohighlight">\({\bf v}\)</span>.</p>
@@ -561,8 +561,8 @@ que pasa por el origen y que tiene pendiente <span class="math notranslate nohig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" src="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" />
-<img alt="../_images/48a3a5998e55aa437bf620f6eec4317fca744f8f21f8b5ef3bb9a3b1c22dfc0f.png" src="../_images/48a3a5998e55aa437bf620f6eec4317fca744f8f21f8b5ef3bb9a3b1c22dfc0f.png" />
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
+<img alt="../_images/e64d5aa61d945455c2629ee84f738cb871645e52efc68241bcd7e5d636f9f27f.png" src="../_images/e64d5aa61d945455c2629ee84f738cb871645e52efc68241bcd7e5d636f9f27f.png" />
 </div>
 </div>
 <p><em>Explora</em>: observa como son las secciones y las pendientes en un punto y una dirección con la función <span class="math notranslate nohighlight">\(f(x, y) = y^2 - x^2\)</span>.</p>
@@ -578,8 +578,8 @@ que pasa por el origen y que tiene pendiente <span class="math notranslate nohig
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3c0141538b437dbb77e1dd9606983191fbb67c529063df66b2dbb1da62e4490b.png" src="../_images/3c0141538b437dbb77e1dd9606983191fbb67c529063df66b2dbb1da62e4490b.png" />
-<img alt="../_images/0138c55352e3e63caefe67096c04cd08fa6d45e5b9ea9c0a26f3520c8b164c22.png" src="../_images/0138c55352e3e63caefe67096c04cd08fa6d45e5b9ea9c0a26f3520c8b164c22.png" />
+<img alt="../_images/0f3acb586a544b7900290be4a418e3e04e37ed7b3bcd201b971e88bb4c8237da.png" src="../_images/0f3acb586a544b7900290be4a418e3e04e37ed7b3bcd201b971e88bb4c8237da.png" />
+<img alt="../_images/32e5c0fcb95708e7be61fd5806fed926d0bf4a727b70958386490954ae56c3a4.png" src="../_images/32e5c0fcb95708e7be61fd5806fed926d0bf4a727b70958386490954ae56c3a4.png" />
 </div>
 </div>
 <p>Definimos la <strong>derivada direccional</strong>, <span class="math notranslate nohighlight">\(f'({\bf x}; {\bf v})\)</span> , de una función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, en un punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span> y dirección, <span class="math notranslate nohighlight">\({\bf v}\)</span>, como:</p>
@@ -648,8 +648,8 @@ f'((0, 0); \, \lambda (v_x, v_y)) = \lambda \, f'((0, 0); \, (v_x, v_y))
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ca07e361a2747677a528cf460c66dafe0c8b4c3dcc076d19928874bf76c4d175.png" src="../_images/ca07e361a2747677a528cf460c66dafe0c8b4c3dcc076d19928874bf76c4d175.png" />
-<img alt="../_images/b5376e79fe00b19b301852846b48f882962df90bc77171d3f428beb11620b769.png" src="../_images/b5376e79fe00b19b301852846b48f882962df90bc77171d3f428beb11620b769.png" />
+<img alt="../_images/121809250c06d7aab125b3aa42a3f75de5b79df9d9a43f5e15f10cb3306809fb.png" src="../_images/121809250c06d7aab125b3aa42a3f75de5b79df9d9a43f5e15f10cb3306809fb.png" />
+<img alt="../_images/de463cdedb3b4ab1a8a690f75e00e12d740a2e17792daa48aba198cdb9a7db4d.png" src="../_images/de463cdedb3b4ab1a8a690f75e00e12d740a2e17792daa48aba198cdb9a7db4d.png" />
 </div>
 </div>
 <p>La función es: <span class="math notranslate nohighlight">\(f(x, y) = 9 -x^2 - y^2\)</span></p>
@@ -813,7 +813,7 @@ x+y &amp; \quad \mbox{si $x=0$ o $y=0$} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c946edc9b6ecfb5ceec480140eaa3c69616b37799f5039e4346fa630fee63e9f.png" src="../_images/c946edc9b6ecfb5ceec480140eaa3c69616b37799f5039e4346fa630fee63e9f.png" />
+<img alt="../_images/d3f5f29f6c091e0b06204d3ce80c5c57c6bd4bd71488bce5ae63d0dc16535a37.png" src="../_images/d3f5f29f6c091e0b06204d3ce80c5c57c6bd4bd71488bce5ae63d0dc16535a37.png" />
 </div>
 </div>
 </section>
@@ -850,7 +850,7 @@ y(x) = y_0 + a \, (x-x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/53763d291ca4e3c31c57625a47b1062813456f91098350c28335403b1e01f459.png" src="../_images/53763d291ca4e3c31c57625a47b1062813456f91098350c28335403b1e01f459.png" />
+<img alt="../_images/0fa4a1fbc86183a72161a9f1677a642677caed96bb2960efca56a50685ad4f35.png" src="../_images/0fa4a1fbc86183a72161a9f1677a642677caed96bb2960efca56a50685ad4f35.png" />
 </div>
 </div>
 <p>Consideremos ahora una función escalar de dos dimensiones, diremos que es “suave” si su gráfica es continua (no está quebrada), no tiene dobleces, ni picos.</p>
@@ -868,7 +868,7 @@ f(x, y) = 9 - x^2 - y^2
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18edd92541ab4abce4abfecd40517105043aa4cce81dc370845533774f9dc1b2.png" src="../_images/18edd92541ab4abce4abfecd40517105043aa4cce81dc370845533774f9dc1b2.png" />
+<img alt="../_images/142eef9b4f41fc3f3a23abbbb1070a66a5e0ecbe2e07e05addd733f96db31c88.png" src="../_images/142eef9b4f41fc3f3a23abbbb1070a66a5e0ecbe2e07e05addd733f96db31c88.png" />
 </div>
 </div>
 <p>Las funciones escalares de dos dimensiones serán diferenciables si podemos hacer su desarrollo de Taylor de primer orden.</p>
@@ -924,8 +924,8 @@ f(x, y) \approx 9 -x^2_0 - y^2_0 - 2 x_0 (x - x_0) - 2 y_0 ( y - y_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18edd92541ab4abce4abfecd40517105043aa4cce81dc370845533774f9dc1b2.png" src="../_images/18edd92541ab4abce4abfecd40517105043aa4cce81dc370845533774f9dc1b2.png" />
-<img alt="../_images/36ba9cb28e8681655a384dc4aefc2ec2204f92760a457f7edd5231bf72305bc2.png" src="../_images/36ba9cb28e8681655a384dc4aefc2ec2204f92760a457f7edd5231bf72305bc2.png" />
+<img alt="../_images/ee86421802c12fbe8353a18e6fffa6f2a4e61ee30939125cb6c534df13873ddd.png" src="../_images/ee86421802c12fbe8353a18e6fffa6f2a4e61ee30939125cb6c534df13873ddd.png" />
+<img alt="../_images/91781aaab05dd8d9c87db16a48045be206731c7ffd20549fb75abe16610c9374.png" src="../_images/91781aaab05dd8d9c87db16a48045be206731c7ffd20549fb75abe16610c9374.png" />
 </div>
 </div>
 <p><em>Ejercicio</em> Calcula el desarrollo de Taylor en el origen del plano <span class="math notranslate nohighlight">\(y -x\)</span> y verifica que es el mismo.</p>

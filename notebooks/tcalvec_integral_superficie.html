@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -459,13 +459,13 @@
 <h1>Integral de superficie<a class="headerlink" href="#integral-de-superficie" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:00:52 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Mar 15 23:55:04 2025
 </pre></div>
 </div>
 </div>
@@ -486,12 +486,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -529,7 +529,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/62624a1e4298f4ba483ae4c6ca0295a485be830c5c8f1e362f42e9b1429da4a0.png" src="../_images/62624a1e4298f4ba483ae4c6ca0295a485be830c5c8f1e362f42e9b1429da4a0.png" />
+<img alt="../_images/c2d9d8355f58168772aa965f940520dd0660e0a7a84a7fb9259a56f62907a76d.png" src="../_images/c2d9d8355f58168772aa965f940520dd0660e0a7a84a7fb9259a56f62907a76d.png" />
 </div>
 </div>
 <p><em>Exemplo</em> : parametrización dunha esfera centrada na orixe do raio <span class="math notranslate nohighlight">\(r\)</span>.</p>
@@ -550,7 +550,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/90b8eff3bc96b4ab5346f762087ebca7876590b59082be3d2e69f2b7a5c1f2e9.png" src="../_images/90b8eff3bc96b4ab5346f762087ebca7876590b59082be3d2e69f2b7a5c1f2e9.png" />
+<img alt="../_images/88d9c7dd17229f6f383a83d27b2a64dc57a490e71ebf7b9f49d6225892d08911.png" src="../_images/88d9c7dd17229f6f383a83d27b2a64dc57a490e71ebf7b9f49d6225892d08911.png" />
 </div>
 </div>
 <p>A superficie está construída a partir de liñas mestras. Establecido un valor de <span class="math notranslate nohighlight">\(u = u'\)</span>, se atravesamos <span class="math notranslate nohighlight">\(v\)</span> no seu rango, <span class="math notranslate nohighlight">\([v_0, v_1]\)</span> obtemos as liñas mestras ao longo de <span class="math notranslate nohighlight">\(v\)</span>.</p>
@@ -580,7 +580,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88e8b617946ef1df7b6e2fd92dab99f79ddbb9e434658d469d71fc5f60fa2ba6.png" src="../_images/88e8b617946ef1df7b6e2fd92dab99f79ddbb9e434658d469d71fc5f60fa2ba6.png" />
+<img alt="../_images/93d3160e81d1ee1cbb2d6e7c25adc9e9bcf3c5ae157c39118d5f0eef18e04884.png" src="../_images/93d3160e81d1ee1cbb2d6e7c25adc9e9bcf3c5ae157c39118d5f0eef18e04884.png" />
 </div>
 </div>
 <p><em>Observa</em> : Na seguinte figura están marcadas dúas das liñas mestras da esfera.</p>
@@ -603,7 +603,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/01309beeca2f2b360354bb5d2dcc7c84459ee3a2eaf78057536a01dfa56e6518.png" src="../_images/01309beeca2f2b360354bb5d2dcc7c84459ee3a2eaf78057536a01dfa56e6518.png" />
+<img alt="../_images/34d3a067d2f19a8e85c905c0d6a74fd64352958a781770b925e01cbb50400948.png" src="../_images/34d3a067d2f19a8e85c905c0d6a74fd64352958a781770b925e01cbb50400948.png" />
 </div>
 </div>
 <p>Nun punto <span class="math notranslate nohighlight">\((u, v)\)</span> podemos obter os vectores tanxentes ás rectas nese punto.</p>
@@ -647,7 +647,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0aec81c6861a11a92f6a2652dedcafb9ce53d4fa3ef69c71646245af6355eb95.png" src="../_images/0aec81c6861a11a92f6a2652dedcafb9ce53d4fa3ef69c71646245af6355eb95.png" />
+<img alt="../_images/c5050dddbe1edc2a751ec65f1d16abe5482a8b1f3f138a3c6ec44891ac97496a.png" src="../_images/c5050dddbe1edc2a751ec65f1d16abe5482a8b1f3f138a3c6ec44891ac97496a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -665,7 +665,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/060c5ce1062150b3e2dee8f249f64716584ca65a748e19c211536e79a1790754.png" src="../_images/060c5ce1062150b3e2dee8f249f64716584ca65a748e19c211536e79a1790754.png" />
+<img alt="../_images/2aa111215282a429161b9b9107bcc17240c436cabfe3e9a22501683ad1d4ca98.png" src="../_images/2aa111215282a429161b9b9107bcc17240c436cabfe3e9a22501683ad1d4ca98.png" />
 </div>
 </div>
 <p><em>Pregunta:</em> a seguinte superficie é regular?</p>
@@ -685,7 +685,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/83f67e9cd2387e29810bf3b299897c4711955e3b7bdd3193c2fd8b000fbc6c6f.png" src="../_images/83f67e9cd2387e29810bf3b299897c4711955e3b7bdd3193c2fd8b000fbc6c6f.png" />
+<img alt="../_images/f9a8258ed8cf82c2cb84334553cf531f6548351978afa6adc37e08bffa128f05.png" src="../_images/f9a8258ed8cf82c2cb84334553cf531f6548351978afa6adc37e08bffa128f05.png" />
 </div>
 </div>
 <p>Se agora consideramos nun punto <span class="math notranslate nohighlight">\((u, v)\)</span> os elementos diferenciais do arco nas dúas liñas mestras son:</p>
@@ -806,7 +806,7 @@ S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/22b4c87e4155fbccb6e7fe58b3dec723c5416affb66bdb01d4209b1c40c66a2c.png" src="../_images/22b4c87e4155fbccb6e7fe58b3dec723c5416affb66bdb01d4209b1c40c66a2c.png" />
+<img alt="../_images/2f90dad334e52636930bbeee8e18ba38815dd8a7dd77176e871215b40466903a.png" src="../_images/2f90dad334e52636930bbeee8e18ba38815dd8a7dd77176e871215b40466903a.png" />
 </div>
 </div>
 </section>
@@ -831,7 +831,7 @@ S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/caf8ec39101e6589733f391ab32816d5f397381d3524cc30facaa4dbf277feac.png" src="../_images/caf8ec39101e6589733f391ab32816d5f397381d3524cc30facaa4dbf277feac.png" />
+<img alt="../_images/09046b6cdea132d29256716c16f8f290d0c5ddf06c31121755aa310e7e8318a3.png" src="../_images/09046b6cdea132d29256716c16f8f290d0c5ddf06c31121755aa310e7e8318a3.png" />
 </div>
 </div>
 <p>A partir da superficie parametrizada:</p>
@@ -907,7 +907,7 @@ S = \int_{\sigma} \mathrm{d}\sigma = \int_R |{\bf n}| \, \mathrm{d} u \mathrm{d}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3321ff9b5e93ec357ee1e78f72765865cd7a7dc43bb2dd1b4f27ceb0789658e2.png" src="../_images/3321ff9b5e93ec357ee1e78f72765865cd7a7dc43bb2dd1b4f27ceb0789658e2.png" />
+<img alt="../_images/92982ce6e982d1d0090f3aa81060a7116dab00ddbc9486442e64a4ec02bd5551.png" src="../_images/92982ce6e982d1d0090f3aa81060a7116dab00ddbc9486442e64a4ec02bd5551.png" />
 </div>
 </div>
 <p>Antes vimos:</p>

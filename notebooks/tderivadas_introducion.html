@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -458,13 +458,13 @@
 <h1>Cuestións iniciais<a class="headerlink" href="#cuestions-iniciais" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:01:25 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Mar 15 23:55:54 2025
 </pre></div>
 </div>
 </div>
@@ -485,12 +485,12 @@
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">import</span> <span class="nn">scipy.stats</span> <span class="k">as</span> <span class="nn">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
 
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), ®</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 </pre></div>
@@ -504,7 +504,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a grid in the [-300, 300] x [-300, 300] region</span>
-<span class="k">def</span> <span class="nf">mexican_hat</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">mexican_hat</span><span class="p">():</span>
     <span class="n">rs</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span>     <span class="mi">300</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">phis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">rms</span><span class="p">,</span> <span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">phis</span><span class="p">)</span>
@@ -530,7 +530,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ec7f3e44857bbd721732c97269659d610610bb2333e5c3669f945f7d7394602.png" src="../_images/8ec7f3e44857bbd721732c97269659d610610bb2333e5c3669f945f7d7394602.png" />
+<img alt="../_images/1a5357c8672fca43f786ded12a3f5513e7d94f986f552474f310b9f4c36da174.png" src="../_images/1a5357c8672fca43f786ded12a3f5513e7d94f986f552474f310b9f4c36da174.png" />
 </div>
 </div>
 <section id="problemas">
@@ -585,7 +585,7 @@
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_axis</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">set_axis</span><span class="p">():</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;bottom&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">((</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
     <span class="n">ax</span><span class="o">.</span><span class="n">spines</span><span class="p">[</span><span class="s1">&#39;left&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">set_position</span><span class="p">((</span><span class="s1">&#39;data&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
@@ -616,7 +616,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/51d596de8dcdd06fbaf58e2ce62dac65203e782c2c04174e5a5f8c8512928aa3.png" src="../_images/51d596de8dcdd06fbaf58e2ce62dac65203e782c2c04174e5a5f8c8512928aa3.png" />
+<img alt="../_images/d13e8f4c2c361a0dee633d27e99a96b0ab49f0cd9fea9d086d1087d2b25bd097.png" src="../_images/d13e8f4c2c361a0dee633d27e99a96b0ab49f0cd9fea9d086d1087d2b25bd097.png" />
 </div>
 </div>
 <ol class="arabic" start="2">
@@ -627,7 +627,7 @@
 </ol>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw_plane</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">draw_plane</span><span class="p">(</span><span class="n">a</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="n">b</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">):</span>
     <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">()</span>
     <span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">projection</span><span class="o">=</span><span class="s1">&#39;3d&#39;</span><span class="p">)</span>
     <span class="c1"># create two arrays, xs, ys, between [-1., 1.] of 20 bins</span>
@@ -656,7 +656,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/28c40f72bd54ae1740bf1a90674b3e5c765b945798acfbba5090944ccba1c7a5.png" src="../_images/28c40f72bd54ae1740bf1a90674b3e5c765b945798acfbba5090944ccba1c7a5.png" />
+<img alt="../_images/014994dd316b6317b42910ab3cf0c53d407b7bd29895be29d170495d185cda02.png" src="../_images/014994dd316b6317b42910ab3cf0c53d407b7bd29895be29d170495d185cda02.png" />
 </div>
 </div>
 <ol class="arabic" start="3">
@@ -680,7 +680,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e69861b642c189bfcf31292a35c7a42eee274d271caaf2e2ad9b4e4cf78421f6.png" src="../_images/e69861b642c189bfcf31292a35c7a42eee274d271caaf2e2ad9b4e4cf78421f6.png" />
+<img alt="../_images/dce4273db4bc37704ffe6542297cd76c846d7aee11cab7901ed72e1f0692cd3f.png" src="../_images/dce4273db4bc37704ffe6542297cd76c846d7aee11cab7901ed72e1f0692cd3f.png" />
 </div>
 </div>
 </section>
@@ -719,10 +719,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.5, &#39;y&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;y&#39;)
 </pre></div>
 </div>
-<img alt="../_images/7f9dac34b9f1bf2f3a329149bc13f1ac317ad7da481d77634b78fac1b89c390c.png" src="../_images/7f9dac34b9f1bf2f3a329149bc13f1ac317ad7da481d77634b78fac1b89c390c.png" />
+<img alt="../_images/09f3c7484ac5330b6d22be066d994d5ce8b981aa6fc2b92c7d9aab8c208753de.png" src="../_images/09f3c7484ac5330b6d22be066d994d5ce8b981aa6fc2b92c7d9aab8c208753de.png" />
 </div>
 </div>
 </section>

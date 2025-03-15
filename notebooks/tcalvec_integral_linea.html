@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -458,13 +458,13 @@
 <h1>Integral de línea<a class="headerlink" href="#integral-de-linea" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Thu Mar  6 17:00:49 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Sat Mar 15 23:54:59 2025
 </pre></div>
 </div>
 </div>
@@ -491,12 +491,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -534,7 +534,7 @@ t \in [0, 2 n \pi] \to \left( r \cos \omega t, r \sin \omega t, v_z t \right)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4a6c57c0358ee1415ae8224dd534809fa9ff32766d3be2121696cc15e9c8bf57.png" src="../_images/4a6c57c0358ee1415ae8224dd534809fa9ff32766d3be2121696cc15e9c8bf57.png" />
+<img alt="../_images/00dea26d5c8c321bffeafcd5abf635ebe255f407fd013c32c53ed0441490ce70.png" src="../_images/00dea26d5c8c321bffeafcd5abf635ebe255f407fd013c32c53ed0441490ce70.png" />
 </div>
 </div>
 <p>Calculamos en su momento la longitud de arco, <span class="math notranslate nohighlight">\(s\)</span>, de una línea, mediante la integral en una dimensión dada por:</p>
@@ -578,7 +578,7 @@ s = \int_{{\bf c}} \, \mathrm{d}s = \int_{t_a}^{t_b} | \dot{{\bf c}}(t) | \mathr
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/164af52ee128717beba2ea157451f61bb497620b007ee4e88713f3366faa95ac.png" src="../_images/164af52ee128717beba2ea157451f61bb497620b007ee4e88713f3366faa95ac.png" />
+<img alt="../_images/cad4bb07268fc2ecaa8623136f34e6857329c4ccb48f669a854b7b7d07bc4805.png" src="../_images/cad4bb07268fc2ecaa8623136f34e6857329c4ccb48f669a854b7b7d07bc4805.png" />
 </div>
 </div>
 <p>La circunferencia de radio unidad puede parametrizarse con:</p>
@@ -629,7 +629,7 @@ f({\bf c} (t))  = (1 + \sin^3 t)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/df8fa8f7769fb46481b50e9fe9f7a201da5388e9590bb050392641591f4c5343.png" src="../_images/df8fa8f7769fb46481b50e9fe9f7a201da5388e9590bb050392641591f4c5343.png" />
+<img alt="../_images/c0319eee1fb3e331152d98158f943a219a7dc8eb28d2d20a5ef4dcd6d0f83388.png" src="../_images/c0319eee1fb3e331152d98158f943a219a7dc8eb28d2d20a5ef4dcd6d0f83388.png" />
 </div>
 </div>
 </section>
@@ -657,7 +657,7 @@ Calcular la integral a lo largo de una línea horizonal, otra vertical y en la d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88a0b5b6cb5dd3b81bdb9123b359df3e6024427187244bb09fbdc532e66082ec.png" src="../_images/88a0b5b6cb5dd3b81bdb9123b359df3e6024427187244bb09fbdc532e66082ec.png" />
+<img alt="../_images/98d58e704b97ec8b4890e82ab94df8b7be6c4a10d6e5d86b2edde30c69fb32ee.png" src="../_images/98d58e704b97ec8b4890e82ab94df8b7be6c4a10d6e5d86b2edde30c69fb32ee.png" />
 </div>
 </div>
 <p><em>Ejemplo</em>: Calcula la integral de la función <span class="math notranslate nohighlight">\({\bf F}(x,y) = (x, y)\)</span> a lo largo de la circunferencia de radio unidad.</p>
@@ -676,7 +676,7 @@ Calcular la integral a lo largo de una línea horizonal, otra vertical y en la d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d40a9c47bd83a7b2c547f319d5d17ef412cfb2cdd7f62ffb3a668d90b688e905.png" src="../_images/d40a9c47bd83a7b2c547f319d5d17ef412cfb2cdd7f62ffb3a668d90b688e905.png" />
+<img alt="../_images/97d7b108ea9a54d76dd09f70ad49b5830c0f8dffe2dfddbac09607d457446486.png" src="../_images/97d7b108ea9a54d76dd09f70ad49b5830c0f8dffe2dfddbac09607d457446486.png" />
 </div>
 </div>
 <p>En la literatura es normal encontrar la expresión:</p>
@@ -706,7 +706,7 @@ Calcular la integral a lo largo de una línea horizonal, otra vertical y en la d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/70cf1b36442d0bfe1a111627c1e108f747c503a1d6a30161f2c25c33ab9b74c8.png" src="../_images/70cf1b36442d0bfe1a111627c1e108f747c503a1d6a30161f2c25c33ab9b74c8.png" />
+<img alt="../_images/21f4c4702a76949e192d1376e1d8a8c12374d0fc4b81d944e9d0f3388e5bd13c.png" src="../_images/21f4c4702a76949e192d1376e1d8a8c12374d0fc4b81d944e9d0f3388e5bd13c.png" />
 </div>
 </div>
 <p><em>Ejercicio</em>: Integra ahora <span class="math notranslate nohighlight">\({\bf F}(x, y) = (-y, 0)\)</span> en la elipse de exes <span class="math notranslate nohighlight">\(a, b\)</span>, recorrida en sentido anti-horario.</p>

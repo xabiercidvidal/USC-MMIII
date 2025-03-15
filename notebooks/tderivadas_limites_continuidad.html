@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -459,13 +459,13 @@
 <h1>Límite y continuidad de funciones escalares y vectoriales<a class="headerlink" href="#limite-y-continuidad-de-funciones-escalares-y-vectoriales" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Mar  6 17:01:27 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Sat Mar 15 23:55:57 2025
 </pre></div>
 </div>
 </div>
@@ -481,11 +481,11 @@
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 </pre></div>
@@ -524,7 +524,7 @@
 <p><strong>Ejercicio</strong>: ¿Puedes demostrar que todos los puntos de una bola abierta en un espacio 2D son interiores? Fíjate en la celda siguiente.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">phis</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phis</span><span class="p">)</span>
 <span class="n">r1</span><span class="p">,</span> <span class="n">phi</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
@@ -541,7 +541,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3eb6504fe7a4e49f769b791dbf3f58fc8a58e7fa89b630b43188f524fb390c54.png" src="../_images/3eb6504fe7a4e49f769b791dbf3f58fc8a58e7fa89b630b43188f524fb390c54.png" />
+<img alt="../_images/bf1625b557a1adb86075453b83a0decd1fa9c02d657873af42a3edfdf2d6c628.png" src="../_images/bf1625b557a1adb86075453b83a0decd1fa9c02d657873af42a3edfdf2d6c628.png" />
 </div>
 </div>
 </section>
@@ -575,7 +575,7 @@ f(x) = \frac{\sin x}{x}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f365ee3fe88a3dc002914b35647e2e7b59455be6256886318bf45d3c97bbc456.png" src="../_images/f365ee3fe88a3dc002914b35647e2e7b59455be6256886318bf45d3c97bbc456.png" />
+<img alt="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" src="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" />
 </div>
 </div>
 <p>Decimos que una función escalar <span class="math notranslate nohighlight">\(f({\bf x}\)</span>) tiene límite en un punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, de su dominio o frontera del mismo y vale <span class="math notranslate nohighlight">\(b\)</span>, si:</p>
@@ -614,7 +614,7 @@ f(x, y) = \frac{\sin \sqrt{x^2 + y^2}}{ \sqrt{x^2 + y^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aa69e31ff35997f4a1e623c7140ca25d4d9ec5596b86a07d08904a8c94cd6844.png" src="../_images/aa69e31ff35997f4a1e623c7140ca25d4d9ec5596b86a07d08904a8c94cd6844.png" />
+<img alt="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" src="../_images/3b6392b82de3218a7f900cb10bd45540ecd9f159d7c12ca2141342d47b0bbb81.png" />
 </div>
 </div>
 <p>La siguiente celda te permite variar el valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> y te muestra la gráfica con los puntos que están cerca del límite a una distancia menor que <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
@@ -634,11 +634,11 @@ f(x, y) = \frac{\sin \sqrt{x^2 + y^2}}{ \sqrt{x^2 + y^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/rx/82jfsqxj6ms7ll1_lj0dmr5r0000gq/T/ipykernel_27270/2511310414.py:8: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 3 Axes&gt; than &lt;Figure size 640x480 with 1 Axes&gt; which fig.colorbar is called on.
-  ax.set_xlabel(&#39;x&#39;); ax.set_ylabel(&#39;y&#39;); fig.colorbar(sf);
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/Users/Xabier/jupyter/lib/python3.7/site-packages/ipykernel_launcher.py:8: MatplotlibDeprecationWarning: Starting from Matplotlib 3.6, colorbar() will steal space from the mappable&#39;s axes, rather than from the current axes, to place the colorbar.  To silence this warning, explicitly pass the &#39;ax&#39; argument to colorbar().
+  
 </pre></div>
 </div>
-<img alt="../_images/a6d438d084671534fdc61c396066daa064cebc9c0b2459fc1c8bbe47c29a917d.png" src="../_images/a6d438d084671534fdc61c396066daa064cebc9c0b2459fc1c8bbe47c29a917d.png" />
+<img alt="../_images/212dd013972cdc9cc61ece71a5d04c66d049543bcb7c10e7d77a3496a97bc178.png" src="../_images/212dd013972cdc9cc61ece71a5d04c66d049543bcb7c10e7d77a3496a97bc178.png" />
 </div>
 </div>
 <p>Para calcular los límites utilizaremos una aproximación.</p>
@@ -665,7 +665,7 @@ f(x, y) = \frac{\sin(x^2 + y^2)}{x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1548ddb919268d4dea7efdb5240d4eff4fdd99a2b15635ac6fd118d268c3f59.png" src="../_images/a1548ddb919268d4dea7efdb5240d4eff4fdd99a2b15635ac6fd118d268c3f59.png" />
+<img alt="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" src="../_images/e5f0eb35408d11afcfe6d7f0bfab4fc2d80577ba13f0f574e10ccd97e806323d.png" />
 </div>
 </div>
 <p>Calculamos ahora el límite en el origen aproximandonos por todas la rectas que pasan por el origen, que podemos dar en:</p>
@@ -720,7 +720,7 @@ f(x, y) = \frac{x y}{x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/595a11875531e9491386144972c269eabf79f589a027037e709a01ba5b170b24.png" src="../_images/595a11875531e9491386144972c269eabf79f589a027037e709a01ba5b170b24.png" />
+<img alt="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" src="../_images/d81e1f4cee1c99b7428f2b55592c8bd1a2953a6508c910d16d4341b10b326c54.png" />
 </div>
 </div>
 <p>Dibujamos ahora los conjuntos de nivel. ¿Son rectas? ¿Qué pasa si te aproximas ahora al origen por cada una de esas rectas?</p>
@@ -736,7 +736,7 @@ f(x, y) = \frac{x y}{x^2 + y^2}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7e3129a8b16b9707ffc392191d5a5f864ea81bd343d558054bc8f8d4a3c307ce.png" src="../_images/7e3129a8b16b9707ffc392191d5a5f864ea81bd343d558054bc8f8d4a3c307ce.png" />
+<img alt="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" src="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" />
 </div>
 </div>
 <p><em>solución</em>:</p>

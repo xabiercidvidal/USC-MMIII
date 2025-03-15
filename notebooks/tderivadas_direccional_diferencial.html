@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -460,13 +460,13 @@
 <h1>Derivadas direccionais e funcións derivables<a class="headerlink" href="#derivadas-direccionais-e-funcions-derivables" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:01:09 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Mar 15 23:55:28 2025
 </pre></div>
 </div>
 </div>
@@ -496,12 +496,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -528,7 +528,7 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" src="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" />
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
 </div>
 </div>
 <p>A seguinte figura mostra os conxuntos de niveis do plano, que son liñas rectas.</p>
@@ -549,7 +549,7 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8ff2375035184c132bbb8818f24e7b1e33d0eda7ba828aef858229d192f4b6c5.png" src="../_images/8ff2375035184c132bbb8818f24e7b1e33d0eda7ba828aef858229d192f4b6c5.png" />
+<img alt="../_images/2a1e29396e0bd70aa29057d9b618afa0ea00e103af124735fbda6387ddbeef68.png" src="../_images/2a1e29396e0bd70aa29057d9b618afa0ea00e103af124735fbda6387ddbeef68.png" />
 </div>
 </div>
 <p>Puideches verificar que a pendente cambia co vector <span class="math notranslate nohighlight">\({\bf v}\)</span>.</p>
@@ -567,8 +567,8 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" src="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" />
-<img alt="../_images/48a3a5998e55aa437bf620f6eec4317fca744f8f21f8b5ef3bb9a3b1c22dfc0f.png" src="../_images/48a3a5998e55aa437bf620f6eec4317fca744f8f21f8b5ef3bb9a3b1c22dfc0f.png" />
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
+<img alt="../_images/e64d5aa61d945455c2629ee84f738cb871645e52efc68241bcd7e5d636f9f27f.png" src="../_images/e64d5aa61d945455c2629ee84f738cb871645e52efc68241bcd7e5d636f9f27f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -582,8 +582,8 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" src="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" />
-<img alt="../_images/28251d8f7890b866065bdad68de99888b052fcabbb463eec8cc082aadc4a8f9b.png" src="../_images/28251d8f7890b866065bdad68de99888b052fcabbb463eec8cc082aadc4a8f9b.png" />
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
+<img alt="../_images/20de4cbe5fdab99084e205590fa0743416155193c95672e155cd48fed111d114.png" src="../_images/20de4cbe5fdab99084e205590fa0743416155193c95672e155cd48fed111d114.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -597,8 +597,8 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" src="../_images/c924cd07c7eaf950e62e7931e13a6c39ee9ae49d21348160b34139e5d9b80c3a.png" />
-<img alt="../_images/e667690adc42b256084bcb4b14acf6e6f1e0e1e2a1edba154a6143a3253081ef.png" src="../_images/e667690adc42b256084bcb4b14acf6e6f1e0e1e2a1edba154a6143a3253081ef.png" />
+<img alt="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" src="../_images/2aab86116f1cb869a47481d8fd8722ec9778fe668b1dfd392844df50636446bf.png" />
+<img alt="../_images/d06168ce2cbba84bc7f4e36022e649d5c2866358c3bd09e7d218b64645596557.png" src="../_images/d06168ce2cbba84bc7f4e36022e649d5c2866358c3bd09e7d218b64645596557.png" />
 </div>
 </div>
 <p><em>Explorar</em>: observa como son as seccións e pendentes nun punto e nunha dirección coa función <span class="math notranslate nohighlight">\(f(x, y) = y^2 - x^2\)</span>.</p>
@@ -614,8 +614,8 @@ f'(x) = \lim_{h \to 0} \frac{f(x +h) - f(x)}{h}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3c0141538b437dbb77e1dd9606983191fbb67c529063df66b2dbb1da62e4490b.png" src="../_images/3c0141538b437dbb77e1dd9606983191fbb67c529063df66b2dbb1da62e4490b.png" />
-<img alt="../_images/0138c55352e3e63caefe67096c04cd08fa6d45e5b9ea9c0a26f3520c8b164c22.png" src="../_images/0138c55352e3e63caefe67096c04cd08fa6d45e5b9ea9c0a26f3520c8b164c22.png" />
+<img alt="../_images/0f3acb586a544b7900290be4a418e3e04e37ed7b3bcd201b971e88bb4c8237da.png" src="../_images/0f3acb586a544b7900290be4a418e3e04e37ed7b3bcd201b971e88bb4c8237da.png" />
+<img alt="../_images/32e5c0fcb95708e7be61fd5806fed926d0bf4a727b70958386490954ae56c3a4.png" src="../_images/32e5c0fcb95708e7be61fd5806fed926d0bf4a727b70958386490954ae56c3a4.png" />
 </div>
 </div>
 <p>Definimos a <strong>derivada direccional</strong>, <span class="math notranslate nohighlight">\(f'({\bf x}; {\bf v})\)</span> , dunha función escalar, <span class="math notranslate nohighlight">\(f({\bf x})\)</span>, no punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span> e dirección, <span class="math notranslate nohighlight">\({\bf v}\)</span>, como:</p>
@@ -689,8 +689,8 @@ f'((0, 0); \, \lambda (v_x, v_y)) = \lambda \, f'((0, 0); \, (v_x, v_y))
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ca07e361a2747677a528cf460c66dafe0c8b4c3dcc076d19928874bf76c4d175.png" src="../_images/ca07e361a2747677a528cf460c66dafe0c8b4c3dcc076d19928874bf76c4d175.png" />
-<img alt="../_images/b5376e79fe00b19b301852846b48f882962df90bc77171d3f428beb11620b769.png" src="../_images/b5376e79fe00b19b301852846b48f882962df90bc77171d3f428beb11620b769.png" />
+<img alt="../_images/121809250c06d7aab125b3aa42a3f75de5b79df9d9a43f5e15f10cb3306809fb.png" src="../_images/121809250c06d7aab125b3aa42a3f75de5b79df9d9a43f5e15f10cb3306809fb.png" />
+<img alt="../_images/de463cdedb3b4ab1a8a690f75e00e12d740a2e17792daa48aba198cdb9a7db4d.png" src="../_images/de463cdedb3b4ab1a8a690f75e00e12d740a2e17792daa48aba198cdb9a7db4d.png" />
 </div>
 </div>
 <p>A función é: <span class="math notranslate nohighlight">\(f(x, y) = 9 -x^2 - y^2\)</span></p>
@@ -842,7 +842,7 @@ x+y &amp; \quad \mbox{se $x=0$ ou $y=0$} \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4c7d216b35e76b969c0e31ba8bd605bc4937bc7810d88b9c06c1c0576bee8503.png" src="../_images/4c7d216b35e76b969c0e31ba8bd605bc4937bc7810d88b9c06c1c0576bee8503.png" />
+<img alt="../_images/b2645eaabb85b972b64fd52dd157ddc3f3633a7b7fe9a6a57c94dc2c0b00e520.png" src="../_images/b2645eaabb85b972b64fd52dd157ddc3f3633a7b7fe9a6a57c94dc2c0b00e520.png" />
 </div>
 </div>
 <p><em>Pregunta</em> :  Agora estuda esta función, que é aínda peor:</p>
@@ -890,7 +890,7 @@ y(x) = y_0 + a \, (x-x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/add3efe40b4c66049ef55f48d10d964bbaf84e9084edc859610fb5d3afb42ae6.png" src="../_images/add3efe40b4c66049ef55f48d10d964bbaf84e9084edc859610fb5d3afb42ae6.png" />
+<img alt="../_images/94cbc09ab341dd5389a4e40f9a688b66170df5be80e931001a00f4c9c8fc1211.png" src="../_images/94cbc09ab341dd5389a4e40f9a688b66170df5be80e931001a00f4c9c8fc1211.png" />
 </div>
 </div>
 <p>Consideremos agora unha función escalar bidimensional. Diremos que é “suave” se a súa gráfica é continua (non está rota), non ten pregamentos nin picos.</p>
@@ -907,7 +907,7 @@ y(x) = y_0 + a \, (x-x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/18edd92541ab4abce4abfecd40517105043aa4cce81dc370845533774f9dc1b2.png" src="../_images/18edd92541ab4abce4abfecd40517105043aa4cce81dc370845533774f9dc1b2.png" />
+<img alt="../_images/142eef9b4f41fc3f3a23abbbb1070a66a5e0ecbe2e07e05addd733f96db31c88.png" src="../_images/142eef9b4f41fc3f3a23abbbb1070a66a5e0ecbe2e07e05addd733f96db31c88.png" />
 </div>
 </div>
 <p>Sen dúbida é “suave”</p>
@@ -964,7 +964,7 @@ f(x, y) \approx 9 -x^2_0 - y^2_0 - 2 x_0 (x - x_0) - 2 y_0 ( y - y_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6eec185b4b690c46d6605b1f4049989e8b7cba3c06815c754dfbefd58add2997.png" src="../_images/6eec185b4b690c46d6605b1f4049989e8b7cba3c06815c754dfbefd58add2997.png" />
+<img alt="../_images/ba0447b857322f941185b85dd9c65d146560334e9f325d2715bc4ce4a53741e0.png" src="../_images/ba0447b857322f941185b85dd9c65d146560334e9f325d2715bc4ce4a53741e0.png" />
 </div>
 </div>
 <p><em>Exercicio</em> Calcula a expansión de Taylor na orixe do plano <span class="math notranslate nohighlight">\(y -x\)</span> e verifica que é o mesmo.</p>

@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -459,13 +459,13 @@
 <h1>Límite e continuidade das funcións escalares e vectoriais<a class="headerlink" href="#limite-e-continuidade-das-funcions-escalares-e-vectoriais" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:01:29 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Sat Mar 15 23:56:00 2025
 </pre></div>
 </div>
 </div>
@@ -481,11 +481,11 @@
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 </pre></div>
@@ -524,7 +524,7 @@
 <p><strong>Exercicio</strong> : Podes demostrar que todos os puntos dunha bola aberta no espazo 2D son interiores? Mira a seguinte cela.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">phis</span>     <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="c1">## big circle</span>
 <span class="n">xs</span><span class="p">,</span> <span class="n">ys</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">phis</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">phis</span><span class="p">)</span>
@@ -546,7 +546,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/884a7fd783091c90034478b5ca2c37d508e37f822dce1a1d3efedc64bbe71db5.png" src="../_images/884a7fd783091c90034478b5ca2c37d508e37f822dce1a1d3efedc64bbe71db5.png" />
+<img alt="../_images/793d5500748835e43d04c7af20c2ad7af15cadba355753d916ca49bee33fbe81.png" src="../_images/793d5500748835e43d04c7af20c2ad7af15cadba355753d916ca49bee33fbe81.png" />
 </div>
 </div>
 </section>
@@ -580,7 +580,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f365ee3fe88a3dc002914b35647e2e7b59455be6256886318bf45d3c97bbc456.png" src="../_images/f365ee3fe88a3dc002914b35647e2e7b59455be6256886318bf45d3c97bbc456.png" />
+<img alt="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" src="../_images/ce3b6e2df09435ccb651f99c124fc9bde7c1c295e06601aa69881f427b3f0103.png" />
 </div>
 </div>
 <p>Dicimos que unha función escalar <span class="math notranslate nohighlight">\(f({\bf x}\)</span>) ten un límite nun punto, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, do seu dominio ou do seu bordo e vale <span class="math notranslate nohighlight">\(b\)</span>, se:</p>
@@ -624,10 +624,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x107836fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x129b97450&gt;
 </pre></div>
 </div>
-<img alt="../_images/37205c7e1b2cd173e6c3b2d8d5e0c5cae882d812b720a723a9746d9bd5218dab.png" src="../_images/37205c7e1b2cd173e6c3b2d8d5e0c5cae882d812b720a723a9746d9bd5218dab.png" />
+<img alt="../_images/71ab72bc14dc68396a68d57f5f9361f95689248e0f45c99f00b83be240081d85.png" src="../_images/71ab72bc14dc68396a68d57f5f9361f95689248e0f45c99f00b83be240081d85.png" />
 </div>
 </div>
 <p>A seguinte cela permíteche variar o valor de <span class="math notranslate nohighlight">\(\epsilon\)</span> e móstrache a gráfica cos puntos que están preto do límite a unha distancia inferior a <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
@@ -657,10 +657,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x107bbf9d0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x12cdf0290&gt;
 </pre></div>
 </div>
-<img alt="../_images/65f52f6266b8749f356017cb9cd69b0a818c42c6007da4555e1a951b59cf49f5.png" src="../_images/65f52f6266b8749f356017cb9cd69b0a818c42c6007da4555e1a951b59cf49f5.png" />
+<img alt="../_images/60788b1d28b3d953db73b737503621394924ec41d9dfa10d2781053a7f9a9a32.png" src="../_images/60788b1d28b3d953db73b737503621394924ec41d9dfa10d2781053a7f9a9a32.png" />
 </div>
 </div>
 <p>Para calcular os límites usaremos unha aproximación.</p>
@@ -687,7 +687,7 @@ f(x, y) = \frac{\sin\sqrt{x^2 + y^2}}{\sqrt{x^2 + y^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9e32bc34b46e01ba2491cc9b0e394c591b6c614a7072a2bf1330cf552ce8167b.png" src="../_images/9e32bc34b46e01ba2491cc9b0e394c591b6c614a7072a2bf1330cf552ce8167b.png" />
+<img alt="../_images/5cc1c50b438dbbc983842af1ed7ffa20c567d36351c033a21b08fcd607bd46e0.png" src="../_images/5cc1c50b438dbbc983842af1ed7ffa20c567d36351c033a21b08fcd607bd46e0.png" />
 </div>
 </div>
 <p>Agora calculamos o límite na orixe aproximando todas as liñas que pasan pola orixe, que podemos dar como:</p>
@@ -746,10 +746,10 @@ Calculamos en 1D o límite cando <span class="math notranslate nohighlight">\(x 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x107cf2940&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x131567f50&gt;
 </pre></div>
 </div>
-<img alt="../_images/dffbf648634f355c4e635fc3198eca97257fde587d88ff6a3e6a6b10b1f44e86.png" src="../_images/dffbf648634f355c4e635fc3198eca97257fde587d88ff6a3e6a6b10b1f44e86.png" />
+<img alt="../_images/dd0ef05633eb98968ce424226b1946780c5fbdc1d66319897501ff83de226cf3.png" src="../_images/dd0ef05633eb98968ce424226b1946780c5fbdc1d66319897501ff83de226cf3.png" />
 </div>
 </div>
 <p>Agora debuxamos os conxuntos de nivel. Son rectas? Que pasa se agora te achegas á orixe por cada unha desas liñas?</p>
@@ -765,7 +765,7 @@ Calculamos en 1D o límite cando <span class="math notranslate nohighlight">\(x 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7e3129a8b16b9707ffc392191d5a5f864ea81bd343d558054bc8f8d4a3c307ce.png" src="../_images/7e3129a8b16b9707ffc392191d5a5f864ea81bd343d558054bc8f8d4a3c307ce.png" />
+<img alt="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" src="../_images/0fe843e6ce7584fc9fae033e9ffada8ecff471c3077bae836c7ae6692ba842e6.png" />
 </div>
 </div>
 <p><em>Solución</em> :</p>
@@ -825,7 +825,7 @@ Calculamos en 1D o límite cando <span class="math notranslate nohighlight">\(x 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cc5ecf02f699cc6dcb9a400b6cd1f00ede5501d2efc5b1ecce6b8146d5d639c1.png" src="../_images/cc5ecf02f699cc6dcb9a400b6cd1f00ede5501d2efc5b1ecce6b8146d5d639c1.png" />
+<img alt="../_images/1f9c5f3ebd903e97bd45376d42b7c38e422af115b48bd6442571e43c0e8a7e5a.png" src="../_images/1f9c5f3ebd903e97bd45376d42b7c38e422af115b48bd6442571e43c0e8a7e5a.png" />
 </div>
 </div>
 <p><strong>Exercicio</strong> : Podes dar as ecuacións de todas as rectas que pasan por <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>? En cartesianas e polares.</p>
