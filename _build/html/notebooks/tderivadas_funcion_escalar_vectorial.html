@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -463,13 +463,13 @@
 <h1>Funcións escalares, gráficos, conxuntos de nivel e funcións vectoriais.<a class="headerlink" href="#funcions-escalares-graficos-conxuntos-de-nivel-e-funcions-vectoriais" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:01:17 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Mar 15 23:55:41 2025
 </pre></div>
 </div>
 </div>
@@ -496,11 +496,11 @@
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 </pre></div>
@@ -517,7 +517,7 @@
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">charge_potential</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">charge_potential</span><span class="p">():</span>
     <span class="n">rs</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.1</span><span class="p">,</span>     <span class="mi">10</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
     <span class="n">phis</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mf">0.</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
     <span class="n">rms</span><span class="p">,</span> <span class="n">pms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">rs</span><span class="p">,</span> <span class="n">phis</span><span class="p">)</span>
@@ -544,7 +544,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5a2e8474ac7c33cac03493a42b6d52f520b6e1186bfdc2e378e6c51525305092.png" src="../_images/5a2e8474ac7c33cac03493a42b6d52f520b6e1186bfdc2e378e6c51525305092.png" />
+<img alt="../_images/822291a89274a8877ebd707c11b803024c73d93454ede8936e974f90542675cf.png" src="../_images/822291a89274a8877ebd707c11b803024c73d93454ede8936e974f90542675cf.png" />
 </div>
 </div>
 <p>É o potencial electromagnético dunha carga no plano</p>
@@ -601,7 +601,7 @@ Isto é:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d1ea07e23f2c9c3d29389cd6fdf8098c54976230e1d8b2756a7081ad0bef3956.png" src="../_images/d1ea07e23f2c9c3d29389cd6fdf8098c54976230e1d8b2756a7081ad0bef3956.png" />
+<img alt="../_images/8a3d8a561f01b122b0aad2bcdff4bafdafcd4e52ba006bbb9cd04e4abe35e01e.png" src="../_images/8a3d8a561f01b122b0aad2bcdff4bafdafcd4e52ba006bbb9cd04e4abe35e01e.png" />
 </div>
 </div>
 <p><em>Pregunta</em>: No caso do potencial eléctrico tridimensional dunha carga situada na orixe, que figura xeométrica forman os seus conxuntos de nivel?</p>
@@ -622,7 +622,7 @@ Isto é:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/586c0638a1c23aa7987a26d8c9c38a927859620cba2b11befb91801d96840e7f.png" src="../_images/586c0638a1c23aa7987a26d8c9c38a927859620cba2b11befb91801d96840e7f.png" />
+<img alt="../_images/eca696bb60798193891455b5349352d0a9e85002adcd8e5e253ff743ea6d9a3f.png" src="../_images/eca696bb60798193891455b5349352d0a9e85002adcd8e5e253ff743ea6d9a3f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -636,7 +636,7 @@ Isto é:</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88a5c1f3c5fc103398cbcacf3c360391c206c4225ed36ec44c46ddf702f68df3.png" src="../_images/88a5c1f3c5fc103398cbcacf3c360391c206c4225ed36ec44c46ddf702f68df3.png" />
+<img alt="../_images/1ab342ce00a3e714afcc9e49f94f8533569a9f52bed0932ec246b5179194aa50.png" src="../_images/1ab342ce00a3e714afcc9e49f94f8533569a9f52bed0932ec246b5179194aa50.png" />
 </div>
 </div>
 <p><em>Solución</em>: O dominio é todo <span class="math notranslate nohighlight">\(\mathbb{R}^2\)</span>.</p>
@@ -666,7 +666,7 @@ x^{2} + y^{2} = c
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a  1.0 , b = 2.0
 </pre></div>
 </div>
-<img alt="../_images/56d077f14763c445a7abe77b77901e120055da83d7cfa8f81f43f0b717d79e07.png" src="../_images/56d077f14763c445a7abe77b77901e120055da83d7cfa8f81f43f0b717d79e07.png" />
+<img alt="../_images/c24e17c79ef440cf039ef22ed60d7b26844389b6860e549646e7fca3a76048ee.png" src="../_images/c24e17c79ef440cf039ef22ed60d7b26844389b6860e549646e7fca3a76048ee.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -679,7 +679,7 @@ x^{2} + y^{2} = c
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4664f822b599ba435850cc338fcd18723cd03a6265d0e6f9753105acfcbc3e23.png" src="../_images/4664f822b599ba435850cc338fcd18723cd03a6265d0e6f9753105acfcbc3e23.png" />
+<img alt="../_images/73e2ccb87d74c3b860c552fe7b4f5838e5a203ce12547207073d04187d8eb011.png" src="../_images/73e2ccb87d74c3b860c552fe7b4f5838e5a203ce12547207073d04187d8eb011.png" />
 </div>
 </div>
 <p><em>Solución</em>: os conxuntos de nivel son elipses (<span class="math notranslate nohighlight">\(c &gt;0)\)</span>:</p>
@@ -703,7 +703,7 @@ x^{2} + y^{2} = c
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/37866f50c8a15c2ba23a901ae558568282bfe0984e7e529cd6f5f787d497b978.png" src="../_images/37866f50c8a15c2ba23a901ae558568282bfe0984e7e529cd6f5f787d497b978.png" />
+<img alt="../_images/7e8a312c3426cc5643607895bdac96766daaa43bb4e4cad37d1c6efd19a29678.png" src="../_images/7e8a312c3426cc5643607895bdac96766daaa43bb4e4cad37d1c6efd19a29678.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -716,7 +716,7 @@ x^{2} + y^{2} = c
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a2bd059e470230d83fe963a9e8ba520c623a28b34918007f6fbd1bc34063edfb.png" src="../_images/a2bd059e470230d83fe963a9e8ba520c623a28b34918007f6fbd1bc34063edfb.png" />
+<img alt="../_images/6e8e83301451f491789ca671ea3ab18c8bbc710820ead33f7765d860dfd060d2.png" src="../_images/6e8e83301451f491789ca671ea3ab18c8bbc710820ead33f7765d860dfd060d2.png" />
 </div>
 </div>
 <p><em>Solución</em>: Os conxuntos de nivel son hipérbolas:</p>
@@ -732,13 +732,13 @@ y = \pm x
 <p><em>Exercicio</em>: Debuxa a gráfica do potencial dun dipolo eléctrico, centrado na orixe, para o cal as cargas, <span class="math notranslate nohighlight">\(q\)</span>, están separadas por unha distancia <span class="math notranslate nohighlight">\(d\)</span>. Considera por simplicidade <span class="math notranslate nohighlight">\(k=1, q = \pm 1\)</span>, <span class="math notranslate nohighlight">\(d = 2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dipole_potential</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dipole_potential</span><span class="p">():</span>
     <span class="n">dsize</span> <span class="o">=</span> <span class="mf">2.</span>
     <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">dsize</span><span class="p">,</span> <span class="n">dsize</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">dsize</span><span class="p">,</span> <span class="n">dsize</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
     <span class="n">xms</span><span class="p">,</span> <span class="n">yms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">Vfield</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">q0</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">Vfield</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">q0</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
         <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">xs</span> <span class="o">-</span> <span class="n">x0</span><span class="p">,</span> <span class="n">ys</span> <span class="o">-</span> <span class="n">y0</span>
         <span class="n">rr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xx</span><span class="o">*</span><span class="n">xx</span> <span class="o">+</span> <span class="n">yy</span><span class="o">*</span> <span class="n">yy</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">k</span><span class="o">*</span><span class="n">q0</span><span class="o">/</span><span class="n">rr</span>
@@ -765,7 +765,7 @@ y = \pm x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/743a87a0bff36fd2f2344efb9f2ce5c6b4b6704e017d5ae3b1418e598a05c01a.png" src="../_images/743a87a0bff36fd2f2344efb9f2ce5c6b4b6704e017d5ae3b1418e598a05c01a.png" />
+<img alt="../_images/a366871befa9be353c6765e457f7bb546754222380e77313cd3dc0461eed763e.png" src="../_images/a366871befa9be353c6765e457f7bb546754222380e77313cd3dc0461eed763e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -778,11 +778,7 @@ y = \pm x
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/rx/82jfsqxj6ms7ll1_lj0dmr5r0000gq/T/ipykernel_27255/803566706.py:4: UserWarning: Adding colorbar to a different Figure &lt;Figure size 640x480 with 2 Axes&gt; than &lt;Figure size 640x480 with 2 Axes&gt; which fig.colorbar is called on.
-  fig.colorbar(sf,ax=plt.gca()); plt.axis(&#39;equal&#39;); plt.tight_layout();
-</pre></div>
-</div>
-<img alt="../_images/0b8bac3d3da7df00e44dc018e9c550ee49f2537108ad9e3d1c18914c19434ff0.png" src="../_images/0b8bac3d3da7df00e44dc018e9c550ee49f2537108ad9e3d1c18914c19434ff0.png" />
+<img alt="../_images/edbdc383fdb6aec19a51e166c09cd2a217cb876adcb1a5fa2f3c762119e5ae0e.png" src="../_images/edbdc383fdb6aec19a51e166c09cd2a217cb876adcb1a5fa2f3c762119e5ae0e.png" />
 </div>
 </div>
 <p><em>Pregunta</em>: Que indica que os conxuntos de nivel estean moi preto uns dos outros? E cando están separados?</p>
@@ -839,7 +835,7 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 <p>A seguinte figura tenta visualizar o campo eléctrico dunha carga en dúas dimensións.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">charge_electric_field</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">charge_electric_field</span><span class="p">():</span>
 
     <span class="n">xs</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
     <span class="n">ys</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">10.</span><span class="p">,</span> <span class="mf">10.</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
@@ -869,7 +865,7 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b4977f53526dc656a807d83a0c4150f4b90dc173b87333e5ac9446a82ef90434.png" src="../_images/b4977f53526dc656a807d83a0c4150f4b90dc173b87333e5ac9446a82ef90434.png" />
+<img alt="../_images/351df95f56b858ec2891878aefbd674b59e1f24e83e0f1aac99df2e458adb6d3.png" src="../_images/351df95f56b858ec2891878aefbd674b59e1f24e83e0f1aac99df2e458adb6d3.png" />
 </div>
 </div>
 <p>O campo eléctrico é radial e vaise debilitando a medida que nos afastamos da carga.</p>
@@ -877,13 +873,13 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 <p>Tenta debuxar o campo eléctrico no plano producido por un dipolo, centrado na orixe, con cargas separadas por unha distancia <span class="math notranslate nohighlight">\(d =2\)</span>. Considera por simplicidade <span class="math notranslate nohighlight">\(k =1, \, q = \pm 1\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dipole_electric_field</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">dipole_electric_field</span><span class="p">():</span>
     <span class="n">dsize</span>    <span class="o">=</span> <span class="mf">3.</span>
     <span class="n">xs</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">dsize</span><span class="p">,</span> <span class="n">dsize</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
     <span class="n">ys</span>       <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">dsize</span><span class="p">,</span> <span class="n">dsize</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
     <span class="n">xms</span><span class="p">,</span> <span class="n">yms</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
  
-    <span class="k">def</span> <span class="nf">Efield</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">q0</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">Efield</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">q0</span><span class="p">,</span> <span class="n">k</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">):</span>
         <span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="p">(</span><span class="n">xs</span> <span class="o">-</span> <span class="n">x0</span><span class="p">),</span> <span class="n">ys</span> <span class="o">-</span> <span class="n">y0</span>
         <span class="n">rr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">xx</span><span class="o">*</span><span class="n">xx</span> <span class="o">+</span> <span class="n">yy</span><span class="o">*</span> <span class="n">yy</span><span class="p">)</span>
         <span class="n">Ex</span><span class="p">,</span> <span class="n">Ey</span> <span class="o">=</span> <span class="n">k</span><span class="o">*</span><span class="n">q0</span><span class="o">*</span><span class="n">xx</span><span class="o">/</span><span class="n">rr</span><span class="o">**</span><span class="mi">3</span><span class="p">,</span> <span class="n">k</span><span class="o">*</span><span class="n">q0</span><span class="o">*</span><span class="n">yy</span><span class="o">/</span><span class="n">rr</span><span class="o">**</span><span class="mi">3</span>
@@ -912,7 +908,7 @@ E_z ( x, y, z) =  k \frac{q}{(x^2+y^2+z^2)} \; \frac{z}{\sqrt{x^2 + y^2 + z^2}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2690fe00402aedbe7dfc20df3733cf82699dfacaa411fb93834de9f2f279210a.png" src="../_images/2690fe00402aedbe7dfc20df3733cf82699dfacaa411fb93834de9f2f279210a.png" />
+<img alt="../_images/59d0dfad56701f733cb067ab8ff5d2042bfa76c6d8412eb514b56e4a3189c85a.png" src="../_images/59d0dfad56701f733cb067ab8ff5d2042bfa76c6d8412eb514b56e4a3189c85a.png" />
 </div>
 </div>
 <p>As liñas de campo eléctrico dun dipolo saen da carga positiva e morren na carga negativa.</p>

@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -460,13 +460,13 @@
 <h1>Teorema de Stokes e Teorema de Gauss<a class="headerlink" href="#teorema-de-stokes-e-teorema-de-gauss" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:01:03 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Mar 15 23:55:19 2025
 </pre></div>
 </div>
 </div>
@@ -487,12 +487,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -527,7 +527,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/924f6650af436d6e5b9432bc8a4da49c09847f7edb7441e67e6fb8dc47207bf0.png" src="../_images/924f6650af436d6e5b9432bc8a4da49c09847f7edb7441e67e6fb8dc47207bf0.png" />
+<img alt="../_images/9f6cf127fd732ce32f7343540acd87a55ed109485a9af6fd34442dcebd1a1e4d.png" src="../_images/9f6cf127fd732ce32f7343540acd87a55ed109485a9af6fd34442dcebd1a1e4d.png" />
 </div>
 </div>
 <p><strong>O teorema de Stokes</strong> é a xeneralización do teorema de Green a 3 dimensións.</p>
@@ -619,7 +619,7 @@ $<span class="math notranslate nohighlight">\(
 <p>Considera a espira de tamaño diferencial, cos lados <span class="math notranslate nohighlight">\(\Delta x, \, \Delta y\)</span> co vértice inferior en <span class="math notranslate nohighlight">\((x_0, y_0)\)</span>. O campo ten derivadas parciais continuas, polo que admite a expansión de Taylor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">espira</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">espira</span><span class="p">():</span>
     <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># -y/2 #+ x/2</span>
     <span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>   <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">2</span>
@@ -642,7 +642,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3e32860a9ef5c9332a08ff0ba0222e7b3b532c08e24b1418f8d39b6380279b49.png" src="../_images/3e32860a9ef5c9332a08ff0ba0222e7b3b532c08e24b1418f8d39b6380279b49.png" />
+<img alt="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" src="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" />
 </div>
 </div>
 <p>Considera a integral ao longo dos lados verticais na que só participa <span class="math notranslate nohighlight">\(F_y\)</span>. Ten en conta que o lado dereito entra cun (+) e o lado esquerdo cun (-) na circulación. Podemos aproximar a integral:</p>
@@ -711,7 +711,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ae74064d31e5c1ad3b0300d1f37422eeecc6e650cc666a0d1bd110682745e029.png" src="../_images/ae74064d31e5c1ad3b0300d1f37422eeecc6e650cc666a0d1bd110682745e029.png" />
+<img alt="../_images/c548c1f2e2a82239114e06c08189f62e454cde74578968baa6e98a29de6ec4fc.png" src="../_images/c548c1f2e2a82239114e06c08189f62e454cde74578968baa6e98a29de6ec4fc.png" />
 </div>
 </div>
 <p>Lembremos que a superficie está baseada nun disco de raio unitario e a intersección co plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
@@ -847,7 +847,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7319db0790d780c8558144d52b182b5b484e305e328d191ff57d76efa67cffcd.png" src="../_images/7319db0790d780c8558144d52b182b5b484e305e328d191ff57d76efa67cffcd.png" />
+<img alt="../_images/bd04389f1fbc7f616441b2c2234b6ba3d4e53c4a86aa7553b091089b1a36dd41.png" src="../_images/bd04389f1fbc7f616441b2c2234b6ba3d4e53c4a86aa7553b091089b1a36dd41.png" />
 </div>
 </div>
 <p>Parametrizamos a superficie como unha gráfica:</p>
@@ -937,7 +937,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/963052f03e08ce0f4822e9db4d6c002dad42e038ef8d7af37cb25d6fba06b686.png" src="../_images/963052f03e08ce0f4822e9db4d6c002dad42e038ef8d7af37cb25d6fba06b686.png" />
+<img alt="../_images/9264062434b44cb23f069f3a6bc6e6cc6e1888f2223988839a0588ac10e9ee77.png" src="../_images/9264062434b44cb23f069f3a6bc6e6cc6e1888f2223988839a0588ac10e9ee77.png" />
 </div>
 </div>
 <p><em>Cando falabamos de integrais de superficie, dicíamos</em> : a seguinte figura, onde se representa a gráfica da función <span class="math notranslate nohighlight">\(f(x, y) = x^2 + y^2\)</span>, e se debuxa unha partición da rexión <span class="math notranslate nohighlight">\((x, y)\)</span>. Para cada un dos rectángulos da gráfica, que é unha pequena sección dun plano, damos a súa área como:</p>
@@ -971,7 +971,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/22b4c87e4155fbccb6e7fe58b3dec723c5416affb66bdb01d4209b1c40c66a2c.png" src="../_images/22b4c87e4155fbccb6e7fe58b3dec723c5416affb66bdb01d4209b1c40c66a2c.png" />
+<img alt="../_images/2f90dad334e52636930bbeee8e18ba38815dd8a7dd77176e871215b40466903a.png" src="../_images/2f90dad334e52636930bbeee8e18ba38815dd8a7dd77176e871215b40466903a.png" />
 </div>
 </div>
 <p>A integral</p>
@@ -1021,7 +1021,7 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/07448753d990e682b4c0f983453e80572602242ae024ecc5a453e1d362b85b82.png" src="../_images/07448753d990e682b4c0f983453e80572602242ae024ecc5a453e1d362b85b82.png" />
+<img alt="../_images/aae11ac9bb262b5a916aaa48ca1a3bfe231774a5685053a2194da1c14c6c8005.png" src="../_images/aae11ac9bb262b5a916aaa48ca1a3bfe231774a5685053a2194da1c14c6c8005.png" />
 </div>
 </div>
 <p>a) a diverxencia

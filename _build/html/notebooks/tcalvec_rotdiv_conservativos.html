@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -457,13 +457,13 @@
 <h1>Operador Nabla. Campos conservativos<a class="headerlink" href="#operador-nabla-campos-conservativos" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:00:56 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Mar 15 23:55:10 2025
 </pre></div>
 </div>
 </div>
@@ -484,12 +484,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -573,7 +573,7 @@ F_x &amp; F_y &amp; F_z \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bc83d3fdc02d39b0f689297db4fffe4f36b91716f73cc3c9c1f0defdc61c2760.png" src="../_images/bc83d3fdc02d39b0f689297db4fffe4f36b91716f73cc3c9c1f0defdc61c2760.png" />
+<img alt="../_images/f0ddf059507ef3fb53a2cfdedc3c99e44b4eb764f8aa3781b8becd7137bc7f7c.png" src="../_images/f0ddf059507ef3fb53a2cfdedc3c99e44b4eb764f8aa3781b8becd7137bc7f7c.png" />
 </div>
 </div>
 <p><em>Pregunta</em> : Demostrar que se as funcións compoñentes do campo vectorial, <span class="math notranslate nohighlight">\({\bf F}(x, y, z) = (F_x, F_y, F_z)\)</span> teñen derivadas segundas continuas, acontece que: <span class="math notranslate nohighlight">\(\nabla \cdot (\nabla \times {\bf F}) = 0\)</span>, a diverxencia do rotacional é cero.</p>
@@ -649,7 +649,7 @@ F_x &amp; F_y &amp; F_z \\
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7bae7b2a78593fbef17a5c1994d40ef386a61c4d569bb1c2c969560b18e8c1db.png" src="../_images/7bae7b2a78593fbef17a5c1994d40ef386a61c4d569bb1c2c969560b18e8c1db.png" />
+<img alt="../_images/4185be6e194fe1f351825b764c5511a1dde0e7798c33e8c3eb35223cb870b1de.png" src="../_images/4185be6e194fe1f351825b764c5511a1dde0e7798c33e8c3eb35223cb870b1de.png" />
 </div>
 </div>
 <p>Pero é aínda podemos ir un paso máis aló:</p>
@@ -715,7 +715,7 @@ g(y) = \int \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y} \, \ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d14f8846efdac83421fcbfed4919ab1fba46e7f70162ec88718334acd2921329.png" src="../_images/d14f8846efdac83421fcbfed4919ab1fba46e7f70162ec88718334acd2921329.png" />
+<img alt="../_images/db7e0c0b2ee9e36b4b7c9d4f365c7ffc6276ec5adfe79b78446e130fb5018188.png" src="../_images/db7e0c0b2ee9e36b4b7c9d4f365c7ffc6276ec5adfe79b78446e130fb5018188.png" />
 </div>
 </div>
 <p><em>Observa</em>  e compara os seguintes campos vectoriais, <span class="math notranslate nohighlight">\(F(x,y)=(y,x)\)</span> e <span class="math notranslate nohighlight">\(F(x,y)=(-y,x)\)</span>. Un é conservativo, o outro non. Continúa dun vector a outro coma se fose un gradiente (subindo nun suposto campo escalar do que proviría)… e verás se é ou non posible.</p>
@@ -742,7 +742,7 @@ g(y) = \int \left( F_y(x, y) - \int \frac{\partial F_x(x, y)}{\partial y} \, \ma
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aea12732f6a7f2d121a8d30a23b66fb53030f99a4fdf48dbce7b18f130fe3530.png" src="../_images/aea12732f6a7f2d121a8d30a23b66fb53030f99a4fdf48dbce7b18f130fe3530.png" />
+<img alt="../_images/d7cb59deb24c07772985495ff672dd529708d2b16ffeecbcd5cdb79978c0f102.png" src="../_images/d7cb59deb24c07772985495ff672dd529708d2b16ffeecbcd5cdb79978c0f102.png" />
 </div>
 </div>
 <p>É dicir, un campo conservativo provén de, ou pode expresarse, como o gradiente dun campo escalar.

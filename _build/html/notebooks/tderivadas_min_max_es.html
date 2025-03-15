@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -475,13 +475,13 @@
 <h1>Mínimos y máximos de funciones escalares<a class="headerlink" href="#minimos-y-maximos-de-funciones-escalares" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Thu Mar  6 17:01:52 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución   Sat Mar 15 23:56:31 2025
 </pre></div>
 </div>
 </div>
@@ -509,12 +509,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -551,7 +551,7 @@ x \in [x_0 - h, x_0 + h] \Rightarrow f(x) \le f(x_0)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c5549e8be3aa69bade6d310b34f8860f6b4cec1f864d6afdd65e6db507afde1f.png" src="../_images/c5549e8be3aa69bade6d310b34f8860f6b4cec1f864d6afdd65e6db507afde1f.png" />
+<img alt="../_images/4c3c15ad98ace6be397f227c383876e0a9cce8386c30df0c44f39616fbd9c886.png" src="../_images/4c3c15ad98ace6be397f227c383876e0a9cce8386c30df0c44f39616fbd9c886.png" />
 </div>
 </div>
 <p>En este caso, con <span class="math notranslate nohighlight">\(f(x) = x^2 + 2x - 1\)</span>, la condición de extremo: <span class="math notranslate nohighlight">\(f'(x_0) = 2 x_0 + 2 = 0\)</span>, que resulta en <span class="math notranslate nohighlight">\(x_0 = -1\)</span>.</p>
@@ -641,7 +641,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/30695daea19a5d8c55ba151d696e81f211a2114d414622a83555b903062f34e5.png" src="../_images/30695daea19a5d8c55ba151d696e81f211a2114d414622a83555b903062f34e5.png" />
+<img alt="../_images/f2a8a255e865ac903a80f01ff6666c24d203c57461cfebe5a57ad0c5604d8ba9.png" src="../_images/f2a8a255e865ac903a80f01ff6666c24d203c57461cfebe5a57ad0c5604d8ba9.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -651,7 +651,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ab93e0285128f5dbc57486344041104fde2f46a94cd454e35972cbccf687a0ca.png" src="../_images/ab93e0285128f5dbc57486344041104fde2f46a94cd454e35972cbccf687a0ca.png" />
+<img alt="../_images/233212d0d6b33738fcd9d3521e4a210884e2179169dce735c38ba20821e8235f.png" src="../_images/233212d0d6b33738fcd9d3521e4a210884e2179169dce735c38ba20821e8235f.png" />
 </div>
 </div>
 </section>
@@ -669,7 +669,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e8837d1f31cdc5ee62cfb146c965fc27356dd20a0e4b25faed45d24d767b5441.png" src="../_images/e8837d1f31cdc5ee62cfb146c965fc27356dd20a0e4b25faed45d24d767b5441.png" />
+<img alt="../_images/6ec77d1ecfec14d3f263db2dfd1c4dcf65fee91de6c945a0d10634f776f1da44.png" src="../_images/6ec77d1ecfec14d3f263db2dfd1c4dcf65fee91de6c945a0d10634f776f1da44.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -682,7 +682,7 @@ f({\bf x}_0 + {\bf v}) = \frac{1}{2} (v_x, v_y) \, \left( \begin{array}{cc} 4 &a
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b395ffa84b5df122c6b5b9cf0c47c0f4f15c6415ba7c901eb57b17b913206313.png" src="../_images/b395ffa84b5df122c6b5b9cf0c47c0f4f15c6415ba7c901eb57b17b913206313.png" />
+<img alt="../_images/eb4bb90ca78e0da7135398cc7e66c71a819e3ac8f112d0d2784c15f737ab1bfd.png" src="../_images/eb4bb90ca78e0da7135398cc7e66c71a819e3ac8f112d0d2784c15f737ab1bfd.png" />
 </div>
 </div>
 <p><em>Ejercicio</em>: Da el desarrolo de Taylor de segundo orden de la función <span class="math notranslate nohighlight">\(f(x, y) = 2 x^2 - 4 y^2\)</span> en el punto silla <span class="math notranslate nohighlight">\((0, 0)\)</span>.</p>
@@ -746,7 +746,7 @@ Si es negativo, es un máximo, la función desciende siempre. Y si dependiendo d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2e324c7ed704c1095a2cfbbe7d077160507cdc5cb7cfd9fb54df2c6990be57a8.png" src="../_images/2e324c7ed704c1095a2cfbbe7d077160507cdc5cb7cfd9fb54df2c6990be57a8.png" />
+<img alt="../_images/05b4ab67ed7171a92f7ae3792bf3c5aa6bf61a41aefaf1e1c06f26c67e99c15b.png" src="../_images/05b4ab67ed7171a92f7ae3792bf3c5aa6bf61a41aefaf1e1c06f26c67e99c15b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -756,7 +756,7 @@ Si es negativo, es un máximo, la función desciende siempre. Y si dependiendo d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/7ab3db33c9dc98f9ba9aa0f9cf203b648f7d6710a451e9d57e2d57b4a3348793.png" src="../_images/7ab3db33c9dc98f9ba9aa0f9cf203b648f7d6710a451e9d57e2d57b4a3348793.png" />
+<img alt="../_images/b0d45456499af8f1c4a3780612255fba09139d7170cd300db071244153e9783f.png" src="../_images/b0d45456499af8f1c4a3780612255fba09139d7170cd300db071244153e9783f.png" />
 </div>
 </div>
 <p>¿Y si la hesiana en el punto extremo, <span class="math notranslate nohighlight">\({\bf x}_0\)</span>, no es diagonal?</p>
@@ -849,7 +849,7 @@ Si es negativo, es un máximo, la función desciende siempre. Y si dependiendo d
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9995065168a86e8f0ab1cbc4f7b6de7a8902f4bcb2bf7fe42c42fe9d0cc7325b.png" src="../_images/9995065168a86e8f0ab1cbc4f7b6de7a8902f4bcb2bf7fe42c42fe9d0cc7325b.png" />
+<img alt="../_images/ae87edf33561fc2cc50f8e96b8100962055914edd388294e8b0ce11c56144019.png" src="../_images/ae87edf33561fc2cc50f8e96b8100962055914edd388294e8b0ce11c56144019.png" />
 </div>
 </div>
 <p>El desarrollo de Taylor de segundo orden en torno a un punto extremo <em>siempre</em> tiene ejes de simetría, que vienen dados por los autovectores.</p>
@@ -897,7 +897,7 @@ f(x'_0 + v'_x, \, y'_0 + v'_y) \simeq f(x'_0, y'_0) + \frac{1}{2}\left( \lambda'
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d9990eda98ecdf1e92807a754036f3edacba423f9716f01fc59d5a905aa8c323.png" src="../_images/d9990eda98ecdf1e92807a754036f3edacba423f9716f01fc59d5a905aa8c323.png" />
+<img alt="../_images/25b64e7965cd333963f2e2787d3e36288aa7ac426fbc105f8001155d5bba2e02.png" src="../_images/25b64e7965cd333963f2e2787d3e36288aa7ac426fbc105f8001155d5bba2e02.png" />
 </div>
 </div>
 <p>Vamos a dibujar sobre un determinado punto el gradiente de la función, que como sabemos nos indica la dirección en la que la función experimenta el cambio máximo.</p>
@@ -922,7 +922,7 @@ f(x, y) = x^2 - y^2 \, \Rightarrow \nabla f(x, y) = (2x, 2y)
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1156599757c7172b05f46f344db344c1e0ac4fd8834458e567ecabf05ec9ce6.png" src="../_images/a1156599757c7172b05f46f344db344c1e0ac4fd8834458e567ecabf05ec9ce6.png" />
+<img alt="../_images/b9ac89d2eaa2f4ce3754382f8663a3edc937fd5901be120e34195abeccafb866.png" src="../_images/b9ac89d2eaa2f4ce3754382f8663a3edc937fd5901be120e34195abeccafb866.png" />
 </div>
 </div>
 <p>Si te das cuenta el extremo de la función coincide en el punto cuyo gradiente sea <em>ortogonal</em> a la circunferencia.</p>
@@ -954,7 +954,7 @@ g(x, y) = x^2 + y^2 = c
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/68e4ca68901dad6d2d61a917b3c2b65ae056da067401a4c02951a3a0e2fb98e1.png" src="../_images/68e4ca68901dad6d2d61a917b3c2b65ae056da067401a4c02951a3a0e2fb98e1.png" />
+<img alt="../_images/7752f747ebdfaccb867ae811bf878bc01ccffe7e2d9a4113f3b19d74c908ec5a.png" src="../_images/7752f747ebdfaccb867ae811bf878bc01ccffe7e2d9a4113f3b19d74c908ec5a.png" />
 </div>
 </div>
 <section id="multiplicadores-de-lagrange">
@@ -1031,21 +1031,21 @@ y(x \, | \, a, b) = a \, x + b
 <p><em>Explora</em> Cambia el número de puntos, o los parámetros verdaderos para ver cómo cambia el ajuste.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.stats</span>    <span class="k">as</span> <span class="nn">stats</span>
-<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">optimize</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.stats</span><span class="w">    </span><span class="k">as</span><span class="w"> </span><span class="nn">stats</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optimize</span>
 
-<span class="k">def</span> <span class="nf">experiment</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span> <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">experiment</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span> <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">)):</span>
     <span class="n">x0</span><span class="p">,</span> <span class="n">xf</span> <span class="o">=</span> <span class="n">xrange</span>
     <span class="n">xs</span> <span class="o">=</span> <span class="n">x0</span> <span class="o">+</span> <span class="p">(</span><span class="n">xf</span> <span class="o">-</span> <span class="n">x0</span><span class="p">)</span><span class="o">*</span><span class="n">stats</span><span class="o">.</span><span class="n">uniform</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">size</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">)</span>
     <span class="n">ys</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">xs</span> <span class="o">+</span> <span class="n">b</span> <span class="o">+</span> <span class="n">stats</span><span class="o">.</span><span class="n">norm</span><span class="o">.</span><span class="n">rvs</span><span class="p">(</span><span class="n">scale</span> <span class="o">=</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="n">npoints</span><span class="p">)</span>
     <span class="k">return</span> <span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">lsq_fit</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">aguess</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bguess</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">lsq_fit</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">ys</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">aguess</span> <span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bguess</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">):</span>
     <span class="n">fres</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">pars</span><span class="p">:</span> <span class="p">(</span><span class="n">ys</span> <span class="o">-</span> <span class="n">pars</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">xs</span> <span class="o">-</span> <span class="n">pars</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="n">sigma</span>
     <span class="n">x</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">leastsq</span><span class="p">(</span><span class="n">fres</span><span class="p">,</span> <span class="p">(</span><span class="n">aguess</span><span class="p">,</span> <span class="n">bguess</span><span class="p">))</span>
     <span class="k">return</span> <span class="n">x</span>
 
-<span class="k">def</span> <span class="nf">chisq</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">chisq</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
     <span class="n">chi2</span> <span class="o">=</span> <span class="mf">0.</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ys</span><span class="p">)):</span>
         <span class="n">dx</span> <span class="o">=</span> <span class="p">(</span><span class="n">ys</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span> <span class="n">a</span><span class="o">*</span><span class="n">xs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">-</span><span class="n">b</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span>
@@ -1071,10 +1071,10 @@ y(x \, | \, a, b) = a \, x + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  0.9954818248749652 b =  0.07498987482659608
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a =  0.9656643375486585 b =  0.09663186107954831
 </pre></div>
 </div>
-<img alt="../_images/adf4396607ddc2088e79d38914d7e2ac99dc47ff022dd5249aaa361a8f74b799.png" src="../_images/adf4396607ddc2088e79d38914d7e2ac99dc47ff022dd5249aaa361a8f74b799.png" />
+<img alt="../_images/aec9ebe6c15aee564a98a5b5327f2f92c384fb78f70258389081cac8ad1867d7.png" src="../_images/aec9ebe6c15aee564a98a5b5327f2f92c384fb78f70258389081cac8ad1867d7.png" />
 </div>
 </div>
 <p>En la siguiente celda, dibujamos los conjuntos de nivel de la función <span class="math notranslate nohighlight">\(\chi^2(a, b)\)</span>.</p>
@@ -1091,10 +1091,10 @@ y(x \, | \, a, b) = a \, x + b
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  0.867151642696896
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>chisq  1.0113988301106098
 </pre></div>
 </div>
-<img alt="../_images/3a1eccadab90ceb4cd6edee2af4705148f67dbdec1f937d554679f3dca232e4b.png" src="../_images/3a1eccadab90ceb4cd6edee2af4705148f67dbdec1f937d554679f3dca232e4b.png" />
+<img alt="../_images/d8338b4318ac665c2bac9de3f62d99221f11bc9d507c755403c20ebcec25fdc5.png" src="../_images/d8338b4318ac665c2bac9de3f62d99221f11bc9d507c755403c20ebcec25fdc5.png" />
 </div>
 </div>
 </section>
@@ -1126,7 +1126,7 @@ u( {\bf x} \, | \, {\bf a}, b ) = \frac{1}{1 + e^{-{\bf a x} - b}}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/606d3249710cb995f2e5044ed91b082dfc88cc098dcdbf663b56271fbf634168.png" src="../_images/606d3249710cb995f2e5044ed91b082dfc88cc098dcdbf663b56271fbf634168.png" />
+<img alt="../_images/af35f96641eae5d5f26c1e904e649bf33b7a073e3fdf68461d04e9cb2145171b.png" src="../_images/af35f96641eae5d5f26c1e904e649bf33b7a073e3fdf68461d04e9cb2145171b.png" />
 </div>
 </div>
 <p><strong>¿Cómo funcionan las redes neuronales?</strong></p>
@@ -1178,7 +1178,7 @@ f(x, y) = \frac{x - y}{ 2 x^2 + 8 y^2 + 3}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a64392c83317ae5a93c17358a8ef67374b8dbf28d8d16d076028d20609d15274.png" src="../_images/a64392c83317ae5a93c17358a8ef67374b8dbf28d8d16d076028d20609d15274.png" />
+<img alt="../_images/1e6da6bbb848bfac9128ab4bd47eafeab8d5ef4770231f9b4367dff797aa6da5.png" src="../_images/1e6da6bbb848bfac9128ab4bd47eafeab8d5ef4770231f9b4367dff797aa6da5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1188,7 +1188,7 @@ f(x, y) = \frac{x - y}{ 2 x^2 + 8 y^2 + 3}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/74f4fb5d35dfa3ae33f2bb48d607d72b772003c401ce8078180b327ef30ca53f.png" src="../_images/74f4fb5d35dfa3ae33f2bb48d607d72b772003c401ce8078180b327ef30ca53f.png" />
+<img alt="../_images/2a8376c04b6cea784694a480906c6fef5226ed26eecc46e8b719fa15007278b1.png" src="../_images/2a8376c04b6cea784694a480906c6fef5226ed26eecc46e8b719fa15007278b1.png" />
 </div>
 </div>
 <p>De los conjuntos de nivel observamos que hay un mínimo en torno al <span class="math notranslate nohighlight">\((-1, 0)\)</span> y un máximo cerca del <span class="math notranslate nohighlight">\((1, 0)\)</span>, y que los ejes de simetría en los extremos coinciden con los ejes coordenadas.</p>
@@ -1198,8 +1198,8 @@ f(x, y) = \frac{x - y}{ 2 x^2 + 8 y^2 + 3}
 <p>Finalmente calcularemos numéricamente los autovalores y autovectores de la matriz hessiana, y comprobaremos que se trata de un máximo y un mínimo.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="k">as</span> <span class="nn">optimize</span>
-<span class="kn">import</span> <span class="nn">scipy.linalg</span>   <span class="k">as</span> <span class="nn">linalg</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">scipy.optimize</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">optimize</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">scipy.linalg</span><span class="w">   </span><span class="k">as</span><span class="w"> </span><span class="nn">linalg</span>
 <span class="n">fun</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">*</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="mi">3</span><span class="p">)</span>
 <span class="n">res1</span> <span class="o">=</span> <span class="n">optimize</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span> <span class="o">=</span> <span class="n">res1</span><span class="o">.</span><span class="n">x</span>
@@ -1212,15 +1212,15 @@ f(x, y) = \frac{x - y}{ 2 x^2 + 8 y^2 + 3}
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto mínimo  -1.0954920902489504 0.27386219865609934
-punto máximo  1.09549208306744 -0.2738622105039066
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto mínimo  -1.0954920902489502 0.2738621986560991
+punto máximo  1.0954920606202636 -0.27386221675122946
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sympy</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sympy</span>
 <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">symbols</span><span class="p">(</span><span class="s1">&#39;x y&#39;</span><span class="p">)</span>
 <span class="n">fx</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="n">x</span><span class="p">)</span>
 <span class="n">fy</span> <span class="o">=</span> <span class="n">sympy</span><span class="o">.</span><span class="n">diff</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="n">y</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">8</span><span class="o">*</span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="o">+</span><span class="mi">3</span><span class="p">),</span> <span class="n">y</span><span class="p">)</span>
@@ -1275,7 +1275,7 @@ fyy  512*y**2*(x - y)/(2*x**2 + 8*y**2 + 3)**3 + 32*y/(2*x**2 + 8*y**2 + 3)**2 -
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  -1.0954920902489504 0.27386219865609934
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  -1.0954920902489502 0.2738621986560991
 hessiana  [[1.52129395e-01 5.62777899e-06]
  [5.62777899e-06 6.08558515e-01]]
 autovalores [0.15212939+0.j 0.60855852+0.j]
@@ -1302,12 +1302,12 @@ autovector 2 : [-1.23300174e-05 -1.00000000e+00]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  1.09549208306744 -0.2738622105039066
-hessiana  [[-1.52129396e-01 -5.63224688e-06]
- [-5.63224688e-06 -6.08558503e-01]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>punto  1.0954920606202636 -0.27386221675122946
+hessiana  [[-1.52129403e-01 -5.63252983e-06]
+ [-5.63252983e-06 -6.08558504e-01]]
 autovalores [-0.1521294+0.j -0.6085585+0.j]
-autovector 1 : [ 1.00000000e+00 -1.23398065e-05]
-autovector 2 : [1.23398065e-05 1.00000000e+00]
+autovector 1 : [ 1.00000000e+00 -1.23404266e-05]
+autovector 2 : [1.23404266e-05 1.00000000e+00]
 </pre></div>
 </div>
 </div>

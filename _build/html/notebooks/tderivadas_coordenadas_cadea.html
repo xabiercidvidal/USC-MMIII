@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -462,13 +462,13 @@
 <h1>Cambio de coordenadas e regra da cadea<a class="headerlink" href="#cambio-de-coordenadas-e-regra-da-cadea" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Thu Mar  6 17:01:05 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución  Sat Mar 15 23:55:22 2025
 </pre></div>
 </div>
 </div>
@@ -489,12 +489,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
 </pre></div>
 </div>
 </div>
@@ -533,7 +533,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f912c3d5693edcc87756416071f03f711353e7c47c7dea49e693cc3e3dd08c8.png" src="../_images/9f912c3d5693edcc87756416071f03f711353e7c47c7dea49e693cc3e3dd08c8.png" />
+<img alt="../_images/a56f866ec52d4f987569b04391f85c2a37ed32571e5dd7ce884a7cd959dcc514.png" src="../_images/a56f866ec52d4f987569b04391f85c2a37ed32571e5dd7ce884a7cd959dcc514.png" />
 </div>
 </div>
 <p>Podemos dar todos os puntos, <span class="math notranslate nohighlight">\((x, y, z)\)</span>, dun espazo <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span> en <em>coordenadas cilíndricas</em> , onde expresamos as coordenadas <span class="math notranslate nohighlight">\((x, y)\)</span> por, <span class="math notranslate nohighlight">\((r, \phi)\)</span> onde <span class="math notranslate nohighlight">\(r\)</span> é a distancia á orixe e <span class="math notranslate nohighlight">\(\phi\)</span> o ángulo co eixe <span class="math notranslate nohighlight">\(x\)</span>. Mentres mantemos a coordenada <span class="math notranslate nohighlight">\(z\)</span>. Isto é:</p>
@@ -574,7 +574,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/db0f64d6f4a4a9b0abdb95cee120a4bc8a7e645a04c9da216d12246f7bda72ef.png" src="../_images/db0f64d6f4a4a9b0abdb95cee120a4bc8a7e645a04c9da216d12246f7bda72ef.png" />
+<img alt="../_images/0ca2e9840e118dfe24919b42583b8d6e3d1dbed0073a3f3203bd225c5a35c61e.png" src="../_images/0ca2e9840e118dfe24919b42583b8d6e3d1dbed0073a3f3203bd225c5a35c61e.png" />
 </div>
 </div>
 <p><em>As coordenadas esféricas</em> permítennos asociar calquera punto do espazo, <span class="math notranslate nohighlight">\((x, y, z)\)</span>, de <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, a un raio, <span class="math notranslate nohighlight">\(r\)</span>, a distancia do punto desde a orixe, o ángulo <span class="math notranslate nohighlight">\( \theta\)</span> que forma o punto co eixe <span class="math notranslate nohighlight">\(z\)</span>, e o ángulo que forma a proxección do punto no plano <span class="math notranslate nohighlight">\((x, y)\)</span> no eixe <span class="math notranslate nohighlight">\(x\)</span>.</p>
@@ -757,12 +757,12 @@ f'_x(x_0, y_0, z_0) \, (x - x_0) \, + \, f'_y(x_0, y_0, z_0) \, (y - y_0) + \, f
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradiente   : (np.float64(8.659560562354932e-17), np.float64(-1.414213562373095), np.float64(1.4142135623730951))
-v-paralelo  : (np.float64(0.7071067811865475), np.float64(4.329780281177466e-17), 0.0)
-v-meridiano : (np.float64(4.329780281177467e-17), np.float64(-0.7071067811865476), np.float64(-0.7071067811865475))
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>gradiente   : (8.659560562354932e-17, -1.414213562373095, 1.4142135623730951)
+v-paralelo  : (0.7071067811865475, 4.329780281177466e-17, 0.0)
+v-meridiano : (4.329780281177467e-17, -0.7071067811865476, -0.7071067811865475)
 </pre></div>
 </div>
-<img alt="../_images/c34e6d3a1e7eb4cf5d86e7a8404130aeb4ccca01104e99a891e240e3f8f04f90.png" src="../_images/c34e6d3a1e7eb4cf5d86e7a8404130aeb4ccca01104e99a891e240e3f8f04f90.png" />
+<img alt="../_images/4a1ec4be867eae89adf095ebd9694688868c525c626661c30a8d1ffd96a88018.png" src="../_images/4a1ec4be867eae89adf095ebd9694688868c525c626661c30a8d1ffd96a88018.png" />
 </div>
 </div>
 <p><em>Exercicio</em> : Sexa a función <span class="math notranslate nohighlight">\(f(x, y, z) = x^2 + y^2 + z^2\)</span>, e o punto <span class="math notranslate nohighlight">\({\bf x}_0 = \left(0, -1/{\sqrt {2}}, 1/{\sqrt{2}} \right)\)</span>, calcula o plano tanxente do conxunto de nivel da función á que pertence o punto.</p>

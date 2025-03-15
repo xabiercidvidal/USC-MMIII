@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -458,13 +458,13 @@
 <h1>Parametrización de curvas e superficies<a class="headerlink" href="#parametrizacion-de-curvas-e-superficies" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Thu Mar  6 17:01:58 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Sat Mar 15 23:56:40 2025
 </pre></div>
 </div>
 </div>
@@ -484,11 +484,11 @@
 <span class="o">%</span><span class="k">matplotlib</span> inline
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="c1"># possible styles: ggplot (simplicity), bmh (scientify data), </span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 </pre></div>
@@ -519,7 +519,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/1ca8c93566e4c2cd72b1942ec3e3dd0b4c446214ecbc45c0c0a49ae16692c66a.png" src="../_images/1ca8c93566e4c2cd72b1942ec3e3dd0b4c446214ecbc45c0c0a49ae16692c66a.png" />
+<img alt="../_images/376be12a43057ebcfc43fda3504be73e9e4f7e3519b868c50418e8dd15ee4e3c.png" src="../_images/376be12a43057ebcfc43fda3504be73e9e4f7e3519b868c50418e8dd15ee4e3c.png" />
 </div>
 </div>
 <p>En xeral, podemos expresar unha curva no espazo, sempre que non se corte a si mesma, mediante unha función vectorial que asigna a valores adxacentes de <span class="math notranslate nohighlight">\(t\)</span> dentro dun intervalo, intervalo, <span class="math notranslate nohighlight">\([t_0, t_{e}]\)</span> de <span class="math notranslate nohighlight">\(\mathbb{R}\)</span>, puntos contiguos, <span class="math notranslate nohighlight">\({\bf r}(t)\)</span>, no espazo <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>, con <span class="math notranslate nohighlight">\(n &gt;1\)</span>.</p>
@@ -548,7 +548,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/029115584d338729302ab7556870e024aeb0c3c08505425aee30cf4bf92fb3ed.png" src="../_images/029115584d338729302ab7556870e024aeb0c3c08505425aee30cf4bf92fb3ed.png" />
+<img alt="../_images/7eda0b048987867a7f8100baeeed402a59b23a0bdb6bf407c3dd59879f38d5ac.png" src="../_images/7eda0b048987867a7f8100baeeed402a59b23a0bdb6bf407c3dd59879f38d5ac.png" />
 </div>
 </div>
 <p><strong>Explora</strong> como cambia a traxectoria variando os parámetros <span class="math notranslate nohighlight">\(r, \omega, v_z\)</span> e o intervalo de <span class="math notranslate nohighlight">\(t\)</span>.</p>
@@ -597,7 +597,7 @@ y(t) = r - r \cos(\omega t) =r \, [1 - \cos(v_x t/r)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/88518ca07dc65d46987514862bd40b85da438f7055e7d9ff34483caf7f0c499d.png" src="../_images/88518ca07dc65d46987514862bd40b85da438f7055e7d9ff34483caf7f0c499d.png" />
+<img alt="../_images/f283694c49fafec2b04e49299722273a0bda0df7f4a087f40b9e6bc4835511d3.png" src="../_images/f283694c49fafec2b04e49299722273a0bda0df7f4a087f40b9e6bc4835511d3.png" />
 </div>
 </div>
 <section id="lonxitude-do-arco">
@@ -618,7 +618,7 @@ y(t) = r - r \cos(\omega t) =r \, [1 - \cos(v_x t/r)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d244efbc1369d8aaa590ba198600fe3b4a75c7bbed948152231002f0081a16ba.png" src="../_images/d244efbc1369d8aaa590ba198600fe3b4a75c7bbed948152231002f0081a16ba.png" />
+<img alt="../_images/f7059e9cf935e747101c86eb42924143fcc0a247a27963d4e16656be11609d77.png" src="../_images/f7059e9cf935e747101c86eb42924143fcc0a247a27963d4e16656be11609d77.png" />
 </div>
 </div>
 <p>Agora considera que queremos calcular a lonxitude da circunferencia a partir destes segmentos. Saberías como facelo? Bastaría con calcular a lonxitude de cada un destes segmentos e despois sumalos.</p>
@@ -638,7 +638,7 @@ y(t) = r - r \cos(\omega t) =r \, [1 - \cos(v_x t/r)]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lonxitude da circunferencia  6.2788815581098705
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>lonxitude da circunferencia  6.27888155810987
 a lonxitud dunha circunferencia de raio unidade é  6.283185307179586
 </pre></div>
 </div>
@@ -713,7 +713,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fd0806e71875952f9a0cf482c246e22dabb9d219f8dd2e6898cdab1e81ef9638.png" src="../_images/fd0806e71875952f9a0cf482c246e22dabb9d219f8dd2e6898cdab1e81ef9638.png" />
+<img alt="../_images/991d4748472839d7fb383c0cc028fefc11c27ad69929b63490282216ab8a17b2.png" src="../_images/991d4748472839d7fb383c0cc028fefc11c27ad69929b63490282216ab8a17b2.png" />
 </div>
 </div>
 <p>Se cortas a parede do cilindro ao longo dunha liña vertical e o despregases, terías unha folla cadrada.</p>
@@ -746,7 +746,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/79a38be35d1d91110568c2cd99624855f017ec77d02af82d3721e0d10dd5db05.png" src="../_images/79a38be35d1d91110568c2cd99624855f017ec77d02af82d3721e0d10dd5db05.png" />
+<img alt="../_images/a0f6ad1b0a206f9099364bad0057a3bc20e0d2b72a8e498e2f1207ccf60b941e.png" src="../_images/a0f6ad1b0a206f9099364bad0057a3bc20e0d2b72a8e498e2f1207ccf60b941e.png" />
 </div>
 </div>
 <p>Neste caso, a rexión <span class="math notranslate nohighlight">\(\mathcal{R} = [-2, 2] \times [-2, 2]\)</span> é a área en vermello, e as variables <span class="math notranslate nohighlight">\((u, v)\)</span> son simplemente <span class="math notranslate nohighlight">\((x, y )\)</span>. A superficie é azul e a súa parametrización é moi sinxela:</p>
@@ -772,7 +772,7 @@ s = \int_{t_0}^{t_e} || {\bf r}' (t) || \, \mathrm{d}t
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2d896db79a8fe4e1a04b68a344a3055270a8690f9890e79e66b1f55535d20595.png" src="../_images/2d896db79a8fe4e1a04b68a344a3055270a8690f9890e79e66b1f55535d20595.png" />
+<img alt="../_images/f9e2abab932e4b33945c14dc49b04dc1a460fb2d7103564ce0800047a1fdf8fa.png" src="../_images/f9e2abab932e4b33945c14dc49b04dc1a460fb2d7103564ce0800047a1fdf8fa.png" />
 </div>
 </div>
 <p><em>solución</em> : A rexión <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> vén dada polas variables <span class="math notranslate nohighlight">\(\theta, \phi\)</span> que toman valores nos intervalos <span class="math notranslate nohighlight">\(\theta \in [0, \pi]\)</span> e <span class="math notranslate nohighlight">\(\phi \in [0 , 2 \pi)\)</span>.</p>
