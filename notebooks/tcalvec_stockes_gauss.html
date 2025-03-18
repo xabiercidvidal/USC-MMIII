@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -460,13 +460,13 @@
 <h1>Teorema de Stockes y Teorema de Gauss<a class="headerlink" href="#teorema-de-stockes-y-teorema-de-gauss" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última ejecución &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Sat Mar 15 23:55:16 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última ejecución  Tue Mar 18 16:44:28 2025
 </pre></div>
 </div>
 </div>
@@ -484,12 +484,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -530,8 +530,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
-<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
+<img alt="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" src="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" />
+<img alt="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" src="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" />
 </div>
 </div>
 <p><strong>El teorema de Stockes</strong> es la generalización del de Green a 3 dimensiones.</p>
@@ -624,7 +624,7 @@ $<span class="math notranslate nohighlight">\(
 <p>Date cuenta que si la superficie es maleable, el teorema se aplica igualmente, la circulación en todos los cuadraditos es al final siempre la circulación en su frontera, e igual a la integral del rotacional en la superficie, da igual la forma de ésta.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">espira</span><span class="p">():</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">espira</span><span class="p">():</span>
     <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
     <span class="n">Ex</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>  <span class="o">-</span><span class="n">y</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="c1"># -y/2 #+ x/2</span>
     <span class="n">Ey</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span>   <span class="n">x</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">y</span><span class="o">/</span><span class="mi">2</span>
@@ -650,7 +650,7 @@ $<span class="math notranslate nohighlight">\(
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" src="../_images/402dbc9d7794927a9cbf131edb49356531a646e2468a053506f845a91fd79abc.png" />
+<img alt="../_images/3e32860a9ef5c9332a08ff0ba0222e7b3b532c08e24b1418f8d39b6380279b49.png" src="../_images/3e32860a9ef5c9332a08ff0ba0222e7b3b532c08e24b1418f8d39b6380279b49.png" />
 </div>
 </div>
 <p>Considera la integral por los lados verticales en los que solo partipa <span class="math notranslate nohighlight">\(F_y\)</span>. Nota que el lado de la derecha entra con un (+) y el de la izquierda con un (-) en la circulación. La integral podemos aproximarla:</p>
@@ -695,9 +695,9 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/201e003656486a50753b36d7d51295235f61e5b2b0b5545ffa3d4b0203905fd9.png" src="../_images/201e003656486a50753b36d7d51295235f61e5b2b0b5545ffa3d4b0203905fd9.png" />
-<img alt="../_images/5b157a79e768e72aa4e32b880e4b271b4fb40497642332fd910f29a196a79e27.png" src="../_images/5b157a79e768e72aa4e32b880e4b271b4fb40497642332fd910f29a196a79e27.png" />
-<img alt="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" src="../_images/e1316d8bfa70159b9f7225ab4e1650b1c26f2c76f0127f12c99c20d3b2df9467.png" />
+<img alt="../_images/ce4ecb552f4ca28028f711ee3957ceaabe36c6fc9dc5098d96694b521dd888a5.png" src="../_images/ce4ecb552f4ca28028f711ee3957ceaabe36c6fc9dc5098d96694b521dd888a5.png" />
+<img alt="../_images/8c72327a36fcf05f1f0a80e9c89ba009790a3333e837ffa193fb7a1c843d990d.png" src="../_images/8c72327a36fcf05f1f0a80e9c89ba009790a3333e837ffa193fb7a1c843d990d.png" />
+<img alt="../_images/0b1cd8526b37b318572dfa41a868d5917589dc5e51a848baba8204b6b0249885.png" src="../_images/0b1cd8526b37b318572dfa41a868d5917589dc5e51a848baba8204b6b0249885.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -721,8 +721,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" src="../_images/6115b0dd212fc241e649f6e2b9ae8ccf30f7b9fa0c616adaf9ca6116ec5b8fb2.png" />
-<img alt="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" src="../_images/cc28043a1042d208ae7c25ccf686a22632a29ff5b1d5d36c26889a952b043f43.png" />
+<img alt="../_images/f71a6af81aff17277b17b9a62ee2c766c7975ef836117fd50ac563c4e9a9780d.png" src="../_images/f71a6af81aff17277b17b9a62ee2c766c7975ef836117fd50ac563c4e9a9780d.png" />
+<img alt="../_images/24338cd746e30aa771d44293f66c71400174532120787f8985dfff1c3054de97.png" src="../_images/24338cd746e30aa771d44293f66c71400174532120787f8985dfff1c3054de97.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -734,8 +734,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" src="../_images/aee63c290b7d1600786e0d2d2c6c2ed749426fdad58efa1ed6afc483dc532bb4.png" />
-<img alt="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" src="../_images/833b1f3b12fb4dcfc1f8e393f123219d29ef56d3f8ce8e1c4a9f201053e09c62.png" />
+<img alt="../_images/e0e8c7dc22b6436ffd63a63033d982eddfedab32e3ccbf8d2da0be9a5350f700.png" src="../_images/e0e8c7dc22b6436ffd63a63033d982eddfedab32e3ccbf8d2da0be9a5350f700.png" />
+<img alt="../_images/bf130c0754a5c82337217595b482fc2078d58e420799a98ca6e941795ddd203e.png" src="../_images/bf130c0754a5c82337217595b482fc2078d58e420799a98ca6e941795ddd203e.png" />
 </div>
 </div>
 <p>Recordemos que la superficie tiene como base un disco de radio unidad y la intersección con el plano <span class="math notranslate nohighlight">\(x + y + z = 1\)</span></p>
@@ -848,8 +848,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" src="../_images/b5020b71964d3242d645db33bc820973a7325ef21d5e05b74671effbc85060fc.png" />
-<img alt="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" src="../_images/bd1b31c4b8b18765af7dec4fbdad499181a768b9a8ca70a5a6aa59d3a104b3c1.png" />
+<img alt="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" src="../_images/0ccf6dd701d00203a23524e27bfdb6ae074aa4dbc159656d85aff3519160ca91.png" />
+<img alt="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" src="../_images/5a1ddb70cf6d14eec682dd95d65e14d715ac4aed1fa35789599af827fded1628.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -875,10 +875,10 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" src="../_images/d5c383954eb2934a6882f824828550b85d9b612c7464e22af7fac609b65ec270.png" />
-<img alt="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" src="../_images/8fa4de888bdacc407dffdd377929d772dcffa899a0611e16bde70cf78cc994f7.png" />
-<img alt="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" src="../_images/aa0c529929e4d6c21eb350bc104a291ef15f9832da7ff0727b8cf697e6ed450d.png" />
-<img alt="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" src="../_images/7170f113873fd0db568910b83b08ecbca8db24437c5b2bc92361f4f901bfc4ea.png" />
+<img alt="../_images/090d3f203e042ab8bcc87fb712187c74247991c62797d1d97c2736b4c6021a5c.png" src="../_images/090d3f203e042ab8bcc87fb712187c74247991c62797d1d97c2736b4c6021a5c.png" />
+<img alt="../_images/92dd0f4da295565698583f5a2eb3f423c86a85fd1076ca61062484213411f304.png" src="../_images/92dd0f4da295565698583f5a2eb3f423c86a85fd1076ca61062484213411f304.png" />
+<img alt="../_images/808fa1927a1396f42cd8c58c0a40b147993e120a86c6d4175749f012018ca967.png" src="../_images/808fa1927a1396f42cd8c58c0a40b147993e120a86c6d4175749f012018ca967.png" />
+<img alt="../_images/23298490e4fc01f5bce0ab9d9a5b6ce6435d6175d04a73378a446e5b9473bdd8.png" src="../_images/23298490e4fc01f5bce0ab9d9a5b6ce6435d6175d04a73378a446e5b9473bdd8.png" />
 </div>
 </div>
 <p>Parametrizamos la superficie como una gráfica:</p>
@@ -968,8 +968,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" src="../_images/3d23f5c0d5798c6db96476ead2942e4a129e42d297bcd06419700811d578e020.png" />
-<img alt="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" src="../_images/0b5526602fbecafe9d7c9c4203a38a93265bd0d0f5bdbc9708d44452d1a9b0c7.png" />
+<img alt="../_images/b3936f779ba2e36d252888c83a5e69811b5f984c41615c1defc361d5c23d496c.png" src="../_images/b3936f779ba2e36d252888c83a5e69811b5f984c41615c1defc361d5c23d496c.png" />
+<img alt="../_images/8d70aa333fe47ffe3132e03d5676d9f3664c9920d5229cd56594568586dde7a8.png" src="../_images/8d70aa333fe47ffe3132e03d5676d9f3664c9920d5229cd56594568586dde7a8.png" />
 </div>
 </div>
 <p>La integral</p>
@@ -1027,8 +1027,8 @@ F_y(x_0 + \Delta x, y_0) \, \Delta y - F_y(x_0, y_0) \, \Delta y \simeq \frac{\p
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" src="../_images/e2a2e4edd0ba22cb107226c2b0e2b723a7cf81322b2c288fb92a527f7d6adc19.png" />
-<img alt="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" src="../_images/d063bea469b2314e603d8bbf09c0797fca4e9fcc07bb2cdd9b6695d6d9307107.png" />
+<img alt="../_images/92bfc45d7dd364f3698f89877bd6697d50eb4c8d9dd83177ceb661a04f01ab1a.png" src="../_images/92bfc45d7dd364f3698f89877bd6697d50eb4c8d9dd83177ceb661a04f01ab1a.png" />
+<img alt="../_images/d2a2d8b738d4bb9aaecfe3e94cf15c3061c328dd34e08b20d4d5b9263ea1b8d0.png" src="../_images/d2a2d8b738d4bb9aaecfe3e94cf15c3061c328dd34e08b20d4d5b9263ea1b8d0.png" />
 </div>
 </div>
 <p>a) la divergencia
