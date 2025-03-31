@@ -470,7 +470,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Mar 18 16:44:30 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Mon Mar 31 13:59:27 2025
 </pre></div>
 </div>
 </div>
@@ -718,7 +718,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x115efae50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;mpl_toolkits.mplot3d.art3d.Line3D at 0x106a33d90&gt;]
 </pre></div>
 </div>
 <img alt="../_images/b32de42070b037096d0460e6c07ae6f81e3ab72aca0f9af5bcfc7d498f0eba0c.png" src="../_images/b32de42070b037096d0460e6c07ae6f81e3ab72aca0f9af5bcfc7d498f0eba0c.png" />
@@ -1011,7 +1011,7 @@
 <p>Onde,</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
-J = \left| \begin{array}{cc} \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\ 
+X = \left| \begin{array}{cc} \frac{\partial x}{\partial u} &amp; \frac{\partial x}{\partial v} \\ 
 \frac{\partial y}{ \partial u} &amp; \frac{\partial y}{\partial v} 
 \end{array} \right|
 \end{split}\]</div>
@@ -1020,14 +1020,14 @@ J = \left| \begin{array}{cc} \frac{\partial x}{\partial u} &amp; \frac{\partial 
 <p>Así, cando cambiamos de coordenadas</p>
 <div class="math notranslate nohighlight">
 \[
-\int_R f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_{R'} f(u, v) \, |J| \, \mathrm{d}u \mathrm{d} v
+\int_R f(x, y) \, \mathrm{d}x \mathrm{d}y = \int_{R'} f(u, v) \, |X| \, \mathrm{d}u \mathrm{d} v
 \]</div>
 <p>onde <span class="math notranslate nohighlight">\(R'\)</span> é a rexión definida no espazo (<span class="math notranslate nohighlight">\(u, v\)</span>), <span class="math notranslate nohighlight">\(f(u, v) = f(x(u, v), y(u, v)) \)</span> é a función no novo coordenadas e, finalmente, a diferencial de área vén dada por:</p>
 <div class="math notranslate nohighlight">
 \[
-\mathrm{d}x \mathrm{d} y \to |J| \mathrm{d} u \mathrm{d}v,
+\mathrm{d}x \mathrm{d} y \to |X| \mathrm{d} u \mathrm{d}v,
 \]</div>
-<p>onde <span class="math notranslate nohighlight">\(|J|\)</span> é o valor absoluto do xacobiano do cambio de variables.</p>
+<p>onde <span class="math notranslate nohighlight">\(|X|\)</span> é o valor absoluto do xacobiano do cambio de variables.</p>
 <p><em>Exercicio</em> : Calcula a integral do anel comprendido entre os raios <span class="math notranslate nohighlight">\([a, b]\)</span> do primeiro cuadrante da función <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> e da función <span class="math notranslate nohighlight">\(f(x, y) = \log ( x^2 + y^2)\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1064,7 +1064,7 @@ r \mathrm{d}\phi \mathrm{d} r
 \[
 \{ a \le r \le b, \; 0 \le \phi \le \pi/2\}
 \]</div>
-<p>O xacobiano do cambio de coordenadas, que calculamos antes, é: <span class="math notranslate nohighlight">\(J = r\)</span></p>
+<p>O xacobiano do cambio de coordenadas, que calculamos antes, é: <span class="math notranslate nohighlight">\(|X| = r\)</span></p>
 <p>para <span class="math notranslate nohighlight">\(f(x, y) = 1\)</span> a integral é:</p>
 <div class="math notranslate nohighlight">
 \[
