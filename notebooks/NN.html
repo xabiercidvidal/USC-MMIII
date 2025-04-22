@@ -530,7 +530,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f8f855b10c0390798ea33d0a3125318c7ec95508709a5089ed0c0c7bd1cce186.png" src="../_images/f8f855b10c0390798ea33d0a3125318c7ec95508709a5089ed0c0c7bd1cce186.png" />
+<img alt="../_images/78240fbd5e8a4668d3ce4765111c916f4315f9f9108558490bc06a7de41a59a7.png" src="../_images/78240fbd5e8a4668d3ce4765111c916f4315f9f9108558490bc06a7de41a59a7.png" />
 </div>
 </div>
 </section>
@@ -579,21 +579,25 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9f084bfaf4e333dde0a694395a8555bc209f61271b408ed9fb66829731e4e9cd.png" src="../_images/9f084bfaf4e333dde0a694395a8555bc209f61271b408ed9fb66829731e4e9cd.png" />
+<img alt="../_images/27422b16270d71486c0ca2c927b85a14ca445bdb974af27cc944720a05e99433.png" src="../_images/27422b16270d71486c0ca2c927b85a14ca445bdb974af27cc944720a05e99433.png" />
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mf">162e9580</span><span class="n">d08c</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Prediction: </span><span class="si">{</span><span class="n">prediction</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 <span class="ne">----&gt; </span><span class="mi">9</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Continue (y/n) ?&#39;</span><span class="p">)</span>
 <span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;True: </span><span class="si">{</span><span class="n">test</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="nn">~/jupyter/lib/python3.7/site-packages/ipykernel/kernelbase.py</span> in <span class="ni">raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">    </span><span class="mi">844</span>         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">845</span>             <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span>
-<span class="ne">--&gt; </span><span class="mi">846</span>                 <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="g g-Whitespace">    </span><span class="mi">847</span>             <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">848</span>         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="nn">File ~/Library/Python/3.9/lib/python/site-packages/ipykernel/kernelbase.py:1281,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1279</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1280</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1281</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1282</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1283</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1284</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1285</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1286</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1287</span> <span class="p">)</span>
 
 <span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
