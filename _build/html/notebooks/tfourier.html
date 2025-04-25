@@ -469,7 +469,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Tue Apr 22 15:43:53 2025
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Apr 25 15:47:37 2025
 </pre></div>
 </div>
 </div>
@@ -529,26 +529,26 @@
 <section id="funcions-pares-impares-e-periodicas">
 <h3>Funcións pares, impares e periódicas.<a class="headerlink" href="#funcions-pares-impares-e-periodicas" title="Link to this heading">#</a></h3>
 <p>Dicimos que unha función <span class="math notranslate nohighlight">\(f(x)\)</span> é <strong>periódica</strong> con período <span class="math notranslate nohighlight">\(T\)</span> se: <span class="math notranslate nohighlight">\(f(x + T) = f(x)\)</span>.</p>
-<p>Por exemplo, <span class="math notranslate nohighlight">\(f(x) = sen(x)\)</span> é unha función periódica do período <span class="math notranslate nohighlight">\(T = 2\pi\)</span>, <span class="math notranslate nohighlight">\(\sin(2\pi + x) = \sin(x)\)</span></p>
+<p>Por exemplo, <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> é unha función periódica do período <span class="math notranslate nohighlight">\(T = 2\pi\)</span>, <span class="math notranslate nohighlight">\(\sin(2\pi + x) = \sin(x)\)</span></p>
 <p>Unha función é par se <span class="math notranslate nohighlight">\(f(- x) = f(x)\)</span> e impar se <span class="math notranslate nohighlight">\(f(-x) = - f(x)\)</span></p>
 <p>Por exemplo, <span class="math notranslate nohighlight">\(f(x) = \cos(x)\)</span> é par e <span class="math notranslate nohighlight">\(f(x) = \sin(x)\)</span> é impar.</p>
 <p><em>Exercicio:</em> Comproba que dado <span class="math notranslate nohighlight">\(n\)</span> natural, <span class="math notranslate nohighlight">\(n&gt;0\)</span>, <span class="math notranslate nohighlight">\(\cos (nx)\)</span> é par e <span class="math notranslate nohighlight">\(\sin(nx)\)</span> é impar, e ambos son periódicos co período <span class="math notranslate nohighlight">\(2 \pi\)</span></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span><span class="p">,</span> <span class="n">m</span><span class="p">,</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span>
 <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">N</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">sx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
 <span class="n">cx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">m</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;$\sin &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;x$&#39;</span><span class="p">)</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$\cos &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;x$&#39;</span><span class="p">);</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">sin &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;x$&#39;</span><span class="p">)</span>
+<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">cx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$</span><span class="se">\\</span><span class="s1">cos &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">m</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;x$&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/f16a7be3b312faa5aea8d1ea0dfb47d3f6fb22c5d4c7dc64accc3ee4de933b62.png" src="../_images/f16a7be3b312faa5aea8d1ea0dfb47d3f6fb22c5d4c7dc64accc3ee4de933b62.png" />
+<img alt="../_images/40571dead6c11e4b810d3692b2abab99be09f83e02d559d457b3c48284473e7d.png" src="../_images/40571dead6c11e4b810d3692b2abab99be09f83e02d559d457b3c48284473e7d.png" />
 </div>
 </div>
-<p><em>Teorema</em> : Sexa <span class="math notranslate nohighlight">\(f(x)\)</span> unha función par e <span class="math notranslate nohighlight">\(g(x), \, h(x)\)</span> sexan impares, satisfacen:</p>
+<p><em>Teorema</em> : Sexa <span class="math notranslate nohighlight">\(f(x)\)</span> unha función par e <span class="math notranslate nohighlight">\(g(x), \, h(x)\)</span> sexan impares, satisfán:</p>
 <ol class="arabic simple">
 <li><p><span class="math notranslate nohighlight">\(g(0) = 0\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\(\int_{-a}^{a} f(x) \, \mathrm{d}x = 2 \int_0^af(x) \, \mathrm{d}x\)</span></p></li>
@@ -646,7 +646,7 @@ h(x) = \frac{1}{2}(f(x)  + f(-x)), \; g(x) = \frac{1}{2}(f(x) - f(-x))
 \[
  \int_a^bf^2(x) \, \mathrm{d}x = \int_a^bg^2(x) \, \mathrm{d}x = 1
  \]</div>
-<p>Dicimos que un conxunto contable <span class="math notranslate nohighlight">\({\Psi_n(x)}\)</span> con <span class="math notranslate nohighlight">\(n \in \mathcal{N}\)</span> está completo nun intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, se son funcións ortonormais que permiten que “toda” función. <span class="math notranslate nohighlight">\( f(x)\)</span> se poida expresar como:</p>
+<p>Dicimos que un conxunto contable <span class="math notranslate nohighlight">\({\Psi_n(x)}\)</span> con <span class="math notranslate nohighlight">\(n \in \mathcal{N}\)</span> está <strong>completo</strong> nun intervalo <span class="math notranslate nohighlight">\([a, b]\)</span>, se son funcións ortonormais que permiten que “toda” función. <span class="math notranslate nohighlight">\( f(x)\)</span> se poida expresar como:</p>
 <div class="math notranslate nohighlight">
 \[
  f(x) = \sum_n a_n \, \Psi_n(x)
@@ -848,9 +848,10 @@ S(x) = \frac{a_0}{2} + \sum_{n} a_n \cos \frac{n \pi x}{L} + \sum_{n} b_n \sin \
 <section id="expansion-de-fourier-para-unha-funcion-non-periodica-definida-nun-intervalo-0-l">
 <h3>Expansión de Fourier para unha función non periódica definida nun intervalo [0, L]<a class="headerlink" href="#expansion-de-fourier-para-unha-funcion-non-periodica-definida-nun-intervalo-0-l" title="Link to this heading">#</a></h3>
 <p>E se a función se define só nunha rexión <span class="math notranslate nohighlight">\([0, L]\)</span>?</p>
-<p>Podemos estender a función a <span class="math notranslate nohighlight">\([-L, L]\)</span> por exemplo <span class="math notranslate nohighlight">\(f(-x) = f(x)\)</span> facéndoa par, calculando a súa serie de Fourier e declarándoa válida só no intervalo <span class="math notranslate nohighlight">\([0 , L] \)</span></p>
+<p>Podemos estender a función a <span class="math notranslate nohighlight">\([-L, L]\)</span> por exemplo <span class="math notranslate nohighlight">\(f(-x) = f(x)\)</span> facéndoa par, calculando a súa serie de Fourier e declarándoa válida só no intervalo <span class="math notranslate nohighlight">\([0 , L] \)</span>.</p>
+<p>Alternativamente, podemos compoñer a serie como suma de series que nos dean o resultado buscado (ver exemplo).</p>
 <p><strong>Exercicio</strong> : Sexa <span class="math notranslate nohighlight">\(f(x) = x^2\)</span> definido en <span class="math notranslate nohighlight">\([0, 2]\)</span> da a súa expansión en serie de Fourier.</p>
-<p>definimos <span class="math notranslate nohighlight">\(g(x) = x^2\)</span> en <span class="math notranslate nohighlight">\([-2, 2]\)</span></p>
+<p>A primeira opción implica simplemente determinar os coeficientes de Fourier para <span class="math notranslate nohighlight">\(f(x)=x^2\)</span> en <span class="math notranslate nohighlight">\([-2,2]\)</span></p>
 <div class="math notranslate nohighlight">
 \[
 a_0 = \frac{1}{2} \int_{-2}^{2} x^2 \mathrm{d}x = \int_0^2 x^2 \mathrm{d}x = \frac{x^3}{3} \Big|_0^2 = \frac{8}{3}
@@ -878,21 +879,101 @@ S(x) = \frac{4}{3} + 16 \sum_n \frac{(-1)^n}{(n \pi)^2} \cos \frac{n \pi x}{2}
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">2.</span><span class="p">,</span> <span class="mf">2.</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
+<span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="n">xs</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">xrange</span><span class="p">)</span>
 <span class="n">fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
 <span class="k">def</span> <span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">ss</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
         <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ss</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span><span class="s1">&#39;f(x)&#39;</span><span class="p">);</span>
-<span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">sx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">,</span> <span class="n">newfig</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;S(x)&#39;</span><span class="p">);</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$f(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">sx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$s(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fff4691741c2814fd89fea77f05c2f104bccafd0380019a5a99fc724c2838a5e.png" src="../_images/fff4691741c2814fd89fea77f05c2f104bccafd0380019a5a99fc724c2838a5e.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 5.0)
+</pre></div>
+</div>
+<img alt="../_images/e1295ff20f7183d6f00c7c0680c67c819a65ae6fdcd69ce8105c435320002b86.png" src="../_images/e1295ff20f7183d6f00c7c0680c67c819a65ae6fdcd69ce8105c435320002b86.png" />
+</div>
+</div>
+<p>A alternativa implica definir:</p>
+<p><span class="math notranslate nohighlight">\(g(x) = \begin{cases} 0 &amp; \text{se}~ -2 &lt; x &lt; 0 \\
+x^{2} &amp; \text{se}~ 0  &lt; x &lt; 2  \end{cases}\)</span></p>
+<p>e</p>
+<p><span class="math notranslate nohighlight">\(h(x) = \begin{cases} \left(x + 2\right)^{2} &amp; \text{se}~ -2 &lt; x &lt; 0 \\
+0 &amp; \text{se}~ 0  &lt; x &lt; 2  \end{cases}\)</span></p>
+<p>Os coeficientes de Fourier son, para <span class="math notranslate nohighlight">\(g(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{align}
+a_0|_{g(x)} &amp; = \frac{2}{3} \\
+a_n|_{g(x)} &amp; = \frac{8 \left(-1\right)^{n}}{\pi^{2} n^{2}} \\
+b_n|_{g(x)} &amp; = - \frac{4 \left(-1\right)^{n}}{\pi n} + \frac{8 ( \left(-1\right)^{n}-1)}{\pi^{3} n^{3}}
+\end{align}
+\end{split}\]</div>
+<p>e <span class="math notranslate nohighlight">\(h(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{align}
+a_0|_{h(x)} &amp; = \frac{2}{3} \\
+a_n|_{h(x)} &amp; = \frac{8}{\pi^{2} n^{2}} \\
+b_n|_{h(x)} &amp; = - \frac{4}{\pi n} + \frac{8 ( \left(1-\left(-1\right)^{n}\right)}{\pi^{3} n^{3}}
+\end{align}
+\end{split}\]</div>
+<p>A nosa serie de Fourier sería a suma das dúas: <span class="math notranslate nohighlight">\(s(x)=g(x)+h(x)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+\begin{align}
+a_0|_{s(x)} &amp; = \frac{4}{3} \\
+a_n|_{s(x)} &amp; = \frac{8(1+(-1)^n)}{\pi^{2} n^{2}} \\
+b_n|_{s(x)} &amp; = - \frac{4(1+(-1)^n)}{\pi n}
+\end{align}
+\end{split}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="n">ss</span> <span class="o">+=</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">ss</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ss</span>
+
+<span class="k">def</span> <span class="nf">hx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">ss</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
+        <span class="n">ss</span> <span class="o">+=</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+        <span class="n">ss</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ss</span>
+
+<span class="k">def</span> <span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">gx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">hx</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$f(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">gx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$g(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">hx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$h(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$f(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">sx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$s(x) = h(x)+g(x)$&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$x$&#39;</span><span class="p">);</span> <span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;f(x)&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">tmp</span><span class="o">=</span><span class="n">ax2</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/76d768064c0b02a6e26fcfb5f6befa9cad712844b9954c7c195fe20dd39bbca4.png" src="../_images/76d768064c0b02a6e26fcfb5f6befa9cad712844b9954c7c195fe20dd39bbca4.png" />
 </div>
 </div>
 <p><strong>A beleza dos números complexos</strong> permítenos reescribir de forma compacta e elegante os desenvolvementos de Fourier, observa:</p>
