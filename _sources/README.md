@@ -2,7 +2,7 @@
 ## Facultade de Física
 ## Curso Métodos Matemáticos III
 ### author: J. A. Hernando, X. Cid Vidal
-### date  : January 2024
+### date  : March 2026
 
 Repositorio cos *Jupyter Notebook* e módulos *Python* do curso "Métodos Matemáticos III" da Universidade de Santiago de Compostela
 
