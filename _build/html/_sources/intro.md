@@ -6,7 +6,7 @@ Autor: José Ángel Hernando Morata, Xabier Cid Vidal
 
 Correo electrónico: xabier.cid@usc.gal
 
-Vesión: Marzo 2025
+Vesión: Marzo 2026
 
 -----
 
