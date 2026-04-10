@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -472,13 +472,13 @@
 <h1>Serie de Fourier<a class="headerlink" href="#serie-de-fourier" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Sun Mar 22 22:11:44 2026
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Fri Apr 10 12:15:38 2026
 </pre></div>
 </div>
 </div>
@@ -501,12 +501,12 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">graph_utils</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">gf</span>
+<span class="kn">import</span> <span class="nn">graph_utils</span> <span class="k">as</span> <span class="nn">gf</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
 <span class="n">cmap</span>    <span class="o">=</span> <span class="s1">&#39;hot&#39;</span>
@@ -527,7 +527,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5b9ffb00c3bca582c379cf056980220579d73ee910c997e64c383a825ff7e382.png" src="../_images/5b9ffb00c3bca582c379cf056980220579d73ee910c997e64c383a825ff7e382.png" />
+<img alt="../_images/bfe3cd83773796f50c74af5c9d35f389130f9fe7e6276fc215e2efe5adbc0cde.png" src="../_images/bfe3cd83773796f50c74af5c9d35f389130f9fe7e6276fc215e2efe5adbc0cde.png" />
 </div>
 </div>
 <a class="reference internal image-reference" href="../_images/fourier_meme.jpeg"><img alt="../_images/fourier_meme.jpeg" class="align-center" src="../_images/fourier_meme.jpeg" style="width: 400px;" /></a>
@@ -554,7 +554,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/437f63fe3e8ee64c8e119a4c1f378843608958027dedb8da1c2dd97b2aca17cf.png" src="../_images/437f63fe3e8ee64c8e119a4c1f378843608958027dedb8da1c2dd97b2aca17cf.png" />
+<img alt="../_images/40571dead6c11e4b810d3692b2abab99be09f83e02d559d457b3c48284473e7d.png" src="../_images/40571dead6c11e4b810d3692b2abab99be09f83e02d559d457b3c48284473e7d.png" />
 </div>
 </div>
 <p><em>Teorema</em> : Sexa <span class="math notranslate nohighlight">\(f(x)\)</span> unha función par e <span class="math notranslate nohighlight">\(g(x), \, h(x)\)</span> sexan impares, satisfán:</p>
@@ -606,7 +606,7 @@ h(x) = \frac{1}{2}(f(x)  + f(-x)), \; g(x) = \frac{1}{2}(f(x) - f(-x))
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8bf97fb622a3f235bd17895272a5046f91bae1aaf2b6d7bfbe4f401e79cc29c8.png" src="../_images/8bf97fb622a3f235bd17895272a5046f91bae1aaf2b6d7bfbe4f401e79cc29c8.png" />
+<img alt="../_images/4d95bdf3bccc9e48228744208e1fbe90b6beff19c264934319c31011877116c8.png" src="../_images/4d95bdf3bccc9e48228744208e1fbe90b6beff19c264934319c31011877116c8.png" />
 </div>
 </div>
 <p>A integral</p>
@@ -698,7 +698,7 @@ b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \, \sin nx \, \mathrm{d}x
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">fx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">fx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">sign</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">sign</span><span class="o">*</span><span class="n">x</span>
 <span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
@@ -706,7 +706,7 @@ b_n = \frac{1}{\pi} \int_{-\pi}^{\pi} f(x) \, \sin nx \, \mathrm{d}x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0628619e72b94b3279ebb406d14e6153656b0de355c3269f460b63a169c6ae60.png" src="../_images/0628619e72b94b3279ebb406d14e6153656b0de355c3269f460b63a169c6ae60.png" />
+<img alt="../_images/a8ca20a5aa002a27223a381283852877e846313560eb10ca6305a7650796cb9d.png" src="../_images/a8ca20a5aa002a27223a381283852877e846313560eb10ca6305a7650796cb9d.png" />
 </div>
 </div>
 <p>É unha función par, polo tanto <span class="math notranslate nohighlight">\(b_n = 0\)</span>.</p>
@@ -732,7 +732,7 @@ S(x) = \frac{\pi}{2} - \frac{4}{\pi} \sum_k \frac{1}{(2k+1)^2} \cos (2k+1) x
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">ss</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">2</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
         <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span> <span class="o">+</span> <span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
@@ -743,7 +743,7 @@ S(x) = \frac{\pi}{2} - \frac{4}{\pi} \sum_k \frac{1}{(2k+1)^2} \cos (2k+1) x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/08440acdcf5e6e1c62374274beaf0ccfba058ffd1ff25bc522ae3f01266c72ad.png" src="../_images/08440acdcf5e6e1c62374274beaf0ccfba058ffd1ff25bc522ae3f01266c72ad.png" />
+<img alt="../_images/85c2430131abec111c902669731a136ba1daf875dda9afc84d6325a688000832.png" src="../_images/85c2430131abec111c902669731a136ba1daf875dda9afc84d6325a688000832.png" />
 </div>
 </div>
 <p>Ás veces, as series de Fourier poden axudarnos a calcular series numéricas</p>
@@ -773,7 +773,7 @@ S(x) = \frac{\pi}{2} - \frac{4}{\pi} \sum_k \frac{1}{(2k+1)^2} \cos (2k+1) x
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">fx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">fx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">sig</span> <span class="o">=</span> <span class="n">x</span><span class="o">/</span><span class="nb">abs</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">return</span>  <span class="mi">1</span><span class="o">/</span><span class="mi">2</span> <span class="o">+</span> <span class="n">sig</span><span class="o">/</span><span class="mf">2.</span>
 <span class="n">gf</span><span class="o">.</span><span class="n">fun1d</span><span class="p">(</span><span class="n">fx</span><span class="p">,</span> <span class="n">xrange</span><span class="p">);</span>
@@ -781,7 +781,7 @@ S(x) = \frac{\pi}{2} - \frac{4}{\pi} \sum_k \frac{1}{(2k+1)^2} \cos (2k+1) x
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/41ee2327560a5bae8569237377de41a5212905951bda564e6786e621933868e5.png" src="../_images/41ee2327560a5bae8569237377de41a5212905951bda564e6786e621933868e5.png" />
+<img alt="../_images/912694da5ace24525f3b925fa914f68d1870e3e839ddc48eb7c54b7e061d9ed0.png" src="../_images/912694da5ace24525f3b925fa914f68d1870e3e839ddc48eb7c54b7e061d9ed0.png" />
 </div>
 </div>
 <div class="math notranslate nohighlight">
@@ -811,7 +811,7 @@ b_k = \frac{2}{(2k+1) \pi}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">25</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">ss</span> <span class="o">=</span> <span class="mf">1.</span><span class="o">/</span><span class="mf">2.</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
         <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span> <span class="o">+</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">((</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">k</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>
@@ -822,7 +822,7 @@ b_k = \frac{2}{(2k+1) \pi}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cc7f1cedf830aa150c9a0313e94969018de2aa79ea377b021a657bd06ebdfad2.png" src="../_images/cc7f1cedf830aa150c9a0313e94969018de2aa79ea377b021a657bd06ebdfad2.png" />
+<img alt="../_images/db645e197fb5eceb1b56175582ee0337bc9289477237aab51c767f9b6f3433e7.png" src="../_images/db645e197fb5eceb1b56175582ee0337bc9289477237aab51c767f9b6f3433e7.png" />
 </div>
 </div>
 <p><em>Pregunta:</em> Canto vale a serie de Fourier en <span class="math notranslate nohighlight">\(x=0\)</span>? E a función?</p>
@@ -892,7 +892,7 @@ S(x) = \frac{4}{3} + 16 \sum_n \frac{(-1)^n}{(n \pi)^2} \cos \frac{n \pi x}{2}
 <span class="n">xrange</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="mf">6.</span><span class="p">,</span> <span class="mf">6.</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
 <span class="n">xs</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">*</span><span class="n">xrange</span><span class="p">)</span>
 <span class="n">fx</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">ss</span> <span class="o">=</span> <span class="mf">4.</span><span class="o">/</span><span class="mf">3.</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
         <span class="n">ss</span> <span class="o">=</span> <span class="n">ss</span> <span class="o">+</span> <span class="mi">16</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
@@ -911,7 +911,7 @@ S(x) = \frac{4}{3} + 16 \sum_n \frac{(-1)^n}{(n \pi)^2} \cos \frac{n \pi x}{2}
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 5.0)
 </pre></div>
 </div>
-<img alt="../_images/17847b79559e3d306cb7f1461aab8a8d0302e2c0b1d6a49af69464d3797439db.png" src="../_images/17847b79559e3d306cb7f1461aab8a8d0302e2c0b1d6a49af69464d3797439db.png" />
+<img alt="../_images/e1295ff20f7183d6f00c7c0680c67c819a65ae6fdcd69ce8105c435320002b86.png" src="../_images/e1295ff20f7183d6f00c7c0680c67c819a65ae6fdcd69ce8105c435320002b86.png" />
 </div>
 </div>
 <p>A alternativa implica definir:</p>
@@ -949,21 +949,21 @@ b_n|_{s(x)} &amp; = - \frac{4(1+(-1)^n)}{\pi n}
 \end{split}\]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">gx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">ss</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
         <span class="n">ss</span> <span class="o">+=</span> <span class="mi">8</span> <span class="o">*</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
         <span class="n">ss</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">*</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ss</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">hx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">hx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">ss</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">/</span><span class="mf">3.</span>
     <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">N</span><span class="p">):</span>
         <span class="n">ss</span> <span class="o">+=</span> <span class="mi">8</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">n</span><span class="o">*</span><span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
         <span class="n">ss</span> <span class="o">+=</span> <span class="p">(</span><span class="o">-</span><span class="mi">4</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">n</span><span class="p">)</span> <span class="o">+</span> <span class="mi">8</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">n</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">**</span><span class="mi">3</span><span class="o">*</span><span class="n">n</span><span class="o">**</span><span class="mi">3</span><span class="p">))</span><span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span> <span class="n">n</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="n">x</span><span class="o">/</span><span class="mf">2.</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">ss</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">gx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">hx</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+<span class="k">def</span> <span class="nf">sx</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> <span class="k">return</span> <span class="p">(</span><span class="n">gx</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">hx</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 
 <span class="n">fig</span><span class="p">,</span> <span class="p">(</span><span class="n">ax1</span><span class="p">,</span> <span class="n">ax2</span><span class="p">)</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">14</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
 <span class="n">ax1</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">xs</span><span class="p">,</span> <span class="n">fx</span><span class="p">(</span><span class="n">xs</span><span class="p">),</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$f(x)$&#39;</span><span class="p">)</span>
@@ -982,7 +982,7 @@ b_n|_{s(x)} &amp; = - \frac{4(1+(-1)^n)}{\pi n}
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/ffc819dcf4d275fb5bc2e373c5b4e001fda3a2075bd4cb7ef7f8348632591349.png" src="../_images/ffc819dcf4d275fb5bc2e373c5b4e001fda3a2075bd4cb7ef7f8348632591349.png" />
+<img alt="../_images/76d768064c0b02a6e26fcfb5f6befa9cad712844b9954c7c195fe20dd39bbca4.png" src="../_images/76d768064c0b02a6e26fcfb5f6befa9cad712844b9954c7c195fe20dd39bbca4.png" />
 </div>
 </div>
 <p><strong>A beleza dos números complexos</strong> permítenos reescribir de forma compacta e elegante os desenvolvementos de Fourier, observa:</p>
