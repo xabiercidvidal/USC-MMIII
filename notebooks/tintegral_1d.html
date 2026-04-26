@@ -30,7 +30,7 @@
   <link href="../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 <link href="../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
@@ -469,13 +469,13 @@
 <h1>Integrais nunha dimensión<a class="headerlink" href="#integrais-nunha-dimension" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">time</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; Última execución  &#39;</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">asctime</span><span class="p">()</span> <span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Sun Mar 22 22:11:52 2026
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span> Última execución   Sun Apr 26 21:41:39 2026
 </pre></div>
 </div>
 </div>
@@ -495,10 +495,10 @@
 <span class="o">%</span><span class="k">autoreload</span> 2
 
 <span class="c1"># numpy and matplotlib</span>
-<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">matplotlib</span>
-<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
-<span class="kn">from</span> <span class="nn">mpl_toolkits.mplot3d</span> <span class="kn">import</span> <span class="n">Axes3D</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mpl_toolkits.mplot3d</span><span class="w"> </span><span class="kn">import</span> <span class="n">Axes3D</span>
 <span class="n">matplotlib</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
 
 <span class="n">figsize</span> <span class="o">=</span> <span class="mi">6</span><span class="p">,</span> <span class="mf">3.8</span>
@@ -509,11 +509,11 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Javascript</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">IPython.display</span><span class="w"> </span><span class="kn">import</span> <span class="n">Javascript</span>
 
 <span class="c1">## potential fix to display latex in google colab</span>
-<span class="k">def</span> <span class="nf">fix_mathjax</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fix_mathjax</span><span class="p">():</span>
     <span class="k">if</span> <span class="s2">&quot;google.colab&quot;</span> <span class="ow">in</span> <span class="n">sys</span><span class="o">.</span><span class="n">modules</span><span class="p">:</span>
         <span class="n">display</span><span class="p">(</span><span class="n">Javascript</span><span class="p">(</span><span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">            MathJax.Hub.Queue([&quot;setRenderer&quot;, MathJax.Hub, &quot;CommonHTML&quot;]);</span>
@@ -560,7 +560,7 @@
 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">riemann_sum</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">draw</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">riemann_sum</span><span class="p">(</span><span class="n">fun</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="mi">100</span><span class="p">,</span> <span class="n">draw</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
     <span class="n">xs</span>   <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">size</span><span class="p">)</span>
     <span class="n">dx</span>   <span class="o">=</span> <span class="n">xs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">xs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  
     <span class="n">ts</span>   <span class="o">=</span> <span class="p">[</span><span class="n">xi</span> <span class="o">+</span> <span class="n">dx</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">uniform</span><span class="p">()</span> <span class="k">for</span> <span class="n">xi</span> <span class="ow">in</span> <span class="n">xs</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]]</span>
@@ -582,10 +582,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Riemann Sum 1.99440
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Riemann Sum 1.99803
 </pre></div>
 </div>
-<img alt="../_images/6076fbe5781990829dda8f9c16e41200dd5fd4599222c60c235e11dfc3bb23c7.png" src="../_images/6076fbe5781990829dda8f9c16e41200dd5fd4599222c60c235e11dfc3bb23c7.png" />
+<img alt="../_images/66c4454ac93d1750d4793c2b3099acf5ccdef73c7b48e54f320e12d6dcb56375.png" src="../_images/66c4454ac93d1750d4793c2b3099acf5ccdef73c7b48e54f320e12d6dcb56375.png" />
 </div>
 </div>
 <p>Na seguinte cela estudamos a evolución da suma de Riemann para particións regulares cada vez máis finas.</p>
@@ -600,7 +600,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a3e23f591e4d3613825401f2f153ed10216f4c193e01bbbb24f2b9c925426a50.png" src="../_images/a3e23f591e4d3613825401f2f153ed10216f4c193e01bbbb24f2b9c925426a50.png" />
+<img alt="../_images/a1d8046ad424a9e69e9d2e8b8f3ed69603a6385fc198389966ad8fc737f1c06e.png" src="../_images/a1d8046ad424a9e69e9d2e8b8f3ed69603a6385fc198389966ad8fc737f1c06e.png" />
 </div>
 </div>
 <p>Comprobamos que a suma de Riemann para particións cada vez máis finas converxe a un determinado valor <span class="math notranslate nohighlight">\(S\)</span>.</p>
